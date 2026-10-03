@@ -3,3 +3,4 @@
 *.md text eol=lf
 *.json text eol=lf
 *.png binary
+data_split/*.csv text eol=lf
