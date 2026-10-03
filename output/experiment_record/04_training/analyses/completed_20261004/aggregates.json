@@ -1,0 +1,219 @@
+[
+  {
+    "id": "preprocess_01_stretch",
+    "mean": 127774.4193065206,
+    "std": 486.298219644171,
+    "delta_percent": 0.0,
+    "mae": 264.51653195813424,
+    "tail": 679580.1654989404,
+    "minutes": 109.73828885833305,
+    "groups": [
+      {
+        "group": "low",
+        "contribution": 0.0,
+        "mean_bias": 344.45869415453245
+      },
+      {
+        "group": "middle",
+        "contribution": 0.0,
+        "mean_bias": 151.37725050233328
+      },
+      {
+        "group": "high",
+        "contribution": 0.0,
+        "mean_bias": -128.79432173248787
+      },
+      {
+        "group": "tail",
+        "contribution": 0.0,
+        "mean_bias": -775.2513266627634
+      }
+    ]
+  },
+  {
+    "id": "tune_02_adam_0p001",
+    "mean": 128284.30529381457,
+    "std": 1106.074867294598,
+    "delta_percent": 0.39905169599776524,
+    "mae": 264.7998043113107,
+    "tail": 712285.8415283755,
+    "minutes": 98.4423503016665,
+    "groups": [
+      {
+        "group": "low",
+        "contribution": 1080.172527407776,
+        "mean_bias": 364.5367853809184
+      },
+      {
+        "group": "middle",
+        "contribution": -2214.567527764465,
+        "mean_bias": 151.65675378116813
+      },
+      {
+        "group": "high",
+        "contribution": -1603.8155074650033,
+        "mean_bias": -148.4949507981215
+      },
+      {
+        "group": "tail",
+        "contribution": 3248.0964951156566,
+        "mean_bias": -810.0133185534847
+      }
+    ]
+  },
+  {
+    "id": "tune_03_cosine",
+    "mean": 128840.02496562789,
+    "std": 1118.861638711049,
+    "delta_percent": 0.8339741748706331,
+    "mae": 272.25262613683617,
+    "tail": 661480.9708674734,
+    "minutes": 73.95473845833331,
+    "groups": [
+      {
+        "group": "low",
+        "contribution": 4613.308711336558,
+        "mean_bias": 413.48652977899025
+      },
+      {
+        "group": "middle",
+        "contribution": 2318.168923880088,
+        "mean_bias": 192.32767686550915
+      },
+      {
+        "group": "high",
+        "contribution": -4068.387937131682,
+        "mean_bias": -114.22465873241299
+      },
+      {
+        "group": "tail",
+        "contribution": -1797.484038977683,
+        "mean_bias": -775.2137458717539
+      }
+    ]
+  },
+  {
+    "id": "tune_04_batch_16",
+    "mean": 129059.33877488603,
+    "std": 1731.4029388644035,
+    "delta_percent": 1.0056155804418099,
+    "mae": 268.784596877935,
+    "tail": 664164.2993859256,
+    "minutes": 90.03704426833428,
+    "groups": [
+      {
+        "group": "low",
+        "contribution": 2429.276572891791,
+        "mean_bias": 374.9036317932798
+      },
+      {
+        "group": "middle",
+        "contribution": 1021.2162907733332,
+        "mean_bias": 164.56959402191325
+      },
+      {
+        "group": "high",
+        "contribution": -634.5785720833934,
+        "mean_bias": -116.8800593215414
+      },
+      {
+        "group": "tail",
+        "contribution": -1530.9948232163345,
+        "mean_bias": -770.2504519814706
+      }
+    ]
+  },
+  {
+    "id": "tune_04_batch_64",
+    "mean": 128921.62487678946,
+    "std": 1010.0508867720996,
+    "delta_percent": 0.897836653451578,
+    "mae": 268.6769247817894,
+    "tail": 672786.8357218619,
+    "minutes": 71.51944671833382,
+    "groups": [
+      {
+        "group": "low",
+        "contribution": 2817.8134852835883,
+        "mean_bias": 386.5379773252137
+      },
+      {
+        "group": "middle",
+        "contribution": -180.88328168419562,
+        "mean_bias": 166.55770228257043
+      },
+      {
+        "group": "high",
+        "contribution": -815.0591526587918,
+        "mean_bias": -125.8156727670302
+      },
+      {
+        "group": "tail",
+        "contribution": -674.6654806717723,
+        "mean_bias": -775.0213536994503
+      }
+    ]
+  },
+  {
+    "id": "tune_05_dropout_0",
+    "mean": 129852.2048275631,
+    "std": 866.6698236629182,
+    "delta_percent": 1.6261357573130963,
+    "mae": 270.11268180530107,
+    "tail": 679728.9412751899,
+    "minutes": 76.3218249383363,
+    "groups": [
+      {
+        "group": "low",
+        "contribution": 3097.3620153187494,
+        "mean_bias": 385.56734989599653
+      },
+      {
+        "group": "middle",
+        "contribution": 628.1008777365936,
+        "mean_bias": 169.41559842339709
+      },
+      {
+        "group": "high",
+        "contribution": -1662.4527301787818,
+        "mean_bias": -126.93125444353377
+      },
+      {
+        "group": "tail",
+        "contribution": 14.775358165926264,
+        "mean_bias": -782.4962162539883
+      }
+    ]
+  },
+  {
+    "id": "tune_05_dropout_0p2",
+    "mean": 129936.06553130648,
+    "std": 380.912805623577,
+    "delta_percent": 1.691767598333005,
+    "mae": 269.49740285970904,
+    "tail": 687346.337361372,
+    "minutes": 86.99023712166624,
+    "groups": [
+      {
+        "group": "low",
+        "contribution": 2609.622253244151,
+        "mean_bias": 382.9714354747644
+      },
+      {
+        "group": "middle",
+        "contribution": 548.3706754535393,
+        "mean_bias": 170.51685255844689
+      },
+      {
+        "group": "high",
+        "contribution": -1767.6279819421836,
+        "mean_bias": -128.4142891800343
+      },
+      {
+        "group": "tail",
+        "contribution": 771.2812780303566,
+        "mean_bias": -787.5435118948379
+      }
+    ]
+  }
+]

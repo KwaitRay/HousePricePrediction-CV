@@ -1,0 +1,15 @@
+{
+  "reason": "early_stopping",
+  "epochs": 40,
+  "max_epochs": 60,
+  "best_epoch": 7,
+  "counter": 33,
+  "reference": 130339.5256470297,
+  "settings": {
+    "enabled": true,
+    "patience": 15,
+    "relative_improvement": 0.001,
+    "min_epochs": 40
+  },
+  "monitor": "validation_original_price_mse"
+}
