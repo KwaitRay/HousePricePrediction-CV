@@ -1,0 +1,6 @@
+{
+  "status": "interrupted",
+  "kind": "development",
+  "reason": "User explicitly requested stopping GPU usage",
+  "stopped_utc": "2026-10-03T00:21:41.167874+00:00"
+}

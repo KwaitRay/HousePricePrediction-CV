@@ -1,0 +1,10 @@
+{
+  "preprocess.size": {
+    "before": 224,
+    "after": 320
+  },
+  "run_kind": {
+    "before": null,
+    "after": "development"
+  }
+}

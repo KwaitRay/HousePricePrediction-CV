@@ -1,0 +1,140 @@
+"""Lossless deterministic-input cache, outside the frozen training source tree."""
+from pathlib import Path
+import hashlib
+import json
+import sys
+import time
+import importlib.metadata
+import numpy as np
+import torch
+
+HERE = Path(__file__).resolve().parent
+STAGE = HERE.parent.parent
+PROJECT = STAGE.parents[2]
+CODE = PROJECT/'scripts/experiments'
+sys.path.insert(0, str(CODE))
+from common.config import digest, read_json, write_json, path_at_root, resolve
+from preparation.images import HouseImages as UncachedHouseImages
+
+POINTER = HERE/'cache_pointer.json'
+
+
+def specification(config, root, frame, stats):
+    if config['preprocess']['filter'] != 'frequency' or config['augmentation']:
+        raise ValueError('This cache only supports frequency filtering without augmentation')
+    return {'format_version':1,'preprocess':config['preprocess'],'stats':stats,
+            'source_hashes':read_json(STAGE/'source_manifest_v2.json')['source_hashes'],
+            'packages':{p:importlib.metadata.version(p) for p in ['numpy','torch','torchvision','Pillow']},
+            'partition':'train','dtype':'float32','root':str(Path(root).resolve()),
+            'images':[{ 'imageid':name,'sha256':digest(Path(root)/'train'/name)} for name in frame.imageid]}
+
+
+def key_for(spec):
+    return hashlib.sha256(json.dumps(spec,sort_keys=True,separators=(',',':')).encode()).hexdigest()
+
+
+def verify_cache(config=None, check_sources=True):
+    pointer=read_json(POINTER)
+    directory=Path(pointer['directory'])
+    meta=read_json(directory/'manifest.json')
+    assert meta['status']=='complete' and key_for(meta['specification'])==pointer['key']
+    assert digest(directory/'inputs.npy')==meta['inputs_sha256'], 'Cache file checksum mismatch'
+    spec=meta['specification']
+    if check_sources:
+        for name,value in spec['source_hashes'].items():
+            assert digest(CODE/name)==value, f'Training source changed: {name}'
+        for name,value in spec['packages'].items():
+            assert importlib.metadata.version(name)==value, f'Package changed: {name}'
+        for row in spec['images']:
+            assert digest(Path(spec['root'])/'train'/row['imageid'])==row['sha256'], row['imageid']
+    if config:
+        assert config['preprocess']==spec['preprocess'] and not config['augmentation']
+        assert path_at_root(config['data']['root']).resolve()==Path(spec['root'])
+    arr=np.load(directory/'inputs.npy',mmap_mode='r',allow_pickle=False)
+    assert arr.shape==(len(spec['images']),3,spec['preprocess']['size'],spec['preprocess']['size'])
+    assert arr.dtype==np.dtype('float32')
+    del arr
+    return directory,meta
+
+
+class CachedHouseImages(UncachedHouseImages):
+    """Labels and sample order still come from the original run's DataFrame."""
+    def __init__(self, root, frame, config, stats=None, training=False, partition='train'):
+        super().__init__(root,frame,config,stats,training,partition)
+        pointer=read_json(POINTER)
+        self.cache_directory=Path(pointer['directory'])
+        meta=read_json(self.cache_directory/'manifest.json')
+        spec=meta['specification']
+        if (meta['status']!='complete' or partition!='train' or config['augmentation'] or
+            config['preprocess']!=spec['preprocess'] or self.stats!=spec['stats'] or
+            self.root.resolve()!=Path(spec['root'])):
+            raise ValueError('Cache configuration, statistics or partition mismatch')
+        self.cache_index={row['imageid']:i for i,row in enumerate(spec['images'])}
+        if not set(frame.imageid).issubset(self.cache_index):
+            raise ValueError('Cache does not contain all requested image IDs')
+        self._cache_array=None
+
+    def __getstate__(self):
+        result=self.__dict__.copy()
+        result['_cache_array']=None
+        return result
+
+    def __getitem__(self,index):
+        if self._cache_array is None:
+            self._cache_array=np.load(self.cache_directory/'inputs.npy',mmap_mode='r',allow_pickle=False)
+        row=self.frame.iloc[index]
+        # Copy one tensor to avoid mutable/read-only aliasing of the shared mmap.
+        x=torch.from_numpy(np.array(self._cache_array[self.cache_index[row.imageid]],copy=True))
+        return x,float(row.get('price',0)),row.imageid,'{}'
+
+
+def build():
+    from preparation.split import load_split
+    from training.engine import loader
+    cfg=resolve(HERE.parent/'config.json')
+    split,_=load_split(cfg)
+    frame=split.sort_values('imageid').reset_index(drop=True)
+    assert len(frame)==8000 and frame.imageid.is_unique
+    stats={'mean':[.5]*3,'std':[.5]*3}
+    assert cfg['preprocess']['normalization']=='fixed'
+    root=path_at_root(cfg['data']['root'])
+    torch.set_num_threads(cfg['training']['cpu_threads'])
+    start=time.perf_counter()
+    spec=specification(cfg,root,frame,stats);key=key_for(spec)
+    directory=HERE/'cache'/key
+    directory.mkdir(parents=True,exist_ok=False)
+    write_json(directory/'build_status.json',{'status':'building','key':key})
+    array=np.lib.format.open_memmap(directory/'inputs.npy',mode='w+',dtype=np.float32,
+                                  shape=(len(frame),3,224,224))
+    dataset=UncachedHouseImages(root,frame,cfg,stats)
+    offset=0;hashes=[]
+    for batch in loader(dataset,cfg):
+        x,_,ids=batch[:3];values=x.numpy();end=offset+len(ids)
+        assert list(ids)==list(frame.imageid.iloc[offset:end])
+        assert np.isfinite(values).all()
+        array[offset:end]=values
+        assert np.array_equal(array[offset:end],values)
+        hashes.extend(hashlib.sha256(v.tobytes()).hexdigest() for v in values)
+        offset=end
+        if offset%400==0:
+            array.flush()
+            write_json(directory/'build_status.json',{'status':'building','key':key,'images':offset,'total':len(frame),'seconds':time.perf_counter()-start})
+            print(f'cache: {offset}/{len(frame)}',flush=True)
+    assert offset==len(frame)
+    array.flush();del array
+    # Read the complete file back and verify every tensor against its pre-write hash.
+    reread=np.load(directory/'inputs.npy',mmap_mode='r',allow_pickle=False)
+    for i,expected in enumerate(hashes):
+        assert hashlib.sha256(reread[i].tobytes()).hexdigest()==expected,i
+    del reread
+    metadata={'status':'complete','specification':spec,'key':key,'n':len(frame),
+              'inputs_sha256':digest(directory/'inputs.npy'),'tensor_sha256':hashes,
+              'build_seconds':time.perf_counter()-start,'all_written_tensors_exact':True}
+    write_json(directory/'manifest.json',metadata)
+    write_json(directory/'build_status.json',{'status':'complete','images':offset,'seconds':metadata['build_seconds']})
+    write_json(POINTER,{'directory':str(directory),'key':key})
+    print(f'Cache complete in {metadata["build_seconds"]:.2f}s: {directory}',flush=True)
+
+
+if __name__=='__main__':
+    build()

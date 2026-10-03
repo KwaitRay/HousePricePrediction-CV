@@ -1,0 +1,80 @@
+"""Train-only geometry review; no fitting, prediction or validation-based selection."""
+from pathlib import Path
+import sys
+import hashlib
+import json
+import math
+import numpy as np
+import pandas as pd
+import torch
+from PIL import Image, ImageDraw
+
+OUT = Path(__file__).resolve().parent
+PROJECT = OUT.parents[4]
+CODE = PROJECT / 'scripts/experiments'
+sys.path.insert(0, str(CODE))
+from common.config import resolve, path_at_root, digest, write_json
+from preparation.images import geometry, read_rgb
+from torchvision.transforms.functional import to_pil_image
+
+def describe(values):
+    return {'mean': float(np.mean(values)), 'min': float(np.min(values)),
+            'p10': float(np.quantile(values, .1)), 'median': float(np.median(values)),
+            'p90': float(np.quantile(values, .9)), 'max': float(np.max(values))}
+
+def main():
+    torch.set_num_threads(4)
+    c = resolve(CODE / 'configs/base.json')
+    split_path = path_at_root(c['data']['split'])
+    inventory_path = PROJECT / 'output/experiment_record/00_preparation/runs/preflight_audit_w0/20261001T090901Z_5d8772aa/image_inventory.csv'
+    split = pd.read_csv(split_path)
+    train = split.loc[split.partition == 'train', ['imageid']]
+    inventory = pd.read_csv(inventory_path)
+    frame = train.merge(inventory.loc[inventory.partition == 'train', ['imageid', 'width', 'height']],
+                        on='imageid', validate='one_to_one')
+    assert len(frame) == 6399
+    w, h = frame.width.to_numpy(), frame.height.to_numpy()
+    longest, shortest = np.maximum(w,h), np.minimum(w,h)
+    nw, nh = np.maximum(1,np.rint(w*224/longest)), np.maximum(1,np.rint(h*224/longest))
+    frame['letterbox_padding_fraction'] = 1-nw*nh/(224*224)
+    frame['stretch_axis_scale_ratio'] = longest/shortest
+    # torchvision resize(int) fixes the short edge and truncates the computed long edge.
+    resized_w = np.where(w <= h, 256, (256*w/h).astype(int))
+    resized_h = np.where(h <= w, 256, (256*h/w).astype(int))
+    frame['center_crop_discarded_area_fraction'] = 1-224*224/(resized_w*resized_h)
+    frame['letterbox_224_upscales'] = longest < 224
+    frame['letterbox_320_upscales'] = longest < 320
+    frame.to_csv(OUT/'per_train_image.csv',index=False,encoding='utf-8-sig')
+    counts = frame.groupby(['width','height']).size().sort_values(ascending=False).head(8)
+    summary = {'scope': '6399 frozen training-side images only; no validation/test image statistics or labels used',
+               'n': len(frame), 'common_sizes': [{'width':int(k[0]),'height':int(k[1]),'n':int(v)} for k,v in counts.items()],
+               'letterbox_padding_fraction': describe(frame.letterbox_padding_fraction),
+               'stretch_axis_scale_ratio': describe(frame.stretch_axis_scale_ratio),
+               'center_crop_discarded_area_fraction': describe(frame.center_crop_discarded_area_fraction),
+               'upscaled_at_224':int(frame.letterbox_224_upscales.sum()),
+               'upscaled_at_320':int(frame.letterbox_320_upscales.sum()),
+               'input_pixel_ratio_320_over_224': (320/224)**2,
+               'crop_discard_definition':'Geometric field-of-view area discarded after short-edge=256 resize; not semantic information or price-signal loss.',
+               'performance_comparison_available': False}
+    write_json(OUT/'summary.json',summary)
+    ids = ['1034.jpg','4301.jpg','2696.jpg','3975.jpg','6230.jpg','6923.jpg']
+    assert set(ids).issubset(set(frame.imageid))
+    sheet=Image.new('RGB',(224*3,260*len(ids)+32),'white')
+    draw=ImageDraw.Draw(sheet)
+    for j,title in enumerate(['Letterbox 224','Stretch 224','Center crop 224']):
+        draw.text((j*224+8,8),title,fill='black')
+    for i,name in enumerate(ids):
+        x=read_rgb(path_at_root(c['data']['root'])/'train'/name)
+        for j,mode in enumerate(['letterbox','stretch','center_crop']):
+            y=geometry(x,{**c['preprocess'],'geometry':mode})
+            sheet.paste(to_pil_image(y.clamp(0,1)),(j*224,32+i*260))
+            draw.text((j*224+4,32+i*260+226),f'{name} {x.shape[2]}x{x.shape[1]}',fill='black')
+    sheet.save(OUT/'geometry_comparison.png')
+    write_json(OUT/'manifest.json',{'script_sha256':digest(__file__),'split_sha256':digest(split_path),
+        'inventory_sha256':digest(inventory_path),'image_code_sha256':digest(CODE/'preparation/images.py'),
+        'preview_ids':ids,'preview_selection':'Six fixed training images from the previously reviewed 32-image preview, including landscape/portrait and partial roof views.',
+        'torch':torch.__version__,'config_preprocess':c['preprocess']})
+    print(json.dumps(summary,indent=2))
+
+if __name__=='__main__':
+    main()

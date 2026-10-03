@@ -1,0 +1,36 @@
+{
+  "selected_method": "preprocess_01_stretch",
+  "challengers": [
+    "preprocess_01_stretch",
+    "preprocess_06_frequency_filter"
+  ],
+  "eligibility": [
+    {
+      "method": "preprocess_01_stretch",
+      "mean_mse": 127774.4193065206,
+      "mean_paired_change": -641.2654262817426,
+      "seeds_improved": 2,
+      "per_seed_changes": {
+        "2026": -2840.1070287964976,
+        "2027": -837.6828669763199,
+        "2028": 1753.9936169275898
+      },
+      "eligible": true
+    },
+    {
+      "method": "preprocess_06_frequency_filter",
+      "mean_mse": 127886.37976718455,
+      "mean_paired_change": -529.3049656177949,
+      "seeds_improved": 1,
+      "per_seed_changes": {
+        "2026": -3497.9074727496627,
+        "2027": 245.52520586570608,
+        "2028": 1664.467370030572
+      },
+      "eligible": false
+    }
+  ],
+  "rule": "Lower mean MSE and at least 2 of 3 seed improvements; otherwise retain baseline.",
+  "limitations": "Three seeds on one repeatedly used development split; no independent test claim; close ranks remain uncertain.",
+  "completed_utc": "2026-10-02T07:18:50.362490+00:00"
+}

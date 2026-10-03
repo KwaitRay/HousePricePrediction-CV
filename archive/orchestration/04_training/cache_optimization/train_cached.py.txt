@@ -1,0 +1,49 @@
+"""Explicit cache runtime adapter; scientific configuration stays unchanged."""
+import os
+os.environ.setdefault('CUBLAS_WORKSPACE_CONFIG', ':4096:8')
+import sys
+import time
+from pathlib import Path
+from stretch_cache import CachedHouseImages, verify_cache, HERE, CODE
+from common.config import digest, read_json, write_json, resolve
+
+
+def main():
+    if len(sys.argv)<3 or sys.argv[1]!='train':
+        raise ValueError('Only development training is supported by the cache adapter')
+    cfg=resolve(Path(sys.argv[2]))
+    approval=read_json(HERE/'equivalence.json')
+    assert approval['passed'] and approval['full_input_count']==8000
+    for name,value in approval['runtime_hashes'].items():
+        assert digest(HERE/name)==value,name
+    verification_start=time.perf_counter()
+    directory,meta=verify_cache(cfg)
+    verification_seconds=time.perf_counter()-verification_start
+    assert approval['cache_key']==meta['key']
+    import training.engine as engine
+    import run
+    import common.config as configuration
+    original_stage_directory=configuration.stage_directory
+    def training_stage(config,kind='development'):
+        if config['experiment']['stage']=='02_training' and kind=='development':
+            return HERE.parent
+        return original_stage_directory(config,kind)
+    configuration.stage_directory=training_stage
+    engine.HouseImages=CachedHouseImages
+    original_new_run=run.new_run
+    def recorded_run(config,kind='development'):
+        out=original_new_run(config,kind)
+        write_json(out/'runtime_cache.json',{'enabled':True,'implementation':'lossless_final_input_mmap',
+            'cache_key':meta['key'],'cache_manifest':str(directory/'manifest.json'),
+            'inputs_sha256':meta['inputs_sha256'],'cache_build_seconds':meta['build_seconds'],
+            'cache_verification_seconds':verification_seconds,
+            'build_cost_shared_across_seeds':True,'equivalence_evidence':str(HERE/'equivalence.json'),
+            'equivalence_sha256':digest(HERE/'equivalence.json'),'runtime_hashes':approval['runtime_hashes'],
+            'note':'Frozen training source hashes remain unchanged; this external dataset adapter is additionally recorded here.'})
+        return out
+    run.new_run=recorded_run
+    run.main(sys.argv[1:])
+
+
+if __name__=='__main__':
+    main()

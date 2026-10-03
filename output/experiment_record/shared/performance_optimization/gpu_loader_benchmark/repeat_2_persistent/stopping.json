@@ -1,0 +1,15 @@
+{
+  "reason": "max_epochs",
+  "epochs": 2,
+  "max_epochs": 2,
+  "best_epoch": 2,
+  "counter": 0,
+  "reference": 159623.97251256718,
+  "settings": {
+    "enabled": false,
+    "patience": 15,
+    "relative_improvement": 0.001,
+    "min_epochs": 40
+  },
+  "monitor": "validation_original_price_mse"
+}

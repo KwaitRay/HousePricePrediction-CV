@@ -1,0 +1,18 @@
+{
+  "extends": "sift_ridge.json",
+  "experiment": {
+    "id": "traditional_04_svr",
+    "name": "传统参照阶段—实验四：回归器替换",
+    "stage": "01_baselines",
+    "question": "只替换或追加登记的特征因素，其他条件一致",
+    "comparison": "继承配置 sift_ridge.json 对应的已保留方案",
+    "changed_fields": [
+      "traditional.regressor"
+    ],
+    "enforce_changes": true,
+    "status": "ready"
+  },
+  "traditional": {
+    "regressor": "svr"
+  }
+}

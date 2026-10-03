@@ -1,0 +1,20 @@
+{
+  "extends": "../01_baselines/alexnet.json",
+  "experiment": {
+    "comparison": "Optimized v2 shared AlexNet control; old runs are historical only",
+    "changed_fields": [
+      "training.loader_mode",
+      "training.early_stopping"
+    ],
+    "enforce_changes": true
+  },
+  "training": {
+    "loader_mode": "persistent",
+    "early_stopping": {
+      "enabled": true,
+      "min_epochs": 40,
+      "patience": 15,
+      "relative_improvement": 0.001
+    }
+  }
+}

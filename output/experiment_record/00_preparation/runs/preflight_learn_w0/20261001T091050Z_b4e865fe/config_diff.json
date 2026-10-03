@@ -1,0 +1,14 @@
+{
+  "device": {
+    "before": "auto",
+    "after": "cuda"
+  },
+  "run_kind": {
+    "before": null,
+    "after": "diagnostic"
+  },
+  "training.workers": {
+    "before": 2,
+    "after": 0
+  }
+}

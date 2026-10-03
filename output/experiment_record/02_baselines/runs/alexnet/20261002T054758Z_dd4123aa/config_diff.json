@@ -1,0 +1,26 @@
+{
+  "run_kind": {
+    "before": null,
+    "after": "development"
+  },
+  "seed": {
+    "before": 2026,
+    "after": 2028
+  },
+  "training.early_stopping.enabled": {
+    "before": false,
+    "after": true
+  },
+  "training.early_stopping.min_epochs": {
+    "before": 15,
+    "after": 40
+  },
+  "training.early_stopping.patience": {
+    "before": 10,
+    "after": 15
+  },
+  "training.loader_mode": {
+    "before": "legacy",
+    "after": "persistent"
+  }
+}

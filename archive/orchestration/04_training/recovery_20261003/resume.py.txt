@@ -1,0 +1,46 @@
+"""User-approved SGD range reduction, preserving all previous attempts."""
+from pathlib import Path
+import sys,os,traceback
+HERE=Path(__file__).resolve().parent
+STAGE=HERE.parent
+sys.path.insert(0,str(STAGE/'diagnostics'))
+import pipeline as p
+
+def main():
+    import msvcrt
+    lock=(STAGE/'pipeline.lock').open('r+b');lock.seek(0);msvcrt.locking(lock.fileno(),msvcrt.LK_NBLCK,1)
+    p.guard()
+    candidate='tune_02_sgd_0.0005.json'
+    p.validate(p.resolve(STAGE/'configs'/candidate))
+    p.NAMES[candidate]='动量随机梯度下降，学习率0.0005'
+    expected={str(f):p.digest(f) for f in [Path(__file__),HERE/'decision.md',STAGE/'configs'/candidate]}
+    p.write(HERE/'registration.json',{'files':expected,'registered_utc':p.now(),'excluded':['SGD 0.01 (failed)','SGD 0.03 (cancelled before execution)']})
+    original_guard=p.guard
+    def guard():
+        original_guard()
+        for f,h in expected.items():assert p.digest(f)==h,f
+    p.guard=guard
+    original_report=p.report
+    def report(state):
+        original_report(state)
+        doc=STAGE/'实验报告.md';text=doc.read_text(encoding='utf-8')
+        text=text.replace('0.001、0.01、0.03','0.0005、0.001（原0.01失败；0.03取消）')
+        text=text.replace('两个优化器各有三个学习率候选','原计划各三个学习率；SGD因已记录数值失败和用户调整，当前仅比较两个有效学习率候选')
+        doc.write_text(text+'\n\n'+(HERE/'decision.md').read_text(encoding='utf-8'),encoding='utf-8')
+    p.report=report
+    state=p.read_json(STAGE/'pipeline_state.json')
+    state.update(status='running',active=None,excluded={'tune_02_sgd_0.01.json':'failed_nonfinite_loss','tune_02_sgd_0.03.json':'cancelled_by_user'},
+        decision_text='按用户要求，SGD不再运行高于0.001的候选。保留0.01失败证据，补0.0005；完成后接续其他优化器，已完成实验不重跑。')
+    p.save(state);p.status('resuming',next_experiment='SGD 0.0005')
+    p.train(state,candidate,2026)
+    # New optimizers should begin after this screen, rather than wait for old SGD repeats.
+    adam=['control',*p.FILES[:2]];sgd=['tune_02_sgd_0.001.json',candidate]
+    best_adam=min(adam,key=lambda f:p.mse(p.run_path(state,f'{f}:2026')))
+    best_sgd=min(sgd,key=lambda f:p.mse(p.run_path(state,f'{f}:2026')))
+    state.update(finalists=[f for f in [best_adam,best_sgd] if f!='control'],status='optimizer_block_completed',active=None,
+        decision_text='原有学习率及调整后的SGD初筛完成。下一步立即进入其他优化器初筛；SGD及新增优化器的种子复核在统一初筛后进行，尚未选定最终优化器。')
+    p.save(state);p.status('optimizer_block_completed',note='Initial screen only; confirmation delegated to expanded queue')
+
+if __name__=='__main__':
+    try:main()
+    except Exception:p.status('failed',error=traceback.format_exc());raise

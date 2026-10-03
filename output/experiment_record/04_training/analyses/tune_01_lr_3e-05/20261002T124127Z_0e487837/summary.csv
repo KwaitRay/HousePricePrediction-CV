@@ -1,0 +1,5 @@
+,,mse,mse,mse,mae,mae,mae,tail_mse,tail_mse,tail_mse
+,,mean,std,count,mean,std,count,mean,std,count
+experiment,config_version,,,,,,,,,
+训练调优阶段—实验一：固定学习率大小比较,e343375069c2,129337.63888667713,,1,269.16986057709306,,1,695422.9853809517,,1
+预处理备选阶段—实验一：拉伸尺寸调整,f1fd1543d268,128268.66898790754,,1,259.9859476672047,,1,700139.5572144003,,1

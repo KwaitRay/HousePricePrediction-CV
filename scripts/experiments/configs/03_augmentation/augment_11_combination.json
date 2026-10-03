@@ -1,0 +1,27 @@
+{
+  "extends": "../selected/training.json",
+  "experiment": {
+    "id": "augment_11_combination",
+    "name": "增强阶段—实验十一：有效增强组合",
+    "stage": "03_augmentation",
+    "question": "这里是示例组合，必须根据两个有效单项登记实际组合后将 status 改为 ready",
+    "comparison": "继承配置 ../selected/training.json 对应的已保留方案",
+    "changed_fields": [
+      "augmentation"
+    ],
+    "enforce_changes": true,
+    "status": "design_required"
+  },
+  "augmentation": {
+    "flip": {
+      "probability": 0.5
+    },
+    "brightness": {
+      "probability": 1.0,
+      "range": [
+        0.9,
+        1.1
+      ]
+    }
+  }
+}

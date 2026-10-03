@@ -1,0 +1,10 @@
+{
+  "method": {
+    "before": "neural",
+    "after": "mean"
+  },
+  "run_kind": {
+    "before": null,
+    "after": "development"
+  }
+}

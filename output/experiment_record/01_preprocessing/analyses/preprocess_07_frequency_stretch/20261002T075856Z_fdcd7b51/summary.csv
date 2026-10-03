@@ -1,0 +1,5 @@
+,,mse,mse,mse,mae,mae,mae,tail_mse,tail_mse,tail_mse
+,,mean,std,count,mean,std,count,mean,std,count
+experiment,config_version,,,,,,,,,
+Frequency filtering plus direct stretch,d4a5831fd85b,128889.843272727,,1,266.1290326560447,,1,656864.1999745675,,1
+神经网络基线阶段—实验一：AlexNet 房价回归,59cc7a433fc7,131108.77601670404,,1,278.56331682992084,,1,641434.873647467,,1

@@ -1,0 +1,123 @@
+"""One controlled combination run; build, verify, train, review, then stop."""
+from pathlib import Path
+import os
+os.environ.setdefault('CUBLAS_WORKSPACE_CONFIG', ':4096:8')
+import sys
+import subprocess
+import time
+import traceback
+import datetime
+import json
+
+HERE=Path(__file__).resolve().parent
+STAGE=HERE.parent
+CODE=STAGE.parents[2]/'scripts/experiments'
+CACHE=HERE/'cache_optimization'
+sys.path.insert(0,str(CODE))
+sys.path.insert(0,str(STAGE/'diagnostics'))
+sys.path.insert(0,str(CACHE))
+from common.config import read_json, write_json, resolve, validate, differences, digest
+import sequential_stage_v2 as checks
+from cache_evidence import verify_runtime_record
+
+def state(status, **extra):
+    write_json(HERE/'execution_state.json',{'status':status,'seed':2026,
+        'updated_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),**extra})
+
+def child(script, args, log, phase):
+    state(phase,log=str(log))
+    with log.open('x',encoding='utf-8') as stream:
+        subprocess.run([sys.executable,'-X','utf8',str(script),*args],cwd=CODE,
+                       stdout=stream,stderr=subprocess.STDOUT,check=True)
+
+def main():
+    import msvcrt
+    lock=(HERE/'pipeline.lock').open('a+b')
+    lock.seek(0);lock.write(b'0');lock.flush();lock.seek(0)
+    msvcrt.locking(lock.fileno(),msvcrt.LK_NBLCK,1)
+    assert not (HERE/'execution_state.json').exists(), 'Existing attempt requires inspection'
+    checks.check_sources()
+    cfg=validate(resolve(HERE/'config.json'))
+    base=validate(resolve(CODE/'configs/optimized_v2/alexnet.json'))
+    diff=differences(base,cfg)
+    assert set(diff)=={'preprocess.filter','preprocess.geometry'},diff
+    old=read_json(STAGE/'pipeline_state_v2.json')
+    assert old['status']=='completed'
+    controls={name:STAGE.parent/old['runs'][key+':2026'] for name,key in
+              [('B','alexnet'),('F','preprocess_06_frequency_filter'),('S','preprocess_01_stretch')]}
+    checks.BASE=controls['B']
+    for p in controls.values():
+        assert read_json(p/'status.json')['status']=='completed'
+        actual=read_json(p/'config.json')
+        assert actual['training']==cfg['training'] and actual['model']==cfg['model']
+        assert read_json(p/'environment.json')['source_hashes']==read_json(checks.MANIFEST)['source_hashes']
+    write_json(HERE/'registration.json',{'seed':2026,'differences':diff,
+        'config_sha256':digest(HERE/'config.json'),'controls':{k:str(v) for k,v in controls.items()},
+        'source_manifest_sha256':digest(checks.MANIFEST),
+        'scripts':{str(p.relative_to(HERE)):digest(p) for p in [Path(__file__),*CACHE.glob('*.py')]},
+        'next_seed_policy':'Stop after seed2026 numeric review; inspect before expanding.'})
+    logs=HERE/'logs';logs.mkdir(exist_ok=True)
+    child(CACHE/'frequency_cache.py',[],logs/'cache_build.log','building_cache')
+    child(CACHE/'verify_equivalence.py',[],logs/'equivalence.log','verifying_equivalence')
+    checks.check_sources()
+    assert digest(HERE/'config.json')==read_json(HERE/'registration.json')['config_sha256']
+    root=STAGE/'runs'/cfg['experiment']['id']
+    before=set(root.iterdir()) if root.exists() else set()
+    with (logs/'train_seed2026.log').open('x',encoding='utf-8') as stream:
+        proc=subprocess.Popen([sys.executable,'-X','utf8',str(CACHE/'train_cached.py'),
+            'train',str(HERE/'config.json'),'--seed','2026'],cwd=CODE,stdout=stream,stderr=subprocess.STDOUT)
+        start=time.monotonic();run=None;last_progress=start;last_stamp=None
+        while proc.poll() is None:
+            candidates=set(root.iterdir())-before if root.exists() else set()
+            if candidates:
+                assert len(candidates)==1
+                run=candidates.pop()
+                history=run/'history.csv'
+                n=0
+                if history.exists():
+                    import csv
+                    rows=list(csv.DictReader(history.open(encoding='utf-8-sig')));n=len(rows)
+                    stamp=history.stat().st_mtime_ns
+                    if stamp!=last_stamp:last_progress=time.monotonic();last_stamp=stamp
+                state('training',run=str(run),completed_epochs=n,pid=proc.pid)
+            else:state('verifying_cache_before_training',pid=proc.pid)
+            if time.monotonic()-last_progress>1200:
+                import psutil
+                parent=psutil.Process(proc.pid)
+                for p in parent.children(recursive=True):p.terminate()
+                parent.terminate()
+                raise RuntimeError('No training progress for 20 minutes')
+            time.sleep(10)
+        if proc.returncode:raise RuntimeError(f'Training failed: {proc.returncode}')
+    assert run is not None
+    state('reviewing',run=str(run))
+    checks.check_sources();verify_runtime_record(run)
+    for p in controls.values():checks.complete_checks(run,p)
+    import formal_analysis
+    formal_analysis.analyze(run,controls['B'])
+    from evaluation.report import compare_runs
+    for name in ['F','S']:
+        compare_runs([controls[name],run],HERE/'analyses'/('vs_'+name),paired=True)
+    scores={k:read_json(p/'metrics.json') for k,p in controls.items()}
+    scores['FS']=read_json(run/'metrics.json')
+    delta={k:scores['FS']['mse']-scores[k]['mse'] for k in controls}
+    interaction=scores['FS']['mse']-scores['F']['mse']-scores['S']['mse']+scores['B']['mse']
+    result={'seed':2026,'run':str(run),'metrics':scores,'mse_change_vs':delta,
+        'mse_interaction':interaction,'numeric_integrity_checks':'passed',
+        'next_step':'Review grouped errors and uncertainty before deciding seeds2027/2028; no automatic new training.'}
+    write_json(HERE/'review_seed2026.json',result)
+    text=['# 组合实验 seed2026 数值复核','', '| 方案 | MSE | MAE | 尾部MSE |', '| --- | ---: | ---: | ---: |']
+    for k,m in scores.items():text.append(f"| {k} | {m['mse']:.2f} | {m['mae']:.2f} | {m['tail_mse']:.2f} |")
+    text.extend(['',f'组合相对各对照的MSE差值（负值为改善）：{delta}。',f'MSE加性交互量：{interaction:.2f}。',
+        '','已通过完整性、停止规则、初始化、数据划分及缓存证据校验；此为自动数值复核，不等于人工案例审阅或因果机制证明。',
+        '进一步查看配对区间、分组误差及案例后，再决定是否追加种子；不自动启动下一组。',
+        f'组合相对基线的完整诊断：../../analyses/{cfg["experiment"]["id"]}/{run.name}/。'])
+    (HERE/'review_seed2026.md').write_text('\n'.join(text)+'\n',encoding='utf-8')
+    with (HERE/'README.md').open('a',encoding='utf-8') as f:f.write('\nseed2026 已完成：[数值复核](review_seed2026.md)，等待分组分析后的下一轮决策。\n')
+    state('completed_pending_review',run=str(run),review='review_seed2026.md')
+
+if __name__=='__main__':
+    try:main()
+    except Exception:
+        state('failed',error=traceback.format_exc())
+        raise

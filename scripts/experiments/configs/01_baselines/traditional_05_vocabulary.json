@@ -1,0 +1,18 @@
+{
+  "extends": "sift_ridge.json",
+  "experiment": {
+    "id": "traditional_05_vocabulary",
+    "name": "传统参照阶段—实验五：视觉词典大小",
+    "stage": "01_baselines",
+    "question": "只替换或追加登记的特征因素，其他条件一致",
+    "comparison": "继承配置 sift_ridge.json 对应的已保留方案",
+    "changed_fields": [
+      "traditional.words"
+    ],
+    "enforce_changes": true,
+    "status": "ready"
+  },
+  "traditional": {
+    "words": 512
+  }
+}

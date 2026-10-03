@@ -1,0 +1,46 @@
+"""Full-model deterministic GPU and optimizer state roundtrip preflight."""
+import os
+os.environ.setdefault('CUBLAS_WORKSPACE_CONFIG', ':4096:8')
+import time,gc,sys
+import torch
+from runtime import *
+from common.config import resolve
+from models.alexnet import AlexNetRegressor,initialize
+
+def main():
+    cfg=resolve(STAGE/'configs/input_frozen.json');torch.set_num_threads(4)
+    torch.use_deterministic_algorithms(True)
+    results={}
+    for name,lr in [('adam',1e-4),('adagrad',.01),('muon',.01)]:
+        trial=deepcopy(cfg);trial['training'].update(optimizer=name,lr=lr);validate(trial)
+        hashes=[];times=[]
+        for repeat in range(2):
+            torch.manual_seed(2026)
+            model=AlexNetRegressor(cfg['model']);initialize(model,2026,.72);model=model.cuda()
+            opt=optimizer_for(model,trial['training'])
+            params=[p for g in opt.param_groups for p in g['params']]
+            assert len(params)==len({id(p) for p in params})==len(list(model.parameters()))
+            x=torch.randn(1,3,224,224,device='cuda');y=torch.tensor([.7],device='cuda')
+            torch.cuda.reset_peak_memory_stats();torch.cuda.synchronize();start=time.perf_counter()
+            for step in range(2):
+                opt.zero_grad(set_to_none=True);loss=(model(x)-y).square().mean();loss.backward()
+                assert torch.isfinite(loss)
+                opt.step()
+            torch.cuda.synchronize();times.append(time.perf_counter()-start)
+            import hashlib
+            h=hashlib.sha256()
+            for p in model.parameters():
+                assert torch.isfinite(p).all();h.update(p.detach().cpu().numpy().tobytes())
+            hashes.append(h.hexdigest())
+            # State restoration must not change group membership or step state.
+            state=opt.state_dict();opt.load_state_dict(state)
+            memory=torch.cuda.max_memory_allocated()
+            del opt,model,x,y,loss,state,params,p;gc.collect();torch.cuda.empty_cache()
+        assert hashes[0]==hashes[1],name
+        results[name]={'two_step_seconds':times,'repeat_weight_hashes':hashes,'peak_cuda_bytes':memory}
+        print(name,results[name],flush=True)
+    write_json(HERE/'preflight.json',{'passed':True,'results':results,
+        'runtime_hashes':{n:digest(HERE/n) for n in ['runtime.py','train_cached.py']},
+        'script_sha256':digest(__file__),'scope':'Full AlexNet two-step GPU diagnostic, not validation performance.'})
+
+if __name__=='__main__':main()

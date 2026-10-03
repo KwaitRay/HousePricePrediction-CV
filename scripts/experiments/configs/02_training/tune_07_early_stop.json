@@ -1,0 +1,20 @@
+{
+  "extends": "../selected/regularization.json",
+  "experiment": {
+    "id": "tune_07_early_stop",
+    "name": "训练调优阶段—实验七：提前停止",
+    "stage": "02_training",
+    "question": "评价是否节省成本及错过后期改善",
+    "comparison": "继承配置 ../selected/regularization.json 对应的已保留方案",
+    "changed_fields": [
+      "training.early_stopping.enabled"
+    ],
+    "enforce_changes": true,
+    "status": "ready"
+  },
+  "training": {
+    "early_stopping": {
+      "enabled": true
+    }
+  }
+}

@@ -1,0 +1,73 @@
+"""Three paired GPU diagnostics; never used to rank preprocessing methods."""
+from pathlib import Path
+from copy import deepcopy
+import os
+os.environ.setdefault('CUBLAS_WORKSPACE_CONFIG', ':4096:8')
+import sys
+import time
+import gc
+import numpy as np
+import pandas as pd
+import torch
+
+HERE=Path(__file__).resolve().parent
+CODE=HERE.parents[3]/'scripts/experiments'
+sys.path.insert(0,str(CODE))
+from common.config import resolve, path_at_root, read_json, write_json
+from preparation.split import load_split
+from training.engine import fit_neural
+
+
+def main():
+    config=resolve(CODE/'configs/optimized_v2/alexnet.json')
+    config['training']['epochs']=2
+    config['training']['early_stopping']['enabled']=False
+    split,meta=load_split(config)
+    train=split.loc[split.partition=='train'].head(64).copy()
+    val=split.loc[split.partition=='validation'].head(32).copy()
+    rows=[]
+    for repeat in range(1,4):
+        predictions={}
+        histories={}
+        modes=['legacy','persistent'] if repeat%2 else ['persistent','legacy']
+        for mode in modes:
+            c=deepcopy(config)
+            c['training']['loader_mode']=mode
+            out=HERE/'gpu_loader_benchmark'/f'repeat_{repeat}_{mode}'
+            out.mkdir(parents=True,exist_ok=False)
+            write_json(out/'config.json',c)
+            write_json(out/'status.json',{'status':'running','kind':'diagnostic'})
+            start=time.perf_counter()
+            pred=fit_neural(c,path_at_root(c['data']['root']),train,val,meta['tail_threshold'],out)
+            seconds=time.perf_counter()-start
+            predictions[mode]=pred
+            histories[mode]=pd.read_csv(out/'history.csv')
+            saved=torch.load(out/'best.pt',map_location='cpu',weights_only=True)
+            import hashlib
+            sha=hashlib.sha256()
+            for key,value in saved['model'].items():
+                sha.update(key.encode());sha.update(value.numpy().tobytes())
+            write_json(out/'weight_digest.json',{'sha256':sha.hexdigest()})
+            del saved
+            rows.append({'repeat':repeat,'mode':mode,'wall_seconds':seconds,**read_json(out/'cost.json')})
+            write_json(out/'status.json',{'status':'completed','kind':'diagnostic'})
+            gc.collect()
+            torch.cuda.empty_cache()
+            print(f'{repeat} {mode}: {seconds:.2f}s',flush=True)
+        assert np.array_equal(predictions['legacy'],predictions['persistent']), 'Prediction equality failed'
+        fields=['data_loss','penalty','gradient_norm','samples','updates','val_mse','val_mae','val_tail_mse']
+        np.testing.assert_array_equal(histories['legacy'][fields].to_numpy(),histories['persistent'][fields].to_numpy())
+        digests=[read_json(HERE/'gpu_loader_benchmark'/f'repeat_{repeat}_{mode}'/'weight_digest.json') for mode in ['legacy','persistent']]
+        assert digests[0]==digests[1], 'Checkpoint weights differ'
+    frame=pd.DataFrame(rows)
+    frame.to_csv(HERE/'gpu_loader_benchmark/results.csv',index=False)
+    summary={'kind':'diagnostic_not_formal_performance','train_n':64,'validation_n':32,'epochs':2,'paired_repeats':3,
+        'prediction_and_weight_equality':'exact','history_equality':'exact on training/validation numerical fields',
+        'timing_scope':'Small workload exaggerates startup fraction; no full-dataset speedup claim.',
+        'wall_seconds_by_mode':{mode:{'mean':float(g.wall_seconds.mean()),'std':float(g.wall_seconds.std())} for mode,g in frame.groupby('mode')}}
+    write_json(HERE/'gpu_loader_benchmark/summary.json',summary)
+    print(summary,flush=True)
+
+
+if __name__=='__main__':
+    main()

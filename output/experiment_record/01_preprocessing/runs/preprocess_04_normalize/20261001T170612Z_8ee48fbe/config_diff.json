@@ -1,0 +1,10 @@
+{
+  "preprocess.normalization": {
+    "before": "fixed",
+    "after": "train_stats"
+  },
+  "run_kind": {
+    "before": null,
+    "after": "development"
+  }
+}

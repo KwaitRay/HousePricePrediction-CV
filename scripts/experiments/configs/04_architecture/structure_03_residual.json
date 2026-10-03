@@ -1,0 +1,18 @@
+{
+  "extends": "../selected/multi.json",
+  "experiment": {
+    "id": "structure_03_residual",
+    "name": "结构改进阶段—实验三：残差连接",
+    "stage": "04_architecture",
+    "question": "只继承已保留改动，共享训练设置一致，全部从零训练",
+    "comparison": "继承配置 ../selected/multi.json 对应的已保留方案",
+    "changed_fields": [
+      "model.residual"
+    ],
+    "enforce_changes": true,
+    "status": "ready"
+  },
+  "model": {
+    "residual": true
+  }
+}

@@ -1,0 +1,393 @@
+"""Sequential, resumable preprocessing experiments with a documented review gate.
+
+Lives outside frozen training sources. Never changes training settings or retries
+failed training silently. Numeric reviews distinguish evidence from hypotheses.
+"""
+from pathlib import Path
+import argparse
+import datetime as dt
+import json
+import os
+import subprocess
+import sys
+import time
+import traceback
+import numpy as np
+import pandas as pd
+
+STAGE = Path(__file__).resolve().parents[1]
+RECORD = STAGE.parent
+CODE = STAGE.parents[2] / 'scripts/experiments'
+sys.path.insert(0, str(CODE))
+from common.config import read_json, digest, differences, resolve, validate
+
+BASE = None
+MANIFEST = STAGE/'source_manifest_v2.json'
+CANDIDATES = [
+    ('preprocess_01_stretch','preprocess.geometry','去除补边、提高画面占用，同时引入非等比形变；二者作用不能单独分离。'),
+    ('preprocess_02_crop','preprocess.geometry','中心裁剪改变视野和主体尺度，可能减少无关背景，也可能丢失庭院、边缘建筑等信息。'),
+    ('preprocess_03_resolution','preprocess.size','提高输入分辨率改变细节保留与卷积特征采样，同时增加计算量；不能保证原图包含更多有效细节。'),
+    ('preprocess_04_normalize','preprocess.normalization','训练侧通道统计改变输入偏移与尺度，会影响优化路径；该实验不增加原图信息。'),
+    ('preprocess_05_spatial_filter','preprocess.filter','空间低通同时抑制高频干扰与真实纹理；清晰度代理的分组变化不能证明噪声是因果。'),
+    ('preprocess_06_frequency_filter','preprocess.filter','频率低通改变高频成分并可能带来边界影响；结果不能解释为频域方法普遍优于空间方法。'),
+]
+STATE = STAGE/'pipeline_state_v2.json'
+
+def now():
+    return dt.datetime.now(dt.timezone.utc).isoformat()
+
+def write(path, value):
+    path=Path(path)
+    path.parent.mkdir(parents=True,exist_ok=True)
+    temporary=path.with_name(path.name+'.tmp')
+    temporary.write_text(json.dumps(value,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+    os.replace(temporary,path)
+
+def relative(path):
+    return Path(os.path.relpath(path,STAGE)).as_posix()
+
+def config_for(identifier):
+    return CODE/f'configs/optimized_v2/{identifier}.json'
+
+def check_sources():
+    env=read_json(MANIFEST)
+    for name,expected in env['source_hashes'].items():
+        if digest(CODE/name)!=expected:
+            raise RuntimeError(f'Frozen training source changed: {name}; stop for review')
+    for name,expected in env['config_hashes'].items():
+        if digest(CODE/name)!=expected:
+            raise RuntimeError(f'Frozen configuration changed: {name}')
+
+def check_plan():
+    check_sources()
+    baseline=validate(resolve(config_for('alexnet')))
+    baseline['run_kind']='development'
+    for identifier,field,_ in CANDIDATES:
+        cfg=validate(resolve(config_for(identifier)))
+        cfg['seed']=2026
+        cfg['run_kind']='development'
+        diff=differences(baseline,cfg)
+        if set(diff)!={field}:
+            raise RuntimeError(f'Unexpected controlled difference: {identifier}: {diff}')
+    print('All six planned candidates have exactly one registered difference.',flush=True)
+
+def complete_checks(run,control=None):
+    if read_json(run/'status.json')!={'status':'completed','kind':'development'}:
+        raise RuntimeError(f'Incomplete run: {run}')
+    cost=read_json(run/'cost.json')
+    cfg=read_json(run/'config.json')
+    settings=cfg['training']['early_stopping']
+    assert cfg['training']['loader_mode']=='persistent'
+    assert cfg['training']['epochs']==60
+    assert settings=={'enabled':True,'min_epochs':40,'patience':15,'relative_improvement':.001}
+    epochs=cost['epochs']
+    assert 40 <= epochs <= 60
+    assert cost['optimizer_updates']==200*epochs and cost['samples_seen']==6399*epochs
+    history=pd.read_csv(run/'history.csv')
+    assert list(history.epoch)==list(range(1,epochs+1))
+    from training.engine import EarlyStop
+    stopper=EarlyStop(settings)
+    triggered=False
+    for row in history.itertuples():
+        triggered=stopper.update(row.val_mse,row.epoch)
+        if triggered:
+            assert row.epoch==epochs, 'Training continued past registered stop'
+    assert bool(cost['stopped_early'])==triggered
+    assert triggered or epochs==60
+    stopping=read_json(run/'stopping.json')
+    assert stopping['reason']==('early_stopping' if triggered else 'max_epochs')
+    assert stopping['settings']==settings and stopping['epochs']==epochs
+    assert cost['best_epoch']==int(history.loc[history.val_mse.idxmin(),'epoch'])
+    assert (history.samples==6399).all() and (history.updates==200).all()
+    assert np.isfinite(history[['data_loss','val_mse','val_mae','val_tail_mse']].to_numpy()).all()
+    for folder,n in [(run,1601),(run/'train_evaluation',6399)]:
+        pred=pd.read_csv(folder/'predictions.csv')
+        assert len(pred)==n and pred.imageid.is_unique
+        assert np.isfinite(pred[['price','prediction']].to_numpy()).all()
+        metrics=read_json(folder/'metrics.json')
+        assert np.isclose(np.mean((pred.prediction-pred.price)**2),metrics['mse'],rtol=1e-10)
+    env=read_json(run/'environment.json')
+    assert env['source_hashes']==read_json(MANIFEST)['source_hashes']
+    ref=read_json(BASE/'environment.json') if BASE else env
+    for key in ['source_hashes','packages','gpu','cuda','cudnn']:
+        assert env[key]==ref[key],key
+    if control:
+        assert read_json(run/'model_summary.json')['initialization_sha256']==read_json(control/'model_summary.json')['initialization_sha256']
+        a,b=read_json(control/'data_manifest.json'),read_json(run/'data_manifest.json')
+        assert a['split_sha256']==b['split_sha256']
+
+def analyze(run,control=None):
+    cfg=read_json(run/'config.json')
+    output=STAGE/'analyses'/cfg['experiment']['id']/run.name
+    if not (output/'analysis.json').exists():
+        if output.exists():
+            raise RuntimeError(f'Partial analysis requires review, not overwrite: {output}')
+        log=STAGE/'logs'/f'analysis_{run.name}.log'
+        command=[sys.executable,'-X','utf8',str(STAGE/'diagnostics/formal_analysis.py'),'analyze',str(run)]
+        if control:
+            command+=['--control',str(control)]
+        with log.open('x',encoding='utf-8') as stream:
+            subprocess.run(command,stdout=stream,stderr=subprocess.STDOUT,check=True,cwd=CODE)
+    provenance=read_json(output/'analysis_provenance.json')
+    assert provenance['prediction_sha256']==digest(run/'predictions.csv')
+    if control:
+        assert provenance['control_prediction_sha256']==digest(control/'predictions.csv')
+    return output
+
+def review(run,control,mechanism):
+    complete_checks(run,control)
+    output=analyze(run,control)
+    gate=output/'review_gate.json'
+    if gate.exists():
+        old=read_json(gate)
+        assert old['prediction_sha256']==digest(run/'predictions.csv')
+        assert old['review_sha256']==digest(output/'review.md')
+        return
+    s=read_json(output/'analysis.json')
+    cfg=read_json(run/'config.json')
+    name=cfg['experiment']['name']
+    lines=[f"# {name}：seed {cfg['seed']} 逐组 review",'',
+        f'完成时间（UTC）：{now()}。本页由冻结规则生成数值复核与条件性解释，图像案例另见诊断页；不声称已人工逐张检查。',
+        '',f'[原始运行]({os.path.relpath(run,output).replace(chr(92),"/")}) · [图表与案例](README.md) · [分组指标](group_metrics.csv)',
+        '',f"实际{s['cost']['epochs']}轮，上限60轮；停止原因{s['cost']['stop_reason']}；最佳第{s['best_epoch']}轮。验证MSE **{s['metrics']['mse']:.2f}**、MAE {s['metrics']['mae']:.2f}、尾部MSE {s['metrics']['tail_mse']:.2f}。",
+        f"同一最佳权重完整训练MSE {s['train_metrics_at_best_checkpoint']['mse']:.2f}，验证减训练 {s['generalization_gap_mse']:.2f}。末十轮验证均值 {s['late_validation_mse_mean']:.2f}、轮间标准差 {s['late_validation_mse_std']:.2f}；不代表种子不确定性。",
+        f"总运行 {s['cost']['train_seconds']/60:.2f}分钟，逐轮训练 {s['cost']['training_seconds']/60:.2f}分钟，峰值CUDA分配 {s['cost']['peak_cuda_bytes']/2**30:.3f}GiB。",'']
+    if control:
+        b=s['control']
+        delta=s['metrics']['mse']-b['metrics']['mse']
+        train_delta=s['train_metrics_at_best_checkpoint']['mse']-b['train_metrics_at_best_checkpoint']['mse']
+        lo,hi=s['bootstrap']['interval_95']
+        interval='区间跨零，当前样本证据不足以排除无改善。' if lo<=0<=hi else ('区间全为负，样本配对支持下降，仍需训练种子复核。' if hi<0 else '区间全为正，样本配对支持退步，仍需训练种子复核。')
+        lines += ['## 相对同种子等比补边对照','',
+            f"仅登记的预处理因素改变；同一数据划分、环境、训练代码和初始化已核对。最佳轮次：对照{b['best_epoch']}、候选{s['best_epoch']}。",
+            f"MSE变化 **{delta:+.2f}（{s['mse_relative_change']:+.2%}）**；MAE变化 {s['metrics']['mae']-b['metrics']['mae']:+.2f}；尾部MSE变化 {s['metrics']['tail_mse']-b['metrics']['tail_mse']:+.2f}。",
+            f'按原图组重采样1000次的95%区间 [{lo:.2f}, {hi:.2f}]。{interval}',
+            f"总耗时比 {s['cost']['train_seconds']/b['cost']['train_seconds']:.3f}，逐轮训练耗时比 {s['cost']['training_seconds']/b['cost']['training_seconds']:.3f}。时间受系统负载影响，不作为精确硬件基准。",'',
+            '## 误差变化定位','', '| 分组 | 样本数 | 对照MSE | 候选MSE | 候选减对照 |', '| --- | ---: | ---: | ---: | ---: |']
+        groups=pd.read_csv(output/'group_metrics.csv')
+        for row in groups.itertuples():
+            lines.append(f'| {row.grouping}/{row.group} | {row.n} | {row.control_mse:.2f} | {row.mse:.2f} | {row.mse_change:+.2f} |')
+        influence=s['influence_check']
+        total=influence['total_squared_error_change']
+        lines += ['',f"绝对变化最大的10张合计平方误差变化 {influence['top10_absolute_change_sum']:+.2f}，全体合计 {total:+.2f}；其余1591张平均变化 {influence['remaining_1591_mean_change']:+.2f}。这只是敏感性检查，主指标仍包括全部1601张。"]
+        if delta*influence['remaining_1591_mean_change']<0:
+            lines.append('去除最大变化10张后的方向与整体相反，整体结论受到少数案例显著影响，不能称为广泛改善。')
+        price=groups.loc[groups.grouping=='price_band'].copy()
+        largest=price.loc[price.sse_change.abs().idxmax()]
+        lines.append(f"互斥价格分组中，绝对贡献最大的是{largest['group']}组（n={int(largest['n'])}），平方误差合计变化{largest['sse_change']:+.2f}。亮度、清晰度、补边分组互相重叠，不能相加当作原因贡献。")
+        cases=pd.read_csv(output/'selected_cases.csv')
+        lines += ['', '变化最大的正反例（原图见诊断页）：']
+        selected=pd.concat([cases.loc[cases.case_type=='improved'].head(3),cases.loc[cases.case_type=='worsened'].head(3)])
+        for row in selected.itertuples():
+            lines.append(f'- {row.imageid}：真实{row.price:.2f}，对照{row.control_prediction:.2f}，候选{row.prediction:.2f}，平方误差变化{row.squared_error_change:+.2f}。')
+        if train_delta<0 and delta<0:
+            explanation='训练与验证同向下降，与当前预算下拟合和泛化一起改善一致。'
+        elif train_delta<0 and delta>=0:
+            explanation='训练下降而验证升高，与拟合加强但泛化收益不足一致；不能仅凭这一点确认过拟合的唯一原因。'
+        elif train_delta>=0 and delta<0:
+            explanation='训练没有改善而验证下降，与较强约束或不同优化路径带来的泛化改善一致，尚不能确认具体机制。'
+        else:
+            explanation='训练与验证均未改善，与信息损失或当前训练设置下优化更困难一致，尚不能区分二者。'
+        lines += ['', '## 原因判断与下一轮决策','',
+            f'直接观测：最佳权重训练MSE变化{train_delta:+.2f}，验证变化{delta:+.2f}。{explanation}',
+            f'该因素的机制假设：{mechanism}',
+            '尚未排除：不同最佳轮次、单种子优化波动、价格构成与图像属性混杂。分组相关性及所选案例不构成因果证明；结果只适用于该AlexNet与固定训练预算。',
+            '决策：本组完整结果和不利结果均保留，当前不据单种子锁定最优输入。完成本页与校验门记录后，按预登记顺序继续下一组；六组后按最低MSE及1%范围进入2027/2028复核。']
+    else:
+        lines += ['## 对照组复核结论','',
+            '这是独立种子的完整等比补边对照。指标、预测和预算检查通过，用于本种子后续候选的配对比较；不能把跨种子差异解释为预处理收益。',
+            '决策：完成本页后，依次运行已由2026初筛确定的候选，固定本种子初始化与其他设置。']
+    (output/'review.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
+    with (STAGE/'group_reviews_v2.md').open('a',encoding='utf-8') as journal:
+        journal.write(f"\n## {name}，seed {cfg['seed']}：已完成数值 review\n\nMSE {s['metrics']['mse']:.2f}，MAE {s['metrics']['mae']:.2f}，尾部MSE {s['metrics']['tail_mse']:.2f}。\n\n[逐组原因分析与下一轮决策]({relative(output/'review.md')})；[图表与案例]({relative(output/'README.md')})。该页为自动数值review，图像人工复核状态见人工追加意见。\n")
+    write(gate,{'reviewed_utc':now(),'kind':'numeric_review_with_conditional_mechanisms',
+        'prediction_sha256':digest(run/'predictions.csv'),'review_sha256':digest(output/'review.md'),
+        'next_run_allowed':True,'budget_and_environment_verified':True})
+    print(f'Review completed: {run.name}',flush=True)
+
+def wait_run(run,child=None):
+    last=0
+    while True:
+        try:
+            status=read_json(run/'status.json')
+        except (FileNotFoundError,json.JSONDecodeError):
+            status={}
+        if status.get('status')=='completed':
+            if child and child.wait()!=0:
+                raise RuntimeError('Training process failed after completed status')
+            return
+        if status.get('status')=='failed':
+            raise RuntimeError(f'Training failed; inspect {run}')
+        if child and child.poll() is not None:
+            raise RuntimeError(f'Training exited without completed status: {child.returncode}')
+        if time.monotonic()-last>60:
+            last=time.monotonic()
+            history=run/'history.csv'
+            try:
+                h=pd.read_csv(history)
+                progress={'completed_epochs':int(h.epoch.iloc[-1]),'best_validation_mse_so_far':float(h.val_mse.min())}
+            except (FileNotFoundError,pd.errors.EmptyDataError,IndexError):
+                progress={'completed_epochs':0}
+            write(STAGE/'execution_state.json',{'status':'training','active_run':relative(run),'snapshot_utc':now(),
+                'review_before_next':True,'protocol':'protocol_v2.md','group_reviews':'group_reviews_v2.md',**progress})
+            newest=max(p.stat().st_mtime for p in run.iterdir() if p.is_file())
+            if time.time()-newest>1200:
+                raise RuntimeError('No run artifact progress for 20 minutes; inspect instead of starting another GPU job')
+        time.sleep(10)
+
+def get_run(state,identifier,seed):
+    key=f'{identifier}:{seed}'
+    if key in state['runs']:
+        run=RECORD/state['runs'][key]
+        wait_run(run)
+        complete_checks(run)
+        return run
+    check_sources()
+    root=(RECORD/'02_baselines' if identifier=='alexnet' else STAGE)/'runs'/identifier
+    before=set(root.glob('*')) if root.exists() else set()
+    # Any untracked running experiment is reviewed manually before another launch.
+    for p in before:
+        if read_json(p/'status.json').get('status')=='running':
+            raise RuntimeError(f'Untracked active run requires review: {p}')
+    logstage=RECORD/'02_baselines' if identifier=='alexnet' else STAGE
+    log=logstage/'logs'/f'{identifier}_seed{seed}_pipeline_v2.log'
+    with log.open('x',encoding='utf-8') as stream:
+        child=subprocess.Popen([sys.executable,'-X','utf8','run.py','train',str(config_for(identifier)),'--seed',str(seed)],
+            cwd=CODE,stdout=stream,stderr=subprocess.STDOUT)
+        for _ in range(60):
+            added=set(root.glob('*'))-before if root.exists() else set()
+            if len(added)==1:
+                run=added.pop()
+                state['runs'][key]=os.path.relpath(run,RECORD).replace('\\','/')
+                state['active']=key
+                write(STATE,state)
+                break
+            if len(added)>1 or child.poll() is not None:
+                raise RuntimeError(f'Unexpected launch result; inspect {log}')
+            time.sleep(1)
+        else:
+            raise RuntimeError('Training did not create a run directory; inspect child before resuming')
+        with (STAGE/'group_reviews_v2.md').open('a',encoding='utf-8') as journal:
+            journal.write(f'\n### 已按顺序启动 {identifier}，seed {seed}\n\n前一组数值review已落盘。[运行]({relative(run)})；[日志]({relative(log)})。\n')
+        print(f'Started {key}: {run.name}',flush=True)
+        wait_run(run,child)
+    complete_checks(run)
+    return run
+
+def finish(state,challengers):
+    rows=[]
+    for identifier in ['alexnet',*challengers]:
+        for seed in [2026,2027,2028]:
+            run=RECORD/state['runs'][f'{identifier}:{seed}']
+            complete_checks(run)
+            rows.append({'method':identifier,'seed':seed,**read_json(run/'metrics.json'),**read_json(run/'cost.json')})
+    frame=pd.DataFrame(rows)
+    output=STAGE/'final_comparison_v2'
+    output.mkdir(exist_ok=True)
+    frame.to_csv(output/'seed_results.csv',index=False,encoding='utf-8-sig')
+    summary=frame.groupby('method')[['mse','mae','tail_mse','train_seconds','peak_cuda_bytes']].agg(['mean','std'])
+    summary.to_csv(output/'summary.csv',encoding='utf-8-sig')
+    base=frame.loc[frame.method=='alexnet'].set_index('seed')
+    eligibility=[]
+    for name in challengers:
+        candidate=frame.loc[frame.method==name].set_index('seed')
+        changes=candidate.mse-base.mse
+        eligibility.append({'method':name,'mean_mse':float(candidate.mse.mean()),'mean_paired_change':float(changes.mean()),
+            'seeds_improved':int((changes<0).sum()),'per_seed_changes':changes.to_dict(),
+            'eligible':bool(changes.mean()<0 and (changes<0).sum()>=2)})
+    eligible=[r for r in eligibility if r['eligible']]
+    winner=min(eligible,key=lambda r:r['mean_mse'])['method'] if eligible else 'alexnet'
+    decision={'selected_method':winner,'challengers':challengers,'eligibility':eligibility,
+        'rule':'Lower mean MSE and at least 2 of 3 seed improvements; otherwise retain baseline.',
+        'limitations':'Three seeds on one repeatedly used development split; no independent test claim; close ranks remain uncertain.',
+        'completed_utc':now()}
+    write(output/'decision.json',decision)
+    screening=read_json(STAGE/'screening_selection_v2.json')
+    lines=['# 预处理备选阶段：三种子比较与选择','',f'按预登记规则保留 **{winner}**。',
+        '先完成六项seed2026初筛，再对初筛最佳候选及距离其1%以内的候选，与原基线一起复核2027/2028。每次运行均在前组数值review落盘后启动。','',
+        '## 六项初筛（seed2026）','',
+        '| 方法 | 验证MSE | 相对原基线变化 |', '| --- | ---: | ---: |']
+    baseline_score=read_json(BASE/'metrics.json')['mse']
+    for name,score in sorted(screening['scores'].items(),key=lambda item:item[1]):
+        lines.append(f'| {name} | {score:.2f} | {score/baseline_score-1:+.2%} |')
+    lines += ['', '## 三种子复核','',
+        '| 方法 | MSE均值 ± 标准差 | MAE均值 | 尾部MSE均值 | 平均分钟 |', '| --- | ---: | ---: | ---: | ---: |']
+    for name in ['alexnet',*challengers]:
+        x=frame.loc[frame.method==name]
+        lines.append(f'| {name} | {x.mse.mean():.2f} ± {x.mse.std():.2f} | {x.mae.mean():.2f} | {x.tail_mse.mean():.2f} | {x.train_seconds.mean()/60:.2f} |')
+    lines+=['','## 逐种子一致性','']
+    for row in eligibility:
+        lines.append(f"- {row['method']}：候选减对照MSE {row['per_seed_changes']}；{row['seeds_improved']}/3个种子改善，平均变化{row['mean_paired_change']:+.2f}。")
+    lines+=['','若差距很小或种子间方向变化，保留规则只是工程选择，不证明存在稳定优势。均值/标准差来自单次运行指标，未对预测做集成。未复核的候选只有一个种子的结果，不能宣称已证明其总体劣于入围者。',
+        '', '[逐种子完整指标](seed_results.csv) · [均值及样本标准差](summary.csv) · [选择规则结果](decision.json) · [逐组原因分析](../group_reviews_v2.md)',
+        '', '结论范围：当前AlexNet、当前固定划分和统一40/15/0.1%早停策略（上限60轮）。开发验证集已用于多次选择，不等于独立测试泛化结论。']
+    (output/'README.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
+    chosen=RECORD/state['runs'][f'{winner}:2026']
+    target=CODE/'configs/selected/input.json'
+    reason=f'Preprocessing three-seed rule; evidence: {output / "README.md"}; selected={winner}; no test data used.'
+    if target.exists():
+        assert Path(read_json(target)['selection']['run']).resolve()==chosen.resolve(), 'Existing selected input differs; do not overwrite'
+    else:
+        subprocess.run([sys.executable,'-X','utf8','run.py','select',str(chosen),'--slot','input','--reason',reason],cwd=CODE,check=True)
+        selected=read_json(target)
+        selected['selection']['warning']='按预登记规则完成三个训练种子的开发集复核；仍非独立测试结论。'
+        selected['selection']['three_seed_evidence']=str(output/'decision.json')
+        write(target,selected)
+    for doc in [STAGE/'README.md',RECORD/'README.md']:
+        link=os.path.relpath(output/'README.md',doc.parent).replace('\\','/')
+        original=doc.read_text(encoding='utf-8')
+        title,rest=original.split('\n',1)
+        doc.write_text(f'{title}\n\n**正式预处理比较已完成；按三种子规则保留 {winner}。** [最终比较与限制]({link})。下文保留阶段历史。\n'+rest,encoding='utf-8')
+    state.update(status='completed',selected_method=winner,completed_utc=now())
+    write(STATE,state)
+    write(STAGE/'execution_state.json',{'status':'completed','selected_method':winner,'final_report':'final_comparison_v2/README.md','snapshot_utc':now()})
+
+def main():
+    global BASE
+    parser=argparse.ArgumentParser()
+    parser.add_argument('command',choices=['check','run'])
+    args=parser.parse_args()
+    check_plan()
+    if args.command=='check':
+        return
+    verified=read_json(RECORD/'shared/performance_optimization/gpu_loader_benchmark/summary.json')
+    assert verified['paired_repeats']==3 and verified['prediction_and_weight_equality']=='exact'
+    import msvcrt
+    lock=(STAGE/'pipeline_v2.lock').open('a+b')
+    lock.seek(0)
+    if not lock.read(1):
+        lock.write(b'0');lock.flush()
+    lock.seek(0)
+    msvcrt.locking(lock.fileno(),msvcrt.LK_NBLCK,1)
+    state=read_json(STATE) if STATE.exists() else {'status':'running','version':'optimized_v2','started_utc':now(),'runs':{}}
+    if state['status']=='completed':
+        return
+    write(STATE,state)
+    try:
+        BASE=get_run(state,'alexnet',2026)
+        review(BASE,None,'')
+        for identifier,_,mechanism in CANDIDATES:
+            run=get_run(state,identifier,2026)
+            review(run,BASE,mechanism)
+        scores={identifier:read_json(RECORD/state['runs'][f'{identifier}:2026']/'metrics.json')['mse'] for identifier,_,_ in CANDIDATES}
+        best=min(scores.values())
+        challengers=[name for name,score in scores.items() if score<=best*1.01]
+        write(STAGE/'screening_selection_v2.json',{'scores':scores,'challengers':challengers,'threshold':best*1.01,'selected_utc':now()})
+        for seed in [2027,2028]:
+            baseline=get_run(state,'alexnet',seed)
+            review(baseline,None,'')
+            for identifier in challengers:
+                mechanism=next(m for name,_,m in CANDIDATES if name==identifier)
+                candidate=get_run(state,identifier,seed)
+                review(candidate,baseline,mechanism)
+        finish(state,challengers)
+    except Exception:
+        state.update(status='stopped_for_review',error=traceback.format_exc(),stopped_utc=now())
+        write(STATE,state)
+        write(STAGE/'execution_state.json',{'status':'stopped_for_review','pipeline_state':'pipeline_state_v2.json','snapshot_utc':now(),'error':state['error']})
+        raise
+    finally:
+        lock.close()
+
+if __name__=='__main__':
+    main()

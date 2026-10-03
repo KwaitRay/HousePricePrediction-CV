@@ -1,0 +1,18 @@
+{
+  "extends": "../selected/training.json",
+  "experiment": {
+    "id": "tune_08_initialization",
+    "name": "训练调优阶段—实验八：初始化检查",
+    "stage": "02_training",
+    "question": "仅在初始化诊断后登记卷积 Xavier 与原 Kaiming 对照",
+    "comparison": "继承配置 ../selected/training.json 对应的已保留方案",
+    "changed_fields": [
+      "training.initialization"
+    ],
+    "enforce_changes": true,
+    "status": "design_required"
+  },
+  "training": {
+    "initialization": "xavier_convolution"
+  }
+}

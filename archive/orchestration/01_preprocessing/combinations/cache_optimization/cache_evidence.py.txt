@@ -1,0 +1,25 @@
+"""Additional provenance guard for comparison with uncached v2 controls."""
+from pathlib import Path
+from frequency_cache import HERE
+from common.config import read_json, digest
+
+
+def verify_runtime_record(run):
+    run=Path(run)
+    record=read_json(run/'runtime_cache.json')
+    assert record['enabled'] and record['implementation']=='lossless_final_input_mmap'
+    evidence=HERE/'equivalence.json'
+    assert record['equivalence_sha256']==digest(evidence)
+    proof=read_json(evidence)
+    assert proof['passed'] and proof['full_input_count']==8000
+    assert proof['cache_key']==record['cache_key']
+    assert proof['inputs_sha256']==record['inputs_sha256']
+    assert record['runtime_hashes']==proof['runtime_hashes']
+    for name,value in record['runtime_hashes'].items():
+        assert digest(HERE/name)==value, f'Unregistered cache runtime change: {name}'
+    manifest=read_json(record['cache_manifest'])
+    assert manifest['key']==record['cache_key'] and manifest['inputs_sha256']==record['inputs_sha256']
+    assert manifest['specification']['source_hashes']==read_json(run/'environment.json')['source_hashes']
+    cfg=read_json(run/'config.json')
+    assert not cfg['augmentation'] and cfg['preprocess']==manifest['specification']['preprocess']
+    return record

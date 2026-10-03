@@ -1,0 +1,18 @@
+{
+  "extends": "../selected/augmentation.json",
+  "experiment": {
+    "id": "structure_01_small_kernels",
+    "name": "结构改进阶段—实验一：小卷积核堆叠",
+    "stage": "04_architecture",
+    "question": "只继承已保留改动，共享训练设置一致，全部从零训练",
+    "comparison": "继承配置 ../selected/augmentation.json 对应的已保留方案",
+    "changed_fields": [
+      "model.small_kernels"
+    ],
+    "enforce_changes": true,
+    "status": "ready"
+  },
+  "model": {
+    "small_kernels": true
+  }
+}

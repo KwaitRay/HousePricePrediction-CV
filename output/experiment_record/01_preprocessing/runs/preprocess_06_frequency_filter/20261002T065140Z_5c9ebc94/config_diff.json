@@ -1,0 +1,14 @@
+{
+  "preprocess.filter": {
+    "before": "none",
+    "after": "frequency"
+  },
+  "run_kind": {
+    "before": null,
+    "after": "development"
+  },
+  "seed": {
+    "before": 2026,
+    "after": 2028
+  }
+}

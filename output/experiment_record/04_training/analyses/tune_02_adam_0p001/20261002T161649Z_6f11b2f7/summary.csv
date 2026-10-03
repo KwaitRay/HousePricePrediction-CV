@@ -1,0 +1,5 @@
+,,mse,mse,mse,mae,mae,mae,tail_mse,tail_mse,tail_mse
+,,mean,std,count,mean,std,count,mean,std,count
+experiment,config_version,,,,,,,,,
+adam lr=0.001,e996a7bb9321,127743.92034609924,,1,264.1693916030767,,1,712857.1421175475,,1
+预处理备选阶段—实验一：拉伸尺寸调整,f1fd1543d268,128268.66898790754,,1,259.9859476672047,,1,700139.5572144003,,1

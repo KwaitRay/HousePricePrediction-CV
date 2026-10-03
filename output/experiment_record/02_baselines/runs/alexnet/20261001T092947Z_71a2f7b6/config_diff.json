@@ -1,0 +1,6 @@
+{
+  "run_kind": {
+    "before": null,
+    "after": "development"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "extends": "../selected/convolution.json",
+  "experiment": {
+    "id": "encoder_01_mean_head",
+    "name": "卷积特征处理阶段—实验一：直接汇总特征预测房价",
+    "stage": "05_encoder",
+    "question": "先区分替换大型全连接头的影响，不使用编码器",
+    "comparison": "继承配置 ../selected/convolution.json 对应的已保留方案",
+    "changed_fields": [
+      "model.head"
+    ],
+    "enforce_changes": true,
+    "status": "ready"
+  },
+  "model": {
+    "head": "mean"
+  }
+}

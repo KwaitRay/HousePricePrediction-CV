@@ -1,0 +1,7 @@
+{
+  "data_root": "../comp-90086-2026/house_dataset",
+  "split_path": ".local/artifacts/split_v1.csv",
+  "records_root": ".local/experiment_record",
+  "cache_root": ".local/cache",
+  "eda_output_root": ".local/analysis_outputs"
+}

@@ -1,0 +1,10 @@
+{
+  "run_kind": {
+    "before": null,
+    "after": "development"
+  },
+  "training.lr": {
+    "before": 0.0001,
+    "after": 3e-05
+  }
+}

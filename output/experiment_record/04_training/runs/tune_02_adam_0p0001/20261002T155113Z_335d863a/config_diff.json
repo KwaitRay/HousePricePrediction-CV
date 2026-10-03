@@ -1,0 +1,10 @@
+{
+  "run_kind": {
+    "before": null,
+    "after": "development"
+  },
+  "training.optimizer": {
+    "before": "adamw",
+    "after": "adam"
+  }
+}

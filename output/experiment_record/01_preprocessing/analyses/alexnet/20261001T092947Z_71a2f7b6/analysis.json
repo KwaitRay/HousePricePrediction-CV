@@ -1,0 +1,43 @@
+{
+  "run": "${LOCAL_ASSIGNMENT}\\output\\experiment_record\\02_baselines\\runs\\alexnet\\20261001T092947Z_71a2f7b6",
+  "metrics": {
+    "mse": 131108.77601670404,
+    "mae": 278.56331682992084,
+    "tail_mse": 641434.873647467,
+    "n": 1601,
+    "tail_n": 159,
+    "tail_threshold": 1300.0
+  },
+  "train_metrics_at_best_checkpoint": {
+    "mse": 122541.28414815689,
+    "mae": 269.57209490897526,
+    "tail_mse": 609703.4331625487,
+    "n": 6399,
+    "tail_n": 636,
+    "tail_threshold": 1300.0
+  },
+  "best_epoch": 6,
+  "last_validation_mse": 136969.17250915256,
+  "first_validation_mse": 135753.79654903122,
+  "last_training_data_loss": 0.0072995215803335,
+  "late_validation_mse_mean": 137406.64767409884,
+  "late_validation_mse_std": 2814.2696186159274,
+  "generalization_gap_mse": 8567.49186854715,
+  "cost": {
+    "train_seconds": 5077.764778099954,
+    "epochs": 60,
+    "best_epoch": 6,
+    "optimizer_updates": 12000,
+    "samples_seen": 383940,
+    "training_seconds": 3015.59894849977,
+    "seconds_per_update": 0.25129991237498084,
+    "predict_seconds": 21.254813199979253,
+    "timing_note": "train_seconds包括逐轮验证与固定样本诊断；predict_seconds包括读取和预处理",
+    "stopped_early": false,
+    "peak_cuda_bytes": 1213386752
+  },
+  "prediction_checks": {
+    "nonpositive_count": 0,
+    "unclipped_mse": 131108.77601670404
+  }
+}

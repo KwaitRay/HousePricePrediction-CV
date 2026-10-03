@@ -1,0 +1,104 @@
+"""Validate real stretch cache inputs, rejection rules and paired GPU training."""
+import os
+os.environ.setdefault('CUBLAS_WORKSPACE_CONFIG', ':4096:8')
+from pathlib import Path
+from copy import deepcopy
+import gc
+import time
+import hashlib
+import numpy as np
+import pandas as pd
+import torch
+from stretch_cache import HERE, CODE, STAGE, CachedHouseImages, UncachedHouseImages, verify_cache
+from common.config import resolve, path_at_root, write_json, read_json, digest
+from preparation.split import load_split
+import training.engine as engine
+
+
+def main():
+    config=resolve(STAGE/'configs/input_frozen.json')
+    directory,meta=verify_cache(config)
+    split,split_meta=load_split(config)
+    train=split.loc[split.partition=='train'].sample(41,random_state=913).copy()
+    val=split.loc[split.partition=='validation'].sample(23,random_state=914).copy()
+    frame=pd.concat([train,val]).sample(frac=1,random_state=915).reset_index(drop=True)
+    root=path_at_root(config['data']['root'])
+    torch.set_num_threads(config['training']['cpu_threads'])
+    original=UncachedHouseImages(root,frame,config,training=True)
+    cached=CachedHouseImages(root,frame,config,training=True)
+    for i in range(len(frame)):
+        a,b=original[i],cached[i]
+        torch.testing.assert_close(a[0],b[0],rtol=0,atol=0)
+        assert a[1:]==b[1:]
+    first=cached[0][0];expected=first.clone();first.zero_()
+    torch.testing.assert_close(cached[0][0],expected,rtol=0,atol=0)
+    for field,value in [('geometry','letterbox'),('size',320),('filter','frequency'),('normalization','train_stats')]:
+        bad=deepcopy(config);bad['preprocess'][field]=value
+        try:CachedHouseImages(root,frame,bad)
+        except ValueError:pass
+        else:raise AssertionError('Cache accepted incompatible '+field)
+    bad=deepcopy(config);bad['augmentation']={'flip':{'probability':.5}}
+    try:CachedHouseImages(root,frame,bad,training=True)
+    except ValueError:pass
+    else:raise AssertionError('Cache accepted random augmentation')
+    try:CachedHouseImages(root,frame,config,stats={'mean':[0.]*3,'std':[1.]*3})
+    except ValueError:pass
+    else:raise AssertionError('Cache accepted different statistics')
+    # Tamper rejection without touching the real cache.
+    from unittest.mock import patch
+    import stretch_cache
+    real_digest=stretch_cache.digest
+    def wrong_checksum(path):
+        return 'incorrect' if Path(path).name=='inputs.npy' else real_digest(path)
+    with patch.object(stretch_cache,'digest',side_effect=wrong_checksum):
+        try:verify_cache(config,check_sources=False)
+        except AssertionError:pass
+        else:raise AssertionError('Tampered cache was accepted')
+    print('64 real input tensors, labels/IDs, configuration rejection and checksum rejection passed.',flush=True)
+    outcomes={}
+    saved_class=engine.HouseImages
+    try:
+        for mode,cls in [('uncached',UncachedHouseImages),('cached',CachedHouseImages)]:
+            cfg=deepcopy(config)
+            cfg['training']['epochs']=2
+            cfg['training']['early_stopping']['enabled']=False
+            out=HERE/'verification'/mode
+            out.mkdir(parents=True,exist_ok=False)
+            write_json(out/'status.json',{'status':'running','kind':'diagnostic'})
+            engine.HouseImages=cls
+            start=time.perf_counter()
+            predictions=engine.fit_neural(cfg,root,train,val,split_meta['tail_threshold'],out)
+            wall=time.perf_counter()-start
+            checkpoint=torch.load(out/'best.pt',map_location='cpu',weights_only=True)
+            sha=hashlib.sha256()
+            for name,value in checkpoint['model'].items():
+                sha.update(name.encode());sha.update(value.numpy().tobytes())
+            outcomes[mode]={'predictions':predictions,'weight_sha256':sha.hexdigest(),
+                'history':pd.read_csv(out/'history.csv'),'wall_seconds':wall}
+            np.save(out/'returned_predictions.npy',predictions)
+            write_json(out/'weight_digest.json',{'sha256':sha.hexdigest()})
+            write_json(out/'status.json',{'status':'completed','kind':'diagnostic'})
+            del checkpoint;gc.collect();torch.cuda.empty_cache()
+            print(f'{mode}: {wall:.2f}s',flush=True)
+    finally:
+        engine.HouseImages=saved_class
+    a,b=outcomes['uncached'],outcomes['cached']
+    np.testing.assert_array_equal(a['predictions'],b['predictions'])
+    assert a['weight_sha256']==b['weight_sha256']
+    fields=['data_loss','gradient_norm','probe_mse','val_mse','val_mae','val_tail_mse','samples','updates']
+    np.testing.assert_array_equal(a['history'][fields].to_numpy(),b['history'][fields].to_numpy())
+    result={'passed':True,'kind':'cache_equivalence_diagnostic_not_formal_performance',
+        'full_input_count':meta['n'],'all_cache_roundtrip_bytes_exact':meta['all_written_tensors_exact'],
+        'independently_recomputed_inputs':len(frame),'input_tensor_equality':'exact','configuration_and_integrity_rejection':'passed',
+        'gpu_train_n':len(train),'gpu_validation_n':len(val),'gpu_epochs':2,'weights_and_predictions_equality':'exact',
+        'cache_key':meta['key'],'inputs_sha256':meta['inputs_sha256'],
+        'runtime_hashes':{name:digest(HERE/name) for name in ['stretch_cache.py','train_cached.py','cache_evidence.py']},
+        'verification_script_sha256':digest(__file__),
+        'wall_seconds':{mode:item['wall_seconds'] for mode,item in outcomes.items()},
+        'timing_note':'One small paired diagnostic; full-epoch timings are the performance evidence, cache build cost reported separately.'}
+    write_json(HERE/'equivalence.json',result)
+    print('Cache GPU equivalence passed.',flush=True)
+
+
+if __name__=='__main__':
+    main()

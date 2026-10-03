@@ -1,0 +1,29 @@
+import os
+os.environ.setdefault('CUBLAS_WORKSPACE_CONFIG', ':4096:8')
+import sys
+import importlib.util
+from pathlib import Path
+from runtime import HERE,STAGE,validate,optimizer_for,read_json,write_json,digest
+
+def main():
+    assert read_json(HERE/'preflight.json')['passed']
+    for name,sha in read_json(HERE/'preflight.json')['runtime_hashes'].items():assert digest(HERE/name)==sha
+    import run
+    import training.engine as engine
+    run.validate=validate;engine.optimizer_for=optimizer_for
+    original=run.new_run
+    def recorded(config,kind='development'):
+        out=original(config,kind)
+        name=config['training']['optimizer']
+        write_json(out/'optimizer_runtime.json',{'optimizer':name,
+            'files':{n:digest(HERE/n) for n in ['runtime.py','train_cached.py']},
+            'preflight_sha256':digest(HERE/'preflight.json'),
+            'muon_assignment':{'regressor.1.weight':'Muon','regressor.4.weight':'Muon','all_other_parameters':'AdamW lr=0.0001'} if name=='muon' else None,
+            'note':'Optimizer extension is explicitly recorded in addition to frozen core source and cache adapter hashes.'})
+        return out
+    run.new_run=recorded
+    sys.path.insert(0,str(STAGE/'cache_optimization'))
+    spec=importlib.util.spec_from_file_location('verified_cache_entry',STAGE/'cache_optimization/train_cached.py')
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);module.main()
+
+if __name__=='__main__':main()

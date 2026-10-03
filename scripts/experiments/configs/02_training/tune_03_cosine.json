@@ -1,0 +1,18 @@
+{
+  "extends": "../selected/optimizer.json",
+  "experiment": {
+    "id": "tune_03_cosine",
+    "name": "训练调优阶段—实验三：学习率变化策略比较",
+    "stage": "02_training",
+    "question": "固定起点学习率，比较全程固定与逐轮衰减",
+    "comparison": "继承配置 ../selected/optimizer.json 对应的已保留方案",
+    "changed_fields": [
+      "training.schedule"
+    ],
+    "enforce_changes": true,
+    "status": "ready"
+  },
+  "training": {
+    "schedule": "cosine"
+  }
+}

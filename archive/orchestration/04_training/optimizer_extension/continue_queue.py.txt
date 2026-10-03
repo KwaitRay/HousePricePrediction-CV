@@ -1,0 +1,106 @@
+"""Wait for the intact original queue, then run the registered extensions."""
+from pathlib import Path
+import sys,time,subprocess,copy,traceback,os
+HERE=Path(__file__).resolve().parent
+STAGE=HERE.parent
+sys.path.insert(0,str(STAGE/'diagnostics'))
+import pipeline as p
+from runtime import validate,verify_record
+
+def main():
+    import msvcrt
+    lock=(HERE/'queue.lock').open('a+b');lock.seek(0);lock.write(b'0');lock.flush();lock.seek(0)
+    msvcrt.locking(lock.fileno(),msvcrt.LK_NBLCK,1)
+    items=p.read_json(HERE/'candidates.json')
+    files=[*HERE.glob('*.py'),HERE/'candidates.json',HERE/'protocol.md',STAGE/'configs/tune_02_sgd_0.0005.json',STAGE/'recovery_20261003/decision.md',*[STAGE/'configs'/i['filename'] for i in items]]
+    manifest={str(f.relative_to(STAGE)):p.digest(f) for f in files}
+    p.write(HERE/'registration.json',{'files':manifest,'registered_utc':p.now(),'candidates':items})
+    p.write(HERE/'execution_state.json',{'status':'waiting_for_current_queue','updated_utc':p.now()})
+    while True:
+        live=p.read_json(STAGE/'execution_state.json')
+        if live['status']=='failed':raise RuntimeError('Original queue failed; inspect before extending')
+        if live['status']=='optimizer_block_completed':break
+        # Maintain the requested single reader-facing report while the old writer is active.
+        document=STAGE/'实验报告.md'
+        if document.exists():
+            text=document.read_text(encoding='utf-8')
+            supplement=(HERE/'protocol.md').read_text(encoding='utf-8')
+            if '## 用户追加：扩展优化器比较' not in text:
+                temporary=HERE/'report_pending.tmp'
+                temporary.write_text(text+'\n\n'+supplement,encoding='utf-8')
+                if document.read_text(encoding='utf-8')==text:os.replace(temporary,document)
+        time.sleep(20)
+    # Wait for the old controller to release its lock; no overlap in GPU work or report writes.
+    main_lock=(STAGE/'pipeline.lock').open('r+b')
+    while True:
+        try:main_lock.seek(0);msvcrt.locking(main_lock.fileno(),msvcrt.LK_NBLCK,1);break
+        except OSError:time.sleep(5)
+    old_guard=p.guard
+    def guard():
+        old_guard()
+        for f,sha in manifest.items():assert p.digest(STAGE/f)==sha,f
+    guard()
+    p.status('optimizer_preflight',note='Registered Adam, Adagrad and hybrid Muon extension')
+    with (HERE/'preflight.log').open('x',encoding='utf-8') as log:
+        subprocess.run([sys.executable,'-X','utf8',str(HERE/'preflight.py')],cwd=p.CODE,
+            stdout=log,stderr=subprocess.STDOUT,check=True)
+    p.write(HERE/'execution_state.json',{'status':'running','updated_utc':p.now()})
+    old_checked=p.checked
+    def checked(run,ref):
+        old_checked(run,ref)
+        if (run/'optimizer_runtime.json').exists():verify_record(run)
+    p.checked=checked;p.validate=validate;p.guard=guard;p.CACHE=HERE
+    p.STATE=HERE/'pipeline_state.json'
+    names={'adam':'Adam','adagrad':'Adagrad','muon':'Muon＋AdamW混合更新'}
+    p.NAMES['tune_02_sgd_0.0005.json']='动量随机梯度下降，学习率0.0005'
+    for item in items:p.NAMES[item['filename']]=f"{names[item['optimizer']]}，学习率{item['lr']:g}"
+    old_report=p.report
+    def report(state):
+        old_report(state)
+        file=STAGE/'实验报告.md'
+        content=file.read_text(encoding='utf-8')
+        content=content.replace('0.001、0.01、0.03','0.0005、0.001（0.01失败；0.03取消）')
+        content=content.replace('两个优化器各有三个学习率候选','原计划各三个学习率；SGD现按用户要求只比较两个有效候选')
+        file.write_text(content+'\n\n'+(HERE/'protocol.md').read_text(encoding='utf-8')+'\n\n'+(STAGE/'recovery_20261003/decision.md').read_text(encoding='utf-8'),encoding='utf-8')
+    p.report=report
+    state=copy.deepcopy(p.read_json(STAGE/'pipeline_state.json'))
+    state.update(status='extended_optimizer_screening',active=None,
+        decision_text='原队列结果作为阶段性对照保留；按用户要求追加Adam、Adagrad和Muon混合更新。扩展比较完成前不宣布优化器最终胜出，也不进入下一训练因素。')
+    p.save(state)
+    for item in items:p.train(state,item['filename'],2026)
+    finalists=[]
+    for name in names:
+        candidates=[i['filename'] for i in items if i['optimizer']==name]
+        finalists.append(min(candidates,key=lambda f:p.mse(p.run_path(state,f'{f}:2026'))))
+    state['extended_finalists']=finalists
+    state['decision_text']='扩展初筛完成，每个新增优化器保留最低均方误差的学习率，追加两个种子；继续用同种子的原有直接拉伸设置作对照。';p.save(state)
+    confirmation=list(dict.fromkeys([*state.get('finalists',[]),*finalists]))
+    for seed in [2027,2028]:
+        for filename in confirmation:p.train(state,filename,seed)
+    candidates=list(dict.fromkeys(['control',*state.get('finalists',[]),*finalists]))
+    means={f:float(p.np.mean([p.mse(p.run_path(state,f'{f}:{seed}')) for seed in [2026,2027,2028]])) for f in candidates}
+    wins={f:sum(p.mse(p.run_path(state,f'{f}:{seed}'))<p.mse(p.control(seed)) for seed in [2026,2027,2028]) for f in candidates if f!='control'}
+    eligible=[f for f in wins if wins[f]>=2 and means[f]<means['control']]
+    selected=min(eligible,key=lambda f:means[f]) if eligible else 'control'
+    state.update(status='extended_optimizer_block_completed',active=None,selected=selected,means=means,wins=wins,
+        decision_text=f"扩展优化器比较已完成，按三种子平均及至少两次改善规则保留：{p.NAMES[selected]}。平均均方误差{means[selected]:.2f}。这是优化器及所选学习率的整体方案比较；Muon方案包含AdamW辅助更新，不能解释为全网络纯Muon。后续调度和正则化另行登记后继续。")
+    p.save(state)
+    p.write(HERE/'decision.json',{'selected':selected,'mean_mse':means,'improvement_counts':wins,'updated_utc':p.now()})
+    dest=p.CODE/'configs/selected/optimizer.json'
+    if dest.exists():
+        import shutil
+        shutil.copy2(dest,HERE/'optimizer_selection_before_extension.json')
+    cfg=p.resolve(STAGE/'configs/input_frozen.json' if selected=='control' else STAGE/'configs'/selected)
+    cfg={k:v for k,v in cfg.items() if not k.startswith('_') and k not in {'selection','run_kind'}}
+    cfg['experiment']['enforce_changes']=False
+    cfg['selection']={'evidence':str(HERE/'decision.json'),'requires_optimizer_runtime_adapter':selected in finalists,
+        'runtime':str(HERE/'runtime.py') if selected in finalists else None}
+    p.write_json(dest,cfg)
+    p.status('extended_optimizer_block_completed',selected=p.NAMES[selected])
+    p.write(HERE/'execution_state.json',{'status':'completed','selected':selected,'updated_utc':p.now()})
+
+if __name__=='__main__':
+    try:main()
+    except Exception:
+        p.write(HERE/'execution_state.json',{'status':'failed','error':traceback.format_exc(),'updated_utc':p.now()})
+        raise

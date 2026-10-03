@@ -1,0 +1,48 @@
+{
+  "run": "${LOCAL_ASSIGNMENT}\\output\\experiment_record\\02_baselines\\runs\\alexnet\\20261002T054758Z_dd4123aa",
+  "metrics": {
+    "mse": 126004.11223892565,
+    "mae": 262.128119203384,
+    "tail_mse": 682618.2355725423,
+    "n": 1601,
+    "tail_n": 159,
+    "tail_threshold": 1300.0
+  },
+  "train_metrics_at_best_checkpoint": {
+    "mse": 113449.50098239651,
+    "mae": 249.7156387122459,
+    "tail_mse": 622681.075157133,
+    "n": 6399,
+    "tail_n": 636,
+    "tail_threshold": 1300.0
+  },
+  "best_epoch": 7,
+  "last_validation_mse": 135645.80811385153,
+  "first_validation_mse": 140266.53643548547,
+  "last_training_data_loss": 0.010666286724273,
+  "late_validation_mse_mean": 135189.8481416435,
+  "late_validation_mse_std": 1409.4251201397585,
+  "generalization_gap_mse": 12554.61125652914,
+  "cost": {
+    "train_seconds": 1928.1045960000483,
+    "epochs": 40,
+    "best_epoch": 7,
+    "loader_setup_seconds": 0.1734197000041604,
+    "stop_reason": "early_stopping",
+    "probe_seconds": 1.4498282000422478,
+    "validation_seconds": 321.70553379983176,
+    "checkpoint_seconds": 3.7208155998960137,
+    "optimizer_updates": 8000,
+    "samples_seen": 255960,
+    "training_seconds": 1541.549214199651,
+    "seconds_per_update": 0.19269365177495637,
+    "predict_seconds": 7.632647600024939,
+    "timing_note": "train_seconds包括逐轮验证与固定样本诊断；predict_seconds包括读取和预处理",
+    "stopped_early": true,
+    "peak_cuda_bytes": 1213386752
+  },
+  "prediction_checks": {
+    "nonpositive_count": 0,
+    "unclipped_mse": 126004.11223892565
+  }
+}

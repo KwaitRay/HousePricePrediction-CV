@@ -1,0 +1,13 @@
+{
+  "extends": "../base.json",
+  "experiment": {
+    "id": "prepare_split",
+    "name": "实验前准备：数据分组与冻结划分",
+    "stage": "00_preparation",
+    "question": "避免重复图片跨训练验证侧",
+    "comparison": "继承配置 ../base.json 对应的已保留方案",
+    "changed_fields": [],
+    "enforce_changes": true,
+    "status": "ready"
+  }
+}

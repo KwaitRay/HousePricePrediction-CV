@@ -1,0 +1,18 @@
+{
+  "extends": "../base.json",
+  "experiment": {
+    "id": "preprocess_05_spatial_filter",
+    "name": "预处理备选阶段—实验五：空间低通滤波",
+    "stage": "00_preparation",
+    "question": "输入诊断提供依据后，固定 AlexNet 训练设置比较该输入因素",
+    "comparison": "继承配置 ../base.json 对应的已保留方案",
+    "changed_fields": [
+      "preprocess.filter"
+    ],
+    "enforce_changes": true,
+    "status": "ready"
+  },
+  "preprocess": {
+    "filter": "spatial"
+  }
+}

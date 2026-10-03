@@ -1,0 +1,13 @@
+{
+  "extends": "../base.json",
+  "experiment": {
+    "id": "alexnet",
+    "name": "神经网络基线阶段—实验一：AlexNet 房价回归",
+    "stage": "01_baselines",
+    "question": "建立无增强从零网络参照",
+    "comparison": "继承配置 ../base.json 对应的已保留方案",
+    "changed_fields": [],
+    "enforce_changes": true,
+    "status": "ready"
+  }
+}

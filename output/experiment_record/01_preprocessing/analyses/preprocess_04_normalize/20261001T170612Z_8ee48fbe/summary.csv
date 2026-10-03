@@ -1,0 +1,5 @@
+,,mse,mse,mse,mae,mae,mae,tail_mse,tail_mse,tail_mse
+,,mean,std,count,mean,std,count,mean,std,count
+experiment,config_version,,,,,,,,,
+神经网络基线阶段—实验一：AlexNet 房价回归,59cc7a433fc7,131108.77601670404,,1,278.56331682992084,,1,641434.873647467,,1
+预处理备选阶段—实验四：训练侧颜色标准化,d6b6e5f6aef1,130192.36618213232,,1,263.36116962077955,,1,758501.087889561,,1

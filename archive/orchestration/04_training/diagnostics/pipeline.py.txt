@@ -1,0 +1,232 @@
+"""Controlled first training-tuning block: LR, optimizer, paired seed review."""
+from pathlib import Path
+import os
+os.environ.setdefault('CUBLAS_WORKSPACE_CONFIG', ':4096:8')
+import sys
+import time
+import json
+import subprocess
+import datetime
+import traceback
+import math
+import csv
+import numpy as np
+import pandas as pd
+
+STAGE=Path(__file__).resolve().parents[1]
+RECORD=STAGE.parent
+CODE=STAGE.parents[2]/'scripts/experiments'
+CACHE=STAGE/'cache_optimization'
+sys.path.insert(0,str(CODE))
+sys.path.insert(0,str(RECORD/'01_preprocessing/diagnostics'))
+sys.path.insert(0,str(CACHE))
+from common.config import read_json,write_json,digest,resolve,validate,differences
+from cache_evidence import verify_runtime_record
+import sequential_stage_v2 as validation
+
+FILES=['tune_01_lr_3e-05.json','tune_01_lr_0.0003.json',
+       'tune_02_sgd_0.001.json','tune_02_sgd_0.01.json','tune_02_sgd_0.03.json']
+NAMES={
+ 'control':'原有自适应优化器，学习率0.0001',
+ 'tune_01_lr_3e-05.json':'自适应优化器，学习率0.00003',
+ 'tune_01_lr_0.0003.json':'自适应优化器，学习率0.0003',
+ 'tune_02_sgd_0.001.json':'动量随机梯度下降，学习率0.001',
+ 'tune_02_sgd_0.01.json':'动量随机梯度下降，学习率0.01',
+ 'tune_02_sgd_0.03.json':'动量随机梯度下降，学习率0.03'}
+STATE=STAGE/'pipeline_state.json'
+
+def now():return datetime.datetime.now(datetime.timezone.utc).isoformat()
+
+def write(path,obj):
+    path=Path(path);path.parent.mkdir(parents=True,exist_ok=True)
+    temp=path.with_name(path.name+'.tmp');write_json(temp,obj);os.replace(temp,path)
+
+def status(label,**kwargs):
+    write(STAGE/'execution_state.json',{'status':label,'updated_utc':now(),**kwargs})
+
+def guard():
+    validation.check_sources()
+    registered=read_json(STAGE/'registration.json')
+    for name,value in registered['files'].items():assert digest(STAGE/name)==value,name
+
+def control(seed):
+    state=read_json(RECORD/'01_preprocessing/pipeline_state_v2.json')
+    return RECORD/state['runs'][f'preprocess_01_stretch:{seed}']
+
+def run_path(state,key):return Path(state['runs'][key])
+
+def report(state):
+    intro=(STAGE/'report_intro.md').read_text(encoding='utf-8')
+    lines=[intro,'','## 当前执行结果','',f'更新时间：{now()}（协调世界时）。',
+      '种子只改变训练随机过程，不改变训练验证划分。以下复用对照与新运行均通过完整性核验；未完成实验不参与选取。','',
+      '| 实验 | 随机种子 | 均方误差 | 平均绝对误差 | 高价尾部误差 | 轮数／最佳轮次 | 运行分钟 |',
+      '| --- | ---: | ---: | ---: | ---: | ---: | ---: |']
+    for key,path in state['runs'].items():
+        p=Path(path)
+        if not (p/'status.json').exists() or read_json(p/'status.json')['status']!='completed':continue
+        name,seed=key.rsplit(':',1);m=read_json(p/'metrics.json');cost=read_json(p/'cost.json')
+        lines.append(f"| {NAMES[name]} | {seed} | {m['mse']:.2f} | {m['mae']:.2f} | {m['tail_mse']:.2f} | {cost['epochs']}／{cost['best_epoch']} | {cost['train_seconds']/60:.2f} |")
+    lines+=['','## 逐组结果定位与下一步','']
+    for review in state['reviews']:
+        lines+=[review['text'],'']
+    lines+=['## 当前选择与后续安排','',state.get('decision_text','学习率和优化器候选尚未全部完成，暂不选定训练调优方案。原有直接拉伸方案继续作为共同对照。'),
+      '', '本轮按固定候选范围推进，每次完整数值分析落盘后才运行下一组。分组和案例是误差定位证据，不直接证明因果机制。',
+      '', '## 复现证据','', '[实时状态](execution_state.json) · [运行映射](pipeline_state.json) · [登记配置](configs/) · [逐图分析与曲线](analyses/) · [缓存及一致性验证](cache_optimization/) · [日志](logs/)',
+      '', '缓存构建费用与正式训练费用分开报告，旧实验不重复计入新训练开销。']
+    pointer=CACHE/'cache_pointer.json'
+    if pointer.exists():
+        m=read_json(Path(read_json(pointer)['directory'])/'manifest.json')
+        lines+=['',f"本阶段共享输入缓存一次性构建耗时{m['build_seconds']/60:.2f}分钟，8000张约4.49吉字节；不是每次实验重复构建。"]
+    write_report='\n'.join(lines)+'\n'
+    target=STAGE/'实验报告.md';temp=target.with_suffix('.md.tmp');temp.write_text(write_report,encoding='utf-8');os.replace(temp,target)
+
+def save(state):
+    write(STATE,state);report(state)
+
+def checked(run,ref):
+    validation.BASE=ref
+    validation.complete_checks(run,ref)
+    cfg=read_json(run/'config.json');base=read_json(ref/'config.json')
+    allowed={'training.optimizer','training.lr'}
+    assert set(differences(base,cfg)).issubset(allowed),differences(base,cfg)
+    if (run/'runtime_cache.json').exists():verify_runtime_record(run)
+
+def analyze_review(state,key,run,ref):
+    checked(run,ref)
+    if any(r['key']==key for r in state['reviews']):return
+    output=STAGE/'analyses'/read_json(run/'config.json')['experiment']['id']/run.name
+    log=STAGE/'logs'/f'analysis_{run.name}.log'
+    with log.open('x',encoding='utf-8') as stream:
+        subprocess.run([sys.executable,'-X','utf8',str(STAGE/'diagnostics/analyze.py'),
+            'analyze',str(run),'--control',str(ref)],cwd=CODE,stdout=stream,stderr=subprocess.STDOUT,check=True)
+    a=read_json(output/'analysis.json');b=a['control'];m=a['metrics'];bm=b['metrics']
+    delta=m['mse']-bm['mse'];td=a['train_metrics_at_best_checkpoint']['mse']-b['train_metrics_at_best_checkpoint']['mse']
+    groups=pd.read_csv(output/'group_metrics.csv');g=groups.loc[groups.grouping=='price_band']
+    labels={'low':'低价','middle':'中价','high':'高价'}
+    parts='；'.join(f"{labels[row.group]}组均方误差变化{row.mse_change:+.2f}" for row in g.itertuples())
+    largest=g.loc[g.sse_change.abs().idxmax()]
+    lo,hi=a['bootstrap']['interval_95']
+    interval='区间跨零，证据不足以排除随机波动' if lo<=0<=hi else '区间未跨零，仍需训练种子复核'
+    if td<0 and delta<0:reason='训练与验证均下降，与当前设置改善优化和泛化相符，但最佳轮次不同，不能只凭训练误差证明机制。'
+    elif td<0:reason='训练误差下降但验证退步，提示拟合提升未转化为泛化收益，优先检查泛化差距和尾部误差。'
+    elif delta<0:reason='训练误差未下降而验证改善，可能来自不同优化路径或隐式约束，尚不能认定具体机制。'
+    else:reason='训练和验证均未改善，当前学习率或优化器在共同预算下可能不适配；不据此宣称算法普遍无效。'
+    name,seed=key.rsplit(':',1)
+    question='仅改变固定学习率，检验更新幅度与收敛速度。' if name.startswith('tune_01') else '比较优化器及其配套学习率，不把全部差异归因于优化器名称；权重衰减系数相同，但与自适应优化器的解耦衰减语义不同。'
+    cases=pd.read_csv(output/'selected_cases.csv');case_text=[]
+    for kind,label in [('improved','改善'),('worsened','退步')]:
+        row=cases.loc[cases.case_type==kind].iloc[0]
+        case_text.append(f"{label}案例{Path(row.imageid).stem}：真实价格{row.price:.2f}，对照预测{row.control_prediction:.2f}，候选预测{row.prediction:.2f}")
+    text=(f"### {NAMES[name]}，随机种子{seed}\n\n依据：{question}\n\n"
+      f"结果：相对同种子原有直接拉伸对照，均方误差变化{delta:+.2f}（{delta/bm['mse']:+.2%}），平均绝对误差变化{m['mae']-bm['mae']:+.2f}，高价尾部误差变化{m['tail_mse']-bm['tail_mse']:+.2f}。\n\n"
+      f"定位：{parts}。按样本数加权，绝对贡献最大的是{labels[largest['group']]}组。{'; '.join(case_text)}，价格单位均为千美元。\n\n"
+      f"判断：同一最佳权重的训练误差变化{td:+.2f}；{reason} 配对差值区间为[{lo:.2f}, {hi:.2f}]，{interval}。\n\n"
+      '建议：保留全部结果，完成登记候选后按共同规则选取并复核；不临时扩大学习率或改变停止策略来挽救某个候选。')
+    evidence={'key':key,'text':text,'prediction_sha256':digest(run/'predictions.csv'),
+        'analysis_sha256':digest(output/'analysis.json'),'completed_utc':now(),'kind':'numeric_review_with_conditional_mechanism'}
+    write(output/'review_gate.json',{k:v for k,v in evidence.items() if k!='text'})
+    state['reviews'].append(evidence);save(state)
+
+def train(state,filename,seed):
+    key=f'{filename}:{seed}'
+    if key in state['runs']:
+        p=run_path(state,key);analyze_review(state,key,p,control(seed));return p
+    guard()
+    cfg=validate(resolve(STAGE/'configs'/filename));identifier=cfg['experiment']['id']
+    root=STAGE/'runs'/identifier;before=set(root.iterdir()) if root.exists() else set()
+    log=STAGE/'logs'/f'{identifier}_{seed}.log'
+    state['active']=key;save(state)
+    with log.open('x',encoding='utf-8') as stream:
+        child=subprocess.Popen([sys.executable,'-X','utf8',str(CACHE/'train_cached.py'),'train',
+            str(STAGE/'configs'/filename),'--seed',str(seed)],cwd=CODE,stdout=stream,stderr=subprocess.STDOUT)
+        last_progress=time.monotonic();last_stamp=None;p=None
+        while child.poll() is None:
+            candidates=set(root.iterdir())-before if root.exists() else set()
+            if candidates:
+                assert len(candidates)==1
+                p=candidates.pop()
+                if key not in state['runs']:state['runs'][key]=str(p);write(STATE,state)
+                h=p/'history.csv';n=0;best=None
+                if h.exists():
+                    rows=list(csv.DictReader(h.open(encoding='utf-8-sig')));n=len(rows)
+                    if rows:best=min(float(row['val_mse']) for row in rows)
+                    stamp=h.stat().st_mtime_ns
+                    if stamp!=last_stamp:last_progress=time.monotonic();last_stamp=stamp
+                status('training',experiment=NAMES[filename],seed=seed,run=str(p),completed_epochs=n,best_validation_mse_so_far=best,pid=child.pid)
+            else:status('verifying_cache',experiment=NAMES[filename],seed=seed,pid=child.pid)
+            if time.monotonic()-last_progress>1200:
+                import psutil
+                parent=psutil.Process(child.pid)
+                for sub in parent.children(recursive=True):sub.terminate()
+                parent.terminate();raise RuntimeError('No progress for 20 minutes; inspect before retry')
+            time.sleep(10)
+        if child.returncode:raise RuntimeError(f'Training failed: {key}: {child.returncode}')
+    assert p is not None
+    status('reviewing',experiment=NAMES[filename],seed=seed,run=str(p))
+    guard();analyze_review(state,key,p,control(seed));return p
+
+def mse(p):return read_json(p/'metrics.json')['mse']
+
+def main():
+    import msvcrt
+    lock=(STAGE/'pipeline.lock').open('a+b');lock.seek(0);lock.write(b'0');lock.flush();lock.seek(0)
+    msvcrt.locking(lock.fileno(),msvcrt.LK_NBLCK,1)
+    assert not STATE.exists(),'Existing attempt must be inspected before restart'
+    validation.check_sources()
+    base=validate(resolve(STAGE/'configs/input_frozen.json'))
+    assert base['preprocess']=={'size':224,'geometry':'stretch','normalization':'fixed','filter':'none'}
+    for filename in FILES:
+        cfg=validate(resolve(STAGE/'configs'/filename));diff=differences(base,cfg)
+        expected={'training.lr'} if filename.startswith('tune_01') else {'training.lr','training.optimizer'}
+        assert set(diff)==expected,(filename,diff)
+    paths=[*STAGE.glob('configs/*.json'),*STAGE.glob('diagnostics/*.py'),*CACHE.glob('*.py'),STAGE/'report_intro.md']
+    write(STAGE/'registration.json',{'registered_utc':now(),'files':{str(p.relative_to(STAGE)):digest(p) for p in paths},
+        'initial_queue':FILES,'input_source_sha256':digest(CODE/'configs/selected/input.json'),
+        'preprocessing_manifest_sha256':digest(validation.MANIFEST),
+        'selection_rule':'Best seed2026 candidate per optimizer; ties retain baseline; confirm 2027/2028, retain only lower mean and >=2/3 paired improvements.',
+        'budget':'Each full run same max60/min40/patience15/relative0.001; no per-candidate rescue tuning.'})
+    state={'status':'preparing','runs':{},'reviews':[],'initial_queue':FILES}
+    for seed in [2026,2027,2028]:
+        p=control(seed);checked(p,p)
+        expected=dict(base);expected['seed']=seed
+        assert not differences(expected,{k:v for k,v in read_json(p/'config.json').items() if k!='run_kind'})
+        state['runs'][f'control:{seed}']=str(p)
+    save(state)
+    for script,phase in [('stretch_cache.py','building_cache'),('verify_equivalence.py','verifying_equivalence')]:
+        status(phase)
+        with (STAGE/'logs'/f'{phase}.log').open('x',encoding='utf-8') as stream:
+            subprocess.run([sys.executable,'-X','utf8',str(CACHE/script)],cwd=CODE,
+                stdout=stream,stderr=subprocess.STDOUT,check=True)
+    state['status']='running';save(state)
+    for filename in FILES:train(state,filename,2026)
+    adam=['control',*FILES[:2]];sgd=FILES[2:]
+    best_adam=min(adam,key=lambda f:mse(run_path(state,f'{f}:2026')))
+    best_sgd=min(sgd,key=lambda f:mse(run_path(state,f'{f}:2026')))
+    finalists=[f for f in [best_adam,best_sgd] if f!='control']
+    state['finalists']=finalists;state['decision_text']='单次筛选完成；分别复核两个优化器的最佳学习率，并保留原有设置作为同种子对照。尚未确定最终优化器。';save(state)
+    for seed in [2027,2028]:
+        for filename in finalists:train(state,filename,seed)
+    means={f:float(np.mean([mse(run_path(state,f'{f}:{seed}')) for seed in [2026,2027,2028]])) for f in ['control',*finalists]}
+    wins={f:sum(mse(run_path(state,f'{f}:{seed}'))<mse(control(seed)) for seed in [2026,2027,2028]) for f in finalists}
+    eligible=[f for f in finalists if means[f]<means['control'] and wins[f]>=2]
+    selected=min(eligible,key=lambda f:means[f]) if eligible else 'control'
+    state['selected']=selected;state['means']=means;state['wins']=wins
+    state['status']='optimizer_block_completed';state['active']=None
+    state['decision_text']=f"学习率与优化器复核已完成，当前保留：{NAMES[selected]}，三种子平均均方误差{means[selected]:.2f}。这只是训练调优的前两项结论，不代表整个训练调优阶段完成。下一步根据曲线研究调度和泛化约束，另行登记后继续；当前队列到此结束，不直接启动增强或架构实验。"
+    save(state)
+    write(STAGE/'optimizer_decision.json',{'selected':selected,'mean_mse':means,'paired_improvement_counts':wins,'updated_utc':now()})
+    # Publish the reviewed configuration for the next tuning block, preserving any previous selection.
+    dest=CODE/'configs/selected/optimizer.json'
+    assert not dest.exists(),'Existing optimizer selection requires reconciliation, not overwrite'
+    cfg=resolve(STAGE/'configs/input_frozen.json' if selected=='control' else STAGE/'configs'/selected)
+    cfg={k:v for k,v in cfg.items() if not k.startswith('_') and k not in {'selection','run_kind'}}
+    cfg['experiment']['enforce_changes']=False
+    cfg['selection']={'evidence':str(STAGE/'optimizer_decision.json'),'reason':'Three-seed mean and paired improvement rule; no test selection.'}
+    write_json(dest,cfg)
+    status('optimizer_block_completed',selected=NAMES[selected],next_step='Review curves before registering schedule/dropout/regularization block')
+
+if __name__=='__main__':
+    try:main()
+    except Exception:
+        status('failed',error=traceback.format_exc())
+        raise
