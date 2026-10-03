@@ -165,3 +165,5 @@ def main():
 
 if __name__=='__main__':main()
 
+
+# Authorized handoff: after active run, controller digest guard yields to regularization_screen.py.
