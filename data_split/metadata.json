@@ -1,0 +1,20 @@
+{
+  "version": "split_v1",
+  "rows": 8000,
+  "counts": {
+    "train": 6399,
+    "validation": 1601
+  },
+  "split_seed": 2026,
+  "index_sha256": "e4324a2a55e6d9e33e758a22dec5dfbd3d446103b2400dab858a9a7e55bafc99",
+  "original_split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "source_train_csv_sha256": "6a37aec7c596d98a2342aae32b0cf2eb660e56c92292fd1c324961ca5d8653d5",
+  "source_test_csv_sha256": "3b204c0887200c43fc7ff7e5e0f897b7b82ea16cf2387d55b3bf31759db57de9",
+  "near_pairs": [
+    [
+      "1078.jpg",
+      "3568.jpg"
+    ]
+  ],
+  "contains_price_labels": false
+}

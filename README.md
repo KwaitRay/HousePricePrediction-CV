@@ -23,6 +23,8 @@ local_paths.json                本机配置，不提交
 
 从[实验记录导航](output/experiment_record/README.md)阅读结果，从[模型与实验计划](design/model_and_experiment_plan.md)阅读设计。每个阶段只维护一篇实验报告，运行目录保存证据。
 
+协作时使用[固定划分索引](data_split/README.md)：包含全部8000张有标签图片的训练／验证归属，不含价格或图片。所有同学沿用该索引，避免重新划分导致结果无法直接比较。
+
 ## 本地配置与运行
 
 使用 Python 3.11，在本地虚拟环境安装 `scripts/experiments/requirements.txt`。历史实验使用 PyTorch 2.11.0、torchvision 0.26.0；Muon 需要包含 `torch.optim.Muon` 的 PyTorch。GPU版本应与本机驱动匹配。
