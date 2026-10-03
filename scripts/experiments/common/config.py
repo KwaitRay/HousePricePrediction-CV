@@ -208,10 +208,20 @@ def new_run(c, kind="development"):
         except importlib.metadata.PackageNotFoundError:
             pass
     sources = list(ROOT.glob("*.py")) + [p for d in ("common", "preparation", "traditional", "models", "training", "evaluation") for p in (ROOT / d).glob("*.py")]
-    import os, sys, torch
+    import os, sys
+    # Classical CPU experiments do not require the neural-network dependencies.
+    # A missing torch is acceptable only for mean/traditional methods; broken
+    # installations and neural experiments still fail instead of hiding errors.
+    try:
+        import torch
+    except ModuleNotFoundError as exc:
+        if exc.name != "torch" or c["method"] == "neural":
+            raise
+        torch = None
     write_json(out / "environment.json", {"python": platform.python_version(), "executable": sys.executable,
-                "platform": platform.platform(), "packages": versions, "cuda": torch.version.cuda,
-                "cudnn": torch.backends.cudnn.version(), "gpu": torch.cuda.get_device_name(0) if torch.cuda.is_available() else None,
+                "platform": platform.platform(), "packages": versions, "cuda": torch.version.cuda if torch else None,
+                "cudnn": torch.backends.cudnn.version() if torch else None,
+                "gpu": torch.cuda.get_device_name(0) if torch and torch.cuda.is_available() else None,
                 "cublas_workspace_config": os.environ.get("CUBLAS_WORKSPACE_CONFIG"),
                 "source_hashes": {str(p.relative_to(ROOT)): digest(p) for p in sources}})
     return out

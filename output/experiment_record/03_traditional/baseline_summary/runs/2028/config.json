@@ -1,0 +1,33 @@
+{
+  "method": "traditional",
+  "seed": 2028,
+  "traditional": {
+    "words": 256,
+    "long_edge": 320,
+    "max_keypoints": 256,
+    "per_image_sample": 128,
+    "max_descriptors": 200000,
+    "spatial_pyramid": false,
+    "appearance": "none",
+    "regressor": "ridge",
+    "ridge_alpha": 10.0
+  },
+  "target": {
+    "transform": "scale",
+    "scale": 1000.0,
+    "loss": "mse",
+    "huber_delta": 0.1
+  },
+  "experiment": {
+    "id": "sift_ridge",
+    "name": "传统参照阶段—实验一：局部特征与房价回归",
+    "stage": "01_baselines",
+    "question": "局部纹理是否能提供价格信息",
+    "comparison": "继承配置 ../base.json 对应的已保留方案",
+    "changed_fields": [
+      "method"
+    ],
+    "enforce_changes": true,
+    "status": "ready"
+  }
+}
