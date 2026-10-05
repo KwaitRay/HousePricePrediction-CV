@@ -1,0 +1,37 @@
+{
+  "python": "3.11.15",
+  "packages": {
+    "numpy": "2.4.6",
+    "pandas": "3.0.6",
+    "Pillow": "12.3.0",
+    "opencv-python-headless": "5.0.0.93",
+    "scikit-learn": "1.9.1"
+  },
+  "source_hashes": {
+    "batch_dropout.py": "e1a8dc9415b2ed89aa13e66f1b13db9981119f92f4ed09b8d6b253277165535b",
+    "continue_training.py": "38b5434de912e321e30872aed14294bf046aa334df07598f938ae2b8e26df836",
+    "generate_configs.py": "dc83c15222ec4ce532276857e8dcd4bf3f0ec3040dd9afce94ffb26786e6ba67",
+    "preflight.py": "2c945cc096c6a4e98b75b8bc12530425193e7bdace96008d32b028b2f181b5c4",
+    "run.py": "b89c360edc55e1d0fc9e2a031bb9d8dda45e8da306b609735026bdb3ae744c05",
+    "train_cached.py": "6ee39f322e7fa1393695c06704997254d4dce03b530a1bf2bc90dc58ba719708",
+    "common\\config.py": "f90dad78a6188f1a67fbbb3ab62dda40cbadaf0ed8ed1b75d486d25553775beb",
+    "common\\local_paths.py": "13fe2527b1ab31904823af32c98bb29dc21aa2afc4591a115dfe6d0d602fc721",
+    "common\\metrics.py": "d06d027f49f3614c3d607e4ba34eab27246766350021a6ce805d3c43f919de49",
+    "common\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "preparation\\images.py": "2841fe6a6bbc50f47aa428f7d06a6776b353fe00d9d7f490850e58e343be0568",
+    "preparation\\split.py": "f2885e0bc40abaa08a7717b6e15e70cd43cb12de577f03a9b43055f744610d20",
+    "preparation\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "traditional\\pipeline.py": "131b1ff75a453341477da5ce01700e30e7cd6825a15471fe2bb6248ee2ee26e6",
+    "traditional\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "models\\alexnet.py": "040a64503175ba477115dc3e483e9bfa727bbd9f3081784176609df0920952c6",
+    "models\\encoder.py": "bea0aa4ab5887b679bbf54912de7d208ba30fe7d9a41e1bab07748e922dc4e48",
+    "models\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "training\\cached_input.py": "68859325c5e6c4f6b9bcd3e8b78efea4c984ed41e7b204da9458f7384735c3de",
+    "training\\engine.py": "ada060249311661b8ac60eb62baa0d577e1236c1b2dfb8111a519df825a9c70d",
+    "training\\loading.py": "c908b9b421ffb90b0e44c0f8f49fd2d4f3bc05676c50d65436d448ee7d4e08ed",
+    "training\\optimizers.py": "3a9ffffa1e69608c32b96efd1eaf53a98ec28d368266fd20415470f1450862e3",
+    "training\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evaluation\\report.py": "9672c516b6f40efcd41df0e71e69f3f66f61c0448526f0705d2874a8ab945a27",
+    "evaluation\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}
