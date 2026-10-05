@@ -3,6 +3,7 @@ from pathlib import Path
 import time
 import hashlib
 import json
+import uuid
 import cv2
 import joblib
 import numpy as np
@@ -11,8 +12,9 @@ from sklearn.cluster import MiniBatchKMeans
 from sklearn.linear_model import Ridge
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVR
+from threadpoolctl import threadpool_limits
 from common.config import stable_seed, write_json, ROOT, digest
-from common.metrics import transform_target, inverse_target
+from common.metrics import transform_target, inverse_target, evaluate
 
 
 def unit(x):
@@ -78,7 +80,44 @@ class TraditionalModel:
         self.cfg, self.target, self.seed = cfg, target, seed
 
     def records(self, root, ids, partition="train"):
-        return [extract(Path(root) / partition / name, self.cfg) for name in ids]
+        # Cache only deterministic per-image descriptors, not a fitted vocabulary
+        # or features depending on validation prices. Seeds deliberately share it.
+        from common.local_paths import local_path
+        from importlib.metadata import version
+        signature = {"source": digest(__file__), "opencv": cv2.__version__,
+                     "pillow": version("Pillow"),
+                     "settings": {k: self.cfg[k] for k in
+                                  ("long_edge", "max_keypoints", "appearance")}}
+        signature_hash = hashlib.sha256(json.dumps(signature, sort_keys=True).encode()).hexdigest()
+        cache_root = local_path("cache_root") / "sift_records" / signature_hash
+        cache_root.mkdir(parents=True, exist_ok=True)
+        result, hits = [], 0
+        for i, name in enumerate(ids, 1):
+            path = Path(root) / partition / name
+            # Hash actual bytes: changing an image never reuses its old extraction.
+            cache = cache_root / f"{digest(path)}.npz"
+            if cache.exists():
+                with np.load(cache, allow_pickle=False) as saved:
+                    record = tuple(saved[k].copy() for k in ("desc", "coords", "extra"))
+                hits += 1
+            else:
+                record = extract(path, self.cfg)
+                temp = cache.with_name(cache.name + f".{uuid.uuid4().hex}.tmp")
+                with temp.open("wb") as stream:
+                    np.savez(stream, desc=record[0], coords=record[1], extra=record[2])
+                temp.replace(cache)
+            desc, coords, extra = record
+            if (desc.ndim != 2 or desc.shape[1] != 128 or
+                    coords.shape != (len(desc), 2) or extra.ndim != 1 or
+                    not all(np.isfinite(a).all() for a in record)):
+                raise ValueError(f"Invalid SIFT extraction/cache: {name}")
+            result.append(record)
+            if i % 500 == 0 or i == len(ids):
+                print(f"SIFT: {i}/{len(ids)} images; {hits} cached", flush=True)
+        self.last_extraction_cache_ = {"images": len(result), "hits": hits,
+                                       "misses": len(result) - hits,
+                                       "signature": signature_hash}
+        return result
 
     def features(self, records):
         result = []
@@ -100,6 +139,7 @@ class TraditionalModel:
     def fit(self, root, train):
         cv2.setNumThreads(1)
         rec = self.records(root, train.imageid)
+        extraction_cache = dict(self.last_extraction_cache_)
         pool = []
         for name, (desc, _, _) in zip(train.imageid, rec):
             rng = np.random.default_rng(stable_seed(self.seed, "descriptor", name))
@@ -132,16 +172,32 @@ class TraditionalModel:
                           SVR(C=10, epsilon=.05, gamma="scale", tol=.001, cache_size=512, max_iter=-1))
         self.regressor.fit(self.scaler.transform(features), transform_target(train.price.to_numpy(), self.target))
         self.fit_ids = list(train.imageid)
+        # Evaluate the training fit using the already computed features. This is
+        # diagnostic only, never a substitute for the held-out validation score.
+        fitted = inverse_target(self.regressor.predict(self.scaler.transform(features)), self.target)
+        train_metrics = evaluate(train.price.to_numpy(), fitted, float(train.price.quantile(.9)))
         return {"keypoints": [len(r[0]) for r in rec], "zero_keypoint_count": sum(len(r[0]) == 0 for r in rec),
                 "feature_dimension": features.shape[1], "vocabulary_descriptors": len(pool),
-                "vocabulary_cache_key": cache_key, "vocabulary_reused": reused}
+                "vocabulary_cache_key": cache_key, "vocabulary_reused": reused,
+                "extraction_cache": extraction_cache, "train_metrics": train_metrics}
 
     def predict(self, root, frame, partition="train"):
-        features = self.features(self.records(root, frame.imageid, partition))
+        records = self.records(root, frame.imageid, partition)
+        self.last_prediction_features_ = {"keypoints": [len(r[0]) for r in records],
+                                         "zero_keypoint_count": sum(len(r[0]) == 0 for r in records),
+                                         "extraction_cache": dict(self.last_extraction_cache_)}
+        features = self.features(records)
         return inverse_target(self.regressor.predict(self.scaler.transform(features)), self.target)
 
 
 def fit_traditional(c, root, train, validation, out):
+    # Prevent small matrix operations from oversubscribing Windows CPU threads.
+    # This changes execution resources, not the registered model parameters.
+    with threadpool_limits(limits=c["training"]["cpu_threads"]):
+        return _fit_traditional(c, root, train, validation, out)
+
+
+def _fit_traditional(c, root, train, validation, out):
     start = time.perf_counter()
     model = TraditionalModel(c["traditional"], c["target"], c["seed"])
     info = model.fit(root, train)
@@ -150,5 +206,7 @@ def fit_traditional(c, root, train, validation, out):
     write_json(out / "features.json", info)
     start = time.perf_counter()
     pred = model.predict(root, validation) if len(validation) else None
+    if len(validation):
+        write_json(out / "validation_features.json", model.last_prediction_features_)
     write_json(out / "cost.json", {"train_seconds": train_seconds, "predict_seconds": time.perf_counter()-start})
     return pred

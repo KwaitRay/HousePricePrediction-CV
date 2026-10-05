@@ -1,0 +1,9 @@
+# CPU-only stage 03. No torch/torchvision or pretrained weights required.
+numpy>=1.26
+pandas>=2.2
+Pillow>=10
+scikit-learn>=1.5
+opencv-python-headless>=4.10
+matplotlib>=3.8
+joblib>=1.3
+threadpoolctl>=3.1

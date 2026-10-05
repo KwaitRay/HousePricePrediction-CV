@@ -1,0 +1,162 @@
+{
+  "n_seeds": 3,
+  "mean": {
+    "mse": 145336.73195255862,
+    "mae": 288.66096308074725,
+    "tail_mse": 757394.0879040387,
+    "train_mse": 140235.4399765503
+  },
+  "sample_standard_deviation": {
+    "mse": 1091.5839722491287,
+    "mae": 1.223225174803993,
+    "tail_mse": 4499.252071239237,
+    "train_mse": 340.6925794531532
+  },
+  "mean_baseline": {
+    "mse": 151839.68563807715,
+    "mae": 294.4691962280568,
+    "tail_mse": 841224.6579332527,
+    "n": 1601,
+    "tail_n": 159,
+    "tail_threshold": 1300.0
+  },
+  "mse_reduction_from_mean_percent": 4.2827760464539395,
+  "feature_coverage": [
+    {
+      "seed": 2026,
+      "train": {
+        "n": 6399,
+        "zero_count": 0,
+        "zero_fraction": 0.0,
+        "mean": 255.17221440850133,
+        "quantiles": {
+          "min": 104.0,
+          "q25": 256.0,
+          "median": 256.0,
+          "q75": 256.0,
+          "max": 256.0
+        }
+      },
+      "validation": {
+        "n": 1601,
+        "zero_count": 0,
+        "zero_fraction": 0.0,
+        "mean": 255.28919425359152,
+        "quantiles": {
+          "min": 91.0,
+          "q25": 256.0,
+          "median": 256.0,
+          "q75": 256.0,
+          "max": 256.0
+        }
+      },
+      "vocabulary_cache_key": "9e9e9b9a91bfad959ea100902e816e9c8f2867c146382ce5122ac7182440b244",
+      "vocabulary_descriptors": 200000
+    },
+    {
+      "seed": 2027,
+      "train": {
+        "n": 6399,
+        "zero_count": 0,
+        "zero_fraction": 0.0,
+        "mean": 255.17221440850133,
+        "quantiles": {
+          "min": 104.0,
+          "q25": 256.0,
+          "median": 256.0,
+          "q75": 256.0,
+          "max": 256.0
+        }
+      },
+      "validation": {
+        "n": 1601,
+        "zero_count": 0,
+        "zero_fraction": 0.0,
+        "mean": 255.28919425359152,
+        "quantiles": {
+          "min": 91.0,
+          "q25": 256.0,
+          "median": 256.0,
+          "q75": 256.0,
+          "max": 256.0
+        }
+      },
+      "vocabulary_cache_key": "cb8d43641fbf1a672eef84724a6ee71bc88b72c9832071d2fb3ad8f667c3b6d6",
+      "vocabulary_descriptors": 200000
+    },
+    {
+      "seed": 2028,
+      "train": {
+        "n": 6399,
+        "zero_count": 0,
+        "zero_fraction": 0.0,
+        "mean": 255.17221440850133,
+        "quantiles": {
+          "min": 104.0,
+          "q25": 256.0,
+          "median": 256.0,
+          "q75": 256.0,
+          "max": 256.0
+        }
+      },
+      "validation": {
+        "n": 1601,
+        "zero_count": 0,
+        "zero_fraction": 0.0,
+        "mean": 255.28919425359152,
+        "quantiles": {
+          "min": 91.0,
+          "q25": 256.0,
+          "median": 256.0,
+          "q75": 256.0,
+          "max": 256.0
+        }
+      },
+      "vocabulary_cache_key": "d104cdfa784de8d377056134919da557f0fe30322791d696b66a481714d8e138",
+      "vocabulary_descriptors": 200000
+    }
+  ],
+  "split": {
+    "train_csv_sha256": "6a37aec7c596d98a2342aae32b0cf2eb660e56c92292fd1c324961ca5d8653d5",
+    "test_csv_sha256": "3b204c0887200c43fc7ff7e5e0f897b7b82ea16cf2387d55b3bf31759db57de9",
+    "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+    "tail_threshold": 1300.0,
+    "seed": 2026,
+    "near_pairs": [
+      [
+        "1078.jpg",
+        "3568.jpg"
+      ]
+    ],
+    "n": 8000,
+    "train_n": 6399,
+    "validation_n": 1601
+  },
+  "traditional_settings": {
+    "words": 256,
+    "long_edge": 320,
+    "max_keypoints": 256,
+    "per_image_sample": 128,
+    "max_descriptors": 200000,
+    "spatial_pyramid": false,
+    "appearance": "none",
+    "regressor": "ridge",
+    "ridge_alpha": 10.0
+  },
+  "target": {
+    "transform": "scale",
+    "scale": 1000.0,
+    "loss": "mse",
+    "huber_delta": 0.1
+  },
+  "price_bin_thresholds_from_training": [
+    509.99600000000004,
+    775.0,
+    1300.0
+  ],
+  "notes": [
+    "Metrics are per-model scores, NOT an ensemble of seed predictions.",
+    "Cold and cached fit times are recorded separately, not treated as model speed differences.",
+    "Split reconstructed with repository algorithm; teammate original hash still needs confirmation."
+  ]
+}
