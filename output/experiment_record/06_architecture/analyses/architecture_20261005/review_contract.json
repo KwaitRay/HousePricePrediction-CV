@@ -1,0 +1,11 @@
+{
+  "utc": "2026-10-04T14:49:11.031610+00:00",
+  "passed": true,
+  "checks": [
+    "Historical paired reference yields zero delta",
+    "Mismatched registered initialization rejected",
+    "Changed data manifest rejected"
+  ],
+  "controller_sha256": "4644739559241759463f2d5f461626b457612685dcea1fce3f9117a83235f8bb",
+  "scope": "Post-run review path using temporary copies of a completed control; not an architecture training result"
+}

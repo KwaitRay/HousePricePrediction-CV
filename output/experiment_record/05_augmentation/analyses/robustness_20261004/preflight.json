@@ -1,0 +1,26 @@
+{
+  "augment_08_blur": {
+    "passed": true,
+    "train_samples_checked": 8,
+    "validation_samples_checked": 8,
+    "changed_across_epochs": 2,
+    "preview_images": 32,
+    "views_per_image": 5
+  },
+  "augment_09_noise": {
+    "passed": true,
+    "train_samples_checked": 8,
+    "validation_samples_checked": 8,
+    "changed_across_epochs": 2,
+    "preview_images": 32,
+    "views_per_image": 5
+  },
+  "augment_10_erase": {
+    "passed": true,
+    "train_samples_checked": 8,
+    "validation_samples_checked": 8,
+    "changed_across_epochs": 1,
+    "preview_images": 32,
+    "views_per_image": 5
+  }
+}

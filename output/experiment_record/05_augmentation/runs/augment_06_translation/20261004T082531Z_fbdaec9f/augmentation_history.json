@@ -1,0 +1,642 @@
+[
+  {
+    "epoch": 1,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1863,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 2,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1911,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 3,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1942,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 4,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1947,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 5,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1912,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 6,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1884,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 7,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1923,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 8,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1919,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 9,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1915,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 10,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1920,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 11,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1915,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 12,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1885,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 13,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1819,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 14,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1906,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 15,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1878,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 16,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1871,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 17,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1900,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 18,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1948,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 19,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1918,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 20,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1922,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 21,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1890,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 22,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 2007,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 23,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1863,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 24,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1926,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 25,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1878,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 26,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1933,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 27,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1874,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 28,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1918,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 29,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1853,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 30,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1990,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 31,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1933,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 32,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1929,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 33,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1886,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 34,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1892,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 35,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1923,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 36,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1965,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 37,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1910,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 38,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1926,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 39,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1860,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 40,
+    "operations": {
+      "translation": {
+        "samples": 6399,
+        "triggered": 1978,
+        "skipped": 0,
+        "observed_ranges": {
+          "pixels": [
+            -12,
+            12
+          ]
+        }
+      }
+    }
+  }
+]

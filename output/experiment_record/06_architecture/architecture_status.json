@@ -1,0 +1,227 @@
+{
+  "status": "三项结构初筛及必要种子复核完成；本阶段结束",
+  "updated_utc": "2026-10-04T16:18:18.856157+00:00",
+  "reviews": [
+    {
+      "seed": 2026,
+      "optimizer": "adamw",
+      "schedule": "constant",
+      "mse": 127319.94954574882,
+      "control_mse": 126601.96985951577,
+      "delta_mse": 717.979686233055,
+      "price_groups": [
+        {
+          "group": "低价≤300",
+          "n": 169,
+          "mean_signed_error": 354.04022109798,
+          "delta_mse": -16011.859416236399,
+          "contribution": -1690.1962781661157
+        },
+        {
+          "group": "中价300–700",
+          "n": 775,
+          "mean_signed_error": 144.5353492051229,
+          "delta_mse": -957.6882947095081,
+          "contribution": -463.5905236726226
+        },
+        {
+          "group": "高价700–1300",
+          "n": 498,
+          "mean_signed_error": -134.4892352295803,
+          "delta_mse": 9204.27533683422,
+          "contribution": 2863.0412977785395
+        },
+        {
+          "group": "尾部>1300",
+          "n": 159,
+          "mean_signed_error": -771.6885944750564,
+          "delta_mse": 87.85553244997033,
+          "contribution": 8.7251902932825
+        }
+      ],
+      "prediction_std": 184.53659934580196,
+      "target_std": 389.7863906871689,
+      "train_validation_gap": 31815.150126210603,
+      "best_epoch": 12,
+      "text": "种子2026，adamw／constant：验证均方误差127319.95，相对同种子对照变化+717.98。主要误差变化来自高价700–1300组（对总误差贡献+2863.04）；最佳模型训练与验证误差差距31815.15。分组贡献定位结果来源，不能单凭相关性证明优化机制。先保留该结果，按预登记种子完成复核，不临时改参。",
+      "experiment": "structure_01_small_kernels",
+      "trigger_rate": 0.4987458977965307,
+      "skipped_count": 0,
+      "epochs": 40,
+      "parameters": 56922017,
+      "cost": {
+        "train_seconds": 1584.4314130999846,
+        "epochs": 40,
+        "best_epoch": 12,
+        "loader_setup_seconds": 0.09033159993123263,
+        "stop_reason": "early_stopping",
+        "probe_seconds": 1.3706983000738546,
+        "validation_seconds": 135.07703399995808,
+        "checkpoint_seconds": 3.6091275000944734,
+        "optimizer_updates": 8000,
+        "samples_seen": 255960,
+        "training_seconds": 1404.5950896999566,
+        "seconds_per_update": 0.17557438621249458,
+        "predict_seconds": 2.9855168000794947,
+        "timing_note": "train_seconds包括逐轮验证与固定样本诊断；predict_seconds包括读取和预处理",
+        "stopped_early": true,
+        "peak_cuda_bytes": 1209977344
+      },
+      "train_mse": 95504.79941953822,
+      "analysis": "主要退步来源：高价700–1300，对总误差变化贡献+2863.04；主要改善来源：低价≤300，贡献-1690.20。这是误差分解，不是机制的因果证明。"
+    },
+    {
+      "seed": 2026,
+      "optimizer": "adamw",
+      "schedule": "constant",
+      "mse": 130027.49280599953,
+      "control_mse": 126601.96985951577,
+      "delta_mse": 3425.522946483761,
+      "price_groups": [
+        {
+          "group": "低价≤300",
+          "n": 169,
+          "mean_signed_error": 356.8719016328394,
+          "delta_mse": -20050.45367154796,
+          "contribution": -2116.5063525868864
+        },
+        {
+          "group": "中价300–700",
+          "n": 775,
+          "mean_signed_error": 137.32254003467682,
+          "delta_mse": -8656.744498987813,
+          "contribution": -4190.491559472552
+        },
+        {
+          "group": "高价700–1300",
+          "n": 498,
+          "mean_signed_error": -178.68193716678468,
+          "delta_mse": 9548.972617101677,
+          "contribution": 2970.2613137518024
+        },
+        {
+          "group": "尾部>1300",
+          "n": 159,
+          "mean_signed_error": -827.2039278291547,
+          "delta_mse": 68090.4247245976,
+          "contribution": 6762.259544791392
+        }
+      ],
+      "prediction_std": 137.0470247410259,
+      "target_std": 389.7863906871689,
+      "train_validation_gap": 6094.032646235573,
+      "best_epoch": 8,
+      "text": "种子2026，adamw／constant：验证均方误差130027.49，相对同种子对照变化+3425.52。主要误差变化来自尾部>1300组（对总误差贡献+6762.26）；最佳模型训练与验证误差差距6094.03。分组贡献定位结果来源，不能单凭相关性证明优化机制。先保留该结果，按预登记种子完成复核，不临时改参。",
+      "experiment": "structure_02_inception",
+      "trigger_rate": 0.4987458977965307,
+      "skipped_count": 0,
+      "epochs": 40,
+      "parameters": 56544161,
+      "cost": {
+        "train_seconds": 1845.6933967000805,
+        "epochs": 40,
+        "best_epoch": 8,
+        "loader_setup_seconds": 0.08786830003373325,
+        "stop_reason": "early_stopping",
+        "probe_seconds": 1.8262324999086559,
+        "validation_seconds": 156.28433280007448,
+        "checkpoint_seconds": 2.975107099977322,
+        "optimizer_updates": 8000,
+        "samples_seen": 255960,
+        "training_seconds": 1644.7026486000977,
+        "seconds_per_update": 0.20558783107501222,
+        "predict_seconds": 3.213217100012116,
+        "timing_note": "train_seconds包括逐轮验证与固定样本诊断；predict_seconds包括读取和预处理",
+        "stopped_early": true,
+        "peak_cuda_bytes": 1202225152
+      },
+      "train_mse": 123933.46015976396,
+      "analysis": "主要退步来源：尾部>1300，对总误差变化贡献+6762.26；主要改善来源：中价300–700，贡献-4190.49。这是误差分解，不是机制的因果证明。"
+    },
+    {
+      "seed": 2026,
+      "optimizer": "adamw",
+      "schedule": "constant",
+      "mse": 128714.2563919833,
+      "control_mse": 126601.96985951577,
+      "delta_mse": 2112.2865324675367,
+      "price_groups": [
+        {
+          "group": "低价≤300",
+          "n": 169,
+          "mean_signed_error": 432.7552196140854,
+          "delta_mse": 37720.0518828218,
+          "contribution": 3981.6919226713826
+        },
+        {
+          "group": "中价300–700",
+          "n": 775,
+          "mean_signed_error": 211.7879895063043,
+          "delta_mse": 16461.443767459783,
+          "contribution": 7968.531492680407
+        },
+        {
+          "group": "高价700–1300",
+          "n": 498,
+          "mean_signed_error": -103.98379568623922,
+          "delta_mse": -14987.420583160922,
+          "contribution": -4661.920955911392
+        },
+        {
+          "group": "尾部>1300",
+          "n": 159,
+          "mean_signed_error": -749.2635667117377,
+          "delta_mse": -52118.24842190915,
+          "contribution": -5176.015926972864
+        }
+      ],
+      "prediction_std": 131.60163790893242,
+      "target_std": 389.7863906871689,
+      "train_validation_gap": 7373.937737738495,
+      "best_epoch": 11,
+      "text": "种子2026，adamw／constant：验证均方误差128714.26，相对同种子对照变化+2112.29。主要误差变化来自中价300–700组（对总误差贡献+7968.53）；最佳模型训练与验证误差差距7373.94。分组贡献定位结果来源，不能单凭相关性证明优化机制。先保留该结果，按预登记种子完成复核，不临时改参。",
+      "experiment": "structure_03_residual",
+      "trigger_rate": 0.4987458977965307,
+      "skipped_count": 0,
+      "epochs": 40,
+      "parameters": 57106497,
+      "cost": {
+        "train_seconds": 1665.6178561999695,
+        "epochs": 40,
+        "best_epoch": 11,
+        "loader_setup_seconds": 0.07268510002177209,
+        "stop_reason": "early_stopping",
+        "probe_seconds": 1.379121899837628,
+        "validation_seconds": 132.54812679986935,
+        "checkpoint_seconds": 2.9050825000740588,
+        "optimizer_updates": 8000,
+        "samples_seen": 255960,
+        "training_seconds": 1492.314476399566,
+        "seconds_per_update": 0.18653930954994574,
+        "predict_seconds": 2.8323394000763074,
+        "timing_note": "train_seconds包括逐轮验证与固定样本诊断；predict_seconds包括读取和预处理",
+        "stopped_early": true,
+        "peak_cuda_bytes": 1215354880
+      },
+      "train_mse": 121340.31865424481,
+      "analysis": "主要退步来源：中价300–700，对总误差变化贡献+7968.53；主要改善来源：尾部>1300，贡献-5176.02。这是误差分解，不是机制的因果证明。"
+    }
+  ],
+  "decisions": [
+    {
+      "text": "实验一：小卷积核堆叠种子2026复核完成：未达到追加种子条件。"
+    },
+    {
+      "text": "实验二：多尺度卷积种子2026复核完成：未达到追加种子条件。"
+    },
+    {
+      "text": "实验三：残差连接种子2026复核完成：未达到追加种子条件。"
+    },
+    {
+      "text": "追加种子候选：无。"
+    },
+    {
+      "text": "本轮推荐：保留水平翻转AlexNet。未执行组合，不推断单项叠加有效。"
+    }
+  ]
+}
