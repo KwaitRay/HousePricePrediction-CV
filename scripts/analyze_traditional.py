@@ -4,6 +4,7 @@ No fitting, test predictions, parameter search or neural training happens here.
 Raw per-image predictions and models remain under the ignored local run root.
 """
 import argparse
+import hashlib
 from pathlib import Path
 import sys
 
@@ -29,6 +30,40 @@ def keypoint_summary(values):
             "mean": float(values.mean()),
             "quantiles": dict(zip(["min", "q25", "median", "q75", "max"],
                                   np.quantile(values, [0, .25, .5, .75, 1]).tolist()))}
+
+
+def local_preview_path(output):
+    """Raw-image illustrations always stay inside the git-ignored .local tree."""
+    identity = hashlib.sha256(str(Path(output).resolve()).encode()).hexdigest()[:12]
+    return ROOT / ".local" / "traditional_previews" / identity / "keypoint_examples.png"
+
+
+def save_keypoint_examples(train, counts, cfg, output):
+    destination = local_preview_path(output)
+    if destination.exists():
+        raise FileExistsError("Local keypoint preview exists; choose a new analysis directory")
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    order = np.argsort(counts, kind="stable")
+    chosen = order[np.linspace(0, len(order)-1, 6, dtype=int)]
+    figure, axes = plt.subplots(2, 3, figsize=(12, 7), layout="constrained")
+    image_root = path_at_root(cfg["data"]["root"])
+    try:
+        for ax, index in zip(axes.ravel(), chosen):
+            name = train.iloc[index].imageid
+            _, coords, _ = extract(image_root / "train" / name, cfg["traditional"])
+            with Image.open(image_root / "train" / name) as image:
+                rgb = np.asarray(ImageOps.exif_transpose(image).convert("RGB"))
+            ax.imshow(rgb)
+            if len(coords):
+                ax.scatter(coords[:, 0]*rgb.shape[1], coords[:, 1]*rgb.shape[0],
+                           s=8, facecolors="none", edgecolors="lime", linewidths=.6)
+            ax.set_title(f"Train {name}: {len(coords)} keypoints")
+            ax.axis("off")
+        figure.suptitle("SIFT locations: inspect house vs vegetation/background coverage")
+        figure.savefig(destination, dpi=150)
+    finally:
+        plt.close(figure)
+    return destination
 
 
 def analyze(runs, output, mean_run):
@@ -155,24 +190,7 @@ def analyze(runs, output, mean_run):
     plt.close(figure)
     # Deterministic TRAINING illustrations span the keypoint-count distribution;
     # they diagnose where descriptors occur, not causality or semantic objects.
-    order = np.argsort(counts, kind="stable")
-    chosen = order[np.linspace(0, len(order)-1, 6, dtype=int)]
-    figure, axes = plt.subplots(2, 3, figsize=(12, 7), layout="constrained")
-    image_root = path_at_root(cfg["data"]["root"])
-    for ax, index in zip(axes.ravel(), chosen):
-        name = train.iloc[index].imageid
-        _, coords, _ = extract(image_root / "train" / name, cfg["traditional"])
-        with Image.open(image_root / "train" / name) as image:
-            rgb = np.asarray(ImageOps.exif_transpose(image).convert("RGB"))
-        ax.imshow(rgb)
-        if len(coords):
-            ax.scatter(coords[:, 0]*rgb.shape[1], coords[:, 1]*rgb.shape[0],
-                       s=8, facecolors="none", edgecolors="lime", linewidths=.6)
-        ax.set_title(f"Train {name}: {len(coords)} keypoints")
-        ax.axis("off")
-    figure.suptitle("SIFT locations: inspect house vs vegetation/background coverage")
-    figure.savefig(output / "keypoint_examples.png", dpi=150)
-    plt.close(figure)
+    print(f"Raw-image preview (local only): {save_keypoint_examples(train, counts, cfg, output)}")
     return output
 
 
