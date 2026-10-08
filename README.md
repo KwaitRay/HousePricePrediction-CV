@@ -28,7 +28,7 @@ python scripts/package_submission.py --config configs/01_baselines/sift_ridge.js
 <details>
 <summary>开发环境、完整目录与历史运行说明（需要时展开）</summary>
 
-本仓库集中维护实验代码、设计和各阶段报告。数据集、模型权重、预处理缓存和逐图预测保留在本地，不上传 GitHub。main的训练调优实验一至五记录已完成；实验六的更新由队友分支另行维护，本PR不启动或修改该队列。
+本仓库集中维护实验代码、设计和各阶段报告。数据集、模型权重、预处理缓存和逐图预测保留在本地，不上传 GitHub。训练调优实验一至八、11组数据增强及三项结构初筛均已结束，当前推荐直接拉伸、50%水平翻转的AlexNet，训练队列已结束。
 
 ## 目录
 
@@ -44,6 +44,9 @@ output/experiment_record/       阶段报告、汇总指标、训练历史与曲
   02_baselines/                  基线
   03_traditional/                传统参照
   04_training/                   训练调优
+  05_augmentation/               数据增强与视觉覆盖诊断
+  06_architecture/               独立结构对照
+risk/                           风险与兼容性审查记录
 archive/orchestration/          历史队列源码，仅供审计，不直接执行
 local_paths.example.json        本地路径配置示例
 local_paths.json                本机配置，不提交
@@ -92,10 +95,11 @@ uv pip install --python .venv/Scripts/python.exe -r scripts/experiments/requirem
 
 完整三种子结果、误差分析和已核对的划分指纹见
 [传统参照报告](output/experiment_record/03_traditional/实验报告.md)。
-分析入口 `scripts/analyze_traditional.py` 将本地运行整理为精简证据，
-不导出模型、原始图片或逐图预测。本PR不改变队友的训练调优队列。
+分析入口 `scripts/analyze_traditional.py` 将本地运行整理为精简证据。当前传统分析中的原图示例归档、缓存长路径及提交包路径问题见[风险记录](risk/README.md)；PR #1已合入main，相关风险仍需后续处理。
 
 ### 神经网络主线
+
+训练调优实验六至八未改变原推荐。增强阶段保留50%水平翻转，三种子平均验证均方误差126810.01，比无增强127774.42降低0.75%。小卷积核、多尺度、残差三项独立初筛均未优于同种子对照，保留AlexNet；单种子筛选结论不代表跨种子普遍无效。完整分析见[增强报告](output/experiment_record/05_augmentation/实验报告.md)和[结构报告](output/experiment_record/06_architecture/实验报告.md)。
 
 预处理选用直接拉伸。训练调优保留AdamW 0.0001、固定学习率、有效批量32、随机失活0.5，三种子平均验证均方误差127774.42。Adam复核、余弦衰减、批量16/64及随机失活0/0.2均未满足替换条件。原因、控制变量和局限统一见[训练调优报告](output/experiment_record/04_training/实验报告.md)。Muon剩余候选不继续。
 

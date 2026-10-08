@@ -1,0 +1,642 @@
+[
+  {
+    "epoch": 1,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1902,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.9867615164940933,
+            2.9987999955635365
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 2,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1951,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.999017912603822,
+            2.997671246286054
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 3,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1931,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.9914048767604733,
+            2.993728737727425
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 4,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1878,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.9961660289049594,
+            2.998871159672868
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 5,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1901,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.9988446867635856,
+            2.9987732874537762
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 6,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1911,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.999019976087139,
+            2.9978922479523042
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 7,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1925,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.9973896136084273,
+            2.9996728453214345
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 8,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1937,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.994165798079462,
+            2.9965432823961606
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 9,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1879,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.998814700599878,
+            2.995294732789647
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 10,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1936,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.998288493327088,
+            2.999356025415471
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 11,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1998,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.999091744092302,
+            2.9991296648676755
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 12,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1916,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.9905203225434884,
+            2.9968068803600927
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 13,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1911,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.9974188181415626,
+            2.996749466703047
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 14,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1899,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.9990663205136303,
+            2.9991179123723226
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 15,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1937,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.998237009145599,
+            2.994162072636356
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 16,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1954,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.9976273989608346,
+            2.996488013646963
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 17,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1952,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.997767365329606,
+            2.9997805868732472
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 18,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1949,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.9987466426746354,
+            2.9997140867277565
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 19,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1888,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.9956518966937926,
+            2.9983684862969637
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 20,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1977,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.9985849076795374,
+            2.9942348942677484
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 21,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1980,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.9971768643904455,
+            2.996641923984784
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 22,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1958,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.9956465471293368,
+            2.989243805344141
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 23,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1912,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.992364479910434,
+            2.998769926299458
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 24,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1949,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.9975778380702875,
+            2.9894683182926585
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 25,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1875,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.9964880853184837,
+            2.9947329770005986
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 26,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1934,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.996509621327184,
+            2.9952815151657823
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 27,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1892,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.997572477369939,
+            2.997868095595714
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 28,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1981,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.998776730949219,
+            2.994239728473733
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 29,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1909,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.998235002363323,
+            2.9964582237972737
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 30,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1832,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.996279097472198,
+            2.9993346541070167
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 31,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1933,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.9978705293407146,
+            2.9987639436234197
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 32,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1901,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.995530371283783,
+            2.9948493838033095
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 33,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1909,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.994577866276866,
+            2.9997932623166594
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 34,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1910,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.997431751347947,
+            2.992202938627093
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 35,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1925,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.998871497479527,
+            2.998497457859412
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 36,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1909,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.996997540622107,
+            2.998079836199219
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 37,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1937,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.9992729104376217,
+            2.990234114777417
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 38,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1934,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.997377444087342,
+            2.9993984927667094
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 39,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1950,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.9999521040811548,
+            2.9953882682468684
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 40,
+    "operations": {
+      "rotation": {
+        "samples": 6399,
+        "triggered": 1948,
+        "skipped": 0,
+        "observed_ranges": {
+          "angle": [
+            -2.9997240500254714,
+            2.986009025533387
+          ]
+        }
+      }
+    }
+  }
+]

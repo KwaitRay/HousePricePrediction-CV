@@ -1,11 +1,11 @@
 {
-  "extends": "../selected/multi.json",
+  "extends": "../selected/augmentation.json",
   "experiment": {
     "id": "structure_03_residual",
     "name": "结构改进阶段—实验三：残差连接",
     "stage": "04_architecture",
-    "question": "只继承已保留改动，共享训练设置一致，全部从零训练",
-    "comparison": "继承配置 ../selected/multi.json 对应的已保留方案",
+    "question": "相对共同AlexNet对照，仅改变登记的局部结构，保持其他训练和输入条件一致",
+    "comparison": "已选水平翻转AlexNet，同种子配对对照",
     "changed_fields": [
       "model.residual"
     ],
@@ -13,6 +13,8 @@
     "status": "ready"
   },
   "model": {
+    "small_kernels": false,
+    "inception": false,
     "residual": true
   }
 }

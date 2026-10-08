@@ -1,0 +1,642 @@
+[
+  {
+    "epoch": 1,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1906,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.900125,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 2,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1885,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8992476851851852,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 3,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1919,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8996119133574008,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 4,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1853,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8994384057971014,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 5,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1971,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8996119133574008,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 6,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1907,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8987017167381974,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 7,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1909,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8993220338983051,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 8,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1873,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8994384057971014,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 9,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1887,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8994384057971014,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 10,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1940,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8994384057971014,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 11,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1908,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8996119133574008,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 12,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1883,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8987017167381974,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 13,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1940,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8996119133574008,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 14,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1988,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8994384057971014,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 15,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1914,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8987017167381974,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 16,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1918,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8996119133574008,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 17,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1877,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8996119133574008,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 18,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1920,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8989102564102565,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 19,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1858,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8994384057971014,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 20,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1953,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8980037313432836,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 21,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 2020,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8997841726618705,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 22,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1883,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8994384057971014,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 23,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1939,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.897391826923077,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 24,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1839,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8984913793103448,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 25,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1907,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8994384057971014,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 26,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1975,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8976315789473684,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 27,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1955,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8997841726618705,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 28,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1926,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8989247311827957,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 29,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1973,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.900125,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 30,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1899,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8996119133574008,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 31,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1946,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8983703703703704,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 32,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1984,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8996119133574008,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 33,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1978,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8996119133574008,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 34,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1896,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8996119133574008,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 35,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1892,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8996119133574008,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 36,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1952,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8997967479674797,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 37,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1895,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8996119133574008,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 38,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1966,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.9,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 39,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1908,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8997967479674797,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 40,
+    "operations": {
+      "crop": {
+        "samples": 6399,
+        "triggered": 1963,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.8996119133574008,
+            1.0
+          ]
+        }
+      }
+    }
+  }
+]

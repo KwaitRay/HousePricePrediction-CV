@@ -1,0 +1,5 @@
+{
+  "passed": true,
+  "scope": "Four fixed training images and two forced views per operation",
+  "observations": "Blur and noise are mild after resize; erasing creates small gray rectangles, house remains in inspected views. Does not establish invariance for all images."
+}

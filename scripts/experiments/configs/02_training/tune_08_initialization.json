@@ -10,7 +10,7 @@
       "training.initialization"
     ],
     "enforce_changes": true,
-    "status": "design_required"
+    "status": "ready"
   },
   "training": {
     "initialization": "xavier_convolution"

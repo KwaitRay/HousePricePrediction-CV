@@ -1,0 +1,226 @@
+{
+  "passed": true,
+  "seeds": {
+    "2026": {
+      "baseline": {
+        "initialization_sha256": "235e1783f8da4a874c0d622e1d559f3440a7662c6bf91ddc41cecf4959ca2b51",
+        "parameters": 57007937
+      },
+      "structure_01_small_kernels": {
+        "initialization_sha256": "a234bcca2996f271495d93d3c2de40ddd38f34d7e2a93eef2f5e340c2183ca40",
+        "parameters": 56922017,
+        "shared_parameters_identical": true,
+        "changed_region": "conv2.",
+        "diagnostic": {
+          "shapes": {
+            "conv1": [
+              4,
+              64,
+              55,
+              55
+            ],
+            "conv2": [
+              4,
+              192,
+              27,
+              27
+            ],
+            "conv3": [
+              4,
+              384,
+              13,
+              13
+            ],
+            "conv4": [
+              4,
+              256,
+              13,
+              13
+            ],
+            "conv5": [
+              4,
+              256,
+              13,
+              13
+            ],
+            "spatial_pool": [
+              4,
+              256,
+              6,
+              6
+            ]
+          },
+          "scaled_loss": 0.1052306741476059,
+          "changed_region_gradient_norms": {
+            "conv2.0.weight": 0.19377921521663666,
+            "conv2.0.bias": 0.01170442346483469,
+            "conv2.2.weight": 0.20783458650112152,
+            "conv2.2.bias": 0.011140557006001472
+          }
+        }
+      },
+      "structure_02_inception": {
+        "initialization_sha256": "7685da9ca79fa0c88c479741de9948e802d43f1a6bb3017e4af90dae0a9e8a68",
+        "parameters": 56544161,
+        "shared_parameters_identical": true,
+        "changed_region": "conv3.",
+        "diagnostic": {
+          "shapes": {
+            "conv1": [
+              4,
+              64,
+              55,
+              55
+            ],
+            "conv2": [
+              4,
+              192,
+              27,
+              27
+            ],
+            "conv3": [
+              4,
+              384,
+              13,
+              13
+            ],
+            "conv4": [
+              4,
+              256,
+              13,
+              13
+            ],
+            "conv5": [
+              4,
+              256,
+              13,
+              13
+            ],
+            "spatial_pool": [
+              4,
+              256,
+              6,
+              6
+            ]
+          },
+          "scaled_loss": 0.1031104326248169,
+          "changed_region_gradient_norms": {
+            "conv3.branches.0.0.weight": 0.06344977021217346,
+            "conv3.branches.0.0.bias": 0.004235090222209692,
+            "conv3.branches.1.0.0.weight": 0.06757916510105133,
+            "conv3.branches.1.0.0.bias": 0.005166593473404646,
+            "conv3.branches.1.1.0.weight": 0.1005040630698204,
+            "conv3.branches.1.1.0.bias": 0.005051895976066589,
+            "conv3.branches.2.0.0.weight": 0.04552602767944336,
+            "conv3.branches.2.0.0.bias": 0.0031182118691504,
+            "conv3.branches.2.1.0.weight": 0.108675517141819,
+            "conv3.branches.2.1.0.bias": 0.0036118188872933388,
+            "conv3.branches.3.1.0.weight": 0.07089653611183167,
+            "conv3.branches.3.1.0.bias": 0.0037320407573133707
+          }
+        }
+      },
+      "structure_03_residual": {
+        "initialization_sha256": "defab9d10a728e54c4d7f199290c5d5fdaa15765bd101a28eef94ab35eab20c5",
+        "parameters": 57106497,
+        "shared_parameters_identical": true,
+        "changed_region": "shortcut.",
+        "diagnostic": {
+          "shapes": {
+            "conv1": [
+              4,
+              64,
+              55,
+              55
+            ],
+            "conv2": [
+              4,
+              192,
+              27,
+              27
+            ],
+            "conv3": [
+              4,
+              384,
+              13,
+              13
+            ],
+            "conv4": [
+              4,
+              256,
+              13,
+              13
+            ],
+            "conv5": [
+              4,
+              256,
+              13,
+              13
+            ],
+            "spatial_pool": [
+              4,
+              256,
+              6,
+              6
+            ]
+          },
+          "scaled_loss": 0.10912135243415833,
+          "changed_region_gradient_norms": {
+            "shortcut.weight": 0.2098536491394043,
+            "shortcut.bias": 0.012418114580214024
+          }
+        },
+        "zero_shortcut_recovers_baseline": true
+      }
+    },
+    "2027": {
+      "baseline": {
+        "initialization_sha256": "9f08a25f87fc0636b3d8126a988bcf88610fb7d4dff0de27403e7a8b4f55480e",
+        "parameters": 57007937
+      },
+      "structure_01_small_kernels": {
+        "initialization_sha256": "0458b91c25337ba816105510f351b4d177e72df54f38bc4ea39ec64011ab41e8",
+        "parameters": 56922017,
+        "shared_parameters_identical": true,
+        "changed_region": "conv2."
+      },
+      "structure_02_inception": {
+        "initialization_sha256": "bf1cf84a2c60507da403c041507eca9de205416dffe9e9432ecb27779cccfe9a",
+        "parameters": 56544161,
+        "shared_parameters_identical": true,
+        "changed_region": "conv3."
+      },
+      "structure_03_residual": {
+        "initialization_sha256": "0f8b86df050c63060f28ff0f014ca0cf833a12f40651b3add1c759795ab73529",
+        "parameters": 57106497,
+        "shared_parameters_identical": true,
+        "changed_region": "shortcut."
+      }
+    },
+    "2028": {
+      "baseline": {
+        "initialization_sha256": "7501f82ec4033884da12d54a375e94fb1c4d5ed4a92f1b9a2ef4595877857ad7",
+        "parameters": 57007937
+      },
+      "structure_01_small_kernels": {
+        "initialization_sha256": "83a6261bb306547cb6859fdfb3b7e299e2597b064b1d3f0d25902ec2bb51e909",
+        "parameters": 56922017,
+        "shared_parameters_identical": true,
+        "changed_region": "conv2."
+      },
+      "structure_02_inception": {
+        "initialization_sha256": "7fbeaeecf258718b48f0afd1493ed302ac6db657c6114549424ab290849b1be3",
+        "parameters": 56544161,
+        "shared_parameters_identical": true,
+        "changed_region": "conv3."
+      },
+      "structure_03_residual": {
+        "initialization_sha256": "3a081c7e739c353b911d50c4f25b8372e21b28e1cca55b9bf1091f03e7c2d481",
+        "parameters": 57106497,
+        "shared_parameters_identical": true,
+        "changed_region": "shortcut."
+      }
+    }
+  },
+  "scope": "Shared-layer bitwise initialization; CPU forward/backward on four training images; unchanged cached evaluation inputs"
+}
