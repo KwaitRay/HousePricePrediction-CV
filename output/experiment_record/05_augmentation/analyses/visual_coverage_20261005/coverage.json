@@ -1,0 +1,989 @@
+{
+  "cells": [
+    {
+      "band": "low",
+      "label": "F",
+      "name": "地面外观",
+      "sample_n": 100,
+      "positive": 80,
+      "unknown": 0,
+      "fraction": 0.8,
+      "possible_fraction_upper": 0.8,
+      "ci95": [
+        0.7111708344068438,
+        0.866633066668966
+      ],
+      "population": 680,
+      "estimated_count": 544.0,
+      "estimated_count_ci95": [
+        483.5961673966538,
+        589.3104853348968
+      ],
+      "sample_rare": false,
+      "low_coverage": false,
+      "absolute_coverage_candidate": false
+    },
+    {
+      "band": "low",
+      "label": "A",
+      "name": "航拍或高位全景",
+      "sample_n": 100,
+      "positive": 7,
+      "unknown": 0,
+      "fraction": 0.07,
+      "possible_fraction_upper": 0.07,
+      "ci95": [
+        0.03431926106727332,
+        0.13749514739073268
+      ],
+      "population": 680,
+      "estimated_count": 47.6,
+      "estimated_count_ci95": [
+        23.33709752574586,
+        93.49670022569822
+      ],
+      "sample_rare": false,
+      "low_coverage": false,
+      "absolute_coverage_candidate": false
+    },
+    {
+      "band": "low",
+      "label": "D",
+      "name": "局部或环境特写",
+      "sample_n": 100,
+      "positive": 13,
+      "unknown": 0,
+      "fraction": 0.13,
+      "possible_fraction_upper": 0.13,
+      "ci95": [
+        0.0775716742724062,
+        0.20980351440076173
+      ],
+      "population": 680,
+      "estimated_count": 88.4,
+      "estimated_count_ci95": [
+        52.74873850523622,
+        142.66638979251798
+      ],
+      "sample_rare": false,
+      "low_coverage": false,
+      "absolute_coverage_candidate": false
+    },
+    {
+      "band": "low",
+      "label": "I",
+      "name": "室内",
+      "sample_n": 100,
+      "positive": 0,
+      "unknown": 0,
+      "fraction": 0.0,
+      "possible_fraction_upper": 0.0,
+      "ci95": [
+        0,
+        0.036993498206983715
+      ],
+      "population": 680,
+      "estimated_count": 0.0,
+      "estimated_count_ci95": [
+        0,
+        25.155578780748925
+      ],
+      "sample_rare": true,
+      "low_coverage": true,
+      "absolute_coverage_candidate": true
+    },
+    {
+      "band": "low",
+      "label": "R",
+      "name": "建筑效果图",
+      "sample_n": 100,
+      "positive": 0,
+      "unknown": 0,
+      "fraction": 0.0,
+      "possible_fraction_upper": 0.0,
+      "ci95": [
+        0,
+        0.036993498206983715
+      ],
+      "population": 680,
+      "estimated_count": 0.0,
+      "estimated_count_ci95": [
+        0,
+        25.155578780748925
+      ],
+      "sample_rare": true,
+      "low_coverage": true,
+      "absolute_coverage_candidate": true
+    },
+    {
+      "band": "low",
+      "label": "U",
+      "name": "无法判断",
+      "sample_n": 100,
+      "positive": 0,
+      "unknown": 0,
+      "fraction": 0.0,
+      "possible_fraction_upper": 0.0,
+      "ci95": [
+        0,
+        0.036993498206983715
+      ],
+      "population": 680,
+      "estimated_count": 0.0,
+      "estimated_count_ci95": [
+        0,
+        25.155578780748925
+      ],
+      "sample_rare": true,
+      "low_coverage": true,
+      "absolute_coverage_candidate": true
+    },
+    {
+      "band": "low",
+      "label": "P",
+      "name": "泳池",
+      "sample_n": 100,
+      "positive": 0,
+      "unknown": 0,
+      "fraction": 0.0,
+      "possible_fraction_upper": 0.0,
+      "ci95": [
+        0,
+        0.036993498206983715
+      ],
+      "population": 680,
+      "estimated_count": 0.0,
+      "estimated_count_ci95": [
+        0,
+        25.155578780748925
+      ],
+      "sample_rare": true,
+      "low_coverage": true,
+      "absolute_coverage_candidate": true
+    },
+    {
+      "band": "low",
+      "label": "T",
+      "name": "黄昏夜景",
+      "sample_n": 100,
+      "positive": 2,
+      "unknown": 0,
+      "fraction": 0.02,
+      "possible_fraction_upper": 0.02,
+      "ci95": [
+        0.005501967550162523,
+        0.07001179072854186
+      ],
+      "population": 680,
+      "estimated_count": 13.6,
+      "estimated_count_ci95": [
+        3.7413379341105157,
+        47.60801769540846
+      ],
+      "sample_rare": true,
+      "low_coverage": true,
+      "absolute_coverage_candidate": true
+    },
+    {
+      "band": "low",
+      "label": "O",
+      "name": "明显植被遮挡",
+      "sample_n": 100,
+      "positive": 6,
+      "unknown": 0,
+      "fraction": 0.06,
+      "possible_fraction_upper": 0.06,
+      "ci95": [
+        0.02778612396318876,
+        0.1247681544589569
+      ],
+      "population": 680,
+      "estimated_count": 40.8,
+      "estimated_count_ci95": [
+        18.894564294968358,
+        84.84234503209069
+      ],
+      "sample_rare": false,
+      "low_coverage": false,
+      "absolute_coverage_candidate": false
+    },
+    {
+      "band": "low",
+      "label": "W",
+      "name": "木质山林小屋",
+      "sample_n": 100,
+      "positive": 8,
+      "unknown": 0,
+      "fraction": 0.08,
+      "possible_fraction_upper": 0.08,
+      "ci95": [
+        0.04109346148438136,
+        0.14998107700948496
+      ],
+      "population": 680,
+      "estimated_count": 54.4,
+      "estimated_count_ci95": [
+        27.943553809379324,
+        101.98713236644977
+      ],
+      "sample_rare": false,
+      "low_coverage": false,
+      "absolute_coverage_candidate": false
+    },
+    {
+      "band": "middle",
+      "label": "F",
+      "name": "地面外观",
+      "sample_n": 100,
+      "positive": 74,
+      "unknown": 1,
+      "fraction": 0.74,
+      "possible_fraction_upper": 0.75,
+      "ci95": [
+        0.6462901055081309,
+        0.8245478863771215
+      ],
+      "population": 3111,
+      "estimated_count": 2302.14,
+      "estimated_count_ci95": [
+        2010.6085182357954,
+        2565.168474519225
+      ],
+      "sample_rare": false,
+      "low_coverage": false,
+      "absolute_coverage_candidate": false
+    },
+    {
+      "band": "middle",
+      "label": "A",
+      "name": "航拍或高位全景",
+      "sample_n": 100,
+      "positive": 6,
+      "unknown": 1,
+      "fraction": 0.06,
+      "possible_fraction_upper": 0.07,
+      "ci95": [
+        0.02778612396318876,
+        0.13749514739073268
+      ],
+      "population": 3111,
+      "estimated_count": 186.66,
+      "estimated_count_ci95": [
+        86.44263164948023,
+        427.74740353256936
+      ],
+      "sample_rare": false,
+      "low_coverage": false,
+      "absolute_coverage_candidate": false
+    },
+    {
+      "band": "middle",
+      "label": "D",
+      "name": "局部或环境特写",
+      "sample_n": 100,
+      "positive": 16,
+      "unknown": 1,
+      "fraction": 0.16,
+      "possible_fraction_upper": 0.17,
+      "ci95": [
+        0.10095288488804913,
+        0.2554800476760086
+      ],
+      "population": 3111,
+      "estimated_count": 497.76,
+      "estimated_count_ci95": [
+        314.0644248867208,
+        794.7984283200628
+      ],
+      "sample_rare": false,
+      "low_coverage": false,
+      "absolute_coverage_candidate": false
+    },
+    {
+      "band": "middle",
+      "label": "I",
+      "name": "室内",
+      "sample_n": 100,
+      "positive": 0,
+      "unknown": 1,
+      "fraction": 0.0,
+      "possible_fraction_upper": 0.01,
+      "ci95": [
+        0,
+        0.05448619617870333
+      ],
+      "population": 3111,
+      "estimated_count": 0.0,
+      "estimated_count_ci95": [
+        0,
+        169.50655631194607
+      ],
+      "sample_rare": true,
+      "low_coverage": true,
+      "absolute_coverage_candidate": false
+    },
+    {
+      "band": "middle",
+      "label": "R",
+      "name": "建筑效果图",
+      "sample_n": 100,
+      "positive": 3,
+      "unknown": 1,
+      "fraction": 0.03,
+      "possible_fraction_upper": 0.04,
+      "ci95": [
+        0.010254524024039209,
+        0.09837071435887702
+      ],
+      "population": 3111,
+      "estimated_count": 93.33,
+      "estimated_count_ci95": [
+        31.90182423878598,
+        306.0312923704664
+      ],
+      "sample_rare": true,
+      "low_coverage": true,
+      "absolute_coverage_candidate": false
+    },
+    {
+      "band": "middle",
+      "label": "U",
+      "name": "无法判断",
+      "sample_n": 100,
+      "positive": 1,
+      "unknown": 0,
+      "fraction": 0.01,
+      "possible_fraction_upper": 0.01,
+      "ci95": [
+        0.0017674320641407164,
+        0.05448619617870333
+      ],
+      "population": 3111,
+      "estimated_count": 31.11,
+      "estimated_count_ci95": [
+        5.498481151541768,
+        169.50655631194607
+      ],
+      "sample_rare": true,
+      "low_coverage": true,
+      "absolute_coverage_candidate": false
+    },
+    {
+      "band": "middle",
+      "label": "P",
+      "name": "泳池",
+      "sample_n": 100,
+      "positive": 3,
+      "unknown": 1,
+      "fraction": 0.03,
+      "possible_fraction_upper": 0.04,
+      "ci95": [
+        0.010254524024039209,
+        0.09837071435887702
+      ],
+      "population": 3111,
+      "estimated_count": 93.33,
+      "estimated_count_ci95": [
+        31.90182423878598,
+        306.0312923704664
+      ],
+      "sample_rare": true,
+      "low_coverage": true,
+      "absolute_coverage_candidate": false
+    },
+    {
+      "band": "middle",
+      "label": "T",
+      "name": "黄昏夜景",
+      "sample_n": 100,
+      "positive": 3,
+      "unknown": 0,
+      "fraction": 0.03,
+      "possible_fraction_upper": 0.03,
+      "ci95": [
+        0.010254524024039209,
+        0.08451936429052548
+      ],
+      "population": 3111,
+      "estimated_count": 93.33,
+      "estimated_count_ci95": [
+        31.90182423878598,
+        262.93974230782476
+      ],
+      "sample_rare": true,
+      "low_coverage": true,
+      "absolute_coverage_candidate": false
+    },
+    {
+      "band": "middle",
+      "label": "O",
+      "name": "明显植被遮挡",
+      "sample_n": 100,
+      "positive": 6,
+      "unknown": 0,
+      "fraction": 0.06,
+      "possible_fraction_upper": 0.06,
+      "ci95": [
+        0.02778612396318876,
+        0.1247681544589569
+      ],
+      "population": 3111,
+      "estimated_count": 186.66,
+      "estimated_count_ci95": [
+        86.44263164948023,
+        388.1537285218149
+      ],
+      "sample_rare": false,
+      "low_coverage": false,
+      "absolute_coverage_candidate": false
+    },
+    {
+      "band": "middle",
+      "label": "W",
+      "name": "木质山林小屋",
+      "sample_n": 100,
+      "positive": 3,
+      "unknown": 0,
+      "fraction": 0.03,
+      "possible_fraction_upper": 0.03,
+      "ci95": [
+        0.010254524024039209,
+        0.08451936429052548
+      ],
+      "population": 3111,
+      "estimated_count": 93.33,
+      "estimated_count_ci95": [
+        31.90182423878598,
+        262.93974230782476
+      ],
+      "sample_rare": true,
+      "low_coverage": true,
+      "absolute_coverage_candidate": false
+    },
+    {
+      "band": "upper",
+      "label": "F",
+      "name": "地面外观",
+      "sample_n": 100,
+      "positive": 75,
+      "unknown": 0,
+      "fraction": 0.75,
+      "possible_fraction_upper": 0.75,
+      "ci95": [
+        0.6569553645193867,
+        0.8245478863771215
+      ],
+      "population": 1972,
+      "estimated_count": 1479.0,
+      "estimated_count_ci95": [
+        1295.5159788322308,
+        1626.0084319356836
+      ],
+      "sample_rare": false,
+      "low_coverage": false,
+      "absolute_coverage_candidate": false
+    },
+    {
+      "band": "upper",
+      "label": "A",
+      "name": "航拍或高位全景",
+      "sample_n": 100,
+      "positive": 16,
+      "unknown": 0,
+      "fraction": 0.16,
+      "possible_fraction_upper": 0.16,
+      "ci95": [
+        0.10095288488804913,
+        0.24420269389269986
+      ],
+      "population": 1972,
+      "estimated_count": 315.52,
+      "estimated_count_ci95": [
+        199.07908899923288,
+        481.5677123564041
+      ],
+      "sample_rare": false,
+      "low_coverage": false,
+      "absolute_coverage_candidate": false
+    },
+    {
+      "band": "upper",
+      "label": "D",
+      "name": "局部或环境特写",
+      "sample_n": 100,
+      "positive": 8,
+      "unknown": 0,
+      "fraction": 0.08,
+      "possible_fraction_upper": 0.08,
+      "ci95": [
+        0.04109346148438136,
+        0.14998107700948496
+      ],
+      "population": 1972,
+      "estimated_count": 157.76,
+      "estimated_count_ci95": [
+        81.03630604720004,
+        295.76268386270436
+      ],
+      "sample_rare": false,
+      "low_coverage": false,
+      "absolute_coverage_candidate": false
+    },
+    {
+      "band": "upper",
+      "label": "I",
+      "name": "室内",
+      "sample_n": 100,
+      "positive": 0,
+      "unknown": 0,
+      "fraction": 0.0,
+      "possible_fraction_upper": 0.0,
+      "ci95": [
+        0,
+        0.036993498206983715
+      ],
+      "population": 1972,
+      "estimated_count": 0.0,
+      "estimated_count_ci95": [
+        0,
+        72.95117846417189
+      ],
+      "sample_rare": true,
+      "low_coverage": true,
+      "absolute_coverage_candidate": false
+    },
+    {
+      "band": "upper",
+      "label": "R",
+      "name": "建筑效果图",
+      "sample_n": 100,
+      "positive": 1,
+      "unknown": 0,
+      "fraction": 0.01,
+      "possible_fraction_upper": 0.01,
+      "ci95": [
+        0.0017674320641407164,
+        0.05448619617870333
+      ],
+      "population": 1972,
+      "estimated_count": 19.72,
+      "estimated_count_ci95": [
+        3.485376030485493,
+        107.44677886440297
+      ],
+      "sample_rare": true,
+      "low_coverage": true,
+      "absolute_coverage_candidate": false
+    },
+    {
+      "band": "upper",
+      "label": "U",
+      "name": "无法判断",
+      "sample_n": 100,
+      "positive": 0,
+      "unknown": 0,
+      "fraction": 0.0,
+      "possible_fraction_upper": 0.0,
+      "ci95": [
+        0,
+        0.036993498206983715
+      ],
+      "population": 1972,
+      "estimated_count": 0.0,
+      "estimated_count_ci95": [
+        0,
+        72.95117846417189
+      ],
+      "sample_rare": true,
+      "low_coverage": true,
+      "absolute_coverage_candidate": false
+    },
+    {
+      "band": "upper",
+      "label": "P",
+      "name": "泳池",
+      "sample_n": 100,
+      "positive": 9,
+      "unknown": 0,
+      "fraction": 0.09,
+      "possible_fraction_upper": 0.09,
+      "ci95": [
+        0.048072540002565965,
+        0.16226212852716068
+      ],
+      "population": 1972,
+      "estimated_count": 177.48,
+      "estimated_count_ci95": [
+        94.79904888506009,
+        319.98091745556087
+      ],
+      "sample_rare": false,
+      "low_coverage": false,
+      "absolute_coverage_candidate": false
+    },
+    {
+      "band": "upper",
+      "label": "T",
+      "name": "黄昏夜景",
+      "sample_n": 100,
+      "positive": 7,
+      "unknown": 0,
+      "fraction": 0.07,
+      "possible_fraction_upper": 0.07,
+      "ci95": [
+        0.03431926106727332,
+        0.13749514739073268
+      ],
+      "population": 1972,
+      "estimated_count": 138.04,
+      "estimated_count_ci95": [
+        67.67758282466299,
+        271.14043065452483
+      ],
+      "sample_rare": false,
+      "low_coverage": false,
+      "absolute_coverage_candidate": false
+    },
+    {
+      "band": "upper",
+      "label": "O",
+      "name": "明显植被遮挡",
+      "sample_n": 100,
+      "positive": 6,
+      "unknown": 0,
+      "fraction": 0.06,
+      "possible_fraction_upper": 0.06,
+      "ci95": [
+        0.02778612396318876,
+        0.1247681544589569
+      ],
+      "population": 1972,
+      "estimated_count": 118.32,
+      "estimated_count_ci95": [
+        54.79423645540824,
+        246.04280059306302
+      ],
+      "sample_rare": false,
+      "low_coverage": false,
+      "absolute_coverage_candidate": false
+    },
+    {
+      "band": "upper",
+      "label": "W",
+      "name": "木质山林小屋",
+      "sample_n": 100,
+      "positive": 2,
+      "unknown": 0,
+      "fraction": 0.02,
+      "possible_fraction_upper": 0.02,
+      "ci95": [
+        0.005501967550162523,
+        0.07001179072854186
+      ],
+      "population": 1972,
+      "estimated_count": 39.44,
+      "estimated_count_ci95": [
+        10.849880008920495,
+        138.06325131668453
+      ],
+      "sample_rare": true,
+      "low_coverage": true,
+      "absolute_coverage_candidate": false
+    },
+    {
+      "band": "tail",
+      "label": "F",
+      "name": "地面外观",
+      "sample_n": 100,
+      "positive": 52,
+      "unknown": 2,
+      "fraction": 0.52,
+      "possible_fraction_upper": 0.54,
+      "ci95": [
+        0.4231657776522422,
+        0.6343919169097565
+      ],
+      "population": 636,
+      "estimated_count": 330.72,
+      "estimated_count_ci95": [
+        269.13343458682607,
+        403.4732591546051
+      ],
+      "sample_rare": false,
+      "low_coverage": false,
+      "absolute_coverage_candidate": false
+    },
+    {
+      "band": "tail",
+      "label": "A",
+      "name": "航拍或高位全景",
+      "sample_n": 100,
+      "positive": 22,
+      "unknown": 2,
+      "fraction": 0.22,
+      "possible_fraction_upper": 0.24,
+      "ci95": [
+        0.15001282384605563,
+        0.33232336349814207
+      ],
+      "population": 636,
+      "estimated_count": 139.92,
+      "estimated_count_ci95": [
+        95.40815596609139,
+        211.35765918481835
+      ],
+      "sample_rare": false,
+      "low_coverage": false,
+      "absolute_coverage_candidate": false
+    },
+    {
+      "band": "tail",
+      "label": "D",
+      "name": "局部或环境特写",
+      "sample_n": 100,
+      "positive": 24,
+      "unknown": 2,
+      "fraction": 0.24,
+      "possible_fraction_upper": 0.26,
+      "ci95": [
+        0.16691325556948947,
+        0.35370989449186907
+      ],
+      "population": 636,
+      "estimated_count": 152.64,
+      "estimated_count_ci95": [
+        106.1568305421953,
+        224.95949289682872
+      ],
+      "sample_rare": false,
+      "low_coverage": false,
+      "absolute_coverage_candidate": false
+    },
+    {
+      "band": "tail",
+      "label": "I",
+      "name": "室内",
+      "sample_n": 100,
+      "positive": 0,
+      "unknown": 2,
+      "fraction": 0.0,
+      "possible_fraction_upper": 0.02,
+      "ci95": [
+        0,
+        0.07001179072854186
+      ],
+      "population": 636,
+      "estimated_count": 0.0,
+      "estimated_count_ci95": [
+        0,
+        44.52749890335262
+      ],
+      "sample_rare": true,
+      "low_coverage": true,
+      "absolute_coverage_candidate": true
+    },
+    {
+      "band": "tail",
+      "label": "R",
+      "name": "建筑效果图",
+      "sample_n": 100,
+      "positive": 0,
+      "unknown": 2,
+      "fraction": 0.0,
+      "possible_fraction_upper": 0.02,
+      "ci95": [
+        0,
+        0.07001179072854186
+      ],
+      "population": 636,
+      "estimated_count": 0.0,
+      "estimated_count_ci95": [
+        0,
+        44.52749890335262
+      ],
+      "sample_rare": true,
+      "low_coverage": true,
+      "absolute_coverage_candidate": true
+    },
+    {
+      "band": "tail",
+      "label": "U",
+      "name": "无法判断",
+      "sample_n": 100,
+      "positive": 2,
+      "unknown": 0,
+      "fraction": 0.02,
+      "possible_fraction_upper": 0.02,
+      "ci95": [
+        0.005501967550162523,
+        0.07001179072854186
+      ],
+      "population": 636,
+      "estimated_count": 12.72,
+      "estimated_count_ci95": [
+        3.4992513619033647,
+        44.52749890335262
+      ],
+      "sample_rare": true,
+      "low_coverage": true,
+      "absolute_coverage_candidate": true
+    },
+    {
+      "band": "tail",
+      "label": "P",
+      "name": "泳池",
+      "sample_n": 100,
+      "positive": 16,
+      "unknown": 0,
+      "fraction": 0.16,
+      "possible_fraction_upper": 0.16,
+      "ci95": [
+        0.10095288488804913,
+        0.24420269389269986
+      ],
+      "population": 636,
+      "estimated_count": 101.76,
+      "estimated_count_ci95": [
+        64.20603478879924,
+        155.3129133157571
+      ],
+      "sample_rare": false,
+      "low_coverage": false,
+      "absolute_coverage_candidate": false
+    },
+    {
+      "band": "tail",
+      "label": "T",
+      "name": "黄昏夜景",
+      "sample_n": 100,
+      "positive": 24,
+      "unknown": 0,
+      "fraction": 0.24,
+      "possible_fraction_upper": 0.24,
+      "ci95": [
+        0.16691325556948947,
+        0.33232336349814207
+      ],
+      "population": 636,
+      "estimated_count": 152.64,
+      "estimated_count_ci95": [
+        106.1568305421953,
+        211.35765918481835
+      ],
+      "sample_rare": false,
+      "low_coverage": false,
+      "absolute_coverage_candidate": false
+    },
+    {
+      "band": "tail",
+      "label": "O",
+      "name": "明显植被遮挡",
+      "sample_n": 100,
+      "positive": 3,
+      "unknown": 1,
+      "fraction": 0.03,
+      "possible_fraction_upper": 0.04,
+      "ci95": [
+        0.010254524024039209,
+        0.09837071435887702
+      ],
+      "population": 636,
+      "estimated_count": 19.08,
+      "estimated_count_ci95": [
+        6.521877279288937,
+        62.563774332245785
+      ],
+      "sample_rare": true,
+      "low_coverage": true,
+      "absolute_coverage_candidate": false
+    },
+    {
+      "band": "tail",
+      "label": "W",
+      "name": "木质山林小屋",
+      "sample_n": 100,
+      "positive": 2,
+      "unknown": 0,
+      "fraction": 0.02,
+      "possible_fraction_upper": 0.02,
+      "ci95": [
+        0.005501967550162523,
+        0.07001179072854186
+      ],
+      "population": 636,
+      "estimated_count": 12.72,
+      "estimated_count_ci95": [
+        3.4992513619033647,
+        44.52749890335262
+      ],
+      "sample_rare": true,
+      "low_coverage": true,
+      "absolute_coverage_candidate": true
+    }
+  ],
+  "weighted_totals": [
+    {
+      "label": "F",
+      "name": "地面外观",
+      "weighted_fraction": 0.7275918112205032,
+      "estimated_count": 4655.86
+    },
+    {
+      "label": "A",
+      "name": "航拍或高位全景",
+      "weighted_fraction": 0.1077824660103141,
+      "estimated_count": 689.6999999999999
+    },
+    {
+      "label": "D",
+      "name": "局部或环境特写",
+      "weighted_fraction": 0.14010939209251444,
+      "estimated_count": 896.56
+    },
+    {
+      "label": "I",
+      "name": "室内",
+      "weighted_fraction": 0.0,
+      "estimated_count": 0.0
+    },
+    {
+      "label": "R",
+      "name": "建筑效果图",
+      "weighted_fraction": 0.017666822941084542,
+      "estimated_count": 113.05
+    },
+    {
+      "label": "U",
+      "name": "无法判断",
+      "weighted_fraction": 0.006849507735583685,
+      "estimated_count": 43.83
+    },
+    {
+      "label": "P",
+      "name": "泳池",
+      "weighted_fraction": 0.05822315986872949,
+      "estimated_count": 372.57
+    },
+    {
+      "label": "T",
+      "name": "黄昏夜景",
+      "weighted_fraction": 0.06213627129238943,
+      "estimated_count": 397.60999999999996
+    },
+    {
+      "label": "O",
+      "name": "明显植被遮挡",
+      "weighted_fraction": 0.05701828410689169,
+      "estimated_count": 364.85999999999996
+    },
+    {
+      "label": "W",
+      "name": "木质山林小屋",
+      "weighted_fraction": 0.031237693389592123,
+      "estimated_count": 199.89
+    }
+  ],
+  "annotated": 400,
+  "unannotated": 5999,
+  "caveat": "Sampling estimates, pointwise Wilson intervals without annotation-error adjustment; no full-population visual labels."
+}

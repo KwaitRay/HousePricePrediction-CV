@@ -1,0 +1,6 @@
+{
+  "adapter_sha256": "34764e08f31f6dbaeed5c8dfed90119aab80ccb15be2ed7904fc0a39b97e9160",
+  "weight_norms": "Eligible weights only; read after epoch with no grad and no RNG consumption",
+  "total_loss_monitor": "Sample-mean data loss plus update-mean penalty; diagnostic only, not selection metric",
+  "selection_metric": "Validation original-price MSE, excludes parameter penalties"
+}
