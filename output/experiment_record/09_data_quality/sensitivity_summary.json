@@ -1,0 +1,66 @@
+{
+  "n": 12,
+  "records": [
+    {
+      "case_group": "joint_failure_candidate",
+      "maximum_absolute_occlusion_delta": 26.6600341796875,
+      "absolute_error": 1519.2889821529388
+    },
+    {
+      "case_group": "joint_failure_candidate",
+      "maximum_absolute_occlusion_delta": 80.21746826171875,
+      "absolute_error": 1184.8963284492493
+    },
+    {
+      "case_group": "joint_failure_candidate",
+      "maximum_absolute_occlusion_delta": 44.418701171875,
+      "absolute_error": 1140.4228615760803
+    },
+    {
+      "case_group": "joint_failure_candidate",
+      "maximum_absolute_occlusion_delta": 31.16400146484375,
+      "absolute_error": 1217.2373843193054
+    },
+    {
+      "case_group": "joint_failure_candidate",
+      "maximum_absolute_occlusion_delta": 89.98654174804688,
+      "absolute_error": 1444.7137522697449
+    },
+    {
+      "case_group": "joint_failure_candidate",
+      "maximum_absolute_occlusion_delta": 43.9151611328125,
+      "absolute_error": 1110.9926475753784
+    },
+    {
+      "case_group": "success_control",
+      "maximum_absolute_occlusion_delta": 71.515625,
+      "absolute_error": 7.125154876709075
+    },
+    {
+      "case_group": "success_control",
+      "maximum_absolute_occlusion_delta": 99.96875,
+      "absolute_error": 234.74322943878175
+    },
+    {
+      "case_group": "success_control",
+      "maximum_absolute_occlusion_delta": 45.5035400390625,
+      "absolute_error": 178.31795120239258
+    },
+    {
+      "case_group": "success_control",
+      "maximum_absolute_occlusion_delta": 74.0579833984375,
+      "absolute_error": 266.65477657318115
+    },
+    {
+      "case_group": "success_control",
+      "maximum_absolute_occlusion_delta": 219.2557373046875,
+      "absolute_error": 155.1440715789795
+    },
+    {
+      "case_group": "success_control",
+      "maximum_absolute_occlusion_delta": 50.71722412109375,
+      "absolute_error": 352.0132660865784
+    }
+  ],
+  "note": "Input-gradient and gray occlusion sensitivity, not attention truth; raw images private"
+}

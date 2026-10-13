@@ -1,0 +1,9 @@
+{
+  "counts": {
+    "joint_failure_candidate": 20,
+    "model_disagreement": 20,
+    "success_control": 20
+  },
+  "case_file_sha256": "876c5cc5bdd89a59fdc8e2d13eb345460ea34b20180e51b3d58c6d0f23cf3f3c",
+  "interpretation": "Shared failures only: information limitation remains a hypothesis; no claim of a measured irreducible error bound"
+}
