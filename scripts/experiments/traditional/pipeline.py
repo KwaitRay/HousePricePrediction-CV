@@ -3,7 +3,7 @@ from pathlib import Path
 import time
 import hashlib
 import json
-import uuid
+import tempfile
 import cv2
 import joblib
 import numpy as np
@@ -102,10 +102,18 @@ class TraditionalModel:
                 hits += 1
             else:
                 record = extract(path, self.cfg)
-                temp = cache.with_name(cache.name + f".{uuid.uuid4().hex}.tmp")
-                with temp.open("wb") as stream:
-                    np.savez(stream, desc=record[0], coords=record[1], extra=record[2])
-                temp.replace(cache)
+                # A short sibling temp name avoids adding another hash to long
+                # Windows paths. The full final cache key is unchanged.
+                temp = None
+                try:
+                    with tempfile.NamedTemporaryFile(dir=cache_root, prefix="sift_",
+                                                     suffix=".tmp", delete=False) as stream:
+                        temp = Path(stream.name)
+                        np.savez(stream, desc=record[0], coords=record[1], extra=record[2])
+                    temp.replace(cache)
+                finally:
+                    if temp is not None and temp.exists():
+                        temp.unlink()
             desc, coords, extra = record
             if (desc.ndim != 2 or desc.shape[1] != 128 or
                     coords.shape != (len(desc), 2) or extra.ndim != 1 or

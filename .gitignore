@@ -34,4 +34,5 @@ split*.csv
 train.csv
 test.csv
 cases.png
+keypoint_examples.png
 .DS_Store

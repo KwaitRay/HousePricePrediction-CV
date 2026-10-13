@@ -1,6 +1,9 @@
 """Standard-library checks for the clean submission boundary."""
 import importlib.util
 import json
+import shlex
+import subprocess
+import sys
 from pathlib import Path
 import tempfile
 import unittest
@@ -86,6 +89,43 @@ class SubmissionPackaging(unittest.TestCase):
         predictions.write_text("imageid,price\n1.jpg,nan\n")
         with self.assertRaises(ValueError):
             self.bundle(predictions=predictions)
+
+    def test_absolute_config_with_spaces_is_portable_after_relocation(self):
+        selected = self.root / "scripts/experiments/configs/selected model.json"
+        selected.write_text('{"extends":"base.json"}', encoding="utf-8")
+        # A small stand-in CLI actually resolves and reads the supplied config;
+        # no model training is needed to check command portability.
+        (self.root / "project.py").write_text(
+            "import json, sys\nfrom pathlib import Path\n"
+            "config = Path(__file__).parent / 'scripts/experiments' / sys.argv[2]\n"
+            "assert json.loads(config.read_text())['extends'] == 'base.json'\n",
+            encoding="utf-8")
+        files = pack.make_bundle(self.root, [str(selected)])
+        guide = files["README.txt"].decode("utf-8")
+        self.assertNotIn(str(self.root), guide)
+        manifest = json.loads(files["manifest.json"])
+        self.assertEqual(manifest["configs"], ["configs/selected model.json"])
+        archive_path = self.root / "relocation.zip"
+        pack.export_zip(files, archive_path)
+        relocated = self.root / "different directory"
+        with zipfile.ZipFile(archive_path) as archive:
+            archive.extractall(relocated)
+        # Parse the documented command, then actually run its bundled entrypoint
+        # in a different directory; each config must resolve inside this bundle.
+        for line in guide.splitlines():
+            if not line.startswith("python project.py train "):
+                continue
+            args = shlex.split(line)
+            self.assertEqual(args[3], "configs/selected model.json")
+            self.assertTrue((relocated / pack.EXPERIMENTS / args[3]).is_file())
+            result = subprocess.run([sys.executable, *args[1:]], cwd=relocated,
+                                    capture_output=True, text=True, check=True)
+            self.assertEqual(result.returncode, 0)
+
+    def test_relative_and_absolute_configs_have_identical_manifest_names(self):
+        relative = self.bundle()
+        absolute = pack.make_bundle(self.root, [str(self.root / "scripts/experiments/configs/a.json")])
+        self.assertEqual(relative, absolute)
 
 
 if __name__ == "__main__":

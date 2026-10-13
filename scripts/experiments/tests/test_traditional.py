@@ -142,6 +142,59 @@ class TraditionalChecks(unittest.TestCase):
         self.assertAlmostEqual(summary["zero_fraction"], 1/3)
         self.assertEqual(summary["quantiles"]["median"], 128)
 
+    def test_raw_image_preview_is_local_and_cannot_overwrite(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "train").mkdir()
+            Image.new("RGB", (24, 24), "white").save(root / "train/1.jpg")
+            shared = root / "output/experiment_record/03_traditional/new_summary"
+            train = pd.DataFrame({"imageid": ["1.jpg"]})
+            empty = (np.empty((0, 128)), np.empty((0, 2)), np.empty(0))
+            with patch.object(analysis, "ROOT", root), patch.object(analysis, "path_at_root", return_value=root), patch.object(analysis, "extract", return_value=empty):
+                preview = analysis.save_keypoint_examples(train, [0], self.config(), shared)
+                self.assertTrue(preview.is_file())
+                self.assertTrue(preview.is_relative_to(root / ".local/traditional_previews"))
+                self.assertFalse((shared / "keypoint_examples.png").exists())
+                with self.assertRaises(FileExistsError):
+                    analysis.save_keypoint_examples(train, [0], self.config(), shared)
+
+    def test_long_cache_path_uses_short_temp_and_preserves_cached_values(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "train").mkdir()
+            Image.new("RGB", (24, 24), "white").save(root / "train/1.jpg")
+            # The old temp suffix would exceed 260, while the final file and
+            # new short sibling temp both fit classic Windows path limits.
+            suffix_length = len("/sift_records/") + 64 + 1 + 68
+            cache_root = root / ("x" * (245 - suffix_length - len(str(root)) - 1))
+            cfg = self.config()
+            with patch.dict(os.environ, {"CV_CACHE_ROOT": str(cache_root)}), patch("traditional.pipeline.np.savez", wraps=np.savez) as save:
+                model = TraditionalModel(cfg["traditional"], cfg["target"], 2026)
+                fresh = model.records(root, ["1.jpg"])[0]
+                temporary_name = save.call_args.args[0].name
+                final = next(cache_root.rglob("*.npz"))
+                self.assertGreater(len(str(final)) + 37, 260)
+                self.assertLess(len(str(final)), 260)
+                self.assertLess(len(str(temporary_name)), len(str(final)))
+                self.assertEqual(list(cache_root.rglob("*.tmp")), [])
+                cached = model.records(root, ["1.jpg"])[0]
+                self.assertEqual(model.last_extraction_cache_["hits"], 1)
+                for a, b in zip(fresh, cached):
+                    np.testing.assert_array_equal(a, b)
+
+    def test_failed_cache_write_cleans_temporary_file(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "train").mkdir()
+            Image.new("RGB", (24, 24), "white").save(root / "train/1.jpg")
+            with patch.dict(os.environ, {"CV_CACHE_ROOT": str(root / "cache")}), patch("traditional.pipeline.np.savez", side_effect=OSError("simulated write failure")):
+                cfg = self.config()
+                model = TraditionalModel(cfg["traditional"], cfg["target"], 2026)
+                with self.assertRaises(OSError):
+                    model.records(root, ["1.jpg"])
+            self.assertEqual(list((root / "cache").rglob("*.tmp")), [])
+            self.assertEqual(list((root / "cache").rglob("*.npz")), [])
+
     def test_environment_preserves_torch_present_metadata(self):
         cfg = self.config()
         fake_torch = SimpleNamespace(version=SimpleNamespace(cuda="test-cuda"),

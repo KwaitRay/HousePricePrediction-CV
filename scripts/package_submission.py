@@ -51,6 +51,19 @@ def config_files(root, configs):
     return sorted(selected)
 
 
+def portable_config_names(root, configs):
+    """Resolve inputs once, then refer only to paths present inside the bundle."""
+    experiments = (root / EXPERIMENTS).resolve()
+    names = []
+    for name in configs:
+        path = Path(name)
+        path = path.resolve() if path.is_absolute() else (experiments / path).resolve()
+        if not path.is_relative_to(experiments / "configs"):
+            raise ValueError(f"Configuration must stay within configs/: {path}")
+        names.append(path.relative_to(experiments).as_posix())
+    return names
+
+
 def collect(root, configs):
     """Use a whitelist: do not recursively copy the whole repository."""
     root = root.resolve()
@@ -107,6 +120,7 @@ def make_bundle(root, configs, split=None, predictions=None, final=False):
     if final and (split is None or predictions is None):
         raise ValueError("Final export requires --split and --predictions; otherwise use preview mode")
     files = collect(root, configs)
+    configs = portable_config_names(root, configs)
     if split is not None:
         meta = split.with_suffix(".json")
         # Preserve the exact frozen split pair instead of creating a new split.
@@ -115,7 +129,7 @@ def make_bundle(root, configs, split=None, predictions=None, final=False):
     if predictions is not None:
         files["predictions.csv"] = predictions_bytes(predictions)
     commands = "\n".join(
-        f"python project.py train {name} --seed {seed}"
+        f"python project.py train {json.dumps(name, ensure_ascii=False)} --seed {seed}"
         for name in configs for seed in (2026, 2027, 2028))
     guide = f"""HOUSE PRICE PREDICTION - CODE BUNDLE
 Export mode: {'FINAL CANDIDATE (requires human review)' if final else 'DEVELOPMENT PREVIEW - NOT A FINAL SUBMISSION'}
