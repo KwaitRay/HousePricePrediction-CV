@@ -1,0 +1,61 @@
+{
+  "status": "completed",
+  "reviews": [
+    {
+      "head": "mean",
+      "seed": 2026,
+      "mse": 120774.16151018173,
+      "mae": 263.87658966321067,
+      "tail_mse": 577900.4793619328,
+      "n": 1601,
+      "tail_n": 159,
+      "tail_threshold": 1300.0,
+      "delta_mse": -5827.808349334038,
+      "best_epoch": 18
+    },
+    {
+      "head": "mean",
+      "seed": 2027,
+      "mse": 122278.5450969994,
+      "mae": 264.72148161842017,
+      "tail_mse": 572816.9288623085,
+      "n": 1601,
+      "tail_n": 159,
+      "tail_threshold": 1300.0,
+      "delta_mse": -2741.800998951425,
+      "best_epoch": 14
+    },
+    {
+      "head": "mean",
+      "seed": 2028,
+      "mse": 123949.96818563809,
+      "mae": 255.83941263204332,
+      "tail_mse": 723630.460815235,
+      "n": 1601,
+      "tail_n": 159,
+      "tail_threshold": 1300.0,
+      "delta_mse": -4857.738051586828,
+      "best_epoch": 14
+    },
+    {
+      "head": "one_layer",
+      "seed": 2026,
+      "mse": 124389.27648773571,
+      "mae": 259.54829270864536,
+      "tail_mse": 685199.5560732029,
+      "n": 1601,
+      "tail_n": 159,
+      "tail_threshold": 1300.0,
+      "delta_mse": -2212.6933717800566,
+      "best_epoch": 12
+    }
+  ],
+  "decisions": [
+    "平均汇总小头三种子复核：优于AlexNet，保留为候选。",
+    "单层初筛未同时优于小头和AlexNet，不追加种子、不开展两层；结论仅限初筛。"
+  ],
+  "protocol": "scratch mean head; one-layer screen versus both mean head and retained AlexNet; replicate winners; two layers only after one layer accepted",
+  "cuda": "12.8",
+  "torch": "2.11.0+cu128",
+  "gpu": "NVIDIA GeForce RTX 2060"
+}

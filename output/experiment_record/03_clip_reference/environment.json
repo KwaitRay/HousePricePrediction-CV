@@ -1,0 +1,12 @@
+{
+  "checkpoint_sha256": {
+    "ViT-B-32.pt": "40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af"
+  },
+  "torch": "2.11.0+cu128",
+  "open_clip": "3.3.0",
+  "torchvision": "0.26.0+cu128",
+  "pillow": "12.3.0",
+  "device": "cuda",
+  "precision": "float32",
+  "source_sha256": "a724e21419d4a7f9632ef410723a6650f294f7f6f5a20d89fe799e17d4667ef8"
+}
