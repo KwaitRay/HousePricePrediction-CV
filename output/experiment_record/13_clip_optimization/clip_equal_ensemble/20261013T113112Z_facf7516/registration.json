@@ -1,0 +1,24 @@
+{
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "weights_learned": false,
+  "models": [
+    "13_clip_optimization\\clip_b16_kernel\\20261013T111716Z_5ecc630f",
+    "13_clip_optimization\\clip_multiview_kernel\\20261013T111418Z_5ad0f81d"
+  ],
+  "model_sha256": [
+    "34a19b86216b710d541d7edc230cd8608d4e22b6adb790611cc5fe0bf95d32da",
+    "80853dee1b29ba18da6fc41529c196581f2c035d461da77eae8dc574e7db7c6f"
+  ],
+  "prediction_sha256": [
+    "911cea29ca7ff82c81ca71ad0fd7d80f4f222b3ffdd9a3534b8c784a40f54f00",
+    "bff2f318faffb7e43150001358bde3c00b33a41675bae458a44bbb762831fd01"
+  ],
+  "rule": "Average each constituent nonnegative prediction with fixed equal weight",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "source_sha256": "a52a58aa23f236002d795a58d237a08199ce9371c2e97bb16cc70d1624a5fd70",
+  "course_scope": "Exploratory CLIP ensemble; eligibility unresolved",
+  "selection_caveat": "Constituents selected after development validation comparisons; no fitting of blend weights to validation labels"
+}

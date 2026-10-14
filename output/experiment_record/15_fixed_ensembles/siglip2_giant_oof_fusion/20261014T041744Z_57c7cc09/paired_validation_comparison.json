@@ -1,0 +1,49 @@
+{
+  "baseline": "15_fixed_ensembles/encoder_family_oof_fusion/20261014T012302Z_b883fad1",
+  "candidate": "15_fixed_ensembles/siglip2_giant_oof_fusion/20261014T041744Z_57c7cc09",
+  "baseline_prediction_sha256": "245f08b74509980bb77c7af6fe76265f261070e7b0e392fb6b4b0587afb8c77d",
+  "candidate_prediction_sha256": "a72bfe0ece55734729646f0620e420cb50f2b7b7a7a2779fa094fcfaa5b16af6",
+  "n": 1601,
+  "paired_mse_delta": -963.825631363362,
+  "group_bootstrap_seed": 2026,
+  "group_bootstrap_replicates": 1000,
+  "paired_mse_delta_95_percent_ci": [
+    -1534.5619327558084,
+    -355.4392246987759
+  ],
+  "price_bands": [
+    {
+      "price_band": "≤300",
+      "n": 169,
+      "baseline_mse": 25782.287946498374,
+      "giant_fusion_mse": 25630.59060077961,
+      "baseline_bias": 118.96813168050971,
+      "giant_fusion_bias": 119.1684468497614
+    },
+    {
+      "price_band": "300–700",
+      "n": 775,
+      "baseline_mse": 25148.645553874605,
+      "giant_fusion_mse": 24501.513770863952,
+      "baseline_bias": 79.67355492914255,
+      "giant_fusion_bias": 78.72020490378674
+    },
+    {
+      "price_band": "700–1300",
+      "n": 498,
+      "baseline_mse": 51746.24842629463,
+      "giant_fusion_mse": 49869.48702865591,
+      "baseline_bias": -11.271915422113862,
+      "giant_fusion_bias": -10.481258962452415
+    },
+    {
+      "price_band": ">1300",
+      "n": 159,
+      "baseline_mse": 271781.8091588425,
+      "giant_fusion_mse": 271270.5281743838,
+      "baseline_bias": -425.09367208611627,
+      "giant_fusion_bias": -426.26374065803117
+    }
+  ],
+  "caveat": "Conditional fixed-validation paired comparison; repeated method selection not corrected; not evidence of meeting the preregistered training-side gate or Kaggle target"
+}

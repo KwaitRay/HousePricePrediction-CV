@@ -1,0 +1,10 @@
+{
+  "head": "fixed_equal_ensemble",
+  "mse": 78449.23151172757,
+  "mae": 203.39098586828007,
+  "tail_mse": 408953.2254029266,
+  "n": 1601,
+  "tail_n": 159,
+  "tail_threshold": 1300.0,
+  "training_oof_mse": 82789.15010044597
+}

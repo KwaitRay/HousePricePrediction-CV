@@ -1,0 +1,9 @@
+{
+  "status": "completed",
+  "controller_pid": 16528,
+  "reference_pid": 16556,
+  "cache_key": "bab1d08edf868e4350bb353f4dac15f6b52b71395d78d2542659f691584a6bdd",
+  "cache_family": "blip_features",
+  "name": "blip_base_kernel",
+  "exit_code": 0
+}

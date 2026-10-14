@@ -1,0 +1,14 @@
+{
+  "source_model": "13_clip_optimization/clip_l14_multiview_kernel/20261013T120554Z_e2a41622",
+  "slope": 1.0313732454505844,
+  "intercept_thousand_usd": -22.94666249693501,
+  "fit_scope": "Only base training OOF predictions and training labels; no validation calibration fitting",
+  "transform": "max(0,slope*base_nonnegative_prediction+intercept)",
+  "source_head_sha256": "8c73917dcfbaf805b3d24e72c27bb821fc12ee61307ac5212849c2a7c2596269",
+  "source_oof_sha256": "66eb9ddd4364a7740ee25c1b6e78e9b4e93a9b8c253b300247aa13bac0d28027",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "source_sha256": "c24828fcbf3077a2aa29c2450ffa2f70372ca65ce2a4dfb515ad5b65f065dcc6",
+  "caveat": "Calibration training-fit error is not independent OOF performance; base hyperparameters already selected on these folds; development model selection bias remains",
+  "course_scope": "Exploratory CLIP visual components, eligibility unresolved",
+  "test_images_used": false
+}

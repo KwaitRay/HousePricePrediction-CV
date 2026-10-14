@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "scope": "12 supplied labeled images per full-refit component; KRR linear-system identity independent of prediction adapter",
+  "all_validation_predictions_replayed_before_refit": true,
+  "imageids": [
+    "5115.jpg",
+    "6648.jpg",
+    "212.jpg",
+    "3736.jpg",
+    "6325.jpg",
+    "6806.jpg",
+    "2922.jpg",
+    "639.jpg",
+    "1430.jpg",
+    "2963.jpg",
+    "2839.jpg",
+    "5146.jpg"
+  ],
+  "components": [
+    {
+      "component": 0,
+      "kernel_type": "image_rbf",
+      "max_abs_prediction_identity_error": 5.5706550483591855e-12,
+      "full_head_sha256": "8634a45712b23d25d0abcb26c5b808235bdc461d834db0d62b1452580627a920"
+    },
+    {
+      "component": 1,
+      "kernel_type": "image_rbf",
+      "max_abs_prediction_identity_error": 6.934897101018578e-12,
+      "full_head_sha256": "90d95f22101e9f7724d610eec3cb48dcad2a4d7de6b56ee9849da08bbfa52098"
+    },
+    {
+      "component": 2,
+      "kernel_type": "pls_product_rbf",
+      "max_abs_prediction_identity_error": 9.094947017729282e-12,
+      "full_head_sha256": "9c615ac96ee2e4d6258cb5b71a908271d36b0ee82e87531d41feb5bdad989cec"
+    },
+    {
+      "component": 3,
+      "kernel_type": "image_rbf",
+      "max_abs_prediction_identity_error": 8.697043085703626e-12,
+      "full_head_sha256": "d5cb5a076250ab686402f9a6c29474dcea3971e03fd10b9a1da832a176621fa4"
+    },
+    {
+      "component": 4,
+      "kernel_type": "image_rbf",
+      "max_abs_prediction_identity_error": 7.219114195322618e-12,
+      "full_head_sha256": "9c9a3534fc5aa3f6ec879331e787388dc082faf6d66477fdb1e8d36965ad7b06"
+    }
+  ],
+  "source_sha256": "027306f52843a0fa6f656a3d8ed9432ded70fa17280a2716333b19a0ad389d7e",
+  "test_images_used": false
+}

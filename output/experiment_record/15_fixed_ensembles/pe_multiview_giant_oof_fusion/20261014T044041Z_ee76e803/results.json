@@ -1,0 +1,28 @@
+{
+  "head": "convex_oof_stack",
+  "mse": 56549.273825136086,
+  "mae": 168.41304268356728,
+  "tail_mse": 270159.95125138236,
+  "n": 1601,
+  "tail_n": 159,
+  "tail_threshold": 1300.0,
+  "baseline_validation_mse": 57982.72725781495,
+  "meta_cv_mse": 58211.50880417518,
+  "baseline_meta_cv_mse": 58968.86651367765,
+  "meta_folds_won": 3,
+  "meta_training_fit_mse": 58113.58368373105,
+  "weights": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.2745198820575424,
+    0.06935627292265349,
+    0.20445782289904946,
+    0.45166602212075474
+  ],
+  "export_eligible": true,
+  "caveat": "Base OOF predictions and hyperparameters were previously selected; meta cross-fitting does not refit base models, so it is not an unbiased nested estimate"
+}

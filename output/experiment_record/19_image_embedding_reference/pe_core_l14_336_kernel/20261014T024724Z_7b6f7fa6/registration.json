@@ -1,0 +1,26 @@
+{
+  "method": "mean-centered RBF kernel ridge",
+  "gammas": [
+    1.0,
+    4.0,
+    16.0
+  ],
+  "alphas": [
+    0.01,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "train_only_group_cv": 3,
+  "feature_cache_key": "9b10d06398eadd9e96bfd61ea68958424d28b605e281683adb7e6cd7ff8949c5",
+  "manifest_sha256": "ee9ae6fecb6161e93f7855091cf08ffa4dd812cfe47179c0e49fc8c6976e6c71",
+  "source_sha256": "a12183782b840617cfa65673b67cae5864ae750c27e33de5fd1d12e507042a10",
+  "original_manifest_sha256": null,
+  "feature_dim": 1024,
+  "cache_family": "pe_core_features",
+  "course_scope": "General-purpose frozen image tower only; no MLLM or price-task model",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "dtype": "float64",
+  "centering": "Only training fold target mean, no validation label use",
+  "selection": "Original-price unweighted clipped MSE over all training OOF images; validation evaluated once after selection"
+}

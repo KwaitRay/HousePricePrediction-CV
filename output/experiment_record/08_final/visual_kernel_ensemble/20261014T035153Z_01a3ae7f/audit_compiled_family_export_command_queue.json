@@ -1,0 +1,11 @@
+{
+  "status": "completed",
+  "controller_pid": 24076,
+  "reference_pid": 28768,
+  "command": [
+    "scripts/experiments/audit_visual_submission.py",
+    "--prepared-run",
+    ".local/experiment_record/08_final/visual_kernel_ensemble/20261014T035153Z_01a3ae7f"
+  ],
+  "exit_code": 0
+}

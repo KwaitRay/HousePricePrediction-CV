@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "batch_size": 1,
+  "probe_imageids": [
+    "1.jpg",
+    "2.jpg",
+    "3.jpg",
+    "4.jpg"
+  ],
+  "finite_unit_features": true,
+  "repeated_feature_replay_passed": true,
+  "peak_allocated_mib": 2251.60302734375,
+  "peak_reserved_mib": 2340.0,
+  "text_modules_used": false
+}

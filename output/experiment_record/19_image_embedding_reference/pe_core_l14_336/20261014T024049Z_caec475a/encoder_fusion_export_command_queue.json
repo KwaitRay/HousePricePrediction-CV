@@ -1,0 +1,13 @@
+{
+  "status": "failed",
+  "controller_pid": 38044,
+  "reference_pid": 31172,
+  "command": [
+    "scripts/experiments/visual_kernel_submission.py",
+    "--phase",
+    "infer",
+    "--prepared-run",
+    "D:\\\u5b66\u4e60\\\u7814\u7a76\u751f\\graduate 26s2\\COMP 90086 CV\\Final_Assignment\\cv-house-price\\.local\\experiment_record\\08_final\\visual_kernel_ensemble\\20261014T025747Z_ec2c6d25"
+  ],
+  "exit_code": 1
+}

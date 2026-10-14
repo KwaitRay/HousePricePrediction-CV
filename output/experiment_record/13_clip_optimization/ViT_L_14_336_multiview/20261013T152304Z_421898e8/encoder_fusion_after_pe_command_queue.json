@@ -1,0 +1,28 @@
+{
+  "status": "not_started",
+  "controller_pid": 27308,
+  "reference_pid": 6916,
+  "command": [
+    "scripts/experiments/encoder_oof_fusion.py",
+    "--phase",
+    "run",
+    "--protocol-dir",
+    "D:\\\u5b66\u4e60\\\u7814\u7a76\u751f\\graduate 26s2\\COMP 90086 CV\\Final_Assignment\\cv-house-price\\.local\\experiment_record\\15_fixed_ensembles\\encoder_family_oof_fusion\\20261014T012302Z_b883fad1",
+    "--gpu-predecessor-status",
+    "output/experiment_record/13_clip_optimization/ViT_L_14_336_multiview/20261013T152304Z_421898e8/metric_export_after_pe_command_queue.json",
+    "--gpu-predecessor-pid",
+    "5744"
+  ],
+  "reason": "Predecessor not completed",
+  "predecessor": {
+    "status": "failed",
+    "controller_pid": 6916,
+    "reference_pid": 37280,
+    "command": [
+      "scripts/experiments/pe_core_visual_reference.py",
+      "--weights-dir",
+      ".local\\cache\\pe_core_weights\\e63206c8e3a0e9b699e40f31080eebd78fd2258e"
+    ],
+    "exit_code": 1
+  }
+}

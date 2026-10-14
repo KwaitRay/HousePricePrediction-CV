@@ -1,0 +1,14 @@
+{
+  "source_sha256": "71d8a96d32e6aa37a5e7e494ae9be47938832feacebd74d07cc9fa94ec55d665",
+  "attention_head_sha256": "ad034ae2f888a98a8fd3c365735599c93e7ee339ad9c82e3168d0d21cc3225f0",
+  "prediction_sha256": "feec0c53caf0b9f541aecdc40d84d6d463cd42d0bab0f8aa97735d0e8bef52ab",
+  "token_manifest_sha256": "df8b157d7fda79b2b5bc39dfc20e1499f6308fe97cd543e10b06239a72b734a9",
+  "token_array_sha256_at_training": "731e84f062eff579d6b3a89e2a79d2f332aca49652b0df600840ed4dfa38ad46",
+  "scope": "Post-training diagnostics only; cached baseline held constant for sensitivity; gradient is of the learned residual branch, not the entire price model",
+  "selection": "4 largest high-price underestimates, 2 best high-price cases, 2 largest low-price overestimates, 2 fixed random middle-price, 2 fixed random validation cases",
+  "labels_role": "Select and describe diagnosis cases only; no training, prompt changes, model selection or calibration",
+  "token_position_caveat": "Last-layer tokens contain global context; maps show nominal patch locations, not independent local pixel effects",
+  "test_images_used": false,
+  "gpu_used": false,
+  "cpu_prediction_replay_passed": true
+}

@@ -1,0 +1,11 @@
+{
+  "head": "fixed_equal_ensemble",
+  "mse": 80603.57122204533,
+  "mae": 205.36484758617578,
+  "tail_mse": 416248.9660276165,
+  "n": 1601,
+  "tail_n": 159,
+  "tail_threshold": 1300.0,
+  "training_oof_mse": 85908.37602062566,
+  "validation_error_correlation": 0.9255747252563955
+}

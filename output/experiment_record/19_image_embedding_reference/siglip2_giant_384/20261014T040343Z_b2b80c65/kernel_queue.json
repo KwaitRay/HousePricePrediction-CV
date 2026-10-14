@@ -1,0 +1,16 @@
+{
+  "status": "completed",
+  "command": [
+    "D:\\学习\\研究生\\graduate 26s2\\COMP 90086 CV\\Final_Assignment\\cv-house-price\\.venv\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "D:\\学习\\研究生\\graduate 26s2\\COMP 90086 CV\\Final_Assignment\\cv-house-price\\scripts\\experiments\\frozen_kernel_search.py",
+    "--name",
+    "siglip2_giant_384_kernel",
+    "--cache-family",
+    "siglip2_giant_features",
+    "--cache-key",
+    "eebfca6336987022166c4aae23008ff570150bb2ad16265085c0c60e69fec709"
+  ],
+  "exit_code": 0
+}

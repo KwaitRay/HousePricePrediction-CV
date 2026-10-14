@@ -1,0 +1,43 @@
+{
+  "sources": [
+    "13_clip_optimization/clip_l14_multiview_kernel/20261013T120554Z_e2a41622",
+    "13_clip_optimization/clip_l14_multiview_weighted_kernel/20261013T135817Z_d44b33db"
+  ],
+  "source_head_sha256": [
+    "8c73917dcfbaf805b3d24e72c27bb821fc12ee61307ac5212849c2a7c2596269",
+    "b0f258ae4c918b8c5db80aa39408a4394a1ca17f4ba3f9a1be20a05d5d391033"
+  ],
+  "source_oof_sha256": [
+    "66eb9ddd4364a7740ee25c1b6e78e9b4e93a9b8c253b300247aa13bac0d28027",
+    "cdc0b983409a82eb2ec7b949b706d589bb9802024e7ece101742af2032d20ec5"
+  ],
+  "source_sha256": "ac6dd8a64dc23105de8b4d67f28c57ead5130ad056270e51a530d673c47e441e",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "parameters": {
+    "boundaries": [
+      300.0,
+      700.0,
+      1300.0
+    ],
+    "weights": [
+      0.0,
+      0.0,
+      0.1033512285812252,
+      0.8877515918406518
+    ],
+    "training_band_counts": [
+      176,
+      3227,
+      2727,
+      269
+    ],
+    "global_fallback_weight": 0.049591649408411896,
+    "min_group_n": 100,
+    "gate_input": "Unweighted model prediction; never ground-truth price at prediction time"
+  },
+  "test_images_used": false,
+  "fit": "Closed-form bounded squared-error blend fit independently in training OOF predicted-price bands",
+  "selection": "Fixed bands and minimum support; no validation-fitted gate or weights",
+  "course_scope": "Visual CLIP features only, eligibility pending confirmation",
+  "caveat": "Meta training fit is not independent OOF; base hyperparameters already selected using these folds"
+}

@@ -1,0 +1,18 @@
+{
+  "gamma": 4.0,
+  "gamma_source": "previous train-only CV-selected L14 kernel gamma4",
+  "alphas": [
+    0.01,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "weights": "Four price bands; sqrt(N/(4*n_band)), clip 0.8..1.25, normalize training mean1; recompute independently per fit fold",
+  "center": "Fit-fold weighted target mean",
+  "evaluation": "Unweighted original-price clipped MSE, train-only GroupKFold3 selects alpha; validation once",
+  "source_sha256": "878d136cc8b1d5821b581cf7e7c6060b31cd416c6c7427070c22dcc8fcea2299",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "feature_manifest_sha256": "d569d4a2584b0bf5e06f0a39794b0f4e767169c97cde2ae68ae2207a025272cb",
+  "test_images_used": false,
+  "course_scope": "Exploratory CLIP, eligibility unresolved"
+}

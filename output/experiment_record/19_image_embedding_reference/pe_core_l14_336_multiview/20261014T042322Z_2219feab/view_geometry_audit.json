@@ -1,0 +1,193 @@
+{
+  "passed": true,
+  "provided_training_images": [
+    "1.jpg",
+    "2.jpg",
+    "3.jpg",
+    "4.jpg",
+    "5.jpg",
+    "6.jpg",
+    "7.jpg",
+    "8.jpg",
+    "10.jpg",
+    "11.jpg",
+    "12.jpg",
+    "13.jpg"
+  ],
+  "n": 12,
+  "fixed_center_60_percent_crop_pixels_verified": true,
+  "original_images_unchanged": true,
+  "whole_view_size_verified": true,
+  "sizes": [
+    {
+      "original": [
+        400,
+        277
+      ],
+      "whole": [
+        336,
+        336
+      ],
+      "detail": [
+        240,
+        167
+      ]
+    },
+    {
+      "original": [
+        400,
+        277
+      ],
+      "whole": [
+        336,
+        336
+      ],
+      "detail": [
+        240,
+        167
+      ]
+    },
+    {
+      "original": [
+        400,
+        277
+      ],
+      "whole": [
+        336,
+        336
+      ],
+      "detail": [
+        240,
+        167
+      ]
+    },
+    {
+      "original": [
+        400,
+        300
+      ],
+      "whole": [
+        336,
+        336
+      ],
+      "detail": [
+        240,
+        180
+      ]
+    },
+    {
+      "original": [
+        400,
+        278
+      ],
+      "whole": [
+        336,
+        336
+      ],
+      "detail": [
+        240,
+        166
+      ]
+    },
+    {
+      "original": [
+        400,
+        278
+      ],
+      "whole": [
+        336,
+        336
+      ],
+      "detail": [
+        240,
+        166
+      ]
+    },
+    {
+      "original": [
+        400,
+        294
+      ],
+      "whole": [
+        336,
+        336
+      ],
+      "detail": [
+        240,
+        176
+      ]
+    },
+    {
+      "original": [
+        400,
+        278
+      ],
+      "whole": [
+        336,
+        336
+      ],
+      "detail": [
+        240,
+        166
+      ]
+    },
+    {
+      "original": [
+        400,
+        282
+      ],
+      "whole": [
+        336,
+        336
+      ],
+      "detail": [
+        240,
+        170
+      ]
+    },
+    {
+      "original": [
+        400,
+        266
+      ],
+      "whole": [
+        336,
+        336
+      ],
+      "detail": [
+        240,
+        160
+      ]
+    },
+    {
+      "original": [
+        233,
+        300
+      ],
+      "whole": [
+        336,
+        336
+      ],
+      "detail": [
+        139,
+        180
+      ]
+    },
+    {
+      "original": [
+        400,
+        274
+      ],
+      "whole": [
+        336,
+        336
+      ],
+      "detail": [
+        240,
+        164
+      ]
+    }
+  ],
+  "price_labels_not_used": true,
+  "gpu_not_used": true
+}

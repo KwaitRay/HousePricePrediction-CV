@@ -1,0 +1,53 @@
+{
+  "model": "google/siglip2-so400m-patch16-naflex",
+  "revision": "cc24074f717b612951c2dead130904ab9b65a81e",
+  "checkpoint_sha256": "11a61a2068800d5f4f35cb041c1fea25de86ce87725e4c97a9ed046d0b22c076",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "preprocess": {
+    "_processor_class": "Siglip2Processor",
+    "do_convert_rgb": null,
+    "do_normalize": true,
+    "do_rescale": true,
+    "do_resize": true,
+    "image_mean": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "image_processor_type": "Siglip2ImageProcessorFast",
+    "image_std": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "max_num_patches": 576,
+    "patch_size": 16,
+    "resample": 2,
+    "rescale_factor": 0.00392156862745098,
+    "size": null,
+    "crop_size": null,
+    "pad_size": null,
+    "default_to_square": true,
+    "do_center_crop": null,
+    "do_pad": null,
+    "return_tensors": null,
+    "data_format": "channels_first",
+    "input_data_format": null,
+    "device": null,
+    "disable_grouping": null
+  },
+  "max_num_patches": 576,
+  "feature_dim": 1152,
+  "feature": "Official NaFlex vision attention pooler, float32 L2 normalization",
+  "precision": "float16 vision forward, float32 normalized feature storage",
+  "batch_size": 4,
+  "source_sha256": "7f63e9ce11632fdf2fcb9d452fb38a385e5e27ef98c5850298a4203d3bccd39d",
+  "encoder_source_sha256": "f1c2b7ba149448ce2c1b4ef5c199ba8a1a18330a63e90421b9ea69906ccf01fc",
+  "test_images_used": false,
+  "text_modules_used": false,
+  "mllm_components": false,
+  "course_scope": "Generic frozen image tower, no price-task model or additional SoCal data",
+  "official_model_card": "https://huggingface.co/google/siglip2-so400m-patch16-naflex",
+  "caveat": "Full method comparison: checkpoint, patch size and image preprocessing differ from fixed-resolution SigLIP2; more patches cannot recover absent native detail",
+  "cache_key": "8b18cb9dd59f766ed86954e2f8c74fcc7627a593921091845f9a6063148be4e9"
+}

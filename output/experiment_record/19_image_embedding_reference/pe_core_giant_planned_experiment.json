@@ -1,0 +1,37 @@
+{
+  "status": "weights_downloaded_gpu_preflight_pending",
+  "repo": "timm/vit_pe_core_gigantic_patch14_448.fb",
+  "revision": "fb096c09d13bd2e3827aed4dbdffb8a6b8e0c10b",
+  "config_sha256": "f3d4cd28623bd6dc7dcea522411c48ebfea44aae844aa5cb7a8401a3601d5b6f",
+  "architecture": "vit_pe_core_gigantic_patch14_448",
+  "output_dim": 1280,
+  "vision_params": 1882033920,
+  "fp16_parameter_gib": 3.505561351776123,
+  "meta_tensor_count": 621,
+  "meta_buffers": [
+    {
+      "name": "rope.pos_embed",
+      "shape": [
+        1024,
+        192
+      ],
+      "device": "meta"
+    }
+  ],
+  "all_parameters_meta": true,
+  "actual_gpu_preflight_completed": false,
+  "full_checkpoint_verified": true,
+  "download_handle": "unified_exec:51717",
+  "scope": "Weights downloaded and provenance verified; no GPU inference or price fitting yet",
+  "planned_hardware": "RTX 2060 6GB; batch 1, direct vision tensor streaming if checkpoint and model shapes match",
+  "mllm_components": false,
+  "text_modules_used": false,
+  "test_images_used": false,
+  "official_model_card": "https://huggingface.co/timm/vit_pe_core_gigantic_patch14_448.fb",
+  "free_disk_gib": 50.99766159057617,
+  "checkpoint_verification_basis": "Completed downloader recorded SHA256 and verified publisher LFS; byte length checked at documentation handoff",
+  "weight_sha256": "a0a499d4a7c6d35bb5f11aa2b076eaacde06e66a08176eb3b3d362d80eb91bd8",
+  "weight_bytes": 7528195816,
+  "download_completed": true,
+  "documentation_updated_at": "2026-10-14"
+}

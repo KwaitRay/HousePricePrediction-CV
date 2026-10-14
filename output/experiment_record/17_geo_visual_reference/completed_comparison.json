@@ -1,0 +1,37 @@
+{
+  "recorded_at": "2026-10-13T13:34:25.993511+00:00",
+  "attempts": [
+    {
+      "artifact": "output\\experiment_record\\17_geo_visual_reference\\streetclip\\20261013T130557Z_4af0d9ef",
+      "results": {
+        "head": "ridge",
+        "alpha": 1000,
+        "training_cv_mse": 80762.03839344066,
+        "mse": 77359.54621542897,
+        "mae": 201.442290462883,
+        "tail_mse": 357936.14488689683,
+        "n": 1601,
+        "tail_n": 159,
+        "tail_threshold": 1300.0,
+        "seconds": 1113.0693737000693
+      }
+    },
+    {
+      "artifact": "output\\experiment_record\\17_geo_visual_reference\\streetclip_kernel\\20261013T133019Z_a48bab87",
+      "results": {
+        "gamma": 4.0,
+        "alpha": 1.0,
+        "training_oof_mse": 77137.09497199109,
+        "mse": 73300.8230230693,
+        "mae": 194.68084766739463,
+        "tail_mse": 354698.10172561824,
+        "n": 1601,
+        "tail_n": 159,
+        "tail_threshold": 1300.0,
+        "seconds": 158.21401310013607
+      }
+    }
+  ],
+  "adoption": "No single StreetCLIP head beats existing 70595.98 ensemble; evaluate separately registered training-OOF convex ensemble",
+  "test_images_used": false
+}

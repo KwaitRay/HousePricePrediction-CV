@@ -1,0 +1,32 @@
+{
+  "comparisons": [
+    {
+      "before": "metric",
+      "after": "ordinal",
+      "mse_difference_after_minus_before": -339.85535009611266,
+      "group_bootstrap_95_interval": [
+        -735.4950712221419,
+        62.41669724400511
+      ],
+      "groups": 1600,
+      "resamples": 1000,
+      "seed": 2026,
+      "interval_crosses_zero": true
+    },
+    {
+      "before": "baseline_fusion",
+      "after": "ordinal_fusion",
+      "mse_difference_after_minus_before": -118.53857359578959,
+      "group_bootstrap_95_interval": [
+        -314.57742069704926,
+        95.32128855402402
+      ],
+      "groups": 1600,
+      "resamples": 1000,
+      "seed": 2026,
+      "interval_crosses_zero": true
+    }
+  ],
+  "scope": "Fixed development validation, original unweighted price MSE; uncertainty conditional on this selected candidate, not correction for repeated model selection",
+  "test_images_used": false
+}

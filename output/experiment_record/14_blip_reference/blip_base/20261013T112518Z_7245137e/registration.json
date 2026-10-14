@@ -1,0 +1,46 @@
+{
+  "model": "Salesforce/blip-image-captioning-base",
+  "revision": "82a37760796d32b1411fe092ab5d4e227313294b",
+  "checkpoint_sha256": "d6638651a5526cc2ede56f2b5104d6851b0755816d220e5e046870430180c767",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "preprocess": {
+    "_processor_class": "BlipProcessor",
+    "image_processor_type": "BlipImageProcessor",
+    "do_resize": true,
+    "size": {
+      "height": 384,
+      "width": 384
+    },
+    "resample": 3,
+    "do_rescale": true,
+    "rescale_factor": 0.00392156862745098,
+    "do_normalize": true,
+    "image_mean": [
+      0.48145466,
+      0.4578275,
+      0.40821073
+    ],
+    "image_std": [
+      0.26862954,
+      0.26130258,
+      0.27577711
+    ],
+    "do_convert_rgb": true
+  },
+  "feature": "L2-normalized CLS pooled image token",
+  "source_sha256": "5abd646380371a8076081e99efdb5a6cf63752355f1d41bc737aee1393481c1a",
+  "frozen": true,
+  "precision": "float32",
+  "text_modules_used": false,
+  "test_images_used": false,
+  "course_scope": "Original BLIP visual tower exploratory; course eligibility unresolved; no BLIP-2 or LLM",
+  "cache_key": "bab1d08edf868e4350bb353f4dac15f6b52b71395d78d2542659f691584a6bdd",
+  "alphas": [
+    1,
+    10,
+    100,
+    1000,
+    10000
+  ],
+  "selection": "train-only 3-fold GroupKFold"
+}

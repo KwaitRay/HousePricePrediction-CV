@@ -1,0 +1,18 @@
+{
+  "head": "additive_rbf_kernel",
+  "weight_candidate": 1,
+  "alpha": 1.0,
+  "training_oof_mse": 73475.46601137829,
+  "kernel_weights": [
+    0.5,
+    0.2,
+    0.3
+  ],
+  "mse": 70393.04311119289,
+  "mae": 190.15760928941074,
+  "tail_mse": 344155.39795366797,
+  "n": 1601,
+  "tail_n": 159,
+  "tail_threshold": 1300.0,
+  "seconds": 139.948358300142
+}

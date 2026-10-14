@@ -1,0 +1,50 @@
+{
+  "model": "google/siglip2-so400m-patch14-384",
+  "revision": "e8e487298228002f3d8a82e0cd5c8ea9c567f57f",
+  "checkpoint_sha256": "9f4f4a49f908ef0c979bce8ff5a5c0e88882dc6c5dc4304387cbbd152558e2c2",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "original_manifest_sha256": "ef0887a8ed732aa570703547a600c1456640bfca6aece090517647326c79dcf5",
+  "views": [
+    "Original official square resize",
+    "Whole EXIF image letterboxed to 384 square, gray RGB128 border",
+    "Fixed center 60% width and height, official square preprocessing"
+  ],
+  "view_size": 384,
+  "feature_dim": 1152,
+  "combined_feature_dim": 3456,
+  "batch_size": 4,
+  "preprocess": {
+    "_processor_class": "SiglipProcessor",
+    "image_processor_type": "SiglipImageProcessor",
+    "do_resize": true,
+    "size": {
+      "height": 384,
+      "width": 384
+    },
+    "resample": 2,
+    "do_rescale": true,
+    "rescale_factor": 0.00392156862745098,
+    "do_normalize": true,
+    "image_mean": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "image_std": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "do_convert_rgb": null
+  },
+  "precision": "float16 visual forward, float32 normalized cached features",
+  "extra_feature_storage": "L2-normalized image embedding rounded to float32",
+  "source_sha256": "b727b40b74e30c59c42f530b3289d21f3644be928ace85d9040ce0c86e38ef68",
+  "encoder_source_sha256": "adbc99248c1e5efdb86de2da962efaee89c4fc4ce2b3efeff8e140d515a01c73",
+  "test_images_used": false,
+  "text_modules_used": false,
+  "selection": "Training-only 3-fold GroupKFold kernel parameter selection",
+  "course_scope": "General-purpose frozen image tower; no MLLM, price-task checkpoint or extra SoCal data",
+  "caveat": "Original view remains present; upsampling cannot recover missing native image detail",
+  "cache_key": "e9dcadf64123f3f7e8dd28bc2e2601304e55880d085e1f55d588b399bfd778d9"
+}

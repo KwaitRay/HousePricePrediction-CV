@@ -1,0 +1,75 @@
+{
+  "method": "Fixed visual-only convex kernel ensemble; full-label refit",
+  "reference": "15_fixed_ensembles\\siglip2_clip336_multiview_street_oof_stack\\20261013T153302Z_38ca5d6b",
+  "reference_ensemble_sha256": "2f4aaf0dee679bf24837f89e0e54d43141c347883a871252bb0deea0cc6b5c12",
+  "weights": [
+    0.8092959399048508,
+    0.04960685967965158,
+    0.14109720041549767,
+    1.6627256754601916e-18
+  ],
+  "models": [
+    "19_image_embedding_reference/siglip2_so400m_kernel/20261013T152001Z_34db8dd3",
+    "13_clip_optimization/clip_l14_multiview_kernel/20261013T120554Z_e2a41622",
+    "13_clip_optimization/ViT_L_14_336_kernel/20261013T144616Z_8b3d237e",
+    "17_geo_visual_reference/streetclip_kernel/20261013T133019Z_a48bab87"
+  ],
+  "source_sha256": "6912aef4a08132750286fc024130dbf4532b99af62c36cee0fea51b44b471a37",
+  "reference_validation_mse": 61652.210649188564,
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "train_csv_sha256": "6a37aec7c596d98a2342aae32b0cf2eb660e56c92292fd1c324961ca5d8653d5",
+  "test_csv_sha256": "3b204c0887200c43fc7ff7e5e0f897b7b82ea16cf2387d55b3bf31759db57de9",
+  "train_n": 8000,
+  "test_n": 3000,
+  "price_unit": "thousand USD",
+  "target_scale": 1000,
+  "mllm_components": false,
+  "selection": "Components, gamma, alpha and blend weights frozen before test inference",
+  "scope": "Exploratory visual-only candidate; source course eligibility unresolved; not uploaded",
+  "test_images_used": true,
+  "test_labels_used": false,
+  "components": [
+    {
+      "source": "19_image_embedding_reference/siglip2_so400m_kernel/20261013T152001Z_34db8dd3",
+      "cache_family": "siglip_features",
+      "cache_key": "27e6c6c8fb0cf6f77c313901ecfd59f7e7a14df068aaf7098f35ec28407cee12",
+      "gamma": 4.0,
+      "alpha": 1.0,
+      "feature_dim": 1152,
+      "full_head_sha256": "f21ff76426000f0765149840f95bc31a64fb5cf29b173964b98a1f57fa7e6fa9",
+      "reference_replay_passed": true
+    },
+    {
+      "source": "13_clip_optimization/clip_l14_multiview_kernel/20261013T120554Z_e2a41622",
+      "cache_family": "clip_multiview",
+      "cache_key": "eae299f8903e58fff9ec29f3bdc3aa8a61957b645b6d3490dac6c3cbe410706d",
+      "gamma": 4.0,
+      "alpha": 1.0,
+      "feature_dim": 2304,
+      "full_head_sha256": "e76f7cbbf9c3016681642506f253ea70c89b5b86ca3850da50d5bacdb7b1fb90",
+      "reference_replay_passed": true
+    },
+    {
+      "source": "13_clip_optimization/ViT_L_14_336_kernel/20261013T144616Z_8b3d237e",
+      "cache_family": "clip_features",
+      "cache_key": "b10faf89cab6045f9c2f9cf7ce2e6cfe79e4fedc187f1e2ffd76065aca3bd1f9",
+      "gamma": 4.0,
+      "alpha": 1.0,
+      "feature_dim": 768,
+      "full_head_sha256": "042cbe1226e4cf2df4a4ba7d7ed0d5503bfd69766fcdab5a562d42ed1a3c9071",
+      "reference_replay_passed": true
+    },
+    {
+      "source": "17_geo_visual_reference/streetclip_kernel/20261013T133019Z_a48bab87",
+      "cache_family": "streetclip_features",
+      "cache_key": "4dde547b9a31ac46e7ee5ef42f9eee8b22acec8227d7e07cc2530f0707989d39",
+      "gamma": 4.0,
+      "alpha": 1.0,
+      "feature_dim": 768,
+      "full_head_sha256": "4baae4aba77e51756b5b3935ce279289cc510a33a08292179d9b9e0cb69b847a",
+      "reference_replay_passed": true
+    }
+  ],
+  "inference_source_sha256": "fd2afedc8cbc959041e7acf0bdce55a88171c6cc25f58429341dab6d8872bb49",
+  "test_images_role": "Inference only; no training, target access, model selection or calibration"
+}

@@ -1,0 +1,11 @@
+{
+  "status": "completed",
+  "controller_pid": 37656,
+  "reference_pid": 43720,
+  "command": [
+    "scripts/experiments/streetclip_visual_reference.py",
+    "--weights-dir",
+    ".local/cache/streetclip_weights/e3561ba2ad9bf14c9efd6b0092607b8497efbfea"
+  ],
+  "exit_code": 0
+}

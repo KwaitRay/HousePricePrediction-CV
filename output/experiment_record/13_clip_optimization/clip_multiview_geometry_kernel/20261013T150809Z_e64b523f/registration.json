@@ -1,0 +1,31 @@
+{
+  "method": "RBF image kernel multiplied by RBF native-image-geometry kernel",
+  "geometry": [
+    "log(native width)",
+    "log(native height)"
+  ],
+  "geometry_gammas": [
+    0.0,
+    0.01,
+    0.1,
+    1.0
+  ],
+  "image_gamma": 4.0,
+  "alphas": [
+    0.01,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "source": "13_clip_optimization/clip_l14_multiview_kernel/20261013T120554Z_e2a41622",
+  "source_head_sha256": "8c73917dcfbaf805b3d24e72c27bb821fc12ee61307ac5212849c2a7c2596269",
+  "source_sha256": "7f69b929f0a9e49f4fb2d1fc6aa432b6ee22b1f0ed58973e8259eb11cb279bd7",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "selection": "Original unweighted training GroupKFold3 MSE",
+  "geometry_scaling": "StandardScaler fit separately on each fitting fold; never validation",
+  "geometry_gamma_zero": "Image-only null control; must reproduce original selected training OOF predictions",
+  "test_images_used": false,
+  "filename_or_order_features": false,
+  "course_scope": "Provided image dimensions only, no EXIF GPS, listing metadata or MLLM",
+  "caveat": "Geometry is photographic framing/resolution, not physical house area; source gamma selected in previous training CV"
+}

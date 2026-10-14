@@ -1,0 +1,7 @@
+{
+  "label_conditioned_oracle_linear_slope": 1.0119891219927415,
+  "intercept": -6.629762861170548,
+  "oracle_linear_mse_diagnostic_only": 91808.39553317968,
+  "std_matching_factor": 1.6094673785486642,
+  "std_matching_mse_diagnostic_only": 112733.22113643949
+}

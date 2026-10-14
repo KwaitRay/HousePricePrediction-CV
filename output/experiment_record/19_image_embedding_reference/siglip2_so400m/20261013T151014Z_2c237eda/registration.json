@@ -1,0 +1,52 @@
+{
+  "model": "google/siglip2-so400m-patch14-384",
+  "revision": "e8e487298228002f3d8a82e0cd5c8ea9c567f57f",
+  "checkpoint_sha256": "9f4f4a49f908ef0c979bce8ff5a5c0e88882dc6c5dc4304387cbbd152558e2c2",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "preprocess": {
+    "_processor_class": "SiglipProcessor",
+    "image_processor_type": "SiglipImageProcessor",
+    "do_resize": true,
+    "size": {
+      "height": 384,
+      "width": 384
+    },
+    "resample": 2,
+    "do_rescale": true,
+    "rescale_factor": 0.00392156862745098,
+    "do_normalize": true,
+    "image_mean": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "image_std": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "do_convert_rgb": null
+  },
+  "feature": "Official vision pooler, float32 L2 normalization",
+  "precision": "float16 visual forward, float32 normalized cached features",
+  "feature_dim": 1152,
+  "source_sha256": "c240708ab8afc37ea3391a602f2fb8cb575e43e4d3e0d4ed9f78522f94aa9bf5",
+  "text_modules_used": false,
+  "test_images_used": false,
+  "vision_tensor_n": 448,
+  "legacy_buffers_verified": [],
+  "model_card": "https://huggingface.co/google/siglip2-so400m-patch14-384",
+  "paper": "https://arxiv.org/abs/2502.14786",
+  "pretraining_dataset": "WebLI, as documented in official model card",
+  "course_scope": "General-purpose frozen visual features; no MLLM, no price-task model or additional SoCal data",
+  "caveat": "A complete method comparison; pretraining, model, resolution and precision change together",
+  "cache_key": "27e6c6c8fb0cf6f77c313901ecfd59f7e7a14df068aaf7098f35ec28407cee12",
+  "alphas": [
+    1,
+    10,
+    100,
+    1000,
+    10000
+  ],
+  "selection": "Training-only 3-fold GroupKFold"
+}

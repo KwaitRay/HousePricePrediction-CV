@@ -1,0 +1,16 @@
+{
+  "head": "ordinal_kernel_readout",
+  "variant": "isotonic",
+  "alpha": 1.0,
+  "training_oof_mse": 64728.83234816551,
+  "mse": 61455.90169209929,
+  "mae": 179.82360351068604,
+  "tail_mse": 286000.887162248,
+  "n": 1601,
+  "tail_n": 159,
+  "tail_threshold": 1300.0,
+  "source_validation_mse": 61795.75704219541,
+  "training_null_replay_passed": true,
+  "validation_source_replay_passed": true,
+  "seconds": 100.4749342999421
+}

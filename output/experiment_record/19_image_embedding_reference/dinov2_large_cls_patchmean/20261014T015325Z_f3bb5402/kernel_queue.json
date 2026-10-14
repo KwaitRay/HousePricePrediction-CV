@@ -1,0 +1,16 @@
+{
+  "status": "completed",
+  "command": [
+    "D:\\学习\\研究生\\graduate 26s2\\COMP 90086 CV\\Final_Assignment\\cv-house-price\\.venv\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "D:\\学习\\研究生\\graduate 26s2\\COMP 90086 CV\\Final_Assignment\\cv-house-price\\scripts\\experiments\\frozen_kernel_search.py",
+    "--name",
+    "dinov2_large_cls_patchmean_kernel",
+    "--cache-family",
+    "dinov2_features",
+    "--cache-key",
+    "adb6b3c871bc8800b0aa1ad49be82cff10274608e8071cd0266ba76daabe8802"
+  ],
+  "exit_code": 0
+}

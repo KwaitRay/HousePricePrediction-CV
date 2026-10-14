@@ -1,0 +1,23 @@
+{
+  "attention_range": [
+    0,
+    0.9896767735481262
+  ],
+  "sensitivity_range": [
+    -0.42441511154174805,
+    0.42441511154174805
+  ],
+  "sensitivity_limit_rule": "Shared 98th percentile absolute residual gradient-times-activation across all twelve cases",
+  "patch_grid": [
+    27,
+    27
+  ],
+  "patch_size": 14,
+  "processed_size": [
+    384,
+    384
+  ],
+  "uncovered_bottom_right_pixels": 6,
+  "overlay": "Nominal 14px token cells mapped through the inverse square resize onto the original full image; untokenized border masked",
+  "color_scales_shared_across_cases": true
+}

@@ -1,0 +1,9 @@
+{
+  "status": "completed",
+  "controller_pid": 49020,
+  "reference_pid": 17244,
+  "cache_key": "eae299f8903e58fff9ec29f3bdc3aa8a61957b645b6d3490dac6c3cbe410706d",
+  "cache_family": "clip_multiview",
+  "name": "clip_l14_multiview_kernel",
+  "exit_code": 0
+}

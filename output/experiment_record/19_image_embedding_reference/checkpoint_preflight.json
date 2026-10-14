@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "model_type": "siglip",
+  "vision_tensor_n": 448,
+  "vision_parameter_n": 428225600,
+  "all_vision_tensor_names_and_shapes_match": true,
+  "text_model_instantiated": false,
+  "gpu_used": false,
+  "checkpoint_sha256": "9f4f4a49f908ef0c979bce8ff5a5c0e88882dc6c5dc4304387cbbd152558e2c2",
+  "publisher_sha256_matches": true
+}

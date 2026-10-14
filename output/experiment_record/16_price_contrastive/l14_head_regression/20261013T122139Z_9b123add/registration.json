@@ -1,0 +1,27 @@
+{
+  "mode": "regression",
+  "lambda": 0,
+  "epochs": [
+    10,
+    30,
+    60
+  ],
+  "margin": 0.5,
+  "head": "Fixed fit-fold Ridge alpha10000 + residual 768->64->1, contrast projection64->32",
+  "positive": "log price distance <= log1.15; different group; visual near easy / far hard",
+  "negative": "log price distance >= log2; different group; visual far easy / near hard",
+  "visual_difficulty": "Lower/upper quartile among price-eligible pairs in training microbatch, computed from original frozen unit CLIP embeddings",
+  "curriculum": "Hard pair fraction 0 until epoch10, linear rise to25% by epoch20; positive and negative separately normalized",
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "dropout": 0.25,
+  "batch_size": 256,
+  "seed": 2026,
+  "backbone_frozen": true,
+  "source_sha256": "be8d7d545c31e30e6b86e1a1d6ba20d85cbf66c7ed7fd7ca177d21364701fc44",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "feature_manifest_sha256": "d569d4a2584b0bf5e06f0a39794b0f4e767169c97cde2ae68ae2207a025272cb",
+  "selection": "Epoch chosen on 3-fold training GroupKFold unweighted price MSE; validation once",
+  "scope": "Frozen-feature head experiment; does not claim image-encoder attention changed; CLIP course eligibility unresolved",
+  "test_images_used": false
+}

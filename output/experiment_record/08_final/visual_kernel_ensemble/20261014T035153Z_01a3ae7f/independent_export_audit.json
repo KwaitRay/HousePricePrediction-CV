@@ -1,0 +1,57 @@
+{
+  "passed": true,
+  "n": 3000,
+  "all_raw_test_image_checksums_verified": true,
+  "all_test_feature_chunks_verified": true,
+  "all_exported_prices_replayed": true,
+  "max_abs_csv_replay_error": 2.2737367544323206e-13,
+  "csv_sha256": "8b19c397e3dc2060d9021f59ef1fb09157625dc092ff9a78ea7585ff48094e18",
+  "components": [
+    {
+      "component": 0,
+      "source": "19_image_embedding_reference/siglip2_so400m_kernel/20261013T152001Z_34db8dd3",
+      "feature_rows": 3000,
+      "cached_feature_chunks_verified": 750,
+      "full_head_sha256": "8634a45712b23d25d0abcb26c5b808235bdc461d834db0d62b1452580627a920"
+    },
+    {
+      "component": 1,
+      "source": "19_image_embedding_reference/siglip2_price_metric_kernel/20261013T155603Z_4129a7fd",
+      "feature_rows": 3000,
+      "cached_feature_chunks_verified": 750,
+      "full_head_sha256": "9c615ac96ee2e4d6258cb5b71a908271d36b0ee82e87531d41feb5bdad989cec"
+    },
+    {
+      "component": 2,
+      "source": "13_clip_optimization/ViT_L_14_336_multiview_kernel/20261013T155600Z_8367fcf1",
+      "feature_rows": 3000,
+      "cached_feature_chunks_verified": 750,
+      "full_head_sha256": "d5cb5a076250ab686402f9a6c29474dcea3971e03fd10b9a1da832a176621fa4"
+    },
+    {
+      "component": 3,
+      "source": "13_clip_optimization/ViT_L_14_336_kernel/20261013T144616Z_8b3d237e",
+      "feature_rows": 3000,
+      "cached_feature_chunks_verified": 750,
+      "full_head_sha256": "9c9a3534fc5aa3f6ec879331e787388dc082faf6d66477fdb1e8d36965ad7b06"
+    },
+    {
+      "component": 4,
+      "source": "19_image_embedding_reference\\siglip2_naflex_576_kernel\\20261014T020905Z_e457778a",
+      "feature_rows": 3000,
+      "cached_feature_chunks_verified": 750,
+      "full_head_sha256": "be76de6ec2b5ae798beba58d1c0639a272c265e3eb78c0e510504fa296a2c817"
+    },
+    {
+      "component": 5,
+      "source": "19_image_embedding_reference\\pe_core_l14_336_kernel\\20261014T024724Z_7b6f7fa6",
+      "feature_rows": 3000,
+      "cached_feature_chunks_verified": 750,
+      "full_head_sha256": "974c422e26e723dfe68a1018d63450c6d37c6bcbd193ba4b0c61ff1db69f0641"
+    }
+  ],
+  "source_sha256": "57a1a590495791ffa2e6b5ead44f444f0fe029f5d149f38133c46d6e60f9a252",
+  "scope": "CPU audit of all cached feature rows and price formulas, with runtime labeled encoder probes; no new encoder extraction",
+  "test_labels_used": false,
+  "kaggle_uploaded": false
+}

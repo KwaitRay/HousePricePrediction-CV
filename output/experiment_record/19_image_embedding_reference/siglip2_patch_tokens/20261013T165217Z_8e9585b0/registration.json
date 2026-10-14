@@ -1,0 +1,45 @@
+{
+  "method": "Frozen post-layernorm patch tokens, original full-image official SigLIP2 resize",
+  "model": "google/siglip2-so400m-patch14-384",
+  "revision": "e8e487298228002f3d8a82e0cd5c8ea9c567f57f",
+  "checkpoint_sha256": "9f4f4a49f908ef0c979bce8ff5a5c0e88882dc6c5dc4304387cbbd152558e2c2",
+  "original_manifest_sha256": "ef0887a8ed732aa570703547a600c1456640bfca6aece090517647326c79dcf5",
+  "preprocess": {
+    "_processor_class": "SiglipProcessor",
+    "image_processor_type": "SiglipImageProcessor",
+    "do_resize": true,
+    "size": {
+      "height": 384,
+      "width": 384
+    },
+    "resample": 2,
+    "do_rescale": true,
+    "rescale_factor": 0.00392156862745098,
+    "do_normalize": true,
+    "image_mean": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "image_std": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "do_convert_rgb": null
+  },
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "shape": [
+    8000,
+    729,
+    1152
+  ],
+  "dtype": "float16",
+  "batch_size": 4,
+  "source_sha256": "594eef0f81ec98963220f102ebfe1b792cc0c661ee2856494d23b2a28a3c6060",
+  "text_modules_used": false,
+  "mllm_components": false,
+  "test_images_used": false,
+  "course_scope": "Generic frozen image tower and provided images only; supervised pooling is trained separately on training labels",
+  "cache_key": "db9c5d6c0fe5eee6b54ab2a8948101fdba2aad59d15cf04ce12d980c891e57f2"
+}

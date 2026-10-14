@@ -1,0 +1,23 @@
+{
+  "scope": "Display-only rerender with shared logarithmic attention color scale; original numerical maps and price predictions unchanged",
+  "numeric_source_run": "20261014T015453Z_cb88a2e8",
+  "numeric_source_registration_sha256": "e82b0be21f882c8bbad17f848bd7f81f4c0284f48c02492edff565123097f6fb",
+  "source_cases_sha256": "6ef27d0455243214418ec84cd313cbef486f0cea73c4e00afeb6a893acacfa04",
+  "render_source_sha256": "87f88c91db594bd1b74cde3ad7b8bd6358f0ea93e091bf2602ba2efd9dd46091",
+  "copied_map_sha256": {
+    "case_01_maps.npz": "759d2e51646d98fff3b6f20b145343a79cdb161ef2216a6fb3e50ef1585bf777",
+    "case_02_maps.npz": "9279b5949d5c9292331d8e51d387e9d2759a585ca40ec4946c7f4b50dfe15541",
+    "case_03_maps.npz": "186843161f6c9580f988a577abfd6becfb3f16e6970c718d0dd055e8479d8998",
+    "case_04_maps.npz": "81206978bdb0f96f084b69edd95e7b69a03e5843cc003d52583d135e5dc95109",
+    "case_05_maps.npz": "8cf2e19cec2d190a8695743cd4b82ddef33b917cff88476061d96c3c68adc995",
+    "case_06_maps.npz": "cb9f6aafd1237bc201c0d62f712ba8bbdda4156c6023d8848323e747eed40c61",
+    "case_07_maps.npz": "d67ecc04a09eb252046f3d15943beda327fdc0b0793e717768493732ffb6adfa",
+    "case_08_maps.npz": "bb7301f7a0d6325226ef1549883e53c84edf1dc158ec8d1bacd5d00e43f0d466",
+    "case_09_maps.npz": "078ec5b7990cddc5abb71f654f2e7d4d43a2581eda0dbb90b6c7844c2837429b",
+    "case_10_maps.npz": "437b98a8c162cfd9ee5a42803afa7a455a4bc9a0afce97e0ce62d1c11cef0ef3",
+    "case_11_maps.npz": "d4c145cebb4964f251e0caf004d718540fe1876e497a8a2039f7779c4e6e9975",
+    "case_12_maps.npz": "6c2b238af4dc9c9364fb0277c2cad0d03c4753b486413da5573519d7bea1d375"
+  },
+  "test_images_used": false,
+  "gpu_used": false
+}

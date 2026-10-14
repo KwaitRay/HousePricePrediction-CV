@@ -1,0 +1,32 @@
+{
+  "views": [
+    "original official center-crop reference",
+    "whole EXIF image letterboxed to 336 square, gray RGB128 border",
+    "fixed center 60% width and height, official preprocessing"
+  ],
+  "view_size": 336,
+  "combinations": [
+    "original+whole",
+    "original+center",
+    "original+whole+center"
+  ],
+  "head": "fold-specific StandardScaler+Ridge",
+  "alphas": [
+    10,
+    100,
+    1000,
+    10000,
+    100000
+  ],
+  "selection": "training-only 3-fold GroupKFold",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "original_manifest_sha256": "3b39557d72868510284da26680d3ba90109322a498a9d3a0fdefba3553d3973e",
+  "checkpoint_sha256": "3035c92b350959924f9f00213499208652fc7ea050643e8b385c2dac08641f02",
+  "source_sha256": "d7e21c89165607d9d5758d1a9dba8ea7046f8b7b57bd81fecc46deb3ac66b1a1",
+  "model": "ViT-L-14-336",
+  "feature_dim": 768,
+  "preprocess": "Compose(\n    Resize(size=336, interpolation=bicubic, max_size=None, antialias=True)\n    CenterCrop(size=(336, 336))\n    MaybeConvertMode()\n    MaybeToTensor()\n    Normalize(mean=(0.48145466, 0.4578275, 0.40821073), std=(0.26862954, 0.26130258, 0.27577711))\n)",
+  "precision": "float32",
+  "test_images_used": false,
+  "course_scope": "CLIP exploratory; eligibility unresolved; no text prompts"
+}

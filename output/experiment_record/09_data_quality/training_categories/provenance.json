@@ -1,0 +1,9 @@
+{
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "prior_sample_sha256": "29e148f3d9854517440f200bf986d093a7ce0b540c0e891db78911ac8eb380f1",
+  "prior_labels_sha256": "c7eef9f5b2807c5cd21ea693a6c51ae668ed199a45f3499ced4f3c8199e030ef",
+  "index_sha256": "864415fc2bf5f3b6f093dfa3702ae31945d3dcc7b6f8d517dbb1b4646e459d36",
+  "scope": "Only 6399 development training images; validation and test excluded; no new pretrained labeler",
+  "high_review_sha256": "0ce005e1dab9aef3943f17a4fd98bb8557deeac76eb9e96f5e9269752e86a831",
+  "large_building_and_multistorey": "High-price images reviewed directly; ambiguous visible mass/levels remain unknown; no actual floor area inference"
+}

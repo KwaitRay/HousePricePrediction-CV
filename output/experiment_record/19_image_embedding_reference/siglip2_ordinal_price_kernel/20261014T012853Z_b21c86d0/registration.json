@@ -1,0 +1,53 @@
+{
+  "method": "Bounded ordinal survival readout over fold-fitted PLS product kernel",
+  "source": "19_image_embedding_reference/siglip2_price_metric_kernel/20261013T155603Z_4129a7fd",
+  "source_head_sha256": "d23ed2cd81980608ec2bec6c63214140b31edbe9383afd4ee419cc0c866f3752",
+  "source_metric_sha256": "b00eb95dfe97316b8baa97a53fd6223c018a8622f826e82a46478c43d8e059f0",
+  "source_registration_sha256": "63872ad2d273415bb4a9ab3c94c08a30a8a98c4e7c17546cc2c40ad5f77dc0c8",
+  "source_sha256": "f5a79a64f28dbc5705e27947f9809e1ae3b6ef53f89653bde404f45a70f7d6e2",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "thresholds_thousand_usd": [
+    0.0,
+    100.0,
+    200.0,
+    300.0,
+    400.0,
+    500.0,
+    600.0,
+    700.0,
+    800.0,
+    900.0,
+    1000.0,
+    1100.0,
+    1200.0,
+    1300.0,
+    1400.0,
+    1500.0,
+    1600.0,
+    1700.0,
+    1800.0,
+    1900.0
+  ],
+  "bin_step_thousand_usd": 100,
+  "targets": "20 survival indicators plus exact within-bin residual; unprojected sum exactly equals continuous price",
+  "image_gamma": 4.0,
+  "pls_gamma": 0.1,
+  "pls_fit_components": 16,
+  "used_components": 4,
+  "alphas": [
+    0.1,
+    1,
+    10
+  ],
+  "variants": [
+    "bounded",
+    "isotonic"
+  ],
+  "null_control": "Existing continuous PLS product kernel at alpha=1; exact unprojected ordinal reconstruction replay on every OOF and validation image",
+  "selection": "Original unweighted training GroupKFold3 MSE, including existing null baseline; validation once after selection",
+  "caveat": "Source metric hyperparameters were already selected on these training folds; this is not a nested unbiased estimate",
+  "mllm_components": false,
+  "test_images_used": false,
+  "test_labels_used": false,
+  "course_scope": "Provided training labels and existing generic frozen image features only"
+}

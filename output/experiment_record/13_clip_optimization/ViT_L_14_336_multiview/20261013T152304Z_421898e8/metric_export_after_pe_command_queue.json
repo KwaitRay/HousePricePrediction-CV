@@ -1,0 +1,24 @@
+{
+  "status": "not_started",
+  "controller_pid": 5744,
+  "reference_pid": 6916,
+  "command": [
+    "scripts/experiments/visual_kernel_submission.py",
+    "--phase",
+    "infer",
+    "--prepared-run",
+    ".local/experiment_record/08_final/visual_kernel_ensemble/20261013T174737Z_9a3bc1a4"
+  ],
+  "reason": "Predecessor not completed",
+  "predecessor": {
+    "status": "failed",
+    "controller_pid": 6916,
+    "reference_pid": 37280,
+    "command": [
+      "scripts/experiments/pe_core_visual_reference.py",
+      "--weights-dir",
+      ".local\\cache\\pe_core_weights\\e63206c8e3a0e9b699e40f31080eebd78fd2258e"
+    ],
+    "exit_code": 1
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "method": "mean-centered RBF kernel ridge",
+  "gammas": [
+    1.0,
+    4.0,
+    16.0
+  ],
+  "alphas": [
+    0.01,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "train_only_group_cv": 3,
+  "feature_cache_key": "27e6c6c8fb0cf6f77c313901ecfd59f7e7a14df068aaf7098f35ec28407cee12",
+  "manifest_sha256": "ef0887a8ed732aa570703547a600c1456640bfca6aece090517647326c79dcf5",
+  "source_sha256": "1847121c768a836e7059000773659664731ba78412fe2c6c78d9d7899f91867f",
+  "original_manifest_sha256": null,
+  "feature_dim": 1152,
+  "cache_family": "siglip_features",
+  "course_scope": "General-purpose SigLIP 2 image tower only; no MLLM or price-task model",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "dtype": "float64",
+  "centering": "Only training fold target mean, no validation label use",
+  "selection": "Original-price unweighted clipped MSE over all training OOF images; validation evaluated once after selection"
+}

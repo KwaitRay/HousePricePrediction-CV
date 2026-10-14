@@ -1,0 +1,80 @@
+{
+  "method": "One joint convex OOF fusion of existing baseline and preregistered DINOv2, NaFlex, PE-Core kernels",
+  "baseline": "15_fixed_ensembles/siglip2_multiview_metric_clip336_oof_stack/20261013T170640Z_6d0238b8",
+  "baseline_ensemble_sha256": "d024de8d1389083edbd41e1ac54dea55392ccb3fb64eec16427e818000adb2bc",
+  "new_encoders": [
+    {
+      "name": "dinov2_large_cls_patchmean_kernel",
+      "family": "dinov2_features",
+      "model": "facebook/dinov2-large",
+      "revision": "47b73eefe95e8d44ec3623f8890bd894b6ea2d6c"
+    },
+    {
+      "name": "siglip2_naflex_576_kernel",
+      "family": "siglip2_naflex_features",
+      "model": "google/siglip2-so400m-patch16-naflex",
+      "revision": "cc24074f717b612951c2dead130904ab9b65a81e",
+      "max_num_patches": 576
+    },
+    {
+      "name": "pe_core_l14_336_kernel",
+      "family": "pe_core_features",
+      "model": "timm/vit_pe_core_large_patch14_336.fb",
+      "revision": "e63206c8e3a0e9b699e40f31080eebd78fd2258e"
+    }
+  ],
+  "source_sha256": "053b724c5d5abdfeab8c360fa44b9eda9d69aee8badd81e3233761f8f85a46f6",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "selection": "One joint eight-component model; grouped three-fold meta check on training OOF inputs, then fixed validation evaluation",
+  "export_gate": {
+    "minimum_meta_cv_relative_gain": 0.01,
+    "minimum_meta_folds_won": 2,
+    "require_validation_mse_below_fixed_baseline": true
+  },
+  "caveat": "Base OOF predictions and hyperparameters were previously selected; meta cross-fitting does not refit base models, so it is not an unbiased nested estimate",
+  "mllm_components": false,
+  "test_images_used": false,
+  "test_labels_used": false,
+  "automatic_test_inference": "Only if both preregistered gates pass; wait for existing GPU export controller",
+  "course_scope": "General image-only encoders, provided labels and existing CLIP visual references; no MLLM or extra SoCal data",
+  "models": [
+    "19_image_embedding_reference/siglip2_so400m_kernel/20261013T152001Z_34db8dd3",
+    "19_image_embedding_reference/siglip2_so400m_multiview_kernel/20261013T164917Z_2f8bbb75",
+    "19_image_embedding_reference/siglip2_price_metric_kernel/20261013T155603Z_4129a7fd",
+    "13_clip_optimization/ViT_L_14_336_multiview_kernel/20261013T155600Z_8367fcf1",
+    "13_clip_optimization/ViT_L_14_336_kernel/20261013T144616Z_8b3d237e",
+    "19_image_embedding_reference\\dinov2_large_cls_patchmean_kernel\\20261014T015706Z_3adbcc84",
+    "19_image_embedding_reference\\siglip2_naflex_576_kernel\\20261014T020905Z_e457778a",
+    "19_image_embedding_reference\\pe_core_l14_336_kernel\\20261014T024724Z_7b6f7fa6"
+  ],
+  "weights": [
+    4.6010829694853594e-17,
+    0.0,
+    0.11284834142864732,
+    1.666960840196463e-17,
+    3.8624702394796095e-18,
+    0.0,
+    0.3662065245800294,
+    0.5209451339913231
+  ],
+  "model_sha256": [
+    "72957882da73e9eac2d110a8fe5740abe58fe88c733c1005844ecabfb8143691",
+    "55f6efd7d503b8f3566503ce0f16d95ba8522e8ba6c1c8a90209aaab9018921b",
+    "d23ed2cd81980608ec2bec6c63214140b31edbe9383afd4ee419cc0c866f3752",
+    "2d9107c99182f7ba49b7aed8edb1f2ff930d9bd4fba32969f777103a5003ebff",
+    "c47498e06ee693a119449ad7d82ed13fcf9675156af53e56ff14179d87f47bca",
+    "65e75364d0717e428b5812214651862d4782b05d14491d9ec98a048705bf5ab7",
+    "71dedbb240ce7022bbb48557ddae9fdb2f0bf68067d6815459b7c33b8f1461da",
+    "2be3dd10d0cf58eaa657e69f9bf0ce8c49f0985df40e1fc86d730b3858fa06ee"
+  ],
+  "prediction_sha256": [
+    "4bcf36717991dd2dd0918ec50bf0f338be8717aa466046e499932dff4c6304a6",
+    "35d25fcdca669c8964b1e7921c5cdb278c8375d3d45ce052f067081920eb49d8",
+    "407b5439aa7549cf976fe52728f1447066ba38298614580216e096dfe28b6e24",
+    "673615c783cd35505c4d0bbefa95f41799112e8a43f12adedcc588e768cef87e",
+    "2ff54cabcebb7f7a7fb03efb3b6b4274b6e2fba9850f0b01df9314b0ff176852",
+    "4262fda640f484162b0ff5608ceaa01eb9b4b4c032b104ec92bd19efe235f9c3",
+    "f4fbd1d8df2aa69d120d9b741318d9db77bb2ee630d301a84581ccc18ab31bc9",
+    "9f2d902819396195f03a748a3192753fabc1c5878e28e05e5b1499da18a54449"
+  ]
+}

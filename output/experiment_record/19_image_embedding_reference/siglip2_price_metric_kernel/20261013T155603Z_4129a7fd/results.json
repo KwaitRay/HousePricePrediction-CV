@@ -1,0 +1,14 @@
+{
+  "head": "supervised_metric_kernel",
+  "components": 4,
+  "pls_gamma": 0.1,
+  "alpha": 1.0,
+  "training_oof_mse": 65041.18247229963,
+  "mse": 61795.75704219541,
+  "mae": 179.42875764077354,
+  "tail_mse": 280455.1789960414,
+  "n": 1601,
+  "tail_n": 159,
+  "tail_threshold": 1300.0,
+  "seconds": 309.5034997998737
+}

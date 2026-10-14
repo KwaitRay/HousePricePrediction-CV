@@ -1,0 +1,9 @@
+{
+  "protocol_dir": "D:\\学习\\研究生\\graduate 26s2\\COMP 90086 CV\\Final_Assignment\\cv-house-price\\.local\\experiment_record\\15_fixed_ensembles\\siglip2_giant_oof_fusion\\20261014T041744Z_57c7cc09",
+  "reference_pid": 27924,
+  "reference_status": "D:\\学习\\研究生\\graduate 26s2\\COMP 90086 CV\\Final_Assignment\\cv-house-price\\output\\experiment_record\\19_image_embedding_reference\\siglip2_giant_384\\20261014T040343Z_b2b80c65\\status.json",
+  "controller_pid": 39068,
+  "controller_handle": "unified_exec:96796",
+  "queue_record": "D:\\学习\\研究生\\graduate 26s2\\COMP 90086 CV\\Final_Assignment\\cv-house-price\\output\\experiment_record\\19_image_embedding_reference\\siglip2_giant_384\\20261014T040343Z_b2b80c65\\giant_fusion_after_reference_command_queue.json",
+  "status": "queued_after_live_giant_reference"
+}

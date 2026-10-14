@@ -1,0 +1,26 @@
+{
+  "updated_date": "2026-10-14",
+  "target_mse": 50000,
+  "target_verified": false,
+  "best_user_reported_public_mse": 53754.8796,
+  "best_feedback_run": "08_final/visual_kernel_ensemble/20261014T035153Z_01a3ae7f",
+  "latest_ready_submission_run": "08_final/visual_kernel_ensemble/20261014T044646Z_7d1af3eb",
+  "latest_reference_validation_mse": 56549.273825136086,
+  "latest_public_mse": null,
+  "latest_csv_sha256": "604354958797acf5388b10df43cdb73ccf37bd526ba314260a90ffd3bfeccc8b",
+  "latest_independent_audit_passed": true,
+  "pe_multiview_price_metric_status": "completed",
+  "pe_multiview_price_metric_validation_mse": 59483.30818305479,
+  "pe_core_giant_status": "weights_downloaded_gpu_preflight_pending",
+  "known_active_project_jobs": [],
+  "process_observation": "Get-Process found no python/pythonw at handoff; not a future liveness guarantee",
+  "design_entry": "design/后续实验与新窗口接续.md",
+  "next_steps": [
+    "obtain latest candidate public feedback and refresh training OOF scene diagnostics",
+    "evaluate completed PE PLS complementarity and extend adapter if needed",
+    "PE-Core-G loading and GPU preflight before full experiment"
+  ],
+  "mllm_course_submission_allowed": false,
+  "initial_handoff_git_commit_or_push_performed": false,
+  "documentation_publication": "Subsequent user authorization: publish refactored design and public evidence to experiment/data-quality-diagnostics; completion recorded by Git history"
+}

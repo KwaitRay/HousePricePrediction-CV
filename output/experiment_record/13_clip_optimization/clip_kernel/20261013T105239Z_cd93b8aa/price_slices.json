@@ -1,0 +1,29 @@
+[
+  {
+    "price_tier": "low",
+    "n": 169,
+    "kernel_mse": 61249.478051415565,
+    "ridge_mse": 72500.79855012319,
+    "mse_difference": -11251.320498707604,
+    "kernel_bias": 204.9442600638437,
+    "ridge_bias": 221.58918693298702
+  },
+  {
+    "price_tier": "middle",
+    "n": 1273,
+    "kernel_mse": 47292.1820334641,
+    "ridge_mse": 49151.704366065605,
+    "mse_difference": -1859.522332601501,
+    "kernel_bias": 46.01892063517322,
+    "ridge_bias": 44.37353134071368
+  },
+  {
+    "price_tier": "high",
+    "n": 159,
+    "kernel_mse": 434866.7709844724,
+    "ridge_mse": 453976.2775825664,
+    "mse_difference": -19109.50659809409,
+    "kernel_bias": -592.1344011281535,
+    "ridge_bias": -610.6914784311739
+  }
+]

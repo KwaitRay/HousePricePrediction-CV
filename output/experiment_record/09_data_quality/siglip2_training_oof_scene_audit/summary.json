@@ -1,0 +1,213 @@
+{
+  "scope": "6399 training OOF only; no validation annotation or test labels",
+  "sources": [
+    {
+      "model": "clip224_multiview",
+      "path": "D:\\学习\\研究生\\graduate 26s2\\COMP 90086 CV\\Final_Assignment\\cv-house-price\\.local\\experiment_record\\13_clip_optimization\\clip_l14_multiview_kernel\\20261013T120554Z_e2a41622\\selected_training_oof.csv",
+      "sha256": "66eb9ddd4364a7740ee25c1b6e78e9b4e93a9b8c253b300247aa13bac0d28027"
+    },
+    {
+      "model": "siglip2",
+      "path": "D:\\学习\\研究生\\graduate 26s2\\COMP 90086 CV\\Final_Assignment\\cv-house-price\\.local\\experiment_record\\19_image_embedding_reference\\siglip2_so400m_kernel\\20261013T152001Z_34db8dd3\\selected_training_oof.csv",
+      "sha256": "5f4528f459aacedd206ce0640b7543874f9d08e62c8c143b87d40657890d029f"
+    },
+    {
+      "model": "siglip2_price_metric",
+      "path": "D:\\学习\\研究生\\graduate 26s2\\COMP 90086 CV\\Final_Assignment\\cv-house-price\\.local\\experiment_record\\19_image_embedding_reference\\siglip2_price_metric_kernel\\20261013T155603Z_4129a7fd\\selected_training_oof.csv",
+      "sha256": "2673d43c82808917f65492683f1e25861cee14ca08cfc30cfe94ef83d1343c9e"
+    }
+  ],
+  "annotation_sha256": "864415fc2bf5f3b6f093dfa3702ae31945d3dcc7b6f8d517dbb1b4646e459d36",
+  "rows": [
+    {
+      "model": "clip224_multiview",
+      "slice": "price_tier",
+      "category": "中价",
+      "n": 5083,
+      "mse": 44100.781565329045,
+      "mae": 162.66861302351313,
+      "bias": 44.51085462892724
+    },
+    {
+      "model": "clip224_multiview",
+      "slice": "price_tier",
+      "category": "低价",
+      "n": 680,
+      "mse": 43148.050311263345,
+      "mae": 168.34059459528515,
+      "bias": 160.69404115766653
+    },
+    {
+      "model": "clip224_multiview",
+      "slice": "price_tier",
+      "category": "高价",
+      "n": 636,
+      "mse": 357208.8807317112,
+      "mae": 528.7548846802212,
+      "bias": -524.3207171206215
+    },
+    {
+      "model": "clip224_multiview",
+      "slice": "high_price_scene",
+      "category": "地面外观",
+      "n": 359,
+      "mse": 382649.55835349404,
+      "mae": 552.3631043184805,
+      "bias": -548.8353614324199
+    },
+    {
+      "model": "clip224_multiview",
+      "slice": "high_price_scene",
+      "category": "局部或环境特写",
+      "n": 157,
+      "mse": 351586.11358534923,
+      "mae": 527.5333407314725,
+      "bias": -524.3359413098989
+    },
+    {
+      "model": "clip224_multiview",
+      "slice": "high_price_scene",
+      "category": "建筑效果图",
+      "n": 5,
+      "mse": 551077.5363989763,
+      "mae": 667.5130310000244,
+      "bias": -667.5130310000244
+    },
+    {
+      "model": "clip224_multiview",
+      "slice": "high_price_scene",
+      "category": "航拍或高位全景",
+      "n": 115,
+      "mse": 277036.94940495014,
+      "mae": 450.6908917951728,
+      "bias": -441.54585559845447
+    },
+    {
+      "model": "siglip2",
+      "slice": "price_tier",
+      "category": "中价",
+      "n": 5083,
+      "mse": 38991.66704677343,
+      "mae": 152.2751453528544,
+      "bias": 41.3901713878115
+    },
+    {
+      "model": "siglip2",
+      "slice": "price_tier",
+      "category": "低价",
+      "n": 680,
+      "mse": 33105.56430838482,
+      "mae": 146.19683231440456,
+      "bias": 134.7244482437699
+    },
+    {
+      "model": "siglip2",
+      "slice": "price_tier",
+      "category": "高价",
+      "n": 636,
+      "mse": 315062.3235470223,
+      "mae": 491.80220996509996,
+      "bias": -486.12739463128025
+    },
+    {
+      "model": "siglip2",
+      "slice": "high_price_scene",
+      "category": "地面外观",
+      "n": 359,
+      "mse": 324676.9566411844,
+      "mae": 500.87606868909234,
+      "bias": -494.56867461934786
+    },
+    {
+      "model": "siglip2",
+      "slice": "high_price_scene",
+      "category": "局部或环境特写",
+      "n": 157,
+      "mse": 340616.65921365115,
+      "mae": 518.9447304683359,
+      "bias": -513.627990240537
+    },
+    {
+      "model": "siglip2",
+      "slice": "high_price_scene",
+      "category": "建筑效果图",
+      "n": 5,
+      "mse": 430512.4591155695,
+      "mae": 548.5556619862898,
+      "bias": -548.5556619862898
+    },
+    {
+      "model": "siglip2",
+      "slice": "high_price_scene",
+      "category": "航拍或高位全景",
+      "n": 115,
+      "mse": 245141.15260521657,
+      "mae": 423.953007695298,
+      "bias": -419.5173566908916
+    },
+    {
+      "model": "siglip2_price_metric",
+      "slice": "price_tier",
+      "category": "中价",
+      "n": 5083,
+      "mse": 39408.43945535493,
+      "mae": 152.20763853272075,
+      "bias": 39.30397447830597
+    },
+    {
+      "model": "siglip2_price_metric",
+      "slice": "price_tier",
+      "category": "低价",
+      "n": 680,
+      "mse": 31801.677905458175,
+      "mae": 143.05157690532823,
+      "bias": 133.40549623055537
+    },
+    {
+      "model": "siglip2_price_metric",
+      "slice": "price_tier",
+      "category": "高价",
+      "n": 636,
+      "mse": 305440.7042656677,
+      "mae": 479.3962063067479,
+      "bias": -470.67678546247606
+    },
+    {
+      "model": "siglip2_price_metric",
+      "slice": "high_price_scene",
+      "category": "地面外观",
+      "n": 359,
+      "mse": 313813.1780213211,
+      "mae": 486.70959305287136,
+      "bias": -477.50864587459137
+    },
+    {
+      "model": "siglip2_price_metric",
+      "slice": "high_price_scene",
+      "category": "局部或环境特写",
+      "n": 157,
+      "mse": 336555.4284628241,
+      "mae": 510.7065293259899,
+      "bias": -502.945087626815
+    },
+    {
+      "model": "siglip2_price_metric",
+      "slice": "high_price_scene",
+      "category": "建筑效果图",
+      "n": 5,
+      "mse": 391725.7701603983,
+      "mae": 514.426897538801,
+      "bias": -500.42702318983754
+    },
+    {
+      "model": "siglip2_price_metric",
+      "slice": "high_price_scene",
+      "category": "航拍或高位全景",
+      "n": 115,
+      "mse": 233074.13812039135,
+      "mae": 412.29724968031695,
+      "bias": -404.0027635808469
+    }
+  ],
+  "caveat": "Base hyperparameters and PLS settings selected with these folds, so slice scores are diagnostic rather than unbiased nested performance; small categories are unstable"
+}

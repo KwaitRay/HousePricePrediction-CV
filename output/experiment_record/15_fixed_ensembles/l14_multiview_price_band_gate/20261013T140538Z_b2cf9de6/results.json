@@ -1,0 +1,16 @@
+{
+  "head": "train_oof_price_band_gate",
+  "mse": 70846.61564222336,
+  "mae": 191.83387156774597,
+  "tail_mse": 336247.7105970207,
+  "n": 1601,
+  "tail_n": 159,
+  "tail_threshold": 1300.0,
+  "meta_training_fit_mse": 75042.7272134053,
+  "weighted_blend_per_predicted_band": [
+    0.0,
+    0.0,
+    0.1033512285812252,
+    0.8877515918406518
+  ]
+}

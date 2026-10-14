@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "removed_exact_zero_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "kept_indices": [
+    6,
+    7,
+    8,
+    9
+  ],
+  "nonzero_weights_unchanged": true,
+  "model_files_byte_identical": true,
+  "all_1601_validation_and_6399_training_inputs_replayed": true,
+  "max_abs_composition_errors": {
+    "validation": 2.2737367544323206e-13,
+    "training_oof_inputs": 4.547473508864641e-13
+  },
+  "test_labels_used": false,
+  "no_new_training_or_parameter_selection": true
+}

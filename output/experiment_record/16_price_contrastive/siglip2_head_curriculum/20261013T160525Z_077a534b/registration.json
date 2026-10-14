@@ -1,0 +1,31 @@
+{
+  "mode": "curriculum",
+  "lambda": 0.01,
+  "epochs": [
+    10,
+    30,
+    60
+  ],
+  "margin": 0.5,
+  "head": "Fixed fit-fold Ridge alpha1000.0 + residual 1152->64->1, contrast projection64->32",
+  "positive": "log price distance <= log1.15; different group; visual near easy / far hard",
+  "negative": "log price distance >= log2; different group; visual far easy / near hard",
+  "visual_difficulty": "Lower/upper quartile among price-eligible pairs in training microbatch, computed from original frozen unit CLIP embeddings",
+  "curriculum": "Hard pair fraction 0 until epoch10, linear rise to25% by epoch20; positive and negative separately normalized",
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "dropout": 0.25,
+  "batch_size": 256,
+  "seed": 2026,
+  "backbone_frozen": true,
+  "source_sha256": "500ccbec82fcba844ff08030c2359b3d554c79aef6b2c773984fd51bbbb69146",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "feature_manifest_sha256": "ef0887a8ed732aa570703547a600c1456640bfca6aece090517647326c79dcf5",
+  "selection": "Epoch chosen on 3-fold training GroupKFold unweighted price MSE; validation once",
+  "scope": "Frozen-feature head experiment; does not claim image-encoder attention changed; source checkpoint scope retained",
+  "test_images_used": false,
+  "reference_kernel": "19_image_embedding_reference/siglip2_so400m_kernel/20261013T152001Z_34db8dd3",
+  "feature_dim": 1152,
+  "baseline_alpha": 1000.0,
+  "source_course_scope": "General-purpose SigLIP 2 image tower only; no MLLM or price-task model"
+}

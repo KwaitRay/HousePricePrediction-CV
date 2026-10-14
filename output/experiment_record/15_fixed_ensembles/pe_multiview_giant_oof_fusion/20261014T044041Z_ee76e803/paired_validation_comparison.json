@@ -1,0 +1,47 @@
+{
+  "n": 1601,
+  "baseline": "15_fixed_ensembles/encoder_family_oof_fusion/20261014T012302Z_b883fad1",
+  "candidate": "15_fixed_ensembles/pe_multiview_giant_oof_fusion/20261014T044041Z_ee76e803",
+  "mse_delta": -1433.4534326788541,
+  "group_bootstrap_95_percent_ci": [
+    -2183.323931115428,
+    -702.208485974871
+  ],
+  "bootstrap_seed": 2026,
+  "bootstrap_replicates": 1000,
+  "price_bands": [
+    {
+      "band": "≤300",
+      "n": 169,
+      "baseline_mse": 25782.287946498374,
+      "candidate_mse": 24606.81589885404,
+      "baseline_bias": 118.96813168050971,
+      "candidate_bias": 115.06743923318297
+    },
+    {
+      "band": "300–700",
+      "n": 775,
+      "baseline_mse": 25148.645553874605,
+      "candidate_mse": 24273.790547807013,
+      "baseline_bias": 79.67355492914255,
+      "candidate_bias": 77.12171038931785
+    },
+    {
+      "band": "700–1300",
+      "n": 498,
+      "baseline_mse": 51746.24842629463,
+      "candidate_mse": 49416.09554943036,
+      "baseline_bias": -11.271915422113862,
+      "candidate_bias": -9.965407755415248
+    },
+    {
+      "band": ">1300",
+      "n": 159,
+      "baseline_mse": 271781.8091588425,
+      "candidate_mse": 270159.9512513824,
+      "baseline_bias": -425.09367208611627,
+      "candidate_bias": -423.78966497973425
+    }
+  ],
+  "caveat": "Conditional fixed-validation comparison; repeated selection bias not corrected; no new public score yet"
+}

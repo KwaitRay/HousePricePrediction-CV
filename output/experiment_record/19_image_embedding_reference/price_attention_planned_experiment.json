@@ -1,0 +1,24 @@
+{
+  "status": "preregistered_waiting_for_siglip_multiview",
+  "source_sha256": "62648e3f58932bc2c0f1a5fe8a04e43e181f7237d354381525fdb33669f24a80",
+  "extractor_sha256": "594eef0f81ec98963220f102ebfe1b792cc0c661ee2856494d23b2a28a3c6060",
+  "real_outer_fold_baseline_replay_passed": true,
+  "nested_oof_targets_finite": true,
+  "attention_shape_normalization_initial_null_and_backward_passed": true,
+  "epochs": [
+    5,
+    15,
+    30
+  ],
+  "residual_scales": [
+    0,
+    0.25,
+    0.5,
+    1
+  ],
+  "selection": "Training GroupKFold3, inner grouped baseline residual targets, original unweighted MSE",
+  "patch_cache_expected_gib": 12.514114379882812,
+  "test_images_used": false,
+  "numerical_preflight_source_sha256": "34dc0d554ef53dc29c1f3c04e29001a0e50829fff65fc21705425c3ae119d37a",
+  "change_after_preflight": "Added per-minute Chinese residual training plots, source snapshots and full selected-model training error diagnosis; kernel, attention architecture and training selection unchanged"
+}

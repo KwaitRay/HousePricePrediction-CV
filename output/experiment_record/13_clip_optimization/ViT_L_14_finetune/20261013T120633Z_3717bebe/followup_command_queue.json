@@ -1,0 +1,11 @@
+{
+  "status": "completed",
+  "controller_pid": 43720,
+  "reference_pid": 12888,
+  "command": [
+    "scripts/experiments/kernel_after_clip_finetune.py",
+    "--fine-dir",
+    "13_clip_optimization/ViT_L_14_finetune/20261013T120633Z_3717bebe"
+  ],
+  "exit_code": 0
+}

@@ -1,0 +1,10 @@
+{
+  "head": "fixed_kernel_on_supervised_encoder",
+  "mse": 74082.5308836457,
+  "mae": 197.14044488172826,
+  "tail_mse": 357107.35735986225,
+  "n": 1601,
+  "tail_n": 159,
+  "tail_threshold": 1300.0,
+  "seconds": 482.29641559999436
+}

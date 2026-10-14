@@ -1,0 +1,46 @@
+{
+  "components": [
+    {
+      "model": "19_image_embedding_reference/siglip2_so400m_kernel/20261013T152001Z_34db8dd3",
+      "head_sha256": "72957882da73e9eac2d110a8fe5740abe58fe88c733c1005844ecabfb8143691",
+      "oof_sha256": "5f4528f459aacedd206ce0640b7543874f9d08e62c8c143b87d40657890d029f",
+      "prediction_sha256": "4bcf36717991dd2dd0918ec50bf0f338be8717aa466046e499932dff4c6304a6"
+    },
+    {
+      "model": "13_clip_optimization/clip_l14_multiview_kernel/20261013T120554Z_e2a41622",
+      "head_sha256": "8c73917dcfbaf805b3d24e72c27bb821fc12ee61307ac5212849c2a7c2596269",
+      "oof_sha256": "66eb9ddd4364a7740ee25c1b6e78e9b4e93a9b8c253b300247aa13bac0d28027",
+      "prediction_sha256": "4eb3f632d58d88bd30af90df7465e90d6a3d96eda2db6f3428ee75e70b663f75"
+    },
+    {
+      "model": "13_clip_optimization/ViT_L_14_336_kernel/20261013T144616Z_8b3d237e",
+      "head_sha256": "c47498e06ee693a119449ad7d82ed13fcf9675156af53e56ff14179d87f47bca",
+      "oof_sha256": "5e2e3278439eebee64eff71a2d798e2c17022909d33ad34b0be6ab8808870261",
+      "prediction_sha256": "2ff54cabcebb7f7a7fb03efb3b6b4274b6e2fba9850f0b01df9314b0ff176852"
+    },
+    {
+      "model": "17_geo_visual_reference/streetclip_kernel/20261013T133019Z_a48bab87",
+      "head_sha256": "faa5d82dc825f5599d0cd598c2c1bc289576e1ced1c32932e838ffc59ee7ed44",
+      "oof_sha256": "c4c072e3bbc4f076ae4dcadc01e040d22d13469081a61c55978d22e50cab2b6b",
+      "prediction_sha256": "ffe8a264c3af66cc7f4cbff747caeb55bf8b294a713e6720a381bdf37abb487b"
+    }
+  ],
+  "params": {
+    "loss": "squared_error",
+    "learning_rate": 0.05,
+    "max_iter": 100,
+    "max_depth": 2,
+    "max_leaf_nodes": 4,
+    "min_samples_leaf": 100,
+    "l2_regularization": 1.0,
+    "early_stopping": false,
+    "random_state": 2026
+  },
+  "fit_scope": "6399 training base OOF predictions and training labels only; no validation meta fitting",
+  "features": "Only numeric image-model price predictions; no filename, price-tier label, scene labels or metadata input",
+  "source_sha256": "c32585e415cff89148980abc44cf311cff62eabf43d4798ab695689da8a61776",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "test_images_used": false,
+  "course_scope": "Exploratory CLIP/BLIP visual components, eligibility unresolved",
+  "caveat": "Meta training-fit error is not independent OOF performance; development and base hyperparameter selection bias remains"
+}

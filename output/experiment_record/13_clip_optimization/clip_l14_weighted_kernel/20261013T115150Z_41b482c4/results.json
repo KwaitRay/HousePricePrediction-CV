@@ -1,0 +1,12 @@
+{
+  "head": "weighted_kernel",
+  "alpha": 1.0,
+  "training_oof_mse": 78579.1948453663,
+  "mse": 74149.3530933595,
+  "mae": 199.90369564735187,
+  "tail_mse": 329194.3904518082,
+  "n": 1601,
+  "tail_n": 159,
+  "tail_threshold": 1300.0,
+  "seconds": 59.19543389999308
+}
