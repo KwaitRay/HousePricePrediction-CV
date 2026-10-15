@@ -1,0 +1,14 @@
+{
+  "model": "timm/vit_pe_core_gigantic_patch14_448.fb",
+  "revision": "fb096c09d13bd2e3827aed4dbdffb8a6b8e0c10b",
+  "source_sha256": "1fddd9f65df031cb7fef35b6594de2870235faf5173cea3fbecf96b873e11ae3",
+  "shape_only": true,
+  "batch_size": 1,
+  "probe_selection": "First three training rows in frozen split, no prices consulted",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "checkpoint_sha256": "a0a499d4a7c6d35bb5f11aa2b076eaacde06e66a08176eb3b3d362d80eb91bd8",
+  "precision": "FP16 parameters and forward; FP32 official RoPE then FP16 cast; FP32 output normalization",
+  "mllm_components": false,
+  "test_images_used": false,
+  "text_modules_used": false
+}

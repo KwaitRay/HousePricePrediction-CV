@@ -1,0 +1,33 @@
+{
+  "source_sha256": "bb59fb26c5f09b2d4aafda907ee1930ef278de7905a48204b8ca5df4a06aa140",
+  "adapter_sha256": "1abebb9cedcbb880ca5afbfbc29a5c82f1730edf2498ace8a2b2d81b6c6406bb",
+  "upstream_failure_sha256": "4e190a2fd279799e3a8e90ff796bae586e549c38352634cc2566b729875ee6a5",
+  "probe_imageids": [
+    "1.jpg",
+    "2.jpg",
+    "3.jpg",
+    "4741.jpg",
+    "4994.jpg",
+    "5672.jpg",
+    "7028.jpg",
+    "9.jpg",
+    "15.jpg"
+  ],
+  "probe_selection": "3 fixed first training + 4 known replay violations + 2 fixed first validation; diagnostic, no accuracy selection",
+  "policies": [
+    "legacy_default",
+    "deterministic_math_tf32_off"
+  ],
+  "repeats": 3,
+  "feature_tolerance": {
+    "rtol": 0.0001,
+    "atol": 3e-06
+  },
+  "price_tolerance": {
+    "rtol": 1e-07,
+    "atol": 0.0001
+  },
+  "fit_price_model": false,
+  "test_images_used": false,
+  "export_eligible": false
+}

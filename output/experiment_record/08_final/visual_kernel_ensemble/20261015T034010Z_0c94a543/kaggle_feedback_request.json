@@ -1,0 +1,9 @@
+{
+  "status": "requested_user_manual_submission",
+  "candidate": "20261015T034010Z_0c94a543",
+  "csv_sha256": "c39009ec65fd89a0f531991d1cfc26a2ecf4095e512ce9905b89c38da06b8da3",
+  "validation_mse": 52201.21126766699,
+  "independent_export_audit_passed": true,
+  "kaggle_uploaded_by_tool": false,
+  "public_mse": null
+}

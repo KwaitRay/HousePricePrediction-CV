@@ -1,0 +1,52 @@
+{
+  "method": "Fixed final price-supervised PE-G LoRA encoder followed by coherent same-encoder RBF bank/head refit and unchanged three-branch blend",
+  "upstream": "20_price_lora\\pe_giant_query_lora\\20261014T112652Z_0fdd4154",
+  "upstream_registration_sha256": "cb439bebbee10c26f12fd7005bd9cf34b1b17fec4349db503eb3efa7169e4de1",
+  "upstream_source_sha256": "97c817972773cee7a783406cfd3e30a8239ef5fd1d076b69a9e81e3060295e32",
+  "upstream_dependency_sha256": {
+    "pe_core_giant_preflight.py": "1fddd9f65df031cb7fef35b6594de2870235faf5173cea3fbecf96b873e11ae3",
+    "pe_giant_lora_preflight.py": "9f5c552b17d082ca416dcb5ca1ba36b708f1119e84db7838524cac3562876197",
+    "pe_giant_whole_view.py": "7d1ce7868274eb04bb03130200048583ed343212659e266f8f22b2983bbc90fb",
+    "visual_kernel_submission.py": "74501ca9f2da2c6a3c44d51dea5b324e226a3be9b3190a66d92ac316f2e96eb1"
+  },
+  "source_checkpoint_epoch": 2,
+  "checkpoint_choice": "Fixed final epoch2 from the original two-epoch budget regardless of validation score; no checkpoint search",
+  "upstream_status_observed": {
+    "status": "completed",
+    "pid": 48048,
+    "screen_passed": false
+  },
+  "upstream_epoch2_metrics_generated_at_registration": true,
+  "start_condition": "Upstream run and its queued artifact audit must complete successfully; execute only if the upstream asymmetric-query screen fails. If it passes, prefer the already planned three-seed workflow.",
+  "hypothesis": "Student query features changed while original teacher anchors/coefficients stayed fixed. Refitting anchors and coefficients in the same adapted feature space may preserve learned relative price cues and reduce coordinate/readout mismatch.",
+  "direct_comparison": "Same trained student epoch2, images, gamma4 alpha1 and fixed baseline blend weights; change the complete RBF bank/head from original teacher space to the adapted student space",
+  "baseline_fusion": "15_fixed_ensembles/pe_giant_whole_incremental_fusion/20261014T082727Z_c5152cef",
+  "baseline_ensemble_sha256": "8743f95ec0b465c71bb508181346f8714c56de756b9737aafbe861580e09bfb8",
+  "original_teacher_kernel": "19_image_embedding_reference/pe_core_g14_448_whole_kernel/20261014T090655Z_2d55c743",
+  "original_teacher_head_sha256": "7747bd57dd7f4fc60d5a56d86b4ba7601a541fc7feaeef9215f9a4b20353829d",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "gamma": 4.0,
+  "alpha": 1.0,
+  "price_scale": 1000,
+  "fit_partition": "6399 train images only; fold/gamma/alpha selection is not repeated",
+  "validation_partition": "All original 1601 validation images, original-price unweighted MSE",
+  "fixed_blend_weights": true,
+  "new_model_oof_generated": false,
+  "meta_weights_relearned": false,
+  "control": "Reproduce original teacher head and full fixed blend on all 1601 validation images before evaluating the adapted-bank alternative",
+  "baseline_validation_mse": 52524.78420579877,
+  "screen_gate": {
+    "minimum_relative_validation_gain": 0.01
+  },
+  "later_adoption": "Only after the readout screen succeeds: same complete training/readout pipeline for seeds2026/2027/2028, mean validation improvement and at least2/3 paired wins. No fresh model OOF or unbiased meta CV claimed.",
+  "execution_source_path": "scripts/experiments/pe_lora_coherent_readout.py",
+  "execution_binding": "Implementation and the completed upstream epoch2 adapter hash will be frozen in a separate execution_binding.json before extraction; this preregistration is preserved unchanged",
+  "feature_family": "pe_giant_lora_price_features",
+  "supervised_encoder": true,
+  "caveat": "Development validation has been reused. The encoder was supervised on all6399 training labels, so ordinary post-encoder CV would leak fold-heldout labels and is not used.",
+  "test_images_used": false,
+  "mllm_components": false,
+  "automatic_test_export": false,
+  "full_refit_adapter_supported": false,
+  "source_sha256": "e671fb46d894031922503d06089a91211c9542c1a0b52de974570eb43316e690"
+}

@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "strict_checkpoint_loading": true,
+  "learned_projection_preserved": true,
+  "feature_shape": [
+    3,
+    768
+  ],
+  "repeat_max_abs_error": 0.0,
+  "preprocess": "Compose(\n    Resize(size=336, interpolation=bicubic, max_size=None, antialias=True)\n    CenterCrop(size=[336, 336])\n    MaybeToTensor()\n    Normalize(mean=tensor([0.4815, 0.4578, 0.4082]), std=tensor([0.2686, 0.2613, 0.2758]))\n)",
+  "peak_allocated_gib": 0.6174526214599609,
+  "peak_reserved_gib": 0.640625,
+  "seconds": 12.785346900112927,
+  "price_model_evaluated": false
+}

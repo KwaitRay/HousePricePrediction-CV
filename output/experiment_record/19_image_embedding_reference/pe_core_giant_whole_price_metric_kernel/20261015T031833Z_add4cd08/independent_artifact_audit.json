@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "n_train_equation": 6399,
+  "n_validation_replay": 1601,
+  "mse": 53608.65068544293,
+  "max_training_equation_error": 7.275957614183426e-12,
+  "max_validation_price_error": 1.3642420526593924e-12,
+  "head_sha256": "c2f223e7008692e8c88768d0db06ce952fe546c26abf37240b9718fafe2d831c",
+  "predictions_sha256": "9508b8a899c1fb3629639f027ab2768d513e312eb6a825d39ea88a28930059a0",
+  "source_sha256": "486eddf69d44cc45010fd0afbd0befee5129cde3ac63ad379dc795c9e33d3b18",
+  "scope": "CPU head bank, fitted transform means/scores, all training equations, all validation prices and selected OOF score. Does not refit all OOF models or reencode GPU images.",
+  "export_eligible": false,
+  "test_images_used": false
+}

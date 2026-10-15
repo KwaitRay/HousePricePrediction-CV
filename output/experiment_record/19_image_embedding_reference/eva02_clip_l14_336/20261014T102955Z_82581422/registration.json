@@ -1,0 +1,65 @@
+{
+  "model": "timm/eva02_large_patch14_clip_336.merged2b",
+  "revision": "a925908b5ecdd9b1eb34c8839aaf86cc6464b941",
+  "cache_family": "eva_clip_features",
+  "feature_dim": 768,
+  "batch_size": 1,
+  "checkpoint_sha256": "c62a355b5d30f66a3654327b84a086176603f2c04630c58bad3911d155b42a3b",
+  "config_sha256": "9e61ac7b2846c7e0c21b9a453c85c3f8a5ed4b864dcec15f2287886c6a3916d1",
+  "preprocess": "Compose(\n    Resize(size=336, interpolation=bicubic, max_size=None, antialias=True)\n    CenterCrop(size=[336, 336])\n    MaybeToTensor()\n    Normalize(mean=tensor([0.4815, 0.4578, 0.4082]), std=tensor([0.2686, 0.2613, 0.2758]))\n)",
+  "feature": "Official final image token readout with learned projection, unit normalized",
+  "precision": "FP32 visual model/forward/math attention and unit normalization/storage; F64 renormalization",
+  "numerical_policy": "FP32, TF32 disabled, SDPA MATH only, deterministic Torch/CUDA, cuDNN benchmark off, CUBLAS workspace :4096:8; two fixed RGB128 336-square warmup forwards per load",
+  "learned_projection_preserved": true,
+  "cross_process_check_sha256": "962bc77b7642c24e6da35a873be7cc8936cba890e011ce9866d710bcf962c767",
+  "source_sha256": "1609cc96bf9f093571bbc0b5477fa894e7e93aefb3e241d0e61558fff156fc69",
+  "encoder_source_sha256": "74d5fb3fef6123d398d902336212160046904c4d09e9c31ae867bccb69ba3b23",
+  "kernel_source_sha256": "ae4006419e647001e9fa257a97f5e67a233b92aa76efa11a479268d067cc9717",
+  "native_implementation_sha256": "a8c9807ef5e8dabc725c1e2a89439760a900d6af6cdafefea18fc121173643a2",
+  "timm_version": "1.0.30",
+  "torch_version": "2.11.0+cu128",
+  "preflight_reference": "19_image_embedding_reference/eva02_clip_l14_336_preflight/20261014T102715Z_08eb0511",
+  "preflight_registration_sha256": "c8f1e8415f6a1349391e37a7119c6648f50d19d96b594406a255452b787801af",
+  "preflight_results_sha256": "391f0eaec8f9f7d966ba2e61019f31d815f0194cd2f71283f87694d0aeecc3f0",
+  "license": "mit",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "train_csv_sha256": "6a37aec7c596d98a2342aae32b0cf2eb660e56c92292fd1c324961ca5d8653d5",
+  "mllm_components": false,
+  "text_modules_used": false,
+  "remote_code_executed": false,
+  "test_images_used": false,
+  "test_labels_used": false,
+  "baseline_fusion": "15_fixed_ensembles/pe_giant_whole_incremental_fusion/20261014T082727Z_c5152cef",
+  "baseline_ensemble_sha256": "8743f95ec0b465c71bb508181346f8714c56de756b9737aafbe861580e09bfb8",
+  "hypothesis": "Different generic image pretraining may complement PE-G whole-frame and existing PLS/NaFlex residuals",
+  "comparison": "Complete fixed encoder method; pretraining, resolution and processor differ. No causal isolation of training objective.",
+  "selection": "One official token readout with learned 768D projection preserved, no layer/window sweep; grouped three-fold original-price OOF KRR",
+  "kernel_grid": {
+    "gammas": [
+      1.0,
+      4.0,
+      16.0
+    ],
+    "alphas": [
+      0.01,
+      0.1,
+      1.0,
+      10.0
+    ]
+  },
+  "fusion_gate": {
+    "minimum_meta_cv_relative_gain": 0.01,
+    "minimum_folds_won": 2,
+    "fixed_validation_improvement": true
+  },
+  "audit": {
+    "probe_n": 12,
+    "seed": 2026,
+    "rtol": 0.0001,
+    "atol": 3e-06,
+    "label_blind_selection": true
+  },
+  "automatic_test_export": false,
+  "course_scope": "Generic visual-only checkpoint and supplied images/labels only",
+  "cache_key": "b564a02200fae2b1ed34e7d2267f17f7f5ae30382bc0bba1c8a52e0e985df85b"
+}

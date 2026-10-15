@@ -1,0 +1,12 @@
+{
+  "source_kernel": "19_image_embedding_reference/pe_core_g14_448_whole_kernel/20261014T090655Z_2d55c743",
+  "source_sha256": "248c6e94f3d2e08975721cda4e46a74ddc506f491674ea6534d000978d74f5f2",
+  "source_head_sha256": "7747bd57dd7f4fc60d5a56d86b4ba7601a541fc7feaeef9215f9a4b20353829d",
+  "recipe": "Unchanged existing fold-fitted PLS-score product kernel, 16 fit components, score dimensions4/16, gamma0.01/0.1, alpha0.1/1/10, plus null ordinary kernel",
+  "new_factor": "Apply the existing PLS readout to the whole-view PE-G source instead of original crop-only PE-G",
+  "fold_fitting_only": true,
+  "test_images_used": false,
+  "automatic_export": false,
+  "fusion_baseline": "15_fixed_ensembles/pe_giant_whole_incremental_fusion/20261014T082727Z_c5152cef",
+  "fusion_gate": "metaCV >=1% gain, >=2/3 wins and improved validation"
+}

@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "n_training_oof": 6399,
+  "maximum_raw_oof_error": 1.226680979016237e-10,
+  "scope": "Same grouped folds, representation and original gamma4 alpha1; complete training OOF replay"
+}

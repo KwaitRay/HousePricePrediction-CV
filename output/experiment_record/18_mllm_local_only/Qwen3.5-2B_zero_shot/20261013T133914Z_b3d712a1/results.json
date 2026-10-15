@@ -1,0 +1,15 @@
+{
+  "head": "zero_shot_direct_price",
+  "mse": 109500.15668050095,
+  "mae": 247.54854715802625,
+  "tail_mse": 482779.0295847107,
+  "n": 1601,
+  "tail_n": 159,
+  "tail_threshold": 1300.0,
+  "course_eligible": false,
+  "independent_local_only": true,
+  "invalid_n": 0,
+  "mean_inference_seconds": 1.7300826024984257,
+  "peak_cuda_allocated_mib": 4287.44970703125,
+  "seconds": 2980.8232547000516
+}

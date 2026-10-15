@@ -1,0 +1,51 @@
+{
+  "method": "Price-supervised LoRA query adaptation with frozen teacher prototypes and fixed fusion weights",
+  "source_kernel": "19_image_embedding_reference/pe_core_g14_448_whole_kernel/20261014T090655Z_2d55c743",
+  "baseline_fusion": "15_fixed_ensembles/pe_giant_whole_incremental_fusion/20261014T082727Z_c5152cef",
+  "preflight_reference": "19_image_embedding_reference/pe_lora_prototype_preflight/20261014T111614Z_95bf28f8",
+  "preflight_results_sha256": "9d7bc3784b48845ba242a7908dfdd0f1e8f222b260df5457f5f67a914a546562",
+  "source_sha256": "62d5e4292c7832e99a879d0b8a2fda99f04d31c4c58f232c5f3377091b262717",
+  "dependency_sha256": {
+    "pe_core_giant_preflight.py": "1fddd9f65df031cb7fef35b6594de2870235faf5173cea3fbecf96b873e11ae3",
+    "pe_giant_lora_preflight.py": "9f5c552b17d082ca416dcb5ca1ba36b708f1119e84db7838524cac3562876197",
+    "pe_giant_whole_view.py": "7d1ce7868274eb04bb03130200048583ed343212659e266f8f22b2983bbc90fb",
+    "visual_kernel_submission.py": "74501ca9f2da2c6a3c44d51dea5b324e226a3be9b3190a66d92ac316f2e96eb1"
+  },
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "source_head_sha256": "7747bd57dd7f4fc60d5a56d86b4ba7601a541fc7feaeef9215f9a4b20353829d",
+  "baseline_ensemble_sha256": "8743f95ec0b465c71bb508181346f8714c56de756b9737aafbe861580e09bfb8",
+  "source_feature_registration_sha256": "0a5f7d2acf7f1817bde44e42e839c44ece468900bf9c3a141fbdc944170edcb7",
+  "seed": 2026,
+  "epochs": 2,
+  "microbatch": 1,
+  "effective_batch": 16,
+  "rank": 4,
+  "adapter_alpha": 4,
+  "trainable_modules": "Last two block qkv/proj only; FP32 adapters, frozen FP16 base and learned projection",
+  "optimizer": {
+    "name": "AdamW",
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08
+  },
+  "gradient_clip_norm": 1.0,
+  "teacher_drift_coefficient": 0.1,
+  "loss": "MSE(max(0,query-price)/1000,real-price/1000) + 0.1*sum((query-feature-teacher-feature)^2)",
+  "readout": "Fixed original training teacher anchors, coefficients, gamma and prior mean; adapt query encoder only",
+  "augmentation": false,
+  "selection": "Complete fixed validation MSE of unchanged three-branch convex blend; cached epoch-zero reference, two complete epochs, retain best improved checkpoint",
+  "control": "All 1601 cached teacher prices replayed; first three train images independently encoded at zero LoRA; no claim all validation images freshly reencoded at epoch zero",
+  "screen_gate": {
+    "minimum_relative_validation_gain": 0.01
+  },
+  "later_adoption": "Only after screen succeeds, seeds 2026/2027/2028 require mean validation improvement and at least 2/3 paired wins; no newly learned meta weights",
+  "caveat": "Development validation repeatedly used; original base parameters and blend weights already selected. No unbiased nested CV or fresh model OOF claimed.",
+  "test_images_used": false,
+  "mllm_components": false,
+  "automatic_test_export": false,
+  "full_refit_adapter_supported": false
+}

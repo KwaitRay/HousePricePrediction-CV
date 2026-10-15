@@ -1,0 +1,7 @@
+{
+  "status": "completed",
+  "prepared_run": "D:\\学习\\研究生\\graduate 26s2\\COMP 90086 CV\\Final_Assignment\\cv-house-price\\.local\\experiment_record\\08_final\\visual_kernel_ensemble\\20261014T064810Z_d7817485",
+  "independent_audit_passed": true,
+  "failed_fresh_extraction": "08_final/visual_kernel_ensemble/20261014T064058Z_16e1be61",
+  "feature_reuse_source": "08_final/visual_kernel_ensemble/20261014T044646Z_7d1af3eb"
+}

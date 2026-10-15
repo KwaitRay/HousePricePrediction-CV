@@ -1,0 +1,12 @@
+{
+  "baseline_validation_mse": 52524.78420579877,
+  "best_validation_mse": 52524.78420579877,
+  "relative_gain": 0.0,
+  "screen_passed": false,
+  "three_seed_adoption_completed": false,
+  "price_model_uses_fixed_prototypes": true,
+  "seconds": 11683.503778300015,
+  "peak_allocated_gib": 3.897857189178467,
+  "test_images_used": false,
+  "export_eligible": false
+}

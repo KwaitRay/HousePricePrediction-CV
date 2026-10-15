@@ -1,0 +1,9 @@
+{
+  "status": "completed",
+  "controller_pid": 20924,
+  "reference_pid": 18992,
+  "command": [
+    "scripts/experiments/audit_pe_giant_whole_feature_adapter.py"
+  ],
+  "exit_code": 0
+}

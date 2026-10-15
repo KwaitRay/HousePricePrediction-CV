@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "validation_n": 1601,
+  "mse": 52524.784205798795,
+  "max_price_error": 3.183231456205249e-12,
+  "scope": "Independent same-gamma/alpha refit of the original cached teacher features and unchanged blend; no GPU zero-adapter claim"
+}

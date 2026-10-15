@@ -1,0 +1,56 @@
+{
+  "scope": "Fixed teacher prices on its own 6399 training anchors; in-sample diagnostic, not OOF or validation. Dynamic epoch process loss averages different adapter states and is not endpoint training MSE.",
+  "source_sha256": "64a5661c5cc67e24937eabe677cd8ea19f55aa4b75acb2dd47cdca301cd11f78",
+  "head_sha256": "7747bd57dd7f4fc60d5a56d86b4ba7601a541fc7feaeef9215f9a4b20353829d",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "history_sha256_observed": "225d2addc029dd22b3506805f3ef1ac9b3af1e3fd5fb528b49e1c79d4d1cdee8",
+  "equation_identity_probe_count": 12,
+  "equation_identity_max_error": 2.8421709430404007e-12,
+  "fixed_teacher_in_sample_mse": 22416.82971992154,
+  "fixed_teacher_normalized_price_loss": 0.022416829719921542,
+  "price_slices": [
+    {
+      "band": "le300",
+      "n": 680,
+      "mse": 8347.01449537906,
+      "bias": 60.11797863103626
+    },
+    {
+      "band": "300_700",
+      "n": 3111,
+      "mse": 11065.059094702314,
+      "bias": 45.581327136541496
+    },
+    {
+      "band": "700_1300",
+      "n": 1972,
+      "mse": 19688.66718451678,
+      "bias": -8.202784847280506
+    },
+    {
+      "band": "gt1300",
+      "n": 636,
+      "mse": 101446.34117835565,
+      "bias": -265.1543823806528
+    }
+  ],
+  "process_comparison": [
+    {
+      "epoch": 1,
+      "mean_dynamic_training_price_loss": 0.02498373336947529,
+      "fixed_teacher_price_loss": 0.022416829719921542,
+      "dynamic_process_mean_minus_fixed_teacher": 0.00256690364955375,
+      "relative_process_mean_change": 0.11450788008942125
+    },
+    {
+      "epoch": 2,
+      "mean_dynamic_training_price_loss": 0.033922306208219566,
+      "fixed_teacher_price_loss": 0.022416829719921542,
+      "dynamic_process_mean_minus_fixed_teacher": 0.011505476488298024,
+      "relative_process_mean_change": 0.5132517234617373
+    }
+  ],
+  "test_images_used": false,
+  "model_or_optimizer_changed": false,
+  "final_adapter_training_predictions_evaluated": false
+}

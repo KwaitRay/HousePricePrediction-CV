@@ -1,0 +1,6 @@
+{
+  "n": 12,
+  "parsed_n": 12,
+  "mean_seconds": 2.0875225833733566,
+  "peak_cuda_allocated_mib": 4287.44970703125
+}

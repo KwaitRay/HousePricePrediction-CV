@@ -1,0 +1,9 @@
+{
+    "audit_source_sha256":  "036a97d50933b8fa61f15ee51f935e156c904b79e9f71343eabe9d775e708ff8",
+    "controller_source_sha256":  "608fd3809e5b439a8f2919123203bc1cb2b511cc62942bf4754e6f11375274a6",
+    "predecessor_pid":  29048,
+    "bank_train_n":  6399,
+    "validation_n":  1601,
+    "gpu_replay_performed_by_this_audit":  false,
+    "automatic_restart":  false
+}

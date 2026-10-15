@@ -1,0 +1,30 @@
+{
+  "method": "mean-centered weighted-view RBF kernel ridge",
+  "source_kernel": "19_image_embedding_reference/pe_core_g14_448_whole_kernel/20261014T090655Z_2d55c743",
+  "baseline_fusion": "15_fixed_ensembles/pe_giant_whole_incremental_fusion/20261014T082727Z_c5152cef",
+  "cache_family": "pe_giant_whole_view_weight_features",
+  "source_feature_registration_sha256": "0a5f7d2acf7f1817bde44e42e839c44ece468900bf9c3a141fbdc944170edcb7",
+  "source_sha256": "4307ce6b915d39e1da1035a21d6c4c0b7a500ccdfa42ea099e558ca311028a26",
+  "feature_reader_sha256": "74501ca9f2da2c6a3c44d51dea5b324e226a3be9b3190a66d92ac316f2e96eb1",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "whole_weights": [
+    0.5,
+    0.25,
+    0.75,
+    1.0,
+    0.0
+  ],
+  "gamma": 4.0,
+  "alpha": 1.0,
+  "train_only_group_cv": 3,
+  "feature_dim": 2560,
+  "hypothesis": "Equal crop/whole weighting is an untested convention; tune only its geometry weight, preserving the verified encoder, readout gamma/alpha, labels and grouped folds.",
+  "formula": "concat(sqrt(1-w)*unit(crop),sqrt(w)*unit(whole)), followed by unit normalization",
+  "control": "w=0.5 replay all6399 source raw OOF and all1601 source validation prices before evaluating other weights",
+  "selection": "Minimum clipped original-price training OOF MSE; fixed order breaks ties. Validation only for selected weight.",
+  "fusion_gate": "Later separate incremental OOF fusion requires >=1% metaCV improvement, >=2/3 paired wins and improved full validation.",
+  "test_images_used": false,
+  "supervised_encoder": false,
+  "full_refit_adapter_supported": false,
+  "automatic_test_export": false
+}

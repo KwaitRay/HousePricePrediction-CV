@@ -1,0 +1,27 @@
+{
+  "model": "timm/eva02_large_patch14_clip_336.merged2b",
+  "revision": "a925908b5ecdd9b1eb34c8839aaf86cc6464b941",
+  "checkpoint_sha256": "c62a355b5d30f66a3654327b84a086176603f2c04630c58bad3911d155b42a3b",
+  "config_sha256": "9e61ac7b2846c7e0c21b9a453c85c3f8a5ed4b864dcec15f2287886c6a3916d1",
+  "source_sha256": "a08a9678ca8831c790e57adc0109b6e6cada94de637f275e77301355855471ee",
+  "encoder_source_sha256": "1cc4cb1024670ab939d1c6d218484dd8690f08074491c946703cab1bf9c44d65",
+  "feature_dim": 768,
+  "batch_size": 1,
+  "image_size": 336,
+  "learned_projection_preserved": true,
+  "feature": "Official final image token readout with learned projection, unit normalized",
+  "numerical_policy": "Deterministic Torch/CUDA, cuDNN benchmark off, CUBLAS workspace :4096:8; two fixed RGB128 336-square warmup forwards per load",
+  "precision": "FP16 visual forward, FP32 unit normalization/storage, F64 renormalization",
+  "probe_imageids": [
+    "1.jpg",
+    "2.jpg",
+    "3.jpg"
+  ],
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "mllm_components": false,
+  "text_modules_used": false,
+  "test_images_used": false,
+  "price_labels_used_for_selection": false,
+  "automatic_feature_extraction": false,
+  "license": "mit"
+}

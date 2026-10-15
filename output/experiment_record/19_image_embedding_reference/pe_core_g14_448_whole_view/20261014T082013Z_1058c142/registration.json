@@ -1,0 +1,52 @@
+{
+  "method": "Original PE-Core-G plus exactly one whole-frame letterbox view",
+  "source_sha256": "7d1ce7868274eb04bb03130200048583ed343212659e266f8f22b2983bbc90fb",
+  "original_reference": "19_image_embedding_reference/pe_core_g14_448/20261014T065137Z_b822c3d4",
+  "original_cache_key": "d4e2604d156afed5901efb7cd5f2daac1d28efc6e5f2e7ecb9d70097cfe78055",
+  "original_manifest_sha256": "26e2ce5fa0275da38602142de63b1625e7af96f5e30eee9abc56360869b8a400",
+  "original_chunks_manifest_sha256": "7b518bf3f1c7546e3d3a5d0f4a97288f23c15aa6d52bed158d40cc3c0fd6dfab",
+  "dependency_sha256": {
+    "pe_core_giant_encoder.py": "3fa4d736db417bd471454f4b1d72b3d2e4bb698d69d9be5b551a68a73b7537d0",
+    "pe_core_giant_preflight.py": "1fddd9f65df031cb7fef35b6594de2870235faf5173cea3fbecf96b873e11ae3",
+    "frozen_kernel_search.py": "cf50731296523fec7fbc663e4cd91171e3d3a689d1ac0c7dce59bddf05f87057"
+  },
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "model": "timm/vit_pe_core_gigantic_patch14_448.fb",
+  "revision": "fb096c09d13bd2e3827aed4dbdffb8a6b8e0c10b",
+  "cache_family": "pe_core_giant_whole_features",
+  "feature_dim": 2560,
+  "batch_size": 1,
+  "views": [
+    "Unchanged cached official original image vector",
+    "Whole EXIF RGB image letterboxed to 448 square, bicubic, RGB128 border, then unchanged official processor"
+  ],
+  "view_weighting": "Equal-weight concatenation of two unit 1280D vectors, then unit normalization, stored FP32",
+  "comparison": "One added view only; preserve original branch, checkpoint, precision, official processor and target. Feature dimension increases from 1280 to 2560.",
+  "baseline_fusion": "15_fixed_ensembles/pe_giant_incremental_fusion/20261014T065752Z_88efe38c",
+  "baseline_ensemble_sha256": "b1f4830c438ebdcc2f83b7a7e77d900cfbff5fb094b718b1ab546bfe04662a98",
+  "kernel_grid": {
+    "gammas": [
+      1.0,
+      4.0,
+      16.0
+    ],
+    "alphas": [
+      0.01,
+      0.1,
+      1.0,
+      10.0
+    ],
+    "group_folds": 3
+  },
+  "fusion_gate": {
+    "minimum_meta_cv_relative_gain": 0.01,
+    "minimum_folds_won": 2,
+    "require_fixed_validation_improvement": true
+  },
+  "selection": "Unweighted original-price training grouped OOF MSE, then fixed validation. Incremental fusion against fixed 53462.04 scheme only after ordinary kernel completes.",
+  "caveat": "Crop coverage does not prove price information was discarded; pad changes native detail scale. Base and development selection bias remains.",
+  "test_images_used": false,
+  "test_labels_used": false,
+  "mllm_components": false,
+  "automatic_test_export": false
+}

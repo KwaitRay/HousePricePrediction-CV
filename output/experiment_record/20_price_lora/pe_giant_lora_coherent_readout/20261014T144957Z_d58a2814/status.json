@@ -1,0 +1,5 @@
+{
+  "status": "failed",
+  "pid": 29048,
+  "error": "AssertionError('\\nNot equal to tolerance rtol=1e-07, atol=0.0001\\n\\nMismatched elements: 4 / 1601 (0.25%)\\nMismatch at indices:\\n [944]: 550.1083670964431 (ACTUAL), 549.8754469950486 (DESIRED)\\n [1000]: 828.681306044966 (ACTUAL), 828.6473340033801 (DESIRED)\\n [1143]: 403.58580822005086 (ACTUAL), 403.7386538056376 (DESIRED)\\n [1399]: 1227.415591021898 (ACTUAL), 1227.181779785334 (DESIRED)\\nMax absolute difference among violations: 0.23381124\\nMax relative difference among violations: 0.00042359\\n ACTUAL: array([1074.639391,  602.79991 ,  313.456001, ...,  950.947728,\\n        913.24666 , 1242.626359], shape=(1601,))\\n DESIRED: array([1074.639391,  602.79991 ,  313.456001, ...,  950.947728,\\n        913.24666 , 1242.626359], shape=(1601,))')"
+}

@@ -1,0 +1,14 @@
+{
+  "status": "completed",
+  "controller_pid": 43556,
+  "reference_pid": 29572,
+  "command": [
+    "scripts/experiments/clip_variant_reference.py",
+    "--model",
+    "ViT-L-14-336",
+    "--batch-size",
+    "4",
+    "--kernel-followup"
+  ],
+  "exit_code": 0
+}

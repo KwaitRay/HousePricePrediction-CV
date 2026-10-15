@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "cached_validation_prices_replayed": 1601,
+  "online_training_image_probes": 3,
+  "baseline_validation_mse": 52524.78420579877
+}

@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "controller_pid": 6060,
+  "reference_pid": 33020,
+  "command": [
+    "scripts/experiments/aimv2_visual_reference.py",
+    "--phase",
+    "extract",
+    "--protocol-dir",
+    ".local/experiment_record/19_image_embedding_reference/aimv2_large_224_patchmean/20261014T092012Z_432c1a02"
+  ],
+  "exit_code": 0
+}

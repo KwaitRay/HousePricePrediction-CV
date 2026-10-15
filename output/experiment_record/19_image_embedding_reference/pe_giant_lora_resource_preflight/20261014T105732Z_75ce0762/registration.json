@@ -1,0 +1,30 @@
+{
+  "source_sha256": "9f5c552b17d082ca416dcb5ca1ba36b708f1119e84db7838524cac3562876197",
+  "rank": 4,
+  "alpha": 4,
+  "blocks": "Last two only",
+  "target_modules": [
+    "attn.qkv",
+    "attn.proj"
+  ],
+  "base_parameters_frozen": true,
+  "adapter_precision": "FP32 parameters and operations, delta cast to frozen FP16 base output",
+  "base_checkpoint_sha256": "a0a499d4a7c6d35bb5f11aa2b076eaacde06e66a08176eb3b3d362d80eb91bd8",
+  "feature_manifest_sha256": "26e2ce5fa0275da38602142de63b1625e7af96f5e30eee9abc56360869b8a400",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "probe_imageids": [
+    "1.jpg",
+    "2.jpg",
+    "3.jpg"
+  ],
+  "loader_source_sha256": "1fddd9f65df031cb7fef35b6594de2870235faf5173cea3fbecf96b873e11ae3",
+  "gradient_objective": "First coordinate of unit image feature, no price targets and no optimizer step",
+  "tolerance": {
+    "rtol": 0.0001,
+    "atol": 3e-06
+  },
+  "price_model_evaluated": false,
+  "test_images_used": false,
+  "mllm_components": false,
+  "automatic_training": false
+}

@@ -1,0 +1,26 @@
+{
+  "registered_identity_matched": true,
+  "snapshot_time": "After completed export; verified against hashes recorded during execution",
+  "dependencies": [
+    {
+      "source": "visual_kernel_inference.py",
+      "snapshot": "verified_dependency_visual_kernel_inference.py",
+      "sha256": "0c1cca800eb72510a7f26f5109d21b1bd2f8ac96bf7ee0457bbd08e7957286bf"
+    },
+    {
+      "source": "pe_core_giant_encoder.py",
+      "snapshot": "verified_dependency_pe_core_giant_encoder.py",
+      "sha256": "3fa4d736db417bd471454f4b1d72b3d2e4bb698d69d9be5b551a68a73b7537d0"
+    },
+    {
+      "source": "pe_core_giant_preflight.py",
+      "snapshot": "verified_dependency_pe_core_giant_preflight.py",
+      "sha256": "1fddd9f65df031cb7fef35b6594de2870235faf5173cea3fbecf96b873e11ae3"
+    },
+    {
+      "source": "audit_visual_submission.py",
+      "snapshot": "verified_dependency_audit_visual_submission.py",
+      "sha256": "fa85d4f37a44c94ac9325f20dd5b55467ae6bb8e8391e05c45f43a9322c80ee6"
+    }
+  ]
+}

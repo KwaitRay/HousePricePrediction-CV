@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "all_8000_training_pixel_hashes_verified": true,
+  "all_8000_cache_chunks_verified": true,
+  "all_original_branches_verified": true,
+  "max_original_branch_recovery_error": 1.633703328174363e-08,
+  "imageids": [
+    "5115.jpg",
+    "6648.jpg",
+    "212.jpg",
+    "3736.jpg",
+    "6325.jpg",
+    "6806.jpg",
+    "2922.jpg",
+    "639.jpg",
+    "1430.jpg",
+    "2963.jpg",
+    "2839.jpg",
+    "5146.jpg"
+  ],
+  "gpu_feature_probe_n": 12,
+  "max_abs_feature_replay_error": 0.0,
+  "encoder_adapter_source_sha256": "d2543c58424336a2b1de6b081b3081cf634710db4687943ec739fae6324099a4",
+  "feature_manifest_sha256": "b7e44b02d5bc1277f92f92d76de439383eb6d3220483938902296942d1e9de64",
+  "test_images_used": false
+}

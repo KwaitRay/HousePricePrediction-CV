@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "max_abs_feature_replay_error": 1.1102230246251565e-16,
+  "max_abs_price_replay_error": 2.2737367544323206e-13,
+  "gradient_norm_sums": [
+    0.012507670209743083,
+    0.006227671750821173,
+    0.00019934016017941758
+  ],
+  "peak_allocated_gib": 3.8970322608947754,
+  "peak_reserved_gib": 4.1875,
+  "seconds": 3.6082915998995304,
+  "price_model_evaluated": false,
+  "optimizer_step_performed": false,
+  "test_images_used": false
+}

@@ -1,0 +1,14 @@
+{
+  "provisional_unverified_features": true,
+  "not_a_candidate": true,
+  "mse": 52154.631141361315,
+  "branch_mse": 52942.764375650906,
+  "mae": 159.25466869350123,
+  "tail_mse": 248066.79747908717,
+  "baseline_mse": 52524.78420579877,
+  "export_eligible": false,
+  "screen_passed": null,
+  "source_replay_still_failed": true,
+  "no_new_model_oof": true,
+  "scope": "Descriptive diagnostic only. No successful numerical control, adoption, test export or source replay claim."
+}

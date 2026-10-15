@@ -1,0 +1,54 @@
+{
+  "scope": "Algebraic reconstruction of clipped query-branch prices from the existing unchanged-weight blend; no new features, head fitting, meta weights or model OOF. Unclipped query prices cannot be recovered.",
+  "source_sha256": "3ee3f35ae06a8f9970b6227309621c17c336de6adb677cf74fc1b45538d6d772",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "input_sha256": {
+    "15_fixed_ensembles\\pe_giant_whole_incremental_fusion\\20261014T082727Z_c5152cef\\ensemble.json": "8743f95ec0b465c71bb508181346f8714c56de756b9737aafbe861580e09bfb8",
+    "19_image_embedding_reference\\siglip2_naflex_576_kernel\\20261014T020905Z_e457778a\\predictions.csv": "f4fbd1d8df2aa69d120d9b741318d9db77bb2ee630d301a84581ccc18ab31bc9",
+    "19_image_embedding_reference\\pe_core_multiview_price_metric_kernel\\20261014T051116Z_13d3ea16\\predictions.csv": "b6915cb4febe40b1653a41ed7ecbaed031a2da3409758c0b3c1ea2187da3af24",
+    "19_image_embedding_reference\\pe_core_g14_448_whole_kernel\\20261014T090655Z_2d55c743\\predictions.csv": "b51ea95669403aa57dd4b8bd24d78c10d2a4e2050b989a36070ea105bbeadd3e",
+    "15_fixed_ensembles\\pe_giant_whole_incremental_fusion\\20261014T082727Z_c5152cef\\predictions.csv": "9926417dc6984cd926b5af5610a5a49a08e3fa0c0d953b9b1e3a8349d2f9b17e"
+  },
+  "query_weight": 0.7381488258899592,
+  "fixed_teacher_branch": {
+    "n": 1601,
+    "mse": 53252.81379734146,
+    "mae": 161.8785386685108,
+    "bias": 5.866268940779968,
+    "tail_mse": 258630.5481909544,
+    "low_mse": 22050.994472655275
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "clipped_query_branch": {
+        "n": 1601,
+        "mse": 54718.03555105931,
+        "mae": 169.89098891368639,
+        "bias": 29.15171841234115,
+        "tail_mse": 250292.61995382325,
+        "low_mse": 33726.98522858488
+      },
+      "fixed_blend_mse": 53386.30179668267,
+      "query_branch_mse_change": 1465.221753717844,
+      "csv_sha256": "96daab36ef8e35b7ba7b5797616f82f6e576a419b8f70260e660340214572ce0"
+    },
+    {
+      "epoch": 2,
+      "clipped_query_branch": {
+        "n": 1601,
+        "mse": 55803.61632484825,
+        "mae": 168.56116945962663,
+        "bias": 12.11970930446268,
+        "tail_mse": 223791.40943066485,
+        "low_mse": 22254.499682244576
+      },
+      "fixed_blend_mse": 53762.03336147328,
+      "query_branch_mse_change": 2550.802527506785,
+      "csv_sha256": "4b3dd41bc32b05f20a3b796ec9d1e15f7a91d31b10699e36958b9423beffb68d"
+    }
+  ],
+  "test_images_used": false,
+  "model_or_optimizer_changed": false,
+  "export_eligible": false
+}

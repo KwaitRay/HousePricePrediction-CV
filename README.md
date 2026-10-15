@@ -1,5 +1,23 @@
 # 图像房价预测实验
 
+## 当前快照（2026-10-16）
+
+最佳用户反馈Kaggle公榜MSE **47291.34608**，PCA候选034010；开发验证 **52201.21**。CSV与全部3000条独立核验绑定，原50000目标达到，40000目标尚未达到。分数来源是用户反馈，工具未自动提交Kaggle。
+
+实验按用户要求**暂停**，GPU任务已停止；PE-G第40块仅完成600/8000张，续跑适配未实现，不自动恢复。此分支整理设计、结果、分析与代码；数据、权重、缓存、逐图预测继续本地保留。
+
+| 阅读内容 | 入口 |
+| --- | --- |
+| 实验设计、逻辑链和约束（design仅这一份） | [主设计](design/model_and_experiment_plan.md) |
+| 近期结果、误差分析和失败结论 | [近期实验报告](output/experiment_record/improvement_to_50000/近期实验报告.md) |
+| 最新状态与恢复限制 | [当前交接](output/experiment_record/improvement_to_50000/最新进展与接续.md) |
+| 新增视觉、核回归、审计与编排代码 | [代码导航](scripts/experiments/RECENT_EXPERIMENTS.md) |
+| 所有公开运行与用户反馈的机器可读汇总 | [summary.json](output/experiment_record/improvement_to_50000/summary.json) |
+| 历史编排/审计源码及原路径SHA映射 | [快照说明](archive/experiment_orchestration/20261016_snapshot/README.md) |
+
+以下早期训练配置、交付模板和历史推荐作为原阶段记录保留；最新最佳模型与暂停状态以上述入口为准。
+
+
 这是**开发仓库，不是最终提交包**。先按下面三个入口阅读，不需要从头浏览全部文件。
 
 | 你想做什么 | 从哪里开始 |
@@ -15,7 +33,7 @@
 - 正式报告单独提交 PDF，不将内部阶段报告 Markdown 当成正式报告。
 - 原始开发记录继续保留；不移动运行中的目录、不删除证据、不改变实验方案。
 
-目前仅导出传统参照阶段预览；冻结划分已核对一致，可通过 `--split` 打入ZIP，但尚无最终测试预测，**不能直接作为最终提交**。
+早期仅导出传统参照预览；当前视觉候选已有经核验的本地测试CSV，但开发仓库与历史预览ZIP仍不等同最终课程提交包。正式交付前应冻结所选方法、报告、配置及预测。
 
 ```powershell
 python scripts/package_submission.py --config configs/01_baselines/sift_ridge.json --output .local/submission_preview/traditional_code.zip
@@ -103,6 +121,6 @@ uv pip install --python .venv/Scripts/python.exe -r scripts/experiments/requirem
 
 预处理选用直接拉伸。训练调优保留AdamW 0.0001、固定学习率、有效批量32、随机失活0.5，三种子平均验证均方误差127774.42。Adam复核、余弦衰减、批量16/64及随机失活0/0.2均未满足替换条件。原因、控制变量和局限统一见[训练调优报告](output/experiment_record/04_training/实验报告.md)。Muon剩余候选不继续。
 
-本次迁移保留历史指标，不把新代码当作旧版本的逐位复现。历史队列归档为文本。2026-10-03新增 `scripts/experiments/train_cached.py`，通过环境变量 `CV_STRETCH_CACHE_DIRECTORY` 显式连接本地缓存；启动前检查文件、原图和包版本。新顺序队列 `continue_training.py --legacy-root <原Final_Assignment目录>` 先核验核心代码结构和32张独立重算，再复核Adam并进入实验三。普通 `project.py train` 仍使用原图加载，缓存仅对显式入口生效。详见[整理与路径核验](design/整理与路径核验.md)。
+本次迁移保留历史指标，不把新代码当作旧版本的逐位复现。历史队列归档为文本。2026-10-03新增 `scripts/experiments/train_cached.py`，通过环境变量 `CV_STRETCH_CACHE_DIRECTORY` 显式连接本地缓存；启动前检查文件、原图和包版本。新顺序队列 `continue_training.py --legacy-root <原Final_Assignment目录>` 先核验核心代码结构和32张独立重算，再复核Adam并进入实验三。普通 `project.py train` 仍使用原图加载，缓存仅对显式入口生效。详见[整理与路径核验](design/model_and_experiment_plan.md#implementation-history)。
 
 </details>

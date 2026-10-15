@@ -1,0 +1,22 @@
+[
+  {
+    "whole_weight": 0.5,
+    "training_oof_mse": 53646.455354645965
+  },
+  {
+    "whole_weight": 0.25,
+    "training_oof_mse": 54076.27611983107
+  },
+  {
+    "whole_weight": 0.75,
+    "training_oof_mse": 53679.0868232581
+  },
+  {
+    "whole_weight": 1.0,
+    "training_oof_mse": 54447.31821434468
+  },
+  {
+    "whole_weight": 0.0,
+    "training_oof_mse": 55679.72644447942
+  }
+]

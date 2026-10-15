@@ -1,0 +1,13 @@
+{
+  "new_encoder_branch_and_family_only": true,
+  "all_existing_encoder_and_refit_formulas_byte_equivalent_after_route_removal": true,
+  "active_extraction_dependencies_unchanged": true,
+  "gpu_feature_replay_pending": true,
+  "compatible_source_sha256": {
+    "visual_kernel_inference.py": "0c1cca800eb72510a7f26f5109d21b1bd2f8ac96bf7ee0457bbd08e7957286bf",
+    "visual_kernel_submission.py": "25ab9546109fddcecf25c8c709c5bedb585e01cb95f06ad905a3ce2b9f01ba77",
+    "pe_core_giant_encoder.py": "3fa4d736db417bd471454f4b1d72b3d2e4bb698d69d9be5b551a68a73b7537d0"
+  },
+  "scope": "Static dispatch preservation and active dependency identity; numerical GPU replay remains required",
+  "test_images_used": false
+}

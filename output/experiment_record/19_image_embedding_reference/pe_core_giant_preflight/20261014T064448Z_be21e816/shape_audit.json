@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "tensors": 621,
+  "parameters": 1882033920,
+  "meta_buffers": [
+    {
+      "name": "rope.pos_embed",
+      "shape": [
+        1024,
+        192
+      ]
+    }
+  ]
+}

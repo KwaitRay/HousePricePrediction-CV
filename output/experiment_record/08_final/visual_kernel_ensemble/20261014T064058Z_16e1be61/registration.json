@@ -1,0 +1,79 @@
+{
+  "method": "Fixed visual-only convex kernel ensemble; full-label refit",
+  "reference": "15_fixed_ensembles\\pe_pls_sparse_export_reference\\20261014T064058Z_7f5b89d3",
+  "reference_ensemble_sha256": "9b08345a6e26529e2d2c82fabcedbf8ef2dffb14ae786115920537798bab95b5",
+  "weights": [
+    0.2424889393145829,
+    0.20568652636378965,
+    0.5518245343216275
+  ],
+  "models": [
+    "19_image_embedding_reference\\siglip2_naflex_576_kernel\\20261014T020905Z_e457778a",
+    "19_image_embedding_reference\\siglip2_giant_384_kernel\\20261014T042225Z_c6fe9be0",
+    "19_image_embedding_reference/pe_core_multiview_price_metric_kernel/20261014T051116Z_13d3ea16"
+  ],
+  "source_sha256": "96ad86e56cb411197287c4f21d6e37944aa449526e54d2fc4c738ad6b7c78442",
+  "reference_validation_mse": 56454.60263313136,
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "train_csv_sha256": "6a37aec7c596d98a2342aae32b0cf2eb660e56c92292fd1c324961ca5d8653d5",
+  "test_csv_sha256": "3b204c0887200c43fc7ff7e5e0f897b7b82ea16cf2387d55b3bf31759db57de9",
+  "train_n": 8000,
+  "test_n": 3000,
+  "price_unit": "thousand USD",
+  "target_scale": 1000,
+  "mllm_components": false,
+  "selection": "Components, gamma, alpha and blend weights frozen before test inference",
+  "scope": "Exploratory visual-only candidate; source course eligibility unresolved; not uploaded",
+  "test_images_used": true,
+  "test_labels_used": false,
+  "components": [
+    {
+      "source": "19_image_embedding_reference\\siglip2_naflex_576_kernel\\20261014T020905Z_e457778a",
+      "cache_family": "siglip2_naflex_features",
+      "cache_key": "8b18cb9dd59f766ed86954e2f8c74fcc7627a593921091845f9a6063148be4e9",
+      "source_registration_sha256": "04a63c04bcf84cd67d8de24c21a8fe99106718f0eb76df5f4e63bd9346ca5d12",
+      "feature_manifest_sha256": "668f6570df8183b7ad7061df635fc34b84c2efa7657d21860a54fb7db532067a",
+      "kernel_type": "image_rbf",
+      "gamma": 1.0,
+      "alpha": 0.1,
+      "feature_dim": 1152,
+      "full_head_sha256": "be76de6ec2b5ae798beba58d1c0639a272c265e3eb78c0e510504fa296a2c817",
+      "reference_replay_passed": true
+    },
+    {
+      "source": "19_image_embedding_reference\\siglip2_giant_384_kernel\\20261014T042225Z_c6fe9be0",
+      "cache_family": "siglip2_giant_features",
+      "cache_key": "eebfca6336987022166c4aae23008ff570150bb2ad16265085c0c60e69fec709",
+      "source_registration_sha256": "f29f67b042012f6baa7196d0342c13cfeb59b9089065adbf407d7d732e132e6a",
+      "feature_manifest_sha256": "61a2eb0c4e2731d4db7cf6ecef25199a6d660e75d8d1369501392b9e1dc14022",
+      "kernel_type": "image_rbf",
+      "gamma": 4.0,
+      "alpha": 1.0,
+      "feature_dim": 1536,
+      "full_head_sha256": "bf40938b8e331652e03f4fb9c8b072ccf3a036b5b125092a00c441e8de60e771",
+      "reference_replay_passed": true
+    },
+    {
+      "source": "19_image_embedding_reference/pe_core_multiview_price_metric_kernel/20261014T051116Z_13d3ea16",
+      "cache_family": "pe_core_multiview",
+      "cache_key": "d5cbb115b2d7c440dafb307239fc30d3207df90486d9baf790b1f7a7dd7974db",
+      "source_registration_sha256": "dbb18554b97a2e2887908666e04d93ec139a8d97f67b247ccd1d467226824a07",
+      "feature_manifest_sha256": "888822d7bf92e8dd9a2ed50eebc18e615d8c47e2e430fd22b91c6df764b11b69",
+      "kernel_type": "pls_product_rbf",
+      "reference_metric_sha256": "5c8b881ebd57c1d7250e55152195e031d497930d5c062641d6cb274060157879",
+      "full_metric_file": "component_2_full_metric.joblib",
+      "full_metric_sha256": "6675676e412945926713bef3a70244653d8c6be6597f3bc34111ef6ef42679d5",
+      "pls_fit_components": 16,
+      "image_gamma": 1.0,
+      "pls_gamma": 0.1,
+      "components": 4,
+      "alpha": 1.0,
+      "feature_dim": 3072,
+      "full_head_sha256": "c797b1a448c1732fc8136eec0b2f7d0f51599440daccc98f1b2d88f9c2262a96",
+      "reference_replay_passed": true
+    }
+  ],
+  "component_adapter_sha256": "6ec6de98a5fe5373aaacbbeec27e96f48b11cb067c405ffc9e5c30e20564f47e",
+  "inference_source_sha256": "4c20868ae465e9fa6a3fbe66e2fe48298ccb36efd135bda448d2bc5e387da3c0",
+  "test_images_role": "Inference only; no training, target access, model selection or calibration"
+}

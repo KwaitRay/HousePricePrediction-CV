@@ -1,0 +1,8 @@
+{
+  "n": 6399,
+  "median_retained_area_fraction": 0.6925,
+  "native_area_outside_center_square_mean": 0.3064218687893547,
+  "n_more_than_one_third_native_area_outside_crop": 964,
+  "source": "15_fixed_ensembles/pe_giant_incremental_fusion/20261014T065752Z_88efe38c",
+  "price_model_selection_claim": null
+}

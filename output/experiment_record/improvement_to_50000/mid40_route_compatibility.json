@@ -1,0 +1,14 @@
+[
+  {
+    "file": "frozen_kernel_search.py",
+    "before_sha256": "ae4006419e647001e9fa257a97f5e67a233b92aa76efa11a479268d067cc9717",
+    "after_sha256": "e4ab216a731dfff6aea2805a2fd8e4ddab1e2018ec6bc2da88ef2d1d986b7c84",
+    "deleting_added_family_restores_original_text": true
+  },
+  {
+    "file": "visual_kernel_submission.py",
+    "before_sha256": "74501ca9f2da2c6a3c44d51dea5b324e226a3be9b3190a66d92ac316f2e96eb1",
+    "after_sha256": "e1cbffcc76a5ca123bfe3b5382d67d2ad7831063eff22042316e8f2138672b41",
+    "deleting_added_family_restores_original_text": true
+  }
+]

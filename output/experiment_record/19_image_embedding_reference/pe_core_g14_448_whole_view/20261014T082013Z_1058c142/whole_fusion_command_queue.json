@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "controller_pid": 44328,
+  "reference_pid": 18992,
+  "command": [
+    "scripts/experiments/pe_giant_incremental_fusion.py",
+    "--phase",
+    "run",
+    "--protocol-dir",
+    "D:/\u5b66\u4e60/\u7814\u7a76\u751f/graduate 26s2/COMP 90086 CV/Final_Assignment/cv-house-price/.local/experiment_record/15_fixed_ensembles/pe_giant_whole_incremental_fusion/20261014T082727Z_c5152cef"
+  ],
+  "exit_code": 0
+}

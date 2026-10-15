@@ -1,0 +1,9 @@
+{
+  "status": "completed",
+  "controller_pid": 30964,
+  "reference_pid": 29248,
+  "command": [
+    "scripts/experiments/pe_giant_lora_preflight.py"
+  ],
+  "exit_code": 0
+}

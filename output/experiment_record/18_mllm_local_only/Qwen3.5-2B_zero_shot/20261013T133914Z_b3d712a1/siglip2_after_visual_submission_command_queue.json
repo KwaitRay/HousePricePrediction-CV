@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "controller_pid": 9688,
+  "reference_pid": 21512,
+  "command": [
+    "scripts/experiments/siglip_visual_reference.py",
+    "--weights-dir",
+    ".local/cache/siglip2_weights/e8e487298228002f3d8a82e0cd5c8ea9c567f57f",
+    "--batch-size",
+    "4"
+  ],
+  "exit_code": 0
+}

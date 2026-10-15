@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "controller_pid": 3132,
+  "reference_pid": 6060,
+  "command": [
+    "scripts/experiments/pe_giant_incremental_fusion.py",
+    "--phase",
+    "run",
+    "--protocol-dir",
+    ".local/experiment_record/15_fixed_ensembles/aimv2_incremental_fusion/20261014T092113Z_4001e224"
+  ],
+  "exit_code": 0
+}

@@ -1,0 +1,160 @@
+{
+  "scope": "Frozen sources, snapshots, split, head, baseline and completed epoch artifacts; no GPU feature or price formula replay claimed",
+  "source_integrity_passed": true,
+  "baseline": {
+    "n": 1601,
+    "mse": 52524.78420579877,
+    "mae": 160.4449685662412,
+    "bias": 5.774413760699276
+  },
+  "completed_epochs_audited": [
+    {
+      "epoch": 1,
+      "metrics": {
+        "n": 1601,
+        "mse": 53386.30179668267,
+        "mae": 166.05944983637718,
+        "bias": 22.962540948452126
+      },
+      "baseline_minus_candidate_mse": -861.5175908838937,
+      "price_slices": {
+        "low_le300": {
+          "baseline": {
+            "n": 169,
+            "mse": 21510.507659052833,
+            "mae": 111.50447714585827,
+            "bias": 102.55496425290896
+          },
+          "candidate": {
+            "n": 169,
+            "mse": 29849.193179406822,
+            "mae": 142.63033452253558,
+            "bias": 139.88748513857038
+          }
+        },
+        "mid_300_700": {
+          "baseline": {
+            "n": 775,
+            "mse": 22512.627918306778,
+            "mae": 112.04123813169674,
+            "bias": 72.56902423626083
+          },
+          "candidate": {
+            "n": 775,
+            "mse": 25062.776021411286,
+            "mae": 119.96074507846419,
+            "bias": 92.47352728100427
+          }
+        },
+        "mid_700_1300": {
+          "baseline": {
+            "n": 498,
+            "mse": 44591.53079192848,
+            "mae": 168.83542042197936,
+            "bias": -1.5002336006361847
+          },
+          "candidate": {
+            "n": 498,
+            "mse": 42592.833047719294,
+            "mae": 164.8363959063316,
+            "bias": 10.343896540418799
+          }
+        },
+        "high_gt1300": {
+          "baseline": {
+            "n": 159,
+            "mse": 256622.86005053946,
+            "mae": 422.11408248233585,
+            "bias": -399.87943382293946
+          },
+          "candidate": {
+            "n": 159,
+            "mse": 250264.61166547952,
+            "mae": 419.487736204833,
+            "bias": -400.60503804939253
+          }
+        }
+      },
+      "csv_sha256": "96daab36ef8e35b7ba7b5797616f82f6e576a419b8f70260e660340214572ce0",
+      "adapter_sha256": "98ceb321f8427e9b3fd2f76f99bcf540f19b62990f074b190d7315db77bb240e"
+    },
+    {
+      "epoch": 2,
+      "metrics": {
+        "n": 1601,
+        "mse": 53762.03336147328,
+        "mae": 164.52155661346433,
+        "bias": 10.390383422924547
+      },
+      "baseline_minus_candidate_mse": -1237.249155674508,
+      "price_slices": {
+        "low_le300": {
+          "baseline": {
+            "n": 169,
+            "mse": 21510.507659052833,
+            "mae": 111.50447714585827,
+            "bias": 102.55496425290896
+          },
+          "candidate": {
+            "n": 169,
+            "mse": 21340.835152138607,
+            "mae": 111.06236340363934,
+            "bias": 101.22252421594536
+          }
+        },
+        "mid_300_700": {
+          "baseline": {
+            "n": 775,
+            "mse": 22512.627918306778,
+            "mae": 112.04123813169674,
+            "bias": 72.56902423626083
+          },
+          "candidate": {
+            "n": 775,
+            "mse": 25687.24624108078,
+            "mae": 116.22758853956795,
+            "bias": 63.912273312339224
+          }
+        },
+        "mid_700_1300": {
+          "baseline": {
+            "n": 498,
+            "mse": 44591.53079192848,
+            "mae": 168.83542042197936,
+            "bias": -1.5002336006361847
+          },
+          "candidate": {
+            "n": 498,
+            "mse": 52319.67952912359,
+            "mae": 184.98288641333028,
+            "bias": 16.392252541039113
+          }
+        },
+        "high_gt1300": {
+          "baseline": {
+            "n": 159,
+            "mse": 256622.86005053946,
+            "mae": 422.11408248233585,
+            "bias": -399.87943382293946
+          },
+          "candidate": {
+            "n": 159,
+            "mse": 229582.37753878074,
+            "mae": 392.6516614524384,
+            "bias": -365.8299139301443
+          }
+        }
+      },
+      "csv_sha256": "4b3dd41bc32b05f20a3b796ec9d1e15f7a91d31b10699e36958b9423beffb68d",
+      "adapter_sha256": "1abebb9cedcbb880ca5afbfbc29a5c82f1730edf2498ace8a2b2d81b6c6406bb"
+    }
+  ],
+  "training_status_observed": {
+    "status": "completed",
+    "pid": 48048,
+    "screen_passed": false
+  },
+  "three_seed_adoption_verified": false,
+  "export_eligible": false,
+  "screen_gate_independently_verified": false
+}

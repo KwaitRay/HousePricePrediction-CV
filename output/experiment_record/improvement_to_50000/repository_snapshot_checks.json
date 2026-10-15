@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-16",
+  "scope": "Staged snapshot syntax/JSON, original raw archive/evidence bytes, basic credential/file-boundary scan and primary documentation links; no GPU or model-quality experiment",
+  "passed": true,
+  "staged_added_or_modified_files": 481,
+  "staged_bytes": 2490916,
+  "python_compiled": 127,
+  "json_parsed": 296,
+  "archive_hashes_verified": 23,
+  "primary_links_checked": 64,
+  "design_documents": 1,
+  "best_user_reported_public_mse": 47291.34608,
+  "experiments_remain_paused": true,
+  "raw_data_weights_caches_predictions_staged": false,
+  "cpu_contract_tests": {
+    "command": "python -m unittest discover -s scripts/experiments/tests -v",
+    "tests_run": 48,
+    "seconds": 128.806,
+    "passed": true,
+    "CUDA_VISIBLE_DEVICES": "-1"
+  }
+}

@@ -1,8 +1,11 @@
 # 按实验顺序运行房价预测
 
+> 2026-10-16：近期冻结视觉/PCA/LoRA/审计代码见 [RECENT_EXPERIMENTS.md](RECENT_EXPERIMENTS.md)，结果见[近期实验报告](../../output/experiment_record/improvement_to_50000/近期实验报告.md)。实验保持暂停，不执行训练或队列；下文从零网络与旧配置说明限于原阶段。
+
+
 > 2026-10-03迁移说明：当前入口、路径配置和暂停状态以[仓库首页](../../README.md)为准。以下保留原实现的接口说明，旧输出路径已由 `local_paths.json` 映射到本地目录，虚拟环境需自行创建。历史队列不随迁移自动运行；阶段阅读报告位于仓库 `output/experiment_record`，新运行原始产物位于本地 `records_root`。03为传统参照，04为训练调优，后续目录顺延。
 
-本目录实现[设计文档](../../design/model_and_experiment_plan.md)中的实验。共用脚本负责配置、训练和评价；不同路线的专用实现分开保存。所有网络从零训练，不下载预训练权重。候选运行不自动代表获胜，下一阶段读取人工登记的选定配置。
+本目录实现[设计文档](../../design/model_and_experiment_plan.md)中的实验。共用脚本负责配置、训练和评价；不同路线的专用实现分开保存。原从零网络路线不下载预训练权重；后续视觉参照使用明确登记的通用预训练图像编码器，不使用外部房价专用模型。候选运行不自动代表获胜，下一阶段读取人工登记的选定配置。
 
 2026-10-01 准备验收更新：新运行统一写入 [output/experiment_record](../../output/experiment_record/README.md)，完成或失败后自动追加对应阶段 Markdown。下文旧 `outputs/` 路径仅代表历史产物或示例；当前基础配置使用 `../../output/experiment_record`，实际结果位于 `阶段/runs/实验名/运行时间/`，阶段文档位于 `阶段/README.md`，专属日志归入 `阶段/logs/`，通用环境与测试位于 `shared/`。代码 review、GPU 安装与实际验收结果见该索引。
 

@@ -1,0 +1,9 @@
+{
+  "status": "completed",
+  "controller_pid": 43328,
+  "reference_pid": 36020,
+  "command": [
+    ".local/audit_whole_pls_and_fuse.py"
+  ],
+  "exit_code": 0
+}

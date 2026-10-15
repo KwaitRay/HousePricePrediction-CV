@@ -1,0 +1,146 @@
+[
+  {
+    "fold": 1,
+    "components": 64,
+    "whitening_power": 0.0,
+    "gamma": 1.041595914362289,
+    "original_median_distance": 0.5367615777667534,
+    "transformed_median_distance": 2.0613044669837532
+  },
+  {
+    "fold": 1,
+    "components": 64,
+    "whitening_power": 0.5,
+    "gamma": 1.050741315124555,
+    "original_median_distance": 0.5367615777667534,
+    "transformed_median_distance": 2.043363366569918
+  },
+  {
+    "fold": 1,
+    "components": 256,
+    "whitening_power": 0.0,
+    "gamma": 1.0463894368251976,
+    "original_median_distance": 0.5367615777667534,
+    "transformed_median_distance": 2.051861606689445
+  },
+  {
+    "fold": 1,
+    "components": 256,
+    "whitening_power": 0.5,
+    "gamma": 1.0600626767947803,
+    "original_median_distance": 0.5367615777667534,
+    "transformed_median_distance": 2.0253956280763052
+  },
+  {
+    "fold": 1,
+    "components": 1024,
+    "whitening_power": 0.0,
+    "gamma": 1.0483130930500468,
+    "original_median_distance": 0.5367615777667534,
+    "transformed_median_distance": 2.0480964373155195
+  },
+  {
+    "fold": 1,
+    "components": 1024,
+    "whitening_power": 0.5,
+    "gamma": 1.0644859894533008,
+    "original_median_distance": 0.5367615777667534,
+    "transformed_median_distance": 2.016979398826747
+  },
+  {
+    "fold": 2,
+    "components": 64,
+    "whitening_power": 0.0,
+    "gamma": 1.0541533750614311,
+    "original_median_distance": 0.5420729278231254,
+    "transformed_median_distance": 2.056903447438229
+  },
+  {
+    "fold": 2,
+    "components": 64,
+    "whitening_power": 0.5,
+    "gamma": 1.0632277610181902,
+    "original_median_distance": 0.5420729278231254,
+    "transformed_median_distance": 2.0393482852780833
+  },
+  {
+    "fold": 2,
+    "components": 256,
+    "whitening_power": 0.0,
+    "gamma": 1.0579441047617777,
+    "original_median_distance": 0.5420729278231254,
+    "transformed_median_distance": 2.049533336906061
+  },
+  {
+    "fold": 2,
+    "components": 256,
+    "whitening_power": 0.5,
+    "gamma": 1.070607122481539,
+    "original_median_distance": 0.5420729278231254,
+    "transformed_median_distance": 2.0252916926861664
+  },
+  {
+    "fold": 2,
+    "components": 1024,
+    "whitening_power": 0.0,
+    "gamma": 1.0597271262231003,
+    "original_median_distance": 0.5420729278231254,
+    "transformed_median_distance": 2.04608493794092
+  },
+  {
+    "fold": 2,
+    "components": 1024,
+    "whitening_power": 0.5,
+    "gamma": 1.0745413881791968,
+    "original_median_distance": 0.5420729278231254,
+    "transformed_median_distance": 2.0178764030361434
+  },
+  {
+    "fold": 3,
+    "components": 64,
+    "whitening_power": 0.0,
+    "gamma": 1.0448694329439716,
+    "original_median_distance": 0.5348923667842981,
+    "transformed_median_distance": 2.0476907445831283
+  },
+  {
+    "fold": 3,
+    "components": 64,
+    "whitening_power": 0.5,
+    "gamma": 1.0507115240512386,
+    "original_median_distance": 0.5348923667842981,
+    "transformed_median_distance": 2.036305320881638
+  },
+  {
+    "fold": 3,
+    "components": 256,
+    "whitening_power": 0.0,
+    "gamma": 1.0487638523785383,
+    "original_median_distance": 0.5348923667842981,
+    "transformed_median_distance": 2.040086967418611
+  },
+  {
+    "fold": 3,
+    "components": 256,
+    "whitening_power": 0.5,
+    "gamma": 1.0589306060792303,
+    "original_median_distance": 0.5348923667842981,
+    "transformed_median_distance": 2.020500167673034
+  },
+  {
+    "fold": 3,
+    "components": 1024,
+    "whitening_power": 0.0,
+    "gamma": 1.0500763364584076,
+    "original_median_distance": 0.5348923667842981,
+    "transformed_median_distance": 2.0375370750219153
+  },
+  {
+    "fold": 3,
+    "components": 1024,
+    "whitening_power": 0.5,
+    "gamma": 1.0619901912945082,
+    "original_median_distance": 0.5348923667842981,
+    "transformed_median_distance": 2.014679122910894
+  }
+]

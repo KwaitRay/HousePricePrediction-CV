@@ -1,0 +1,23 @@
+{
+  "registration_sha256": "79076b61d2ee5beff36874d4d0e014ce271213e8d77d471330d4d5a448f5d9c0",
+  "source_sha256": "f51323a7b00a5d3a765af98103f8b2e4dd8d85b774bed9fb267fcb1f1749e76a",
+  "dependency_sha256": {
+    "pe_lora_price_screen.py": "97c817972773cee7a783406cfd3e30a8239ef5fd1d076b69a9e81e3060295e32",
+    "pe_core_giant_preflight.py": "1fddd9f65df031cb7fef35b6594de2870235faf5173cea3fbecf96b873e11ae3",
+    "pe_giant_lora_preflight.py": "9f5c552b17d082ca416dcb5ca1ba36b708f1119e84db7838524cac3562876197",
+    "pe_giant_whole_view.py": "7d1ce7868274eb04bb03130200048583ed343212659e266f8f22b2983bbc90fb",
+    "visual_kernel_submission.py": "74501ca9f2da2c6a3c44d51dea5b324e226a3be9b3190a66d92ac316f2e96eb1",
+    "common/config.py": "f90dad78a6188f1a67fbbb3ab62dda40cbadaf0ed8ed1b75d486d25553775beb",
+    "common/local_paths.py": "0edf298a763e77cf64dfd56d766c22ce7e7ab8a418e64f0bcc9174e4dfd0a1e3",
+    "common/metrics.py": "60be3e6de4ad6464ac669a7cab548add9bee9ef54ae32375c6a1e4dbfbf961b9",
+    "preparation/split.py": "7fee65a48cad0ce36f8a7cf11cb99a12206094eb9a1851f0f96a69f56e08316a"
+  },
+  "eva_implementation_sha256": "a8c9807ef5e8dabc725c1e2a89439760a900d6af6cdafefea18fc121173643a2",
+  "adapter_sha256": "1abebb9cedcbb880ca5afbfbc29a5c82f1730edf2498ace8a2b2d81b6c6406bb",
+  "upstream_epoch_predictions_sha256": "4b3dd41bc32b05f20a3b796ec9d1e15f7a91d31b10699e36958b9423beffb68d",
+  "upstream_results_sha256": "e63d4e0f59f4bceb3711fd68c22237b605a87f3a5f46d234f3cb5ec1864e6b2c",
+  "upstream_artifact_audit_sha256": "5af152950f25fe3b51b0d62292657877f0c00bcbda01d7ea1fc2174a2054f7f8",
+  "source_feature_registration_sha256": "0a5f7d2acf7f1817bde44e42e839c44ece468900bf9c3a141fbdc944170edcb7",
+  "base_checkpoint_sha256": "a0a499d4a7c6d35bb5f11aa2b076eaacde06e66a08176eb3b3d362d80eb91bd8",
+  "config_sha256": "f3d4cd28623bd6dc7dcea522411c48ebfea44aae844aa5cb7a8401a3601d5b6f"
+}

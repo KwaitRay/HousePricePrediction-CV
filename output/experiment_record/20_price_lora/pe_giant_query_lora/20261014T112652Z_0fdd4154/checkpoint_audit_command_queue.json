@@ -1,0 +1,9 @@
+{
+  "status": "completed",
+  "controller_pid": 44380,
+  "reference_pid": 48048,
+  "command": [
+    ".local/replay_lora_screen_checkpoint.py"
+  ],
+  "exit_code": 0
+}

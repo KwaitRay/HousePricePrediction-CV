@@ -1,0 +1,9 @@
+{
+  "source_sha256": "b0925b6398d4dca64078f1a6c92e781dc6d3d50477a48a6af49fcb25e5fb36af",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "prediction_sha256": "22d867dff20872be72d1b84526371505515c1787d922356f5a6a20a6ad31360e",
+  "scope": "6399 training rows only; native dimensions and current meta crossfit errors",
+  "geometry": "Ideal center-square retained area after shortest-side resize with crop_pct=1, min(width,height)/max(width,height)",
+  "caveat": "Descriptive association only; price and scene distributions confound comparisons. Does not establish discarded pixels contain useful price information.",
+  "test_images_used": false
+}

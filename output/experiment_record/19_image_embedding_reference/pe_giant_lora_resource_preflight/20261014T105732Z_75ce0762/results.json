@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "injected_modules": [
+    "blocks.48.attn.qkv",
+    "blocks.48.attn.proj",
+    "blocks.49.attn.qkv",
+    "blocks.49.attn.proj"
+  ],
+  "trainable_parameters": 73728,
+  "base_feature_replay_error": 1.1102230246251565e-16,
+  "zero_adapter_feature_replay_error": 1.1102230246251565e-16,
+  "gradient_norms": {
+    "blocks.48.attn.qkv.a": 0.0,
+    "blocks.48.attn.qkv.b": 0.0017168186604976654,
+    "blocks.48.attn.proj.a": 0.0,
+    "blocks.48.attn.proj.b": 0.0015835831873118877,
+    "blocks.49.attn.qkv.a": 0.0,
+    "blocks.49.attn.qkv.b": 0.003391069360077381,
+    "blocks.49.attn.proj.a": 0.0,
+    "blocks.49.attn.proj.b": 0.0020646252669394016
+  },
+  "forward_backward_seconds": 0.5031892999541014,
+  "peak_allocated_gib": 3.6698975563049316,
+  "peak_reserved_gib": 3.955078125,
+  "price_model_evaluated": false,
+  "optimizer_step_performed": false,
+  "test_images_used": false
+}

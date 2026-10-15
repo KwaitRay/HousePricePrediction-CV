@@ -1,0 +1,6 @@
+{
+  "status": "not_required_screen_failed",
+  "cpu_artifact_audit_completed": true,
+  "gpu_replay_performed": false,
+  "export_eligible": false
+}

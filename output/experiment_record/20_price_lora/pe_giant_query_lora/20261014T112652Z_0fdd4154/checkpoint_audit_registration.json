@@ -1,0 +1,18 @@
+{
+    "phase":  "post_training_audit",
+    "controller_session":  2037,
+    "controller_pid":  44380,
+    "predecessor_pid":  48048,
+    "replay_source_sha256":  "2a3626319cf6665984c0fb1682d17a7d038ef0dca8f7000905a717f286205cdf",
+    "artifact_audit_source_sha256":  "d338fc0ab2b30fd7b2ed6cdcfbd2702ee6d3489f21028b06d5040032c5c6394e",
+    "controller_source_sha256":  "608fd3809e5b439a8f2919123203bc1cb2b511cc62942bf4754e6f11375274a6",
+    "fixed_validation_probes":  12,
+    "probe_seed":  2026,
+    "saved_blend_rtol":  1E-07,
+    "saved_blend_atol":  0.0001,
+    "independent_cpu_gpu_price_rtol":  1E-10,
+    "independent_cpu_gpu_price_atol":  1E-07,
+    "gpu_replay_only_if_screen_passes":  true,
+    "automatic_restart":  false,
+    "test_images_used":  false
+}

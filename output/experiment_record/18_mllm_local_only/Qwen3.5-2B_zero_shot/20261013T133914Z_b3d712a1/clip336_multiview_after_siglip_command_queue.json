@@ -1,0 +1,16 @@
+{
+  "status": "completed",
+  "controller_pid": 35504,
+  "reference_pid": 9688,
+  "command": [
+    "scripts/experiments/clip_multiview.py",
+    "--model",
+    "ViT-L-14-336",
+    "--reference-manifest",
+    ".local/experiment_record/13_clip_optimization/ViT_L_14_336/20261013T142931Z_75951dfb/data_manifest.json",
+    "--batch-size",
+    "4",
+    "--kernel-followup"
+  ],
+  "exit_code": 0
+}

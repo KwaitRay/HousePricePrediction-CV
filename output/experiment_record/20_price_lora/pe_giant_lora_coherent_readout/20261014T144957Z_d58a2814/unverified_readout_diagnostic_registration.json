@@ -1,0 +1,17 @@
+{
+  "source_sha256": "2e578d6b965bab87861ba3751361c80364c39fc55055cf90f932d7b07e2b44e4",
+  "failed_status_sha256": "4e190a2fd279799e3a8e90ff796bae586e549c38352634cc2566b729875ee6a5",
+  "feature_manifest_sha256": "fa4e036b42355a3c412fc2d516644d39614df5d8482809cc2f17d5e1d6d62669",
+  "chunks_sha256": "9002e630b0e88b50188ecbf2eb0864f44f88906c2d402e92376001cfb171057c",
+  "purpose": "Resource prioritization only: investigate coherent head using numerically unverified cached features. This does not repair failed source replay or produce a candidate.",
+  "gamma": 4,
+  "alpha": 1,
+  "train_n": 6399,
+  "validation_n": 1601,
+  "fixed_blend_weights": true,
+  "new_model_oof_generated": false,
+  "export_eligible": false,
+  "screen_gate_applicable": false,
+  "test_images_used": false,
+  "tolerance_relaxed": false
+}

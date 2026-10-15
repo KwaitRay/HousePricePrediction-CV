@@ -1,0 +1,13 @@
+{
+  "audit_source_sha256": "486eddf69d44cc45010fd0afbd0befee5129cde3ac63ad379dc795c9e33d3b18",
+  "dependency_sha256": {
+    "visual_price_metric_kernel.py": "248c6e94f3d2e08975721cda4e46a74ddc506f491674ea6534d000978d74f5f2",
+    "visual_kernel_submission.py": "74501ca9f2da2c6a3c44d51dea5b324e226a3be9b3190a66d92ac316f2e96eb1",
+    "pe_pls_incremental_fusion.py": "df926014a0a6f38af85081d34439b458fcb70972a698250e4f8e70049ad35c0d",
+    "encoder_oof_fusion.py": "33671e0ce29345651c926f86e89a305815b43f84d30a0a979b36f6132e4ce0cb",
+    "common/config.py": "f90dad78a6188f1a67fbbb3ab62dda40cbadaf0ed8ed1b75d486d25553775beb",
+    "common/local_paths.py": "0edf298a763e77cf64dfd56d766c22ce7e7ab8a418e64f0bcc9174e4dfd0a1e3",
+    "common/metrics.py": "60be3e6de4ad6464ac669a7cab548add9bee9ef54ae32375c6a1e4dbfbf961b9"
+  },
+  "no_automatic_export": true
+}

@@ -1,0 +1,25 @@
+{
+  "model": "apple/aimv2-large-patch14-224",
+  "revision": "fcb5093a9c5b3efb7db5acee213849967fd18210",
+  "checkpoint_sha256": "7d28174ebb3d01b21053827e27e8e9e59960f0ef2907298b977a1da56f9e3982",
+  "config_sha256": "e63ec2f137fbfcb5ec69672d2b21dc85253c67ec858b5cb09f3e7ef1e606acb7",
+  "batch_size": 1,
+  "image_size": 224,
+  "feature_dim": 1024,
+  "feature": "Unit-normalized mean of all 256 post-norm image patch tokens",
+  "precision": "FP16 visual model and forward, FP32 patch mean and normalization, F64 renormalization",
+  "source_sha256": "d5a966e4a3df5f51fcc83cd2312c7ba2a81b107297e11e7ef59fced437fd3ac3",
+  "encoder_source_sha256": "c505ab3101b90d81a346555626b97b54a7eb821089788748591c19647a184bcb",
+  "probe_imageids": [
+    "1.jpg",
+    "2.jpg",
+    "3.jpg"
+  ],
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "test_images_used": false,
+  "price_labels_used_for_selection": false,
+  "mllm_components": false,
+  "remote_code_executed": false,
+  "automatic_feature_extraction": false,
+  "license": "apple-amlr"
+}

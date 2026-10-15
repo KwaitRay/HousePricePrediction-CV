@@ -1,0 +1,35 @@
+{
+  "source_sha256": "e5623e1213c5745a674477e9f7db79e27183a0c8944a8e7040bffad578f0585a",
+  "source_kernel": "19_image_embedding_reference/pe_core_g14_448_whole_kernel/20261014T090655Z_2d55c743",
+  "source_head_sha256": "7747bd57dd7f4fc60d5a56d86b4ba7601a541fc7feaeef9215f9a4b20353829d",
+  "feature_manifest_sha256": "b7e44b02d5bc1277f92f92d76de439383eb6d3220483938902296942d1e9de64",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "probe_imageids": [
+    "1.jpg",
+    "2.jpg",
+    "3.jpg"
+  ],
+  "base_model": "timm/vit_pe_core_gigantic_patch14_448.fb",
+  "revision": "fb096c09d13bd2e3827aed4dbdffb8a6b8e0c10b",
+  "rank": 4,
+  "adapter_alpha": 4,
+  "frozen_price_head": "Original 6399-training-label RBF head and original teacher feature bank; learn query encoder only",
+  "feature_policy": "Original view + fixed whole view; concatenate unit vectors, normalize, round FP32 as cache, renormalize F64",
+  "dependencies_sha256": {
+    "pe_core_giant_preflight.py": "1fddd9f65df031cb7fef35b6594de2870235faf5173cea3fbecf96b873e11ae3",
+    "pe_giant_lora_preflight.py": "9f5c552b17d082ca416dcb5ca1ba36b708f1119e84db7838524cac3562876197",
+    "pe_giant_whole_view.py": "7d1ce7868274eb04bb03130200048583ed343212659e266f8f22b2983bbc90fb"
+  },
+  "feature_tolerance": {
+    "rtol": 0.0001,
+    "atol": 3e-06
+  },
+  "price_tolerance": {
+    "rtol": 1e-07,
+    "atol": 0.0001
+  },
+  "purpose": "Numerical/gradient/resource check on fixed three training images; no accuracy selection",
+  "price_model_evaluated": false,
+  "optimizer_step_performed": false,
+  "test_images_used": false
+}

@@ -1,0 +1,15 @@
+{
+  "components": 0,
+  "whitening_power": 0.0,
+  "training_oof_mse": 53646.45535782965,
+  "mse": 53252.81379734146,
+  "mae": 161.87853866851077,
+  "tail_mse": 258630.54819095443,
+  "n": 1601,
+  "tail_n": 159,
+  "tail_threshold": 1300.0,
+  "seconds": 131.09139010007493,
+  "export_eligible": false,
+  "full_refit_adapter_supported": false,
+  "test_images_used": false
+}

@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "probe_imageids": [
+    "1.jpg",
+    "2.jpg",
+    "3.jpg"
+  ],
+  "original_replay_max_abs_error": 0.0,
+  "whole_repeat_passed": true,
+  "peak_allocated_gib": 3.5634493827819824,
+  "price_labels_used_to_choose_views": false
+}

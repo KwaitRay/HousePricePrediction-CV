@@ -1,0 +1,97 @@
+{
+  "model": "apple/aimv2-large-patch14-224",
+  "revision": "fcb5093a9c5b3efb7db5acee213849967fd18210",
+  "cache_family": "aimv2_features",
+  "feature_dim": 1024,
+  "batch_size": 1,
+  "checkpoint_sha256": "7d28174ebb3d01b21053827e27e8e9e59960f0ef2907298b977a1da56f9e3982",
+  "config_sha256": "e63ec2f137fbfcb5ec69672d2b21dc85253c67ec858b5cb09f3e7ef1e606acb7",
+  "preprocess": {
+    "_processor_class": null,
+    "crop_size": {
+      "height": 224,
+      "width": 224
+    },
+    "data_format": "channels_first",
+    "default_to_square": false,
+    "device": null,
+    "disable_grouping": null,
+    "do_center_crop": true,
+    "do_convert_rgb": true,
+    "do_normalize": true,
+    "do_rescale": true,
+    "do_resize": true,
+    "image_mean": [
+      0.48145466,
+      0.4578275,
+      0.40821073
+    ],
+    "image_processor_type": "CLIPImageProcessorFast",
+    "image_std": [
+      0.26862954,
+      0.26130258,
+      0.27577711
+    ],
+    "input_data_format": null,
+    "resample": 3,
+    "rescale_factor": 0.00392156862745098,
+    "return_tensors": null,
+    "size": {
+      "shortest_edge": 224
+    },
+    "pad_size": null,
+    "do_pad": null
+  },
+  "feature": "Unit-normalized mean of all 256 post-norm image patch tokens",
+  "precision": "FP16 visual model and forward, FP32 patch mean and normalization, F64 renormalization",
+  "source_sha256": "f87df925b49c9f2fecb4dbf63509710213e85fa95c543cb7950375b3e50d148a",
+  "encoder_source_sha256": "c505ab3101b90d81a346555626b97b54a7eb821089788748591c19647a184bcb",
+  "kernel_source_sha256": "da0bb363f6d9f1dcf6ae080d5cc647fe746035b5725eb3bd88e7ec738b4b16b0",
+  "native_implementation_sha256": "bae8728f16b1b061fb1fc6d2f196ace68e922cf079b40ef6dc2646c434383b29",
+  "transformers_version": "4.57.6",
+  "torch_version": "2.11.0+cu128",
+  "preflight_reference": "19_image_embedding_reference/aimv2_large_224_preflight/20261014T091339Z_8e4c72b3",
+  "preflight_registration_sha256": "49fdf199b91d1e561e02b1d264e8d66185aa6fb856de3c6655133fa1a525bdb0",
+  "preflight_results_sha256": "f915bd3c89d83c48113911737d79858b28c74f6af194b62e1cfed6034e279f17",
+  "license": "apple-amlr",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "train_csv_sha256": "6a37aec7c596d98a2342aae32b0cf2eb660e56c92292fd1c324961ca5d8653d5",
+  "mllm_components": false,
+  "text_modules_used": false,
+  "remote_code_executed": false,
+  "test_images_used": false,
+  "test_labels_used": false,
+  "baseline_fusion": "15_fixed_ensembles/pe_giant_whole_incremental_fusion/20261014T082727Z_c5152cef",
+  "baseline_ensemble_sha256": "8743f95ec0b465c71bb508181346f8714c56de756b9737aafbe861580e09bfb8",
+  "hypothesis": "Different generic image pretraining may complement PE-G whole-frame and existing PLS/NaFlex residuals",
+  "comparison": "Complete fixed encoder method; pretraining, resolution and processor differ. No causal isolation of training objective.",
+  "selection": "One predetermined mean-patch readout, no CLS, no layer/window sweep; grouped three-fold original-price OOF KRR",
+  "kernel_grid": {
+    "gammas": [
+      1.0,
+      4.0,
+      16.0
+    ],
+    "alphas": [
+      0.01,
+      0.1,
+      1.0,
+      10.0
+    ]
+  },
+  "fusion_gate": {
+    "minimum_meta_cv_relative_gain": 0.01,
+    "minimum_folds_won": 2,
+    "fixed_validation_improvement": true
+  },
+  "audit": {
+    "probe_n": 12,
+    "seed": 2026,
+    "rtol": 0.0001,
+    "atol": 3e-06,
+    "label_blind_selection": true
+  },
+  "automatic_test_export": false,
+  "course_scope": "Generic visual-only checkpoint and supplied images/labels only",
+  "cache_key": "c60e7a7d245ab2ac94061cd327180783be1655eac26aa0a7519f11a57c16ed19"
+}

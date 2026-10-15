@@ -1,0 +1,17 @@
+{
+  "method": "Exact-zero compilation before full refit",
+  "reference": "15_fixed_ensembles\\pe_giant_whole_incremental_fusion\\20261014T082727Z_c5152cef",
+  "reference_ensemble_sha256": "8743f95ec0b465c71bb508181346f8714c56de756b9737aafbe861580e09bfb8",
+  "kept_indices": [
+    6,
+    10,
+    12
+  ],
+  "max_abs_composition_errors": {
+    "oof_prediction": 2.2737367544323206e-13,
+    "prediction": 2.2737367544323206e-13
+  },
+  "no_new_selection": true,
+  "test_images_used": false,
+  "source_sha256": "defe4bfb76f9b5bc4e744c2e86c067e7bc3b59b2fb917f3a4bf918c470aba82f"
+}

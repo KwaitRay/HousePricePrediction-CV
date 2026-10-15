@@ -1,0 +1,26 @@
+[
+  {
+    "epoch": 1,
+    "mse": 53386.30179668267,
+    "mae": 166.05944983637718,
+    "tail_mse": 250264.61166547952,
+    "n": 1601,
+    "tail_n": 159,
+    "tail_threshold": 1300.0,
+    "mean_training_price_loss": 0.02498373336947529,
+    "mean_teacher_squared_drift": 0.011530914243981194,
+    "adapter_sha256": "98ceb321f8427e9b3fd2f76f99bcf540f19b62990f074b190d7315db77bb240e"
+  },
+  {
+    "epoch": 2,
+    "mse": 53762.03336147328,
+    "mae": 164.52155661346433,
+    "tail_mse": 229582.37753878074,
+    "n": 1601,
+    "tail_n": 159,
+    "tail_threshold": 1300.0,
+    "mean_training_price_loss": 0.033922306208219566,
+    "mean_teacher_squared_drift": 0.07173011367103171,
+    "adapter_sha256": "1abebb9cedcbb880ca5afbfbc29a5c82f1730edf2498ace8a2b2d81b6c6406bb"
+  }
+]
