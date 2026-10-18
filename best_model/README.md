@@ -39,3 +39,15 @@ python replay_predictions.py
 本地已验证全部 ZIP 条目的 CRC、所有保留文件与原归档的 SHA256 一致性，以及原提交 CSV 的 SHA256。3000 行 CPU 预测回放最大绝对误差为 `1.3642420526593924e-12`。
 
 原始 `predictions.csv` 的 SHA256：`c39009ec65fd89a0f531991d1cfc26a2ecf4095e512ce9905b89c38da06b8da3`。
+
+## 补充：最佳方案的交叉拟合预测
+
+[`meta_crossfit_predictions.csv`](meta_crossfit_predictions.csv) 单独保存在此目录，未放入上述 ZIP。它来自 `15_fixed_ensembles/pe_whole_pca_incremental_fusion/20261015T033810Z_8aa6ec62`，是最终最佳提交所沿用的 PCA 融合方案的训练侧评估记录。
+
+文件共 6399 行，包含 `imageid`、`baseline_meta_prediction`、`augmented_meta_prediction`。在基础模型的 OOF 预测上执行三折 GroupKFold：每折使用另外两折学习融合权重，生成留出折预测。两列分别对应基线方案和新增 PCA 分支后的方案，价格单位与课程标签一致（千美元）。
+
+从逐图预测重新计算，基线交叉拟合 MSE 为 **53052.56579**，新增 PCA 后为 **52210.22283**，三折均改善；固定验证集 MSE 为 **52201.21127**。最终冻结方案在全部 8000 条有标签数据上重新拟合后，测试提交公榜 MSE 为 **47291.34608**。这些分数对应不同样本和评估流程。
+
+[`crossfit_evaluation/`](crossfit_evaluation/) 提供注册信息、三折指标及权重、融合配置、原执行源码、诊断和文件 SHA256。已验证 CSV 覆盖固定训练划分的全部 6399 条样本、顺序一致，重新计算的 MSE 与原记录相符。
+
+基础模型超参数先前已选定，因此该交叉拟合不是完全嵌套的无偏验证；CSV 中的预测也不是最终全训练模型对测试集的预测。

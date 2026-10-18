@@ -1,0 +1,65 @@
+{
+  "reference": "15_fixed_ensembles/pe_whole_pca_incremental_fusion/20261015T033810Z_8aa6ec62",
+  "n": 6399,
+  "columns": [
+    "imageid",
+    "baseline_meta_prediction",
+    "augmented_meta_prediction"
+  ],
+  "imageids_match_frozen_training_split": true,
+  "baseline_meta_cv_mse": 53052.56578893253,
+  "meta_cv_mse": 52210.22282657099,
+  "fixed_validation_mse": 52201.21126766699,
+  "folds_won": 3,
+  "files": [
+    {
+      "path": "meta_crossfit_predictions.csv",
+      "source": ".local/experiment_record/15_fixed_ensembles/pe_whole_pca_incremental_fusion/20261015T033810Z_8aa6ec62/meta_crossfit_predictions.csv",
+      "bytes": 295802,
+      "sha256": "480d5fcdfd921cb1428f9cbaadf33634a859d2a4b77dd4559fcde9270ed2363d"
+    },
+    {
+      "path": "crossfit_evaluation/registration.json",
+      "source": "output/experiment_record/15_fixed_ensembles/pe_whole_pca_incremental_fusion/20261015T033810Z_8aa6ec62/registration.json",
+      "bytes": 5526,
+      "sha256": "e8f27cb921ccf50edad841e6f227f85b5271e854b79d33cf915431c822b3bc21"
+    },
+    {
+      "path": "crossfit_evaluation/results.json",
+      "source": "output/experiment_record/15_fixed_ensembles/pe_whole_pca_incremental_fusion/20261015T033810Z_8aa6ec62/results.json",
+      "bytes": 591,
+      "sha256": "6f46bfa7ef980d87574f5f944658d8213e50178bbdf024a55499235af94433f1"
+    },
+    {
+      "path": "crossfit_evaluation/meta_folds.json",
+      "source": "output/experiment_record/15_fixed_ensembles/pe_whole_pca_incremental_fusion/20261015T033810Z_8aa6ec62/meta_folds.json",
+      "bytes": 1826,
+      "sha256": "4bd1dce978fb9c26fad254654d4c968da4954359fa06bc40cc0041a2f4e09716"
+    },
+    {
+      "path": "crossfit_evaluation/training_diagnostics.json",
+      "source": "output/experiment_record/15_fixed_ensembles/pe_whole_pca_incremental_fusion/20261015T033810Z_8aa6ec62/training_diagnostics.json",
+      "bytes": 1673,
+      "sha256": "2b69426d185d1284d9ffe2510f9c61e885cd99b8f1d3e7eb0fe46b177c97d111"
+    },
+    {
+      "path": "crossfit_evaluation/paired_price_slices.json",
+      "source": "output/experiment_record/15_fixed_ensembles/pe_whole_pca_incremental_fusion/20261015T033810Z_8aa6ec62/paired_price_slices.json",
+      "bytes": 1377,
+      "sha256": "46d035b874ab9182c7ec4583662737d9d29f49014ef5136299732b7249bdbb32"
+    },
+    {
+      "path": "crossfit_evaluation/ensemble.json",
+      "source": ".local/experiment_record/15_fixed_ensembles/pe_whole_pca_incremental_fusion/20261015T033810Z_8aa6ec62/ensemble.json",
+      "bytes": 3845,
+      "sha256": "e4cbef032b73ebb86e3f47d30de73e756c8afbf9b9352b8a0eff3716b46105fc"
+    },
+    {
+      "path": "crossfit_evaluation/source.py",
+      "source": ".local/experiment_record/15_fixed_ensembles/pe_whole_pca_incremental_fusion/20261015T033810Z_8aa6ec62/source.py",
+      "bytes": 8193,
+      "sha256": "65ea50f1a5f9bbbb6fa8bd45f42db0b6e5253c5902f1a1364a62db2717289939"
+    }
+  ],
+  "caveat": "Base hyperparameters were previously selected; meta crossfit is not fully nested unbiased CV. These are training-side evaluation predictions, not final test predictions."
+}

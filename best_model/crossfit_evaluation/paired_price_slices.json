@@ -1,0 +1,43 @@
+{
+  "scope": "Paired fixed validation price slices, no model fitting or subgroup selection",
+  "slices": [
+    {
+      "band": "le300",
+      "n": 169,
+      "baseline_mse": 21510.507659052833,
+      "baseline_bias": 102.55496425290896,
+      "candidate_mse": 19386.3009333509,
+      "candidate_bias": 93.71912536575627,
+      "overall_mse_change_contribution": -224.2291921571685
+    },
+    {
+      "band": "300_700",
+      "n": 775,
+      "baseline_mse": 22512.627918306778,
+      "baseline_bias": 72.56902423626083,
+      "candidate_mse": 22895.695491663613,
+      "candidate_bias": 70.26593885637924,
+      "overall_mse_change_contribution": 185.43246055686893
+    },
+    {
+      "band": "700_1300",
+      "n": 498,
+      "baseline_mse": 44591.53079192848,
+      "baseline_bias": -1.5002336006361847,
+      "candidate_mse": 46512.329472470374,
+      "candidate_bias": 2.7508576962011677,
+      "overall_mse_change_contribution": 597.4751673390767
+    },
+    {
+      "band": "gt1300",
+      "n": 159,
+      "baseline_mse": 256622.86005053946,
+      "baseline_bias": -399.87943382293946,
+      "candidate_mse": 247739.3100532642,
+      "candidate_bias": -385.16363548632205,
+      "overall_mse_change_contribution": -882.2513738705597
+    }
+  ],
+  "low_mse_worsens_over5pct": false,
+  "low_positive_bias_increases_over10pct": false
+}
