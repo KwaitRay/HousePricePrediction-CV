@@ -4,7 +4,6 @@
 *.json text eol=lf
 *.png binary
 data_split/*.csv text eol=lf
-
 # Preserve raw SHA256 of executed experiment code and new evidence snapshots.
 scripts/experiments/*.py -text
 archive/design_history/** -text
@@ -72,3 +71,4 @@ output/experiment_record/improvement_to_50000/whole_pls_launch_registration.json
 output/experiment_record/improvement_to_50000/实验总览.md -text
 output/experiment_record/improvement_to_50000/最新进展与接续.md -text
 output/experiment_record/improvement_to_50000/近期实验报告.md -text
+best_model/20261015T034010Z_0c94a543_features_predictions.zip filter=lfs diff=lfs merge=lfs -text
