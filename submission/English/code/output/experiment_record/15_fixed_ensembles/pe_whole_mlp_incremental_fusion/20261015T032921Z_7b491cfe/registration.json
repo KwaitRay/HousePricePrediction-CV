@@ -1,0 +1,33 @@
+{
+  "baseline": "15_fixed_ensembles/pe_giant_whole_incremental_fusion/20261014T082727Z_c5152cef",
+  "added_model": "16_price_contrastive/pe_giant_whole_head_regression/20261015T032715Z_69ac7909",
+  "models": [
+    "19_image_embedding_reference/siglip2_so400m_kernel/20261013T152001Z_34db8dd3",
+    "19_image_embedding_reference/siglip2_so400m_multiview_kernel/20261013T164917Z_2f8bbb75",
+    "19_image_embedding_reference/siglip2_price_metric_kernel/20261013T155603Z_4129a7fd",
+    "13_clip_optimization/ViT_L_14_336_multiview_kernel/20261013T155600Z_8367fcf1",
+    "13_clip_optimization/ViT_L_14_336_kernel/20261013T144616Z_8b3d237e",
+    "19_image_embedding_reference\\dinov2_large_cls_patchmean_kernel\\20261014T015706Z_3adbcc84",
+    "19_image_embedding_reference\\siglip2_naflex_576_kernel\\20261014T020905Z_e457778a",
+    "19_image_embedding_reference\\pe_core_l14_336_kernel\\20261014T024724Z_7b6f7fa6",
+    "19_image_embedding_reference\\siglip2_giant_384_kernel\\20261014T042225Z_c6fe9be0",
+    "19_image_embedding_reference\\pe_core_l14_336_multiview_kernel\\20261014T043810Z_6840dfd9",
+    "19_image_embedding_reference/pe_core_multiview_price_metric_kernel/20261014T051116Z_13d3ea16",
+    "19_image_embedding_reference\\pe_core_g14_448_kernel\\20261014T073812Z_e0339201",
+    "19_image_embedding_reference\\pe_core_g14_448_whole_kernel\\20261014T090655Z_2d55c743",
+    "16_price_contrastive/pe_giant_whole_head_regression/20261015T032715Z_69ac7909"
+  ],
+  "source_sha256": "044b782bbeff29ed574c6c491b414dec91af3c44b1cfa327bc2d3b0ee0cff0fb",
+  "optimizer_source_sha256": "33671e0ce29345651c926f86e89a305815b43f84d30a0a979b36f6132e4ce0cb",
+  "baseline_ensemble_sha256": "8743f95ec0b465c71bb508181346f8714c56de756b9737aafbe861580e09bfb8",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "method": "Add exactly one frozen-feature residual MLP to the fixed baseline; training OOF convex weights",
+  "gate": {
+    "minimum_meta_cv_relative_gain": 0.01,
+    "minimum_folds_won": 2,
+    "validation_improvement_required": true
+  },
+  "caveat": "Single training seed screen; hyperparameters selected on same OOF, not nested unbiased CV; three-seed adoption and MLP export adapter not implemented",
+  "automatic_test_export": false,
+  "test_images_used": false
+}

@@ -1,0 +1,165 @@
+{
+  "kaggle_public_mse_user_reported": 91993.03622,
+  "validation": {
+    "mse": 91820.72626396028,
+    "global_bias": -1.9761818127128803,
+    "r2": 0.3952738775318084,
+    "target_std": 389.7863906871689,
+    "prediction_std": 242.18346757587497,
+    "prediction_min": 203.6148834228516,
+    "prediction_max": 1716.623291015625,
+    "correlation": 0.6287726831129078,
+    "bands": [
+      {
+        "band": "≤300",
+        "n": 169,
+        "mse": 72500.79855012319,
+        "bias": 221.58918693298702,
+        "contribution_to_total_mse": 7653.113650824996,
+        "share_of_total_error": 0.0833484329978432,
+        "band_mean_bias_component": 5183.134761018216
+      },
+      {
+        "band": "300–700",
+        "n": 775,
+        "mse": 43212.37635519427,
+        "bias": 119.72128248834427,
+        "contribution_to_total_mse": 20917.921096361995,
+        "share_of_total_error": 0.22781262953887457,
+        "band_mean_bias_component": 6938.300279517049
+      },
+      {
+        "band": "700–1300",
+        "n": 498,
+        "mse": 58394.634503465786,
+        "bias": -72.88451512397245,
+        "contribution_to_total_mse": 18163.97750326419,
+        "share_of_total_error": 0.19782001561442195,
+        "band_mean_bias_component": 1652.3747453707501
+      },
+      {
+        "band": ">1300",
+        "n": 159,
+        "mse": 453976.2775825664,
+        "bias": -610.6914784311739,
+        "contribution_to_total_mse": 45085.714013509096,
+        "share_of_total_error": 0.4910189218488601,
+        "band_mean_bias_component": 37038.16927590507
+      }
+    ],
+    "concentration": [
+      {
+        "n": 16,
+        "share": 0.1429407444302536,
+        "tail_count": 16
+      },
+      {
+        "n": 24,
+        "share": 0.18987244910647483,
+        "tail_count": 24
+      },
+      {
+        "n": 80,
+        "share": 0.4002108257163986,
+        "tail_count": 71
+      },
+      {
+        "n": 160,
+        "share": 0.5731566246072919,
+        "tail_count": 105
+      }
+    ],
+    "band_bias_share": 0.5533824565462496
+  },
+  "development_train": {
+    "mse": 88845.01734895362,
+    "global_bias": -1.092386223284979e-05,
+    "r2": 0.4373264020346411,
+    "target_std": 397.39482448631117,
+    "prediction_std": 250.09940592454342,
+    "prediction_min": 108.2145004272461,
+    "prediction_max": 1732.7730712890625,
+    "correlation": 0.6621180534569305,
+    "bands": [
+      {
+        "band": "≤300",
+        "n": 680,
+        "mse": 71744.42087255101,
+        "bias": 223.99703705507164,
+        "contribution_to_total_mse": 7624.035973329377,
+        "share_of_total_error": 0.08581275800065077,
+        "band_mean_bias_component": 5331.892072890573
+      },
+      {
+        "band": "300–700",
+        "n": 3111,
+        "mse": 44989.502240623915,
+        "bias": 117.9877847675163,
+        "contribution_to_total_mse": 21872.533438127986,
+        "share_of_total_error": 0.24618750821129298,
+        "band_mean_bias_component": 6768.02564297072
+      },
+      {
+        "band": "700–1300",
+        "n": 1972,
+        "mse": 52932.59947529432,
+        "bias": -71.39071029607375,
+        "contribution_to_total_mse": 16312.406026766745,
+        "share_of_total_error": 0.18360518702694434,
+        "band_mean_bias_component": 1570.6456156730237
+      },
+      {
+        "band": ">1300",
+        "n": 636,
+        "mse": 432999.42167729273,
+        "bias": -595.2760578728441,
+        "contribution_to_total_mse": 43036.04191072952,
+        "share_of_total_error": 0.4843945467611119,
+        "band_mean_bias_component": 35219.39054676341
+      }
+    ],
+    "concentration": [
+      {
+        "n": 16,
+        "share": 0.0459107176205876,
+        "tail_count": 16
+      },
+      {
+        "n": 24,
+        "share": 0.06447445424951444,
+        "tail_count": 24
+      },
+      {
+        "n": 80,
+        "share": 0.16388836171123536,
+        "tail_count": 79
+      },
+      {
+        "n": 160,
+        "share": 0.2660670109737881,
+        "tail_count": 157
+      }
+    ],
+    "band_bias_share": 0.5502835762446224
+  },
+  "public_vs_validation_percent": 0.1876591081890977,
+  "public_rmse_thousand_usd": 303.30353809344194,
+  "ridge": {
+    "alpha": 1000.0,
+    "feature_dimension": 512,
+    "effective_degrees_of_freedom_excluding_intercept": 253.861283067257
+  },
+  "test_prediction_distribution": {
+    "count": 3000.0,
+    "mean": 706.8759735966667,
+    "std": 253.37899561259135,
+    "min": 129.77147,
+    "1%": 257.8649095,
+    "10%": 412.672555,
+    "50%": 670.2903,
+    "90%": 1056.2606,
+    "99%": 1406.8224019999998,
+    "max": 1695.2185
+  },
+  "limits": "No test labels available. Price-band bias decomposition is label-conditioned and descriptive, not an available inference calibration or a causal explanation."
+}

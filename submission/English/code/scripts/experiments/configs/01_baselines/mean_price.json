@@ -1,0 +1,16 @@
+{
+  "extends": "../base.json",
+  "experiment": {
+    "id": "mean_price",
+    "name": "基础基线：训练集平均房价预测",
+    "stage": "01_baselines",
+    "question": "看图片是否优于直接猜训练侧均价",
+    "comparison": "继承配置 ../base.json 对应的已保留方案",
+    "changed_fields": [
+      "method"
+    ],
+    "enforce_changes": true,
+    "status": "ready"
+  },
+  "method": "mean"
+}

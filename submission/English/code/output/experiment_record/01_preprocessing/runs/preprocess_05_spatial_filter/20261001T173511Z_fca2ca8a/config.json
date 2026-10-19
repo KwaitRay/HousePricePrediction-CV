@@ -1,0 +1,92 @@
+{
+  "experiment": {
+    "id": "preprocess_05_spatial_filter",
+    "name": "预处理备选阶段—实验五：空间低通滤波",
+    "stage": "00_preparation",
+    "question": "输入诊断提供依据后，固定 AlexNet 训练设置比较该输入因素",
+    "comparison": "Optimized v2 AlexNet control, identical stopping policy and loader implementation",
+    "changed_fields": [
+      "preprocess.filter"
+    ],
+    "enforce_changes": true,
+    "status": "ready"
+  },
+  "method": "neural",
+  "seed": 2026,
+  "device": "auto",
+  "output_root": "../../output/experiment_record",
+  "data": {
+    "root": "../../comp-90086-2026/house_dataset",
+    "split": "artifacts/split_v1.csv",
+    "expected_train": 8000,
+    "expected_test": 3000,
+    "split_seed": 2026,
+    "validation_fraction": 0.2,
+    "near_pairs": [
+      [
+        "1078.jpg",
+        "3568.jpg"
+      ]
+    ]
+  },
+  "preprocess": {
+    "size": 224,
+    "geometry": "letterbox",
+    "normalization": "fixed",
+    "filter": "spatial"
+  },
+  "augmentation": {},
+  "model": {
+    "pretrained": false,
+    "small_kernels": false,
+    "inception": false,
+    "residual": false,
+    "head": "alexnet",
+    "dropout": 0.5,
+    "embedding_dim": 128,
+    "attention_heads": 4,
+    "feedforward_dim": 512,
+    "encoder_dropout": 0.1,
+    "encoder_layers": 1
+  },
+  "training": {
+    "optimizer": "adamw",
+    "lr": 0.0001,
+    "momentum": 0.9,
+    "schedule": "constant",
+    "batch_size": 4,
+    "accumulation": 8,
+    "epochs": 60,
+    "workers": 2,
+    "loader_mode": "persistent",
+    "cpu_threads": 4,
+    "weight_decay": 0.0001,
+    "penalty": "none",
+    "penalty_coefficient": 0.0,
+    "initialization": "default",
+    "early_stopping": {
+      "enabled": true,
+      "patience": 15,
+      "relative_improvement": 0.001,
+      "min_epochs": 40
+    }
+  },
+  "target": {
+    "transform": "scale",
+    "scale": 1000.0,
+    "loss": "mse",
+    "huber_delta": 0.1
+  },
+  "traditional": {
+    "words": 256,
+    "long_edge": 320,
+    "max_keypoints": 256,
+    "per_image_sample": 128,
+    "max_descriptors": 200000,
+    "spatial_pyramid": false,
+    "appearance": "none",
+    "regressor": "ridge",
+    "ridge_alpha": 10.0
+  },
+  "run_kind": "development"
+}

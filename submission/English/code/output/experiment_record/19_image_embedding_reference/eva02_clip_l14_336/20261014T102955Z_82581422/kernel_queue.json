@@ -1,0 +1,15 @@
+{
+  "command": [
+    "D:\\学习\\研究生\\graduate 26s2\\COMP 90086 CV\\Final_Assignment\\cv-house-price\\.venv\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "D:\\学习\\研究生\\graduate 26s2\\COMP 90086 CV\\Final_Assignment\\cv-house-price\\scripts\\experiments\\frozen_kernel_search.py",
+    "--cache-family",
+    "eva_clip_features",
+    "--cache-key",
+    "b564a02200fae2b1ed34e7d2267f17f7f5ae30382bc0bba1c8a52e0e985df85b",
+    "--name",
+    "eva02_clip_l14_336_kernel"
+  ],
+  "exit_code": 0
+}

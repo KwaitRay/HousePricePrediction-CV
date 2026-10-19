@@ -1,0 +1,10 @@
+{
+  "preprocess.geometry": {
+    "before": "letterbox",
+    "after": "center_crop"
+  },
+  "run_kind": {
+    "before": null,
+    "after": "development"
+  }
+}

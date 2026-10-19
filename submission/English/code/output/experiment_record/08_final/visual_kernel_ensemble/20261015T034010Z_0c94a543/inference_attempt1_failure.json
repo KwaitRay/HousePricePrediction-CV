@@ -1,0 +1,12 @@
+{
+  "status": "failed_before_test_reading",
+  "session": 70026,
+  "error": "ValueError: Invalid name 'common/config.py'",
+  "stage": "Dependency path digest before main inference try block",
+  "previous_registration_sha256": "838ab183ceac3f9da52bb35c5dc55a162f54c5744bb68f397e4ee5753d344934",
+  "model_refit_repeated": false,
+  "csv_generated": false,
+  "fix": "Use Path(__file__).parent / relative_filename, supporting nested common source paths",
+  "old_inference_snapshot_sha256": "e71552b4d0711cd8ec656a45585dcdb546f0c64dab1ab33d6547f8b52c49cbc0",
+  "corrected_inference_source_sha256": "e8eab55ff7d8ff087538d7ea1231024f7b886ce313834a56c9a34dd8bf10760f"
+}

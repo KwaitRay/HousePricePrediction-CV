@@ -1,0 +1,18 @@
+{
+  "extends": "../selected/input.json",
+  "experiment": {
+    "id": "tune_01_lr_0p0003",
+    "name": "训练调优阶段—实验一：固定学习率大小比较",
+    "stage": "02_training",
+    "question": "全程固定学习率，比较更新幅度",
+    "comparison": "继承配置 ../selected/input.json 对应的已保留方案",
+    "changed_fields": [
+      "training.lr"
+    ],
+    "enforce_changes": true,
+    "status": "ready"
+  },
+  "training": {
+    "lr": 0.0003
+  }
+}

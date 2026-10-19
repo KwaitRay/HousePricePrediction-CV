@@ -1,0 +1,47 @@
+{
+  "n": 3000,
+  "finite_nonnegative": true,
+  "test_order_matches": true,
+  "csv_sha256": "3f9c691c063a4ccaff24d1a6bfbc77e3d953a1248d2f1705bd9d0fda6a8b8c5d",
+  "test_manifest_sha256": "095bc80745738631bc04ab777331c42b5715e43bd0704f8e6a4488e0e4badfb1",
+  "labeled_feature_spotchecks": {
+    "siglip2_naflex_features:8b18cb9dd59f766ed86954e2f8c74fcc7627a593921091845f9a6063148be4e9": true,
+    "siglip2_giant_features:eebfca6336987022166c4aae23008ff570150bb2ad16265085c0c60e69fec709": true,
+    "pe_core_multiview:d5cbb115b2d7c440dafb307239fc30d3207df90486d9baf790b1f7a7dd7974db": true
+  },
+  "labeled_feature_spotchecks_evidence": [
+    {
+      "family": "siglip2_naflex_features",
+      "training_cache_key": "8b18cb9dd59f766ed86954e2f8c74fcc7627a593921091845f9a6063148be4e9",
+      "test_cache_key": "c4a32dce67a35005e6f3a5e8eb543301f8d79eea4a5de5afcc19a6b444279b54",
+      "prior_export": "08_final/visual_kernel_ensemble/20261014T044646Z_7d1af3eb",
+      "prior_probe_evidence_sha256": "d81cf5970a81f8fad0c13983a1d764693ff6e8c3b4128fc88fd960944b0b2c8a",
+      "all_chunk_hashes_verified": true,
+      "fresh_runtime_probe": false
+    },
+    {
+      "family": "siglip2_giant_features",
+      "training_cache_key": "eebfca6336987022166c4aae23008ff570150bb2ad16265085c0c60e69fec709",
+      "test_cache_key": "e6fc054aedee422ab7a44eb7476db34b1841fd5b3fe87c7fb7a82538e8445909",
+      "prior_export": "08_final/visual_kernel_ensemble/20261014T044646Z_7d1af3eb",
+      "prior_probe_evidence_sha256": "d81cf5970a81f8fad0c13983a1d764693ff6e8c3b4128fc88fd960944b0b2c8a",
+      "all_chunk_hashes_verified": true,
+      "fresh_runtime_probe": false
+    },
+    {
+      "family": "pe_core_multiview",
+      "training_cache_key": "d5cbb115b2d7c440dafb307239fc30d3207df90486d9baf790b1f7a7dd7974db",
+      "test_cache_key": "104edaadec785edd2125d18ef026e076a9e9b3f092cf4d5b44625e5c1d5bbd13",
+      "prior_export": "08_final/visual_kernel_ensemble/20261014T044646Z_7d1af3eb",
+      "prior_probe_evidence_sha256": "d81cf5970a81f8fad0c13983a1d764693ff6e8c3b4128fc88fd960944b0b2c8a",
+      "all_chunk_hashes_verified": true,
+      "fresh_runtime_probe": false
+    }
+  ],
+  "fresh_runtime_encoder_spotchecks": false,
+  "test_labels_used": false,
+  "mllm_components": false,
+  "reference_replay_passed": true,
+  "kaggle_uploaded": false,
+  "price_unit": "thousand USD"
+}

@@ -1,0 +1,49 @@
+{
+  "model": "facebook/dinov2-large",
+  "revision": "47b73eefe95e8d44ec3623f8890bd894b6ea2d6c",
+  "checkpoint_sha256": "399fba97a95f22c36834418bc69373364a99af3a1153da1c0fb31db567c92e23",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "preprocess": {
+    "_processor_class": null,
+    "image_processor_type": "BitImageProcessor",
+    "do_resize": true,
+    "size": {
+      "shortest_edge": 256
+    },
+    "resample": 3,
+    "do_center_crop": true,
+    "crop_size": {
+      "height": 224,
+      "width": 224
+    },
+    "do_rescale": true,
+    "rescale_factor": 0.00392156862745098,
+    "do_normalize": true,
+    "image_mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "image_std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "do_convert_rgb": true
+  },
+  "feature": "Post-layernorm CLS and mean patch tokens, each unit-normalized then concatenated and globally normalized",
+  "feature_dim": 2048,
+  "precision": "float16 visual forward; float32 token means and unit normalization; float32 feature storage",
+  "source_sha256": "f4110290d1506886ac2329eb503879cb7e30d157d3b0ea7cd621105e0ef7159e",
+  "encoder_source_sha256": "f1c2b7ba149448ce2c1b4ef5c199ba8a1a18330a63e90421b9ea69906ccf01fc",
+  "batch_size": 4,
+  "text_modules_used": false,
+  "mllm_components": false,
+  "test_images_used": false,
+  "official_model_card": "https://github.com/facebookresearch/dinov2/blob/main/MODEL_CARD.md",
+  "pretraining_dataset": "LVD-142M, self-supervised generic visual pretraining",
+  "license": "apache-2.0",
+  "course_scope": "Generic image-only backbone; no price-task checkpoint, extra SoCal images/metadata or MLLM",
+  "caveat": "Complete method comparison; pretraining, representation and official input preprocessing differ from SigLIP2",
+  "cache_key": "adb6b3c871bc8800b0aa1ad49be82cff10274608e8071cd0266ba76daabe8802"
+}

@@ -1,0 +1,9 @@
+{
+  "status": "completed",
+  "controller_pid": 28912,
+  "reference_pid": 8368,
+  "command": [
+    "scripts/experiments/siglip_patch_tokens.py"
+  ],
+  "exit_code": 0
+}

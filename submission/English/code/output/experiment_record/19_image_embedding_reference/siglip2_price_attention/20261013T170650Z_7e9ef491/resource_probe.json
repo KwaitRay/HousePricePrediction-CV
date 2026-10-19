@@ -1,0 +1,18 @@
+{
+  "utc": "2026-10-14T01:40:06.288390+00:00",
+  "training_state": {
+    "status": "training",
+    "pid": 20408,
+    "fold": "refit",
+    "epoch": 6,
+    "max_epoch": 15,
+    "epoch_seconds": 73.47425590013154
+  },
+  "ram_total_gib": 15.910388946533203,
+  "ram_available_gib": 0.2510566711425781,
+  "trainer_rss_gib": 6.3205108642578125,
+  "trainer_private_gib": 2.946788787841797,
+  "gpu_snapshot": "27 %, 961 MiB, 6144 MiB, 54",
+  "scope": "Single runtime snapshot; memory pressure likely contributes to random patch-cache reads, but this is not an isolated cause-and-effect measurement",
+  "intervention": "No process stopped or active training code changed; preserve current optimizer, sampling and feature protocol"
+}

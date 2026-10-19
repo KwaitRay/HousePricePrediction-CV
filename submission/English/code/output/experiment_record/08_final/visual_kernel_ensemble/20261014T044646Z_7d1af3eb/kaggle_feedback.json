@@ -1,0 +1,13 @@
+{
+  "source": "User-reported Kaggle public leaderboard score",
+  "public_mse": 52555.25635,
+  "reference_validation_mse": 56549.273825136086,
+  "csv_sha256": "604354958797acf5388b10df43cdb73ccf37bd526ba314260a90ffd3bfeccc8b",
+  "candidate": ".local\\experiment_record\\08_final\\visual_kernel_ensemble\\20261014T044646Z_7d1af3eb\\predictions.csv",
+  "previous_public_mse": 53754.8796,
+  "improvement_fraction": 0.022316546124307557,
+  "mse_gap_to_target": 2555.25635,
+  "target_mse": 50000,
+  "target_achieved": false,
+  "reported_date": "2026-10-14"
+}

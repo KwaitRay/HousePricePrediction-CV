@@ -1,0 +1,18 @@
+{
+  "components": 64,
+  "whitening_power": 0.0,
+  "training_oof_mse": 52923.26443349395,
+  "mse": 53853.60829168347,
+  "mae": 162.201155862196,
+  "tail_mse": 248694.11910685644,
+  "n": 1601,
+  "tail_n": 159,
+  "tail_threshold": 1300.0,
+  "gamma": 5.195623660691876,
+  "full_training_original_median_distance": 0.5401885693942629,
+  "full_training_transformed_median_distance": 0.41587967464320047,
+  "seconds": 159.4238201000262,
+  "export_eligible": false,
+  "full_refit_adapter_supported": false,
+  "test_images_used": false
+}

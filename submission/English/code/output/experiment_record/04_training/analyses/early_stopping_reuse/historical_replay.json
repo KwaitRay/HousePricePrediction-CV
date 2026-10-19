@@ -1,0 +1,86 @@
+{
+  "kind": "retrospective_simulation_not_new_training",
+  "relative_improvement": 0.001,
+  "results": [
+    {
+      "run": "baseline",
+      "min_epochs": 15,
+      "patience": 10,
+      "stop_epoch": 16,
+      "best_mse_at_stop": 131108.77601670404,
+      "full_best_mse": 131108.77601670404,
+      "mse_penalty_percent": 0.0,
+      "saved_epoch_minutes": 59.57596682332805
+    },
+    {
+      "run": "baseline",
+      "min_epochs": 30,
+      "patience": 15,
+      "stop_epoch": 30,
+      "best_mse_at_stop": 131108.77601670404,
+      "full_best_mse": 131108.77601670404,
+      "mse_penalty_percent": 0.0,
+      "saved_epoch_minutes": 39.307009453334224
+    },
+    {
+      "run": "baseline",
+      "min_epochs": 40,
+      "patience": 15,
+      "stop_epoch": 40,
+      "best_mse_at_stop": 131108.77601670404,
+      "full_best_mse": 131108.77601670404,
+      "mse_penalty_percent": 0.0,
+      "saved_epoch_minutes": 26.058180211668756
+    },
+    {
+      "run": "baseline",
+      "min_epochs": 40,
+      "patience": 20,
+      "stop_epoch": 40,
+      "best_mse_at_stop": 131108.77601670404,
+      "full_best_mse": 131108.77601670404,
+      "mse_penalty_percent": 0.0,
+      "saved_epoch_minutes": 26.058180211668756
+    },
+    {
+      "run": "stretch",
+      "min_epochs": 15,
+      "patience": 10,
+      "stop_epoch": 17,
+      "best_mse_at_stop": 130917.99625253744,
+      "full_best_mse": 128268.66898790754,
+      "mse_penalty_percent": 2.0654515912063243,
+      "saved_epoch_minutes": 56.930638693331275
+    },
+    {
+      "run": "stretch",
+      "min_epochs": 30,
+      "patience": 15,
+      "stop_epoch": 30,
+      "best_mse_at_stop": 130917.99625253744,
+      "full_best_mse": 128268.66898790754,
+      "mse_penalty_percent": 2.0654515912063243,
+      "saved_epoch_minutes": 40.60646723333048
+    },
+    {
+      "run": "stretch",
+      "min_epochs": 40,
+      "patience": 15,
+      "stop_epoch": 55,
+      "best_mse_at_stop": 128268.66898790754,
+      "full_best_mse": 128268.66898790754,
+      "mse_penalty_percent": 0.0,
+      "saved_epoch_minutes": 6.522201151664679
+    },
+    {
+      "run": "stretch",
+      "min_epochs": 40,
+      "patience": 20,
+      "stop_epoch": 60,
+      "best_mse_at_stop": 128268.66898790754,
+      "full_best_mse": 128268.66898790754,
+      "mse_penalty_percent": 0.0,
+      "saved_epoch_minutes": 0.0
+    }
+  ]
+}

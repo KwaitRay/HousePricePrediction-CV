@@ -1,0 +1,113 @@
+{
+  "run": "${LOCAL_ASSIGNMENT}\\output\\experiment_record\\01_preprocessing\\runs\\preprocess_04_normalize\\20261001T170612Z_8ee48fbe",
+  "metrics": {
+    "mse": 130192.36618213232,
+    "mae": 263.36116962077955,
+    "tail_mse": 758501.087889561,
+    "n": 1601,
+    "tail_n": 159,
+    "tail_threshold": 1300.0
+  },
+  "train_metrics_at_best_checkpoint": {
+    "mse": 121187.97863554061,
+    "mae": 254.79431921486602,
+    "tail_mse": 717756.9788276454,
+    "n": 6399,
+    "tail_n": 636,
+    "tail_threshold": 1300.0
+  },
+  "best_epoch": 7,
+  "last_validation_mse": 137872.50107451112,
+  "first_validation_mse": 141349.96324974837,
+  "last_training_data_loss": 0.0127161308758784,
+  "late_validation_mse_mean": 140518.80719791615,
+  "late_validation_mse_std": 3163.643659990977,
+  "generalization_gap_mse": 9004.387546591708,
+  "cost": {
+    "train_seconds": 1665.380918999901,
+    "epochs": 40,
+    "best_epoch": 7,
+    "loader_setup_seconds": 0.14602930005639791,
+    "stop_reason": "early_stopping",
+    "probe_seconds": 1.2178109001833946,
+    "validation_seconds": 272.0476270002546,
+    "checkpoint_seconds": 2.607600700110197,
+    "optimizer_updates": 8000,
+    "samples_seen": 255960,
+    "training_seconds": 1342.151952400338,
+    "seconds_per_update": 0.16776899405004222,
+    "predict_seconds": 6.37780290003866,
+    "timing_note": "train_seconds包括逐轮验证与固定样本诊断；predict_seconds包括读取和预处理",
+    "stopped_early": true,
+    "peak_cuda_bytes": 1213386752
+  },
+  "prediction_checks": {
+    "nonpositive_count": 0,
+    "unclipped_mse": 130192.36618213232
+  },
+  "control": {
+    "run": "${LOCAL_ASSIGNMENT}\\output\\experiment_record\\02_baselines\\runs\\alexnet\\20261001T142922Z_fcefd127",
+    "metrics": {
+      "mse": 131108.77601670404,
+      "mae": 278.56331682992084,
+      "tail_mse": 641434.873647467,
+      "n": 1601,
+      "tail_n": 159,
+      "tail_threshold": 1300.0
+    },
+    "train_metrics_at_best_checkpoint": {
+      "mse": 122541.28414815689,
+      "mae": 269.57209490897526,
+      "tail_mse": 609703.4331625487,
+      "n": 6399,
+      "tail_n": 636,
+      "tail_threshold": 1300.0
+    },
+    "best_epoch": 6,
+    "last_validation_mse": 138927.04216712998,
+    "first_validation_mse": 135753.79654903122,
+    "last_training_data_loss": 0.0105974770391386,
+    "late_validation_mse_mean": 140781.83420851908,
+    "late_validation_mse_std": 2595.5500352258778,
+    "generalization_gap_mse": 8567.49186854715,
+    "cost": {
+      "train_seconds": 1646.239323799964,
+      "epochs": 40,
+      "best_epoch": 6,
+      "loader_setup_seconds": 0.13712279999163002,
+      "stop_reason": "early_stopping",
+      "probe_seconds": 1.221494999830611,
+      "validation_seconds": 270.2041802997701,
+      "checkpoint_seconds": 2.487558100023307,
+      "optimizer_updates": 8000,
+      "samples_seen": 255960,
+      "training_seconds": 1321.8596681004856,
+      "seconds_per_update": 0.1652324585125607,
+      "predict_seconds": 6.777275400003418,
+      "timing_note": "train_seconds包括逐轮验证与固定样本诊断；predict_seconds包括读取和预处理",
+      "stopped_early": true,
+      "peak_cuda_bytes": 1213386752
+    },
+    "prediction_checks": {
+      "nonpositive_count": 0,
+      "unclipped_mse": 131108.77601670404
+    }
+  },
+  "bootstrap": {
+    "candidate_minus_control_mse": -916.4098345717222,
+    "interval_95": [
+      -4416.796122796846,
+      2599.9337627798095
+    ],
+    "unit": "original_image_group",
+    "draws": 1000
+  },
+  "mse_relative_change": -0.006989691021560329,
+  "same_initialization": true,
+  "influence_check": {
+    "top10_absolute_change_sum": 3261908.5024846774,
+    "total_squared_error_change": -1467172.1451493264,
+    "remaining_1591_mean_change": -2972.395127362668,
+    "note": "Sensitivity diagnosis only; all 1601 samples remain in the official MSE."
+  }
+}

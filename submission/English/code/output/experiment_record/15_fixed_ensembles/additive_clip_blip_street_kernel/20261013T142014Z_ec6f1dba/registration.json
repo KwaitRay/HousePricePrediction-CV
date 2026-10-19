@@ -1,0 +1,59 @@
+{
+  "method": "RBF kernels added before solving one common dual coefficient vector",
+  "components": [
+    {
+      "source": "13_clip_optimization/clip_l14_multiview_kernel/20261013T120554Z_e2a41622",
+      "head_sha256": "8c73917dcfbaf805b3d24e72c27bb821fc12ee61307ac5212849c2a7c2596269",
+      "cache_family": "clip_multiview",
+      "cache_key": "eae299f8903e58fff9ec29f3bdc3aa8a61957b645b6d3490dac6c3cbe410706d",
+      "feature_dim": 2304,
+      "manifest_sha256": "b6b44e6df18931e13b95247d40346cce0a9747b218a2e1c09ded38137f2c29f5"
+    },
+    {
+      "source": "14_blip_reference/blip_base_kernel/20261013T113447Z_d63abf2c",
+      "head_sha256": "1a3798305d5b6efca873b3bcece042978f64203666a966ab0581be57581f693b",
+      "cache_family": "blip_features",
+      "cache_key": "bab1d08edf868e4350bb353f4dac15f6b52b71395d78d2542659f691584a6bdd",
+      "feature_dim": 768,
+      "manifest_sha256": "be7c696171f676a1445a39cf61ee341d17b70c908355d2250d4bd18f8a1d4c9d"
+    },
+    {
+      "source": "17_geo_visual_reference/streetclip_kernel/20261013T133019Z_a48bab87",
+      "head_sha256": "faa5d82dc825f5599d0cd598c2c1bc289576e1ced1c32932e838ffc59ee7ed44",
+      "cache_family": "streetclip_features",
+      "cache_key": "4dde547b9a31ac46e7ee5ef42f9eee8b22acec8227d7e07cc2530f0707989d39",
+      "feature_dim": 768,
+      "manifest_sha256": "98dc71a21d3d682e8d304b3be62fadce64a67386fcbbc5c41b953e785bc831a6"
+    }
+  ],
+  "gammas": [
+    4.0,
+    4.0,
+    4.0
+  ],
+  "kernel_weight_candidates": [
+    [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    [
+      0.5,
+      0.2,
+      0.3
+    ]
+  ],
+  "alphas": [
+    0.01,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "source_sha256": "470f0dd0d7a0e662c884aa61c7f88ffeb077f014164f8658e889ee0b5a149c23",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "selection": "Eight preregistered kernel-weight/alpha candidates; unweighted original-price training GroupKFold3 MSE",
+  "centering": "Fit-fold training target mean; no validation target use",
+  "test_images_used": false,
+  "course_scope": "Frozen visual CLIP/BLIP/StreetCLIP references; eligibility pending confirmation",
+  "caveat": "Source gammas previously chosen using training CV; selected training OOF score is not nested-unbiased"
+}

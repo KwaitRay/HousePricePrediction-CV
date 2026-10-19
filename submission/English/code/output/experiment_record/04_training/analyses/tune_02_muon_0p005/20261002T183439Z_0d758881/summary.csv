@@ -1,0 +1,5 @@
+,,mse,mse,mse,mae,mae,mae,tail_mse,tail_mse,tail_mse
+,,mean,std,count,mean,std,count,mean,std,count
+experiment,config_version,,,,,,,,,
+muon lr=0.005,664637968347,128231.59278899369,,1,269.6955400323802,,1,667045.7457059143,,1
+预处理备选阶段—实验一：拉伸尺寸调整,f1fd1543d268,128268.66898790754,,1,259.9859476672047,,1,700139.5572144003,,1

@@ -1,0 +1,8 @@
+{
+  "status": "completed",
+  "pid": 26288,
+  "feature_cache_key": "d5cbb115b2d7c440dafb307239fc30d3207df90486d9baf790b1f7a7dd7974db",
+  "feature_extraction_completed": true,
+  "price_model_evaluated": false,
+  "next_phase": "Registered multiview kernel adapter and OOF fusion"
+}

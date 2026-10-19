@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "controller_pid": 43980,
+  "reference_pid": 29248,
+  "command": [
+    "scripts/experiments/pe_giant_incremental_fusion.py",
+    "--phase",
+    "run",
+    "--protocol-dir",
+    ".local/experiment_record/15_fixed_ensembles/eva_clip_incremental_fusion/20261014T103120Z_d5d852d1"
+  ],
+  "exit_code": 0
+}

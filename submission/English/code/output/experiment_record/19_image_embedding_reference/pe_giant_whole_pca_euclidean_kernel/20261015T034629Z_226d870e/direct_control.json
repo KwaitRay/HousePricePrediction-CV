@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "oof_n": 6399,
+  "validation_n": 1601,
+  "maximum_oof_price_error": 1.8530954548623413e-10,
+  "maximum_validation_price_error": 9.094947017729282e-12
+}

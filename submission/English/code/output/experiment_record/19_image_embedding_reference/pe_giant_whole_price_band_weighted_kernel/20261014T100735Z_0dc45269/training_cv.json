@@ -1,0 +1,14 @@
+[
+  {
+    "strength": 0.0,
+    "training_oof_mse": 53646.455357829655
+  },
+  {
+    "strength": 0.5,
+    "training_oof_mse": 53487.49907791957
+  },
+  {
+    "strength": 1.0,
+    "training_oof_mse": 53517.54352470863
+  }
+]

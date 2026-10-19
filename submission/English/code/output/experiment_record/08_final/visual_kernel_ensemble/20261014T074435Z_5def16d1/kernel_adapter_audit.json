@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "scope": "12 supplied labeled images per full-refit component; KRR linear-system identity independent of prediction adapter",
+  "all_validation_predictions_replayed_before_refit": true,
+  "imageids": [
+    "5115.jpg",
+    "6648.jpg",
+    "212.jpg",
+    "3736.jpg",
+    "6325.jpg",
+    "6806.jpg",
+    "2922.jpg",
+    "639.jpg",
+    "1430.jpg",
+    "2963.jpg",
+    "2839.jpg",
+    "5146.jpg"
+  ],
+  "components": [
+    {
+      "component": 0,
+      "kernel_type": "image_rbf",
+      "max_abs_prediction_identity_error": 1.7712409317027777e-10,
+      "full_head_sha256": "be76de6ec2b5ae798beba58d1c0639a272c265e3eb78c0e510504fa296a2c817"
+    },
+    {
+      "component": 1,
+      "kernel_type": "pls_product_rbf",
+      "max_abs_prediction_identity_error": 1.5006662579253316e-11,
+      "full_head_sha256": "c797b1a448c1732fc8136eec0b2f7d0f51599440daccc98f1b2d88f9c2262a96"
+    },
+    {
+      "component": 2,
+      "kernel_type": "image_rbf",
+      "max_abs_prediction_identity_error": 1.9326762412674725e-12,
+      "full_head_sha256": "ba2a452c90f4042c47618437702d887744199114efa2c9a9a71b731bf57dcd41"
+    }
+  ],
+  "source_sha256": "027306f52843a0fa6f656a3d8ed9432ded70fa17280a2716333b19a0ad389d7e",
+  "test_images_used": false
+}

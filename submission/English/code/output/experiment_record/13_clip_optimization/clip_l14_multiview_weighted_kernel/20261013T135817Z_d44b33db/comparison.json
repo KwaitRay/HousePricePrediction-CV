@@ -1,0 +1,71 @@
+{
+  "baseline": ".local\\experiment_record\\13_clip_optimization\\clip_l14_multiview_kernel\\20261013T120554Z_e2a41622",
+  "baseline_mse": 71037.86594253306,
+  "weighted_results": {
+    "head": "weighted_kernel",
+    "alpha": 1.0,
+    "training_oof_mse": 75561.0062637026,
+    "mse": 71462.69626197543,
+    "mae": 194.53752968372746,
+    "tail_mse": 315665.71705295297,
+    "n": 1601,
+    "tail_n": 159,
+    "tail_threshold": 1300.0,
+    "seconds": 69.10811140015721
+  },
+  "baseline_price_slices": [
+    {
+      "tier": "low",
+      "n": 169,
+      "mse": 37699.425426131056,
+      "mae": 158.4235965942699,
+      "bias": 154.91906873163606,
+      "mean_positive_overestimate": 156.67133266295298
+    },
+    {
+      "tier": "middle",
+      "n": 1273,
+      "mse": 41391.6289749696,
+      "mae": 156.12028998356936,
+      "bias": 43.12642184270583,
+      "mean_positive_overestimate": 99.6233559131376
+    },
+    {
+      "tier": "high",
+      "n": 159,
+      "mse": 343829.413785176,
+      "mae": 513.7786398802866,
+      "bias": -511.5567789540583,
+      "mean_positive_overestimate": 1.1109304631142418
+    }
+  ],
+  "weighted_price_slices": [
+    {
+      "tier": "low",
+      "n": 169,
+      "mse": 37392.36354235297,
+      "mae": 153.23024485559213,
+      "bias": 147.91066606957094,
+      "mean_positive_overestimate": 150.57045546258152
+    },
+    {
+      "tier": "middle",
+      "n": 1273,
+      "mse": 45484.381983774925,
+      "mae": 163.98954898820327,
+      "bias": 54.8630784815576,
+      "mean_positive_overestimate": 109.42631373488044
+    },
+    {
+      "tier": "high",
+      "n": 159,
+      "mse": 315665.71705295297,
+      "mae": 483.0187281828293,
+      "bias": -478.21382520999464,
+      "mean_positive_overestimate": 2.4024514864172932
+    }
+  ],
+  "decision": "Not adopted as main predictor: unweighted validation MSE and training OOF MSE worsen, although high-price MSE improves. Preserve tail/low-price tradeoff evidence.",
+  "validation_weighted": false,
+  "test_images_used": false
+}

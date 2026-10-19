@@ -1,0 +1,7 @@
+{
+  "config.json": "a71d70eec45fd764f3b5cf455310b95397a4acaad4fadc62b45e10c46336d784",
+  "data_manifest.json": "e8d9372c8715e330023f2b7b8ef3a71598e48cebb0d5f1a71d369cc5c1a53b89",
+  "predictions.csv": "d2d2ea1656c33dc90e6ef44bf0166dfdcfe0a9b1a8d6bb6909a23ae149bd4280",
+  "features.json": "ff4d1a0b103a33d8820c86b13b8ddaa149e13558842e83a46ec3c79ca72347ce",
+  "traditional.joblib": "5469f0956a4e2abf2e22e40a00e83866c54c30e15f9965d5f25fc7bf665496b4"
+}

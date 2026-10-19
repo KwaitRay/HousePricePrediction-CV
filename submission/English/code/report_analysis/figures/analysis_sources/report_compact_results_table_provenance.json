@@ -1,0 +1,16 @@
+{
+  "inputs": {
+    "submission/report/figures/analysis_sources/early_experiment_paired_deltas.csv": "4b60a553a54b0e9f4c563448f0506da9727de96575be9de430ff28efcee1616a",
+    "submission/report/figures/analysis_sources/early_experiment_results_summary.csv": "877682e2b1a595912ffc7914acb1d9aafc4b0e56f113c3a1e6b1d88459d0e27c",
+    "submission/report/figures/analysis_sources/pe_g_view_pca_results_summary.csv": "14be1aa6d9633318e2a7c7b75450b31ca3316e9ef510abcacb95a8b335ce7085",
+    "cv-house-price/output/experiment_record/03_clip_reference/metrics.json": "bce6d5f56829c030ee36cd9f9855a9d25c61b338440f72daf2512fbb11bc9a93",
+    "cv-house-price/output/experiment_record/15_fixed_ensembles/pe_whole_pca_incremental_fusion/20261015T033810Z_8aa6ec62/results.json": "6f46bfa7ef980d87574f5f944658d8213e50178bbdf024a55499235af94433f1"
+  },
+  "outputs": {
+    "submission/report/figures/analysis_sources/report_compact_results_table.csv": "7d184884d22c8d23387075eb926711438d1fb7431aa1f39e8cb27c17451e0177",
+    "submission/report/figures/report_compact_results_table.png": "96aa84dfdb9913732079cfa928b06cc6ed4b8c053007c04aa1c333b8fbb10699",
+    "submission/report/figures/report_compact_results_table.svg": "3a0e9b7db20d3a882b644776ee6488f3abbcd5ba05880255be9036cb0e69b79c",
+    "submission/report/figures/report_compact_results_table.tex": "38baff5ccce3a127e7c0539c55f009973f84d9e2277a840bfc67517f3ee01333"
+  },
+  "notes": "CPU only; no models trained or encoders loaded. MSE display rounded to integer; CSV retains precision."
+}

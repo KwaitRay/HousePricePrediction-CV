@@ -1,0 +1,48 @@
+{
+  "model": "google/siglip2-giant-opt-patch16-384",
+  "revision": "a713301b217d38485fb2204c808367d10bc3cc40",
+  "preprocess": {
+    "_processor_class": "SiglipProcessor",
+    "image_processor_type": "SiglipImageProcessor",
+    "do_resize": true,
+    "size": {
+      "height": 384,
+      "width": 384
+    },
+    "resample": 2,
+    "do_rescale": true,
+    "rescale_factor": 0.00392156862745098,
+    "do_normalize": true,
+    "image_mean": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "image_std": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "do_convert_rgb": null
+  },
+  "checkpoint_index_sha256": "3766cd1194767496943ae5deb6add8c994b41158c69e6c13d4037cbaf8a4e118",
+  "checkpoint_shard_sha256": {
+    "model-00001-of-00002.safetensors": "9f6da5ad2e3178b0c1197b740c9ffefee0bc733ee8759095a5ea8c4c845a3f4e",
+    "model-00002-of-00002.safetensors": "06e64949dd7cafc4d278723533e2591145ae8e5616d2c0c5d8458de25ceede34"
+  },
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "feature_dim": 1536,
+  "batch_size": 1,
+  "precision": "float16 image-only CUDA forward, float32 normalized feature storage",
+  "feature": "Official Giant vision pooler output, unit normalized",
+  "source_sha256": "72dc0281fe7bad95f63822a6de55e5adb5277145bdd0205897987ea655350e80",
+  "loader_source_sha256": "ebd2460b63fe91d4ac2069d345f0e814593e5b02db0d407efd8ef4769f63080a",
+  "encoder_source_sha256": "2e80b5876ebfff58c32fbaa6881d99363a51046a332a6be017ad1fab8de0cc2e",
+  "host_loading": "Meta architecture, direct vision-tensor-to-fp16-CUDA streaming, no full CPU tower",
+  "text_modules_used": false,
+  "mllm_components": false,
+  "test_images_used": false,
+  "pretraining_dataset": "WebLI generic vision-language pretraining",
+  "license": "apache-2.0",
+  "course_scope": "Generic pretrained image encoder and supplied labels only; no MLLM, price-task checkpoint or extra SoCal data"
+}

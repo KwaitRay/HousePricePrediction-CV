@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "source_sha256": "4fd124f96028931feb3af94cf9b32af1f9025dc7ad10a27de99c51b1a5390e42",
+  "head_sha256": "823e316947d34cf3b4ee70229f1ff5b272b0d3ae38e16acde561b74fbee68a3f",
+  "predictions_sha256": "3bb35fd8fb936af522f99575792f6d8e4e9fa6019753b48b17a1503030ae4123",
+  "transform_sha256": "3f46f94937db1eee0dfda447c43b9dcb364c0dc3ca9bf2f38dfa7cdc5a3316de",
+  "n_train_equations": 6399,
+  "n_validation": 1601,
+  "eigen_residual_max": 5.095750210681871e-18,
+  "max_training_price_error": 7.503331289626658e-12,
+  "max_validation_price_error": 6.139089236967266e-12,
+  "median_calibrated_gamma": 1.0532304642288626,
+  "scope": "CPU all fitted PCA eigenpairs/means, transformed training bank, bandwidth, all6399 equations/all1601 prices/selected OOF score. Does not refit every OOF model or reencode images.",
+  "test_images_used": false,
+  "export_eligible": false
+}

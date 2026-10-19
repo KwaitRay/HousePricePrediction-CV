@@ -1,0 +1,9 @@
+{
+  "candidate_minus_control_mse": 1574.8325872255157,
+  "interval_95": [
+    -3602.4444702996707,
+    7371.125705193589
+  ],
+  "unit": "original_image_group",
+  "draws": 1000
+}

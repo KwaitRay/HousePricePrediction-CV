@@ -1,0 +1,12 @@
+{
+  "run": "08_final\\visual_kernel_ensemble\\20261014T091115Z_286fc436",
+  "csv_sha256": "663fe45609d2e086151d410340baac05302d6c54ffc4bc8361f1bfb1622b38a3",
+  "public_mse": 47837.69254,
+  "feedback_status": "Received from user; see kaggle_feedback.json",
+  "kaggle_uploaded_by_tool": false,
+  "validation_mse": 52524.78420579877,
+  "target_mse": 40000,
+  "target_achieved": false,
+  "prior_reported_best_public_mse": 49543.82739,
+  "current_best_public_mse": 47837.69254
+}

@@ -1,0 +1,103 @@
+{
+  "run": "${LOCAL_ASSIGNMENT}\\output\\experiment_record\\01_preprocessing\\runs\\preprocess_02_crop\\20261001T121652Z_fe0754e2",
+  "metrics": {
+    "mse": 129917.75665117161,
+    "mae": 263.97585641447205,
+    "tail_mse": 677794.5394362448,
+    "n": 1601,
+    "tail_n": 159,
+    "tail_threshold": 1300.0
+  },
+  "train_metrics_at_best_checkpoint": {
+    "mse": 4705.138341828928,
+    "mae": 53.02981110005916,
+    "tail_mse": 9675.638885509667,
+    "n": 6399,
+    "tail_n": 636,
+    "tail_threshold": 1300.0
+  },
+  "best_epoch": 57,
+  "last_validation_mse": 132356.6308675602,
+  "first_validation_mse": 138359.80810191104,
+  "last_training_data_loss": 0.0073121724348937,
+  "late_validation_mse_mean": 133600.42175540386,
+  "late_validation_mse_std": 2383.7875801434684,
+  "generalization_gap_mse": 125212.61830934268,
+  "cost": {
+    "train_seconds": 4783.392205400043,
+    "epochs": 60,
+    "best_epoch": 57,
+    "optimizer_updates": 12000,
+    "samples_seen": 383940,
+    "training_seconds": 2821.8667927995557,
+    "seconds_per_update": 0.23515556606662963,
+    "predict_seconds": 21.935430699959397,
+    "timing_note": "train_seconds包括逐轮验证与固定样本诊断；predict_seconds包括读取和预处理",
+    "stopped_early": false,
+    "peak_cuda_bytes": 1213386752
+  },
+  "prediction_checks": {
+    "nonpositive_count": 0,
+    "unclipped_mse": 129917.75665117161
+  },
+  "control": {
+    "run": "${LOCAL_ASSIGNMENT}\\output\\experiment_record\\02_baselines\\runs\\alexnet\\20261001T092947Z_71a2f7b6",
+    "metrics": {
+      "mse": 131108.77601670404,
+      "mae": 278.56331682992084,
+      "tail_mse": 641434.873647467,
+      "n": 1601,
+      "tail_n": 159,
+      "tail_threshold": 1300.0
+    },
+    "train_metrics_at_best_checkpoint": {
+      "mse": 122541.28414815689,
+      "mae": 269.57209490897526,
+      "tail_mse": 609703.4331625487,
+      "n": 6399,
+      "tail_n": 636,
+      "tail_threshold": 1300.0
+    },
+    "best_epoch": 6,
+    "last_validation_mse": 136969.17250915256,
+    "first_validation_mse": 135753.79654903122,
+    "last_training_data_loss": 0.0072995215803335,
+    "late_validation_mse_mean": 137406.64767409884,
+    "late_validation_mse_std": 2814.2696186159274,
+    "generalization_gap_mse": 8567.49186854715,
+    "cost": {
+      "train_seconds": 5077.764778099954,
+      "epochs": 60,
+      "best_epoch": 6,
+      "optimizer_updates": 12000,
+      "samples_seen": 383940,
+      "training_seconds": 3015.59894849977,
+      "seconds_per_update": 0.25129991237498084,
+      "predict_seconds": 21.254813199979253,
+      "timing_note": "train_seconds包括逐轮验证与固定样本诊断；predict_seconds包括读取和预处理",
+      "stopped_early": false,
+      "peak_cuda_bytes": 1213386752
+    },
+    "prediction_checks": {
+      "nonpositive_count": 0,
+      "unclipped_mse": 131108.77601670404
+    }
+  },
+  "bootstrap": {
+    "candidate_minus_control_mse": -1191.0193655324356,
+    "interval_95": [
+      -6981.004973250251,
+      4523.43102063229
+    ],
+    "unit": "original_image_group",
+    "draws": 1000
+  },
+  "mse_relative_change": -0.00908420779842134,
+  "same_initialization": true,
+  "influence_check": {
+    "top10_absolute_change_sum": 2485222.6478462964,
+    "total_squared_error_change": -1906822.0042174282,
+    "remaining_1591_mean_change": -2760.5560352380426,
+    "note": "Sensitivity diagnosis only; all 1601 samples remain in the official MSE."
+  }
+}

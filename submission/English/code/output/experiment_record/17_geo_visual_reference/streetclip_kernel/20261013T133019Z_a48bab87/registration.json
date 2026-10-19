@@ -1,0 +1,26 @@
+{
+  "method": "mean-centered RBF kernel ridge",
+  "gammas": [
+    1.0,
+    4.0,
+    16.0
+  ],
+  "alphas": [
+    0.01,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "train_only_group_cv": 3,
+  "feature_cache_key": "4dde547b9a31ac46e7ee5ef42f9eee8b22acec8227d7e07cc2530f0707989d39",
+  "manifest_sha256": "98dc71a21d3d682e8d304b3be62fadce64a67386fcbbc5c41b953e785bc831a6",
+  "source_sha256": "7be528fe9882cf47aa7e3f868892d46809ca40635c57ddd23255aaa4c1c2f633",
+  "original_manifest_sha256": null,
+  "feature_dim": 768,
+  "cache_family": "streetclip_features",
+  "course_scope": "StreetCLIP vision-only reference, course eligibility unresolved",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "dtype": "float64",
+  "centering": "Only training fold target mean, no validation label use",
+  "selection": "Original-price unweighted clipped MSE over all training OOF images; validation evaluated once after selection"
+}

@@ -1,0 +1,29 @@
+{
+  "views": [
+    "original official center-crop reference",
+    "whole EXIF image letterboxed to 224 square, gray RGB128 border",
+    "fixed center 60% width and height, official preprocessing"
+  ],
+  "combinations": [
+    "original+whole",
+    "original+center",
+    "original+whole+center"
+  ],
+  "head": "fold-specific StandardScaler+Ridge",
+  "alphas": [
+    10,
+    100,
+    1000,
+    10000,
+    100000
+  ],
+  "selection": "training-only 3-fold GroupKFold",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "original_manifest_sha256": "28217f62d8962c3279e7254643ea110916ad27f670b5ad1d64822bb714e0aa44",
+  "checkpoint_sha256": "40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af",
+  "source_sha256": "2df1c2f9d7b77f64e6cb4345809a9f5ba9c1af881cac43fc9c80f7c92f17da95",
+  "preprocess": "Compose(\n    Resize(size=224, interpolation=bicubic, max_size=None, antialias=True)\n    CenterCrop(size=(224, 224))\n    MaybeConvertMode()\n    MaybeToTensor()\n    Normalize(mean=(0.48145466, 0.4578275, 0.40821073), std=(0.26862954, 0.26130258, 0.27577711))\n)",
+  "precision": "float32",
+  "test_images_used": false,
+  "course_scope": "CLIP exploratory; eligibility unresolved; no text prompts"
+}

@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "controller_pid": 29792,
+  "reference_pid": 28768,
+  "command": [
+    "scripts/experiments/siglip_giant_reference.py",
+    "--weights-dir",
+    ".local/cache/siglip2_giant_weights/a713301b217d38485fb2204c808367d10bc3cc40",
+    "--phase",
+    "experiment"
+  ],
+  "exit_code": 0
+}

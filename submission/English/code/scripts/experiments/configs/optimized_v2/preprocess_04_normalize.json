@@ -1,0 +1,18 @@
+{
+  "extends": "alexnet.json",
+  "experiment": {
+    "id": "preprocess_04_normalize",
+    "name": "预处理备选阶段—实验四：训练侧颜色标准化",
+    "stage": "00_preparation",
+    "question": "输入诊断提供依据后，固定 AlexNet 训练设置比较该输入因素",
+    "comparison": "Optimized v2 AlexNet control, identical stopping policy and loader implementation",
+    "changed_fields": [
+      "preprocess.normalization"
+    ],
+    "enforce_changes": true,
+    "status": "ready"
+  },
+  "preprocess": {
+    "normalization": "train_stats"
+  }
+}

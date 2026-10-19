@@ -1,0 +1,9 @@
+{
+  "status": "cancelled",
+  "pid": 48648,
+  "updated_utc": "2026-10-13T11:08:49Z",
+  "head": "svr",
+  "feature_dim": 768,
+  "cancelled_head": "svr",
+  "reason": "User prioritized CLIP; long CPU search terminated to release resources, not a model ineffectiveness conclusion"
+}

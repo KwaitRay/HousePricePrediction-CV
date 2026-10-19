@@ -1,0 +1,44 @@
+{
+  "source_sha256": "8aa3490cf81f0c62773604012255a1581e88b5c56b5ed11a1c04f86a74d94e39",
+  "dependency_sha256": {
+    "visual_kernel_inference.py": "2e80b5876ebfff58c32fbaa6881d99363a51046a332a6be017ad1fab8de0cc2e",
+    "visual_kernel_submission.py": "b8547043385c373689435c48016caf1e0f68ce20f0050d2bb73cf48533268fe3"
+  },
+  "original_reference": "19_image_embedding_reference/pe_core_l14_336/20261014T024049Z_caec475a",
+  "original_manifest_sha256": "ee9ae6fecb6161e93f7855091cf08ffa4dd812cfe47179c0e49fc8c6976e6c71",
+  "original_cache_key": "9b10d06398eadd9e96bfd61ea68958424d28b605e281683adb7e6cd7ff8949c5",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "model": "timm/vit_pe_core_large_patch14_336.fb",
+  "revision": "e63206c8e3a0e9b699e40f31080eebd78fd2258e",
+  "cache_family": "pe_core_multiview",
+  "feature_dim": 3072,
+  "views": [
+    "Original official PE-Core preprocessing, unchanged cached full-image vector",
+    "Whole EXIF image letterboxed to 336 square with RGB128 border",
+    "Fixed center 60% width and height, official PE-Core preprocessing"
+  ],
+  "view_weighting": "Equal-weight concatenation of three unit 1024D vectors, then unit normalization",
+  "precision": "float16 vision forward, float32 normalized feature storage",
+  "batch_size": 4,
+  "next_kernel_protocol": {
+    "gammas": [
+      1.0,
+      4.0,
+      16.0
+    ],
+    "alphas": [
+      0.01,
+      0.1,
+      1.0,
+      10.0
+    ],
+    "selection": "Original unweighted clipped training OOF MSE, three-fold GroupKFold; validation only after selection"
+  },
+  "test_images_used": false,
+  "test_labels_used": false,
+  "text_modules_used": false,
+  "mllm_components": false,
+  "course_scope": "Generic pretrained visual tower and provided images only; no additional SoCal data",
+  "scope": "Feature extraction first; downstream kernel and fusion require an explicit registered adapter",
+  "caveat": "Full-image branch is retained; windows do not depend on price or errors; upsampling does not recover absent detail"
+}

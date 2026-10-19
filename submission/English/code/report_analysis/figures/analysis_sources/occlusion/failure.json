@@ -1,0 +1,4 @@
+{
+  "error_type": "AttributeError",
+  "message": "'function' object has no attribute 'eq'"
+}

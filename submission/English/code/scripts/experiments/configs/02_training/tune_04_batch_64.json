@@ -1,0 +1,18 @@
+{
+  "extends": "../selected/schedule.json",
+  "experiment": {
+    "id": "tune_04_batch_64",
+    "name": "训练调优阶段—实验四：批量大小",
+    "stage": "02_training",
+    "question": "实际批量固定四，改变有效批量，不自动缩放学习率",
+    "comparison": "继承配置 ../selected/schedule.json 对应的已保留方案",
+    "changed_fields": [
+      "training.accumulation"
+    ],
+    "enforce_changes": true,
+    "status": "ready"
+  },
+  "training": {
+    "accumulation": 16
+  }
+}

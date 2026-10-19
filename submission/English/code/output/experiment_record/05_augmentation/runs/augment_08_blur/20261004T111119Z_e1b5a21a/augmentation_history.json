@@ -1,0 +1,642 @@
+[
+  {
+    "epoch": 1,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1293,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.30007797948086834,
+            0.7996396745026464
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 2,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1294,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.3004661716200533,
+            0.7999173166573483
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 3,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1250,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.30002434819083035,
+            0.7994262310406663
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 4,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1284,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.3002695680815632,
+            0.7993060787820363
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 5,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1276,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.3000205874632758,
+            0.7997497179890367
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 6,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1268,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.3002957751651603,
+            0.7999427676430508
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 7,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1273,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.30007667891080075,
+            0.7987291032817094
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 8,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1242,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.30000343314225336,
+            0.7999963265359515
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 9,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1262,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.3003167315388698,
+            0.7999935616393954
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 10,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1268,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.30015620619529604,
+            0.7995880648881137
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 11,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1310,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.30023404416404675,
+            0.7991337758840013
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 12,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1323,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.30000761541073057,
+            0.7996086449337432
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 13,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1286,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.3000107293057655,
+            0.7995103369411973
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 14,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1301,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.30121355026236557,
+            0.7995508413290886
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 15,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1286,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.30068531351683847,
+            0.7998418599862569
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 16,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1238,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.30065533561953567,
+            0.7990794392078621
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 17,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1256,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.3000084843267851,
+            0.7994687420504899
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 18,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1272,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.3013963337882735,
+            0.7999302109970655
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 19,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1215,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.30019384541785504,
+            0.7988900595597281
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 20,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1292,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.30039093164724234,
+            0.7998167113698218
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 21,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1277,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.3000051737015912,
+            0.7998494727713046
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 22,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1271,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.30002558561620746,
+            0.7999058574596414
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 23,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1259,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.30108457909923614,
+            0.7998254160397256
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 24,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1311,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.30029549731593147,
+            0.7993619672662682
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 25,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1250,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.3000172750950791,
+            0.7993998899220847
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 26,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1339,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.30048062240024015,
+            0.7987517692961144
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 27,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1306,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.3005862375651285,
+            0.7997648292716311
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 28,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1270,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.3000830559218526,
+            0.7997541277614875
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 29,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1280,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.30034414641703017,
+            0.7999096752735615
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 30,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1245,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.3006516167447504,
+            0.7998176826746826
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 31,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1317,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.3000606012457791,
+            0.7999551997482681
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 32,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1342,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.3000798658553407,
+            0.7999581722592284
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 33,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1291,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.30044118636185785,
+            0.7997152001608576
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 34,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1339,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.30030354706816675,
+            0.799946539352132
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 35,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1285,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.3006156167056762,
+            0.7997281132509042
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 36,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1307,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.30076435205207613,
+            0.7997066051737314
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 37,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1246,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.3011274724716209,
+            0.798847201484119
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 38,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1276,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.30094310005047153,
+            0.799976835454189
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 39,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1312,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.30041951076740114,
+            0.7999949840111062
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 40,
+    "operations": {
+      "blur": {
+        "samples": 6399,
+        "triggered": 1289,
+        "skipped": 0,
+        "observed_ranges": {
+          "sigma": [
+            0.30082719629832083,
+            0.7995164339406055
+          ]
+        }
+      }
+    }
+  }
+]

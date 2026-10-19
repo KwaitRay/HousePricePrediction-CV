@@ -1,0 +1,131 @@
+{
+  "run": "${LOCAL_ASSIGNMENT}\\output\\experiment_record\\01_preprocessing\\runs\\preprocess_06_frequency_filter\\20261002T065140Z_5c9ebc94",
+  "metrics": {
+    "mse": 127668.57960895622,
+    "mae": 270.4673030420002,
+    "tail_mse": 656842.8448547513,
+    "n": 1601,
+    "tail_n": 159,
+    "tail_threshold": 1300.0
+  },
+  "train_metrics_at_best_checkpoint": {
+    "mse": 117105.62863246418,
+    "mae": 259.70212086209017,
+    "tail_mse": 611655.553411564,
+    "n": 6399,
+    "tail_n": 636,
+    "tail_threshold": 1300.0
+  },
+  "best_epoch": 7,
+  "last_validation_mse": 134231.29246779258,
+  "first_validation_mse": 143041.04067160582,
+  "last_training_data_loss": 0.0115081855727083,
+  "late_validation_mse_mean": 136850.76760724647,
+  "late_validation_mse_std": 2279.537181228057,
+  "generalization_gap_mse": 10562.950976492037,
+  "cost": {
+    "train_seconds": 1594.915848200093,
+    "epochs": 40,
+    "best_epoch": 7,
+    "loader_setup_seconds": 0.07867509999778122,
+    "stop_reason": "early_stopping",
+    "probe_seconds": 1.395027500228025,
+    "validation_seconds": 131.0208659998607,
+    "checkpoint_seconds": 2.888749099918641,
+    "optimizer_updates": 8000,
+    "samples_seen": 255960,
+    "training_seconds": 1416.5521911000833,
+    "seconds_per_update": 0.17706902388751042,
+    "predict_seconds": 2.876061600050889,
+    "timing_note": "train_seconds包括逐轮验证与固定样本诊断；predict_seconds包括读取和预处理",
+    "stopped_early": true,
+    "peak_cuda_bytes": 1213386752
+  },
+  "prediction_checks": {
+    "nonpositive_count": 0,
+    "unclipped_mse": 127668.57960895622
+  },
+  "runtime_cache": {
+    "enabled": true,
+    "implementation": "lossless_final_input_mmap",
+    "cache_key": "b34528804e735508b0af49c8119ba8c57d66f729484542a4bab5d6c634c3f260",
+    "cache_manifest": "${LOCAL_ASSIGNMENT}\\output\\experiment_record\\01_preprocessing\\cache_optimization\\cache\\b34528804e735508b0af49c8119ba8c57d66f729484542a4bab5d6c634c3f260\\manifest.json",
+    "inputs_sha256": "ada38ce397ddc4afdbe95daa71e0f92fad2618d125f3f4cb534428bfa7dff36a",
+    "cache_build_seconds": 560.4545690000523,
+    "cache_verification_seconds": 35.776367499958724,
+    "build_cost_shared_across_seeds": true,
+    "equivalence_evidence": "${LOCAL_ASSIGNMENT}\\output\\experiment_record\\01_preprocessing\\cache_optimization\\equivalence.json",
+    "equivalence_sha256": "6b0f863aa5c7000027bf17777a7547b5f87714af06f15d9062bd3cc81e226c57",
+    "runtime_hashes": {
+      "frequency_cache.py": "11e2da1a4357151f16254ba640d0af5b314399a5c77480939a5214f90ba4db17",
+      "train_cached.py": "ae3a221535b73a88417ef5371a1379e9a2ec349a38d81f0e11eae0c92d69a596",
+      "cache_evidence.py": "d24dfb7ba7f0efb5c308e3b296bd6bb2508c3720caa1aabc60f0c2be784730e1"
+    },
+    "note": "Frozen training source hashes remain unchanged; this external dataset adapter is additionally recorded here."
+  },
+  "control": {
+    "run": "${LOCAL_ASSIGNMENT}\\output\\experiment_record\\02_baselines\\runs\\alexnet\\20261002T054758Z_dd4123aa",
+    "metrics": {
+      "mse": 126004.11223892565,
+      "mae": 262.128119203384,
+      "tail_mse": 682618.2355725423,
+      "n": 1601,
+      "tail_n": 159,
+      "tail_threshold": 1300.0
+    },
+    "train_metrics_at_best_checkpoint": {
+      "mse": 113449.50098239651,
+      "mae": 249.7156387122459,
+      "tail_mse": 622681.075157133,
+      "n": 6399,
+      "tail_n": 636,
+      "tail_threshold": 1300.0
+    },
+    "best_epoch": 7,
+    "last_validation_mse": 135645.80811385153,
+    "first_validation_mse": 140266.53643548547,
+    "last_training_data_loss": 0.010666286724273,
+    "late_validation_mse_mean": 135189.8481416435,
+    "late_validation_mse_std": 1409.4251201397585,
+    "generalization_gap_mse": 12554.61125652914,
+    "cost": {
+      "train_seconds": 1928.1045960000483,
+      "epochs": 40,
+      "best_epoch": 7,
+      "loader_setup_seconds": 0.1734197000041604,
+      "stop_reason": "early_stopping",
+      "probe_seconds": 1.4498282000422478,
+      "validation_seconds": 321.70553379983176,
+      "checkpoint_seconds": 3.7208155998960137,
+      "optimizer_updates": 8000,
+      "samples_seen": 255960,
+      "training_seconds": 1541.549214199651,
+      "seconds_per_update": 0.19269365177495637,
+      "predict_seconds": 7.632647600024939,
+      "timing_note": "train_seconds包括逐轮验证与固定样本诊断；predict_seconds包括读取和预处理",
+      "stopped_early": true,
+      "peak_cuda_bytes": 1213386752
+    },
+    "prediction_checks": {
+      "nonpositive_count": 0,
+      "unclipped_mse": 126004.11223892565
+    }
+  },
+  "bootstrap": {
+    "candidate_minus_control_mse": 1664.4673700305586,
+    "interval_95": [
+      -216.61017400397503,
+      3650.732373666249
+    ],
+    "unit": "original_image_group",
+    "draws": 1000
+  },
+  "mse_relative_change": 0.013209627372116728,
+  "same_initialization": true,
+  "influence_check": {
+    "top10_absolute_change_sum": -875872.9374020419,
+    "total_squared_error_change": 2664812.259418925,
+    "remaining_1591_mean_change": 2225.4463839226687,
+    "note": "Sensitivity diagnosis only; all 1601 samples remain in the official MSE."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "run": "08_final/visual_kernel_ensemble/20261015T034010Z_0c94a543",
+  "csv_sha256": "c39009ec65fd89a0f531991d1cfc26a2ecf4095e512ce9905b89c38da06b8da3",
+  "public_mse": 47291.34608,
+  "source": "User reply to the explicit submission request for run034010 and SHA prefix c39009ec",
+  "reported_date": "2026-10-15",
+  "recorded_date": "2026-10-16",
+  "independently_read_from_kaggle": false,
+  "reference_validation_mse": 52201.21126766699,
+  "prior_best_public_mse": 47837.69254,
+  "improvement_from_prior_best": 546.3464599999934,
+  "primary_target_mse": 50000,
+  "primary_target_achieved": true,
+  "current_target_mse": 40000,
+  "current_target_achieved": false,
+  "gap_to_current_target": 7291.346080000003,
+  "kaggle_uploaded_by_tool": false
+}

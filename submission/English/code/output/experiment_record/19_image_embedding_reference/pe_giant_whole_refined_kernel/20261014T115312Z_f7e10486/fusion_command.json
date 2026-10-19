@@ -1,0 +1,7 @@
+[
+    "scripts/experiments/pe_giant_incremental_fusion.py",
+    "--phase",
+    "run",
+    "--protocol-dir",
+    ".local/experiment_record/15_fixed_ensembles/pe_whole_refined_incremental_fusion/20261014T115345Z_60350891"
+]

@@ -1,0 +1,25 @@
+{
+  "repo": "timm/vit_pe_core_large_patch14_336.fb",
+  "revision": "e63206c8e3a0e9b699e40f31080eebd78fd2258e",
+  "weight_file": "model.safetensors",
+  "files": {
+    "config.json": {
+      "sha256": "5743a679e5dc4cabf535e8b5e7d3992de41b3703f73e88a175f9781a5116ace1",
+      "bytes": 602,
+      "publisher_lfs_verified": false
+    },
+    "model.safetensors": {
+      "sha256": "35edcdb68eb43329192fc1530c246191e8a72f9a3dae01e2c7cccf05338d4cac",
+      "bytes": 1268638488,
+      "publisher_lfs_verified": true
+    },
+    "README.md": {
+      "sha256": "707efd98717c5f36840a5f1c110cd1c297e48d41939d98653dc3d7807ed4a833",
+      "bytes": 4375,
+      "publisher_lfs_verified": false
+    }
+  },
+  "scope": "Download only; downstream uses vision tensors, no text modules",
+  "model_card": "https://huggingface.co/timm/vit_pe_core_large_patch14_336.fb",
+  "license": "apache-2.0"
+}

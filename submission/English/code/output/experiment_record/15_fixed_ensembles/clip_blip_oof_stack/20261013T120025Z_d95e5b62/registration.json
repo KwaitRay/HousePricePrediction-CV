@@ -1,0 +1,38 @@
+{
+  "models": [
+    "13_clip_optimization/clip_l14_kernel/20261013T114601Z_90f006c4",
+    "13_clip_optimization/clip_b16_kernel/20261013T111716Z_5ecc630f",
+    "13_clip_optimization/clip_multiview_kernel/20261013T111418Z_5ad0f81d",
+    "14_blip_reference/blip_base_kernel/20261013T113447Z_d63abf2c"
+  ],
+  "weights": [
+    0.6795588188739836,
+    0.0,
+    2.0017082609513626e-17,
+    0.3204411811260165
+  ],
+  "weights_learned": true,
+  "weight_fit": {
+    "algorithm": "SLSQP convex MSE minimization",
+    "scope": "Only training-component OOF predictions and training labels",
+    "caveat": "This meta fitting criterion is not an independent OOF estimate; base hyperparameters already selected using training folds"
+  },
+  "rule": "Convex average of constituent nonnegative predictions; no validation weight fitting",
+  "model_sha256": [
+    "78fc1f4b5ae0b1d01cfb396445b166b6e3e2e246f7d91bba6c201bb6b379c489",
+    "34a19b86216b710d541d7edc230cd8608d4e22b6adb790611cc5fe0bf95d32da",
+    "80853dee1b29ba18da6fc41529c196581f2c035d461da77eae8dc574e7db7c6f",
+    "1a3798305d5b6efca873b3bcece042978f64203666a966ab0581be57581f693b"
+  ],
+  "prediction_sha256": [
+    "0ad3f73462d9dec02ffe5e435b167e07c53e62daad3069b6d92a1c700753b276",
+    "911cea29ca7ff82c81ca71ad0fd7d80f4f222b3ffdd9a3534b8c784a40f54f00",
+    "bff2f318faffb7e43150001358bde3c00b33a41675bae458a44bbb762831fd01",
+    "61f0ab57265574268beaea5cd8f216d8f833ecd6b253fadd5f9ce7b2765267ce"
+  ],
+  "source_sha256": "89f4d05c47fb5c2b0c767a9dc8a45a978e1f65d1b2a0bbe63208fe6d40614fe5",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "test_images_used": false,
+  "course_scope": "Exploratory visual CLIP/BLIP components; eligibility unresolved",
+  "caveat": "Constituents selected after development comparisons; OOF from previously selected hyperparameters, not nested unbiased evaluation"
+}

@@ -1,0 +1,59 @@
+{
+  "status": "preregistered_waiting_for_price_attention",
+  "repo": "facebook/dinov2-large",
+  "revision": "47b73eefe95e8d44ec3623f8890bd894b6ea2d6c",
+  "checkpoint_sha256": "399fba97a95f22c36834418bc69373364a99af3a1153da1c0fb31db567c92e23",
+  "publisher_checksum_verified": true,
+  "vision_tensor_shapes_match": true,
+  "vision_tensors": 439,
+  "params": 304368640,
+  "preprocess": {
+    "_processor_class": null,
+    "image_processor_type": "BitImageProcessor",
+    "do_resize": true,
+    "size": {
+      "shortest_edge": 256
+    },
+    "resample": 3,
+    "do_center_crop": true,
+    "crop_size": {
+      "height": 224,
+      "width": 224
+    },
+    "do_rescale": true,
+    "rescale_factor": 0.00392156862745098,
+    "do_normalize": true,
+    "image_mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "image_std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "do_convert_rgb": true
+  },
+  "input": "Official short-edge256 and center224 crop",
+  "feature": "CLS+mean patch tokens, separately unit normalized and concatenated",
+  "feature_dim": 2048,
+  "precision": "float16 visual forward; float32 normalized embeddings",
+  "batch_size": 4,
+  "gammas": [
+    1,
+    4,
+    16
+  ],
+  "alphas": [
+    0.01,
+    0.1,
+    1,
+    10
+  ],
+  "selection": "Training-only GroupKFold3 original unweighted MSE",
+  "test_images_used": false,
+  "mllm_components": false,
+  "official_model_card": "https://github.com/facebookresearch/dinov2/blob/main/MODEL_CARD.md",
+  "source_sha256": "f4110290d1506886ac2329eb503879cb7e30d157d3b0ea7cd621105e0ef7159e"
+}

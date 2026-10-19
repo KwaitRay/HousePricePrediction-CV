@@ -1,0 +1,20 @@
+{
+  "extends": "tune_06_no_penalty.json",
+  "experiment": {
+    "id": "tune_06_l1_1e-07",
+    "name": "训练调优阶段—实验六：权重正则化",
+    "stage": "02_training",
+    "question": "显式惩罚按权重求和，优化器衰减关闭",
+    "comparison": "继承配置 tune_06_no_penalty.json 对应的已保留方案",
+    "changed_fields": [
+      "training.penalty",
+      "training.penalty_coefficient"
+    ],
+    "enforce_changes": true,
+    "status": "ready"
+  },
+  "training": {
+    "penalty": "l1",
+    "penalty_coefficient": 1e-07
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "protocol_dir": "D:\\学习\\研究生\\graduate 26s2\\COMP 90086 CV\\Final_Assignment\\cv-house-price\\.local\\experiment_record\\15_fixed_ensembles\\pe_multiview_giant_oof_fusion\\20261014T044041Z_ee76e803",
+  "baseline_public_mse": 53754.8796,
+  "baseline_validation_mse": 57982.72725781495,
+  "new_pe_prices_not_read_for_protocol": true,
+  "no_extra_model_subset_search": true
+}

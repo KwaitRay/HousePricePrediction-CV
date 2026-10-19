@@ -1,0 +1,9 @@
+{
+  "protocol_dir": "D:\\学习\\研究生\\graduate 26s2\\COMP 90086 CV\\Final_Assignment\\cv-house-price\\.local\\experiment_record\\15_fixed_ensembles\\pe_giant_mid40_incremental_fusion\\20261015T035846Z_30523441",
+  "spec": {
+    "name": "pe_giant_mid40_kernel",
+    "family": "pe_giant_mid40_features",
+    "model": "timm/vit_pe_core_gigantic_patch14_448.fb",
+    "revision": "fb096c09d13bd2e3827aed4dbdffb8a6b8e0c10b"
+  }
+}

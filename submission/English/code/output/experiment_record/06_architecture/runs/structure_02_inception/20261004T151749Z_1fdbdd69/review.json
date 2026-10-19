@@ -1,0 +1,68 @@
+{
+  "seed": 2026,
+  "optimizer": "adamw",
+  "schedule": "constant",
+  "mse": 130027.49280599953,
+  "control_mse": 126601.96985951577,
+  "delta_mse": 3425.522946483761,
+  "price_groups": [
+    {
+      "group": "低价≤300",
+      "n": 169,
+      "mean_signed_error": 356.8719016328394,
+      "delta_mse": -20050.45367154796,
+      "contribution": -2116.5063525868864
+    },
+    {
+      "group": "中价300–700",
+      "n": 775,
+      "mean_signed_error": 137.32254003467682,
+      "delta_mse": -8656.744498987813,
+      "contribution": -4190.491559472552
+    },
+    {
+      "group": "高价700–1300",
+      "n": 498,
+      "mean_signed_error": -178.68193716678468,
+      "delta_mse": 9548.972617101677,
+      "contribution": 2970.2613137518024
+    },
+    {
+      "group": "尾部>1300",
+      "n": 159,
+      "mean_signed_error": -827.2039278291547,
+      "delta_mse": 68090.4247245976,
+      "contribution": 6762.259544791392
+    }
+  ],
+  "prediction_std": 137.0470247410259,
+  "target_std": 389.7863906871689,
+  "train_validation_gap": 6094.032646235573,
+  "best_epoch": 8,
+  "text": "种子2026，adamw／constant：验证均方误差130027.49，相对同种子对照变化+3425.52。主要误差变化来自尾部>1300组（对总误差贡献+6762.26）；最佳模型训练与验证误差差距6094.03。分组贡献定位结果来源，不能单凭相关性证明优化机制。先保留该结果，按预登记种子完成复核，不临时改参。",
+  "experiment": "structure_02_inception",
+  "trigger_rate": 0.4987458977965307,
+  "skipped_count": 0,
+  "epochs": 40,
+  "parameters": 56544161,
+  "cost": {
+    "train_seconds": 1845.6933967000805,
+    "epochs": 40,
+    "best_epoch": 8,
+    "loader_setup_seconds": 0.08786830003373325,
+    "stop_reason": "early_stopping",
+    "probe_seconds": 1.8262324999086559,
+    "validation_seconds": 156.28433280007448,
+    "checkpoint_seconds": 2.975107099977322,
+    "optimizer_updates": 8000,
+    "samples_seen": 255960,
+    "training_seconds": 1644.7026486000977,
+    "seconds_per_update": 0.20558783107501222,
+    "predict_seconds": 3.213217100012116,
+    "timing_note": "train_seconds包括逐轮验证与固定样本诊断；predict_seconds包括读取和预处理",
+    "stopped_early": true,
+    "peak_cuda_bytes": 1202225152
+  },
+  "train_mse": 123933.46015976396,
+  "analysis": "主要退步来源：尾部>1300，对总误差变化贡献+6762.26；主要改善来源：中价300–700，贡献-4190.49。这是误差分解，不是机制的因果证明。"
+}

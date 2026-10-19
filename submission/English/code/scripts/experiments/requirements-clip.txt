@@ -1,0 +1,2 @@
+open_clip_torch==3.3.0
+# Requires the shared experiments requirements; optional exploratory reference.

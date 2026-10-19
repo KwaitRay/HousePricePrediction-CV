@@ -1,0 +1,36 @@
+{
+  "n": 3000,
+  "finite_nonnegative": true,
+  "test_order_matches": true,
+  "csv_sha256": "c39009ec65fd89a0f531991d1cfc26a2ecf4095e512ce9905b89c38da06b8da3",
+  "test_manifest_sha256": "095bc80745738631bc04ab777331c42b5715e43bd0704f8e6a4488e0e4badfb1",
+  "labeled_feature_spotchecks": {
+    "siglip2_naflex_features:8b18cb9dd59f766ed86954e2f8c74fcc7627a593921091845f9a6063148be4e9": true,
+    "pe_core_multiview:d5cbb115b2d7c440dafb307239fc30d3207df90486d9baf790b1f7a7dd7974db": true,
+    "pe_core_giant_whole_features:434a9e75fbd87058fb6a6829ae46f1e2ee4d96a409f8e493c3d96770999a831c": true
+  },
+  "labeled_feature_spotchecks_evidence": [
+    {
+      "family": "siglip2_naflex_features",
+      "cache_key": "8b18cb9dd59f766ed86954e2f8c74fcc7627a593921091845f9a6063148be4e9",
+      "fresh_runtime_probe": false,
+      "inherited_probe_reference": "08_final\\visual_kernel_ensemble\\20261014T091115Z_286fc436"
+    },
+    {
+      "family": "pe_core_multiview",
+      "cache_key": "d5cbb115b2d7c440dafb307239fc30d3207df90486d9baf790b1f7a7dd7974db",
+      "fresh_runtime_probe": false,
+      "inherited_probe_reference": "08_final\\visual_kernel_ensemble\\20261014T091115Z_286fc436"
+    },
+    {
+      "family": "pe_core_giant_whole_features",
+      "cache_key": "434a9e75fbd87058fb6a6829ae46f1e2ee4d96a409f8e493c3d96770999a831c",
+      "fresh_runtime_probe": false,
+      "inherited_probe_reference": "08_final\\visual_kernel_ensemble\\20261014T091115Z_286fc436"
+    }
+  ],
+  "test_labels_used": false,
+  "mllm_components": false,
+  "kaggle_uploaded": false,
+  "price_unit": "thousand USD"
+}

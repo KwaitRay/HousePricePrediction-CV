@@ -1,0 +1,24 @@
+{
+  "baseline": "15_fixed_ensembles/pe_pls_incremental_fusion/20261014T063915Z_573c1b3a",
+  "baseline_ensemble_sha256": "38cad9e2eb0ab7ceaa9b2b6bdec8bbdeec940726a64c5d4237039d0e250d77b7",
+  "new_encoder": {
+    "name": "pe_core_g14_448_kernel",
+    "family": "pe_core_giant_features",
+    "model": "timm/vit_pe_core_gigantic_patch14_448.fb",
+    "revision": "fb096c09d13bd2e3827aed4dbdffb8a6b8e0c10b"
+  },
+  "source_sha256": "dac9d19f40c7dae138505d04571c219375197782309d17633fadb8e8bcec8f59",
+  "optimizer_source_sha256": "33671e0ce29345651c926f86e89a305815b43f84d30a0a979b36f6132e4ce0cb",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "weight_zero_tolerance": 1e-12,
+  "gate": {
+    "minimum_meta_cv_relative_gain": 0.01,
+    "minimum_folds_won": 2,
+    "validation_improvement_required": true
+  },
+  "selection": "Add exactly one generic encoder to fixed 56454.60 validation baseline; convex weights from training OOF only",
+  "caveat": "Base hyperparameters previously selected; meta crossfit is not fully nested unbiased CV",
+  "test_images_used": false,
+  "mllm_components": false,
+  "automatic_test_export": false
+}

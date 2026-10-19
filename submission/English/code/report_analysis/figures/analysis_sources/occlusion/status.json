@@ -1,0 +1,111 @@
+{
+  "status": "completed",
+  "outputs": [
+    "pe_g_occlusion_sensitivity_gray.png",
+    "pe_g_occlusion_sensitivity_gray.svg",
+    "pe_g_occlusion_sensitivity_blur.png",
+    "pe_g_occlusion_sensitivity_blur.svg"
+  ],
+  "images": 2,
+  "encoder_forward_calls": 132,
+  "models": [
+    "Single-view KRR",
+    "Two-view KRR",
+    "Two-view PCA KRR"
+  ],
+  "new_training": false,
+  "new_test_access": false,
+  "unmasked_replay_passed": true,
+  "all_198_prices_cpu_replayed": true,
+  "max_cpu_replay_error": 2.2737367544323206e-13,
+  "replacement_consistency": [
+    {
+      "imageid": "4920.jpg",
+      "model": "Single-view KRR",
+      "gray_max_abs_change": 401.36759227593257,
+      "blur_max_abs_change": 414.840477774665,
+      "signed_map_pearson": 0.4354402209391966,
+      "strongest_cell_gray": 10,
+      "strongest_cell_blur": 10
+    },
+    {
+      "imageid": "4920.jpg",
+      "model": "Two-view KRR",
+      "gray_max_abs_change": 269.3344803078095,
+      "blur_max_abs_change": 293.7180576177674,
+      "signed_map_pearson": 0.7959440708472719,
+      "strongest_cell_gray": 10,
+      "strongest_cell_blur": 10
+    },
+    {
+      "imageid": "4920.jpg",
+      "model": "Two-view PCA KRR",
+      "gray_max_abs_change": 248.9438572033299,
+      "blur_max_abs_change": 252.3893592418148,
+      "signed_map_pearson": 0.9393210215424636,
+      "strongest_cell_gray": 10,
+      "strongest_cell_blur": 10
+    },
+    {
+      "imageid": "5712.jpg",
+      "model": "Single-view KRR",
+      "gray_max_abs_change": 176.05784715791447,
+      "blur_max_abs_change": 284.4567462683537,
+      "signed_map_pearson": 0.6555982880069622,
+      "strongest_cell_gray": 9,
+      "strongest_cell_blur": 9
+    },
+    {
+      "imageid": "5712.jpg",
+      "model": "Two-view KRR",
+      "gray_max_abs_change": 135.54590542626056,
+      "blur_max_abs_change": 324.2601677554983,
+      "signed_map_pearson": 0.2666805383701147,
+      "strongest_cell_gray": 9,
+      "strongest_cell_blur": 9
+    },
+    {
+      "imageid": "5712.jpg",
+      "model": "Two-view PCA KRR",
+      "gray_max_abs_change": 122.0383912601701,
+      "blur_max_abs_change": 280.7919647067756,
+      "signed_map_pearson": 0.459583334790901,
+      "strongest_cell_gray": 9,
+      "strongest_cell_blur": 9
+    }
+  ],
+  "execution": {
+    "note": "GPU inference completed and saved all outputs; initial plotting failed before execution counters were persisted. No extra GPU inference for plotting recovery."
+  },
+  "source_sha256": {
+    "submission/report/figures/analysis_sources/occlusion/protocol.json": "f60d7a42c1cf6b301a200cc6fdc95fd669cf5b2359ef9f9d265edca9c8fd22ad",
+    "submission/report/figures/analysis_sources/occlusion/unmasked_replay_checks.json": "1371b8b5d02b19644771b9408d1f8a430b697a41fde5b296b13854029e6dfd2f",
+    "submission/report/figures/analysis_sources/occlusion/per_region_predictions.csv": "3c838050e685b90d3a7f35cc86682c351dcc9c2de19ffebee95dfee553f6b375",
+    "submission/report/figures/analysis_sources/occlusion/feature_row_index.json": "b7bfcf9b4f39e1694892befa037c821da81432adc50d7775727c1f5750740d6c",
+    "submission/report/figures/analysis_sources/occlusion/archived_feature_rows.npz": "54b8b7c06b6140588d5086b82ef27d66afdc5f29b29a1e8a901872fd13ea4b21",
+    "cv-house-price/.local/experiment_record/19_image_embedding_reference/pe_core_g14_448_kernel/20261014T073812Z_e0339201/head.npz": "377bc9f31701c494860c097b930fc3aa01961669de23f2b2365eb0b3a62477f1",
+    "cv-house-price/.local/experiment_record/19_image_embedding_reference/pe_core_g14_448_whole_kernel/20261014T090655Z_2d55c743/head.npz": "7747bd57dd7f4fc60d5a56d86b4ba7601a541fc7feaeef9215f9a4b20353829d",
+    "cv-house-price/.local/experiment_record/19_image_embedding_reference/pe_giant_whole_pca_bandwidth_kernel/20261015T033416Z_4b848f75/head.npz": "823e316947d34cf3b4ee70229f1ff5b272b0d3ae38e16acde561b74fbee68a3f",
+    "cv-house-price/.local/experiment_record/19_image_embedding_reference/pe_giant_whole_pca_bandwidth_kernel/20261015T033416Z_4b848f75/feature_transform.npz": "3f46f94937db1eee0dfda447c43b9dcb364c0dc3ca9bf2f38dfa7cdc5a3316de"
+  },
+  "script_sha256": "91296fce5500193078510fe3a8700969383c7d8ceb5daae16ccad55ba220eb60",
+  "output_checksums": {
+    "pe_g_occlusion_sensitivity_gray.png": {
+      "sha256": "da93fa5a72bf010e1f4eca72525c98da3a6ad77ee49531a76c6d4d15cd809b8c",
+      "bytes": 3867432
+    },
+    "pe_g_occlusion_sensitivity_gray.svg": {
+      "sha256": "ff8413649581d969a967f74b35e1f8c947e95bad7b440b1485fb3a34d358fa54",
+      "bytes": 5198616
+    },
+    "pe_g_occlusion_sensitivity_blur.png": {
+      "sha256": "d1e80388bea99f6b38300e92f99f268bd8614cf66cc1a7899e5c7ae157f0d027",
+      "bytes": 3859965
+    },
+    "pe_g_occlusion_sensitivity_blur.svg": {
+      "sha256": "5dfd24353ef36383f25c788e569e2d24d1a87ed6f42cade615eedfae0b6cd355",
+      "bytes": 5197066
+    }
+  },
+  "limitation": "Two outcome-selected cases; coarse regional sensitivity, not segmentation, causal evidence or the final three-encoder ensemble"
+}

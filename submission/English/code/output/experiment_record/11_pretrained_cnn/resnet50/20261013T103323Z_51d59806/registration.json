@@ -1,0 +1,36 @@
+{
+  "model": "resnet50",
+  "weights": "ResNet50_Weights.IMAGENET1K_V2",
+  "checkpoint_sha256": "11ad3fa62ca79e40addfd354a8ec4b7c75143b3038b8d2a807fbc68deab379ca",
+  "checkpoint_url": "https://download.pytorch.org/models/resnet50-11ad3fa6.pth",
+  "pretraining": "ImageNet-1K image classification, not house price task or SoCal dataset; no MLLM",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "preprocess": "ImageClassification(\n    crop_size=[224]\n    resize_size=[232]\n    mean=[0.485, 0.456, 0.406]\n    std=[0.229, 0.224, 0.225]\n    interpolation=InterpolationMode.BILINEAR\n)",
+  "source_sha256": "53252249ca0048f745de66305cffd09eb0a8fd1c76158f331728388fc121443b",
+  "seed": 2026,
+  "scope": "Only development training/validation images; parameters selected with 3-fold training GroupKFold; no test images",
+  "course_evidence": "COMP90086_2026_Project.pdf page 2 explicitly permits pretrained features; excludes task/dataset-pretrained models, extra SoCal data, pretrained MLLMs",
+  "heads": {
+    "ridge_alpha": [
+      0.1,
+      1,
+      10,
+      100,
+      1000,
+      10000
+    ],
+    "svr_C": [
+      1,
+      10,
+      100
+    ],
+    "svr_gamma": [
+      1,
+      4,
+      16
+    ],
+    "svr_epsilon": 0.05
+  },
+  "precision": "float32",
+  "torch": "2.11.0+cu128"
+}

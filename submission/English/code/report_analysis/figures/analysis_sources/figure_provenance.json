@@ -1,0 +1,691 @@
+{
+  "script_sha256": "ebd17872612454a514e7d1be3b41ecb78a9651388e7a0043416fc8f9e46e6365",
+  "cpu_only": true,
+  "new_training": false,
+  "new_encoder_inference": false,
+  "outputs": [
+    "early_experiment_paired_improvements.png",
+    "early_experiment_paired_improvements.svg",
+    "whole_frame_paired_case_comparison.png",
+    "whole_frame_paired_case_comparison.svg",
+    "pca_bandwidth_geometry_diagnostic.png",
+    "pca_bandwidth_geometry_diagnostic.svg"
+  ],
+  "summary": {
+    "early": {
+      "comparisons": 22,
+      "seed_pairs": 44,
+      "mean_head_delta": -4475.782466624097,
+      "flip_delta": -964.4119089567733
+    },
+    "views": {
+      "landscape_pool_n": 1543,
+      "improvement_n": 839,
+      "single_mse": 55097.487249068174,
+      "whole_mse": 53252.81379734146,
+      "selection": [
+        {
+          "selection": "Largest improvement",
+          "imageid": "4920.jpg",
+          "price": 874.5,
+          "single_prediction": 1369.526666036519,
+          "two_view_prediction": 1192.100015229182,
+          "absolute_error_gain": 177.42665080733696,
+          "aspect_ratio": 1.4492753623188406
+        },
+        {
+          "selection": "Typical improvement",
+          "imageid": "2562.jpg",
+          "price": 945.0,
+          "single_prediction": 1072.5810737004915,
+          "two_view_prediction": 1048.6882929007702,
+          "absolute_error_gain": 23.892780799721322,
+          "aspect_ratio": 1.3333333333333333
+        },
+        {
+          "selection": "Largest worsening",
+          "imageid": "5712.jpg",
+          "price": 1250.0,
+          "single_prediction": 1273.5463759294687,
+          "two_view_prediction": 1496.497070540214,
+          "absolute_error_gain": -222.95069461074536,
+          "aspect_ratio": 1.444043321299639
+        },
+        {
+          "selection": "Smallest change",
+          "imageid": "499.jpg",
+          "price": 825.0,
+          "single_prediction": 816.5396945930331,
+          "two_view_prediction": 816.5050909669864,
+          "absolute_error_gain": -0.03460362604675993,
+          "aspect_ratio": 1.4388489208633093
+        }
+      ]
+    },
+    "pca": {
+      "pair_count": 8192,
+      "original_distance_median": 0.5401885693942629,
+      "pca_distance_median": 2.0515493531219446,
+      "gamma": 1.053230464228864,
+      "fixed_pca256_oof_mse": 77771.4335950089,
+      "calibrated_pca256_oof_mse": 52531.27093548736,
+      "validation_mse": 52805.77357815986
+    }
+  },
+  "source_files": {
+    "scripts/experiments/artifacts/split_v1.csv": {
+      "sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+      "bytes": 776363
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_06_no_penalty/20261003T145806Z_01ce8a0e/metrics.json": {
+      "sha256": "e6987f9c9a84b58473e70eadc34e625770e7f906ab84f27a0554b6ca67ff547e",
+      "bytes": 157
+    },
+    "cv-house-price/.local/experiment_record/04_training/runs/tune_06_no_penalty/20261003T145806Z_01ce8a0e/config.json": {
+      "sha256": "5f96b9f7964e9afc8562db13af79bb96024566e1c851c6678c1cd28bffdfd141",
+      "bytes": 2679
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_06_no_penalty/20261003T153343Z_31050c1b/metrics.json": {
+      "sha256": "e67b053537296c17e68b3dd1574a935fb2d05b7922382cf8b4dcc535708efa45",
+      "bytes": 158
+    },
+    "cv-house-price/.local/experiment_record/04_training/runs/tune_06_no_penalty/20261003T153343Z_31050c1b/config.json": {
+      "sha256": "e70148865d3cb23e14177bea7837c8e85ae951d06181d3179ff24fa422cde70a",
+      "bytes": 2679
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_06_no_penalty/20261003T161152Z_9b70ed3f/metrics.json": {
+      "sha256": "5043cd03289220fc3a3e390a9e670ed32212fdc8b91da8c3a0ec99c3d3c65a94",
+      "bytes": 158
+    },
+    "cv-house-price/.local/experiment_record/04_training/runs/tune_06_no_penalty/20261003T161152Z_9b70ed3f/config.json": {
+      "sha256": "5411b45ab05494b779cb08c4545e7200f0f294e5ab3c2dd87330d27abe8f5411",
+      "bytes": 2679
+    },
+    "cv-house-price/output/experiment_record/05_augmentation/runs/augment_01_flip/20261004T072600Z_0c811207/metrics.json": {
+      "sha256": "5cb97c6f6e026884111e5f93b6de6983c468241411487ab7c71a279180dd57d2",
+      "bytes": 158
+    },
+    "cv-house-price/.local/experiment_record/05_augmentation/runs/augment_01_flip/20261004T072600Z_0c811207/config.json": {
+      "sha256": "49a5b7102238356f2cd0ea4aedf35479066046112966d4517a6d846d5e00ccf2",
+      "bytes": 2804
+    },
+    "cv-house-price/output/experiment_record/05_augmentation/runs/augment_01_flip/20261004T092422Z_4cec3867/metrics.json": {
+      "sha256": "6db2ef21fdffe3769366595045ab64f97f4a7086885c90d0597cace60f66d8d4",
+      "bytes": 158
+    },
+    "cv-house-price/.local/experiment_record/05_augmentation/runs/augment_01_flip/20261004T092422Z_4cec3867/config.json": {
+      "sha256": "b405303d9fefe7e668e8ecbb2353c815e1aac7db611fe1c97dd94ac6434cd55a",
+      "bytes": 2804
+    },
+    "cv-house-price/output/experiment_record/05_augmentation/runs/augment_01_flip/20261004T095200Z_78e79a80/metrics.json": {
+      "sha256": "12e265c604cfad92b341146f0b4937f016d7d0f2493d7dc8b47f3b6339235f81",
+      "bytes": 157
+    },
+    "cv-house-price/.local/experiment_record/05_augmentation/runs/augment_01_flip/20261004T095200Z_78e79a80/config.json": {
+      "sha256": "d65df9102895c2eee392f1847035c00f5d5a64764327641fb3e41d6766d13a6b",
+      "bytes": 2804
+    },
+    "cv-house-price/output/experiment_record/07_encoder/runs/encoder_mean/20261013T043403Z_0ff0ba0f/metrics.json": {
+      "sha256": "8042bf01cafb2c5611f6f88016c89bc76316cb91b49838c33b2451926a988d1d",
+      "bytes": 158
+    },
+    "cv-house-price/output/experiment_record/07_encoder/runs/encoder_mean/20261013T043403Z_0ff0ba0f/config.json": {
+      "sha256": "d6c2e800335cebe97d54ea99963aed6e0b7a290c0518e37128859224a773852b",
+      "bytes": 2439
+    },
+    "cv-house-price/output/experiment_record/07_encoder/runs/encoder_mean/20261013T045657Z_ba1ce2ca/metrics.json": {
+      "sha256": "6d59e53f02229ac8771ba8c18e5d692cfe5891da3c08ebb645047c13f193b137",
+      "bytes": 157
+    },
+    "cv-house-price/output/experiment_record/07_encoder/runs/encoder_mean/20261013T045657Z_ba1ce2ca/config.json": {
+      "sha256": "3d448fa1e1f59c4a5031d9ff2fa7954268d5d95bb2a4a106eea0e1ec82fe3609",
+      "bytes": 2439
+    },
+    "cv-house-price/output/experiment_record/07_encoder/runs/encoder_mean/20261013T051945Z_324de653/metrics.json": {
+      "sha256": "09cd532d482f1b0750e8465f1a3825c1cbc83a468f2f8b9e4e9f6fb70b4182b9",
+      "bytes": 157
+    },
+    "cv-house-price/output/experiment_record/07_encoder/runs/encoder_mean/20261013T051945Z_324de653/config.json": {
+      "sha256": "6060be91ee4d453a2e2251ad3914191d7a8918c478e9407adeb1d0cfb9d66b73",
+      "bytes": 2439
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_01_lr_3e-05/20261002T124127Z_0e487837/metrics.json": {
+      "sha256": "348a28452373367249d118e8d3aa8b8e83b7e74a598e0ff4eedb11fad8b48b85",
+      "bytes": 158
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_01_lr_3e-05/20261002T124127Z_0e487837/config.json": {
+      "sha256": "48e78acd0edf118c2613d6c5eaffb64ba927cc1939d36dbcaaaaac5062fc47ac",
+      "bytes": 2229
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_01_lr_0p0003/20261002T130650Z_6058bbc8/metrics.json": {
+      "sha256": "6bed9b52e70905d65363ddee5c74f96e60936658d7eb6f377970d744eebfabc7",
+      "bytes": 157
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_01_lr_0p0003/20261002T130650Z_6058bbc8/config.json": {
+      "sha256": "f2252e768958dc4c292dd37dfbb1da93d34e8fe499874e7eb0b3016672958688",
+      "bytes": 2231
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_02_adam_0p001/20261002T161649Z_6f11b2f7/metrics.json": {
+      "sha256": "3c6166745a5a640c5b9a2fad7e0f16cf90ab281eebfffddf1de257304af2c009",
+      "bytes": 157
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_02_adam_0p001/20261002T161649Z_6f11b2f7/config.json": {
+      "sha256": "ae8857ddce3be208be03e745403eb94400af8ad84b17033e86570dd2ac05feb8",
+      "bytes": 2198
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_02_adam_0p001/20261003T034816Z_facd6854/metrics.json": {
+      "sha256": "8d984dd95167c7eab7eead20ff8d304652d8457d4262570e9fe3a062a153eebd",
+      "bytes": 157
+    },
+    "cv-house-price/.local/experiment_record/04_training/runs/tune_02_adam_0p001/20261003T034816Z_facd6854/config.json": {
+      "sha256": "7b0d7fa22159f4b37e617a1a91c8fbfda9e87fc6c506eea4b72465db52b5d876",
+      "bytes": 2422
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_02_adam_0p001/20261003T041721Z_4dff5fc7/metrics.json": {
+      "sha256": "91a3e695119711bcf0e1b2c7a7254e9fdc83b7d37de877dc26ac81f9b6ecef7f",
+      "bytes": 156
+    },
+    "cv-house-price/.local/experiment_record/04_training/runs/tune_02_adam_0p001/20261003T041721Z_4dff5fc7/config.json": {
+      "sha256": "73513905d6179dad6014daea38936d6cc5b24a6e08be4950e0c65d2fe9ebc379",
+      "bytes": 2422
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_02_adam_0p001/20261002T161649Z_6f11b2f7/review.json": {
+      "sha256": "688c5e8fc05b02768caa9332f6f6e8fff51360347e7b571c0ee62a32c81d4f7c",
+      "bytes": 1510
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_02_adam_0p001/20261003T034816Z_facd6854/review.json": {
+      "sha256": "97cddd29797a9f3878d47e8d09875644a3a97786f7b7152a3cb370978e1ceea4",
+      "bytes": 1508
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_02_adam_0p001/20261003T041721Z_4dff5fc7/review.json": {
+      "sha256": "b1379e553eefa041e090ca4ff7456b5295c54359d4aeec807cf67d07e7dfae59",
+      "bytes": 1509
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_03_cosine/20261003T050102Z_19886f34/metrics.json": {
+      "sha256": "e3cb0e4d0f6f9452f90c94f5600c04681e0cfc8636115841c88cb437bfcc7f0b",
+      "bytes": 157
+    },
+    "cv-house-price/.local/experiment_record/04_training/runs/tune_03_cosine/20261003T050102Z_19886f34/config.json": {
+      "sha256": "4b6537725c0b364bb2519e4ee1745f8d4566eb098f6e2d730121254fa2b408f8",
+      "bytes": 2640
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_03_cosine/20261003T052850Z_06d0e47a/metrics.json": {
+      "sha256": "dbd04f70f5014811991f119ab61c47f9f0b12727928ecc141872007077a24413",
+      "bytes": 156
+    },
+    "cv-house-price/.local/experiment_record/04_training/runs/tune_03_cosine/20261003T052850Z_06d0e47a/config.json": {
+      "sha256": "d1f380d8c60d5409c23d23d9cac5c85a0a511021de0e78c177d75d48e8ac05ed",
+      "bytes": 2640
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_03_cosine/20261003T055436Z_6b8e6d3a/metrics.json": {
+      "sha256": "f9415b436619df0ca1ed931741c91ee87b57d5eca84404630afb4081dfce483f",
+      "bytes": 158
+    },
+    "cv-house-price/.local/experiment_record/04_training/runs/tune_03_cosine/20261003T055436Z_6b8e6d3a/config.json": {
+      "sha256": "6c9b692cd3d10326e144b0429e0a89df53800d2b28978de799d22ff47c83ea02",
+      "bytes": 2640
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_03_cosine/20261003T050102Z_19886f34/review.json": {
+      "sha256": "4f3776b41283896f24ec466479d87abf162bcee11ad59ecb846dd45c8fc77cc3",
+      "bytes": 1507
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_03_cosine/20261003T052850Z_06d0e47a/review.json": {
+      "sha256": "d1a2ea293f56fea77915245184d251fe81bd829da37d1fc46486b60613ce6141",
+      "bytes": 1506
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_03_cosine/20261003T055436Z_6b8e6d3a/review.json": {
+      "sha256": "9691e63ae57b90824cfb639402a41a2bbb7fd311e90b35c1e24aa663cc479dc5",
+      "bytes": 1507
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_04_batch_16/20261003T064210Z_8846ab8f/metrics.json": {
+      "sha256": "0a414d716edb8a307399da88ecb8aafd97fa58d71e91e1900be7ebe56c5e6fd0",
+      "bytes": 157
+    },
+    "cv-house-price/.local/experiment_record/04_training/runs/tune_04_batch_16/20261003T064210Z_8846ab8f/config.json": {
+      "sha256": "e673a1f7cef83cd8adbfcc1378c16281f0b51713f5768e23d76e2b60738159d6",
+      "bytes": 2364
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_04_batch_16/20261003T071154Z_8af6a290/metrics.json": {
+      "sha256": "71c830b7ae9dffd63920f23ad93a2b8a47dbcfe9686e0dd14a47801e6cd08340",
+      "bytes": 157
+    },
+    "cv-house-price/.local/experiment_record/04_training/runs/tune_04_batch_16/20261003T071154Z_8af6a290/config.json": {
+      "sha256": "6335708b38fda997ea6a0d2f4b0faa2ea2e89bb88c0450150623439507017eca",
+      "bytes": 2364
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_04_batch_16/20261003T074222Z_6a0c68e5/metrics.json": {
+      "sha256": "56093e17b90b622f29682a1388f2a6d63552b46584dbdb603cbc56b62830f741",
+      "bytes": 158
+    },
+    "cv-house-price/.local/experiment_record/04_training/runs/tune_04_batch_16/20261003T074222Z_6a0c68e5/config.json": {
+      "sha256": "faf8340dc783a824cac6d3055aff86e4bccb1e908814d01bbd2c710c5b90a59b",
+      "bytes": 2364
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_04_batch_16/20261003T064210Z_8846ab8f/review.json": {
+      "sha256": "171a1714bee832dddbd6481515d7b7f344f329ee494e4aa18826bd3f5ba6cfe0",
+      "bytes": 1513
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_04_batch_16/20261003T071154Z_8af6a290/review.json": {
+      "sha256": "da1dbf53be973253f95e556959849f8552c9cc5eeff2f03296fe32015ab4bfb2",
+      "bytes": 1512
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_04_batch_16/20261003T074222Z_6a0c68e5/review.json": {
+      "sha256": "7e4c482ae603c2fe973ca836153b81e0fa750a1a88aa8ee2a07573e3483670a8",
+      "bytes": 1519
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_04_batch_64/20261003T081656Z_98b550fe/metrics.json": {
+      "sha256": "34bebbff49bbb28e6601c0d03b305cd78530bdd8f7c3d24661c3b4d79fcd349f",
+      "bytes": 158
+    },
+    "cv-house-price/.local/experiment_record/04_training/runs/tune_04_batch_64/20261003T081656Z_98b550fe/config.json": {
+      "sha256": "c08cc55e6e0c2832088434658be150b7162eb94bb5d9d9f68be3ce011cce23a9",
+      "bytes": 2365
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_04_batch_64/20261003T084356Z_4d481951/metrics.json": {
+      "sha256": "d93f4fe3fa66152c35a23ca55800f8dde80ab5fb419304d8881de3b96e623376",
+      "bytes": 157
+    },
+    "cv-house-price/.local/experiment_record/04_training/runs/tune_04_batch_64/20261003T084356Z_4d481951/config.json": {
+      "sha256": "91ba5e5d61c6966628f4de4bc588cb33b72241797ce2f9507de042ba2398b5b6",
+      "bytes": 2365
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_04_batch_64/20261003T090830Z_f0a34d89/metrics.json": {
+      "sha256": "2e2cf688a60bcfe5e6e0bc5cfbef12ff8e0ae80d89b35b97eb58671f399e9c8b",
+      "bytes": 158
+    },
+    "cv-house-price/.local/experiment_record/04_training/runs/tune_04_batch_64/20261003T090830Z_f0a34d89/config.json": {
+      "sha256": "553acb15d02b7a3d9dafdf67392efba932aa1b53929318e73b6e4a05b0174fb0",
+      "bytes": 2365
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_04_batch_64/20261003T081656Z_98b550fe/review.json": {
+      "sha256": "5d23c63a75a397a48764f74f72ea3a257869d781ac2386b9e2e63a24d5e766e8",
+      "bytes": 1505
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_04_batch_64/20261003T084356Z_4d481951/review.json": {
+      "sha256": "7c016d5bd1d26ffc3584cd8111cb8cbc89dbb81de526b2838d004222914be8cc",
+      "bytes": 1510
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_04_batch_64/20261003T090830Z_f0a34d89/review.json": {
+      "sha256": "ef39b8567a8b2fb1e7c4c971318d6ff418b592b8025ce38013eae15cae239c6a",
+      "bytes": 1507
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_05_dropout_0/20261003T093414Z_adc8350e/metrics.json": {
+      "sha256": "0618db5993ea16bc4436cfe6c75e9a85c7166e8f57d6ab9cf9219724d52bf45f",
+      "bytes": 158
+    },
+    "cv-house-price/.local/experiment_record/04_training/runs/tune_05_dropout_0/20261003T093414Z_adc8350e/config.json": {
+      "sha256": "ae3ca544d4831763999bd6f7682daaca13bedfba2b6475b72da971cd06f2cf62",
+      "bytes": 2349
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_05_dropout_0/20261003T100246Z_a6a359b8/metrics.json": {
+      "sha256": "cc96e6c8908091dc0743f2be06e3b1ea56d406527786ac682ae3036743dfed1d",
+      "bytes": 157
+    },
+    "cv-house-price/.local/experiment_record/04_training/runs/tune_05_dropout_0/20261003T100246Z_a6a359b8/config.json": {
+      "sha256": "b608ac8edfbd2b03e9797f85f7bfb00b4c9c60d3c1bbafec06a8a8a01b7bb9c0",
+      "bytes": 2349
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_05_dropout_0/20261003T102955Z_cc438865/metrics.json": {
+      "sha256": "1fab06832b95c41ef20d8dd837bc6c4e60ca804df1a56a34a9ebf48b7352745c",
+      "bytes": 157
+    },
+    "cv-house-price/.local/experiment_record/04_training/runs/tune_05_dropout_0/20261003T102955Z_cc438865/config.json": {
+      "sha256": "1d7478b154f4772f6e5587621a1de035d92feef32fea48fb1067b2f2436d675d",
+      "bytes": 2349
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_05_dropout_0/20261003T093414Z_adc8350e/review.json": {
+      "sha256": "854efccef938828a8f4ec3f87539a880be4b7a5148af1d25d7153dc6f8a4e7b7",
+      "bytes": 1512
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_05_dropout_0/20261003T100246Z_a6a359b8/review.json": {
+      "sha256": "6679607352375b09927fabf08581fa3b8060d1682a5c04aa0191a7448c7ba009",
+      "bytes": 1507
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_05_dropout_0/20261003T102955Z_cc438865/review.json": {
+      "sha256": "44df4d413f59e809ef76a0a140e2e72dbe0916d94749d62d2483394c34240f1f",
+      "bytes": 1513
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_05_dropout_0p2/20261003T105535Z_159782ad/metrics.json": {
+      "sha256": "1a2842ca926357768922c571d47071e0e813ebf58c37141cf05ddeab9582ccaa",
+      "bytes": 156
+    },
+    "cv-house-price/.local/experiment_record/04_training/runs/tune_05_dropout_0p2/20261003T105535Z_159782ad/config.json": {
+      "sha256": "4a9f898de729c7f648b3592b67dbe557253964bf488f5b52945aa2110ad69d7b",
+      "bytes": 2357
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_05_dropout_0p2/20261003T113155Z_9dfeba2a/metrics.json": {
+      "sha256": "0736e9d87be54b9652153390dd23b9ed2ca26a7fa8e276d97300480db346764c",
+      "bytes": 158
+    },
+    "cv-house-price/.local/experiment_record/04_training/runs/tune_05_dropout_0p2/20261003T113155Z_9dfeba2a/config.json": {
+      "sha256": "fa6bb812a2d8d1b796f09659d39ce41aebb87f7089ca701768c4cbc4ca68faa8",
+      "bytes": 2357
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_05_dropout_0p2/20261003T115856Z_2e89695c/metrics.json": {
+      "sha256": "e81d7164da716e4ae07133d2b0410cdb19061b814534b51290d425f184557c84",
+      "bytes": 156
+    },
+    "cv-house-price/.local/experiment_record/04_training/runs/tune_05_dropout_0p2/20261003T115856Z_2e89695c/config.json": {
+      "sha256": "b27243755e90138b5bfcc07e10117aad12f77a746c54318f9d35a0313e6c7ffb",
+      "bytes": 2357
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_05_dropout_0p2/20261003T105535Z_159782ad/review.json": {
+      "sha256": "35cb60caf8914910adbfe4e29bd1d6c8665589cce48fd7df2ee0c32ae7424f59",
+      "bytes": 1513
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_05_dropout_0p2/20261003T113155Z_9dfeba2a/review.json": {
+      "sha256": "4680b487c7da8bc8255690aaf44dba6325de9fc88de79a640cbe6f5fd19bd413",
+      "bytes": 1509
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_05_dropout_0p2/20261003T115856Z_2e89695c/review.json": {
+      "sha256": "5087d04d60cfc4126b6f53b72b6575063fc7f2d488a172f6ea5240dc33d10d61",
+      "bytes": 1505
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_06_l2_1e-06/20261003T173549Z_67460e51/metrics.json": {
+      "sha256": "66fa74730a2372b1ef856aba52e343d60578d58449465e810ff3bcd63f4879b6",
+      "bytes": 157
+    },
+    "cv-house-price/.local/experiment_record/04_training/runs/tune_06_l2_1e-06/20261003T173549Z_67460e51/config.json": {
+      "sha256": "1889f143059c7db307293e7f0e3dda1a6c1ac054751bc5aa1c5bd9da5301fd04",
+      "bytes": 2658
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_06_l2_1e-06/20261003T194254Z_a32ec1e2/metrics.json": {
+      "sha256": "df97d74992a48f0018561afd4f3b49047db758b3368fdf4c51f21478a3ee25d3",
+      "bytes": 156
+    },
+    "cv-house-price/.local/experiment_record/04_training/runs/tune_06_l2_1e-06/20261003T194254Z_a32ec1e2/config.json": {
+      "sha256": "d50d868f9315f59e17272808a01e9cb77f2bfb7a69adf80f804dd8549b76157b",
+      "bytes": 2658
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_06_l2_1e-06/20261003T200957Z_50fdc7a6/metrics.json": {
+      "sha256": "3c2f4cd9d01fae5db8c766dc7fe62223ad23378da2a5fe30fa1eedd690949d25",
+      "bytes": 158
+    },
+    "cv-house-price/.local/experiment_record/04_training/runs/tune_06_l2_1e-06/20261003T200957Z_50fdc7a6/config.json": {
+      "sha256": "36e5f6a8d3d7b50ea4d3c6d282e85ac8ee97e0b50cb87bd932befe59af7c90e8",
+      "bytes": 2658
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_06_l2_1e-06/20261003T173549Z_67460e51/review.json": {
+      "sha256": "a3623e6623485191ed4b708269109998286c1e0e6c10857f73c68b800241476e",
+      "bytes": 1672
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_06_l2_1e-06/20261003T194254Z_a32ec1e2/review.json": {
+      "sha256": "e74ed6f8425d1937935ea65b3d001121ae77530d2d1eaeca1639958b7c082b72",
+      "bytes": 1670
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_06_l2_1e-06/20261003T200957Z_50fdc7a6/review.json": {
+      "sha256": "f25f8a4c69ad7f3d7042988943d5ea79fccd367dbd9e8289e9fee5b0a77ded52",
+      "bytes": 1676
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_08_initialization/20261004T024854Z_489899ef/metrics.json": {
+      "sha256": "172709742b5e14a40038b8d306dc91fa9217f3306ad7a7c29d54c1e9722f5b68",
+      "bytes": 157
+    },
+    "cv-house-price/.local/experiment_record/04_training/runs/tune_08_initialization/20261004T024854Z_489899ef/config.json": {
+      "sha256": "b78318e0f6f0f317aaffcc94223bf07c51cb7590304b2f98fa199907816708f0",
+      "bytes": 2844
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_08_initialization/20261004T031530Z_3e8d5761/metrics.json": {
+      "sha256": "e9fd3ae8909b8c4765d70cad6757438b6e7f196ff1416ae52767c70aba9f3f08",
+      "bytes": 158
+    },
+    "cv-house-price/.local/experiment_record/04_training/runs/tune_08_initialization/20261004T031530Z_3e8d5761/config.json": {
+      "sha256": "1831088a14a00ab72155642ace0947859c7b9f4a2df332fb220dc80b65d4a92a",
+      "bytes": 2844
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_08_initialization/20261004T034414Z_b0d72c2b/metrics.json": {
+      "sha256": "b87d1664f2110407216c5476d28413cf532e99495643d2fd5dcda5db1ff06ee0",
+      "bytes": 157
+    },
+    "cv-house-price/.local/experiment_record/04_training/runs/tune_08_initialization/20261004T034414Z_b0d72c2b/config.json": {
+      "sha256": "0bed21af9cf43de598cfb78438bab8cd36d3f45e87257da407069ce8037ea754",
+      "bytes": 2844
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_08_initialization/20261004T024854Z_489899ef/review.json": {
+      "sha256": "577acd931158f8be7d80cbe1784b9d49c4118132185f789cc4880050f41bae9c",
+      "bytes": 1510
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_08_initialization/20261004T031530Z_3e8d5761/review.json": {
+      "sha256": "b05939130878992a9b758e24e5615bde24eb5c5e41fdb2fb778229d9c3767b8c",
+      "bytes": 1510
+    },
+    "cv-house-price/output/experiment_record/04_training/runs/tune_08_initialization/20261004T034414Z_b0d72c2b/review.json": {
+      "sha256": "abf8400ed9b2649a97a1757d479946679fdc1aab5d0f258932ece4be27a294c1",
+      "bytes": 1506
+    },
+    "cv-house-price/output/experiment_record/05_augmentation/runs/augment_01_flip/20261004T072600Z_0c811207/review.json": {
+      "sha256": "a4bbb79ec8ffe20265a8e9179f5da49f6fa043867780ef979a89b3f5c4b16189",
+      "bytes": 1838
+    },
+    "cv-house-price/output/experiment_record/05_augmentation/runs/augment_01_flip/20261004T092422Z_4cec3867/review.json": {
+      "sha256": "72d9df179636f7569ab9211ed969961e407e4beb2a3aa865b440b904464973bc",
+      "bytes": 1831
+    },
+    "cv-house-price/output/experiment_record/05_augmentation/runs/augment_01_flip/20261004T095200Z_78e79a80/review.json": {
+      "sha256": "d743259b8824b3e778474cfb4d41e459b58ed41b2724e45d4f34fecddb8b9679",
+      "bytes": 1834
+    },
+    "cv-house-price/output/experiment_record/05_augmentation/runs/augment_05_rotation/20261004T075520Z_05e61c86/metrics.json": {
+      "sha256": "cde6caaa081e5a14fb5aff4c6645c5f8fb5d96840969e77d1e612a399b110367",
+      "bytes": 157
+    },
+    "cv-house-price/.local/experiment_record/05_augmentation/runs/augment_05_rotation/20261004T075520Z_05e61c86/config.json": {
+      "sha256": "e1cb853e542111da2d19041e0df3881f02d09a5425866b8ba64fe530143c28da",
+      "bytes": 2871
+    },
+    "cv-house-price/output/experiment_record/05_augmentation/runs/augment_05_rotation/20261004T075520Z_05e61c86/review.json": {
+      "sha256": "681f36f731a59ed33a70fdd91fe7707b176b30d6b71b72b8233d16d4f1344895",
+      "bytes": 1844
+    },
+    "cv-house-price/output/experiment_record/05_augmentation/runs/augment_06_translation/20261004T082531Z_fbdaec9f/metrics.json": {
+      "sha256": "5fde1b2b1ea4aa66b7cf2c0dec0c2e9f2aa0d6cc9f1951a2ea64b841e375732f",
+      "bytes": 157
+    },
+    "cv-house-price/.local/experiment_record/05_augmentation/runs/augment_06_translation/20261004T082531Z_fbdaec9f/config.json": {
+      "sha256": "5b12c765ee4c9f2e17dac0866df0ba2d5872a11c5cbae3b14ec9aaa405fef47d",
+      "bytes": 2883
+    },
+    "cv-house-price/output/experiment_record/05_augmentation/runs/augment_06_translation/20261004T082531Z_fbdaec9f/review.json": {
+      "sha256": "c07c6826be068819bbbebdb2dc35da556d672361737487b962df83c1d17a85f6",
+      "bytes": 1841
+    },
+    "cv-house-price/output/experiment_record/05_augmentation/runs/augment_07_crop/20261004T085702Z_1423a27b/metrics.json": {
+      "sha256": "0b5f7376f1afa0738a35b79ad4f3a190decfd3fc6b43bc2834000c5c7948f5ca",
+      "bytes": 156
+    },
+    "cv-house-price/.local/experiment_record/05_augmentation/runs/augment_07_crop/20261004T085702Z_1423a27b/config.json": {
+      "sha256": "4fc3fea242e2c66e0c8aecdbe1d49ac6fe2123e89d560965bc253dd1b609da2d",
+      "bytes": 2859
+    },
+    "cv-house-price/output/experiment_record/05_augmentation/runs/augment_07_crop/20261004T085702Z_1423a27b/review.json": {
+      "sha256": "a3e6ef7a2031de79f707183208ddb94bbe1608c0df2a516c889b30e249d508b9",
+      "bytes": 1831
+    },
+    "cv-house-price/output/experiment_record/05_augmentation/runs/augment_08_blur/20261004T111119Z_e1b5a21a/metrics.json": {
+      "sha256": "91d7a45ac7497a890d72767b785183a2d8dfcff143398d6fccf1fa5d9b228ac0",
+      "bytes": 156
+    },
+    "cv-house-price/.local/experiment_record/05_augmentation/runs/augment_08_blur/20261004T111119Z_e1b5a21a/config.json": {
+      "sha256": "7ba04bd5e2376b9ee97e4ad0946a3eb20a7b22564672f826e48560835c1134ca",
+      "bytes": 2861
+    },
+    "cv-house-price/output/experiment_record/05_augmentation/runs/augment_08_blur/20261004T111119Z_e1b5a21a/review.json": {
+      "sha256": "8fe83ffbd425121cc2f8ebd3d362aede205b7b1e14b6b0c9f66d0d3ba6cb101f",
+      "bytes": 1857
+    },
+    "cv-house-price/output/experiment_record/05_augmentation/runs/augment_09_noise/20261004T113830Z_7afc72d6/metrics.json": {
+      "sha256": "6623c61de510f9a64a47435e4f66c2ee7e0c10beca711cf677f2cb65dde036ba",
+      "bytes": 158
+    },
+    "cv-house-price/.local/experiment_record/05_augmentation/runs/augment_09_noise/20261004T113830Z_7afc72d6/config.json": {
+      "sha256": "bb504e8e0e5743eedc2fd80e276ad9f5187d925d45ff1984df3deca1206fb70b",
+      "bytes": 2829
+    },
+    "cv-house-price/output/experiment_record/05_augmentation/runs/augment_09_noise/20261004T113830Z_7afc72d6/review.json": {
+      "sha256": "e2ebaaadb7b8ee885f0ce5bd7bc7b87b3090454005e78ee32ec19251b80076d9",
+      "bytes": 1860
+    },
+    "cv-house-price/output/experiment_record/05_augmentation/runs/augment_10_erase/20261004T120712Z_c603c3fa/metrics.json": {
+      "sha256": "8827a0f699226fcbb1c12a068b3770f6dec01b1066da85302c583b53d73620d5",
+      "bytes": 157
+    },
+    "cv-house-price/.local/experiment_record/05_augmentation/runs/augment_10_erase/20261004T120712Z_c603c3fa/config.json": {
+      "sha256": "d5687ad65bb08c4e800fde82bc53e095319674e2c6d7865f1baaf64a4b86a516",
+      "bytes": 2923
+    },
+    "cv-house-price/output/experiment_record/05_augmentation/runs/augment_10_erase/20261004T123344Z_1f4b6283/metrics.json": {
+      "sha256": "0087a8feb9a7bb23981682cb3992edb2009c2756e7208948a20a5f3892541da4",
+      "bytes": 156
+    },
+    "cv-house-price/.local/experiment_record/05_augmentation/runs/augment_10_erase/20261004T123344Z_1f4b6283/config.json": {
+      "sha256": "e71f70ed4994e3cf74af0005d6b3408eac931563267f67823879c46c4efdc2ba",
+      "bytes": 2923
+    },
+    "cv-house-price/output/experiment_record/05_augmentation/runs/augment_10_erase/20261004T130020Z_c746eb01/metrics.json": {
+      "sha256": "863b67349eafe5949749fbf7707030d9601b4e9bf7dba485da98feec320a5da3",
+      "bytes": 157
+    },
+    "cv-house-price/.local/experiment_record/05_augmentation/runs/augment_10_erase/20261004T130020Z_c746eb01/config.json": {
+      "sha256": "214bb3dfdc3e6f38e13ad23790253b6662b2b4a03e0f0a960dbbb0b4599b2265",
+      "bytes": 2923
+    },
+    "cv-house-price/output/experiment_record/05_augmentation/runs/augment_10_erase/20261004T120712Z_c603c3fa/review.json": {
+      "sha256": "5d03ad5cb4ec9ef74ec1412f0ce80189c76dd17927be6302549d1760c6c2e877",
+      "bytes": 1866
+    },
+    "cv-house-price/output/experiment_record/05_augmentation/runs/augment_10_erase/20261004T123344Z_1f4b6283/review.json": {
+      "sha256": "c71fcd276b4f0daf8ed46aba0352815a1362957783d75688f45567e8da7af3cc",
+      "bytes": 1861
+    },
+    "cv-house-price/output/experiment_record/05_augmentation/runs/augment_10_erase/20261004T130020Z_c746eb01/review.json": {
+      "sha256": "af447f8afda2ac8388ccc63c82e331a300baa45827d9f37575e1baccefd363d0",
+      "bytes": 1874
+    },
+    "cv-house-price/output/experiment_record/06_architecture/runs/structure_01_small_kernels/20261004T145003Z_62e6891d/metrics.json": {
+      "sha256": "5bb6ff0627fd52b59caa24217aae017c0e0d736582ea0394c98244d991c4396c",
+      "bytes": 157
+    },
+    "cv-house-price/.local/experiment_record/06_architecture/runs/structure_01_small_kernels/20261004T145003Z_62e6891d/config.json": {
+      "sha256": "ce859299c7440b0e7a2680af884c225165cfb7edb761276cf7bfc18289c7674c",
+      "bytes": 2890
+    },
+    "cv-house-price/output/experiment_record/06_architecture/runs/structure_01_small_kernels/20261004T145003Z_62e6891d/review.json": {
+      "sha256": "87c749421292409a02f57c960258ffebb3f11bd28cadd83449c0f2e986cf0f45",
+      "bytes": 2600
+    },
+    "cv-house-price/output/experiment_record/06_architecture/runs/structure_02_inception/20261004T151749Z_1fdbdd69/metrics.json": {
+      "sha256": "4c427e68fcc64fa117573eb605592681f07013e9eb2d577a710851cb212988eb",
+      "bytes": 157
+    },
+    "cv-house-price/.local/experiment_record/06_architecture/runs/structure_02_inception/20261004T151749Z_1fdbdd69/config.json": {
+      "sha256": "72cd9383fb9e946ff71be5f8146a02b7a458d37cb969a49e729aeb038615d098",
+      "bytes": 2875
+    },
+    "cv-house-price/output/experiment_record/06_architecture/runs/structure_02_inception/20261004T151749Z_1fdbdd69/review.json": {
+      "sha256": "4eb9515dfe9042a5a48f994923295062a89c36127a1f7e661f47632444854c5e",
+      "bytes": 2590
+    },
+    "cv-house-price/output/experiment_record/06_architecture/runs/structure_03_residual/20261004T155005Z_3fb24b96/metrics.json": {
+      "sha256": "846548572de57efbc2f381afd7f9717b5359b86335318ef421c39c5ef2265d24",
+      "bytes": 157
+    },
+    "cv-house-price/.local/experiment_record/06_architecture/runs/structure_03_residual/20261004T155005Z_3fb24b96/config.json": {
+      "sha256": "2d5f6c37ef7279709e4dcfa3f6fa4d1e5d2daa36c5d18ae5b6ea28c0b44e5889",
+      "bytes": 2869
+    },
+    "cv-house-price/output/experiment_record/06_architecture/runs/structure_03_residual/20261004T155005Z_3fb24b96/review.json": {
+      "sha256": "c3fb0e7b3ce2c43be30dcdd659d6f3b84a005fadd3c7ab61cf3d460f2190a457",
+      "bytes": 2596
+    },
+    "cv-house-price/output/experiment_record/07_encoder/runs/encoder_one_layer/20261013T054243Z_9ccc58aa/metrics.json": {
+      "sha256": "1e308ea29114aab82ef4fc226a414a3ed1d8cb93433d745191d7789ecb1861b9",
+      "bytes": 158
+    },
+    "cv-house-price/output/experiment_record/07_encoder/runs/encoder_one_layer/20261013T054243Z_9ccc58aa/config.json": {
+      "sha256": "08ebc8173d90e03f26ad3d6a2ee82c8c3aa5d37f9e000ea44c0a3e3d7032f5b9",
+      "bytes": 2452
+    },
+    "cv-house-price/.local/experiment_record/19_image_embedding_reference/pe_core_g14_448_kernel/20261014T073812Z_e0339201/predictions.csv": {
+      "sha256": "901f212e3a053819c32452f9ce7a95b0dabcc4c56606ff751abc41ded31f90de",
+      "bytes": 157927
+    },
+    "cv-house-price/.local/experiment_record/19_image_embedding_reference/pe_core_g14_448_kernel/20261014T073812Z_e0339201/metrics.json": {
+      "sha256": "902448181af8bf8332d17148ba81d2184d79111ed10c32395d32c476b99ae8e0",
+      "bytes": 159
+    },
+    "cv-house-price/.local/experiment_record/19_image_embedding_reference/pe_core_g14_448_whole_kernel/20261014T090655Z_2d55c743/predictions.csv": {
+      "sha256": "b51ea95669403aa57dd4b8bd24d78c10d2a4e2050b989a36070ea105bbeadd3e",
+      "bytes": 157928
+    },
+    "cv-house-price/.local/experiment_record/19_image_embedding_reference/pe_core_g14_448_whole_kernel/20261014T090655Z_2d55c743/metrics.json": {
+      "sha256": "c56fe38d6e0d308c811d67b952d0d7eff7c3fa28df9d8a762f281e3fe2c85713",
+      "bytes": 158
+    },
+    "comp-90086-2026/house_dataset/train/4920.jpg": {
+      "sha256": "bbba51966e11246831c766a78817d48966a3b65188df21be88e7949b0f560186",
+      "bytes": 18575
+    },
+    "comp-90086-2026/house_dataset/train/2562.jpg": {
+      "sha256": "3d3e42f2390029ad2b05a426362f075adbf951d8bc27f04f535afd9a5117b33e",
+      "bytes": 32443
+    },
+    "comp-90086-2026/house_dataset/train/5712.jpg": {
+      "sha256": "fca22fca65516ffeee05ec8bbf266def12b12638d00d0f1bfaaa2d8a38b5ee3f",
+      "bytes": 29709
+    },
+    "comp-90086-2026/house_dataset/train/499.jpg": {
+      "sha256": "ea723f74b4f2903b803fe4e1402430c4ebde5d5f1f6de2311930bd5793785478",
+      "bytes": 27527
+    },
+    "cv-house-price/.local/experiment_record/19_image_embedding_reference/pe_core_g14_448_whole_kernel/20261014T090655Z_2d55c743/head.npz": {
+      "sha256": "7747bd57dd7f4fc60d5a56d86b4ba7601a541fc7feaeef9215f9a4b20353829d",
+      "bytes": 93412440
+    },
+    "cv-house-price/.local/experiment_record/19_image_embedding_reference/pe_giant_whole_pca_bandwidth_kernel/20261015T033416Z_4b848f75/feature_transform.npz": {
+      "sha256": "3f46f94937db1eee0dfda447c43b9dcb364c0dc3ca9bf2f38dfa7cdc5a3316de",
+      "bytes": 5045696
+    },
+    "cv-house-price/.local/experiment_record/19_image_embedding_reference/pe_giant_whole_pca_bandwidth_kernel/20261015T033416Z_4b848f75/head.npz": {
+      "sha256": "823e316947d34cf3b4ee70229f1ff5b272b0d3ae38e16acde561b74fbee68a3f",
+      "bytes": 12609303
+    },
+    "cv-house-price/output/experiment_record/19_image_embedding_reference/pe_giant_whole_pca_bandwidth_kernel/20261015T033416Z_4b848f75/results.json": {
+      "sha256": "c16373d5508533e2cc47ca2f9ab713d337388d64d44911d6929e30c5c32751a3",
+      "bytes": 547
+    },
+    "cv-house-price/output/experiment_record/19_image_embedding_reference/pe_giant_whole_pca_kernel/20261015T033047Z_6b2e78e0/training_cv.csv": {
+      "sha256": "eed9459e258cbade6c199544fc77cfb6c9b61e050bbdece2040e077aeac25386",
+      "bytes": 231
+    },
+    "cv-house-price/output/experiment_record/19_image_embedding_reference/pe_giant_whole_pca_bandwidth_kernel/20261015T033416Z_4b848f75/training_cv.csv": {
+      "sha256": "65a93b4631fae0558d981c6258c45ec83d0f5fb051b542fe2fd364588e27b6b5",
+      "bytes": 235
+    }
+  },
+  "output_checksums": {
+    "early_experiment_paired_improvements.png": {
+      "sha256": "83d2841c8f10626d48625919a7c39e2b1be7697677d89ea806af1fd1656fb9d6",
+      "bytes": 443771
+    },
+    "early_experiment_paired_improvements.svg": {
+      "sha256": "8c8e491165d3bf1bbe35d02edb2338f327381e8a671f05d4cf88d3a1e7dd01b8",
+      "bytes": 49672
+    },
+    "whole_frame_paired_case_comparison.png": {
+      "sha256": "5af0c5547863082b46e5996d2561ad0ca0d90094c02c975ec2a7efb753b4d048",
+      "bytes": 5938950
+    },
+    "whole_frame_paired_case_comparison.svg": {
+      "sha256": "7d01c3e5097db7b0931452ae7f0089eeed64713e9643a63d828a589e8ab9f910",
+      "bytes": 6871635
+    },
+    "pca_bandwidth_geometry_diagnostic.png": {
+      "sha256": "ebc2bf5278067f249377199e1b392c996dea90db5159bb9bfb1502d1ad74c14b",
+      "bytes": 436734
+    },
+    "pca_bandwidth_geometry_diagnostic.svg": {
+      "sha256": "369deaf820785e41cbefb623e5124fa45b35da3015d322ad5aba5b759aa0e4d8",
+      "bytes": 147964
+    }
+  }
+}

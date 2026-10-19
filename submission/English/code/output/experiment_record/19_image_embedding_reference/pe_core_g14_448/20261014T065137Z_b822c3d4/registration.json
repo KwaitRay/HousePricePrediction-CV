@@ -1,0 +1,38 @@
+{
+  "model": "timm/vit_pe_core_gigantic_patch14_448.fb",
+  "revision": "fb096c09d13bd2e3827aed4dbdffb8a6b8e0c10b",
+  "checkpoint_sha256": "a0a499d4a7c6d35bb5f11aa2b076eaacde06e66a08176eb3b3d362d80eb91bd8",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "feature_dim": 1280,
+  "batch_size": 1,
+  "preprocess": "Compose(\n    Resize(size=448, interpolation=bicubic, max_size=None, antialias=True)\n    CenterCrop(size=[448, 448])\n    MaybeToTensor()\n    Normalize(mean=tensor([0.5000, 0.5000, 0.5000]), std=tensor([0.5000, 0.5000, 0.5000]))\n)",
+  "config_sha256": "f3d4cd28623bd6dc7dcea522411c48ebfea44aae844aa5cb7a8401a3601d5b6f",
+  "feature": "Official learned PE-Core-G attention pooler and 1280D projection, FP32 L2 normalization",
+  "precision": "FP16 forward and parameters, official FP32 RoPE cast to FP16, FP32 normalized stored features",
+  "source_sha256": "ee340756527ee23a28a574fb8be932905464ea251663928957d3af3488014e4a",
+  "loader_source_sha256": "1fddd9f65df031cb7fef35b6594de2870235faf5173cea3fbecf96b873e11ae3",
+  "kernel_search_source_sha256": "5b6e3335d38dbcacde1adb0795f9f95f2521bbdfb5448f33e560f80029e02a47",
+  "timm_version": "1.0.30",
+  "mllm_components": false,
+  "text_modules_used": false,
+  "test_images_used": false,
+  "course_scope": "Generic pretrained visual features and provided labels only",
+  "official_model_card": "https://huggingface.co/timm/vit_pe_core_gigantic_patch14_448.fb",
+  "cache_family": "pe_core_giant_features",
+  "cache_key": "d4e2604d156afed5901efb7cd5f2daac1d28efc6e5f2e7ecb9d70097cfe78055",
+  "regression_grid": {
+    "gammas": [
+      1.0,
+      4.0,
+      16.0
+    ],
+    "alphas": [
+      0.01,
+      0.1,
+      1.0,
+      10.0
+    ],
+    "training_group_folds": 3
+  },
+  "selection": "Original-price unweighted training grouped OOF MSE; fixed validation once after selection"
+}

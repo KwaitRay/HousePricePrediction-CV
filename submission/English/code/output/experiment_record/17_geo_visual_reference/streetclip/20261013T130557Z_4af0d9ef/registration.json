@@ -1,0 +1,55 @@
+{
+  "model": "geolocal/StreetCLIP",
+  "revision": "e3561ba2ad9bf14c9efd6b0092607b8497efbfea",
+  "license": "cc-by-nc-4.0",
+  "checkpoint_sha256": "cf6dc3802a8bf9301560b1aa0cd1fa983b4139f96a1befc43802e387401fe6c0",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "source_sha256": "332dc1abe3361bde856efb4e5e388f6392b6f6a7c6d310b0f927825fbf7c9ceb",
+  "preprocess": {
+    "_processor_class": "CLIPProcessor",
+    "do_resize": true,
+    "size": {
+      "shortest_edge": 336
+    },
+    "resample": 3,
+    "do_center_crop": true,
+    "crop_size": {
+      "height": 336,
+      "width": 336
+    },
+    "do_rescale": true,
+    "rescale_factor": 0.00392156862745098,
+    "do_normalize": true,
+    "image_mean": [
+      0.48145466,
+      0.4578275,
+      0.40821073
+    ],
+    "image_std": [
+      0.26862954,
+      0.26130258,
+      0.27577711
+    ],
+    "do_convert_rgb": true,
+    "image_processor_type": "CLIPImageProcessor"
+  },
+  "feature": "L2-normalized projected visual CLS embedding",
+  "dimension": 768,
+  "frozen": true,
+  "precision": "float32",
+  "text_modules_used": false,
+  "test_images_used": false,
+  "legacy_buffers_verified": [
+    "legacy fixed position_ids buffer"
+  ],
+  "course_scope": "CLIP vision-only geo-pretrained reference, not house-price task; overall course eligibility pending confirmation",
+  "cache_key": "4dde547b9a31ac46e7ee5ef42f9eee8b22acec8227d7e07cc2530f0707989d39",
+  "alphas": [
+    1,
+    10,
+    100,
+    1000,
+    10000
+  ],
+  "selection": "3-fold training GroupKFold, fold-specific StandardScaler; original unweighted MSE"
+}

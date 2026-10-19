@@ -1,0 +1,6 @@
+{
+  "best_public_mse": 53754.8796,
+  "target_mse": 50000,
+  "target_achieved": false,
+  "next_protocol": "15_fixed_ensembles\\siglip2_giant_oof_fusion\\20261014T041744Z_57c7cc09"
+}

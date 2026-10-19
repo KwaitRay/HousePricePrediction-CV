@@ -1,0 +1,18 @@
+{
+  "extends": "../selected/batch.json",
+  "experiment": {
+    "id": "tune_05_dropout_0",
+    "name": "训练调优阶段—实验五：随机失活概率",
+    "stage": "02_training",
+    "question": "原全连接头位置不变，只改两处概率",
+    "comparison": "继承配置 ../selected/batch.json 对应的已保留方案",
+    "changed_fields": [
+      "model.dropout"
+    ],
+    "enforce_changes": true,
+    "status": "ready"
+  },
+  "model": {
+    "dropout": 0.0
+  }
+}

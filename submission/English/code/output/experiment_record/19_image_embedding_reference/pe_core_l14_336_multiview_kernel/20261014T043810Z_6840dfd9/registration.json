@@ -1,0 +1,30 @@
+{
+  "method": "mean-centered RBF kernel ridge",
+  "cache_family": "pe_core_multiview",
+  "feature_cache_key": "d5cbb115b2d7c440dafb307239fc30d3207df90486d9baf790b1f7a7dd7974db",
+  "manifest_sha256": "888822d7bf92e8dd9a2ed50eebc18e615d8c47e2e430fd22b91c6df764b11b69",
+  "feature_dim": 3072,
+  "source_sha256": "941472d990de81861e8a787e2075dcde050d52d24bacf797271b61e2bc6392da",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "reference": "19_image_embedding_reference\\pe_core_l14_336_multiview\\20261014T042322Z_2219feab",
+  "reference_registration_sha256": "379cdd65cffc1b3db69adc1beafaeda4ce49eaf9d38c492f5ba10183ae8f3351",
+  "gammas": [
+    1.0,
+    4.0,
+    16.0
+  ],
+  "alphas": [
+    0.01,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "train_only_group_cv": 3,
+  "selection": "Original unweighted clipped training OOF MSE, three-fold GroupKFold; validation only after selection",
+  "dtype": "float64",
+  "centering": "Only fitting-fold target mean; validation labels used after selection",
+  "mllm_components": false,
+  "test_images_used": false,
+  "test_labels_used": false,
+  "course_scope": "Generic pretrained visual tower and provided images only; no additional SoCal data"
+}

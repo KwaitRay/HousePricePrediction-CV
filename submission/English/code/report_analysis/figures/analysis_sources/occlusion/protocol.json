@@ -1,0 +1,36 @@
+{
+  "cases": [
+    {
+      "imageid": "4920.jpg",
+      "selection": "Largest improvement",
+      "price": 874.5
+    },
+    {
+      "imageid": "5712.jpg",
+      "selection": "Largest worsening",
+      "price": 1250.0
+    }
+  ],
+  "selection_source": "Previously fixed field-of-view comparison; largest absolute-error improvement and worsening among landscape validation images",
+  "grid": [
+    4,
+    4
+  ],
+  "coordinates": "EXIF-corrected original RGB image; mask before all model preprocessing",
+  "replacements": {
+    "gray": "RGB (128,128,128)",
+    "blur": "Original RGB image GaussianBlur(radius=8); paste only selected region"
+  },
+  "models": [
+    "19_image_embedding_reference/pe_core_g14_448_kernel/20261014T073812Z_e0339201",
+    "19_image_embedding_reference/pe_core_g14_448_whole_kernel/20261014T090655Z_2d55c743",
+    "19_image_embedding_reference/pe_giant_whole_pca_bandwidth_kernel/20261015T033416Z_4b848f75"
+  ],
+  "final_fusion_explained": false,
+  "metric": "clipped unmasked price minus clipped perturbed price; thousand USD",
+  "perturbations_per_image": 32,
+  "new_training": false,
+  "parameter_selection": false,
+  "authorization": "User explicitly allowed brief GPU inference; prior training pause remains in effect",
+  "maximum_inference_seconds_after_load": 240
+}

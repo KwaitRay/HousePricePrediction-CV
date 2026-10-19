@@ -1,0 +1,14 @@
+{
+  "preprocess.filter": {
+    "before": "none",
+    "after": "frequency"
+  },
+  "preprocess.geometry": {
+    "before": "letterbox",
+    "after": "stretch"
+  },
+  "run_kind": {
+    "before": null,
+    "after": "development"
+  }
+}

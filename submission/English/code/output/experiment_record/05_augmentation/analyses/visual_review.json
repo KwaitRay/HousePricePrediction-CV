@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "scope": "4 fixed training images per operation; two forced-trigger views inspected visually",
+  "observations": {
+    "flip": "House structure retained; text direction can reverse",
+    "rotation": "Small corner fill; house remains in inspected views",
+    "translation": "Small border fill and edge clipping within registered amplitude",
+    "crop": "Mild edge loss; house retained in inspected views"
+  },
+  "limitation": "Visual sample inspection does not establish label invariance on every image"
+}

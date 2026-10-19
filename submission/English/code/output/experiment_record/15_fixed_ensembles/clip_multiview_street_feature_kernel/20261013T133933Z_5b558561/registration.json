@@ -1,0 +1,26 @@
+{
+  "method": "mean-centered RBF kernel ridge",
+  "gammas": [
+    1.0,
+    4.0,
+    16.0
+  ],
+  "alphas": [
+    0.01,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "train_only_group_cv": 3,
+  "feature_cache_key": "fdaa63466b5273b5e8cbd949ab94ab99b91db01437b0420f1428449022cb5ad8",
+  "manifest_sha256": "1babb2d69a6b7795ac42039f81c0029cc9eaf218f3475f939b7a7a9e86c2e5fa",
+  "source_sha256": "7be528fe9882cf47aa7e3f868892d46809ca40635c57ddd23255aaa4c1c2f633",
+  "original_manifest_sha256": null,
+  "feature_dim": 3072,
+  "cache_family": "fused_features",
+  "course_scope": "CLIP/BLIP fusion exploratory; eligibility unresolved",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "dtype": "float64",
+  "centering": "Only training fold target mean, no validation label use",
+  "selection": "Original-price unweighted clipped MSE over all training OOF images; validation evaluated once after selection"
+}

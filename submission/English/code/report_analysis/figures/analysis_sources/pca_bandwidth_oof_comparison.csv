@@ -1,0 +1,15 @@
+components,whitening_power,training_oof_mse,bandwidth
+0,0.0,53646.45535782965,Fixed gamma=4
+64,0.0,67247.0739248521,Fixed gamma=4
+64,0.5,87526.84270251285,Fixed gamma=4
+256,0.0,77771.4335950089,Fixed gamma=4
+256,0.5,120804.49772767044,Fixed gamma=4
+1024,0.0,83296.62531492465,Fixed gamma=4
+1024,0.5,138829.4990500986,Fixed gamma=4
+0,0.0,53646.45535782965,Training-median calibration
+64,0.0,52671.1672036144,Training-median calibration
+64,0.5,53689.357970483376,Training-median calibration
+256,0.0,52531.27093548736,Training-median calibration
+256,0.5,54743.70240952803,Training-median calibration
+1024,0.0,52606.34275031668,Training-median calibration
+1024,0.5,57741.75155664785,Training-median calibration

@@ -1,0 +1,62 @@
+{
+  "script_sha256": "54ef2d41783874e3fac5693eab78fd1ac1be409c0ff8ec81ea20ebfc4036244f",
+  "cpu_only": true,
+  "early_comparisons": 22,
+  "source_hashes": {
+    "submission/report/figures/analysis_sources/early_experiment_paired_deltas.csv": "4b60a553a54b0e9f4c563448f0506da9727de96575be9de430ff28efcee1616a",
+    "cv-house-price/local_paths.json": "866d31e4a81c3a7f87dfb47fb118730ebd36842323e5bca3dffe90fd9853e0cb",
+    "scripts/experiments/artifacts/split_v1.csv": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+    "cv-house-price/.local/experiment_record/19_image_embedding_reference/pe_core_g14_448_kernel/20261014T073812Z_e0339201/metrics.json": "902448181af8bf8332d17148ba81d2184d79111ed10c32395d32c476b99ae8e0",
+    "cv-house-price/.local/experiment_record/19_image_embedding_reference/pe_core_g14_448_kernel/20261014T073812Z_e0339201/selected_training_oof.csv": "aaf483ff4724125ce278001b5db3f16fbed0e1ec9eda52bf0816dedaca44ba83",
+    "cv-house-price/.local/experiment_record/19_image_embedding_reference/pe_core_g14_448_kernel/20261014T073812Z_e0339201/selected_oof_protocol.json": "1e5e7f526e56d54609c3c0c6949bcbd1a35242e45ca4d142a3d44ef4abc1a2ae",
+    "cv-house-price/.local/experiment_record/19_image_embedding_reference/pe_core_g14_448_whole_kernel/20261014T090655Z_2d55c743/metrics.json": "c56fe38d6e0d308c811d67b952d0d7eff7c3fa28df9d8a762f281e3fe2c85713",
+    "cv-house-price/.local/experiment_record/19_image_embedding_reference/pe_core_g14_448_whole_kernel/20261014T090655Z_2d55c743/selected_training_oof.csv": "ccf769e90eb192107d888652718636b41aca8efee8c21145c14e3573981fa04f",
+    "cv-house-price/.local/experiment_record/19_image_embedding_reference/pe_core_g14_448_whole_kernel/20261014T090655Z_2d55c743/selected_oof_protocol.json": "1e5e7f526e56d54609c3c0c6949bcbd1a35242e45ca4d142a3d44ef4abc1a2ae",
+    "cv-house-price/.local/experiment_record/19_image_embedding_reference/pe_giant_whole_pca_bandwidth_kernel/20261015T033416Z_4b848f75/metrics.json": "ca834148b14227c261dba599c30b6aba69d6aa4dcd2447c6183cfbf10c328c87",
+    "cv-house-price/.local/experiment_record/19_image_embedding_reference/pe_giant_whole_pca_bandwidth_kernel/20261015T033416Z_4b848f75/selected_training_oof.csv": "847444c6198fd7a2dde4317b18993ca5b9631ad8137ffcd33d3b1bcf5ef81f90",
+    "cv-house-price/output/experiment_record/19_image_embedding_reference/pe_giant_whole_pca_bandwidth_kernel/20261015T033416Z_4b848f75/results.json": "c16373d5508533e2cc47ca2f9ab713d337388d64d44911d6929e30c5c32751a3",
+    "cv-house-price/output/experiment_record/19_image_embedding_reference/pe_giant_whole_pca_kernel/20261015T033047Z_6b2e78e0/training_cv.csv": "eed9459e258cbade6c199544fc77cfb6c9b61e050bbdece2040e077aeac25386"
+  },
+  "outputs": {
+    "early_experiment_results_table.png": {
+      "bytes": 867528,
+      "sha256": "6bbf1c1f08e36c9a18fe2e434124832bedc66b7a9cd6a013c6ddc09b499ac2fe"
+    },
+    "early_experiment_results_table.svg": {
+      "bytes": 101801,
+      "sha256": "2ce518295dfef35b255cb8b224e0f8543aa0d6dfb8abb1784987e38d676dc2bf"
+    },
+    "training_tuning_results_table.png": {
+      "bytes": 464827,
+      "sha256": "705fc4d1969d043d8256b2ce36e9fbafe4a4598476edc9167642b4ea33c41ef1"
+    },
+    "training_tuning_results_table.svg": {
+      "bytes": 48356,
+      "sha256": "a3f261d5277b42e08f97d1a515d6b7e50bf8942692a3a6277381fdb7ee605562"
+    },
+    "augmentation_results_table.png": {
+      "bytes": 362022,
+      "sha256": "bb548b5bb685848b2cb1ddb02fb2823cc1c95552a2982eed777f3410613c7779"
+    },
+    "augmentation_results_table.svg": {
+      "bytes": 37743,
+      "sha256": "d6c2dac207ef65899f9ae4964c42e972b8d67191b81f5815b425dd6deff4a488"
+    },
+    "architecture_head_results_table.png": {
+      "bytes": 346174,
+      "sha256": "cf5d0e02ebb6ada8aabaafb13711aeb7aa7a43ba5dc4a484bd6825eabbeb2dbc"
+    },
+    "architecture_head_results_table.svg": {
+      "bytes": 34228,
+      "sha256": "12d6ac12105c32b5f15da2a5a953770594857bfa40bd5cb5a6af1335bb7aed6a"
+    },
+    "pe_g_view_pca_results_table.png": {
+      "bytes": 241898,
+      "sha256": "aea43edefab3d17f5b2e109b86992713461b9df757a7a20f0e8534796147418f"
+    },
+    "pe_g_view_pca_results_table.svg": {
+      "bytes": 17244,
+      "sha256": "9e86cdb2f9d74d81db27ad4d9b111411a88f513ad52d3c267241446d807ef1ec"
+    }
+  }
+}

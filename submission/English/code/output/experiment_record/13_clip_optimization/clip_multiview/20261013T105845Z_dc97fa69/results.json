@@ -1,0 +1,35 @@
+[
+  {
+    "head": "original_whole",
+    "alpha": 1000,
+    "training_cv_mse": 96856.76568062817,
+    "mse": 90848.42579009748,
+    "mae": 222.0397386864884,
+    "tail_mse": 444230.23216456204,
+    "n": 1601,
+    "tail_n": 159,
+    "tail_threshold": 1300.0
+  },
+  {
+    "head": "original_center",
+    "alpha": 10000,
+    "training_cv_mse": 97724.52179358875,
+    "mse": 91175.91550772057,
+    "mae": 222.75141566461843,
+    "tail_mse": 460188.2118525534,
+    "n": 1601,
+    "tail_n": 159,
+    "tail_threshold": 1300.0
+  },
+  {
+    "head": "original_whole_center",
+    "alpha": 10000,
+    "training_cv_mse": 95221.46135134874,
+    "mse": 89103.18980598549,
+    "mae": 220.0654834472949,
+    "tail_mse": 449454.06619968615,
+    "n": 1601,
+    "tail_n": 159,
+    "tail_threshold": 1300.0
+  }
+]

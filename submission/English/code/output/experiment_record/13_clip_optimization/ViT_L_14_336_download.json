@@ -1,0 +1,10 @@
+{
+  "model": "ViT-L-14-336",
+  "url": "https://openaipublic.azureedge.net/clip/models/3035c92b350959924f9f00213499208652fc7ea050643e8b385c2dac08641f02/ViT-L-14-336px.pt",
+  "expected_sha256": "3035c92b350959924f9f00213499208652fc7ea050643e8b385c2dac08641f02",
+  "scope": "Frozen visual encoder reference; official 336px checkpoint plus input preprocessing, not a pure resolution-only ablation",
+  "test_images_used": false,
+  "status": "completed",
+  "bytes": 934088680,
+  "verified_sha256": "3035c92b350959924f9f00213499208652fc7ea050643e8b385c2dac08641f02"
+}

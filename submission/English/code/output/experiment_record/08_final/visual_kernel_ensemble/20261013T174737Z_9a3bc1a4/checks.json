@@ -1,0 +1,22 @@
+{
+  "n": 3000,
+  "finite_nonnegative": true,
+  "test_order_matches": true,
+  "csv_sha256": "53c65fe1ad9c850c6b942edada165dc4db5aae6aabca8f04b71bd678309bd9d5",
+  "min_price": 155.45623507185633,
+  "max_price": 1787.2737340292865,
+  "reference_replay_passed": true,
+  "test_images_used": true,
+  "test_images_role": "Inference only",
+  "test_labels_used": false,
+  "mllm_components": false,
+  "labeled_feature_spotchecks": {
+    "siglip_features:27e6c6c8fb0cf6f77c313901ecfd59f7e7a14df068aaf7098f35ec28407cee12": true,
+    "siglip_multiview:e9dcadf64123f3f7e8dd28bc2e2601304e55880d085e1f55d588b399bfd778d9": true,
+    "clip_multiview:3a3a422bd5dd2d747387ae6ffc12a8a44fe6572500a8a66b0d189127c5934355": true,
+    "clip_features:b10faf89cab6045f9c2f9cf7ce2e6cfe79e4fedc187f1e2ffd76065aca3bd1f9": true
+  },
+  "test_manifest_sha256": "095bc80745738631bc04ab777331c42b5715e43bd0704f8e6a4488e0e4badfb1",
+  "kaggle_uploaded": false,
+  "price_unit": "thousand USD"
+}

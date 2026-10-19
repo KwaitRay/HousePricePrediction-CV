@@ -1,0 +1,22 @@
+{
+  "head": "price_attention_residual",
+  "epochs": 15,
+  "residual_scale": 0.25,
+  "training_oof_mse": 64948.02372937623,
+  "mse": 61810.29973172895,
+  "mae": 180.12513713573725,
+  "tail_mse": 278645.6712097818,
+  "n": 1601,
+  "tail_n": 159,
+  "tail_threshold": 1300.0,
+  "full_training_metrics": {
+    "mse": 31077.456547908838,
+    "mae": 128.81050858709557,
+    "tail_mse": 132008.1561908219,
+    "n": 6399,
+    "tail_n": 636,
+    "tail_threshold": 1300.0
+  },
+  "full_training_role": "In-fit diagnosis only, never used for model selection",
+  "seconds": 31557.37280729995
+}

@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "strict_checkpoint_loading": true,
+  "feature_shape": [
+    3,
+    1024
+  ],
+  "repeat_max_abs_error": 0.0,
+  "peak_allocated_gib": 0.6119747161865234,
+  "peak_reserved_gib": 0.6328125,
+  "seconds": 15.330262599978596,
+  "preprocess": {
+    "_processor_class": null,
+    "crop_size": {
+      "height": 224,
+      "width": 224
+    },
+    "data_format": "channels_first",
+    "default_to_square": false,
+    "device": null,
+    "disable_grouping": null,
+    "do_center_crop": true,
+    "do_convert_rgb": true,
+    "do_normalize": true,
+    "do_rescale": true,
+    "do_resize": true,
+    "image_mean": [
+      0.48145466,
+      0.4578275,
+      0.40821073
+    ],
+    "image_processor_type": "CLIPImageProcessorFast",
+    "image_std": [
+      0.26862954,
+      0.26130258,
+      0.27577711
+    ],
+    "input_data_format": null,
+    "resample": 3,
+    "rescale_factor": 0.00392156862745098,
+    "return_tensors": null,
+    "size": {
+      "shortest_edge": 224
+    },
+    "pad_size": null,
+    "do_pad": null
+  },
+  "price_model_evaluated": false,
+  "test_images_used": false
+}

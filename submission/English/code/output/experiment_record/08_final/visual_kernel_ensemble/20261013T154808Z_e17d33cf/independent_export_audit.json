@@ -1,0 +1,13 @@
+{
+  "csv_sha256": "8812f9b88604ac82e321ad92a68cfbc6a2aa3db9aff4c97fb7517d3b8120e684",
+  "schema_imageids_and_values_verified": true,
+  "n": 3000,
+  "price_unit": "thousand USD",
+  "reference_validation_mse": 61652.210649188564,
+  "runtime_source_snapshot_sha256": "fd2afedc8cbc959041e7acf0bdce55a88171c6cc25f58429341dab6d8872bb49",
+  "runtime_source_snapshot_matches_registration": true,
+  "all_labeled_feature_spotchecks_passed": true,
+  "test_labels_used": false,
+  "mllm_components": false,
+  "kaggle_uploaded": false
+}

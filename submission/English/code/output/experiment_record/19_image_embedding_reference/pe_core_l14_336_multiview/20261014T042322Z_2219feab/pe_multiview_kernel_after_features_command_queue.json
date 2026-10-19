@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "controller_pid": 7756,
+  "reference_pid": 26288,
+  "command": [
+    "scripts/experiments/pe_multiview_kernel.py",
+    "--reference",
+    "D:\\\u5b66\u4e60\\\u7814\u7a76\u751f\\graduate 26s2\\COMP 90086 CV\\Final_Assignment\\cv-house-price\\.local\\experiment_record\\19_image_embedding_reference\\pe_core_l14_336_multiview\\20261014T042322Z_2219feab",
+    "--source-sha256",
+    "941472d990de81861e8a787e2075dcde050d52d24bacf797271b61e2bc6392da"
+  ],
+  "exit_code": 0
+}

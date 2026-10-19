@@ -1,0 +1,15 @@
+{
+  "source_sha256": "9326451764dd6be030452cb438d4d9033a6a1b4eb9a236b721339a910b0a3939",
+  "statistics_helper_sha256": "5e7305e73610eea7fb9ec8e149720e9ebc3a25a8d28705a9144dea6633085039",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "annotation_index_sha256": "864415fc2bf5f3b6f093dfa3702ae31945d3dcc7b6f8d517dbb1b4646e459d36",
+  "geometry_sha256": "911e63d03722d7c18aedf30721b9c5710befef282fda07a40ec651218348e4e5",
+  "prediction_sha256": {
+    "original": "22d867dff20872be72d1b84526371505515c1787d922356f5a6a20a6ad31360e",
+    "whole": "7f163ffaf121302f778a92be665a3f90a56138cbd64a8682c68c7595f4859ca0"
+  },
+  "scope": "6399 training meta-crossfit rows; paired same fold baseline verified; no refitting or test access",
+  "caveat": "Base selection bias remains; geometry ideal crop proxy; incomplete low/middle annotations; descriptive slices, no causal claims",
+  "test_images_used": false,
+  "validation_images_used": false
+}

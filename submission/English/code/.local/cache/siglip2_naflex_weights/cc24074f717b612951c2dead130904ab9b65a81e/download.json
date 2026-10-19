@@ -1,0 +1,30 @@
+{
+  "repo": "google/siglip2-so400m-patch16-naflex",
+  "revision": "cc24074f717b612951c2dead130904ab9b65a81e",
+  "weight_file": "model.safetensors",
+  "files": {
+    "config.json": {
+      "sha256": "c633ddede50ec15d5818e04325bc4a5ac47c2762194a02486baee7d2a3a3dbc5",
+      "bytes": 590,
+      "publisher_lfs_verified": false
+    },
+    "preprocessor_config.json": {
+      "sha256": "1125703e5446d5b6ff4d5893a33bac128cdd21dc12e3dad2469a648fb0ae3bf7",
+      "bytes": 393,
+      "publisher_lfs_verified": false
+    },
+    "model.safetensors": {
+      "sha256": "11a61a2068800d5f4f35cb041c1fea25de86ce87725e4c97a9ed046d0b22c076",
+      "bytes": 4542792928,
+      "publisher_lfs_verified": true
+    },
+    "README.md": {
+      "sha256": "1104c24a1af2a8a496146c67581523661277883c8d02f022e216302d61bda49b",
+      "bytes": 3389,
+      "publisher_lfs_verified": false
+    }
+  },
+  "scope": "Download only; downstream uses vision tensors, no text modules",
+  "model_card": "https://huggingface.co/google/siglip2-so400m-patch16-naflex",
+  "license": "apache-2.0"
+}

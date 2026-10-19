@@ -1,0 +1,11 @@
+{
+  "head": "train_oof_affine_calibration",
+  "mse": 70953.46903827363,
+  "mae": 191.59886796940296,
+  "tail_mse": 335506.2866299922,
+  "n": 1601,
+  "tail_n": 159,
+  "tail_threshold": 1300.0,
+  "slope": 1.0313732454505844,
+  "intercept_thousand_usd": -22.94666249693501
+}

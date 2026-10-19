@@ -1,0 +1,18 @@
+{
+  "extends": "../base.json",
+  "experiment": {
+    "id": "preprocess_03_resolution",
+    "name": "预处理备选阶段—实验三：提高输入分辨率",
+    "stage": "00_preparation",
+    "question": "输入诊断提供依据后，固定 AlexNet 训练设置比较该输入因素",
+    "comparison": "继承配置 ../base.json 对应的已保留方案",
+    "changed_fields": [
+      "preprocess.size"
+    ],
+    "enforce_changes": true,
+    "status": "ready"
+  },
+  "preprocess": {
+    "size": 320
+  }
+}

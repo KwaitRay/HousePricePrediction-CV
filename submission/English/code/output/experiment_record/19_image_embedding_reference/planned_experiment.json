@@ -1,0 +1,21 @@
+{
+  "status": "completed",
+  "model": "google/siglip2-so400m-patch14-384",
+  "revision": "e8e487298228002f3d8a82e0cd5c8ea9c567f57f",
+  "features": "1152-dimensional normalized vision pooler only; no text/MLLM modules",
+  "precision": "float16 forward and float32 cached units",
+  "batch_size": 4,
+  "split": "Frozen 6399 train/1601 validation, group-disjoint",
+  "heads": [
+    "train-only GroupKFold3 Ridge alpha 1/10/100/1000/10000",
+    "same 12-candidate train-only kernel protocol"
+  ],
+  "test_images_used": false,
+  "course_scope": "General-purpose visual feature reference, WebLI-trained, not a house-price task model",
+  "gpu_predecessor_controller_pid": 21512,
+  "source_sha256_policy": "Runtime records exact checkpoint, source and split hashes",
+  "completed_references": [
+    "19_image_embedding_reference/siglip2_so400m/20261013T151014Z_2c237eda",
+    "19_image_embedding_reference/siglip2_so400m_kernel/20261013T152001Z_34db8dd3"
+  ]
+}

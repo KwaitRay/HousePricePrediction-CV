@@ -1,0 +1,24 @@
+{
+  "extends": "../selected/training.json",
+  "experiment": {
+    "id": "augment_02_brightness",
+    "name": "增强阶段—实验二：亮度变化",
+    "stage": "03_augmentation",
+    "question": "相对同一调优后无增强 AlexNet，仅开启本项操作",
+    "comparison": "继承配置 ../selected/training.json 对应的已保留方案",
+    "changed_fields": [
+      "augmentation"
+    ],
+    "enforce_changes": true,
+    "status": "ready"
+  },
+  "augmentation": {
+    "brightness": {
+      "probability": 1.0,
+      "range": [
+        0.9,
+        1.1
+      ]
+    }
+  }
+}

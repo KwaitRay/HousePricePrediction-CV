@@ -1,0 +1,18 @@
+{
+  "extends": "tune_06_no_penalty.json",
+  "experiment": {
+    "id": "tune_06_decay_0p001",
+    "name": "训练调优阶段—实验六：权重正则化",
+    "stage": "02_training",
+    "question": "仅当已选优化器为 AdamW 才执行解耦衰减候选",
+    "comparison": "继承配置 tune_06_no_penalty.json 对应的已保留方案",
+    "changed_fields": [
+      "training.weight_decay"
+    ],
+    "enforce_changes": true,
+    "status": "ready"
+  },
+  "training": {
+    "weight_decay": 0.001
+  }
+}

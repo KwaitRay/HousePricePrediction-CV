@@ -1,0 +1,191 @@
+{
+  "train_thresholds": {
+    "brightness": [
+      0.39868499157475495,
+      0.6196312997855392
+    ],
+    "sharpness": [
+      0.01890496469509918,
+      0.05227187715992704
+    ]
+  },
+  "slices": [
+    {
+      "feature": "brightness",
+      "price_band": [
+        0,
+        300
+      ],
+      "group": "low",
+      "n": 13,
+      "central_n": 140,
+      "mse_ratio": 1.7114972180324426
+    },
+    {
+      "feature": "brightness",
+      "price_band": [
+        0,
+        300
+      ],
+      "group": "high",
+      "n": 16,
+      "central_n": 140,
+      "mse_ratio": 0.7381200919491393
+    },
+    {
+      "feature": "brightness",
+      "price_band": [
+        300,
+        700
+      ],
+      "group": "low",
+      "n": 55,
+      "central_n": 645,
+      "mse_ratio": 0.8839754487751182
+    },
+    {
+      "feature": "brightness",
+      "price_band": [
+        300,
+        700
+      ],
+      "group": "high",
+      "n": 75,
+      "central_n": 645,
+      "mse_ratio": 0.8874372058343856
+    },
+    {
+      "feature": "brightness",
+      "price_band": [
+        700,
+        1300
+      ],
+      "group": "low",
+      "n": 51,
+      "central_n": 400,
+      "mse_ratio": 1.173543516382247
+    },
+    {
+      "feature": "brightness",
+      "price_band": [
+        700,
+        1300
+      ],
+      "group": "high",
+      "n": 47,
+      "central_n": 400,
+      "mse_ratio": 1.0872902604568484
+    },
+    {
+      "feature": "brightness",
+      "price_band": [
+        1300,
+        null
+      ],
+      "group": "low",
+      "n": 27,
+      "central_n": 125,
+      "mse_ratio": 0.9112902979660042
+    },
+    {
+      "feature": "brightness",
+      "price_band": [
+        1300,
+        null
+      ],
+      "group": "high",
+      "n": 7,
+      "central_n": 125,
+      "mse_ratio": 1.3161082802889223
+    },
+    {
+      "feature": "sharpness",
+      "price_band": [
+        0,
+        300
+      ],
+      "group": "low",
+      "n": 31,
+      "central_n": 120,
+      "mse_ratio": 0.7988325328880977
+    },
+    {
+      "feature": "sharpness",
+      "price_band": [
+        0,
+        300
+      ],
+      "group": "high",
+      "n": 18,
+      "central_n": 120,
+      "mse_ratio": 1.6815277174745988
+    },
+    {
+      "feature": "sharpness",
+      "price_band": [
+        300,
+        700
+      ],
+      "group": "low",
+      "n": 81,
+      "central_n": 626,
+      "mse_ratio": 1.051417322518575
+    },
+    {
+      "feature": "sharpness",
+      "price_band": [
+        300,
+        700
+      ],
+      "group": "high",
+      "n": 68,
+      "central_n": 626,
+      "mse_ratio": 1.91877186175184
+    },
+    {
+      "feature": "sharpness",
+      "price_band": [
+        700,
+        1300
+      ],
+      "group": "low",
+      "n": 36,
+      "central_n": 411,
+      "mse_ratio": 1.0712418711920895
+    },
+    {
+      "feature": "sharpness",
+      "price_band": [
+        700,
+        1300
+      ],
+      "group": "high",
+      "n": 51,
+      "central_n": 411,
+      "mse_ratio": 0.9209445967159356
+    },
+    {
+      "feature": "sharpness",
+      "price_band": [
+        1300,
+        null
+      ],
+      "group": "low",
+      "n": 13,
+      "central_n": 121,
+      "mse_ratio": 1.0309971466068029
+    },
+    {
+      "feature": "sharpness",
+      "price_band": [
+        1300,
+        null
+      ],
+      "group": "high",
+      "n": 25,
+      "central_n": 121,
+      "mse_ratio": 0.6406087447090778
+    }
+  ],
+  "brightness_gate": false
+}

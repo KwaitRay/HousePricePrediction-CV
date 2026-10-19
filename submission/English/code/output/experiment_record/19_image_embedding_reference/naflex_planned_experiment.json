@@ -1,0 +1,95 @@
+{
+  "status": "preregistered_waiting_for_dinov2",
+  "model": "google/siglip2-so400m-patch16-naflex",
+  "revision": "cc24074f717b612951c2dead130904ab9b65a81e",
+  "max_num_patches": 576,
+  "preprocess": {
+    "_processor_class": "Siglip2Processor",
+    "do_convert_rgb": null,
+    "do_normalize": true,
+    "do_rescale": true,
+    "do_resize": true,
+    "image_mean": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "image_processor_type": "Siglip2ImageProcessorFast",
+    "image_std": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "max_num_patches": 576,
+    "patch_size": 16,
+    "resample": 2,
+    "rescale_factor": 0.00392156862745098,
+    "size": null,
+    "crop_size": null,
+    "pad_size": null,
+    "default_to_square": true,
+    "do_center_crop": null,
+    "do_pad": null,
+    "return_tensors": null,
+    "data_format": "channels_first",
+    "input_data_format": null,
+    "device": null,
+    "disable_grouping": null
+  },
+  "processor_batch_vs_single_exact": true,
+  "padding_mask_spatial_shape_consistency_passed": true,
+  "preflight_imageids": [
+    "1.jpg",
+    "2.jpg",
+    "3.jpg",
+    "4.jpg"
+  ],
+  "spatial_shapes": [
+    [
+      20,
+      28
+    ],
+    [
+      20,
+      28
+    ],
+    [
+      20,
+      28
+    ],
+    [
+      21,
+      27
+    ]
+  ],
+  "max_shape": [
+    4,
+    576,
+    768
+  ],
+  "params": 427888064,
+  "checkpoint_preflight_completed": true,
+  "batch_size": 4,
+  "feature_dim": 1152,
+  "precision": "float16 vision forward, float32 normalized feature storage",
+  "gammas": [
+    1,
+    4,
+    16
+  ],
+  "alphas": [
+    0.01,
+    0.1,
+    1,
+    10
+  ],
+  "selection": "Training-only grouped CV, unweighted price MSE",
+  "test_images_used": false,
+  "mllm_components": false,
+  "source_sha256": "7f63e9ce11632fdf2fcb9d452fb38a385e5e27ef98c5850298a4203d3bccd39d",
+  "encoder_source_sha256": "4706f3f5b486008bea33573834a849cb81bb72b8ec67b74277fc1dea7fff8bf1",
+  "publisher_checksum_verified": true,
+  "checkpoint_sha256": "11a61a2068800d5f4f35cb041c1fea25de86ce87725e4c97a9ed046d0b22c076",
+  "vision_tensor_shapes_match": true,
+  "vision_tensors": 448
+}

@@ -1,0 +1,47 @@
+{
+  "components": [
+    {
+      "model": "19_image_embedding_reference/siglip2_so400m_kernel/20261013T152001Z_34db8dd3",
+      "head_sha256": "72957882da73e9eac2d110a8fe5740abe58fe88c733c1005844ecabfb8143691",
+      "oof_sha256": "5f4528f459aacedd206ce0640b7543874f9d08e62c8c143b87d40657890d029f",
+      "prediction_sha256": "4bcf36717991dd2dd0918ec50bf0f338be8717aa466046e499932dff4c6304a6"
+    },
+    {
+      "model": "19_image_embedding_reference/siglip2_price_metric_kernel/20261013T155603Z_4129a7fd",
+      "head_sha256": "d23ed2cd81980608ec2bec6c63214140b31edbe9383afd4ee419cc0c866f3752",
+      "oof_sha256": "2673d43c82808917f65492683f1e25861cee14ca08cfc30cfe94ef83d1343c9e",
+      "prediction_sha256": "407b5439aa7549cf976fe52728f1447066ba38298614580216e096dfe28b6e24"
+    },
+    {
+      "model": "13_clip_optimization/clip_l14_multiview_kernel/20261013T120554Z_e2a41622",
+      "head_sha256": "8c73917dcfbaf805b3d24e72c27bb821fc12ee61307ac5212849c2a7c2596269",
+      "oof_sha256": "66eb9ddd4364a7740ee25c1b6e78e9b4e93a9b8c253b300247aa13bac0d28027",
+      "prediction_sha256": "4eb3f632d58d88bd30af90df7465e90d6a3d96eda2db6f3428ee75e70b663f75"
+    },
+    {
+      "model": "13_clip_optimization/ViT_L_14_336_multiview_kernel/20261013T155600Z_8367fcf1",
+      "head_sha256": "2d9107c99182f7ba49b7aed8edb1f2ff930d9bd4fba32969f777103a5003ebff",
+      "oof_sha256": "cafbe7f0445925ac3624efd80fec6f68c8758fd3a1163f472bd5730d9bfcc85f",
+      "prediction_sha256": "673615c783cd35505c4d0bbefa95f41799112e8a43f12adedcc588e768cef87e"
+    },
+    {
+      "model": "13_clip_optimization/ViT_L_14_336_kernel/20261013T144616Z_8b3d237e",
+      "head_sha256": "c47498e06ee693a119449ad7d82ed13fcf9675156af53e56ff14179d87f47bca",
+      "oof_sha256": "5e2e3278439eebee64eff71a2d798e2c17022909d33ad34b0be6ab8808870261",
+      "prediction_sha256": "2ff54cabcebb7f7a7fb03efb3b6b4274b6e2fba9850f0b01df9314b0ff176852"
+    }
+  ],
+  "params": {
+    "alpha": 1.0,
+    "fit_intercept": true,
+    "solver": "cholesky"
+  },
+  "method": "ridge",
+  "fit_scope": "6399 training base OOF predictions and training labels only; no validation meta fitting",
+  "features": "Only numeric image-model price predictions; no filename, price-tier label, scene labels or metadata input",
+  "source_sha256": "672319a6e6d80b1504d89ca31888c8f611b994930c69806213820be9709ff31a",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "test_images_used": false,
+  "course_scope": "Exploratory CLIP/BLIP visual components, eligibility unresolved",
+  "caveat": "Meta training-fit error is not independent OOF performance; development and base hyperparameter selection bias remains"
+}

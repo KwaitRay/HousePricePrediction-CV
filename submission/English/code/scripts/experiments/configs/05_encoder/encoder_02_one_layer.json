@@ -1,0 +1,20 @@
+{
+  "extends": "../selected/head.json",
+  "experiment": {
+    "id": "encoder_02_one_layer",
+    "name": "卷积特征处理阶段—实验二：加入单层 Transformer 编码器",
+    "stage": "05_encoder",
+    "question": "保留汇总及读出方式，比较有无编码器",
+    "comparison": "继承配置 ../selected/head.json 对应的已保留方案",
+    "changed_fields": [
+      "model.head",
+      "model.encoder_layers"
+    ],
+    "enforce_changes": true,
+    "status": "ready"
+  },
+  "model": {
+    "head": "encoder",
+    "encoder_layers": 1
+  }
+}

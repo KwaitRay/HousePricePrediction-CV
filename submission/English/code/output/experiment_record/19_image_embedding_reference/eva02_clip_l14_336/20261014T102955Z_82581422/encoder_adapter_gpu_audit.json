@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "all_8000_training_pixel_hashes_verified": true,
+  "all_8000_cache_chunks_verified": true,
+  "gpu_feature_probe_n": 12,
+  "max_abs_feature_replay_error": 5.452840901032374e-09,
+  "encoder_adapter_source_sha256": "74d5fb3fef6123d398d902336212160046904c4d09e9c31ae867bccb69ba3b23",
+  "feature_manifest_sha256": "cacf2edc9fc14ac86c945e3b172de8c8ad64c412dfc53b6aa9d95c6ac3f06467",
+  "test_images_used": false
+}

@@ -1,0 +1,35 @@
+{
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "sample_sha256": "29e148f3d9854517440f200bf986d093a7ce0b540c0e891db78911ac8eb380f1",
+  "train_population": {
+    "low": 680,
+    "middle": 3111,
+    "upper": 1972,
+    "tail": 636
+  },
+  "per_band_sample": 100,
+  "band_seeds": {
+    "low": 20261005,
+    "middle": 20261006,
+    "upper": 20261007,
+    "tail": 20261008
+  },
+  "presentation_seed": 20261005,
+  "types": {
+    "F": "地面外观",
+    "A": "航拍或高位全景",
+    "D": "局部或环境特写",
+    "I": "室内",
+    "R": "建筑效果图",
+    "U": "无法判断"
+  },
+  "flags": {
+    "P": "泳池",
+    "T": "黄昏夜景",
+    "O": "明显植被遮挡",
+    "W": "木质山林小屋"
+  },
+  "annotation_source": "assistant visual review; not independent human labels",
+  "sample_selection": "training price strata only; no predictions or errors used",
+  "qa_seed": 20261006
+}

@@ -1,0 +1,8 @@
+{
+  "base_commit": "cceac4082c543d55af51673fd87662fa767be14c",
+  "photometric_pr_commit": "664393e2342fe5b838db6649554b31bc64a1c763",
+  "report_source": "Sibling submission/report",
+  "weights_excluded_by_request": true,
+  "provided_images_excluded": true,
+  "test_labels_used": false
+}

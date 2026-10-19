@@ -1,0 +1,20 @@
+{
+  "extends": "input_frozen.json",
+  "experiment": {
+    "id": "tune_02_sgd_0p001",
+    "name": "训练调优阶段—实验二：优化器选择",
+    "stage": "02_training",
+    "question": "与三个 AdamW 学习率候选比较，两个优化器各三个候选",
+    "comparison": "继承配置 ../selected/input.json 对应的已保留方案",
+    "changed_fields": [
+      "training.optimizer",
+      "training.lr"
+    ],
+    "enforce_changes": true,
+    "status": "ready"
+  },
+  "training": {
+    "optimizer": "sgd",
+    "lr": 0.001
+  }
+}

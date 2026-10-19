@@ -1,0 +1,13 @@
+{
+  "files_sha256": {
+    "visual_kernel_inference.py": "d63a15b2a6cf5e9efed26cf55979fe0235c07bbfe117b18123f25f0c6415e2b6",
+    "pe_core_giant_whole_encoder.py": "d2543c58424336a2b1de6b081b3081cf634710db4687943ec739fae6324099a4",
+    "pe_giant_whole_view.py": "7d1ce7868274eb04bb03130200048583ed343212659e266f8f22b2983bbc90fb",
+    "pe_core_giant_encoder.py": "3fa4d736db417bd471454f4b1d72b3d2e4bb698d69d9be5b551a68a73b7537d0",
+    "pe_core_giant_preflight.py": "1fddd9f65df031cb7fef35b6594de2870235faf5173cea3fbecf96b873e11ae3",
+    "audit_visual_submission.py": "fa85d4f37a44c94ac9325f20dd5b55467ae6bb8e8391e05c45f43a9322c80ee6",
+    "infer_mixed_verified_features.py": "e71552b4d0711cd8ec656a45585dcdb546f0c64dab1ab33d6547f8b52c49cbc0"
+  },
+  "verified_before_test_inference": true,
+  "preserve_frozen_dependencies": true
+}

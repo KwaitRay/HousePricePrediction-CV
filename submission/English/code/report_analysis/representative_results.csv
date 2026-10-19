@@ -1,0 +1,10 @@
+method,seeds,validation_mse,mse_seed_sd,validation_mae,source
+AlexNet (no augmentation),3,127774.4193065206,486.2982196441782,264.51653195813424,Adam rows: seed-matched controls
+"AlexNet (Adam, lr=0.001)",3,128284.30529381458,1106.074867294585,264.7998043113107,"Adam, lr=0.001"
+AlexNet + horizontal flip,3,126810.00739756384,1902.2313010924213,268.01806192175366,Horizontal flip
+Flip AlexNet + small-kernel stack,1,127319.94954574882,,262.1867769521967,Small convolutions
+Flip AlexNet + mean-pooling head,3,122334.22493093972,1588.6353240750427,261.47916130455803,Mean-pooling small head
+Mean-pooling head + Transformer,1,124389.27648773573,,259.54829270864536,One Transformer layer
+Frozen CLIP B32 + Ridge,—,91820.72626396027,,223.2655404822822,03_clip_reference/metrics.json
+"Frozen PE-G, two views + PCA/KRR",—,52805.77357815986,,160.67492289616413,Two views + PCA256
+Selected three-encoder fusion,—,52201.21126766699,,159.58053603321397,pe_whole_pca_incremental_fusion/20261015T033810Z_8aa6ec62

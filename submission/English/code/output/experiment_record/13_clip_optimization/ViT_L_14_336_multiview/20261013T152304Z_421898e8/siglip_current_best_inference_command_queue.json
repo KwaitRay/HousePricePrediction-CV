@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "controller_pid": 39152,
+  "reference_pid": 31088,
+  "command": [
+    "scripts/experiments/visual_kernel_submission.py",
+    "--phase",
+    "infer",
+    "--prepared-run",
+    ".local/experiment_record/08_final/visual_kernel_ensemble/20261013T154808Z_e17d33cf"
+  ],
+  "exit_code": 0
+}

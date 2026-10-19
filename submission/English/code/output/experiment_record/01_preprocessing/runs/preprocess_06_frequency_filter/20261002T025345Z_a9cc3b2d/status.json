@@ -1,0 +1,6 @@
+{
+  "status": "interrupted",
+  "kind": "development",
+  "reason": "User requested deterministic frequency input cache and restart; incomplete run preserved.",
+  "utc": "2026-10-02T03:29:05.449757+00:00"
+}

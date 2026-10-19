@@ -1,0 +1,11 @@
+{
+  "status": "failed",
+  "controller_pid": 24768,
+  "reference_pid": 20408,
+  "command": [
+    "scripts/experiments/price_attention_diagnostics.py",
+    "--reference-dir",
+    ".local/experiment_record/19_image_embedding_reference/siglip2_price_attention/20261013T170650Z_7e9ef491"
+  ],
+  "exit_code": 1
+}

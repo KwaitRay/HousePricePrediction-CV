@@ -1,5 +1,9 @@
 # 图像房价预测实验
 
+## 提交材料（feat/submission）
+
+当前中英文报告、完整实验代码及测试预测见 [submission/](submission/README.md)。Canvas 分别上传 [英文报告](submission/English/report.pdf) 和 [代码包](submission/English/code.zip)；[英文所有材料压缩包](submission/English_all_materials.zip) 用于整体交接。训练权重、预训练权重、特征数组及课程原图均未放入提交材料。仓库其他目录的历史大模型归档不属于本次提交包。
+
 ## 当前快照（2026-10-16）
 
 最佳用户反馈Kaggle公榜MSE **47291.34608**，PCA候选034010；开发验证 **52201.21**。CSV与全部3000条独立核验绑定，原50000目标达到，40000目标尚未达到。分数来源是用户反馈，工具未自动提交Kaggle。

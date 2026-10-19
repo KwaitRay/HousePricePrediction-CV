@@ -1,0 +1,11 @@
+{
+  "status": "completed",
+  "controller_pid": 21512,
+  "reference_pid": 20924,
+  "command": [
+    "scripts/experiments/aimv2_resource_preflight.py",
+    "--weights-dir",
+    ".local/cache/aimv2_weights/fcb5093a9c5b3efb7db5acee213849967fd18210"
+  ],
+  "exit_code": 0
+}

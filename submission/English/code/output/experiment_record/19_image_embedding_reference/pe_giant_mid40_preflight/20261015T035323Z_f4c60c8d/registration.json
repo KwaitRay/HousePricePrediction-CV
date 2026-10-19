@@ -1,0 +1,42 @@
+{
+  "source_sha256": "0b0bfda956e0da1a01de716dd77c0508c5a09fff171d050d5613e3d2c9f9b465",
+  "model": "timm/vit_pe_core_gigantic_patch14_448.fb",
+  "revision": "fb096c09d13bd2e3827aed4dbdffb8a6b8e0c10b",
+  "checkpoint_sha256": "a0a499d4a7c6d35bb5f11aa2b076eaacde06e66a08176eb3b3d362d80eb91bd8",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "probe_imageids": [
+    "1.jpg",
+    "2.jpg",
+    "3.jpg",
+    "5124.jpg",
+    "6644.jpg",
+    "209.jpg",
+    "3740.jpg",
+    "6332.jpg",
+    "6803.jpg",
+    "2926.jpg",
+    "643.jpg",
+    "1444.jpg",
+    "2963.jpg",
+    "2850.jpg",
+    "5154.jpg"
+  ],
+  "probe_selection": "First3 training +12 fixed seed2026 randomly selected other training rows, labels never consulted",
+  "feature_dim": 3072,
+  "block_zero_based": 39,
+  "pooling": "Raw patch tokens float32 mean, no final layer norm/attention pool/learned projection, unit per-view then concatenated unit",
+  "views": "Unchanged official crop and gray448 whole-frame, batch1",
+  "precision": "FrozenFP16 base; deterministic MATH SDPA, TF32off, fixed2 neutral warmups, FP32 per-view pooling/unit and FP32 storage-rounding before final FP64 unit",
+  "feature_tolerance": {
+    "rtol": 0.0001,
+    "atol": 3e-06
+  },
+  "price_fitting": false,
+  "test_images_used": false,
+  "eva_implementation_sha256": "a8c9807ef5e8dabc725c1e2a89439760a900d6af6cdafefea18fc121173643a2",
+  "dependency_sha256": {
+    "pe_giant_mid40_encoder.py": "97fb61804a589dc33302228c91460d0fff16507cb8789dd59d8fd06971fbe958",
+    "pe_core_giant_preflight.py": "1fddd9f65df031cb7fef35b6594de2870235faf5173cea3fbecf96b873e11ae3",
+    "pe_giant_whole_view.py": "7d1ce7868274eb04bb03130200048583ed343212659e266f8f22b2983bbc90fb"
+  }
+}

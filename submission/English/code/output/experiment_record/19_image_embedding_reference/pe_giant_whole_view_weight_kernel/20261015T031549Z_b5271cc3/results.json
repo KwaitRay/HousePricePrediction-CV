@@ -1,0 +1,15 @@
+{
+  "whole_weight": 0.5,
+  "training_oof_mse": 53646.455354645965,
+  "mse": 53252.81380005387,
+  "mae": 161.87853865866805,
+  "tail_mse": 258630.5481795572,
+  "n": 1601,
+  "tail_n": 159,
+  "tail_threshold": 1300.0,
+  "seconds": 85.24080000002868,
+  "baseline_single_validation_mse": 53252.81379734146,
+  "export_eligible": false,
+  "full_refit_adapter_supported": false,
+  "test_images_used": false
+}

@@ -1,0 +1,17 @@
+{
+  "status": "failed",
+  "controller_pid": 6740,
+  "reference_pid": 29300,
+  "command": [
+    "scripts/experiments/encoder_oof_fusion.py",
+    "--phase",
+    "run",
+    "--protocol-dir",
+    ".local\\experiment_record\\15_fixed_ensembles\\encoder_family_oof_fusion\\20261014T012302Z_b883fad1",
+    "--gpu-predecessor-status",
+    "output/experiment_record/19_image_embedding_reference/pe_core_l14_336/20261014T024049Z_caec475a/metric_export_after_pe_recovery_command_queue.json",
+    "--gpu-predecessor-pid",
+    "31172"
+  ],
+  "exit_code": 1
+}

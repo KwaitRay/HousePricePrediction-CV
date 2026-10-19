@@ -1,0 +1,23 @@
+{
+  "description": "Compact panels from archived records; no inference, training or new selection.",
+  "validation_n": 1601,
+  "sources": {
+    "cv-house-price\\.local\\experiment_record\\15_fixed_ensembles\\pe_whole_pca_incremental_fusion\\20261015T033810Z_8aa6ec62\\predictions.csv": "a94f5f4b6456261a903bcc68339f0a82cfaf811252ec164f8debda3b0b673b86",
+    "submission\\report\\figures\\analysis_sources\\occlusion\\per_region_predictions.csv": "3c838050e685b90d3a7f35cc86682c351dcc9c2de19ffebee95dfee553f6b375",
+    "submission\\report\\figures\\analysis_sources\\pca_sampled_pair_geometry.csv": "0ef97dee2bdcfca7c73fb499f26f102a2b995e0c8128713b8ecf3b7b3d72b6fd",
+    "submission\\report\\figures\\analysis_sources\\pca_bandwidth_oof_comparison.csv": "d50a23dd9199742351f1395e2c31aa28b45cd84955d4caa3d23938bfc87719a9",
+    "comp-90086-2026\\house_dataset\\train\\4920.jpg": "bbba51966e11246831c766a78817d48966a3b65188df21be88e7949b0f560186",
+    "comp-90086-2026\\house_dataset\\train\\5712.jpg": "fca22fca65516ffeee05ec8bbf266def12b12638d00d0f1bfaaa2d8a38b5ee3f"
+  },
+  "outputs": {
+    "report_prediction_scatter_price_band_errors.png": "9dfd4fd064943eb0efdb0c0b4549839acf6dc23baf96430e9927eb46444071c8",
+    "report_prediction_scatter_price_band_errors.svg": "1f215d65784795d8a25cffc4b17c0c15d9165279a90f021feef3b49aee0768a8",
+    "report_prediction_scatter_price_band_errors.pdf": "d0128dde8a378b2120db31bd3b0d32d09b5c21e02c3d5c9deaaf24e3073b4fb4",
+    "report_pca_distance_bandwidth_oof.png": "c9c3edc739d2879d17a880b07fb0e88125ea4086d78d58c1879b1e7d852b729a",
+    "report_pca_distance_bandwidth_oof.svg": "90c116663aaa02c99db40535f2a6cf290094d2f3aa0fd413e020013bc49009ad",
+    "report_pca_distance_bandwidth_oof.pdf": "046553a9aa742c5a175604f3b3f24ed5147510df671d84e6dbd04d3270ff1dd3",
+    "report_pe_g_occlusion_model_comparison.png": "d0f8c3d76b504fbb4e22c68e00aedbe77bdbb393232bdef63eaa48ea09a68ad4",
+    "report_pe_g_occlusion_model_comparison.svg": "51ffa6e2a08be715878c94726167e5d1de9d03efd98bfb70ed9896757b80f5d3",
+    "report_pe_g_occlusion_model_comparison.pdf": "5942c0cad4ed1321fa0d93110a58fbcf07835abe2fcb8f013b8543f5e1c143c3"
+  }
+}

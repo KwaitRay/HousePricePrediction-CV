@@ -1,0 +1,16 @@
+{
+  "mse_difference_new_minus_baseline": -3019.3117672923154,
+  "group_bootstrap_95_interval": [
+    -4734.957230285989,
+    -1357.184372631837
+  ],
+  "groups": 1600,
+  "resamples": 1000,
+  "seed": 2026,
+  "source_prediction_sha256": {
+    "baseline": "fdd7f2011ac65027be81d68cbc65394b5106e23ad5c98ca903de0db0ca504a8f",
+    "new_fusion": "245f08b74509980bb77c7af6fe76265f261070e7b0e392fb6b4b0587afb8c77d"
+  },
+  "scope": "Fixed selected development predictions; bootstrap does not correct repeated method-selection bias",
+  "test_images_used": false
+}

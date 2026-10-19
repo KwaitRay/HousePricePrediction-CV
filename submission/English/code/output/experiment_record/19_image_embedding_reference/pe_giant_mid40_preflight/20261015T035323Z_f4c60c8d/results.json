@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "fresh_process_replay_n": 15,
+  "fresh_process_max_error": 0.0,
+  "repeat_max_error": 0.0,
+  "full_forward_hook_errors": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "peak_allocated_gib": 3.729116916656494,
+  "price_fitting": false,
+  "full_extraction_completed": false,
+  "test_images_used": false
+}

@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "training_n": 6399,
+  "validation_n": 1601,
+  "baseline_reference": "15_fixed_ensembles/encoder_family_oof_fusion/20261014T012302Z_b883fad1",
+  "source_sha256": "33671e0ce29345651c926f86e89a305815b43f84d30a0a979b36f6132e4ce0cb",
+  "weight_zero_tolerance": 1e-12,
+  "max_training_prediction_delta": 2.2770971907911705e-13,
+  "max_validation_prediction_delta": 2.1788826683004883e-13,
+  "recomputed_previous_meta_cv_mse": 58968.86651367765,
+  "recorded_previous_meta_cv_mse": 58968.86651367764,
+  "preserves_existing_candidate": true,
+  "only_new_future_fits_use_policy": true
+}

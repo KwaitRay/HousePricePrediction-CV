@@ -1,0 +1,76 @@
+{
+  "high_price_count": 636,
+  "annotations_sha256": "0ce005e1dab9aef3943f17a4fd98bb8557deeac76eb9e96f5e9269752e86a831",
+  "manifest_sha256": "888390fbbd919f97cd7666933a1e758906279248de4309f2cfd5e79bf132668e",
+  "protocol": {
+    "alpha": 1000,
+    "folds": 3,
+    "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+    "manifest_sha256": "28217f62d8962c3279e7254643ea110916ad27f670b5ad1d64822bb714e0aa44",
+    "model": "Frozen CLIP ViT-B/32 + fold-specific StandardScaler + Ridge(svd)",
+    "selection_caveat": "Alpha was previously selected using training CV. This is a diagnostic OOF replay, not nested-CV unbiased performance estimation."
+  },
+  "absolute_error_units": "thousand USD",
+  "counts": {
+    "≤100": 15,
+    "100–300": 70,
+    "300–500": 132,
+    "500–1000": 350,
+    ">1000": 69
+  },
+  "overall": {
+    "类别": "全部",
+    "状态": "全部",
+    "数量": 636,
+    "平均真实价格": 1654.09,
+    "MAE": 627.67,
+    "MSE": 476514.57,
+    "平均偏差_预测减真实": -624.88,
+    "误差>500比例": 0.6588,
+    "误差>1000比例": 0.1085
+  },
+  "label_counts": {
+    "visible_pool": {
+      "否": 542,
+      "是": 94
+    },
+    "twilight_night": {
+      "否": 515,
+      "是": 121
+    },
+    "major_vegetation_occlusion": {
+      "否": 590,
+      "未知": 35,
+      "是": 11
+    },
+    "woodland_cabin_appearance": {
+      "否": 611,
+      "是": 22,
+      "未知": 3
+    },
+    "aerial_view": {
+      "否": 521,
+      "是": 115
+    },
+    "partial_subject": {
+      "否": 479,
+      "是": 157
+    },
+    "interior_view": {
+      "否": 636
+    },
+    "rendering": {
+      "否": 631,
+      "是": 5
+    },
+    "large_building": {
+      "未知": 630,
+      "是": 6
+    },
+    "multistorey": {
+      "是": 301,
+      "未知": 216,
+      "否": 119
+    }
+  }
+}

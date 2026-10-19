@@ -1,0 +1,17 @@
+{
+  "status": "completed",
+  "controller_pid": 33736,
+  "reference_pid": 17244,
+  "command": [
+    "scripts/experiments/finetune_clip.py",
+    "--model",
+    "ViT-L-14",
+    "--reference-dir",
+    "13_clip_optimization/ViT_L_14/20261013T113728Z_b33981a4",
+    "--batch-size",
+    "8",
+    "--epochs",
+    "12"
+  ],
+  "exit_code": 0
+}

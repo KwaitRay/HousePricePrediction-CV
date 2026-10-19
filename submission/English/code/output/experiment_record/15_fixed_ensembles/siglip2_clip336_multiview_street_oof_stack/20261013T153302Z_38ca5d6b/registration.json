@@ -1,0 +1,38 @@
+{
+  "models": [
+    "19_image_embedding_reference/siglip2_so400m_kernel/20261013T152001Z_34db8dd3",
+    "13_clip_optimization/clip_l14_multiview_kernel/20261013T120554Z_e2a41622",
+    "13_clip_optimization/ViT_L_14_336_kernel/20261013T144616Z_8b3d237e",
+    "17_geo_visual_reference/streetclip_kernel/20261013T133019Z_a48bab87"
+  ],
+  "weights": [
+    0.8092959399048508,
+    0.04960685967965158,
+    0.14109720041549767,
+    1.6627256754601916e-18
+  ],
+  "weights_learned": true,
+  "weight_fit": {
+    "algorithm": "SLSQP convex MSE minimization",
+    "scope": "Only training-component OOF predictions and training labels",
+    "caveat": "This meta fitting criterion is not an independent OOF estimate; base hyperparameters already selected using training folds"
+  },
+  "rule": "Convex average of constituent nonnegative predictions; no validation weight fitting",
+  "model_sha256": [
+    "72957882da73e9eac2d110a8fe5740abe58fe88c733c1005844ecabfb8143691",
+    "8c73917dcfbaf805b3d24e72c27bb821fc12ee61307ac5212849c2a7c2596269",
+    "c47498e06ee693a119449ad7d82ed13fcf9675156af53e56ff14179d87f47bca",
+    "faa5d82dc825f5599d0cd598c2c1bc289576e1ced1c32932e838ffc59ee7ed44"
+  ],
+  "prediction_sha256": [
+    "4bcf36717991dd2dd0918ec50bf0f338be8717aa466046e499932dff4c6304a6",
+    "4eb3f632d58d88bd30af90df7465e90d6a3d96eda2db6f3428ee75e70b663f75",
+    "2ff54cabcebb7f7a7fb03efb3b6b4274b6e2fba9850f0b01df9314b0ff176852",
+    "ffe8a264c3af66cc7f4cbff747caeb55bf8b294a713e6720a381bdf37abb487b"
+  ],
+  "source_sha256": "06abb1cb986c3da2ac634624cef5bef6580a7224e1febe78b982d28bfbea059a",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "test_images_used": false,
+  "course_scope": "Exploratory visual CLIP/BLIP components; eligibility unresolved",
+  "caveat": "Constituents selected after development comparisons; OOF from previously selected hyperparameters, not nested unbiased evaluation"
+}

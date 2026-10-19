@@ -1,0 +1,37 @@
+{
+  "method": "Fold-fitted radial-preserving PCA Euclidean RBF with training-median bandwidth calibration",
+  "source_kernel": "19_image_embedding_reference/pe_core_g14_448_whole_kernel/20261014T090655Z_2d55c743",
+  "baseline_fusion": "15_fixed_ensembles/pe_giant_whole_incremental_fusion/20261014T082727Z_c5152cef",
+  "source_sha256": "c257fca061fd0a2490c14e2671b5be6a36232d1570e380b1a5cda47e000073a2",
+  "feature_reader_sha256": "74501ca9f2da2c6a3c44d51dea5b324e226a3be9b3190a66d92ac316f2e96eb1",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "source_registration_sha256": "0a5f7d2acf7f1817bde44e42e839c44ece468900bf9c3a141fbdc944170edcb7",
+  "source_head_sha256": "7747bd57dd7f4fc60d5a56d86b4ba7601a541fc7feaeef9215f9a4b20353829d",
+  "dimensions": [
+    64,
+    256,
+    1024
+  ],
+  "whitening_powers": [
+    0.0,
+    0.5
+  ],
+  "base_gamma": 4.0,
+  "gamma_rule": "4*median(original fit-fold squared distances)/median(transformed fit-fold squared distances), fixed 8192 sampled distinct-row pairs seed2026, no prices or held-out rows",
+  "alpha": 1.0,
+  "train_only_group_cv": 3,
+  "eigenvalue_floor_relative": 1e-08,
+  "hypothesis": "Post-PCA per-image unit normalization discards radial information. Keep projected feature radii and use true squared Euclidean distances; preserve the PCA grid and training-median bandwidth rule, with no new labels or encoder training.",
+  "formula": "(x-fit_mean)@fit_top_eigenvectors / max(fit_variance,fit_max_variance*1e-8)^(power/2); no per-image unit normalization, squared Euclidean kernel distances",
+  "null_control": "Original untransformed kernel; independently reproduce all6399 raw OOF and all1601 validation before PCA candidates",
+  "selection": "Minimum original-price training OOF MSE across null and six fixed transforms; full validation once after selection",
+  "fit_scope": "PCA mean/eigenvectors/variances only fitting-fold frozen features, no held-out features or prices in PCA fit",
+  "caveat": "Source hyperparameters already selected, new OOF selection is not nested unbiased CV",
+  "cache_family": "pe_giant_whole_pca_euclidean_features",
+  "feature_dim": 2560,
+  "no_transformed_cache_created": true,
+  "full_refit_adapter_supported": false,
+  "automatic_test_export": false,
+  "test_images_used": false,
+  "supervised_encoder": false
+}

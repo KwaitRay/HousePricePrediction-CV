@@ -1,0 +1,47 @@
+{
+  "branch": "feat/submission",
+  "authors": [
+    {
+      "name": "Shifeng Chen",
+      "student_id": "1686631"
+    },
+    {
+      "name": "Haoxuan Ying",
+      "student_id": "1255329"
+    }
+  ],
+  "files": {
+    "English/code.zip": {
+      "bytes": 13916498,
+      "sha256": "83dea971c920b2e7c9eb50429f3e88c5d0c5b2bbf7eb00d2bbca776ffdfee068"
+    },
+    "English_all_materials.zip": {
+      "bytes": 33080152,
+      "sha256": "0535229745eaff9cb815f8bdd9d14e60951b0e338b1200b9d079fbcda7249764"
+    },
+    "English/report.pdf": {
+      "bytes": 1892223,
+      "sha256": "f12a497c7e06bb63ed402068b33969fffbbdfa8dd05c586686d22562c506c9e4"
+    },
+    "Chinese/report.pdf": {
+      "bytes": 2067274,
+      "sha256": "d839049d6f0b0230a5c3e7331bae2bdf9496e3690faae7bbd0a3caeee53717c2"
+    }
+  },
+  "validation": {
+    "pdf_pages": {
+      "English": 5,
+      "Chinese": 4
+    },
+    "english_content_pages": 4,
+    "test_predictions": 3000,
+    "fitted_models_included": false,
+    "pretrained_weights_included": false,
+    "feature_arrays_included": false,
+    "provided_images_included": false,
+    "numerical_checks": "English/code/checks/report_metrics.json",
+    "manifest_files": 1864,
+    "zip_crc_checked": true,
+    "gpu_execution": false
+  }
+}

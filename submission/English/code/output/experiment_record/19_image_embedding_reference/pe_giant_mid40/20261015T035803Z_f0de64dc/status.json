@@ -1,0 +1,21 @@
+{
+  "status": "paused_by_user",
+  "reason": "User requested GPU for other work; no automatic restart",
+  "requested_date": "2026-10-15",
+  "recorded_utc": "2026-10-15T04:09:52.889822+00:00",
+  "stopped_pids": [
+    46944,
+    34456,
+    4672
+  ],
+  "verified_complete_chunks": 6,
+  "verified_saved_images": 600,
+  "total_images": 8000,
+  "cache_key": "780eaa7411e687352919345d5251003b23ed64693fdf8c7a6566383014a818ed",
+  "all_saved_chunk_hashes_verified": true,
+  "latest_user_reported_public_mse": 47291.34608,
+  "latest_feedback_run": "20261015T034010Z_0c94a543",
+  "latest_feedback_csv_sha256": "c39009ec65fd89a0f531991d1cfc26a2ecf4095e512ce9905b89c38da06b8da3",
+  "resume_requires_user_instruction": true,
+  "resume_implementation_not_yet_added": true
+}

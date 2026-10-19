@@ -1,0 +1,18 @@
+{
+  "extends": "sift_ridge.json",
+  "experiment": {
+    "id": "traditional_07_gradient",
+    "name": "传统参照阶段—实验七：梯度结构补充",
+    "stage": "01_baselines",
+    "question": "只替换或追加登记的特征因素，其他条件一致",
+    "comparison": "继承配置 sift_ridge.json 对应的已保留方案",
+    "changed_fields": [
+      "traditional.appearance"
+    ],
+    "enforce_changes": true,
+    "status": "ready"
+  },
+  "traditional": {
+    "appearance": "gradient"
+  }
+}

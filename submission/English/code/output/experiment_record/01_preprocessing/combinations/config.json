@@ -1,0 +1,20 @@
+{
+  "extends": "../optimized_v2/alexnet.json",
+  "experiment": {
+    "id": "preprocess_07_frequency_stretch",
+    "name": "Frequency filtering plus direct stretch",
+    "stage": "00_preparation",
+    "question": "Does combining frequency filtering and stretch outperform each single factor?",
+    "comparison": "Same-seed v2 baseline, frequency and stretch; frozen training settings",
+    "changed_fields": [
+      "preprocess.filter",
+      "preprocess.geometry"
+    ],
+    "enforce_changes": true,
+    "status": "ready"
+  },
+  "preprocess": {
+    "filter": "frequency",
+    "geometry": "stretch"
+  }
+}

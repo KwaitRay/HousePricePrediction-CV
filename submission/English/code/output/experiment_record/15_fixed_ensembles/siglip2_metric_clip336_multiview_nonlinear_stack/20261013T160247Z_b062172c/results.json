@@ -1,0 +1,10 @@
+{
+  "head": "nonlinear_oof_stack",
+  "mse": 61142.707294150685,
+  "mae": 176.3748251735522,
+  "tail_mse": 272803.68982889195,
+  "n": 1601,
+  "tail_n": 159,
+  "tail_threshold": 1300.0,
+  "meta_training_fit_mse": 62320.61285553464
+}

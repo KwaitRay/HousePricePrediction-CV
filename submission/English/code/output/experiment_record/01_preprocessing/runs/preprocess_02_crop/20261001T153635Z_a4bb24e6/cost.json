@@ -1,0 +1,18 @@
+{
+  "train_seconds": 2370.17977659998,
+  "epochs": 58,
+  "best_epoch": 43,
+  "loader_setup_seconds": 0.15943400003015995,
+  "stop_reason": "early_stopping",
+  "probe_seconds": 1.7281128001632169,
+  "validation_seconds": 430.077830600203,
+  "checkpoint_seconds": 3.371061700046994,
+  "optimizer_updates": 11600,
+  "samples_seen": 371142,
+  "training_seconds": 1884.4711645999923,
+  "seconds_per_update": 0.16245441074137865,
+  "predict_seconds": 7.186392199946567,
+  "timing_note": "train_seconds包括逐轮验证与固定样本诊断；predict_seconds包括读取和预处理",
+  "stopped_early": true,
+  "peak_cuda_bytes": 1213386752
+}

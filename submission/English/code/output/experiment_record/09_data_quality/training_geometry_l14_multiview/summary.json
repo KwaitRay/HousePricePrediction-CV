@@ -1,0 +1,1210 @@
+{
+  "scope": "Only 6399 training images; no validation or test pixels/labels used",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "oof_sha256": "66eb9ddd4364a7740ee25c1b6e78e9b4e93a9b8c253b300247aa13bac0d28027",
+  "source_sha256": "b89d5fd6575474ebfb30462c23bc0e8b15a83fde17d4952c854c84a41c9ffa83",
+  "all_training": {
+    "n": 6399,
+    "mse": 75119.51790179637,
+    "mae": 199.65686372557147,
+    "bias": 0.32077605521724956,
+    "mean_native_width": 395.4183466166589,
+    "mean_native_height": 276.5502422253477
+  },
+  "native_size_counts": [
+    {
+      "width": 400,
+      "height": 277,
+      "n": 1795
+    },
+    {
+      "width": 400,
+      "height": 300,
+      "n": 1520
+    },
+    {
+      "width": 400,
+      "height": 276,
+      "n": 891
+    },
+    {
+      "width": 400,
+      "height": 278,
+      "n": 652
+    },
+    {
+      "width": 400,
+      "height": 233,
+      "n": 319
+    },
+    {
+      "width": 233,
+      "height": 300,
+      "n": 120
+    },
+    {
+      "width": 400,
+      "height": 234,
+      "n": 61
+    },
+    {
+      "width": 400,
+      "height": 275,
+      "n": 43
+    },
+    {
+      "width": 400,
+      "height": 274,
+      "n": 42
+    },
+    {
+      "width": 400,
+      "height": 202,
+      "n": 39
+    },
+    {
+      "width": 400,
+      "height": 268,
+      "n": 29
+    },
+    {
+      "width": 400,
+      "height": 225,
+      "n": 23
+    },
+    {
+      "width": 400,
+      "height": 243,
+      "n": 19
+    },
+    {
+      "width": 400,
+      "height": 279,
+      "n": 19
+    },
+    {
+      "width": 311,
+      "height": 300,
+      "n": 17
+    },
+    {
+      "width": 400,
+      "height": 246,
+      "n": 15
+    },
+    {
+      "width": 400,
+      "height": 239,
+      "n": 15
+    },
+    {
+      "width": 400,
+      "height": 281,
+      "n": 15
+    },
+    {
+      "width": 400,
+      "height": 270,
+      "n": 15
+    },
+    {
+      "width": 400,
+      "height": 250,
+      "n": 14
+    },
+    {
+      "width": 400,
+      "height": 249,
+      "n": 14
+    },
+    {
+      "width": 400,
+      "height": 259,
+      "n": 13
+    },
+    {
+      "width": 400,
+      "height": 257,
+      "n": 13
+    },
+    {
+      "width": 400,
+      "height": 230,
+      "n": 13
+    },
+    {
+      "width": 400,
+      "height": 266,
+      "n": 12
+    },
+    {
+      "width": 400,
+      "height": 265,
+      "n": 12
+    },
+    {
+      "width": 400,
+      "height": 272,
+      "n": 12
+    },
+    {
+      "width": 400,
+      "height": 285,
+      "n": 12
+    },
+    {
+      "width": 400,
+      "height": 273,
+      "n": 12
+    },
+    {
+      "width": 400,
+      "height": 241,
+      "n": 12
+    },
+    {
+      "width": 400,
+      "height": 251,
+      "n": 11
+    },
+    {
+      "width": 400,
+      "height": 217,
+      "n": 11
+    },
+    {
+      "width": 400,
+      "height": 208,
+      "n": 11
+    },
+    {
+      "width": 400,
+      "height": 283,
+      "n": 11
+    },
+    {
+      "width": 400,
+      "height": 235,
+      "n": 10
+    },
+    {
+      "width": 400,
+      "height": 267,
+      "n": 10
+    },
+    {
+      "width": 400,
+      "height": 284,
+      "n": 10
+    },
+    {
+      "width": 400,
+      "height": 262,
+      "n": 10
+    },
+    {
+      "width": 400,
+      "height": 247,
+      "n": 10
+    },
+    {
+      "width": 400,
+      "height": 263,
+      "n": 10
+    },
+    {
+      "width": 400,
+      "height": 261,
+      "n": 10
+    },
+    {
+      "width": 400,
+      "height": 232,
+      "n": 10
+    },
+    {
+      "width": 400,
+      "height": 244,
+      "n": 10
+    },
+    {
+      "width": 400,
+      "height": 231,
+      "n": 9
+    },
+    {
+      "width": 400,
+      "height": 287,
+      "n": 9
+    },
+    {
+      "width": 400,
+      "height": 201,
+      "n": 9
+    },
+    {
+      "width": 400,
+      "height": 196,
+      "n": 9
+    },
+    {
+      "width": 400,
+      "height": 290,
+      "n": 9
+    },
+    {
+      "width": 400,
+      "height": 291,
+      "n": 8
+    },
+    {
+      "width": 400,
+      "height": 282,
+      "n": 8
+    },
+    {
+      "width": 400,
+      "height": 255,
+      "n": 8
+    },
+    {
+      "width": 400,
+      "height": 248,
+      "n": 8
+    },
+    {
+      "width": 400,
+      "height": 286,
+      "n": 8
+    },
+    {
+      "width": 400,
+      "height": 252,
+      "n": 8
+    },
+    {
+      "width": 400,
+      "height": 296,
+      "n": 8
+    },
+    {
+      "width": 400,
+      "height": 289,
+      "n": 8
+    },
+    {
+      "width": 400,
+      "height": 271,
+      "n": 8
+    },
+    {
+      "width": 400,
+      "height": 269,
+      "n": 8
+    },
+    {
+      "width": 400,
+      "height": 264,
+      "n": 7
+    },
+    {
+      "width": 400,
+      "height": 258,
+      "n": 7
+    },
+    {
+      "width": 400,
+      "height": 298,
+      "n": 7
+    },
+    {
+      "width": 400,
+      "height": 222,
+      "n": 7
+    },
+    {
+      "width": 400,
+      "height": 242,
+      "n": 7
+    },
+    {
+      "width": 400,
+      "height": 254,
+      "n": 7
+    },
+    {
+      "width": 400,
+      "height": 237,
+      "n": 7
+    },
+    {
+      "width": 400,
+      "height": 256,
+      "n": 7
+    },
+    {
+      "width": 400,
+      "height": 297,
+      "n": 6
+    },
+    {
+      "width": 400,
+      "height": 211,
+      "n": 6
+    },
+    {
+      "width": 400,
+      "height": 198,
+      "n": 6
+    },
+    {
+      "width": 400,
+      "height": 288,
+      "n": 6
+    },
+    {
+      "width": 400,
+      "height": 253,
+      "n": 6
+    },
+    {
+      "width": 400,
+      "height": 240,
+      "n": 5
+    },
+    {
+      "width": 400,
+      "height": 214,
+      "n": 5
+    },
+    {
+      "width": 400,
+      "height": 238,
+      "n": 5
+    },
+    {
+      "width": 400,
+      "height": 260,
+      "n": 5
+    },
+    {
+      "width": 400,
+      "height": 226,
+      "n": 5
+    },
+    {
+      "width": 400,
+      "height": 292,
+      "n": 5
+    },
+    {
+      "width": 373,
+      "height": 300,
+      "n": 4
+    },
+    {
+      "width": 400,
+      "height": 294,
+      "n": 4
+    },
+    {
+      "width": 391,
+      "height": 300,
+      "n": 4
+    },
+    {
+      "width": 400,
+      "height": 210,
+      "n": 4
+    },
+    {
+      "width": 400,
+      "height": 236,
+      "n": 4
+    },
+    {
+      "width": 400,
+      "height": 195,
+      "n": 4
+    },
+    {
+      "width": 400,
+      "height": 191,
+      "n": 4
+    },
+    {
+      "width": 400,
+      "height": 280,
+      "n": 3
+    },
+    {
+      "width": 400,
+      "height": 293,
+      "n": 3
+    },
+    {
+      "width": 400,
+      "height": 181,
+      "n": 3
+    },
+    {
+      "width": 400,
+      "height": 180,
+      "n": 3
+    },
+    {
+      "width": 400,
+      "height": 215,
+      "n": 3
+    },
+    {
+      "width": 400,
+      "height": 245,
+      "n": 3
+    },
+    {
+      "width": 400,
+      "height": 182,
+      "n": 3
+    },
+    {
+      "width": 386,
+      "height": 300,
+      "n": 3
+    },
+    {
+      "width": 395,
+      "height": 300,
+      "n": 3
+    },
+    {
+      "width": 317,
+      "height": 300,
+      "n": 3
+    },
+    {
+      "width": 374,
+      "height": 300,
+      "n": 3
+    },
+    {
+      "width": 393,
+      "height": 300,
+      "n": 3
+    },
+    {
+      "width": 400,
+      "height": 193,
+      "n": 3
+    },
+    {
+      "width": 400,
+      "height": 188,
+      "n": 3
+    },
+    {
+      "width": 400,
+      "height": 206,
+      "n": 3
+    },
+    {
+      "width": 400,
+      "height": 209,
+      "n": 3
+    },
+    {
+      "width": 400,
+      "height": 220,
+      "n": 3
+    },
+    {
+      "width": 400,
+      "height": 203,
+      "n": 3
+    },
+    {
+      "width": 400,
+      "height": 227,
+      "n": 3
+    },
+    {
+      "width": 400,
+      "height": 216,
+      "n": 3
+    },
+    {
+      "width": 400,
+      "height": 219,
+      "n": 3
+    },
+    {
+      "width": 400,
+      "height": 228,
+      "n": 3
+    },
+    {
+      "width": 400,
+      "height": 213,
+      "n": 3
+    },
+    {
+      "width": 400,
+      "height": 176,
+      "n": 3
+    },
+    {
+      "width": 400,
+      "height": 212,
+      "n": 3
+    },
+    {
+      "width": 368,
+      "height": 300,
+      "n": 2
+    },
+    {
+      "width": 319,
+      "height": 300,
+      "n": 2
+    },
+    {
+      "width": 358,
+      "height": 300,
+      "n": 2
+    },
+    {
+      "width": 207,
+      "height": 300,
+      "n": 2
+    },
+    {
+      "width": 236,
+      "height": 300,
+      "n": 2
+    },
+    {
+      "width": 175,
+      "height": 300,
+      "n": 2
+    },
+    {
+      "width": 384,
+      "height": 300,
+      "n": 2
+    },
+    {
+      "width": 300,
+      "height": 300,
+      "n": 2
+    },
+    {
+      "width": 283,
+      "height": 300,
+      "n": 2
+    },
+    {
+      "width": 400,
+      "height": 178,
+      "n": 2
+    },
+    {
+      "width": 400,
+      "height": 194,
+      "n": 2
+    },
+    {
+      "width": 400,
+      "height": 207,
+      "n": 2
+    },
+    {
+      "width": 400,
+      "height": 165,
+      "n": 2
+    },
+    {
+      "width": 400,
+      "height": 174,
+      "n": 2
+    },
+    {
+      "width": 400,
+      "height": 179,
+      "n": 2
+    },
+    {
+      "width": 400,
+      "height": 187,
+      "n": 2
+    },
+    {
+      "width": 400,
+      "height": 192,
+      "n": 2
+    },
+    {
+      "width": 400,
+      "height": 205,
+      "n": 2
+    },
+    {
+      "width": 400,
+      "height": 204,
+      "n": 2
+    },
+    {
+      "width": 400,
+      "height": 224,
+      "n": 2
+    },
+    {
+      "width": 400,
+      "height": 229,
+      "n": 2
+    },
+    {
+      "width": 400,
+      "height": 295,
+      "n": 2
+    },
+    {
+      "width": 398,
+      "height": 300,
+      "n": 2
+    },
+    {
+      "width": 397,
+      "height": 300,
+      "n": 2
+    },
+    {
+      "width": 392,
+      "height": 300,
+      "n": 2
+    },
+    {
+      "width": 390,
+      "height": 300,
+      "n": 2
+    },
+    {
+      "width": 388,
+      "height": 300,
+      "n": 2
+    },
+    {
+      "width": 389,
+      "height": 300,
+      "n": 2
+    },
+    {
+      "width": 286,
+      "height": 300,
+      "n": 2
+    },
+    {
+      "width": 400,
+      "height": 153,
+      "n": 2
+    },
+    {
+      "width": 376,
+      "height": 300,
+      "n": 2
+    },
+    {
+      "width": 381,
+      "height": 300,
+      "n": 2
+    },
+    {
+      "width": 206,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 187,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 184,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 151,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 178,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 400,
+      "height": 162,
+      "n": 1
+    },
+    {
+      "width": 400,
+      "height": 160,
+      "n": 1
+    },
+    {
+      "width": 400,
+      "height": 158,
+      "n": 1
+    },
+    {
+      "width": 400,
+      "height": 156,
+      "n": 1
+    },
+    {
+      "width": 400,
+      "height": 149,
+      "n": 1
+    },
+    {
+      "width": 400,
+      "height": 148,
+      "n": 1
+    },
+    {
+      "width": 400,
+      "height": 138,
+      "n": 1
+    },
+    {
+      "width": 396,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 372,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 360,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 367,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 370,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 382,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 380,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 385,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 260,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 315,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 308,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 307,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 321,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 329,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 333,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 334,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 328,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 335,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 337,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 343,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 338,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 346,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 349,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 355,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 359,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 281,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 262,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 284,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 306,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 304,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 305,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 292,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 299,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 222,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 208,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 232,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 237,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 242,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 244,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 249,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 253,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 195,
+      "height": 300,
+      "n": 1
+    },
+    {
+      "width": 400,
+      "height": 218,
+      "n": 1
+    },
+    {
+      "width": 400,
+      "height": 221,
+      "n": 1
+    },
+    {
+      "width": 400,
+      "height": 163,
+      "n": 1
+    },
+    {
+      "width": 400,
+      "height": 168,
+      "n": 1
+    },
+    {
+      "width": 400,
+      "height": 164,
+      "n": 1
+    },
+    {
+      "width": 400,
+      "height": 184,
+      "n": 1
+    },
+    {
+      "width": 400,
+      "height": 177,
+      "n": 1
+    },
+    {
+      "width": 400,
+      "height": 186,
+      "n": 1
+    },
+    {
+      "width": 400,
+      "height": 185,
+      "n": 1
+    },
+    {
+      "width": 400,
+      "height": 199,
+      "n": 1
+    },
+    {
+      "width": 400,
+      "height": 200,
+      "n": 1
+    },
+    {
+      "width": 400,
+      "height": 190,
+      "n": 1
+    },
+    {
+      "width": 400,
+      "height": 197,
+      "n": 1
+    },
+    {
+      "width": 400,
+      "height": 172,
+      "n": 1
+    },
+    {
+      "width": 400,
+      "height": 299,
+      "n": 1
+    }
+  ],
+  "min_side_at_least": {
+    "224": 6184,
+    "336": 0,
+    "384": 0
+  },
+  "exif_nonempty_n": 0,
+  "gps_tag_present_n": 0,
+  "metadata_used_as_model_features": false,
+  "caveats": [
+    "Native dimensions do not measure property size or subject pixel occupancy.",
+    "OOF hyperparameters previously selected in these folds; association is descriptive, not causal or nested-unbiased.",
+    "Only high-price scene annotations cover their entire price tier; other tiers have unreviewed entries."
+  ],
+  "price_strata": [
+    {
+      "price_tier": "high",
+      "n": 636,
+      "mse": 357208.8807317112,
+      "mae": 528.7548846802212,
+      "bias": -524.3207171206215,
+      "mean_native_width": 398.2940251572327,
+      "mean_native_height": 274.5943396226415
+    },
+    {
+      "price_tier": "low",
+      "n": 680,
+      "mse": 43148.050311263345,
+      "mae": 168.34059459528515,
+      "bias": 160.69404115766653,
+      "mean_native_width": 392.9117647058824,
+      "mean_native_height": 280.6926470588235
+    },
+    {
+      "price_tier": "middle",
+      "n": 5083,
+      "mse": 44100.781565329045,
+      "mae": 162.66861302351313,
+      "bias": 44.51085462892724,
+      "mean_native_width": 395.3938618925831,
+      "mean_native_height": 276.24080267558526
+    }
+  ],
+  "high_price_scenes": [
+    {
+      "scene": "地面外观",
+      "n": 359,
+      "mse": 382649.55835349404,
+      "mae": 552.3631043184805,
+      "bias": -548.8353614324199,
+      "mean_native_width": 397.8217270194986,
+      "mean_native_height": 275.1977715877437
+    },
+    {
+      "scene": "局部或环境特写",
+      "n": 157,
+      "mse": 351586.11358534923,
+      "mae": 527.5333407314725,
+      "bias": -524.3359413098989,
+      "mean_native_width": 398.9363057324841,
+      "mean_native_height": 277.43949044585986
+    },
+    {
+      "scene": "建筑效果图",
+      "n": 5,
+      "mse": 551077.5363989763,
+      "mae": 667.5130310000244,
+      "bias": -667.5130310000244,
+      "mean_native_width": 400.0,
+      "mean_native_height": 246.0
+    },
+    {
+      "scene": "航拍或高位全景",
+      "n": 115,
+      "mse": 277036.94940495014,
+      "mae": 450.6908917951728,
+      "bias": -441.54585559845447,
+      "mean_native_width": 398.81739130434784,
+      "mean_native_height": 270.0695652173913
+    }
+  ],
+  "high_price_flags": [
+    {
+      "feature": "visible_pool",
+      "state": "否",
+      "n": 542,
+      "mse": 373228.9355499889,
+      "mae": 540.5708755041602,
+      "bias": -535.8114816656151,
+      "mean_native_width": 398.0018450184502,
+      "mean_native_height": 274.7988929889299
+    },
+    {
+      "feature": "visible_pool",
+      "state": "是",
+      "n": 94,
+      "mse": 264837.926353982,
+      "mae": 460.6243843975087,
+      "bias": -458.0654577228912,
+      "mean_native_width": 399.97872340425533,
+      "mean_native_height": 273.4148936170213
+    },
+    {
+      "feature": "partial_subject",
+      "state": "否",
+      "n": 479,
+      "mse": 359051.8336377213,
+      "mae": 529.1552654734436,
+      "bias": -524.3157271462653,
+      "mean_native_width": 398.0835073068894,
+      "mean_native_height": 273.6617954070981
+    },
+    {
+      "feature": "partial_subject",
+      "state": "是",
+      "n": 157,
+      "mse": 351586.11358534923,
+      "mae": 527.5333407314725,
+      "bias": -524.3359413098989,
+      "mean_native_width": 398.9363057324841,
+      "mean_native_height": 277.43949044585986
+    },
+    {
+      "feature": "large_building",
+      "state": "是",
+      "n": 6,
+      "mse": 208690.0491915193,
+      "mae": 404.0923072152932,
+      "bias": -404.0923072152932,
+      "mean_native_width": 400.0,
+      "mean_native_height": 272.1666666666667
+    },
+    {
+      "feature": "large_building",
+      "state": "未知",
+      "n": 630,
+      "mse": 358623.34579399874,
+      "mae": 529.9421473227443,
+      "bias": -525.4657495959102,
+      "mean_native_width": 398.27777777777777,
+      "mean_native_height": 274.6174603174603
+    }
+  ],
+  "training_identical_pixel_price_variance_mse": 0.0,
+  "identical_pixel_variance_scope": "Empirical training-set disagreement only; cannot establish an unseen-data error floor or label corruption"
+}

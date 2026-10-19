@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "probes": [
+    {
+      "imageid": "4920.jpg",
+      "feature_max_abs_error": 0.0,
+      "joint_feature_max_abs_error": 0.0,
+      "fresh_prices": [
+        1369.5266660365266,
+        1192.100015229182,
+        1203.7352738118404
+      ],
+      "archived_prices": [
+        1369.526666036519,
+        1192.100015229182,
+        1203.7352738118402
+      ],
+      "max_price_error": 7.73070496506989e-12
+    },
+    {
+      "imageid": "5712.jpg",
+      "feature_max_abs_error": 0.0,
+      "joint_feature_max_abs_error": 0.0,
+      "fresh_prices": [
+        1273.546375929468,
+        1496.4970705402143,
+        1485.5304923265571
+      ],
+      "archived_prices": [
+        1273.5463759294687,
+        1496.497070540214,
+        1485.53049232656
+      ],
+      "max_price_error": 2.9558577807620168e-12
+    }
+  ],
+  "rtol": 1e-07,
+  "atol": 0.0001
+}

@@ -1,0 +1,11 @@
+{
+  "status": "completed",
+  "controller_pid": 5616,
+  "reference_pid": 28912,
+  "command": [
+    "scripts/experiments/dinov2_visual_reference.py",
+    "--weights-dir",
+    ".local\\cache\\dinov2_weights\\47b73eefe95e8d44ec3623f8890bd894b6ea2d6c"
+  ],
+  "exit_code": 0
+}

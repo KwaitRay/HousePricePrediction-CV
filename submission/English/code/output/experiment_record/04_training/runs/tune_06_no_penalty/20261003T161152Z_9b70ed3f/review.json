@@ -1,0 +1,46 @@
+{
+  "seed": 2028,
+  "optimizer": "adamw",
+  "schedule": "constant",
+  "mse": 127758.10585585324,
+  "control_mse": 127758.10585585324,
+  "delta_mse": 0.0,
+  "price_groups": [
+    {
+      "group": "低价≤300",
+      "n": 169,
+      "mean_signed_error": 401.9709969364708,
+      "delta_mse": 0.0,
+      "contribution": 0.0
+    },
+    {
+      "group": "中价300–700",
+      "n": 775,
+      "mean_signed_error": 181.09202671578436,
+      "delta_mse": 0.0,
+      "contribution": 0.0
+    },
+    {
+      "group": "高价700–1300",
+      "n": 498,
+      "mean_signed_error": -120.27656321813976,
+      "delta_mse": 0.0,
+      "contribution": 0.0
+    },
+    {
+      "group": "尾部>1300",
+      "n": 159,
+      "mean_signed_error": -782.4778434033905,
+      "delta_mse": 0.0,
+      "contribution": 0.0
+    }
+  ],
+  "prediction_std": 140.45430688715516,
+  "target_std": 389.7863906871689,
+  "train_validation_gap": 9819.869988075894,
+  "best_epoch": 7,
+  "text": "无惩罚，种子2028：验证均方误差127758.11，相对本组对照+0.00；最佳模型训练验证差距9819.87。最后一轮平均显式惩罚0，权重L2范数117.823。误差分解用于定位，不单独证明机制；完成预登记复核后选择。",
+  "last_weight_l1": 726217.8658342361,
+  "last_weight_l2": 117.8229641972782,
+  "last_penalty": 0.0
+}

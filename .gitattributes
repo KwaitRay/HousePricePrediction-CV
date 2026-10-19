@@ -74,3 +74,5 @@ output/experiment_record/improvement_to_50000/近期实验报告.md -text
 best_model/20261015T034010Z_0c94a543_features_predictions.zip filter=lfs diff=lfs merge=lfs -text
 best_model/meta_crossfit_predictions.csv -text
 best_model/crossfit_evaluation/** -text
+# Preserve release manifests and CSV/source checksums across Windows checkouts.
+submission/** -text

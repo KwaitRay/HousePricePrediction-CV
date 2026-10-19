@@ -1,0 +1,21 @@
+{
+  "pr": 5,
+  "url": "https://github.com/KwaitRay/HousePricePrediction-CV/pull/5",
+  "commit": "664393e2342fe5b838db6649554b31bc64a1c763",
+  "groups": [
+    "control",
+    "brightness",
+    "contrast"
+  ],
+  "seed": 2026,
+  "pending_groups": [
+    "saturation"
+  ],
+  "source": "Reviewed PR artifacts; no experiments rerun for report integration",
+  "files": {
+    "price_slices.csv": "7eeafb4a15112011ce099dd2397445ee29cb5d606601a517d2b5537092a07838",
+    "protocol.json": "51669712a12bb1d5d9f1b5d91a94dd73bb0378c2646c78a2e35f7b9c7c9282fa",
+    "results.json": "ad5af379419bd95e8ebd8a144ebf8b57da38de204e8bb540352e952bb884cda2",
+    "summary.csv": "cf2acbadb586cfe1af75dd4aec2b4c19f3a911570c29c3dfc2979be3ec1f59d3"
+  }
+}

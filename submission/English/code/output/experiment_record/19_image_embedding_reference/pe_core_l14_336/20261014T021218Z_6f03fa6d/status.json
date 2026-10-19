@@ -1,0 +1,5 @@
+{
+  "status": "failed",
+  "pid": 44368,
+  "error": "ImportError(\"cannot import name 'load_file' from 'safetensors' (D:\\\\学习\\\\研究生\\\\graduate 26s2\\\\COMP 90086 CV\\\\Final_Assignment\\\\cv-house-price\\\\.venv\\\\Lib\\\\site-packages\\\\safetensors\\\\__init__.py)\")"
+}

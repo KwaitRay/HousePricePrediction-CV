@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "all_8000_training_pixel_hashes_verified": true,
+  "all_8000_cache_chunks_verified": true,
+  "imageids": [
+    "5115.jpg",
+    "6648.jpg",
+    "212.jpg",
+    "3736.jpg",
+    "6325.jpg",
+    "6806.jpg",
+    "2922.jpg",
+    "639.jpg",
+    "1430.jpg",
+    "2963.jpg",
+    "2839.jpg",
+    "5146.jpg"
+  ],
+  "gpu_feature_probe_n": 12,
+  "max_abs_feature_replay_error": 0.0,
+  "encoder_adapter_source_sha256": "3fa4d736db417bd471454f4b1d72b3d2e4bb698d69d9be5b551a68a73b7537d0",
+  "feature_manifest_sha256": "26e2ce5fa0275da38602142de63b1625e7af96f5e30eee9abc56360869b8a400",
+  "test_images_used": false
+}

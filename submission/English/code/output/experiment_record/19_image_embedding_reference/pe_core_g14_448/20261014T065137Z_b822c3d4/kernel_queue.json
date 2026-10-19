@@ -1,0 +1,15 @@
+{
+  "command": [
+    "D:\\学习\\研究生\\graduate 26s2\\COMP 90086 CV\\Final_Assignment\\cv-house-price\\.venv\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "D:\\学习\\研究生\\graduate 26s2\\COMP 90086 CV\\Final_Assignment\\cv-house-price\\scripts\\experiments\\frozen_kernel_search.py",
+    "--name",
+    "pe_core_g14_448_kernel",
+    "--cache-family",
+    "pe_core_giant_features",
+    "--cache-key",
+    "d4e2604d156afed5901efb7cd5f2daac1d28efc6e5f2e7ecb9d70097cfe78055"
+  ],
+  "exit_code": 0
+}

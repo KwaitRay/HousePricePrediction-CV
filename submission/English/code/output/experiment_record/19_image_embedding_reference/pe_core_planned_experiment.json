@@ -1,0 +1,40 @@
+{
+  "status": "preregistered_waiting_for_naflex",
+  "repo": "timm/vit_pe_core_large_patch14_336.fb",
+  "revision": "e63206c8e3a0e9b699e40f31080eebd78fd2258e",
+  "checkpoint_sha256": "35edcdb68eb43329192fc1530c246191e8a72f9a3dae01e2c7cccf05338d4cac",
+  "checkpoint_preflight_completed": true,
+  "publisher_checksum_verified": true,
+  "vision_tensor_shapes_match": true,
+  "vision_tensors": 310,
+  "params": 317152256,
+  "architecture": "vit_pe_core_large_patch14_336",
+  "feature_dim": 1024,
+  "projection_preserved": true,
+  "head_shape": [
+    1024,
+    1024
+  ],
+  "preprocess": "Compose(\n    Resize(size=336, interpolation=bicubic, max_size=None, antialias=True)\n    CenterCrop(size=[336, 336])\n    MaybeToTensor()\n    Normalize(mean=tensor([0.5000, 0.5000, 0.5000]), std=tensor([0.5000, 0.5000, 0.5000]))\n)",
+  "processor_config_vs_model_exact": true,
+  "four_training_image_preprocessing_tensors_exact": true,
+  "batch_size": 4,
+  "precision": "float16 vision forward, float32 normalized feature storage",
+  "gammas": [
+    1,
+    4,
+    16
+  ],
+  "alphas": [
+    0.01,
+    0.1,
+    1,
+    10
+  ],
+  "selection": "Training-only grouped CV, unweighted price MSE",
+  "mllm_components": false,
+  "test_images_used": false,
+  "weight_license_metadata": "apache-2.0",
+  "pretrained_cfg_license": "custom",
+  "source_sha256": "8df0b8b661a0952eda83a2fd09ca3858302fad8fd5eae1d0510616498ee53bce"
+}

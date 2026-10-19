@@ -1,0 +1,9 @@
+{
+  "status": "completed",
+  "controller_pid": 46636,
+  "reference_pid": 48612,
+  "cache_key": "6cc6ea162d96836a66ec8b9b53757f40f2853e0029fdfd1dcf48ef23f98c3529",
+  "cache_family": "clip_features",
+  "name": "clip_l14_kernel",
+  "exit_code": 0
+}

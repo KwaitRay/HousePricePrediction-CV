@@ -1,0 +1,36 @@
+{
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "seed": 2026,
+  "view_crop_fraction": 0.6,
+  "fusion": "0.5 full + 0.5 mean of four fixed corner predictions",
+  "brightness": {
+    "probability": 0.5,
+    "range": [
+      0.9,
+      1.1
+    ]
+  },
+  "brightness_gate": "within-price-band brightness extreme MSE > 1.2x central, n>=30 in both groups",
+  "weighting": {
+    "counts": [
+      680,
+      3111,
+      1972,
+      636
+    ],
+    "weights": [
+      1.3534379638370178,
+      0.8662002968556914,
+      0.9752162860407849,
+      1.3534379638370178
+    ],
+    "scope": "training price bands only"
+  },
+  "selection": "2026 screen then 2027/2028 if MSE improves; unweighted MSE remains primary",
+  "case_selection": "20 high-tail joint worst, 20 model disagreements, 20 tail success controls; no deletion or relabeling",
+  "limits": "Development feedback on reused validation; saliency/occlusion are sensitivities, not causal attention or proof of absent price information",
+  "test_images_used": false,
+  "max_new_training_runs": 6,
+  "source_sha256": "ff957b983da3a3ff1d74fb5482c9ef2cb2939b63f7d16033d88b6f07d0bcee0d",
+  "adapter_sha256": "a0e8f30cf8f5ad306db1d4d5bf59e219dd2bd67a7f108e0869221b1a99661ca4"
+}

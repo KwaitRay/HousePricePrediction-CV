@@ -1,0 +1,642 @@
+[
+  {
+    "epoch": 1,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 958,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.009945848375451264,
+            0.03022644927536232
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 2,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 897,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.009802904564315353,
+            0.030214592274678112
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 3,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 974,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.009928057553956834,
+            0.03032490974729242
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 4,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 913,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.009855595667870035,
+            0.03028846153846154
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 5,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 997,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.009819494584837545,
+            0.03032490974729242
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 6,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 962,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.009816666666666666,
+            0.030351985559566787
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 7,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 932,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.010108695652173913,
+            0.030450643776824035
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 8,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 942,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.009913793103448277,
+            0.030180505415162456
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 9,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 1006,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.010033333333333333,
+            0.030361990950226243
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 10,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 929,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.009855072463768115,
+            0.03007220216606498
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 11,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 941,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.009819494584837545,
+            0.030279783393501805
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 12,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 915,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.009818181818181818,
+            0.030168776371308017
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 13,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 984,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.0099,
+            0.03017086330935252
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 14,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 958,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.009855595667870035,
+            0.030216606498194947
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 15,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 978,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.009914163090128755,
+            0.03009656652360515
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 16,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 984,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.009894736842105263,
+            0.03028985507246377
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 17,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 940,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.009990974729241877,
+            0.030416666666666668
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 18,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 979,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.009785407725321889,
+            0.03010909090909091
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 19,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 921,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.009849056603773585,
+            0.030476190476190476
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 20,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 936,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.009928057553956834,
+            0.030448717948717948
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 21,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 934,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.009866666666666666,
+            0.030279783393501805
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 22,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 1016,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.009981884057971015,
+            0.030216606498194947
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 23,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 931,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.009916666666666667,
+            0.030375
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 24,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 987,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.009855595667870035,
+            0.03016891891891892
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 25,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 950,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.009914163090128755,
+            0.030416666666666668
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 26,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 963,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.009979253112033196,
+            0.030379061371841154
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 27,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 919,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.009855072463768115,
+            0.030351985559566787
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 28,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 950,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.0099,
+            0.030433333333333333
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 29,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 968,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.009902439024390244,
+            0.03032154340836013
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 30,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 985,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.009945848375451264,
+            0.030375
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 31,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 948,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.009866666666666666,
+            0.030180505415162456
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 32,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 1023,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.009990974729241877,
+            0.030158333333333332
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 33,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 968,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.009891304347826087,
+            0.030033333333333332
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 34,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 930,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.00996389891696751,
+            0.030060975609756097
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 35,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 969,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.009866666666666666,
+            0.03007843137254902
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 36,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 967,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.009918032786885246,
+            0.03025
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 37,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 962,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.009891304347826087,
+            0.030497237569060774
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 38,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 944,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.009804347826086957,
+            0.030214592274678112
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 39,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 939,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.010033333333333333,
+            0.03038949275362319
+          ]
+        }
+      }
+    }
+  },
+  {
+    "epoch": 40,
+    "operations": {
+      "erase": {
+        "samples": 6399,
+        "triggered": 979,
+        "skipped": 0,
+        "observed_ranges": {
+          "area": [
+            0.0099,
+            0.03016304347826087
+          ]
+        }
+      }
+    }
+  }
+]

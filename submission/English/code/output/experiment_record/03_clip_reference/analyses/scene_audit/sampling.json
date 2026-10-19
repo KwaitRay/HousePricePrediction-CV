@@ -1,0 +1,22 @@
+{
+  "worst20": {
+    "n": 20,
+    "median_true_price": 1847.4995,
+    "mse": 1226616.6424785156
+  },
+  "best20": {
+    "n": 20,
+    "median_true_price": 1495.0,
+    "mse": 43917.78447561216
+  },
+  "price_matched20": {
+    "n": 20,
+    "median_true_price": 1824.5,
+    "mse": 296123.541860982
+  },
+  "matching": {
+    "max_price_distance": 54.999000000000024,
+    "within50": 19,
+    "rule": "worst20 high-price cases, unique remaining control with smallest SE inside +/-50; nearest-price fallback; diagnostic purposive selection, no causal estimate"
+  }
+}

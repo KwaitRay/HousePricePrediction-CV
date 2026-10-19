@@ -1,0 +1,116 @@
+{
+  "passed": true,
+  "seeds": {
+    "2026": {
+      "default_hash": "235e1783f8da4a874c0d622e1d559f3440a7662c6bf91ddc41cecf4959ca2b51",
+      "default_diagnostic": {
+        "scaled_loss": 0.11961601674556732,
+        "convolution_gradient_norms": {
+          "conv1.weight": 0.1566534787416458,
+          "conv2.weight": 0.3532334566116333,
+          "conv3.weight": 0.436059832572937,
+          "conv4.weight": 0.5739362835884094,
+          "conv5.weight": 0.472165584564209
+        },
+        "activations": {
+          "conv1": {
+            "mean": 0.0093625383451581,
+            "std": 0.6394543647766113,
+            "finite": true
+          },
+          "conv2": {
+            "mean": 0.0768945962190628,
+            "std": 0.904778778553009,
+            "finite": true
+          },
+          "conv3": {
+            "mean": -0.11693696677684784,
+            "std": 1.2794368267059326,
+            "finite": true
+          },
+          "conv4": {
+            "mean": -0.08480026572942734,
+            "std": 1.1428813934326172,
+            "finite": true
+          },
+          "conv5": {
+            "mean": 0.1043967753648758,
+            "std": 1.0229756832122803,
+            "finite": true
+          }
+        }
+      },
+      "xavier_hash": "bb049954dc56bf1e4b37faac3c3fb258c66f3714d5a191ef66f6faa34585ab54",
+      "xavier_convolution_diagnostic": {
+        "scaled_loss": 0.11378975212574005,
+        "convolution_gradient_norms": {
+          "conv1.weight": 0.021384987980127335,
+          "conv2.weight": 0.025248827412724495,
+          "conv3.weight": 0.027134504169225693,
+          "conv4.weight": 0.026504462584853172,
+          "conv5.weight": 0.021573686972260475
+        },
+        "activations": {
+          "conv1": {
+            "mean": 0.0009722503018565476,
+            "std": 0.14456112682819366,
+            "finite": true
+          },
+          "conv2": {
+            "mean": 0.0012013246305286884,
+            "std": 0.10209270566701889,
+            "finite": true
+          },
+          "conv3": {
+            "mean": 0.003443411085754633,
+            "std": 0.08055531978607178,
+            "finite": true
+          },
+          "conv4": {
+            "mean": -0.0007441162597388029,
+            "std": 0.06110784038901329,
+            "finite": true
+          },
+          "conv5": {
+            "mean": -0.0009508347138762474,
+            "std": 0.04057271033525467,
+            "finite": true
+          }
+        }
+      },
+      "changed_parameters": [
+        "conv1.weight",
+        "conv2.weight",
+        "conv3.weight",
+        "conv4.weight",
+        "conv5.weight"
+      ],
+      "all_other_parameters_identical": true
+    },
+    "2027": {
+      "default_hash": "9f08a25f87fc0636b3d8126a988bcf88610fb7d4dff0de27403e7a8b4f55480e",
+      "xavier_hash": "7e8aafd1a4b42c7a5aacd659a12bb62a9787150b97df357ab5afc24ad25568d9",
+      "changed_parameters": [
+        "conv1.weight",
+        "conv2.weight",
+        "conv3.weight",
+        "conv4.weight",
+        "conv5.weight"
+      ],
+      "all_other_parameters_identical": true
+    },
+    "2028": {
+      "default_hash": "7501f82ec4033884da12d54a375e94fb1c4d5ed4a92f1b9a2ef4595877857ad7",
+      "xavier_hash": "fd6a3d3f7aeaff07a3de2468f76c27ac5178f717771d014144ecc70bbe0c19c2",
+      "changed_parameters": [
+        "conv1.weight",
+        "conv2.weight",
+        "conv3.weight",
+        "conv4.weight",
+        "conv5.weight"
+      ],
+      "all_other_parameters_identical": true
+    }
+  },
+  "scope": "CPU training-only initial activation and gradient checks; no optimization or validation-based selection"
+}

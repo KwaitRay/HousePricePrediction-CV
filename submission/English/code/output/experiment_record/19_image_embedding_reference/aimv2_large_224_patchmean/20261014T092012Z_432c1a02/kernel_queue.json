@@ -1,0 +1,15 @@
+{
+  "command": [
+    "D:\\学习\\研究生\\graduate 26s2\\COMP 90086 CV\\Final_Assignment\\cv-house-price\\.venv\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "D:\\学习\\研究生\\graduate 26s2\\COMP 90086 CV\\Final_Assignment\\cv-house-price\\scripts\\experiments\\frozen_kernel_search.py",
+    "--cache-family",
+    "aimv2_features",
+    "--cache-key",
+    "c60e7a7d245ab2ac94061cd327180783be1655eac26aa0a7519f11a57c16ed19",
+    "--name",
+    "aimv2_large_224_patchmean_kernel"
+  ],
+  "exit_code": 0
+}

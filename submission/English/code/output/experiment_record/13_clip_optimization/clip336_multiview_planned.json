@@ -1,0 +1,11 @@
+{
+  "status": "registered_waiting",
+  "method": "CLIP336 official original view + whole letterbox336 + fixed center60% detail; retain original scene reference",
+  "pretrained_model": "ViT-L-14-336/OpenAI",
+  "precision": "float32",
+  "batch_size": 4,
+  "split": "Frozen 6399/1601, GroupKFold3 within training for head selection",
+  "predecessor_controller_pid": 9688,
+  "test_images_used": false,
+  "caveat": "Upsampling native images does not recover unavailable scene details; gains must be measured, not assumed"
+}

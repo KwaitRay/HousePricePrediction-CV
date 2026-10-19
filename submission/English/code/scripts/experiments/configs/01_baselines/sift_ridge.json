@@ -1,0 +1,16 @@
+{
+  "extends": "../base.json",
+  "experiment": {
+    "id": "sift_ridge",
+    "name": "传统参照阶段—实验一：局部特征与房价回归",
+    "stage": "01_baselines",
+    "question": "局部纹理是否能提供价格信息",
+    "comparison": "继承配置 ../base.json 对应的已保留方案",
+    "changed_fields": [
+      "method"
+    ],
+    "enforce_changes": true,
+    "status": "ready"
+  },
+  "method": "traditional"
+}

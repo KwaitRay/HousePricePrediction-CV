@@ -1,0 +1,43 @@
+{
+  "method": "Price-band weighted image RBF with fold-fitted normalized weights and weighted target mean",
+  "source": "19_image_embedding_reference/pe_core_g14_448_whole_kernel/20261014T090655Z_2d55c743",
+  "baseline_fusion": "15_fixed_ensembles/pe_giant_whole_incremental_fusion/20261014T082727Z_c5152cef",
+  "source_sha256": "2bad858500ebcdfbd7ab62a07a4ad18795eb8ebb957a559b8bdcf1cb77ad0cf4",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "feature_cache_key": "434a9e75fbd87058fb6a6829ae46f1e2ee4d96a409f8e493c3d96770999a831c",
+  "cache_family": "pe_core_giant_whole_features",
+  "manifest_sha256": "b7e44b02d5bc1277f92f92d76de439383eb6d3220483938902296942d1e9de64",
+  "feature_dim": 2560,
+  "source_head_sha256": "7747bd57dd7f4fc60d5a56d86b4ba7601a541fc7feaeef9215f9a4b20353829d",
+  "source_oof_sha256": "ccf769e90eb192107d888652718636b41aca8efee8c21145c14e3573981fa04f",
+  "source_predictions_sha256": "b51ea95669403aa57dd4b8bd24d78c10d2a4e2050b989a36070ea105bbeadd3e",
+  "baseline_ensemble_sha256": "8743f95ec0b465c71bb508181346f8714c56de756b9737aafbe861580e09bfb8",
+  "fixed_gamma": 4.0,
+  "fixed_alpha": 1.0,
+  "strengths": [
+    0.0,
+    0.5,
+    1.0
+  ],
+  "bands": [
+    "<=300",
+    "(300,700]",
+    "(700,1300]",
+    ">1300"
+  ],
+  "weight_formula": "Within each fit partition, clip(sqrt(N/(4*n_band)), .8, 1.25), normalize mean; mix with ones by strength; renormalize",
+  "kernel_equation": "(K + alpha*diag(1/w))c = y - weighted_training_mean; prediction=Knew*c+mean",
+  "hypothesis": "Whole-frame meta-crossfit shows low overprediction and high underprediction; bounded tail weighting may improve the readout on the current strong representation",
+  "comparison": "Same cached features, grouped folds, gamma and alpha; only objective weighting/associated prior mean change. Not a rerun of the failed from-scratch CNN weighting.",
+  "selection": "Unweighted original-price grouped three-fold OOF MSE, including strength zero exact replay control; validation once after selection",
+  "control_tolerance": {
+    "rtol": 1e-07,
+    "atol": 0.0001
+  },
+  "full_refit_adapter_supported": false,
+  "automatic_test_export": false,
+  "test_images_used": false,
+  "test_labels_used": false,
+  "mllm_components": false,
+  "caveat": "Source kernel hyperparameters already selected; not unbiased nested CV; validation remains development data"
+}

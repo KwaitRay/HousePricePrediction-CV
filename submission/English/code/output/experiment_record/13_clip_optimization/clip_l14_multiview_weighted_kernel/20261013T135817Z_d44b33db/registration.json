@@ -1,0 +1,21 @@
+{
+  "gamma": 4.0,
+  "gamma_source": "previous train-only CV-selected reference kernel",
+  "alphas": [
+    0.01,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "source_kernel": "13_clip_optimization\\clip_l14_multiview_kernel\\20261013T120554Z_e2a41622",
+  "source_kernel_sha256": "8c73917dcfbaf805b3d24e72c27bb821fc12ee61307ac5212849c2a7c2596269",
+  "feature_dim": 2304,
+  "weights": "Four price bands; sqrt(N/(4*n_band)), clip 0.8..1.25, normalize training mean1; recompute independently per fit fold",
+  "center": "Fit-fold weighted target mean",
+  "evaluation": "Unweighted original-price clipped MSE, train-only GroupKFold3 selects alpha; validation once",
+  "source_sha256": "7ce53489a2912008d16112f6a57199c1a38d63ffa259cc53a06edc8dbae684c2",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "feature_manifest_sha256": "b6b44e6df18931e13b95247d40346cce0a9747b218a2e1c09ded38137f2c29f5",
+  "test_images_used": false,
+  "course_scope": "Exploratory CLIP, eligibility unresolved"
+}

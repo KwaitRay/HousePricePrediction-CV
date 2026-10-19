@@ -1,0 +1,13 @@
+{
+  "head": "image_geometry_kernel",
+  "geometry_gamma": 0.0,
+  "alpha": 1.0,
+  "training_oof_mse": 75119.5179017966,
+  "mse": 71037.86594253306,
+  "mae": 191.8835232445228,
+  "tail_mse": 343829.413785176,
+  "n": 1601,
+  "tail_n": 159,
+  "tail_threshold": 1300.0,
+  "seconds": 228.10480890003964
+}

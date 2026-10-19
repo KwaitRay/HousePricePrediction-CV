@@ -1,0 +1,20 @@
+{
+  "extends": "input_frozen.json",
+  "experiment": {
+    "id": "tune_02_muon_0p02",
+    "name": "muon lr=0.02",
+    "stage": "02_training",
+    "question": "Optimizer and learning-rate controlled comparison",
+    "comparison": "same-seed stretch input AdamW reference",
+    "changed_fields": [
+      "training.optimizer",
+      "training.lr"
+    ],
+    "enforce_changes": true,
+    "status": "ready"
+  },
+  "training": {
+    "optimizer": "muon",
+    "lr": 0.02
+  }
+}

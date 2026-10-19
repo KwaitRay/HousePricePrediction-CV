@@ -1,0 +1,17 @@
+{
+  "run": "08_final\\visual_kernel_ensemble\\20261014T091115Z_286fc436",
+  "csv_sha256": "663fe45609d2e086151d410340baac05302d6c54ffc4bc8361f1bfb1622b38a3",
+  "public_mse": 47837.69254,
+  "source": "User reply to explicit submission request for this run and SHA prefix 663fe456",
+  "reported_date": "2026-10-14",
+  "independently_read_from_kaggle": false,
+  "reference_validation_mse": 52524.78420579877,
+  "prior_best_public_mse": 49543.82739,
+  "improvement_from_prior_best": 1706.1348500000022,
+  "primary_target_mse": 50000,
+  "primary_target_achieved": true,
+  "current_target_mse": 40000,
+  "current_target_achieved": false,
+  "gap_to_current_target": 7837.692539999996,
+  "kaggle_uploaded_by_tool": false
+}

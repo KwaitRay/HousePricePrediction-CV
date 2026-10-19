@@ -1,0 +1,61 @@
+{
+  "status": "extracting",
+  "repo": "google/siglip2-giant-opt-patch16-384",
+  "revision": "a713301b217d38485fb2204c808367d10bc3cc40",
+  "vision_weight_shards": [
+    "model-00001-of-00002.safetensors",
+    "model-00002-of-00002.safetensors"
+  ],
+  "vision_tensor_count": 656,
+  "meta_architecture_preflight_completed": true,
+  "vision_params": 1163659776,
+  "fp16_parameter_gib": 2.167485237121582,
+  "parameter_bytes_not_peak_inference_memory": true,
+  "feature_dim": 1536,
+  "input_size": 384,
+  "patch_size": 16,
+  "vision_type": "SiglipVisionModel with SiglipVisionConfig, not NaFlex Siglip2VisionModel",
+  "host_memory_strategy": "Instantiate on Meta and stream only vision tensors to fp16 CUDA; materialize nonpersistent position_ids separately",
+  "gpu_preflight_completed": true,
+  "checkpoint_tensor_shape_preflight_completed": true,
+  "planned_batch_preflight": [
+    1
+  ],
+  "selection": "Same original unweighted training GroupKFold3 frozen-feature kernel protocol",
+  "test_images_used": false,
+  "mllm_components": false,
+  "text_modules_used": false,
+  "official_model_card": "https://huggingface.co/google/siglip2-giant-opt-patch16-384",
+  "course_scope": "Generic WebLI-pretrained visual encoder only; new price head uses supplied labels",
+  "download_tool_sha256": "bc28edad95f9391f43022cd0b0d8e2b2ead8241cf9f330cffe9e94162b365e26",
+  "download_handle": "unified_exec:74906",
+  "scope": "Model preparation only; full extraction and GPU feasibility not yet established",
+  "vision_loader_implemented": true,
+  "loader_source_sha256": "ebd2460b63fe91d4ac2069d345f0e814593e5b02db0d407efd8ef4769f63080a",
+  "reference_source_sha256": "72dc0281fe7bad95f63822a6de55e5adb5277145bdd0205897987ea655350e80",
+  "publisher_checksum_verified": true,
+  "checkpoint_shard_sha256": {
+    "model-00001-of-00002.safetensors": "9f6da5ad2e3178b0c1197b740c9ffefee0bc733ee8759095a5ea8c4c845a3f4e",
+    "model-00002-of-00002.safetensors": "06e64949dd7cafc4d278723533e2591145ae8e5616d2c0c5d8458de25ceede34"
+  },
+  "vision_tensor_shapes_match": true,
+  "vision_tensors": 656,
+  "gpu_preflight_and_extraction_command": [
+    "scripts/experiments/siglip_giant_reference.py",
+    "--weights-dir",
+    ".local/cache/siglip2_giant_weights/a713301b217d38485fb2204c808367d10bc3cc40",
+    "--phase",
+    "experiment"
+  ],
+  "gpu_predecessor_controllers": [
+    6740,
+    31172
+  ],
+  "inference_batch_size": 1,
+  "gpu_predecessor_pid": 28768,
+  "gpu_predecessor_status": "output/experiment_record/08_final/visual_kernel_ensemble/20261014T035153Z_01a3ae7f/status.json",
+  "active_reference": "19_image_embedding_reference/siglip2_giant_384/20261014T040343Z_b2b80c65",
+  "peak_allocated_mib": 2251.60302734375,
+  "peak_reserved_mib": 2340.0,
+  "batch_size": 1
+}

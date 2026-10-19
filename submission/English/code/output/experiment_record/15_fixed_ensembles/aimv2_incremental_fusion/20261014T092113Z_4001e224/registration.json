@@ -1,0 +1,24 @@
+{
+  "baseline": "15_fixed_ensembles/pe_giant_whole_incremental_fusion/20261014T082727Z_c5152cef",
+  "baseline_ensemble_sha256": "8743f95ec0b465c71bb508181346f8714c56de756b9737aafbe861580e09bfb8",
+  "new_encoder": {
+    "name": "aimv2_large_224_patchmean_kernel",
+    "family": "aimv2_features",
+    "model": "apple/aimv2-large-patch14-224",
+    "revision": "fcb5093a9c5b3efb7db5acee213849967fd18210"
+  },
+  "source_sha256": "97826c263bdbc79bff9918304410c8b40203d7114784ab18443f7396203b6178",
+  "optimizer_source_sha256": "33671e0ce29345651c926f86e89a305815b43f84d30a0a979b36f6132e4ce0cb",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "weight_zero_tolerance": 1e-12,
+  "gate": {
+    "minimum_meta_cv_relative_gain": 0.01,
+    "minimum_folds_won": 2,
+    "validation_improvement_required": true
+  },
+  "selection": "Add exactly one preregistered frozen visual kernel to the explicitly named fixed baseline; convex weights from training OOF only",
+  "caveat": "Base hyperparameters previously selected; meta crossfit is not fully nested unbiased CV",
+  "test_images_used": false,
+  "mllm_components": false,
+  "automatic_test_export": false
+}

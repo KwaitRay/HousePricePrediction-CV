@@ -1,0 +1,14 @@
+{
+  "source_sha256": "573e141fcf4b7865e583c2a749d33530313f407a270ed73c17989e2802101629",
+  "feature_manifest_sha256": "b7e44b02d5bc1277f92f92d76de439383eb6d3220483938902296942d1e9de64",
+  "encoder_source_sha256": "d2543c58424336a2b1de6b081b3081cf634710db4687943ec739fae6324099a4",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "probe_seed": 2026,
+  "probe_n": 12,
+  "tolerances": {
+    "rtol": 0.0001,
+    "atol": 3e-06
+  },
+  "test_images_used": false,
+  "price_labels_used_for_probe_selection": false
+}

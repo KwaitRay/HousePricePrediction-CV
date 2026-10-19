@@ -1,0 +1,18 @@
+{
+  "extends": "../selected/encoder.json",
+  "experiment": {
+    "id": "encoder_03_two_layers",
+    "name": "卷积特征处理阶段—实验三：比较一层与两层编码器",
+    "stage": "05_encoder",
+    "question": "单层有效后只增加编码器深度",
+    "comparison": "继承配置 ../selected/encoder.json 对应的已保留方案",
+    "changed_fields": [
+      "model.encoder_layers"
+    ],
+    "enforce_changes": true,
+    "status": "ready"
+  },
+  "model": {
+    "encoder_layers": 2
+  }
+}

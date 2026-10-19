@@ -1,0 +1,12 @@
+{
+  "source_prediction_sha256": {
+    "metric": "407b5439aa7549cf976fe52728f1447066ba38298614580216e096dfe28b6e24",
+    "ordinal": "65c36eee004bbe1559e95245e3cfe31b49f75b3955526e7aefb3ffb93bca7629",
+    "baseline_fusion": "fdd7f2011ac65027be81d68cbc65394b5106e23ad5c98ca903de0db0ca504a8f",
+    "ordinal_fusion": "dcac78fce3c1f816795d03ba6c4d8e21bd8e45afc27fed71a8b4ab325ccecd99"
+  },
+  "annotation_sha256": "864415fc2bf5f3b6f093dfa3702ae31945d3dcc7b6f8d517dbb1b4646e459d36",
+  "training_scene_role": "Diagnosis of selected base OOF predictions only; annotations not model inputs; selected hyperparameters mean these OOF scores are not unbiased nested estimates",
+  "validation_scene_annotations_used": false,
+  "test_images_used": false
+}

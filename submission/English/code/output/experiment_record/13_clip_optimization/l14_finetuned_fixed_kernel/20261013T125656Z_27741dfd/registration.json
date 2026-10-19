@@ -1,0 +1,17 @@
+{
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "fine_source": "13_clip_optimization/ViT_L_14_finetune/20261013T120633Z_3717bebe",
+  "fine_checkpoint_sha256": "88cdf04cea1d0357d2c2ed75a8f2b63beb955dd954ad170c9de58d889e9849bd",
+  "fine_registration_sha256": "65793f827e07c4ee8c998c64a4297af5542b2f29bb88be3f737b92afc0e9a5d8",
+  "supervised_encoder": true,
+  "preprocess": "Compose(\n    Resize(size=224, interpolation=bicubic, max_size=None, antialias=True)\n    CenterCrop(size=(224, 224))\n    MaybeConvertMode()\n    MaybeToTensor()\n    Normalize(mean=(0.48145466, 0.4578275, 0.40821073), std=(0.26862954, 0.26130258, 0.27577711))\n)",
+  "precision": "float32",
+  "source_sha256": "ca9bd5849be12c887908242c611b3a5969bbeeb5d42078b221c617d33bcb7594",
+  "cache_key": "1e7e12f92cebf2510fd3f1609c9d87e5b3144275ed818f3ad2970c95df5d4bd9",
+  "gamma": 4,
+  "alpha": 1,
+  "head_selection": "Fixed previously training-CV selected pretrained L14 gamma4 alpha1; no new head CV on supervised encoder features",
+  "caveat": "Encoder trained on6399 labels and checkpoint selected on original validation; final validation is development reuse, not independent test",
+  "course_scope": "Exploratory CLIP visual model, eligibility unresolved",
+  "test_images_used": false
+}

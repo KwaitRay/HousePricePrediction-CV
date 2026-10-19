@@ -1,0 +1,24 @@
+{
+  "n": 40,
+  "type_matches": 40,
+  "all_fields_matches": 38,
+  "flag_matches": {
+    "P": 40,
+    "T": 40,
+    "O": 38,
+    "W": 40
+  },
+  "disagreements": [
+    {
+      "code": "V137",
+      "first": "F:",
+      "second": "F:O"
+    },
+    {
+      "code": "V193",
+      "first": "F:",
+      "second": "F:O"
+    }
+  ],
+  "scope": "Same assistant repeated review in the same session, not independent rater agreement; memory effects possible."
+}

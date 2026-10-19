@@ -1,0 +1,14 @@
+{
+  "device": {
+    "before": "auto",
+    "after": "cuda"
+  },
+  "run_kind": {
+    "before": null,
+    "after": "diagnostic"
+  },
+  "training.epochs": {
+    "before": 60,
+    "after": 2
+  }
+}

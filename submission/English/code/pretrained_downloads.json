@@ -1,0 +1,94 @@
+[
+  {
+    "model": "google/siglip2-so400m-patch16-naflex",
+    "revision": "cc24074f717b612951c2dead130904ab9b65a81e",
+    "local_dir": ".local/cache/siglip2_naflex_weights/cc24074f717b612951c2dead130904ab9b65a81e",
+    "url": "https://huggingface.co/google/siglip2-so400m-patch16-naflex/tree/cc24074f717b612951c2dead130904ab9b65a81e",
+    "files": [
+      {
+        "filename": "README.md",
+        "sha256": "1104c24a1af2a8a496146c67581523661277883c8d02f022e216302d61bda49b",
+        "bytes": 3389
+      },
+      {
+        "filename": "config.json",
+        "sha256": "c633ddede50ec15d5818e04325bc4a5ac47c2762194a02486baee7d2a3a3dbc5",
+        "bytes": 590
+      },
+      {
+        "filename": "download.json",
+        "sha256": "f5892112d4693f4db456f69379e8a69cd91c599fd7040db661ed38dd44537697",
+        "bytes": 1081,
+        "origin": "bundled_local_provenance"
+      },
+      {
+        "filename": "model.safetensors",
+        "sha256": "11a61a2068800d5f4f35cb041c1fea25de86ce87725e4c97a9ed046d0b22c076",
+        "bytes": 4542792928
+      },
+      {
+        "filename": "preprocessor_config.json",
+        "sha256": "1125703e5446d5b6ff4d5893a33bac128cdd21dc12e3dad2469a648fb0ae3bf7",
+        "bytes": 393
+      }
+    ]
+  },
+  {
+    "model": "timm/vit_pe_core_large_patch14_336.fb",
+    "revision": "e63206c8e3a0e9b699e40f31080eebd78fd2258e",
+    "local_dir": ".local/cache/pe_core_weights/e63206c8e3a0e9b699e40f31080eebd78fd2258e",
+    "url": "https://huggingface.co/timm/vit_pe_core_large_patch14_336.fb/tree/e63206c8e3a0e9b699e40f31080eebd78fd2258e",
+    "files": [
+      {
+        "filename": "README.md",
+        "sha256": "707efd98717c5f36840a5f1c110cd1c297e48d41939d98653dc3d7807ed4a833",
+        "bytes": 4375
+      },
+      {
+        "filename": "config.json",
+        "sha256": "5743a679e5dc4cabf535e8b5e7d3992de41b3703f73e88a175f9781a5116ace1",
+        "bytes": 602
+      },
+      {
+        "filename": "download.json",
+        "sha256": "5addc90cec6499d3dd1861c27118b9c31555605a7e6dd2589ac681e7bf8833d4",
+        "bytes": 895,
+        "origin": "bundled_local_provenance"
+      },
+      {
+        "filename": "model.safetensors",
+        "sha256": "35edcdb68eb43329192fc1530c246191e8a72f9a3dae01e2c7cccf05338d4cac",
+        "bytes": 1268638488
+      }
+    ]
+  },
+  {
+    "model": "timm/vit_pe_core_gigantic_patch14_448.fb",
+    "revision": "fb096c09d13bd2e3827aed4dbdffb8a6b8e0c10b",
+    "local_dir": ".local/cache/pe_core_giant_weights/fb096c09d13bd2e3827aed4dbdffb8a6b8e0c10b",
+    "url": "https://huggingface.co/timm/vit_pe_core_gigantic_patch14_448.fb/tree/fb096c09d13bd2e3827aed4dbdffb8a6b8e0c10b",
+    "files": [
+      {
+        "filename": "README.md",
+        "sha256": "384e9c7ba2e0ca4ad65a30a0a9a212920cca6dfe6419cbddb9a42faa690f6ecb",
+        "bytes": 4960
+      },
+      {
+        "filename": "config.json",
+        "sha256": "f3d4cd28623bd6dc7dcea522411c48ebfea44aae844aa5cb7a8401a3601d5b6f",
+        "bytes": 605
+      },
+      {
+        "filename": "download.json",
+        "sha256": "c021c1147844d78da75aef7a2f22ec4fb795d1f70b05323ceb246fe7bc06515b",
+        "bytes": 901,
+        "origin": "bundled_local_provenance"
+      },
+      {
+        "filename": "model.safetensors",
+        "sha256": "a0a499d4a7c6d35bb5f11aa2b076eaacde06e66a08176eb3b3d362d80eb91bd8",
+        "bytes": 7528195816
+      }
+    ]
+  }
+]

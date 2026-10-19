@@ -1,0 +1,19 @@
+{
+  "controller_source_sha256": "89929f913167ab6c0d030a4707de5804dcad246b4bf85c97d4dc45d797f280e7",
+  "dependency_sha256": {
+    "pe_giant_mid40_reference.py": "128632776e01c66f046d8ae40bfd153fd9bf0aa89afc7f77f88ea4855436f443",
+    "pe_giant_mid40_encoder.py": "97fb61804a589dc33302228c91460d0fff16507cb8789dd59d8fd06971fbe958",
+    "pe_core_giant_preflight.py": "1fddd9f65df031cb7fef35b6594de2870235faf5173cea3fbecf96b873e11ae3",
+    "pe_giant_whole_view.py": "7d1ce7868274eb04bb03130200048583ed343212659e266f8f22b2983bbc90fb",
+    "frozen_kernel_search.py": "e4ab216a731dfff6aea2805a2fd8e4ddab1e2018ec6bc2da88ef2d1d986b7c84",
+    "visual_kernel_submission.py": "e1cbffcc76a5ca123bfe3b5382d67d2ad7831063eff22042316e8f2138672b41",
+    "pe_giant_incremental_fusion.py": "97826c263bdbc79bff9918304410c8b40203d7114784ab18443f7396203b6178",
+    "encoder_oof_fusion.py": "33671e0ce29345651c926f86e89a305815b43f84d30a0a979b36f6132e4ce0cb",
+    "common/config.py": "f90dad78a6188f1a67fbbb3ab62dda40cbadaf0ed8ed1b75d486d25553775beb",
+    "common/local_paths.py": "0edf298a763e77cf64dfd56d766c22ce7e7ab8a418e64f0bcc9174e4dfd0a1e3",
+    "common/metrics.py": "60be3e6de4ad6464ac669a7cab548add9bee9ef54ae32375c6a1e4dbfbf961b9",
+    "preparation/split.py": "7fee65a48cad0ce36f8a7cf11cb99a12206094eb9a1851f0f96a69f56e08316a"
+  },
+  "source_registration_sha256": "4a5e54a0e19edfc3305b45faa9350ed9fab8799eb928029526e68300a8f4ef51",
+  "automatic_export": false
+}

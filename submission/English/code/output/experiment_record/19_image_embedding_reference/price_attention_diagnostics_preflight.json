@@ -1,0 +1,14 @@
+{
+  "source_sha256": "310d9182578d258972dab9429edfd2488390d250f00ea0beeb81d365a94412b3",
+  "scope": "Case-selection rules tested on existing SigLIP validation predictions, plus nominal patch-grid mapping; no trained attention result or heatmap generated",
+  "distinct_cases": 12,
+  "roles": {
+    "高价最大低估": 4,
+    "高价较好案例": 2,
+    "低价最大高估": 2,
+    "中价固定随机": 2,
+    "全验证固定随机": 2
+  },
+  "patch_border_mask_and_center_mapping_passed": true,
+  "test_images_used": false
+}

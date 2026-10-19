@@ -1,0 +1,18 @@
+{
+  "extends": "alexnet.json",
+  "experiment": {
+    "id": "preprocess_01_stretch",
+    "name": "预处理备选阶段—实验一：拉伸尺寸调整",
+    "stage": "00_preparation",
+    "question": "输入诊断提供依据后，固定 AlexNet 训练设置比较该输入因素",
+    "comparison": "Optimized v2 AlexNet control, identical stopping policy and loader implementation",
+    "changed_fields": [
+      "preprocess.geometry"
+    ],
+    "enforce_changes": true,
+    "status": "ready"
+  },
+  "preprocess": {
+    "geometry": "stretch"
+  }
+}

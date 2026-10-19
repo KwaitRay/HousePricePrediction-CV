@@ -1,0 +1,287 @@
+{
+  "tier_cutoffs_thousand_usd": {
+    "low": "price <= 300",
+    "middle": "300 < price <= 1300",
+    "high": "price > 1300"
+  },
+  "tier_counts": {
+    "中价": 5083,
+    "低价": 680,
+    "高价": 636
+  },
+  "reviewed": 936,
+  "unreviewed": 5463,
+  "cells": [
+    {
+      "price_tier": "低价",
+      "feature": "visible_pool",
+      "feature_name": "画面可见泳池",
+      "population": 680,
+      "known_yes": 0,
+      "known_no": 100,
+      "unknown": 580
+    },
+    {
+      "price_tier": "低价",
+      "feature": "twilight_night",
+      "feature_name": "黄昏或夜景",
+      "population": 680,
+      "known_yes": 2,
+      "known_no": 98,
+      "unknown": 580
+    },
+    {
+      "price_tier": "低价",
+      "feature": "major_vegetation_occlusion",
+      "feature_name": "明显植被遮挡",
+      "population": 680,
+      "known_yes": 6,
+      "known_no": 94,
+      "unknown": 580
+    },
+    {
+      "price_tier": "低价",
+      "feature": "woodland_cabin_appearance",
+      "feature_name": "木质山林小屋外观",
+      "population": 680,
+      "known_yes": 8,
+      "known_no": 92,
+      "unknown": 580
+    },
+    {
+      "price_tier": "低价",
+      "feature": "aerial_view",
+      "feature_name": "航拍高位",
+      "population": 680,
+      "known_yes": 7,
+      "known_no": 93,
+      "unknown": 580
+    },
+    {
+      "price_tier": "低价",
+      "feature": "partial_subject",
+      "feature_name": "主体局部",
+      "population": 680,
+      "known_yes": 13,
+      "known_no": 87,
+      "unknown": 580
+    },
+    {
+      "price_tier": "低价",
+      "feature": "interior_view",
+      "feature_name": "室内",
+      "population": 680,
+      "known_yes": 0,
+      "known_no": 100,
+      "unknown": 580
+    },
+    {
+      "price_tier": "低价",
+      "feature": "rendering",
+      "feature_name": "效果图",
+      "population": 680,
+      "known_yes": 0,
+      "known_no": 100,
+      "unknown": 580
+    },
+    {
+      "price_tier": "低价",
+      "feature": "large_building",
+      "feature_name": "较大建筑",
+      "population": 680,
+      "known_yes": 0,
+      "known_no": 0,
+      "unknown": 680
+    },
+    {
+      "price_tier": "低价",
+      "feature": "multistorey",
+      "feature_name": "多层建筑",
+      "population": 680,
+      "known_yes": 0,
+      "known_no": 0,
+      "unknown": 680
+    },
+    {
+      "price_tier": "中价",
+      "feature": "visible_pool",
+      "feature_name": "画面可见泳池",
+      "population": 5083,
+      "known_yes": 12,
+      "known_no": 187,
+      "unknown": 4884
+    },
+    {
+      "price_tier": "中价",
+      "feature": "twilight_night",
+      "feature_name": "黄昏或夜景",
+      "population": 5083,
+      "known_yes": 10,
+      "known_no": 190,
+      "unknown": 4883
+    },
+    {
+      "price_tier": "中价",
+      "feature": "major_vegetation_occlusion",
+      "feature_name": "明显植被遮挡",
+      "population": 5083,
+      "known_yes": 12,
+      "known_no": 188,
+      "unknown": 4883
+    },
+    {
+      "price_tier": "中价",
+      "feature": "woodland_cabin_appearance",
+      "feature_name": "木质山林小屋外观",
+      "population": 5083,
+      "known_yes": 5,
+      "known_no": 195,
+      "unknown": 4883
+    },
+    {
+      "price_tier": "中价",
+      "feature": "aerial_view",
+      "feature_name": "航拍高位",
+      "population": 5083,
+      "known_yes": 22,
+      "known_no": 177,
+      "unknown": 4884
+    },
+    {
+      "price_tier": "中价",
+      "feature": "partial_subject",
+      "feature_name": "主体局部",
+      "population": 5083,
+      "known_yes": 24,
+      "known_no": 175,
+      "unknown": 4884
+    },
+    {
+      "price_tier": "中价",
+      "feature": "interior_view",
+      "feature_name": "室内",
+      "population": 5083,
+      "known_yes": 0,
+      "known_no": 199,
+      "unknown": 4884
+    },
+    {
+      "price_tier": "中价",
+      "feature": "rendering",
+      "feature_name": "效果图",
+      "population": 5083,
+      "known_yes": 4,
+      "known_no": 195,
+      "unknown": 4884
+    },
+    {
+      "price_tier": "中价",
+      "feature": "large_building",
+      "feature_name": "较大建筑",
+      "population": 5083,
+      "known_yes": 0,
+      "known_no": 0,
+      "unknown": 5083
+    },
+    {
+      "price_tier": "中价",
+      "feature": "multistorey",
+      "feature_name": "多层建筑",
+      "population": 5083,
+      "known_yes": 0,
+      "known_no": 0,
+      "unknown": 5083
+    },
+    {
+      "price_tier": "高价",
+      "feature": "visible_pool",
+      "feature_name": "画面可见泳池",
+      "population": 636,
+      "known_yes": 94,
+      "known_no": 542,
+      "unknown": 0
+    },
+    {
+      "price_tier": "高价",
+      "feature": "twilight_night",
+      "feature_name": "黄昏或夜景",
+      "population": 636,
+      "known_yes": 121,
+      "known_no": 515,
+      "unknown": 0
+    },
+    {
+      "price_tier": "高价",
+      "feature": "major_vegetation_occlusion",
+      "feature_name": "明显植被遮挡",
+      "population": 636,
+      "known_yes": 11,
+      "known_no": 590,
+      "unknown": 35
+    },
+    {
+      "price_tier": "高价",
+      "feature": "woodland_cabin_appearance",
+      "feature_name": "木质山林小屋外观",
+      "population": 636,
+      "known_yes": 22,
+      "known_no": 611,
+      "unknown": 3
+    },
+    {
+      "price_tier": "高价",
+      "feature": "aerial_view",
+      "feature_name": "航拍高位",
+      "population": 636,
+      "known_yes": 115,
+      "known_no": 521,
+      "unknown": 0
+    },
+    {
+      "price_tier": "高价",
+      "feature": "partial_subject",
+      "feature_name": "主体局部",
+      "population": 636,
+      "known_yes": 157,
+      "known_no": 479,
+      "unknown": 0
+    },
+    {
+      "price_tier": "高价",
+      "feature": "interior_view",
+      "feature_name": "室内",
+      "population": 636,
+      "known_yes": 0,
+      "known_no": 636,
+      "unknown": 0
+    },
+    {
+      "price_tier": "高价",
+      "feature": "rendering",
+      "feature_name": "效果图",
+      "population": 636,
+      "known_yes": 5,
+      "known_no": 631,
+      "unknown": 0
+    },
+    {
+      "price_tier": "高价",
+      "feature": "large_building",
+      "feature_name": "较大建筑",
+      "population": 636,
+      "known_yes": 6,
+      "known_no": 0,
+      "unknown": 630
+    },
+    {
+      "price_tier": "高价",
+      "feature": "multistorey",
+      "feature_name": "多层建筑",
+      "population": 636,
+      "known_yes": 301,
+      "known_no": 119,
+      "unknown": 216
+    }
+  ],
+  "caveat": "Known counts are annotations, not population prevalence estimates. Original audit sampled 100 in each of four price strata; merged middle stratum cannot be estimated by raw pooled annotation rates."
+}

@@ -1,0 +1,19 @@
+{
+  "weighting": {
+    "counts": [
+      680,
+      3111,
+      1972,
+      636
+    ],
+    "weights": [
+      1.3534379638370178,
+      0.8662002968556914,
+      0.9752162860407849,
+      1.3534379638370178
+    ],
+    "scope": "training price bands only"
+  },
+  "evaluation": "Unweighted original-price MSE; original frozen validation population",
+  "note": "Price-band coverage probe, not full-population semantic balancing"
+}

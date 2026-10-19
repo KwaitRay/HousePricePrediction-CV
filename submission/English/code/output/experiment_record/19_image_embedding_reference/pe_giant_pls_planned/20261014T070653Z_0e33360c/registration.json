@@ -1,0 +1,34 @@
+{
+  "encoder": {
+    "name": "pe_core_g14_448_kernel",
+    "family": "pe_core_giant_features",
+    "model": "timm/vit_pe_core_gigantic_patch14_448.fb",
+    "revision": "fb096c09d13bd2e3827aed4dbdffb8a6b8e0c10b"
+  },
+  "source_sha256": "75ff77adf62f12511bf71aa1e467251ec608e6c620aba0d5fc6485fc586120e1",
+  "metric_source_sha256": "9df54a8c98d66a8aa6ecf2dddaa48647497a4b9c510e704c38f3b60a960d47cc",
+  "feature_loader_source_sha256": "25ab9546109fddcecf25c8c709c5bedb585e01cb95f06ad905a3ce2b9f01ba77",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "comparison": "Fixed PE-Core-G ordinary image RBF versus same image RBF multiplied by fold-fitted supervised PLS RBF",
+  "image_gamma": "Freeze ordinary image gamma selected by the existing training GroupKFold search",
+  "pls_fit_components": 16,
+  "score_components": [
+    4,
+    16
+  ],
+  "pls_gammas": [
+    0.01,
+    0.1
+  ],
+  "alphas": [
+    0.1,
+    1.0,
+    10.0
+  ],
+  "null_control": "Ordinary image RBF with its training-selected alpha, reuse existing OOF",
+  "selection": "Original-price unweighted training GroupKFold3 MSE; fixed validation once after selection",
+  "caveat": "Source image gamma previously selected on the same training folds; not nested unbiased CV",
+  "test_images_used": false,
+  "mllm_components": false,
+  "automatic_test_export": false
+}

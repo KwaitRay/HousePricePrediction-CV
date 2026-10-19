@@ -1,0 +1,10 @@
+# Observed local environment for recent frozen-vision/KRR experiments; Python 3.11.
+# CUDA wheel selection remains machine-specific; no models or weights are bundled.
+-r requirements.txt
+scipy==1.17.1
+timm==1.0.30
+transformers==4.57.6
+safetensors==0.8.0
+huggingface-hub==0.36.2
+joblib==1.6.0
+threadpoolctl==3.7.0

@@ -1,0 +1,16 @@
+{
+  "status": "completed",
+  "command": [
+    "D:\\学习\\研究生\\graduate 26s2\\COMP 90086 CV\\Final_Assignment\\cv-house-price\\.venv\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "D:\\学习\\研究生\\graduate 26s2\\COMP 90086 CV\\Final_Assignment\\cv-house-price\\scripts\\experiments\\frozen_kernel_search.py",
+    "--name",
+    "siglip2_naflex_576_kernel",
+    "--cache-family",
+    "siglip2_naflex_features",
+    "--cache-key",
+    "8b18cb9dd59f766ed86954e2f8c74fcc7627a593921091845f9a6063148be4e9"
+  ],
+  "exit_code": 0
+}

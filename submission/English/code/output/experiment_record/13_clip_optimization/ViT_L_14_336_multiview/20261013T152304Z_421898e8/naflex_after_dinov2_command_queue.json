@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "controller_pid": 37280,
+  "reference_pid": 5616,
+  "command": [
+    "scripts/experiments/siglip_naflex_reference.py",
+    "--weights-dir",
+    ".local\\cache\\siglip2_naflex_weights\\cc24074f717b612951c2dead130904ab9b65a81e",
+    "--max-num-patches",
+    "576"
+  ],
+  "exit_code": 0
+}

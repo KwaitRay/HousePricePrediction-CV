@@ -1,0 +1,34 @@
+{
+  "method": "mean-centered RBF kernel ridge",
+  "gammas": [
+    2.0,
+    4.0,
+    8.0
+  ],
+  "alphas": [
+    0.1,
+    0.3,
+    1.0,
+    3.0
+  ],
+  "train_only_group_cv": 3,
+  "grid_refinement_only": true,
+  "direct_control_gamma": 4.0,
+  "direct_control_alpha": 1.0,
+  "control_source": "19_image_embedding_reference/pe_core_g14_448_whole_kernel/20261014T090655Z_2d55c743",
+  "control_oof_sha256": "ccf769e90eb192107d888652718636b41aca8efee8c21145c14e3573981fa04f",
+  "reference_implementation_sha256": "ae4006419e647001e9fa257a97f5e67a233b92aa76efa11a479268d067cc9717",
+  "hypothesis": "Original training grid has nearly equal gamma4 alpha0.1/1 scores; a fixed local grid may reduce coarse-grid readout error without changing representations or targets",
+  "automatic_test_export": false,
+  "feature_cache_key": "434a9e75fbd87058fb6a6829ae46f1e2ee4d96a409f8e493c3d96770999a831c",
+  "manifest_sha256": "b7e44b02d5bc1277f92f92d76de439383eb6d3220483938902296942d1e9de64",
+  "source_sha256": "29e930d765ad7ed5385f1a20554d3af1d0cfebfec02e79c1c7336ac03806c21f",
+  "original_manifest_sha256": null,
+  "feature_dim": 2560,
+  "cache_family": "pe_core_giant_whole_features",
+  "course_scope": "General-purpose frozen image tower only; no MLLM or price-task model",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "dtype": "float64",
+  "centering": "Only training fold target mean, no validation label use",
+  "selection": "Original-price unweighted clipped MSE over all training OOF images; validation evaluated once after selection"
+}

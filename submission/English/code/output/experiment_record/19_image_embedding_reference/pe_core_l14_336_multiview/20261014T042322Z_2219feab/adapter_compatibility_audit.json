@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "only_new_encoder_branch_and_whitelist_added": true,
+  "all_existing_encoder_and_kernel_formulas_unchanged": true,
+  "prior_source_sha256": {
+    "visual_kernel_inference.py": "2e80b5876ebfff58c32fbaa6881d99363a51046a332a6be017ad1fab8de0cc2e",
+    "visual_kernel_submission.py": "b8547043385c373689435c48016caf1e0f68ce20f0050d2bb73cf48533268fe3"
+  },
+  "compatible_source_sha256": {
+    "visual_kernel_inference.py": "4c20868ae465e9fa6a3fbe66e2fe48298ccb36efd135bda448d2bc5e387da3c0",
+    "visual_kernel_submission.py": "96ad86e56cb411197287c4f21d6e37944aa449526e54d2fc4c738ad6b7c78442"
+  },
+  "view_source_sha256": "8aa3490cf81f0c62773604012255a1581e88b5c56b5ed11a1c04f86a74d94e39",
+  "test_images_used": false,
+  "mllm_components": false,
+  "eight_actual_training_feature_probes_passed": true,
+  "probe_imageids": [
+    "6809.jpg",
+    "1431.jpg",
+    "2965.jpg",
+    "639.jpg",
+    "5117.jpg",
+    "2923.jpg",
+    "212.jpg",
+    "3738.jpg"
+  ]
+}

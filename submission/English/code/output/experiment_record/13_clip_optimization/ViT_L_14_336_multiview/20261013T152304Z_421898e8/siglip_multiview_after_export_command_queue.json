@@ -1,0 +1,9 @@
+{
+  "status": "completed",
+  "controller_pid": 8368,
+  "reference_pid": 39152,
+  "command": [
+    "scripts/experiments/siglip_multiview.py"
+  ],
+  "exit_code": 0
+}

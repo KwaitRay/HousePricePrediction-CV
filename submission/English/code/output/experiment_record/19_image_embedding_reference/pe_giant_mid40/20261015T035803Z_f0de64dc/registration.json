@@ -1,0 +1,58 @@
+{
+  "method": "Frozen PE-G block40 token means, fixed crop+whole views",
+  "source_sha256": "128632776e01c66f046d8ae40bfd153fd9bf0aa89afc7f77f88ea4855436f443",
+  "preflight": "19_image_embedding_reference/pe_giant_mid40_preflight/20261015T035323Z_f4c60c8d",
+  "preflight_results_sha256": "5bdf51e926525163592f158df802243a3e0f2d3a00ac4d2030bed5f4a180053a",
+  "preflight_registration_sha256": "ba2fcc633d8c4c398e4417f64fbe69fe04cdd81f423b520a97542b175243bec9",
+  "dependency_sha256": {
+    "pe_giant_mid40_encoder.py": "97fb61804a589dc33302228c91460d0fff16507cb8789dd59d8fd06971fbe958",
+    "pe_core_giant_preflight.py": "1fddd9f65df031cb7fef35b6594de2870235faf5173cea3fbecf96b873e11ae3",
+    "pe_giant_whole_view.py": "7d1ce7868274eb04bb03130200048583ed343212659e266f8f22b2983bbc90fb",
+    "frozen_kernel_search.py": "e4ab216a731dfff6aea2805a2fd8e4ddab1e2018ec6bc2da88ef2d1d986b7c84",
+    "common/config.py": "f90dad78a6188f1a67fbbb3ab62dda40cbadaf0ed8ed1b75d486d25553775beb",
+    "common/local_paths.py": "0edf298a763e77cf64dfd56d766c22ce7e7ab8a418e64f0bcc9174e4dfd0a1e3",
+    "preparation/split.py": "7fee65a48cad0ce36f8a7cf11cb99a12206094eb9a1851f0f96a69f56e08316a"
+  },
+  "eva_implementation_sha256": "a8c9807ef5e8dabc725c1e2a89439760a900d6af6cdafefea18fc121173643a2",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "model": "timm/vit_pe_core_gigantic_patch14_448.fb",
+  "revision": "fb096c09d13bd2e3827aed4dbdffb8a6b8e0c10b",
+  "checkpoint_sha256": "a0a499d4a7c6d35bb5f11aa2b076eaacde06e66a08176eb3b3d362d80eb91bd8",
+  "config_sha256": "f3d4cd28623bd6dc7dcea522411c48ebfea44aae844aa5cb7a8401a3601d5b6f",
+  "cache_family": "pe_giant_mid40_features",
+  "feature_dim": 3072,
+  "batch_size": 1,
+  "dtype": "float64 after explicit FP32 feature storage rounding in encoder",
+  "hypothesis": "Intermediate patch averages may retain complementary visible scene detail to the final learned attention pooling and semantic projection; layer39 zero-based fixed before any price evaluation",
+  "encoder_policy": "FrozenFP16 base; deterministic MATH SDPA, TF32off, fixed2 neutral warmups, FP32 per-view pooling/unit and FP32 storage-rounding before final FP64 unit",
+  "pooling": "Raw patch tokens float32 mean, no final layer norm/attention pool/learned projection, unit per-view then concatenated unit",
+  "views": "Unchanged official crop and gray448 whole-frame, batch1",
+  "baseline_fusion": "15_fixed_ensembles/pe_whole_pca_incremental_fusion/20261015T033810Z_8aa6ec62",
+  "kernel_grid": {
+    "gammas": [
+      1.0,
+      4.0,
+      16.0
+    ],
+    "alphas": [
+      0.01,
+      0.1,
+      1.0,
+      10.0
+    ],
+    "group_folds": 3
+  },
+  "gate": {
+    "minimum_meta_cv_relative_gain": 0.01,
+    "minimum_folds_won": 2,
+    "require_full_validation_improvement": true
+  },
+  "source_scope": "Generic image tower, provided images/labels only; no MLLM, external house-price data or new model training",
+  "supervised_encoder": false,
+  "mllm_components": false,
+  "test_images_used": false,
+  "automatic_test_export": false,
+  "cache_key": "780eaa7411e687352919345d5251003b23ed64693fdf8c7a6566383014a818ed",
+  "feature_cache_key": "780eaa7411e687352919345d5251003b23ed64693fdf8c7a6566383014a818ed",
+  "manifest_sha256": "424ca98278bec1ffac9dbbecac7e6c696972cd6b87d04c6d34dbe0a92d2d52b4"
+}

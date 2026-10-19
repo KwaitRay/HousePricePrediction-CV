@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "validation_n": 1601,
+  "max_price_error": 2.2737367544323206e-13,
+  "source_sha256": "044b782bbeff29ed574c6c491b414dec91af3c44b1cfa327bc2d3b0ee0cff0fb",
+  "head_sha256": "c4e52005aeef819f06f9261db4c3d02f115aad61635eb8812d70bd6841bdb6f9",
+  "base_sha256": "27e6d9d0df8b7272e2280613dfbd33838e675ac3f808ba9290f8df1ddb31ff67",
+  "scope": "CPU reload all1601 MLP+Ridge prices and training scaler means, no refit of all OOF networks",
+  "test_images_used": false,
+  "export_eligible": false
+}

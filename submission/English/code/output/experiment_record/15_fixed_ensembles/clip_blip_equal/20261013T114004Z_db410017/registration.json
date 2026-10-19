@@ -1,0 +1,29 @@
+{
+  "models": [
+    "13_clip_optimization/clip_b16_kernel/20261013T111716Z_5ecc630f",
+    "13_clip_optimization/clip_multiview_kernel/20261013T111418Z_5ad0f81d",
+    "14_blip_reference/blip_base_kernel/20261013T113447Z_d63abf2c"
+  ],
+  "weights": [
+    0.3333333333333333,
+    0.3333333333333333,
+    0.3333333333333333
+  ],
+  "weights_learned": false,
+  "rule": "Mean of constituent nonnegative predictions",
+  "model_sha256": [
+    "34a19b86216b710d541d7edc230cd8608d4e22b6adb790611cc5fe0bf95d32da",
+    "80853dee1b29ba18da6fc41529c196581f2c035d461da77eae8dc574e7db7c6f",
+    "1a3798305d5b6efca873b3bcece042978f64203666a966ab0581be57581f693b"
+  ],
+  "prediction_sha256": [
+    "911cea29ca7ff82c81ca71ad0fd7d80f4f222b3ffdd9a3534b8c784a40f54f00",
+    "bff2f318faffb7e43150001358bde3c00b33a41675bae458a44bbb762831fd01",
+    "61f0ab57265574268beaea5cd8f216d8f833ecd6b253fadd5f9ce7b2765267ce"
+  ],
+  "source_sha256": "de8f3156bc4829a44b2c824811ee005337ea5cb7ac5cdb262a64bd2d4c47cf66",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "test_images_used": false,
+  "course_scope": "Exploratory visual CLIP/BLIP components; eligibility unresolved",
+  "caveat": "Constituents selected after development comparisons; OOF from previously selected hyperparameters, not nested unbiased evaluation"
+}

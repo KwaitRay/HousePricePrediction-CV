@@ -1,0 +1,40 @@
+{
+  "components": [
+    {
+      "model": "13_clip_optimization/clip_l14_multiview_kernel/20261013T120554Z_e2a41622",
+      "head_sha256": "8c73917dcfbaf805b3d24e72c27bb821fc12ee61307ac5212849c2a7c2596269",
+      "oof_sha256": "66eb9ddd4364a7740ee25c1b6e78e9b4e93a9b8c253b300247aa13bac0d28027",
+      "prediction_sha256": "4eb3f632d58d88bd30af90df7465e90d6a3d96eda2db6f3428ee75e70b663f75"
+    },
+    {
+      "model": "13_clip_optimization/clip_l14_kernel/20261013T114601Z_90f006c4",
+      "head_sha256": "78fc1f4b5ae0b1d01cfb396445b166b6e3e2e246f7d91bba6c201bb6b379c489",
+      "oof_sha256": "bf5821b7b62c44cb8bd35cf6bec6d7400a9660d6caf8f4b14a4e05fd0450050f",
+      "prediction_sha256": "0ad3f73462d9dec02ffe5e435b167e07c53e62daad3069b6d92a1c700753b276"
+    },
+    {
+      "model": "14_blip_reference/blip_base_kernel/20261013T113447Z_d63abf2c",
+      "head_sha256": "1a3798305d5b6efca873b3bcece042978f64203666a966ab0581be57581f693b",
+      "oof_sha256": "d7cfeca876de66fbdb0b3d2e74c3d38df50bde0ed613f602a9f0fb93850addf0",
+      "prediction_sha256": "61f0ab57265574268beaea5cd8f216d8f833ecd6b253fadd5f9ce7b2765267ce"
+    }
+  ],
+  "params": {
+    "loss": "squared_error",
+    "learning_rate": 0.05,
+    "max_iter": 100,
+    "max_depth": 2,
+    "max_leaf_nodes": 4,
+    "min_samples_leaf": 100,
+    "l2_regularization": 1.0,
+    "early_stopping": false,
+    "random_state": 2026
+  },
+  "fit_scope": "6399 training base OOF predictions and training labels only; no validation meta fitting",
+  "features": "Only numeric image-model price predictions; no filename, price-tier label, scene labels or metadata input",
+  "source_sha256": "c32585e415cff89148980abc44cf311cff62eabf43d4798ab695689da8a61776",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "test_images_used": false,
+  "course_scope": "Exploratory CLIP/BLIP visual components, eligibility unresolved",
+  "caveat": "Meta training-fit error is not independent OOF performance; development and base hyperparameter selection bias remains"
+}

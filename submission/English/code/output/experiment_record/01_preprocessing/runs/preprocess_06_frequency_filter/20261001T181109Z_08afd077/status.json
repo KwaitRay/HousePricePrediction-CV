@@ -1,0 +1,6 @@
+{
+  "status": "interrupted",
+  "kind": "development",
+  "reason": "Training and controller processes absent; artifacts stopped updating at epoch 23; cause unknown. No optimizer/RNG checkpoint for exact continuation.",
+  "detected_utc": "2026-10-02T02:52:51.116777+00:00"
+}

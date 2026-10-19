@@ -1,0 +1,18 @@
+{
+  "model": "ViT-B-32",
+  "pretrained": "openai",
+  "frozen": true,
+  "preprocessing": "OpenAI CLIP validation resize/center-crop/normalization, EXIF transpose, RGB",
+  "features": "L2-normalized image embedding only; no text or prompts",
+  "head": "StandardScaler + Ridge; 3-fold train-only GroupKFold",
+  "alphas": [
+    0.1,
+    1.0,
+    10.0,
+    100.0,
+    1000.0
+  ],
+  "seed": 2026,
+  "scope": "Exploratory pretrained reference; course eligibility unresolved; not a scratch-model ablation",
+  "test_images_used": false
+}

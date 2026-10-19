@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "models": [
+    {
+      "source": "19_image_embedding_reference/siglip2_price_metric_kernel/20261013T155603Z_4129a7fd",
+      "n": 1601,
+      "max_abs_replay_error": 2.2737367544323206e-13
+    },
+    {
+      "source": "19_image_embedding_reference/pe_core_multiview_price_metric_kernel/20261014T051116Z_13d3ea16",
+      "n": 1601,
+      "max_abs_replay_error": 4.547473508864641e-13
+    }
+  ],
+  "adapter_sha256": "6ec6de98a5fe5373aaacbbeec27e96f48b11cb067c405ffc9e5c30e20564f47e"
+}

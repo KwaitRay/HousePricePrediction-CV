@@ -1,0 +1,15 @@
+[
+  {
+    "head": "ridge",
+    "selected_params": {
+      "ridge__alpha": 10000
+    },
+    "training_cv_mse": 119682.21766875772,
+    "mse": 114344.05972146615,
+    "mae": 253.07402266428633,
+    "tail_mse": 594462.505772095,
+    "n": 1601,
+    "tail_n": 159,
+    "tail_threshold": 1300.0
+  }
+]

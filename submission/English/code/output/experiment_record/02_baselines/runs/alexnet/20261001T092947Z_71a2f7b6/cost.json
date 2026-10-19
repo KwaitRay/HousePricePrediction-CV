@@ -1,0 +1,13 @@
+{
+  "train_seconds": 5077.764778099954,
+  "epochs": 60,
+  "best_epoch": 6,
+  "optimizer_updates": 12000,
+  "samples_seen": 383940,
+  "training_seconds": 3015.59894849977,
+  "seconds_per_update": 0.25129991237498084,
+  "predict_seconds": 21.254813199979253,
+  "timing_note": "train_seconds包括逐轮验证与固定样本诊断；predict_seconds包括读取和预处理",
+  "stopped_early": false,
+  "peak_cuda_bytes": 1213386752
+}

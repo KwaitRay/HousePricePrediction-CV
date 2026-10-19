@@ -1,0 +1,34 @@
+{
+  "models": [
+    "13_clip_optimization/clip_l14_multiview_kernel/20261013T120554Z_e2a41622",
+    "13_clip_optimization/clip_l14_kernel/20261013T114601Z_90f006c4",
+    "14_blip_reference/blip_base_kernel/20261013T113447Z_d63abf2c"
+  ],
+  "weights": [
+    0.7076920131339443,
+    0.07438188037249074,
+    0.21792610649356495
+  ],
+  "weights_learned": true,
+  "weight_fit": {
+    "algorithm": "SLSQP convex MSE minimization",
+    "scope": "Only training-component OOF predictions and training labels",
+    "caveat": "This meta fitting criterion is not an independent OOF estimate; base hyperparameters already selected using training folds"
+  },
+  "rule": "Convex average of constituent nonnegative predictions; no validation weight fitting",
+  "model_sha256": [
+    "8c73917dcfbaf805b3d24e72c27bb821fc12ee61307ac5212849c2a7c2596269",
+    "78fc1f4b5ae0b1d01cfb396445b166b6e3e2e246f7d91bba6c201bb6b379c489",
+    "1a3798305d5b6efca873b3bcece042978f64203666a966ab0581be57581f693b"
+  ],
+  "prediction_sha256": [
+    "4eb3f632d58d88bd30af90df7465e90d6a3d96eda2db6f3428ee75e70b663f75",
+    "0ad3f73462d9dec02ffe5e435b167e07c53e62daad3069b6d92a1c700753b276",
+    "61f0ab57265574268beaea5cd8f216d8f833ecd6b253fadd5f9ce7b2765267ce"
+  ],
+  "source_sha256": "06abb1cb986c3da2ac634624cef5bef6580a7224e1febe78b982d28bfbea059a",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "test_images_used": false,
+  "course_scope": "Exploratory visual CLIP/BLIP components; eligibility unresolved",
+  "caveat": "Constituents selected after development comparisons; OOF from previously selected hyperparameters, not nested unbiased evaluation"
+}

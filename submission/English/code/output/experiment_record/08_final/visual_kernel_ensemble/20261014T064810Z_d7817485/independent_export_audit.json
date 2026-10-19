@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "n": 3000,
+  "all_raw_test_image_checksums_verified": true,
+  "all_test_feature_chunks_verified": true,
+  "all_exported_prices_replayed": true,
+  "max_abs_csv_replay_error": 2.2737367544323206e-13,
+  "csv_sha256": "3f9c691c063a4ccaff24d1a6bfbc77e3d953a1248d2f1705bd9d0fda6a8b8c5d",
+  "components": [
+    {
+      "component": 0,
+      "source": "19_image_embedding_reference\\siglip2_naflex_576_kernel\\20261014T020905Z_e457778a",
+      "feature_rows": 3000,
+      "cached_feature_chunks_verified": 750,
+      "full_head_sha256": "be76de6ec2b5ae798beba58d1c0639a272c265e3eb78c0e510504fa296a2c817"
+    },
+    {
+      "component": 1,
+      "source": "19_image_embedding_reference\\siglip2_giant_384_kernel\\20261014T042225Z_c6fe9be0",
+      "feature_rows": 3000,
+      "cached_feature_chunks_verified": 3000,
+      "full_head_sha256": "bf40938b8e331652e03f4fb9c8b072ccf3a036b5b125092a00c441e8de60e771"
+    },
+    {
+      "component": 2,
+      "source": "19_image_embedding_reference/pe_core_multiview_price_metric_kernel/20261014T051116Z_13d3ea16",
+      "feature_rows": 3000,
+      "cached_feature_chunks_verified": 750,
+      "full_head_sha256": "c797b1a448c1732fc8136eec0b2f7d0f51599440daccc98f1b2d88f9c2262a96"
+    }
+  ],
+  "source_sha256": "57a1a590495791ffa2e6b5ead44f444f0fe029f5d149f38133c46d6e60f9a252",
+  "scope": "CPU audit of all cached feature rows and price formulas, with runtime labeled encoder probes; no new encoder extraction",
+  "test_labels_used": false,
+  "kaggle_uploaded": false
+}

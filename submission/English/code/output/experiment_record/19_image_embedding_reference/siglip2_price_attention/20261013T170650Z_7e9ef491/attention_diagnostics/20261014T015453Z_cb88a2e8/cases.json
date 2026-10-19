@@ -1,0 +1,308 @@
+[
+  {
+    "imageid": "2138.jpg",
+    "case_role": "高价最大低估",
+    "true_price": 1995.0,
+    "token_fp16_sha256": "21db0d0a4e7595f5696be437cb1c615387417c37aeaceee60f83a7bb761d4503",
+    "finite_difference_probe": {
+      "token_index": 657,
+      "analytic_sensitivity": -28.37952995300293,
+      "central_difference_steps": [
+        {
+          "step": 0.01,
+          "central_difference_sensitivity": -28.054094314575195
+        },
+        {
+          "step": 0.003,
+          "central_difference_sensitivity": -28.350749969482422
+        },
+        {
+          "step": 0.001,
+          "central_difference_sensitivity": -28.376577377319336
+        }
+      ],
+      "passed": true
+    },
+    "prediction": 658.9826786285074,
+    "raw_prediction": 658.9826786285074,
+    "baseline_raw_prediction": 663.8082632189424,
+    "residual_contribution": -4.825593948364258,
+    "cpu_replay_absolute_error": 9.357929229736328e-06,
+    "normalized_head_entropies": [
+      0.30127025845738387,
+      0.8560895605296139,
+      0.8345340363177454,
+      0.8852770994235221
+    ],
+    "head_top_5_percent_mass": [
+      0.9991881251335144,
+      0.4009063243865967,
+      0.4142559766769409,
+      0.3547481298446655
+    ]
+  },
+  {
+    "imageid": "2409.jpg",
+    "case_role": "高价最大低估",
+    "true_price": 1980.0,
+    "token_fp16_sha256": "dfe1a368058c918473e2ea4e8cac5519dde5ae1117ecb4dee471fee4e8655b59",
+    "finite_difference_probe": null,
+    "prediction": 781.0086682860945,
+    "raw_prediction": 781.0086682860945,
+    "baseline_raw_prediction": 784.6759099469725,
+    "residual_contribution": -3.6672415733337402,
+    "cpu_replay_absolute_error": 8.754432201385498e-08,
+    "normalized_head_entropies": [
+      0.2302255646450525,
+      0.8633493171,
+      0.8098860064173448,
+      0.8495164487310536
+    ],
+    "head_top_5_percent_mass": [
+      1.0000001192092896,
+      0.4251154065132141,
+      0.4440031945705414,
+      0.4077506363391876
+    ]
+  },
+  {
+    "imageid": "2007.jpg",
+    "case_role": "高价最大低估",
+    "true_price": 1850.0,
+    "token_fp16_sha256": "0ea6f2f747a570e36d271a1d9803c386bf2a24b4eadc7fd57898157562c7433e",
+    "finite_difference_probe": null,
+    "prediction": 652.8664499046037,
+    "raw_prediction": 652.8664499046037,
+    "baseline_raw_prediction": 656.5337879573682,
+    "residual_contribution": -3.6673381328582764,
+    "cpu_replay_absolute_error": 8.009374141693115e-08,
+    "normalized_head_entropies": [
+      0.13461749601494055,
+      0.8435581487651675,
+      0.8358216761132043,
+      0.8484409078052736
+    ],
+    "head_top_5_percent_mass": [
+      1.0000001192092896,
+      0.43382492661476135,
+      0.40758511424064636,
+      0.4266849756240845
+    ]
+  },
+  {
+    "imageid": "7245.jpg",
+    "case_role": "高价最大低估",
+    "true_price": 1899.999,
+    "token_fp16_sha256": "5066d92f784a79e29b3928a4c494930296eb06563087bde8c94b586c4a90dcc6",
+    "finite_difference_probe": null,
+    "prediction": 738.2513254362711,
+    "raw_prediction": 738.2513254362711,
+    "baseline_raw_prediction": 741.9185808341572,
+    "residual_contribution": -3.667255401611328,
+    "cpu_replay_absolute_error": 3.725290298461914e-09,
+    "normalized_head_entropies": [
+      0.11352388545244997,
+      0.8578913881714842,
+      0.7915322925979935,
+      0.6960747078265616
+    ],
+    "head_top_5_percent_mass": [
+      1.0,
+      0.423974871635437,
+      0.4994903802871704,
+      0.6039146184921265
+    ]
+  },
+  {
+    "imageid": "3208.jpg",
+    "case_role": "高价较好案例",
+    "true_price": 1350.0,
+    "token_fp16_sha256": "1552add88cbdb88dd067592ef14955e887fd2a6744f4b700d248ea68fbb09d86",
+    "finite_difference_probe": null,
+    "prediction": 1336.1051671708417,
+    "raw_prediction": 1336.1051671708417,
+    "baseline_raw_prediction": 1291.5945381427596,
+    "residual_contribution": 44.5106315612793,
+    "cpu_replay_absolute_error": 2.533197175580426e-06,
+    "normalized_head_entropies": [
+      0.1175335903500605,
+      0.9018086582536703,
+      0.8420723715876995,
+      0.8852870099095882
+    ],
+    "head_top_5_percent_mass": [
+      0.9981476664543152,
+      0.31044456362724304,
+      0.3904135823249817,
+      0.330170214176178
+    ]
+  },
+  {
+    "imageid": "5071.jpg",
+    "case_role": "高价较好案例",
+    "true_price": 1695.0,
+    "token_fp16_sha256": "6b6f1fd85fb9f78211b634d7b155a20dfc3aa145dc3b88392f39c58e5cfe5ba9",
+    "finite_difference_probe": null,
+    "prediction": 1722.5226377345443,
+    "raw_prediction": 1722.5226377345443,
+    "baseline_raw_prediction": 1674.2503632999778,
+    "residual_contribution": 48.272247314453125,
+    "cpu_replay_absolute_error": 2.7120113372802734e-05,
+    "normalized_head_entropies": [
+      0.2483771081656196,
+      0.8830482528090341,
+      0.8317815977459804,
+      0.8588838835643885
+    ],
+    "head_top_5_percent_mass": [
+      0.9999823570251465,
+      0.3703114986419678,
+      0.4086794853210449,
+      0.3940955400466919
+    ]
+  },
+  {
+    "imageid": "4065.jpg",
+    "case_role": "低价最大高估",
+    "true_price": 198.78,
+    "token_fp16_sha256": "4f304169134ee7ab5a432eff47b8e17f1fd05a075f426f0308d9e1e83a82b004",
+    "finite_difference_probe": null,
+    "prediction": 948.8590278305574,
+    "raw_prediction": 948.8590278305574,
+    "baseline_raw_prediction": 953.4570097566112,
+    "residual_contribution": -4.59798002243042,
+    "cpu_replay_absolute_error": 1.9036234562008758e-06,
+    "normalized_head_entropies": [
+      0.11318559969129889,
+      0.856408866263162,
+      0.8155820763687062,
+      0.869639871536703
+    ],
+    "head_top_5_percent_mass": [
+      0.9999998807907104,
+      0.4123475253582001,
+      0.4301314949989319,
+      0.3751983642578125
+    ]
+  },
+  {
+    "imageid": "6250.jpg",
+    "case_role": "低价最大高估",
+    "true_price": 254.0,
+    "token_fp16_sha256": "7f25aa180ebbad58515e40bbfe039eac42d831612df522aaa177627323ad8f54",
+    "finite_difference_probe": null,
+    "prediction": 709.5327476551382,
+    "raw_prediction": 709.5327476551382,
+    "baseline_raw_prediction": 717.2663581138103,
+    "residual_contribution": -7.733608245849609,
+    "cpu_replay_absolute_error": 2.212822437286377e-06,
+    "normalized_head_entropies": [
+      0.1422439224849464,
+      0.5938359633884939,
+      0.8246299161112357,
+      0.8414298537976284
+    ],
+    "head_top_5_percent_mass": [
+      0.9999999403953552,
+      0.8077617287635803,
+      0.435698926448822,
+      0.4268592298030853
+    ]
+  },
+  {
+    "imageid": "2662.jpg",
+    "case_role": "中价固定随机",
+    "true_price": 689.0,
+    "token_fp16_sha256": "241437a7809bbb02a2bdfaaa4caacf32632be81b99b0a59711ded9a079a9f161",
+    "finite_difference_probe": null,
+    "prediction": 544.7200014922333,
+    "raw_prediction": 544.7200014922333,
+    "baseline_raw_prediction": 548.387314632119,
+    "residual_contribution": -3.6673130989074707,
+    "cpu_replay_absolute_error": 4.0978193283081055e-08,
+    "normalized_head_entropies": [
+      0.011581377288462924,
+      0.8833132317175041,
+      0.815010740463957,
+      0.8792209967046327
+    ],
+    "head_top_5_percent_mass": [
+      0.9999436140060425,
+      0.3681429326534271,
+      0.4553009867668152,
+      0.3634990155696869
+    ]
+  },
+  {
+    "imageid": "1346.jpg",
+    "case_role": "中价固定随机",
+    "true_price": 749.0,
+    "token_fp16_sha256": "ab4f8bcd663ba2cb496b711812b3b29c8003612f653575384c28fcf77a6fa169",
+    "finite_difference_probe": null,
+    "prediction": 888.4761962285294,
+    "raw_prediction": 888.4761962285294,
+    "baseline_raw_prediction": 892.1435887636645,
+    "residual_contribution": -3.667393684387207,
+    "cpu_replay_absolute_error": 1.1492520570755005e-06,
+    "normalized_head_entropies": [
+      0.15506930313808923,
+      0.7702821849713175,
+      0.8376762391152369,
+      0.7609084566176338
+    ],
+    "head_top_5_percent_mass": [
+      1.0,
+      0.5015682578086853,
+      0.39504551887512207,
+      0.5188959240913391
+    ]
+  },
+  {
+    "imageid": "1491.jpg",
+    "case_role": "全验证固定随机",
+    "true_price": 548.0,
+    "token_fp16_sha256": "8d73380285e02930eab2768bda959741600680bdc5c90e1bcce5d8ad20f2ac72",
+    "finite_difference_probe": null,
+    "prediction": 447.1669382793914,
+    "raw_prediction": 447.1669382793914,
+    "baseline_raw_prediction": 450.80167771373794,
+    "residual_contribution": -3.634739398956299,
+    "cpu_replay_absolute_error": 3.5390257835388184e-08,
+    "normalized_head_entropies": [
+      0.06778633216081971,
+      0.7752377173616612,
+      0.7904081396529693,
+      0.538864920546465
+    ],
+    "head_top_5_percent_mass": [
+      0.9999154806137085,
+      0.5773649215698242,
+      0.5071811079978943,
+      0.860543966293335
+    ]
+  },
+  {
+    "imageid": "15.jpg",
+    "case_role": "全验证固定随机",
+    "true_price": 700.0,
+    "token_fp16_sha256": "63c0124db9824d654f70878f1bef5d583336a6f9cd35997a203418e75d3df7db",
+    "finite_difference_probe": null,
+    "prediction": 662.2140612308602,
+    "raw_prediction": 662.2140612308602,
+    "baseline_raw_prediction": 665.88831388808,
+    "residual_contribution": -3.6742541790008545,
+    "cpu_replay_absolute_error": 1.521781086921692e-06,
+    "normalized_head_entropies": [
+      0.010359510884276422,
+      0.8985722696688929,
+      0.8122814504727845,
+      0.8996693677103497
+    ],
+    "head_top_5_percent_mass": [
+      1.0,
+      0.3211783468723297,
+      0.46342918276786804,
+      0.3283311426639557
+    ]
+  }
+]

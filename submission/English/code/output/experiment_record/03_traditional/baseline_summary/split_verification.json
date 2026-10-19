@@ -1,0 +1,20 @@
+{
+  "verified_date": "2026-10-04",
+  "main_commit": "11b62e9832a288f2011a80014a23ae5e406be4b0",
+  "teammate_branch": "stage/hyperparameter_finetune",
+  "teammate_branch_commit": "9043f0c6ea751a23372c196f3ec9e00a029ee8c7",
+  "shared_index": "data_split/assignment.csv",
+  "rows": 8000,
+  "unique_image_ids": 8000,
+  "same_image_ids": true,
+  "counts": {"train": 6399, "validation": 1601},
+  "differences_by_column": {"partition": 0, "group_id": 0, "pixel_hash": 0},
+  "index_sha256": "e4324a2a55e6d9e33e758a22dec5dfbd3d446103b2400dab858a9a7e55bafc99",
+  "original_split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "source_train_csv_sha256": "6a37aec7c596d98a2342aae32b0cf2eb660e56c92292fd1c324961ca5d8653d5",
+  "source_test_csv_sha256": "3b204c0887200c43fc7ff7e5e0f897b7b82ea16cf2387d55b3bf31759db57de9",
+  "original_split_checksum_matches": true,
+  "source_checksums_match": true,
+  "main_and_teammate_index_equal": true,
+  "traditional_rerun_required": false
+}
