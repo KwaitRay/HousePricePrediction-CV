@@ -96,10 +96,10 @@ The final weights are NaFlex 0.108065, PE-L PLS 0.080806 and PE-G PCA 0.811129. 
 \end{figure*}
 
 
-\subsection{Local Evidence and the Need for Learned Representations}
+\subsection{Mean, SIFT and AlexNet Baselines}
 SIFT--BoVW--Ridge reduces training-mean MSE 151,839.69 to $145,336.73\pm1,091.58$, revealing limited local-appearance signal. AlexNet improves this to 128,415.68 with padding and 127,774.42 with direct resizing (Table~\ref{tab:representative-results}), motivating training and capacity experiments.
 
-\subsection{Testing Training and Capacity Before Transfer}
+\subsection{CNN Training, Augmentation and Architecture}
 \input{figures/report_augmentation_comparison.tex}
 Seed-matched trials provide little support for optimization changes. Adam at learning rate 0.001 improves seed 2026 but loses the other two comparisons, increasing mean MSE by 509.89; cosine decay, alternative batches and lower dropout also fail adoption. Horizontal flip instead reduces mean MSE by 964.41 with two paired wins, although MAE rises from 264.52 to 268.02. Erasing improves the initial screen (Table~\ref{tab:augmentation}) but wins only one of three reruns and is rejected.
 
@@ -110,24 +110,27 @@ Table~\ref{tab:augmentation} compares the single-seed screens. Contrast reduces 
 
 \input{figures/report_fusion_ablation.tex}
 
+
+
+\subsection{Pretrained Features, Views and Kernel Design}
 CLIP with Ridge reaches MSE 91,820.73, motivating richer transferred features. Transferred features may reduce the burden of learning visual structure from limited price labels.
 
-\subsection{Recovering Context and Repairing Kernel Geometry}
 Supplementing PE-G's official view with the whole frame reduces validation MSE from 55,097.49 to 53,252.81 and OOF MSE from 55,679.73 to 53,646.46, supporting broader coverage.
 
-However, compressing these features with PCA256 and fixed $\gamma=4$ worsens OOF MSE to 77,771.43. The training median squared distance changes from 0.5402 to 2.0515, so we recalibrate $\gamma$ to 1.05323 (Fig.~\ref{fig:pca}). OOF MSE falls to 52,531.27; validation MSE reaches 52,805.77 and MAE 160.67. Compression therefore requires a matching downstream similarity scale.
+However, compressing these features with PCA256 and fixed $\gamma=4$ worsens OOF MSE to 77,771.43. The training median squared distance changes from 0.5402 to 2.0515, so we recalibrate $\gamma$ to 1.05323 (Fig.~\ref{fig:pca}). OOF MSE falls to 52,531.27; validation MSE reaches 52,805.77 and MAE 160.67.
 
 Supervised adaptation is also not uniformly beneficial: PE-L PLS slightly worsens validation MSE relative to its three-view RBF control, while improving MAE.
 
-\subsection{Complementarity and Remaining Valuation Ambiguity}
+\subsection{Fusion Performance and Branch Ablation}
 Adding PE-G PCA lowers meta-CV MSE from 53,052.57 to 52,210.22 with all three folds improving, and validation MSE from 52,524.78 to 52,201.21. Public Kaggle MSE changes from 47,837.69 to 47,291.35.
 
 Table~\ref{tab:fusion-ablation} shows a 1.14\% gain over PE-G PCA alone; removing PE-G has the largest cost, while equal weighting dilutes its contribution. Removing PE-L slightly improves validation MSE but worsens meta-CV, so its benefit is marginal and criterion-dependent. The small PE-L contribution suggests substantial overlap with the dominant PE-G predictions.
 
-Aggregate success leaves a new problem: mean residual $+6.51$ masks low-price overestimation ($+93.72$ at prices up to 300) and high-price underestimation ($-385.16$ above 1,300). The 159 highest-price images contribute 47.13\% of squared error (Fig.~\ref{fig:errors}); the 161 largest errors contribute 63.30\%. RMSE is 228.48 and median absolute error 113.41.
+\subsection{Price-dependent Bias and Error Concentration}
+The final fusion exhibits systematic price-dependent error: mean residual $+6.51$ masks low-price overestimation ($+93.72$ at prices up to 300) and high-price underestimation ($-385.16$ above 1,300). The 159 highest-price images contribute 47.13\% of squared error (Fig.~\ref{fig:errors}); the 161 largest errors contribute 63.30\%. RMSE is 228.48 and median absolute error 113.41.
 
 \newpage
-\subsection{Qualitative Cases and Regional Sensitivity}
+\subsection{Prediction Cases and Occlusion Sensitivity}
 Figure~\ref{fig:occlusion} contrasts fusion case 518 (absolute error 50.17) with severely underestimated case 2138. Similar exterior evidence may correspond to different prices because location and floor area remain hidden. The latter has a true price of 1,995 but a prediction near 605 thousand USD. Its large residual illustrates why the high-price tail dominates MSE even when most predictions lie closer to the diagonal.
 
 The PE-G comparisons expose a second distinction: broader coverage improves the average without benefiting every image. For case 4920, adding the whole frame moves the prediction from about 1,370 to 1,192, toward the true 874.5. For case 5712, the same change moves a near-correct 1,274 estimate to 1,496 against a true 1,250. PCA then changes these estimates only slightly. Thus, the view construction has a larger effect than compression in these two examples.
