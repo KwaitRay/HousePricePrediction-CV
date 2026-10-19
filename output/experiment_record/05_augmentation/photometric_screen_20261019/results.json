@@ -1,0 +1,59 @@
+{
+  "rows": [
+    {
+      "group": "control",
+      "run_id": "20261019T021846Z_f8db5ec4",
+      "mse": 131389.93724224102,
+      "mae": 282.6420959249898,
+      "tail_mse": 593970.49027407,
+      "n": 1601,
+      "tail_n": 159,
+      "tail_threshold": 1300.0,
+      "epochs": 40,
+      "best_epoch": 7,
+      "delta_mse": 0.0,
+      "delta_mse_percent": 0.0,
+      "delta_tail_mse_percent": 0.0
+    },
+    {
+      "group": "brightness",
+      "run_id": "20261019T023749Z_126deab9",
+      "mse": 131433.9130746497,
+      "mae": 274.4981898307014,
+      "tail_mse": 616903.925128544,
+      "n": 1601,
+      "tail_n": 159,
+      "tail_threshold": 1300.0,
+      "epochs": 40,
+      "best_epoch": 11,
+      "delta_mse": 43.97583240867243,
+      "delta_mse_percent": 0.03346971109940867,
+      "delta_tail_mse_percent": 3.8610394337759146
+    },
+    {
+      "group": "contrast",
+      "run_id": "20261019T025403Z_930cdd35",
+      "mse": 128860.53066672682,
+      "mae": 269.00861289516143,
+      "tail_mse": 695747.6618688921,
+      "n": 1601,
+      "tail_n": 159,
+      "tail_threshold": 1300.0,
+      "epochs": 40,
+      "best_epoch": 5,
+      "delta_mse": -2529.4065755142074,
+      "delta_mse_percent": -1.9251143798408172,
+      "delta_tail_mse_percent": 17.135055236138097
+    }
+  ],
+  "screening_only": true,
+  "automatic_promotion": false,
+  "price_unit": "thousand USD; MSE in squared price units",
+  "conclusion": "Brightness: effectively unchanged MSE. Contrast: lower overall MSE/MAE, but higher high-price-tail MSE. No change to final ensemble or Kaggle submission.",
+  "limitations": [
+    "One seed; not a statistical significance claim.",
+    "Best epochs selected on the repeatedly reused validation split; not a fresh test.",
+    "Tail threshold 1300 comes from training data; slices are descriptive.",
+    "No conclusion about augmenting the frozen-encoder final model."
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "brightness": {
+    "repeated_input_equal": true,
+    "global_rng_unchanged": true,
+    "validation_equal_to_control": true,
+    "epoch_changed": 16,
+    "samples": 16
+  },
+  "contrast": {
+    "repeated_input_equal": true,
+    "global_rng_unchanged": true,
+    "validation_equal_to_control": true,
+    "epoch_changed": 16,
+    "samples": 16
+  }
+}
