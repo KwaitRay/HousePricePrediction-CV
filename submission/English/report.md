@@ -4,7 +4,7 @@
 
 Estimating a house's sale price involves size, condition, location and market conditions. Exterior photographs reveal some of this information: computer vision can describe architectural form, surface appearance, landscaping and surrounding scenes. However, a single view provides incomplete coverage and does not directly reveal floor area, an exact address or transaction conditions. We therefore investigate how to extract more informative visual features from house photographs to predict sale prices more accurately.
 
-Visual representations offer several approaches. Handcrafted descriptors summarize local gradients and textures, while networks such as AlexNet [1] learn hierarchical features. Large-scale pretraining further enables transfer across tasks: CLIP [2], SigLIP2 [3] and Perception Encoder [4] motivate freezing the visual encoder and learning price regression separately.
+Handcrafted descriptors summarize local gradients and textures; AlexNet [1] learns hierarchical features. CLIP [2], SigLIP2 [3] and Perception Encoder [4] enable transfer through frozen visual features and separately fitted regression.
 
 Our study follows three stages, each testing a limitation exposed by the preceding experiments. SIFT with a visual vocabulary first tests whether local appearance predicts price. An AlexNet-style regressor then undergoes controlled training, augmentation and architecture experiments. Its remaining error motivates frozen pretrained features, for which we investigate image coverage, feature transformation and regression before combining complementary branches.
 
@@ -14,7 +14,7 @@ The selected fusion achieves validation MSE 52,201.21 and MAE 159.58, with publi
 
 ### Data, Metrics and Evaluation Protocol
 
-The dataset contains 8,000 labelled training images and 3,000 unlabelled test images from Southern California real-estate listings. Prices are measured in thousand USD. We fit the models using the supplied images and prices, with general-purpose pretrained image encoders providing transferable visual features.
+The supplied Southern California dataset contains 8,000 labelled training images and 3,000 unlabelled test images; prices are in thousand USD. General-purpose pretrained encoders provide transferable features.
 
 We split the data into 6,399 training and 1,601 validation images with seed 2026, keeping identified duplicate or related-image groups together. For $N$ evaluated images with true prices $y_i$ and predictions $\hat y_i$, we report
 
@@ -31,7 +31,7 @@ Stochastic models are screened with seed 2026; promising candidates are repeated
 
 ### Baselines and Controlled CNN Development
 
-We first predict the training mean as a non-visual reference. To determine whether local appearance adds information, we extract grayscale SIFT descriptors [5, 6] and build a 256-word visual vocabulary [7]. Histograms undergo L1--square-root--L2 normalization and standardization before Ridge regression [8] ($\alpha=10$). Although this captures local gradient structure, pooling into a histogram discards spatial arrangement. We therefore also examine a CNN that learns feature composition directly from images.
+Beyond a training-mean reference, we extract grayscale SIFT descriptors [5, 6] and build a 256-word visual vocabulary [7]. Histograms undergo L1--square-root--L2 normalization and standardization before Ridge regression [8] ($\alpha=10$). Histogram pooling discards spatial arrangement, motivating learned CNN features.
 
 Our AlexNet-style regressor [1] has five convolutional layers and a 9216--4096--4096--1 head, initialized from scratch. After preprocessing comparisons, the selected input is a direct $224\times224$ resize, RGB normalization with mean and SD 0.5, and no filtering. The retained configuration uses AdamW [9] ($10^{-4}$ learning rate and weight decay), dropout [10, 11] 0.5, and effective batch 32 through microbatch 4 and eight-step accumulation. Training uses prices divided by 1,000; predictions are restored to dataset units. Runs last at most 60 epochs, with a minimum of 40 and patience 15 under a 0.1% improvement stopping rule; the checkpoint with strictly lowest validation MSE is retained.
 
@@ -41,9 +41,9 @@ In a separate seed-2026 screen, brightness and contrast are each multiplied by a
 
 ### Frozen Representations, Views and Regression
 
-To extend the scratch models, we decouple visual representation from price regression. Frozen CLIP ViT-B/32 features with standardized Ridge regression establish the transfer-learning reference; the final branches use SigLIP2 So400m NaFlex, PE-Core-L/14 and PE-Core-G/14. NaFlex preserves native aspect ratio with 576 patches and produces 1,152-dimensional features. Because a single crop can remove useful context, PE-L combines three 1,024-dimensional views: the official input, a 336-pixel gray-padded whole frame, and a central crop spanning 60% of image width and height. PE-G combines its official 448-pixel view with a gray-padded whole frame. Features are individually unit-normalized, concatenated and normalized again, yielding 3,072 PE-L and 2,560 PE-G dimensions.
+Frozen CLIP ViT-B/32 with standardized Ridge establishes the transfer reference; final branches use SigLIP2 So400m NaFlex, PE-Core-L/14 and PE-Core-G/14. NaFlex preserves native aspect ratio with 576 patches and produces 1,152-dimensional features. Because a single crop can remove useful context, PE-L combines three 1,024-dimensional views: the official input, a 336-pixel gray-padded whole frame, and a central crop spanning 60% of image width and height. PE-G combines its official 448-pixel view with a gray-padded whole frame. Features are individually unit-normalized, concatenated and normalized again, yielding 3,072 PE-L and 2,560 PE-G dimensions.
 
-We use RBF kernel ridge regression [20] to model nonlinear relationships in the frozen feature space, with regularization controlling the coefficients. For unit features, squared distance equals twice one minus cosine similarity, so $\gamma$ controls how locally visual neighbors influence price. For $x$,
+RBF kernel ridge regression [20] models nonlinear feature--price relationships. For unit features, squared distance equals twice one minus cosine similarity; $\gamma$ controls locality. For $x$,
 
 $$
 
@@ -54,7 +54,7 @@ $$
 
 with prediction $\bar y+k(x)^Tc$ and non-negative clipping. Ordinary kernel searches use $\gamma\in\{1,4,16\}$ and $\alpha\in\{0.01,0.1,1,10\}$ on training folds. NaFlex selects $\gamma=1$, $\alpha=0.1$.
 
-However, generic visual similarity may emphasize variation unrelated to price. PE-L therefore uses fold-fitted PLS [21, 22] to learn price-related directions. Sixteen components are fitted; the selected head uses the first four standardized scores $s$ and the product kernel
+PE-L adapts generic similarity using fold-fitted PLS [21, 22]. Of sixteen fitted components, the first four standardized scores $s$ enter the product kernel
 
 $$
 
@@ -62,7 +62,7 @@ $$
 
 $$
 
-with $\alpha=1$. The PLS scores introduce price-related directions into the similarity measure while keeping the image encoder frozen.
+with $\alpha=1$. The scores introduce price supervision while the encoder remains frozen.
 
 In contrast to supervised PLS, PCA [23] compresses features along their principal variation directions without using prices. For PE-G, we test 64, 256 and 1,024 dimensions with whitening powers 0 and 0.5, followed by unit normalization. Since this changes distances, we also recalibrate the original $\gamma=4$:
 
@@ -107,17 +107,29 @@ Table 1. Validation n = 1,601. SIFT and the three AlexNet rows are three-seed me
 
 ### Local Evidence and the Need for Learned Representations
 
-The training-mean predictor obtains MSE 151,839.69. SIFT--BoVW--Ridge reduces it to $145,336.73\pm1,091.58$, establishing a limited local-appearance signal. Since visual-word pooling discards spatial arrangement, we next test learned feature composition. The padded AlexNet obtains mean MSE 128,415.68; direct resizing reaches 127,774.42 (Table~1). We next test training and capacity as explanations for the remaining error.
+SIFT--BoVW--Ridge reduces training-mean MSE 151,839.69 to $145,336.73\pm1,091.58$, revealing limited local-appearance signal. AlexNet improves this to 128,415.68 with padding and 127,774.42 with direct resizing (Table~1), motivating training and capacity experiments.
 
 ### Testing Training and Capacity Before Transfer
 
 Seed-matched trials provide little support for optimization changes. Adam at learning rate 0.001 improves seed 2026 but loses the other two comparisons, increasing mean MSE by 509.89; cosine decay, alternative batches and lower dropout also fail adoption. Horizontal flip instead reduces mean MSE by 964.41 with two paired wins, although MAE rises from 264.52 to 268.02. Erasing improves the initial screen but wins only one of three paired reruns and is rejected. Thus, adoption follows repeated evidence rather than the best screening score.
 
+
 To test whether the large prediction head limits learning, we replace it with mean pooling. All three seeds improve, reducing MSE by 4,475.78 relative to flip AlexNet. Small-kernel, multi-scale and residual screens fail their controls; the Transformer increases single-seed MSE by 3,615.11 over the compact head. Greater capacity therefore does not resolve this setting's prediction difficulty.
 
 Photometric changes reveal a further trade-off. Against a fresh seed-2026 control (MSE 131,389.94, MAE 282.64), brightness gives 131,433.91 and 274.50; contrast gives 128,860.53 and 269.01. Contrast improves overall MSE by 1.93% but worsens the above-1,300 tail by 17.14%; brightness worsens it by 3.86%. Thus, lower average error need not help expensive properties. Both remain single-seed screens.
 
-The retained scratch model still has substantial error. Frozen CLIP with Ridge reaches MSE 91,820.73, motivating transfer of richer visual representations. This is a complete-route comparison, with both representation and readout changing.
+| Configuration | Validation MSE | Meta MSE |
+|---|---:|---:|
+| PE-G PCA only | 52,805.77 | 52,531.27 |
+| No NaFlex | 52,597.50 | 52,359.30 |
+| No PE-L PLS | 52,194.81 | 52,244.24 |
+| No PE-G PCA | 57,372.90 | 57,694.20 |
+| Equal weights | 53,847.68 | 54,214.33 |
+| Full fusion | 52,201.21 | 52,210.22 |
+
+After branch removal, remaining weights are refitted on training OOF predictions only. Validation n=1,601; meta uses three-fold cross-fitting on training OOF predictions.
+
+CLIP with Ridge reaches MSE 91,820.73, motivating richer transferred features. Both representation and readout change in this route comparison.
 
 ### Recovering Context and Repairing Kernel Geometry
 
@@ -146,19 +158,12 @@ Left four columns: PE-G regional sensitivity under $4\times4$ blur replacement; 
 
 Adding PE-G PCA lowers meta-CV MSE from 53,052.57 to 52,210.22 with all three folds improving, and validation MSE from 52,524.78 to 52,201.21. Public Kaggle MSE changes from 47,837.69 to 47,291.35.
 
-| Configuration | Validation MSE | Meta MSE |
-|---|---:|---:|
-| PE-G PCA only | 52,805.77 | 52,531.27 |
-| No NaFlex | 52,597.50 | 52,359.30 |
-| No PE-L PLS | 52,194.81 | 52,244.24 |
-| No PE-G PCA | 57,372.90 | 57,694.20 |
-| Equal weights | 53,847.68 | 54,214.33 |
-| Full fusion | 52,201.21 | 52,210.22 |
-
-After branch removal, remaining weights are refitted on training OOF predictions only. Validation n=1,601; meta uses three-fold cross-fitting on training OOF predictions.
 Table~2 tests whether fusion adds value beyond its strongest branch. It improves on PE-G PCA alone by 1.14%; removing PE-G has the largest cost, whereas equal weights dilute its contribution. Removing PE-L slightly improves validation MSE but worsens meta-CV, so its benefit is marginal and criterion-dependent. These are branch-removal tests, not isolated tests of PCA or PLS.
 
 Aggregate success leaves a new problem: mean residual $+6.51$ masks low-price overestimation ($+93.72$ at prices up to 300) and high-price underestimation ($-385.16$ above 1,300). The 159 highest-price images contribute 47.13% of squared error (Fig.~2); the 161 largest errors contribute 63.30%. RMSE is 228.48 and median absolute error 113.41.
+
+
+### Qualitative Cases and Regional Sensitivity
 
 Figure~3 contrasts fusion case 518 (absolute error 50.17) with severely underestimated case 2138. Both show complete buildings, so adequate coverage alone does not ensure accuracy.
 
