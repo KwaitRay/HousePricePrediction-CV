@@ -19,7 +19,7 @@ REPO = ROOT.parent
 FIG = ROOT / 'figures'
 SRC = FIG / 'analysis_sources'
 PRED = REPO / 'evidence/final_validation_predictions.csv'
-DATA = Path(os.environ.get('CV_DATA_ROOT', str(REPO/'dataset')))/'train'
+DATA = Path(os.environ.get('CV_DATA_ROOT',str(REPO/'dataset')))/'train'
 SOURCES = [PRED, SRC / 'occlusion/per_region_predictions.csv', SRC / 'pca_sampled_pair_geometry.csv', SRC / 'pca_bandwidth_oof_comparison.csv']
 OUTPUTS = []
 plt.rcParams.update({'font.family': 'DejaVu Sans', 'font.size': 7,
@@ -46,17 +46,22 @@ def prediction_panels():
     assert abs(np.mean(error**2)-52201.21126766699) < 1e-7
     groups = pd.cut(y, [0, 300, 700, 1300, np.inf], right=True, labels=False)
     assert not np.isnan(groups).any()
-    fig, axes = plt.subplots(1, 3, figsize=(7.0, 1.92), gridspec_kw={'width_ratios': [1.1, 1, 1]})
-    fig.subplots_adjust(left=.07, right=.99, bottom=.25, top=.86, wspace=.48)
+    fig=plt.figure(figsize=(3.35,3.25))
+    grid=fig.add_gridspec(2,2,height_ratios=[1.45,1],left=.16,right=.985,bottom=.15,top=.95,wspace=.84,hspace=.74)
+    axes=[fig.add_subplot(grid[0,:]),fig.add_subplot(grid[1,0]),fig.add_subplot(grid[1,1])]
     ax = axes[0]
     for i, color in enumerate(COLORS):
         use = groups == i
-        ax.scatter(y[use], p[use], s=3, alpha=.5, c=color, edgecolors='none', rasterized=True)
+        ax.scatter(y[use], p[use], s=3, alpha=.5, c=color, edgecolors='none', rasterized=True,
+                   label=['0–300','300–700','700–1300','>1300'][i])
     ax.plot([0,2050],[0,2050], '--', color='.3', lw=.8)
     ax.set(xlim=(0,2050), ylim=(0,2050), xticks=[0,1000,2000], yticks=[0,1000,2000],
-           xlabel='True price (thousand USD)', ylabel='Predicted price', title='(a) Prediction vs. true price')
+           xlabel='True price (thousand USD)', ylabel='Predicted price (thousand USD)', title='(a) Prediction vs. true price')
     # Equal scales prevent distortion of the agreement line.
     ax.set_aspect('equal', adjustable='box')
+    ax.set_anchor('W')
+    ax.legend(title='True price band',title_fontsize=6,loc='center left',bbox_to_anchor=(1.03,.58),
+              frameon=False,handletextpad=.3,borderaxespad=0)
     stats=[]
     for i in range(4):
         mask=groups==i
@@ -68,19 +73,19 @@ def prediction_panels():
     ax=axes[1]
     ax.bar(x,stats.mean_residual,color=COLORS,width=.65)
     ax.axhline(0,color='.35',lw=.6)
-    ax.set(ylim=(-485,170),xticks=x,xticklabels=labels,ylabel='Mean residual (thousand USD)',title='(b) Price-dependent bias')
+    ax.set(ylim=(-485,170),xticks=x,xticklabels=labels,ylabel='Mean residual (thousand USD)',title='(b) Price-band bias')
     for i,v in enumerate(stats.mean_residual):
         ax.text(i,v+(12 if v>=0 else -14),f'{v:+.0f}',ha='center',va='bottom' if v>=0 else 'top',fontsize=6.5)
     ax=axes[2]
     ax.bar(x-.17,stats.image_share,width=.34,color='#9aaec4',label='Images')
     ax.bar(x+.17,stats.sse_share,width=.34,color='#266e83',label='Squared error')
-    ax.set(ylim=(0,65),xticks=x,xticklabels=labels,ylabel='Share (%)',title='(c) Concentration of error')
-    ax.legend(frameon=False,loc='upper center',ncol=1,handlelength=1)
+    ax.set(ylim=(0,77),xticks=x,xticklabels=labels,ylabel='Share (%)',title='(c) Error shares',yticks=[0,20,40,60])
+    ax.legend(frameon=False,loc='upper center',ncol=1,handlelength=.8,fontsize=5.5)
     for i,v in enumerate(stats.sse_share):
         ax.text(i+.17,v+1.2,f'{v:.1f}',ha='center',fontsize=6)
     for ax in axes[1:]:
-        ax.tick_params(axis='x',labelrotation=25,pad=1)
-        ax.set_xlabel('True price band (thousand USD)',labelpad=2)
+        ax.tick_params(axis='x',labelrotation=40,pad=1,labelsize=5.7)
+        ax.set_xlabel('True price band',labelpad=2,fontsize=6)
     for ax in axes:
         ax.grid(axis='y',alpha=.15,zorder=0)
         ax.set_axisbelow(True)

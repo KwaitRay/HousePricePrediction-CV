@@ -135,3 +135,5 @@ meta={'sources':{str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in sour
 (SRC/'report_cycle_evidence_provenance.json').write_text(json.dumps(meta,ensure_ascii=False,indent=2),encoding='utf-8')
 print(data[['method','validation_mse','validation_mae']].to_string(index=False))
 print(cases[['imageid','price','prediction','absolute_error']].to_string(index=False))
+from build_single_column_table import build as build_final_table
+build_final_table()

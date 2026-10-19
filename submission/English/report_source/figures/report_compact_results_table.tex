@@ -1,33 +1,31 @@
-\begin{table*}[t]
+\begin{table}[t]
 \centering
-\caption{From learned representations to the selected frozen branches.}
+\caption{Representative validation results.}
 \label{tab:representative-results}
 \small
-\setlength{\tabcolsep}{4pt}
+\setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.0}
-\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcr@{\,}c@{\,}rr@{}}
+\begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}lrr@{}}
 \hline
-Method & Seeds & \multicolumn{3}{c}{Validation MSE} & Validation MAE \\
+Method & MSE & MAE \\
 \hline
-\multicolumn{6}{l}{\emph{A. Representation route}} \\
-AlexNet (no augmentation) & 3 & 127,774 & $\pm$ & 486 & 264.52 \\
-AlexNet + horizontal flip & 3 & 126,810 & $\pm$ & 1,902 & 268.02 \\
-Flip AlexNet + mean-pooling head & 3 & 122,334 & $\pm$ & 1,589 & 261.48 \\
-Frozen CLIP B32 + Ridge & -- & 91,821 &  &  & 223.27 \\
-\multicolumn{6}{l}{\emph{B. Frozen branches and fusion}} \\
-NaFlex + RBF & -- & 63,086 &  &  & 181.28 \\
-PE-L, three views + RBF & -- & 59,213 &  &  & 172.90 \\
-PE-L, three views + PLS/RBF & -- & 59,483 &  &  & 171.73 \\
-PE-G, official view + RBF & -- & 55,097 &  &  & 165.80 \\
-PE-G, two views + RBF & -- & 53,253 &  &  & 161.88 \\
-PE-G, two views + PCA/RBF & -- & 52,806 &  &  & 160.67 \\
-\textbf{Selected three-encoder fusion} & \textbf{--} & \textbf{52,201} & \textbf{} & \textbf{} & \textbf{159.58} \\
+\multicolumn{3}{l}{\emph{A. Representation route}} \\
+AlexNet & 127,774 & 264.52 \\
+AlexNet + flip & 126,810 & 268.02 \\
+Flip AlexNet + mean head & 122,334 & 261.48 \\
+CLIP B/32 + Ridge & 91,821 & 223.27 \\
+\multicolumn{3}{l}{\emph{B. Frozen branches and fusion}} \\
+NaFlex + RBF & 63,086 & 181.28 \\
+PE-L (3 views) + RBF & 59,213 & 172.90 \\
+PE-L (3 views) + PLS/RBF & 59,483 & 171.73 \\
+PE-G (official view) + RBF & 55,097 & 165.80 \\
+PE-G (2 views) + RBF & 53,253 & 161.88 \\
+PE-G (2 views) + PCA/RBF & 52,806 & 160.67 \\
+\textbf{Three-encoder fusion} & \textbf{52,201} & \textbf{159.58} \\
 \hline
 \end{tabular*}
 \par\smallskip
-\begin{minipage}{0.98\textwidth}\scriptsize
-Validation $n=1{,}601$; MSE: (thousand USD)$^2$; MAE: thousand USD.
-Three seeds: mean $\pm$ sample SD; --: frozen-feature evaluation.
-Panel A compares complete routes; matched PE-L and PE-G rows in B isolate the listed changes.
+\begin{minipage}{\columnwidth}\scriptsize
+$n=1{,}601$; MSE: (thousand USD)$^2$; MAE: thousand USD. First three rows are three-seed means; frozen-feature rows use the selected fits. All entries are point estimates.
 \end{minipage}
-\end{table*}
+\end{table}

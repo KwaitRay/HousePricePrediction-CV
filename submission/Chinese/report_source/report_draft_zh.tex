@@ -36,7 +36,7 @@
 \end{equation}
 主要指标 MSE 对较大误差更敏感，MAE 衡量平均绝对误差。两者单位分别为（千美元）$^2$ 和千美元；有符号残差 $\hat y_i-y_i$ 用于描述预测偏差。
 
-随机训练模型先使用种子 2026 初筛，有希望的候选再以种子 2027 和 2028 复核。当三种子的平均 MSE 下降，且至少两次同种子配对比较改善时，保留相应改动，并报告均值与样本标准差。冻结特征回归器通过训练集上的分组三折折外预测（OOF）选择。视觉词典、标准化器、PCA 和监督变换均在各折训练部分拟合。
+随机训练模型先使用种子 2026 初筛，有希望的候选再以种子 2027 和 2028 复核。当三种子的平均 MSE 下降，且至少两次同种子配对比较改善时，保留相应改动，并报告三种子均值与配对结果。冻结特征回归器通过训练集上的分组三折折外预测（OOF）选择。视觉词典、标准化器、PCA 和监督变换均在各折训练部分拟合。
 
 \subsection{基线与 CNN 受控实验}
 我们首先以训练集均价建立不使用图像的参照。为检验局部外观能否提供额外信息，提取灰度 SIFT 描述子~\cite{sift1999,sift}，构建包含 256 个视觉词的词典~\cite{bovw}。直方图依次进行 L1 归一化、平方根变换、L2 归一化及标准化，再拟合岭回归~\cite{ridge}（$\alpha=10$）。虽然这种表示能够描述局部梯度结构，但直方图汇总会丢失空间排列，因此进一步引入直接从图像学习特征组合的 CNN。
@@ -83,12 +83,12 @@ AlexNet 风格回归网络~\cite{alexnet}由五个卷积层和 9216--4096--4096-
 \caption{PE-G 几何与回归诊断。（a、b）8,192 对训练样本的距离与核相似度经验累积分布；（c）不白化 PCA 的分组三折 OOF MSE。变换与带宽均在各折内拟合；（b）展示相似度 0--0.4 范围。}
 \label{fig:pca-zh}
 \end{figure*}
-\begin{figure*}[t]
+\begin{figure}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/report_prediction_scatter_price_band_errors.pdf}
+\includegraphics[width=\columnwidth]{figures/report_prediction_scatter_price_band_errors.pdf}
 \caption{最终融合在 1,601 张验证图像上的表现。（a）预测与真实价格，虚线为理想预测，颜色对应（b）的价位区间；（b）平均残差 $\hat y-y$；（c）样本与平方误差占比。价位区间为 $(0,300]$、$(300,700]$、$(700,1300]$ 和高于 1,300 千美元。}
 \label{fig:errors-zh}
-\end{figure*}
+\end{figure}
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{figures/report_regional_and_outcome_cases.pdf}

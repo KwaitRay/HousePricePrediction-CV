@@ -35,7 +35,7 @@ We split the data into 6,399 training and 1,601 validation images with seed 2026
 \end{equation}
 MSE, the primary metric, emphasizes large errors; MAE measures average absolute error. Their units are (thousand USD)$^2$ and thousand USD, respectively. Signed residuals $\hat y_i-y_i$ describe bias.
 
-Stochastic models are screened with seed 2026; promising candidates are repeated with seeds 2027 and 2028. Adoption requires lower mean MSE and at least two seed-matched wins; we report means and sample standard deviations. Frozen-feature regressors use grouped three-fold training out-of-fold (OOF) selection, fitting codebooks, scalers, PCA and supervised transforms within each fold.
+Stochastic models are screened with seed 2026; promising candidates are repeated with seeds 2027 and 2028. Adoption requires lower mean MSE and at least two seed-matched wins; we report three-seed means and paired outcomes. Frozen-feature regressors use grouped three-fold training out-of-fold (OOF) selection, fitting codebooks, scalers, PCA and supervised transforms within each fold.
 
 \subsection{Baselines and Controlled CNN Development}
 We first predict the training mean as a non-visual reference. To determine whether local appearance adds information, we extract grayscale SIFT descriptors~\cite{sift1999,sift} and build a 256-word visual vocabulary~\cite{bovw}. Histograms undergo L1--square-root--L2 normalization and standardization before Ridge regression~\cite{ridge} ($\alpha=10$). Although this captures local gradient structure, pooling into a histogram discards spatial arrangement. We therefore also examine a CNN that learns feature composition directly from images.
@@ -82,12 +82,12 @@ The final weights are NaFlex 0.108065, PE-L PLS 0.080806 and PE-G PCA 0.811129. 
 \caption{PE-G geometry and regression. (a,b) Empirical CDFs of distances and kernel similarities for 8,192 training pairs; (c) grouped three-fold OOF MSE for non-whitened PCA. Transforms and bandwidths are fitted within each fold. Panel (b) shows the similarity range 0--0.4.}
 \label{fig:pca}
 \end{figure*}
-\begin{figure*}[t]
+\begin{figure}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/report_prediction_scatter_price_band_errors.pdf}
+\includegraphics[width=\columnwidth]{figures/report_prediction_scatter_price_band_errors.pdf}
 \caption{Selected fusion on 1,601 validation images. (a) Predicted versus true price; the dashed line is perfect prediction and colors follow the price bands in (b). (b) Mean residual $\hat y-y$. (c) Image and squared-error shares. Bands are $(0,300]$, $(300,700]$, $(700,1300]$ and above 1,300 thousand USD.}
 \label{fig:errors}
-\end{figure*}
+\end{figure}
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{figures/report_regional_and_outcome_cases.pdf}

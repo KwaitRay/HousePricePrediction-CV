@@ -27,7 +27,7 @@ $$
 
 MSE, the primary metric, emphasizes large errors; MAE measures average absolute error. Their units are (thousand USD)$^2$ and thousand USD, respectively. Signed residuals $\hat y_i-y_i$ describe bias.
 
-Stochastic models are screened with seed 2026; promising candidates are repeated with seeds 2027 and 2028. Adoption requires lower mean MSE and at least two seed-matched wins; we report means and sample standard deviations. Frozen-feature regressors use grouped three-fold training out-of-fold (OOF) selection, fitting codebooks, scalers, PCA and supervised transforms within each fold.
+Stochastic models are screened with seed 2026; promising candidates are repeated with seeds 2027 and 2028. Adoption requires lower mean MSE and at least two seed-matched wins; we report three-seed means and paired outcomes. Frozen-feature regressors use grouped three-fold training out-of-fold (OOF) selection, fitting codebooks, scalers, PCA and supervised transforms within each fold.
 
 ### Baselines and Controlled CNN Development
 
@@ -83,21 +83,21 @@ The final weights are NaFlex 0.108065, PE-L PLS 0.080806 and PE-G PCA 0.811129. 
 
 ## Results
 
-| Method | Seeds | Validation MSE | Validation MAE |
-|---|:---:|---:|---:|
-| AlexNet (no augmentation) | 3 | 127,774 ± 486 | 264.52 |
-| AlexNet + horizontal flip | 3 | 126,810 ± 1,902 | 268.02 |
-| Flip AlexNet + mean-pooling head | 3 | 122,334 ± 1,589 | 261.48 |
-| Frozen CLIP B32 + Ridge | — | 91,821 | 223.27 |
-| NaFlex + RBF | — | 63,086 | 181.28 |
-| PE-L, three views + RBF | — | 59,213 | 172.90 |
-| PE-L, three views + PLS/RBF | — | 59,483 | 171.73 |
-| PE-G, official view + RBF | — | 55,097 | 165.80 |
-| PE-G, two views + RBF | — | 53,253 | 161.88 |
-| PE-G, two views + PCA/RBF | — | 52,806 | 160.67 |
-| Selected three-encoder fusion | — | 52,201 | 159.58 |
+| Method | Validation MSE | Validation MAE |
+|---|---:|---:|
+| AlexNet (no augmentation) | 127,774 | 264.52 |
+| AlexNet + horizontal flip | 126,810 | 268.02 |
+| Flip AlexNet + mean-pooling head | 122,334 | 261.48 |
+| Frozen CLIP B32 + Ridge | 91,821 | 223.27 |
+| NaFlex + RBF | 63,086 | 181.28 |
+| PE-L, three views + RBF | 59,213 | 172.90 |
+| PE-L, three views + PLS/RBF | 59,483 | 171.73 |
+| PE-G, official view + RBF | 55,097 | 165.80 |
+| PE-G, two views + RBF | 53,253 | 161.88 |
+| PE-G, two views + PCA/RBF | 52,806 | 160.67 |
+| Selected three-encoder fusion | 52,201 | 159.58 |
 
-Table 1. Validation n = 1,601. Three seeds: MSE mean ± sample SD and MAE mean; one seed: seed 2026; —: frozen-feature evaluation.
+Table 1. Validation n = 1,601. First three rows are three-seed means; remaining rows are selected frozen-feature fits. All entries are point estimates.
 
 
 

@@ -31,11 +31,23 @@ def main():
     source=source.replace("data_root=Path(settings['data_root'])/'train'","data_root=Path(os.environ.get('CV_DATA_ROOT',str(REPO/settings['data_root'])))/'train'")
     source=source.replace('str(p.relative_to(REPO.parent))','str(p)')
     (CODE/'report_analysis/build_cycle_evidence.py').write_text(source,encoding='utf-8')
+    shutil.copyfile(REPORT/'build_single_column_table.py',CODE/'report_analysis/build_single_column_table.py')
+    panels=(REPORT/'build_report_analysis_panels.py').read_text(encoding='utf-8')
+    panels=panels.replace('import hashlib','import os\nimport hashlib',1)
+    panels=panels.replace('ASSIGNMENT = ROOT.parents[1]','ASSIGNMENT = ROOT.parent').replace("REPO = ASSIGNMENT / 'cv-house-price'",'REPO = ROOT.parent')
+    import re
+    panels=re.sub(r"PRED = REPO / .*", "PRED = REPO / 'evidence/final_validation_predictions.csv'",panels,count=1)
+    panels=panels.replace("DATA = ASSIGNMENT / 'comp-90086-2026/house_dataset/train'","DATA = Path(os.environ.get('CV_DATA_ROOT',str(REPO/'dataset')))/'train'")
+    panels=panels.replace('str(p.relative_to(ASSIGNMENT))','str(p)')
+    (CODE/'report_analysis/build_panels.py').write_text(panels,encoding='utf-8')
+    for stem in ['report_prediction_scatter_price_band_errors','report_pca_distance_bandwidth_oof']:
+        for ext in ['png','svg','pdf']:shutil.copyfile(REPORT/f'figures/{stem}.{ext}',CODE/f'report_analysis/figures/{stem}.{ext}')
     readme=(CODE/'README.txt').read_text(encoding='utf-8').replace('pe_core_reference.py','pe_core_visual_reference.py')
-    start=readme.index('Read script --help / argparse definitions')
+    start=readme.index('PORTABLE FINAL-RECIPE REPRODUCTION' if 'PORTABLE FINAL-RECIPE REPRODUCTION' in readme else 'Read script --help / argparse definitions')
     end=readme.index('4. REPORT RESULTS WITHOUT RETRAINING')
     readme=readme[:start]+PORTABLE_GUIDE+'\n'+readme[end:]
-    readme=readme.replace('python report_analysis/build_panels.py','python report_analysis/build_panels.py\n  python report_analysis/build_cycle_evidence.py')
+    if 'python report_analysis/build_cycle_evidence.py' not in readme:
+        readme=readme.replace('python report_analysis/build_panels.py','python report_analysis/build_panels.py\n  python report_analysis/build_cycle_evidence.py')
     (CODE/'README.txt').write_text(readme,encoding='utf-8')
     # The original inference adapter imports open_clip; make that dependency explicit.
     req=CODE/'requirements-reproduction.txt'
