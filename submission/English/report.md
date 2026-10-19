@@ -145,7 +145,7 @@ Table~2 compares the single-seed screens. Contrast reduces MSE by 1.93% but incr
 
 After branch removal, remaining weights are refitted on training OOF predictions only. Validation n=1,601; meta uses three-fold cross-fitting on training OOF predictions.
 
-CLIP with Ridge reaches MSE 91,820.73, motivating richer transferred features. Both representation and readout change in this route comparison.
+CLIP with Ridge reaches MSE 91,820.73, motivating richer transferred features. Transferred features may reduce the burden of learning visual structure from limited price labels.
 
 ### Recovering Context and Repairing Kernel Geometry
 
@@ -174,28 +174,28 @@ Left four columns: PE-G regional sensitivity under $4\times4$ blur replacement; 
 
 Adding PE-G PCA lowers meta-CV MSE from 53,052.57 to 52,210.22 with all three folds improving, and validation MSE from 52,524.78 to 52,201.21. Public Kaggle MSE changes from 47,837.69 to 47,291.35.
 
-Table~3 shows a 1.14% gain over PE-G PCA alone; removing PE-G has the largest cost, while equal weighting dilutes its contribution. Removing PE-L slightly improves validation MSE but worsens meta-CV, so its benefit is marginal and criterion-dependent. These are branch-removal tests, not isolated tests of PCA or PLS.
+Table~3 shows a 1.14% gain over PE-G PCA alone; removing PE-G has the largest cost, while equal weighting dilutes its contribution. Removing PE-L slightly improves validation MSE but worsens meta-CV, so its benefit is marginal and criterion-dependent. The small PE-L contribution suggests substantial overlap with the dominant PE-G predictions.
 
 Aggregate success leaves a new problem: mean residual $+6.51$ masks low-price overestimation ($+93.72$ at prices up to 300) and high-price underestimation ($-385.16$ above 1,300). The 159 highest-price images contribute 47.13% of squared error (Fig.~2); the 161 largest errors contribute 63.30%. RMSE is 228.48 and median absolute error 113.41.
 
 
 ### Qualitative Cases and Regional Sensitivity
 
-Figure~3 contrasts fusion case 518 (absolute error 50.17) with severely underestimated case 2138. Both show complete buildings, so adequate coverage alone does not ensure accuracy. The latter has a true price of 1,995 but a prediction near 605 thousand USD. Its large residual illustrates why the high-price tail dominates MSE even when most predictions lie closer to the diagonal.
+Figure~3 contrasts fusion case 518 (absolute error 50.17) with severely underestimated case 2138. Similar exterior evidence may correspond to different prices because location and floor area remain hidden. The latter has a true price of 1,995 but a prediction near 605 thousand USD. Its large residual illustrates why the high-price tail dominates MSE even when most predictions lie closer to the diagonal.
 
 The PE-G comparisons expose a second distinction: broader coverage improves the average without benefiting every image. For case 4920, adding the whole frame moves the prediction from about 1,370 to 1,192, toward the true 874.5. For case 5712, the same change moves a near-correct 1,274 estimate to 1,496 against a true 1,250. PCA then changes these estimates only slightly. Thus, the view construction has a larger effect than compression in these two examples.
 
-Regional perturbation [25] tests a narrower question. Replacing $4\times4$ regions with gray pixels or radius-8 blur gives the largest responses near house regions (Fig.~3). However, the two-view gray/blur correlation for 5712 is only 0.267. These maps describe perturbation sensitivity, not reliable identification of price-related attributes.
+Regional perturbation [25] tests a narrower question. Replacing $4\times4$ regions with gray pixels or radius-8 blur gives the largest responses near house regions (Fig.~3). However, the two-view gray/blur correlation for 5712 is only 0.267. Gray replacement removes local structure, whereas blur retains coarse appearance; this difference may explain the sensitivity to replacement choice.
 
 ## Discussion
 
 The three routes reveal complementary requirements for visual valuation. Handcrafted SIFT features explicitly represent local appearance, but visual-word pooling discards spatial relationships, potentially limiting discrimination between properties with different building and environmental layouts. This highlights the importance of organizing image evidence.
 
-The scratch-CNN route makes this organization learnable, but requires learning features and price relationships from limited supervision. The compact head suggests that matching capacity to available labels can be more useful than architectural complexity. Greater expressive power therefore does not automatically produce more informative price features. Horizontal flip and contrast also reveal that augmentation must preserve the information needed by the target: reducing sensitivity to image variation can improve one error metric while worsening another. The resulting design choice is to retain changes that improve repeated price-prediction comparisons, rather than accumulate architectural and augmentation operations.
+The scratch-CNN route makes this organization learnable, but requires learning features and price relationships from limited supervision. The compact head suggests that matching capacity to available labels can be more useful than architectural complexity. The compact head may reduce fitting of incidental image details. Horizontal flip and contrast also reveal that augmentation must preserve the information needed by the target: reducing sensitivity to image variation can improve one error metric while worsening another. The resulting design choice is to retain changes that improve repeated price-prediction comparisons, rather than accumulate architectural and augmentation operations.
 
 Frozen pretrained encoders supply knowledge learned beyond the price-labelled dataset, allowing task learning to focus on regression. Adaptation remains essential: views determine which evidence survives preprocessing, while transforms and kernel geometry connect visual similarity to price. Caching enables reuse on limited hardware, although dense kernels constrain scalability; fusion exploits complementary representations with unequal contributions. The relatively small gain beyond PE-G PCA makes the strongest individual representation an essential reference. It also suggests that future progress should prioritize resolving shared errors, particularly expensive properties, over adding branches with similar predictions. In deployment, the small fusion gain must be weighed against extracting features from three encoders. A single PE-G branch offers a simpler alternative when computational cost matters; full fusion prioritizes predictive accuracy.
 
-Together, accurate prediction requires informative representations, adequate coverage and a mapping aligned with valuation. Appearance provides partial evidence of value; unobserved location, floor area and transaction conditions may explain remaining ambiguity. Next, we would compare errors by building coverage, occlusion and scene context before testing targeted views. High-price sampling should be checked for error shifts in ordinary-price groups, while contrast augmentation needs multi-seed confirmation. Reused development data and prior branch selection also warrant an independent grouped evaluation; meta cross-fitting alone does not remove this selection bias.
+Together, accurate prediction requires informative representations, adequate coverage and a mapping aligned with valuation. Appearance provides partial evidence of value; unobserved location, floor area and transaction conditions may explain remaining ambiguity. Next, we would compare errors by building coverage, occlusion and scene context before testing targeted views. High-price sampling should be checked for error shifts in ordinary-price groups, while contrast augmentation needs multi-seed confirmation. An independent grouped evaluation would measure generalization after the repeated development comparisons and branch selection.
 ## References
 
 [1] A. Krizhevsky, I. Sutskever, and G. E. Hinton [ImageNet classification with deep convolutional neural networks](https://papers.nips.cc/paper_files/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html). Advances in Neural Information Processing Systems, vol. 25, 2012.
