@@ -16,7 +16,7 @@
 
 建筑、庭院、泳池、环境可提供线索，但真实地址、面积、交易时间没有作为输入。视觉代理不能当作已知真实属性；共同失败不证明不可突破的误差下界。
 
-课程主线使用通用视觉预训练权重与提供的训练标签，排除针对本数据的外部房价模型、额外房源图/元数据及预训练多模态语言模型。Qwen3.5-2B 零样本约 109500.16，独立本地保留，不进入课程方案；Qwen3-VL-Embedding 未执行。历史 registry 原文与哈希不因范围澄清而改写。
+课程主线使用通用视觉预训练权重与提供的训练标签。Project 第 2 页允许补充图像或数据，但禁止使用已在本任务或所提供数据集上训练的预训练模型、课程未提供的原始 House Prices and Images – SoCal 图片或元数据，以及预训练多模态大语言模型；禁止训练测试集或查找其真实价格。此前将所有额外房源图/元数据一概排除的表述过严，现按第 10.6–10.8 节区分来源。当前成绩仍仅来自课程数据，尚未引入独立外部房源。Qwen3.5-2B 零样本约 109500.16，独立本地保留，不进入课程方案；Qwen3-VL-Embedding 未执行。历史 registry 原文与哈希不因范围澄清而改写。
 
 <a id="recent-experiments"></a>
 ## 2. 近期实验的思路与逻辑链
@@ -501,3 +501,94 @@ SIFT 使用灰度、长边 320、最多 256 keypoints、128 维单位描述子�
 ### 10.5 执行顺序与记录
 
 恢复后按“已有记录的 CPU 误差诊断 → 固定评价及直接对照 → 单项视图实验 → PCA/带宽配套 → 有证据的融合 → 完整候选核验”的顺序推进。光度多种子复核和高价加权各自登记，不自动进入最终组合。任何新结果都保留直接对照、参数、折划分、资源开销、失败原因与是否采用；本节目前不包含已完成的新实验。
+
+### 10.6 新问题：难样本扩充与预训练来源（2026-10-20 补充）
+
+设计原则：将“高价样本数量不足”“少数样本支配平方误差”“外观不足以区分价格”和“场景信息误导”分开检验。当前证据说明高价尾部误差集中，不等于所有高价图像都是难样本，更不等于训练集高价样本过多。
+
+**允许范围与待咨询事项**：
+
+| 项目 | 当前依据 | 实施安排 |
+| --- | --- | --- |
+| 课程训练图增强、训练侧难样本重采样/加权 | Project 允许训练图自由使用和数据增强 | 作为独立干预，与无干预对照比较 |
+| 来自原始 SoCal 的额外图片、售价或其他元数据 | Project 第 2 页明确排除 | 不采集、不用于扩充，也不查测试标签 |
+| 其他独立来源的外观照片和真实成交价 | Project 原则允许 supplemental images/data；Ed #162 要求报告来源、代码提供链接、不提交整个数据集 | 先确认具体来源和教师解释，再做小规模训练补充试点；当前未选定或下载数据 |
+| 当前通用视觉 encoder | 论文及模型卡描述通用视觉/图文训练，没有发现 SoCal 或房价任务专项训练的披露 | 请教师确认具体 checkpoint 的使用方式；保留 revision 和权重哈希 |
+| 不可完全核验的网络预训练重叠 | 发布晚于 2019 年房源照片，时间先后不能排除偶然图片重叠 | 如实区分“未发现专项训练证据”和“无法逐图排除重叠”，不承诺零重叠 |
+
+实际三分支及固定版本：
+
+| 分支 | checkpoint | revision | 论文首次公开 |
+| --- | --- | --- | --- |
+| NaFlex | `google/siglip2-so400m-patch16-naflex` | `cc24074f717b612951c2dead130904ab9b65a81e` | 2025-02-20 |
+| PE-L | `timm/vit_pe_core_large_patch14_336.fb` | `e63206c8e3a0e9b699e40f31080eebd78fd2258e` | 2025-04-17 |
+| PE-G | `timm/vit_pe_core_gigantic_patch14_448.fb` | `fb096c09d13bd2e3827aed4dbdffb8a6b8e0c10b` | 2025-04-17 |
+
+上述日期是论文公开日期，不是每个权重转换版本的上传日期。SigLIP2 使用 WebLI；PE-Core 使用通用图文预训练及视频训练，L 还接受 G 的蒸馏。使用视觉编码器，不加载 PE-Lang/PLM 或其他完整 MLLM。老师在 Ed #130 对 CLIP、DINOv2 的允许不能写成已逐一批准 SigLIP2、PE-Core。
+
+来源：[Project 第 2 页](../../COMP90086_2026_Project.pdf)、[本地 Ed #130/#162](../../discussion/discussion_content.md)、[SigLIP2 论文](https://arxiv.org/abs/2502.14786)、[SigLIP2 模型卡](https://huggingface.co/google/siglip2-so400m-patch16-naflex)、[PE 论文](https://arxiv.org/abs/2504.13181)、[PE-Core 官方说明](https://huggingface.co/facebook/PE-Core-G14-448)。实际权重清单见 `submission/English/code/pretrained_downloads.json`。
+
+### 10.7 先诊断再选算法：分阶段对照矩阵
+
+所有阶段仍未执行，不恢复历史自动队列。后续具体优先级以本节及 10.8–10.9 为准，第 4 节旧候选表保留为历史计划。B0 固定为现有融合，B1 为 PE-G PCA 单分支；重新评价时两者必须在相同新折划分下复算，不将旧验证 MSE 与新 CV 数值直接比较。
+
+| 阶段 / ID | 发现的问题与假设 | 直接对照与固定改动 | 如何决定下一步 |
+| --- | --- | --- | --- |
+| P0：训练侧 CPU 审计 | 高价误差可能来自邻居价格偏低、场景干扰或少量标签异常 | 复用训练 OOF，按真实价位×OOF 绝对误差分组；查看分支残差相关、近邻价格、主体占比与质量；不改变预测器 | 产出带样本数的误差表和候选原因，不靠验证失败图片选择训练样本 |
+| V0–V2：视野 | 官方裁剪与环境信息提供不同证据 | V0 官方视图；V1 补边完整视图；V2 拼接。固定 encoder 与回归选择流程，另用官方特征重复拼接作实现对照；对单位化 RBF，它应与原表示距离一致 | 判断改善来自新增内容还是实现差异；仅在确有组间差异时考虑更复杂视图 |
+| V3：主体/环境分离 | 5712 类场景可能让完整视图放大偏高匹配 | 保留 V2 对照；主体视图、环境视图分别单独加入，不同时加入新 loss、新 encoder 或新采样；区域提取算法另登记 | 比较总体和各场景组，识别收益与代价；失败则保留 V2 |
+| H1：难样本温和加权 | 常规最小二乘对已被平滑低估的高价样本拟合不足 | 仅以训练内层 OOF 绝对残差上十分位定义 hard；统一权重 1 的加权 KRR 为实现对照，hard 权重预设 1.25，其余 1，归一化至均值 1 | 只有总体改善才继续；历史价位加权已有落选，不因尾部重要而默认有效 |
+| A1：增强复核 | 对比度总体改善但高价退步可能不稳定 | 沿用新训练光度对照补齐种子 2027/2028；相同初始化和 40 轮设置。更小倍率范围单独登记 | 按三种子均值与配对胜负决策；不自动迁移至冻结特征路线 |
+| X1–X3：独立数据试点 | 有效新增独立高价房可能改善价格覆盖 | 具体数据源获确认且通过 10.8 后，固定 encoder、核与候选数；比较原训练、随机新增、针对高价/困难场景新增；两种新增方案独立房源数相同 | 若随机新增也改善，收益可能来自更多监督；定向方案须进一步优于等量随机对照 |
+| F1：融合验收 | 新分支需纠正当前模型的共同错误 | 每个胜出方案先和 B1 比，再在训练 OOF 上加入 B0；固定权重对照和训练侧重新拟合权重分别记录 | 检查 meta 交叉拟合、固定验证和资源成本；不因单分支漂亮就加入融合 |
+
+H1 的加权 KRR 定义为最小化 `Σ w_i (f(x_i)−y_i)^2 + α ||f||²_H`；同核下可解 `(K + α W⁻¹)c = y_centered`，目标中心由当前拟合部分计算。实现先验证 `W=I` 恢复原 KRR。外层评估折的 hard 标记不能用于生成拟合权重；需在外层训练部分再生成内层 OOF 残差，避免难样本挖掘泄漏。此项先检查已有缓存/预测是否支持，不能把全训练拟合残差当 OOF。
+
+上述矩阵不是全排列搜索。优先顺序是 P0 → 已有缓存可完成的 V0–V2/F1 → 有明确证据再 V3；H1、A1、X1–X3 均为独立路线，各自通过后才考虑组合。新增 encoder 排在这些问题驱动实验之后。
+
+### 10.8 独立难样本数据扩充协议
+
+**目标**：增加独立、可靠且与目标分布接近的视觉—成交价样本，不以复制或增强现有图像的数量冒充新房源数量。
+
+1. **来源先登记**：记录数据提供方、原始链接、许可/使用条件、取得日期、地区、成交日期、货币、房屋类型及价格字段定义。售价必须对应实际成交；挂牌价、估值和租金单列，不混作成交标签。排除原始 SoCal 的任何重新打包或镜像来源。
+2. **只补训练侧**：课程固定验证集保持不变；外部样本不能进入其统计分母。额外 CV 的每一折，只允许外部样本补到该折训练侧，指标只计算该折保留的课程样本。任何标准化、PCA、PLS 和带宽都随该折重新拟合。
+3. **独立房源与去重**：图像哈希、感知哈希、视觉近邻和可用房源 ID 共同审计；同房屋多图成组。对课程训练、验证和测试图片做图像重叠排查；发现外部房源与课程验证/测试重叠，整组外部样本剔除，不读取或转存相应售价。模糊近邻人工复核；不得匹配测试房源以恢复标签。
+4. **兼容性**：统一到千美元；优先选择相近地区、年代和房屋类型。记录时空差异，不利用课程验证/测试标签拟合价格换算。图像—房屋—成交事件的对应关系无法核对时不进入监督训练。
+5. **等量试点**：数据源合格后，先冻结一个总量 100–300 个独立房源的可行性预算，具体 N 在看评价结果前固定。随机新增与定向新增各用 N 个；定向规则由训练侧 P0 决定，例如高价且模型近邻价格覆盖不足，不能直接按验证残差搜房源。可用量不足则缩减所有新增组的 N，不强行填充重复房屋。
+6. **避免混杂**：先固定现有回归设置比较数据本身，再给予各组相同候选数的折内超参选择。保存原有数据收益、外部数据收益及计算成本；若同时更换视图或 encoder，另开组合实验。
+7. **交付记录**：报告明确新增样本数、独立房源数、来源和采用与否；代码提供清单格式、下载/预处理方式及链接，不把原始外部图片纳入 code.zip。当前未选定来源，不预先声称有可用数据或预期提升。
+
+无标签房屋图片可作为独立的自监督研究路线，但不能直接扩充现有监督 KRR 的价格标签。用当前模型给高价图打伪标签可能复制低估偏差，不作为首选试点。合成图片也不会自动产生新的真实成交价格。
+
+### 10.9 指标、采用条件与停止条件
+
+- **相同口径**：每项输出总体 MSE/MAE、平均残差、按价位分组 MSE/MAE/偏差及人数、平方误差份额、逐图配对差异。沿用报告 300/700/1300 千美元分箱，并保留阈值来源；新数据试验同时报告原课程训练/外部训练的数量。
+- **训练侧先选**：小规模筛选使用固定分组三折；继续之前冻结候选数。以同层级对照 MSE 为准，目标至少改善 1%、至少 2/3 折胜出；对融合使用 meta-crossfit，不能拿普通分支 OOF 与 meta MSE 直接比较。
+- **验证只做验收**：候选总体验证 MSE 需要降低；高价改善但总体退步不采用。额外预设价格≤1300 组 MSE 的相对恶化不超过 1%，防止以普通价位损失换取尾部收益。此 1% 是后续方案的预登记容忍度，不是对历史结果的新门槛。
+- **难例数量与稳定性**：高价/场景子组必须连同人数和逐图差异解释，不能凭 4920、5712 两张图定结论。对模型随机性使用匹配种子；对数据划分敏感性使用固定的额外分组复核，两者分别报告。
+- **停止**：来源无法核验、价格字段不兼容、去重不通过或总体误差退步，停止相应扩充；已有源价格回放问题未解决时不继续提取新层特征。每阶段只推进最优且满足条件的候选，不根据公榜反馈反复调整采样规则。
+- **候选导出**：通过后固定所有配置，全课程训练集重拟合；如采用外部数据，按照已登记方案补入。核验 3000 条测试顺序、有限值、CSV 哈希与独立回放后再交用户提交 Kaggle。40000 是目标，不把设计写成效果承诺。
+
+### 10.10 Ed 咨询消息草稿（由用户发布）
+
+状态：尚未发送，尚无教师针对以下具体 checkpoint 或未来外部来源的回复。本地 #130/#162 仅作已有解释；用户发送后，将回复原文及日期补到本节。
+
+**Title: Clarification on frozen SigLIP2/PE-Core encoders and supplementary training data**
+
+Hi teaching team,
+
+Following the clarification in #130 about CLIP and DINOv2, could you please confirm whether the following general-purpose checkpoints are also permitted as frozen visual feature extractors?
+
+- `google/siglip2-so400m-patch16-naflex`
+- `timm/vit_pe_core_large_patch14_336.fb`
+- `timm/vit_pe_core_gigantic_patch14_448.fb`
+
+We use only their image encoders, with our own regression and fusion trained on the supplied training labels. We are not using PE-Lang, PLM, or an MLLM. Their published training descriptions do not identify this house-price task or the SoCal dataset as training sources, but we cannot verify image-level overlap with their web-scale pretraining data. Is this use acceptable, and is any particular disclosure needed?
+
+We also noticed that a small high-price group accounts for a large share of squared error. The specification permits supplementary images/data but excludes additional material from the original House Prices and Images – SoCal dataset. Would it be permissible to add exterior photos with verified sale prices from an independent source to the training set only, after checking provenance and removing overlaps with the supplied images? We would keep the validation set fixed, would not retrieve test labels, and would document the source and processing code without including the external dataset in the submission.
+
+We have not added any external property data. Please let us know if there are additional restrictions or if a specific source needs approval first.
+
+Thank you!
+
+Checkpoint references: [SigLIP2 model card](https://huggingface.co/google/siglip2-so400m-patch16-naflex), [PE-Core-L model card](https://huggingface.co/timm/vit_pe_core_large_patch14_336.fb), [PE-Core-G model card](https://huggingface.co/timm/vit_pe_core_gigantic_patch14_448.fb).
