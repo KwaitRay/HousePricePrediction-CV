@@ -16,7 +16,9 @@ assert len(DATA)==len(EN)==len(ZH)
 
 def build():
     for zh,names in [(False,EN),(True,ZH)]:
-        body=[]
+        body=[r'\multicolumn{3}{l}{\emph{'+('参照基线' if zh else 'Reference baselines')+r'}} \\',
+              ('训练均价' if zh else 'Training mean')+r' & 151,840 & 294.47 \\',
+              r'SIFT--BoVW--Ridge & 145,337 & 288.66 \\']
         for i,(r,name) in enumerate(zip(DATA.itertuples(),names)):
             if i in [0,4]:
                 group=(['A. 表示路线','B. 冻结分支与融合'] if zh else ['A. Representation route','B. Frozen branches and fusion'])[i==4]
@@ -26,8 +28,8 @@ def build():
             body.append(' & '.join(cells)+r' \\')
         label='tab:representative-results'+('-zh' if zh else '')
         caption='固定验证集上的代表性结果。' if zh else 'Representative validation results.'
-        note=(r'$n=1{,}601$；MSE 单位为（千美元）$^2$，MAE 为千美元。前三行是三个种子的均值；冻结特征结果来自选定拟合。表内统一报告点估计。' if zh else
-              r'$n=1{,}601$; MSE: (thousand USD)$^2$; MAE: thousand USD. First three rows are three-seed means; frozen-feature rows use the selected fits. All entries are point estimates.')
+        note=(r'$n=1{,}601$；MSE 单位为（千美元）$^2$，MAE 为千美元。SIFT 与三个 AlexNet 结果为三种子均值；冻结特征行使用选定拟合。' if zh else
+              r'$n=1{,}601$; MSE: (thousand USD)$^2$; MAE: thousand USD. SIFT and the three AlexNet rows are three-seed means; frozen-feature rows use selected fits.')
         tex=r'''\begin{table}[t]
 \centering
 \caption{'''+caption+r'''}

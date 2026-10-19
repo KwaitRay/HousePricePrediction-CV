@@ -1,0 +1,23 @@
+\begin{table}[t]
+\centering
+\caption{Fusion ablation and strongest-branch comparison.}
+\label{tab:fusion-ablation}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}lrr@{}}
+\hline
+Configuration & Val. MSE & Meta MSE \\
+\hline
+PE-G PCA only & 52,805.77 & 52,531.27 \\
+No NaFlex & 52,597.50 & 52,359.30 \\
+No PE-L PLS & 52,194.81 & 52,244.24 \\
+No PE-G PCA & 57,372.90 & 57,694.20 \\
+Equal weights & 53,847.68 & 54,214.33 \\
+Full fusion & 52,201.21 & 52,210.22 \\
+\hline
+\end{tabular*}
+\par\smallskip
+\begin{minipage}{\columnwidth}\scriptsize
+After branch removal, remaining weights are refitted on training OOF predictions only. Validation n=1,601; meta uses three-fold cross-fitting on training OOF predictions.
+\end{minipage}
+\end{table}

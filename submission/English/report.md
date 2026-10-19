@@ -8,7 +8,7 @@ Visual representations offer several approaches. Handcrafted descriptors summari
 
 Our study follows three stages, each testing a limitation exposed by the preceding experiments. SIFT with a visual vocabulary first tests whether local appearance predicts price. An AlexNet-style regressor then undergoes controlled training, augmentation and architecture experiments. Its remaining error motivates frozen pretrained features, for which we investigate image coverage, feature transformation and regression before combining complementary branches.
 
-The selected three-encoder fusion achieves validation MSE 52,201.21 and MAE 159.58, with public Kaggle MSE 47,291.35 after full-data refitting. Our analysis relates these gains to representation and kernel design, while identifying persistent high-price underestimation and uneven benefits across price groups.
+The selected fusion achieves validation MSE 52,201.21 and MAE 159.58, with public Kaggle MSE 47,291.35 after full-data refitting. We examine its gains and persistent high-price underestimation.
 
 ## Methods
 
@@ -35,7 +35,7 @@ We first predict the training mean as a non-visual reference. To determine wheth
 
 Our AlexNet-style regressor [1] has five convolutional layers and a 9216--4096--4096--1 head, initialized from scratch. After preprocessing comparisons, the selected input is a direct $224\times224$ resize, RGB normalization with mean and SD 0.5, and no filtering. The retained configuration uses AdamW [9] ($10^{-4}$ learning rate and weight decay), dropout [10, 11] 0.5, and effective batch 32 through microbatch 4 and eight-step accumulation. Training uses prices divided by 1,000; predictions are restored to dataset units. Runs last at most 60 epochs, with a minimum of 40 and patience 15 under a 0.1% improvement stopping rule; the checkpoint with strictly lowest validation MSE is retained.
 
-To test optimization sensitivity, representative screens use learning rates $3\times10^{-5}$, $10^{-4}$, $3\times10^{-4}$ and $10^{-3}$, effective batches 16/32/64 and dropout 0/0.2/0.5. We compare optimizers including Adam [12], cosine decay [13] without restarts, effective batch size, regularization and initialization [14, 15], then test augmentation. Geometric and degradation transforms are evaluated separately; horizontal flip uses probability 0.5. Architecture experiments test stacked $3\times3$ convolutions [16] replacing the second $5\times5$ layer, an Inception-style multi-scale block [17], and a projected residual connection [18]. To test whether the dense head overfits limited supervision, we project the $6\times6$ convolutional grid to 128 channels, add positional information and normalization, and average the 36 tokens before linear regression. We then test a one-layer Transformer [19] with dimension 128, four heads and a 512-dimensional feed-forward layer. Each change is evaluated against its corresponding control.
+Optimization screens use learning rates $3\times10^{-5}$, $10^{-4}$, $3\times10^{-4}$ and $10^{-3}$, effective batches 16/32/64 and dropout 0/0.2/0.5. We compare Adam [12], cosine decay [13] without restarts, effective batch size, regularization and initialization [14, 15], then test augmentation. Geometric and degradation transforms are evaluated separately; horizontal flip uses probability 0.5. Architecture experiments test stacked $3\times3$ convolutions [16] replacing the second $5\times5$ layer, an Inception-style multi-scale block [17], and a projected residual connection [18]. To reduce dense-head capacity, we project the $6\times6$ convolutional grid to 128 channels, add positional information and normalization, and average the 36 tokens before linear regression. We then test a one-layer Transformer [19] with dimension 128, four heads and a 512-dimensional feed-forward layer. Each change is evaluated against its corresponding control.
 
 In a separate seed-2026 screen, brightness and contrast are each multiplied by a factor sampled uniformly from $[0.9,1.1]$ on every training image before resizing and normalization. Both are compared with a freshly trained unaugmented AlexNet using the same initialization, split and training settings.
 
@@ -85,6 +85,8 @@ The final weights are NaFlex 0.108065, PE-L PLS 0.080806 and PE-G PCA 0.811129. 
 
 | Method | Validation MSE | Validation MAE |
 |---|---:|---:|
+| Training mean | 151,840 | 294.47 |
+| SIFT–BoVW–Ridge | 145,337 | 288.66 |
 | AlexNet (no augmentation) | 127,774 | 264.52 |
 | AlexNet + horizontal flip | 126,810 | 268.02 |
 | Flip AlexNet + mean-pooling head | 122,334 | 261.48 |
@@ -97,7 +99,7 @@ The final weights are NaFlex 0.108065, PE-L PLS 0.080806 and PE-G PCA 0.811129. 
 | PE-G, two views + PCA/RBF | 52,806 | 160.67 |
 | Selected three-encoder fusion | 52,201 | 159.58 |
 
-Table 1. Validation n = 1,601. First three rows are three-seed means; remaining rows are selected frozen-feature fits. All entries are point estimates.
+Table 1. Validation n = 1,601. SIFT and the three AlexNet rows are three-seed means; frozen-feature rows use selected fits. All entries are point estimates.
 
 
 
@@ -105,11 +107,11 @@ Table 1. Validation n = 1,601. First three rows are three-seed means; remaining 
 
 ### Local Evidence and the Need for Learned Representations
 
-The training-mean predictor obtains MSE 151,839.69. SIFT--BoVW--Ridge reduces it to $145,336.73\pm1,091.58$, establishing a limited local-appearance signal. Since visual-word pooling discards spatial arrangement, we next test learned feature composition. The padded AlexNet obtains mean MSE 128,415.68; direct resizing reaches 127,774.42 (Table~1). This improvement motivates examining whether training and capacity, rather than representation alone, explain its remaining error.
+The training-mean predictor obtains MSE 151,839.69. SIFT--BoVW--Ridge reduces it to $145,336.73\pm1,091.58$, establishing a limited local-appearance signal. Since visual-word pooling discards spatial arrangement, we next test learned feature composition. The padded AlexNet obtains mean MSE 128,415.68; direct resizing reaches 127,774.42 (Table~1). We next test training and capacity as explanations for the remaining error.
 
 ### Testing Training and Capacity Before Transfer
 
-Seed-matched trials provide little support for optimization changes. Adam at learning rate 0.001 improves seed 2026 but loses the other two comparisons, increasing mean MSE by 509.89; cosine decay, alternative batches and lower dropout also fail adoption. Horizontal flip instead reduces mean MSE by 964.41 with two paired wins, although MAE rises from 264.52 to 268.02.
+Seed-matched trials provide little support for optimization changes. Adam at learning rate 0.001 improves seed 2026 but loses the other two comparisons, increasing mean MSE by 509.89; cosine decay, alternative batches and lower dropout also fail adoption. Horizontal flip instead reduces mean MSE by 964.41 with two paired wins, although MAE rises from 264.52 to 268.02. Erasing improves the initial screen but wins only one of three paired reruns and is rejected. Thus, adoption follows repeated evidence rather than the best screening score.
 
 To test whether the large prediction head limits learning, we replace it with mean pooling. All three seeds improve, reducing MSE by 4,475.78 relative to flip AlexNet. Small-kernel, multi-scale and residual screens fail their controls; the Transformer increases single-seed MSE by 3,615.11 over the compact head. Greater capacity therefore does not resolve this setting's prediction difficulty.
 
@@ -126,7 +128,7 @@ PE-G geometry and regression. (a,b) Empirical CDFs of distances and kernel simil
 
 Supplementing PE-G's official view with the whole frame reduces validation MSE from 55,097.49 to 53,252.81 and OOF MSE from 55,679.73 to 53,646.46, supporting broader coverage.
 
-However, compressing these features with PCA256 and fixed $\gamma=4$ worsens OOF MSE to 77,771.43. The training median squared distance changes from 0.5402 to 2.0515, so we recalibrate $\gamma$ to 1.05323 (Fig.~1). OOF MSE falls to 52,531.27; validation MSE reaches 52,805.77 and MAE 160.67. The failed fixed-bandwidth experiment therefore identifies a distance-scale problem that must be addressed alongside compression.
+However, compressing these features with PCA256 and fixed $\gamma=4$ worsens OOF MSE to 77,771.43. The training median squared distance changes from 0.5402 to 2.0515, so we recalibrate $\gamma$ to 1.05323 (Fig.~1). OOF MSE falls to 52,531.27; validation MSE reaches 52,805.77 and MAE 160.67. The distance shift explains why compression must be evaluated together with the downstream similarity scale; it does not establish that PCA removes only irrelevant information.
 
 Supervised adaptation is also not uniformly beneficial: PE-L PLS slightly worsens validation MSE relative to its three-view RBF control, while improving MAE. Its usefulness must consequently be judged through complementarity, rather than assumed from price supervision.
 
@@ -142,23 +144,35 @@ Selected fusion on 1,601 validation images. (a) Predicted versus true price; the
 
 Left four columns: PE-G regional sensitivity under $4\times4$ blur replacement; red indicates a prediction decrease, blue an increase, on one shared scale. Cases 4920/5712 are the largest improvement/worsening after adding the whole frame among 1,543 landscape validation images. Right column: separate final-fusion cases, 518 at the 25th absolute-error percentile and retained failure 2138. Prices are in thousand USD.
 
-Adding PE-G PCA lowers meta-CV MSE from 53,052.57 to 52,210.22 with all three folds improving, and validation MSE from 52,524.78 to 52,201.21. Public Kaggle MSE changes from 47,837.69 to 47,291.35. Removing PE-G PCA raises validation MSE to 57,372.90; removing NaFlex gives 52,597.50; equal weights give 53,847.68. Without PE-L, validation MSE slightly improves to 52,194.81, but meta-CV worsens to 52,244.24. Its retained contribution is therefore marginal and criterion-dependent.
+Adding PE-G PCA lowers meta-CV MSE from 53,052.57 to 52,210.22 with all three folds improving, and validation MSE from 52,524.78 to 52,201.21. Public Kaggle MSE changes from 47,837.69 to 47,291.35.
+
+| Configuration | Validation MSE | Meta MSE |
+|---|---:|---:|
+| PE-G PCA only | 52,805.77 | 52,531.27 |
+| No NaFlex | 52,597.50 | 52,359.30 |
+| No PE-L PLS | 52,194.81 | 52,244.24 |
+| No PE-G PCA | 57,372.90 | 57,694.20 |
+| Equal weights | 53,847.68 | 54,214.33 |
+| Full fusion | 52,201.21 | 52,210.22 |
+
+After branch removal, remaining weights are refitted on training OOF predictions only. Validation n=1,601; meta uses three-fold cross-fitting on training OOF predictions.
+Table~2 tests whether fusion adds value beyond its strongest branch. It improves on PE-G PCA alone by 1.14%; removing PE-G has the largest cost, whereas equal weights dilute its contribution. Removing PE-L slightly improves validation MSE but worsens meta-CV, so its benefit is marginal and criterion-dependent. These are branch-removal tests, not isolated tests of PCA or PLS.
 
 Aggregate success leaves a new problem: mean residual $+6.51$ masks low-price overestimation ($+93.72$ at prices up to 300) and high-price underestimation ($-385.16$ above 1,300). The 159 highest-price images contribute 47.13% of squared error (Fig.~2); the 161 largest errors contribute 63.30%. RMSE is 228.48 and median absolute error 113.41.
 
-The right column of Fig.~3 contrasts success and failure. Image 518, at the 25th absolute-error percentile, has absolute error 50.17; the wood-clad house 2138 is strongly underestimated. Both show complete buildings, illustrating that adequate coverage can coexist with large errors. Their visual differences suggest questions for further study, without establishing causes of accuracy.
+Figure~3 contrasts fusion case 518 (absolute error 50.17) with severely underestimated case 2138. Both show complete buildings, so adequate coverage alone does not ensure accuracy.
 
 Regional perturbation [25] tests a narrower question. Replacing $4\times4$ regions with gray pixels or radius-8 blur gives the largest responses near house regions (Fig.~3). However, the two-view gray/blur correlation for 5712 is only 0.267. These maps describe perturbation sensitivity, not reliable identification of price-related attributes.
 
 ## Discussion
 
-The three routes reveal different requirements for visual valuation. Handcrafted SIFT features explicitly represent local appearance, but visual-word pooling discards spatial relationships, potentially limiting discrimination between properties with different building and environmental layouts. This highlights the importance of organizing image evidence.
+The three routes reveal complementary requirements for visual valuation. Handcrafted SIFT features explicitly represent local appearance, but visual-word pooling discards spatial relationships, potentially limiting discrimination between properties with different building and environmental layouts. This highlights the importance of organizing image evidence.
 
 The scratch-CNN route makes this organization learnable, but requires learning features and price relationships from limited supervision. The compact head suggests that matching capacity to available labels can be more useful than architectural complexity. Greater expressive power therefore does not automatically produce more informative price features.
 
 Frozen pretrained encoders supply knowledge learned beyond the price-labelled dataset, allowing task learning to focus on regression. Adaptation remains essential: views determine which evidence survives preprocessing, while transforms and kernel geometry connect visual similarity to price. Caching enables reuse on limited hardware, although dense kernels constrain scalability; fusion exploits complementary representations with unequal contributions.
 
-Together, accurate prediction requires informative representations, adequate coverage and a mapping aligned with valuation. Appearance provides partial evidence of value; unobserved location, floor area and transaction conditions may explain remaining ambiguity. Future work should connect spatial and contextual features more directly to price differences. Multiple component changes and reused development data also warrant independent grouped evaluation.
+Together, accurate prediction requires informative representations, adequate coverage and a mapping aligned with valuation. Appearance provides partial evidence of value; unobserved location, floor area and transaction conditions may explain remaining ambiguity. Next, we would compare errors by building coverage, occlusion and scene context before testing targeted views. High-price sampling should be checked for error shifts in ordinary-price groups, while contrast augmentation needs multi-seed confirmation. Reused development data and prior branch selection also warrant an independent grouped evaluation; meta cross-fitting alone does not remove this selection bias.
 ## References
 
 [1] A. Krizhevsky, I. Sutskever, and G. E. Hinton [ImageNet classification with deep convolutional neural networks](https://papers.nips.cc/paper_files/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html). Advances in Neural Information Processing Systems, vol. 25, 2012.

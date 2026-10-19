@@ -6288,8 +6288,8 @@
     "sha256": "acb2742660123538aafeb9b6fa819ab26cb69603c0ff5fc2dadc6dad5215bd57"
   },
   "report_analysis/build_single_column_table.py": {
-    "bytes": 2552,
-    "sha256": "f6714e370ec57cb57ecf533647c41cc38271ddda2961b9a811e460781835ae36"
+    "bytes": 2741,
+    "sha256": "f2c2f05d4a7316973d6fac22e7e737b2330a723f3e7da988f0f880b393736428"
   },
   "report_analysis/figures/analysis_sources/early_experiment_paired_deltas.csv": {
     "bytes": 11225,

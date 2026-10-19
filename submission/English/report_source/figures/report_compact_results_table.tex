@@ -9,6 +9,9 @@
 \hline
 Method & MSE & MAE \\
 \hline
+\multicolumn{3}{l}{\emph{Reference baselines}} \\
+Training mean & 151,840 & 294.47 \\
+SIFT--BoVW--Ridge & 145,337 & 288.66 \\
 \multicolumn{3}{l}{\emph{A. Representation route}} \\
 AlexNet & 127,774 & 264.52 \\
 AlexNet + flip & 126,810 & 268.02 \\
@@ -26,6 +29,6 @@ PE-G (2 views) + PCA/RBF & 52,806 & 160.67 \\
 \end{tabular*}
 \par\smallskip
 \begin{minipage}{\columnwidth}\scriptsize
-$n=1{,}601$; MSE: (thousand USD)$^2$; MAE: thousand USD. First three rows are three-seed means; frozen-feature rows use the selected fits. All entries are point estimates.
+$n=1{,}601$; MSE: (thousand USD)$^2$; MAE: thousand USD. SIFT and the three AlexNet rows are three-seed means; frozen-feature rows use selected fits.
 \end{minipage}
 \end{table}
