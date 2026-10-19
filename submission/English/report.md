@@ -4,7 +4,7 @@
 
 Estimating a house's sale price involves size, condition, location and market conditions. Exterior photographs reveal some of this information: computer vision can describe architectural form, surface appearance, landscaping and surrounding scenes. However, a single view provides incomplete coverage and does not directly reveal floor area, an exact address or transaction conditions. We therefore investigate how to extract more informative visual features from house photographs to predict sale prices more accurately.
 
-This problem can be approached at several levels of visual representation. Handcrafted local descriptors summarize gradient and texture patterns, whereas convolutional networks such as AlexNet [1] learn a hierarchy of features from training images. More recently, large-scale pretraining has made it possible to reuse visual representations across tasks. CLIP [2], SigLIP2 [3] and Perception Encoder [4] provide such representations, motivating a frozen-encoder approach in which task-specific regression is learned separately.
+Visual representations offer several approaches. Handcrafted descriptors summarize local gradients and textures, while networks such as AlexNet [1] learn hierarchical features. Large-scale pretraining further enables transfer across tasks: CLIP [2], SigLIP2 [3] and Perception Encoder [4] motivate freezing the visual encoder and learning price regression separately.
 
 Our study follows three stages. SIFT with a visual vocabulary first tests whether local appearance predicts price. An AlexNet-style regressor then undergoes controlled training, augmentation and architecture experiments. Its remaining error motivates frozen pretrained features, for which we investigate image coverage, feature transformation and regression before combining complementary branches.
 
@@ -16,9 +16,18 @@ The selected three-encoder fusion achieves validation MSE 52,201.21 and MAE 159.
 
 The dataset contains 8,000 labelled training images and 3,000 unlabelled test images from Southern California real-estate listings. Prices are measured in thousand USD. We fit the models using the supplied images and prices, with general-purpose pretrained image encoders providing transferable visual features.
 
-We use a fixed split of 6,399 training and 1,601 validation images with seed 2026, keeping identified duplicate or related-image groups together. MSE is the primary metric, while MAE and signed residuals $\hat y-y$ describe typical errors and bias. MSE is expressed in (thousand USD)$^2$; MAE and residuals are in thousand USD.
+We split the data into 6,399 training and 1,601 validation images with seed 2026, keeping identified duplicate or related-image groups together. For $N$ evaluated images with true prices $y_i$ and predictions $\hat y_i$, we report
 
-Stochastic models are screened with seed 2026, and promising candidates are repeated with seeds 2027 and 2028. We retain changes that reduce mean MSE and improve at least two seed-matched comparisons, reporting means and sample standard deviations. Frozen-feature regressors are selected through grouped three-fold out-of-fold (OOF) prediction on the training set. Codebooks, scalers, PCA and supervised transforms are fitted within each training fold.
+$$
+
+\mathrm{MSE}=\frac{1}{N}\sum_{i=1}^{N}(\hat y_i-y_i)^2,\qquad
+\mathrm{MAE}=\frac{1}{N}\sum_{i=1}^{N}|\hat y_i-y_i|.
+
+$$
+
+MSE, the primary metric, emphasizes large errors; MAE measures average absolute error. Their units are (thousand USD)$^2$ and thousand USD, respectively. Signed residuals $\hat y_i-y_i$ describe bias.
+
+Stochastic models are screened with seed 2026; promising candidates are repeated with seeds 2027 and 2028. Adoption requires lower mean MSE and at least two seed-matched wins; we report means and sample standard deviations. Frozen-feature regressors use grouped three-fold training out-of-fold (OOF) selection, fitting codebooks, scalers, PCA and supervised transforms within each fold.
 
 ### Baselines and Controlled CNN Development
 
@@ -106,31 +115,31 @@ The scratch experiments thus yield modest improvements. Frozen CLIP with Ridge r
 ### Image Coverage and Kernel Geometry
 
 
-![Report figure](figures/report_pca_distance_bandwidth_oof.png)
+![Report figure](report_source/figures/report_pca_distance_bandwidth_oof.png)
 
 PE-G geometry and regression. (a,b) Empirical CDFs of distances and kernel similarities for 8,192 training pairs; (c) grouped three-fold OOF MSE for non-whitened PCA. Transforms and bandwidths are fitted within each fold. Panel (b) shows the similarity range 0--0.4.
 
 
 
-Within this frozen-feature route, we first examine image coverage. Adding the whole frame to PE-G reduces single-branch validation MSE from 55,097.49 to 53,252.81 and OOF MSE from 55,679.73 to 53,646.46. Thus, retaining the official view while supplementing its peripheral context improves prediction.
+Adding the whole frame to PE-G reduces single-branch validation MSE from 55,097.49 to 53,252.81 and OOF MSE from 55,679.73 to 53,646.46, supporting the value of peripheral context alongside the official view.
 
-We next test whether the resulting features benefit from compression. PCA256 initially worsens OOF MSE to 77,771.43 with fixed $\gamma=4$, but bandwidth calibration reduces it to 52,531.27. This reversal follows a substantial distance-scale change: the development-training median squared distance rises from 0.5402 to 2.0515, giving calibrated $\gamma=1.05323$ (Fig.~1). The selected branch reaches validation MSE 52,805.77 and MAE 160.67. Consequently, the benefit comes from evaluating feature transformation together with kernel bandwidth.
+PCA256 worsens OOF MSE to 77,771.43 with fixed $\gamma=4$, but calibration reduces it to 52,531.27. The development-training median squared distance rises from 0.5402 to 2.0515, giving calibrated $\gamma=1.05323$ (Fig.~1). Validation MSE reaches 52,805.77 and MAE 160.67. Thus, feature transformation needs to be evaluated jointly with bandwidth.
 
 Adding this branch to the preceding fusion lowers meta-CV MSE from 53,052.57 to 52,210.22, with all three folds improving, and validation MSE from 52,524.78 to 52,201.21. The corresponding public Kaggle MSE improves from 47,837.69 to 47,291.35.
 
 ### Fusion Complementarity
 
-To assess each branch, we hold its predictions fixed and refit the fusion weights after removal. Removing PE-G PCA increases validation MSE to 57,372.90, while removing NaFlex gives 52,597.50. Equal-weight fusion gives 53,847.68, supporting the use of learned weights. PE-L contributes a smaller benefit: removing it slightly improves validation MSE to 52,194.81 but raises meta-CV MSE from 52,210.22 to 52,244.24. The full fusion is therefore retained by the training-side selection criterion, with PE-G providing most of its predictive strength.
+With branch predictions fixed, we refit weights after each removal. Without PE-G PCA, validation MSE rises to 57,372.90; without NaFlex, it reaches 52,597.50. Equal weights give 53,847.68, supporting learned fusion. Removing PE-L slightly improves validation MSE to 52,194.81 but raises meta-CV MSE from 52,210.22 to 52,244.24. The training-side criterion therefore retains the full fusion, dominated by PE-G.
 
 ### Error Analysis and Regional Sensitivity
 
 
-![Report figure](figures/report_prediction_scatter_price_band_errors.png)
+![Report figure](report_source/figures/report_prediction_scatter_price_band_errors.png)
 
 Selected fusion on 1,601 validation images. (a) Predicted versus true price; the dashed line is perfect prediction and colors follow the price bands in (b). (b) Mean residual $\hat y-y$. (c) Image and squared-error shares. Bands are $(0,300]$, $(300,700]$, $(700,1300]$ and above 1,300 thousand USD.
 
 
-![Report figure](figures/report_pe_g_occlusion_model_comparison.png)
+![Report figure](report_source/figures/report_pe_g_occlusion_model_comparison.png)
 
 Regional sensitivity of three PE-G regression pipelines under $4\times4$ blur replacement. Rows show the largest improvement (4920) and worsening (5712) after adding the whole frame among 1,543 landscape validation images. Red indicates that replacement lowers the prediction; blue indicates an increase. All maps share one scale; labels give true ($y$) and unperturbed predicted ($\hat y$) prices in thousand USD.
 
