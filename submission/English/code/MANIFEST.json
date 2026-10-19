@@ -6279,6 +6279,10 @@
     "bytes": 5703,
     "sha256": "ad361869fe22effe0d36c4d59ade5136d40181c96f56f7aa33d735e607cf8312"
   },
+  "report_analysis/build_augmentation_table.py": {
+    "bytes": 3147,
+    "sha256": "7d63bf8ef334767adc4ad3f1bcd17715afccf75e337db29694daeb3d287288de"
+  },
   "report_analysis/build_cycle_evidence.py": {
     "bytes": 8938,
     "sha256": "f7072ece5374a177dd7bb1ce7d34b525c38f5b1cb31066ac1d14ba6e5844a63e"
@@ -6288,8 +6292,8 @@
     "sha256": "acb2742660123538aafeb9b6fa819ab26cb69603c0ff5fc2dadc6dad5215bd57"
   },
   "report_analysis/build_single_column_table.py": {
-    "bytes": 2741,
-    "sha256": "f2c2f05d4a7316973d6fac22e7e737b2330a723f3e7da988f0f880b393736428"
+    "bytes": 2834,
+    "sha256": "7f42c51cf999c6585e853878d26b36713cef11e9a76654ef171c129427a5bdb9"
   },
   "report_analysis/figures/analysis_sources/early_experiment_paired_deltas.csv": {
     "bytes": 11225,

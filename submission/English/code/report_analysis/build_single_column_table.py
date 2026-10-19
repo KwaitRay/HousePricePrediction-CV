@@ -20,6 +20,7 @@ def build():
               ('训练均价' if zh else 'Training mean')+r' & 151,840 & 294.47 \\',
               r'SIFT--BoVW--Ridge & 145,337 & 288.66 \\']
         for i,(r,name) in enumerate(zip(DATA.itertuples(),names)):
+            if i in (7,8): continue
             if i in [0,4]:
                 group=(['A. 表示路线','B. 冻结分支与融合'] if zh else ['A. Representation route','B. Frozen branches and fusion'])[i==4]
                 body.append(r'\multicolumn{3}{l}{\emph{'+group+r'}} \\')

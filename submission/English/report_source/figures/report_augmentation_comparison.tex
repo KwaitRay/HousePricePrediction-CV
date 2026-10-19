@@ -1,0 +1,30 @@
+\begin{table}[t]
+\centering
+\caption{AlexNet augmentation comparisons.}
+\label{tab:augmentation}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}lrr@{}}
+\hline
+Setting & MSE & MAE \\
+\hline
+\multicolumn{3}{l}{\emph{A. Geometric and degradation screen}} \\
+No augmentation & 128,268.67 & 259.99 \\
+Horizontal flip & 126,601.97 & 263.16 \\
+Rotation & 129,526.18 & 260.29 \\
+Translation & 129,162.73 & 262.97 \\
+Random crop & 130,222.98 & 272.60 \\
+Gaussian blur & 129,941.36 & 261.20 \\
+Gaussian noise & 131,174.53 & 271.48 \\
+Random erasing & 128,114.40 & 268.07 \\
+\multicolumn{3}{l}{\emph{B. Photometric screen}} \\
+Fresh control & 131,389.94 & 282.64 \\
+Brightness & 131,433.91 & 274.50 \\
+Contrast & 128,860.53 & 269.01 \\
+\hline
+\end{tabular*}
+\par\smallskip
+\begin{minipage}{\columnwidth}\scriptsize
+Seed 2026; validation n=1,601. One augmentation per run; A and B use their respective unaugmented controls.
+\end{minipage}
+\end{table}

@@ -2,13 +2,13 @@
 
 ## Introduction
 
-Estimating a house's sale price involves size, condition, location and market conditions. Exterior photographs reveal some of this information: computer vision can describe architectural form, surface appearance, landscaping and surrounding scenes. However, a single view provides incomplete coverage and does not directly reveal floor area, an exact address or transaction conditions. We therefore investigate how to extract more informative visual features from house photographs to predict sale prices more accurately.
+House prices depend on size, condition, location and market conditions. Exterior photographs reveal architectural form, surface appearance and surrounding scenes, but provide incomplete coverage and omit many valuation factors. We investigate how to extract more informative visual features to predict sale prices more accurately.
 
 Handcrafted descriptors summarize local gradients and textures; AlexNet [1] learns hierarchical features. CLIP [2], SigLIP2 [3] and Perception Encoder [4] enable transfer through frozen visual features and separately fitted regression.
 
-Our study follows three stages, each testing a limitation exposed by the preceding experiments. SIFT with a visual vocabulary first tests whether local appearance predicts price. An AlexNet-style regressor then undergoes controlled training, augmentation and architecture experiments. Its remaining error motivates frozen pretrained features, for which we investigate image coverage, feature transformation and regression before combining complementary branches.
+Our three stages test local SIFT appearance, controlled AlexNet training and architecture changes, then frozen pretrained features. Remaining scratch-model error motivates investigating image coverage, feature transformation and regression before combining branches.
 
-The selected fusion achieves validation MSE 52,201.21 and MAE 159.58, with public Kaggle MSE 47,291.35 after full-data refitting. We examine its gains and persistent high-price underestimation.
+The final fusion achieves validation MSE 52,201.21, MAE 159.58 and public Kaggle MSE 47,291.35 after full-data refitting.
 
 ## Methods
 
@@ -27,21 +27,21 @@ $$
 
 MSE, the primary metric, emphasizes large errors; MAE measures average absolute error. Their units are (thousand USD)$^2$ and thousand USD, respectively. Signed residuals $\hat y_i-y_i$ describe bias.
 
-Stochastic models are screened with seed 2026; promising candidates are repeated with seeds 2027 and 2028. Adoption requires lower mean MSE and at least two seed-matched wins; we report three-seed means and paired outcomes. Frozen-feature regressors use grouped three-fold training out-of-fold (OOF) selection, fitting codebooks, scalers, PCA and supervised transforms within each fold.
+Stochastic models use seed 2026 screening and promising candidates receive 2027/2028 reruns. Adoption requires lower three-seed mean MSE and two paired wins. Frozen regressors use grouped three-fold training out-of-fold (OOF) selection; codebooks, scalers, PCA and supervised transforms are fold-fitted.
 
 ### Baselines and Controlled CNN Development
 
 Beyond a training-mean reference, we extract grayscale SIFT descriptors [5, 6] and build a 256-word visual vocabulary [7]. Histograms undergo L1--square-root--L2 normalization and standardization before Ridge regression [8] ($\alpha=10$). Histogram pooling discards spatial arrangement, motivating learned CNN features.
 
-Our AlexNet-style regressor [1] has five convolutional layers and a 9216--4096--4096--1 head, initialized from scratch. After preprocessing comparisons, the selected input is a direct $224\times224$ resize, RGB normalization with mean and SD 0.5, and no filtering. The retained configuration uses AdamW [9] ($10^{-4}$ learning rate and weight decay), dropout [10, 11] 0.5, and effective batch 32 through microbatch 4 and eight-step accumulation. Training uses prices divided by 1,000; predictions are restored to dataset units. Runs last at most 60 epochs, with a minimum of 40 and patience 15 under a 0.1% improvement stopping rule; the checkpoint with strictly lowest validation MSE is retained.
+Our scratch AlexNet regressor [1] uses five convolutional layers, a 9216--4096--4096--1 head, direct $224\times224$ resizing, RGB mean/SD 0.5 and no filtering. The retained configuration uses AdamW [9] ($10^{-4}$ learning rate and weight decay), dropout [10, 11] 0.5, and effective batch 32 through microbatch 4 and eight-step accumulation. Training uses prices divided by 1,000; predictions are restored to dataset units. Runs last at most 60 epochs, with a minimum of 40 and patience 15 under a 0.1% improvement stopping rule; the checkpoint with strictly lowest validation MSE is retained.
 
 Optimization screens use learning rates $3\times10^{-5}$, $10^{-4}$, $3\times10^{-4}$ and $10^{-3}$, effective batches 16/32/64 and dropout 0/0.2/0.5. We compare Adam [12], cosine decay [13] without restarts, effective batch size, regularization and initialization [14, 15], then test augmentation. Geometric and degradation transforms are evaluated separately; horizontal flip uses probability 0.5. Architecture experiments test stacked $3\times3$ convolutions [16] replacing the second $5\times5$ layer, an Inception-style multi-scale block [17], and a projected residual connection [18]. To reduce dense-head capacity, we project the $6\times6$ convolutional grid to 128 channels, add positional information and normalization, and average the 36 tokens before linear regression. We then test a one-layer Transformer [19] with dimension 128, four heads and a 512-dimensional feed-forward layer. Each change is evaluated against its corresponding control.
 
-In a separate seed-2026 screen, brightness and contrast are each multiplied by a factor sampled uniformly from $[0.9,1.1]$ on every training image before resizing and normalization. Both are compared with a freshly trained unaugmented AlexNet using the same initialization, split and training settings.
+A separate seed-2026 screen multiplies brightness or contrast by $U(0.9,1.1)$ before resizing and normalization, using a fresh unaugmented control with matched initialization, split and training settings.
 
 ### Frozen Representations, Views and Regression
 
-Frozen CLIP ViT-B/32 with standardized Ridge establishes the transfer reference; final branches use SigLIP2 So400m NaFlex, PE-Core-L/14 and PE-Core-G/14. NaFlex preserves native aspect ratio with 576 patches and produces 1,152-dimensional features. Because a single crop can remove useful context, PE-L combines three 1,024-dimensional views: the official input, a 336-pixel gray-padded whole frame, and a central crop spanning 60% of image width and height. PE-G combines its official 448-pixel view with a gray-padded whole frame. Features are individually unit-normalized, concatenated and normalized again, yielding 3,072 PE-L and 2,560 PE-G dimensions.
+Frozen CLIP ViT-B/32 with standardized Ridge establishes the transfer reference; final branches use SigLIP2 So400m NaFlex, PE-Core-L/14 and PE-Core-G/14. NaFlex preserves native aspect ratio with 576 patches and produces 1,152-dimensional features. Because a single crop can remove useful context, PE-L combines three 1,024-dimensional views: the official input, a 336-pixel gray-padded whole frame, and a central crop spanning 60% of image width and height. PE-G combines its official 448-pixel view with a gray-padded whole frame. Views are unit-normalized, concatenated and renormalized: PE-L has 3,072 dimensions; PE-G has 2,560.
 
 RBF kernel ridge regression [20] models nonlinear feature--price relationships. For unit features, squared distance equals twice one minus cosine similarity; $\gamma$ controls locality. For $x$,
 
@@ -94,8 +94,6 @@ The final weights are NaFlex 0.108065, PE-L PLS 0.080806 and PE-G PCA 0.811129. 
 | NaFlex + RBF | 63,086 | 181.28 |
 | PE-L, three views + RBF | 59,213 | 172.90 |
 | PE-L, three views + PLS/RBF | 59,483 | 171.73 |
-| PE-G, official view + RBF | 55,097 | 165.80 |
-| PE-G, two views + RBF | 53,253 | 161.88 |
 | PE-G, two views + PCA/RBF | 52,806 | 160.67 |
 | Selected three-encoder fusion | 52,201 | 159.58 |
 
@@ -111,12 +109,30 @@ SIFT--BoVW--Ridge reduces training-mean MSE 151,839.69 to $145,336.73\pm1,091.58
 
 ### Testing Training and Capacity Before Transfer
 
-Seed-matched trials provide little support for optimization changes. Adam at learning rate 0.001 improves seed 2026 but loses the other two comparisons, increasing mean MSE by 509.89; cosine decay, alternative batches and lower dropout also fail adoption. Horizontal flip instead reduces mean MSE by 964.41 with two paired wins, although MAE rises from 264.52 to 268.02. Erasing improves the initial screen but wins only one of three paired reruns and is rejected. Thus, adoption follows repeated evidence rather than the best screening score.
+| Setting | MSE | MAE |
+|---|---:|---:|
+| **A. Geometric and degradation screen** | | |
+| No augmentation | 128,268.67 | 259.99 |
+| Horizontal flip | 126,601.97 | 263.16 |
+| Rotation | 129,526.18 | 260.29 |
+| Translation | 129,162.73 | 262.97 |
+| Random crop | 130,222.98 | 272.60 |
+| Gaussian blur | 129,941.36 | 261.20 |
+| Gaussian noise | 131,174.53 | 271.48 |
+| Random erasing | 128,114.40 | 268.07 |
+| **B. Photometric screen** | | |
+| Fresh control | 131,389.94 | 282.64 |
+| Brightness | 131,433.91 | 274.50 |
+| Contrast | 128,860.53 | 269.01 |
+
+Seed 2026; validation n=1,601. One augmentation per run; A and B use their respective unaugmented controls.
+
+Seed-matched trials provide little support for optimization changes. Adam at learning rate 0.001 improves seed 2026 but loses the other two comparisons, increasing mean MSE by 509.89; cosine decay, alternative batches and lower dropout also fail adoption. Horizontal flip instead reduces mean MSE by 964.41 with two paired wins, although MAE rises from 264.52 to 268.02. Erasing improves the initial screen (Table~2) but wins only one of three reruns and is rejected.
 
 
 To test whether the large prediction head limits learning, we replace it with mean pooling. All three seeds improve, reducing MSE by 4,475.78 relative to flip AlexNet. Small-kernel, multi-scale and residual screens fail their controls; the Transformer increases single-seed MSE by 3,615.11 over the compact head. Greater capacity therefore does not resolve this setting's prediction difficulty.
 
-Photometric changes reveal a further trade-off. Against a fresh seed-2026 control (MSE 131,389.94, MAE 282.64), brightness gives 131,433.91 and 274.50; contrast gives 128,860.53 and 269.01. Contrast improves overall MSE by 1.93% but worsens the above-1,300 tail by 17.14%; brightness worsens it by 3.86%. Thus, lower average error need not help expensive properties. Both remain single-seed screens.
+Table~2 compares the single-seed screens. Contrast reduces MSE by 1.93% but increases above-1,300 tail MSE by 17.14%; brightness increases tail MSE by 3.86%. Thus, aggregate improvement can conceal worse high-price predictions.
 
 | Configuration | Validation MSE | Meta MSE |
 |---|---:|---:|
@@ -140,7 +156,7 @@ PE-G geometry and regression. (a,b) Empirical CDFs of distances and kernel simil
 
 Supplementing PE-G's official view with the whole frame reduces validation MSE from 55,097.49 to 53,252.81 and OOF MSE from 55,679.73 to 53,646.46, supporting broader coverage.
 
-However, compressing these features with PCA256 and fixed $\gamma=4$ worsens OOF MSE to 77,771.43. The training median squared distance changes from 0.5402 to 2.0515, so we recalibrate $\gamma$ to 1.05323 (Fig.~1). OOF MSE falls to 52,531.27; validation MSE reaches 52,805.77 and MAE 160.67. The distance shift explains why compression must be evaluated together with the downstream similarity scale; it does not establish that PCA removes only irrelevant information.
+However, compressing these features with PCA256 and fixed $\gamma=4$ worsens OOF MSE to 77,771.43. The training median squared distance changes from 0.5402 to 2.0515, so we recalibrate $\gamma$ to 1.05323 (Fig.~1). OOF MSE falls to 52,531.27; validation MSE reaches 52,805.77 and MAE 160.67. Compression therefore requires a matching downstream similarity scale.
 
 Supervised adaptation is also not uniformly beneficial: PE-L PLS slightly worsens validation MSE relative to its three-view RBF control, while improving MAE.
 
@@ -158,7 +174,7 @@ Left four columns: PE-G regional sensitivity under $4\times4$ blur replacement; 
 
 Adding PE-G PCA lowers meta-CV MSE from 53,052.57 to 52,210.22 with all three folds improving, and validation MSE from 52,524.78 to 52,201.21. Public Kaggle MSE changes from 47,837.69 to 47,291.35.
 
-Table~2 tests whether fusion adds value beyond its strongest branch. It improves on PE-G PCA alone by 1.14%; removing PE-G has the largest cost, whereas equal weights dilute its contribution. Removing PE-L slightly improves validation MSE but worsens meta-CV, so its benefit is marginal and criterion-dependent. These are branch-removal tests, not isolated tests of PCA or PLS.
+Table~3 shows a 1.14% gain over PE-G PCA alone; removing PE-G has the largest cost, while equal weighting dilutes its contribution. Removing PE-L slightly improves validation MSE but worsens meta-CV, so its benefit is marginal and criterion-dependent. These are branch-removal tests, not isolated tests of PCA or PLS.
 
 Aggregate success leaves a new problem: mean residual $+6.51$ masks low-price overestimation ($+93.72$ at prices up to 300) and high-price underestimation ($-385.16$ above 1,300). The 159 highest-price images contribute 47.13% of squared error (Fig.~2); the 161 largest errors contribute 63.30%. RMSE is 228.48 and median absolute error 113.41.
 

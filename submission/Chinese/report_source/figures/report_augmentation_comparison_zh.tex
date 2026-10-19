@@ -1,0 +1,30 @@
+\begin{table}[t]
+\centering
+\caption{AlexNet 数据增强对照。}
+\label{tab:augmentation-zh}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}lrr@{}}
+\hline
+设置 & MSE & MAE \\
+\hline
+\multicolumn{3}{l}{\emph{A. 几何与退化增强初筛}} \\
+无增强 & 128,268.67 & 259.99 \\
+水平翻转 & 126,601.97 & 263.16 \\
+旋转 & 129,526.18 & 260.29 \\
+平移 & 129,162.73 & 262.97 \\
+随机裁剪 & 130,222.98 & 272.60 \\
+高斯模糊 & 129,941.36 & 261.20 \\
+高斯噪声 & 131,174.53 & 271.48 \\
+随机擦除 & 128,114.40 & 268.07 \\
+\multicolumn{3}{l}{\emph{B. 光度增强初筛}} \\
+新训练对照 & 131,389.94 & 282.64 \\
+亮度 & 131,433.91 & 274.50 \\
+对比度 & 128,860.53 & 269.01 \\
+\hline
+\end{tabular*}
+\par\smallskip
+\begin{minipage}{\columnwidth}\scriptsize
+种子 2026，验证集 n=1,601；每次只增加一种增强。A、B 分别使用各自的无增强对照。
+\end{minipage}
+\end{table}
