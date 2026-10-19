@@ -16,16 +16,16 @@
       "sha256": "075d4532b57ef6737b77bba40e60c50f0bf4d24d06281bc55901e56c3424aac6"
     },
     "English_all_materials.zip": {
-      "bytes": 51686154,
-      "sha256": "4091a743a826091e5e18597f04a1de4db7cc1278b7da231a615340afb71efdcf"
+      "bytes": 51685966,
+      "sha256": "a9782dbdd478489d90cfd7a6a548cca67abfeaba56d9a4298098be0d23b533c3"
     },
     "English/report.pdf": {
-      "bytes": 1769131,
-      "sha256": "b6bb54b86a9429a687afa8ebebbb0ccfea21f3e40859a1ad44da98cb0dd5e900"
+      "bytes": 1768960,
+      "sha256": "f361f4e0103249d6974fba2cbed5ae6a6ce98e4155aaa29e5206bdfc338efcdf"
     },
     "Chinese/report.pdf": {
-      "bytes": 1954669,
-      "sha256": "ea1c5a1b1e453da7011576acd58f0e2a6cf5c640ff87ea8132cfe157f4101d70"
+      "bytes": 1954555,
+      "sha256": "7cffc4aec7ebd8e39dd3f9ab76c6ed56371e0de28421dcf78cd28f3733135bc7"
     }
   },
   "validation": {

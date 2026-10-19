@@ -168,26 +168,26 @@ Adding PE-G PCA lowers meta-CV MSE from 53,052.57 to 52,210.22 with all three fo
 
 Table~3 shows a 1.14% gain over PE-G PCA alone; removing PE-G has the largest cost, while equal weighting dilutes its contribution. Removing PE-L slightly improves validation MSE but worsens meta-CV, so its benefit is marginal and criterion-dependent. The small PE-L contribution suggests substantial overlap with the dominant PE-G predictions.
 
-### Price-dependent Bias and Error Concentration
+### Prediction Errors and Image Sensitivity
 
 
 ![Report figure](report_source/figures/report_prediction_scatter_price_band_errors.png)
 
 Selected fusion on 1,601 validation images. (a) Predicted versus true price; the dashed line is perfect prediction and colors follow the price bands in (b). (b) Mean residual $\hat y-y$. (c) Image and squared-error shares. Bands are $(0,300]$, $(300,700]$, $(700,1300]$ and above 1,300 thousand USD.
 
-The final fusion exhibits systematic price-dependent error: mean residual $+6.51$ masks low-price overestimation ($+93.72$ at prices up to 300) and high-price underestimation ($-385.16$ above 1,300). The 159 highest-price images contribute 47.13% of squared error (Fig.~2); the 161 largest errors contribute 63.30%. RMSE is 228.48 and median absolute error 113.41.
-
-
-### Prediction Cases and Occlusion Sensitivity
-
 
 ![Report figure](report_source/figures/report_regional_and_outcome_cases.png)
 
 Left four columns: PE-G regional sensitivity under $4\times4$ blur replacement; red indicates a prediction decrease, blue an increase, on one shared scale. Cases 4920/5712 are the largest improvement/worsening after adding the whole frame among 1,543 landscape validation images. Right column: separate final-fusion cases, 518 at the 25th absolute-error percentile and retained failure 2138. Prices are in thousand USD.
 
+The final fusion exhibits systematic price-dependent error: mean residual $+6.51$ masks low-price overestimation ($+93.72$ at prices up to 300) and high-price underestimation ($-385.16$ above 1,300). The 159 highest-price images contribute 47.13% of squared error (Fig.~2); the 161 largest errors contribute 63.30%. RMSE is 228.48 and median absolute error 113.41.
+
+
 Figure~3 contrasts fusion case 518 (absolute error 50.17) with severely underestimated case 2138. Similar exterior evidence may correspond to different prices because location and floor area remain hidden. The latter has a true price of 1,995 but a prediction near 605 thousand USD. Its large residual illustrates why the high-price tail dominates MSE even when most predictions lie closer to the diagonal.
 
+
 The PE-G comparisons expose a second distinction: broader coverage improves the average without benefiting every image. For case 4920, adding the whole frame moves the prediction from about 1,370 to 1,192, toward the true 874.5. For case 5712, the same change moves a near-correct 1,274 estimate to 1,496 against a true 1,250. PCA then changes these estimates only slightly. Thus, the view construction has a larger effect than compression in these two examples.
+
 
 Regional perturbation [25] tests a narrower question. Replacing $4\times4$ regions with gray pixels or radius-8 blur gives the largest responses near house regions (Fig.~3). However, the two-view gray/blur correlation for 5712 is only 0.267. Gray replacement removes local structure, whereas blur retains coarse appearance; this difference may explain the sensitivity to replacement choice.
 
