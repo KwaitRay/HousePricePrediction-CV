@@ -33,6 +33,14 @@ def main():
             tex=re.sub(r'\\setmainfont[^\n]*',r'\\setmainfont{TeX Gyre Termes}',tex)
             tex=re.sub(r'\\setCJKmainfont[^\n]*',r'\\setCJKmainfont{FandolSong-Regular}',tex)
         (DEST/lang/f'report_source/{stem}.tex').write_text(tex,encoding='utf-8')
+        for relative in re.findall(r'\\includegraphics\[[^]]*\]\{([^}]+)\}|\\input\{([^}]+)\}',tex):
+            name=relative[0] or relative[1]
+            source=SOURCE/name
+            if source.is_file():
+                dest=DEST/lang/'report_source'/name;dest.parent.mkdir(parents=True,exist_ok=True)
+                shutil.copyfile(source,dest)
+                if source.suffix=='.pdf' and source.with_suffix('.png').exists():
+                    shutil.copyfile(source.with_suffix('.png'),dest.with_suffix('.png'))
         manifest['validation']['pdf_pages'][lang]=len(reader.pages)
     target=DEST/'English_all_materials.zip';temp=target.with_suffix('.refresh.zip')
     with zipfile.ZipFile(temp,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:

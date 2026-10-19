@@ -1,0 +1,28 @@
+{
+  "sources": {
+    "cv-house-price\\.local\\experiment_record\\19_image_embedding_reference\\siglip2_naflex_576_kernel\\20261014T020905Z_e457778a\\predictions.csv": "f4fbd1d8df2aa69d120d9b741318d9db77bb2ee630d301a84581ccc18ab31bc9",
+    "cv-house-price\\.local\\experiment_record\\19_image_embedding_reference\\pe_core_l14_336_multiview_kernel\\20261014T043810Z_6840dfd9\\predictions.csv": "8480be699c3996e857e9958d42dbefdb04f95e7ec5add8198e5643c5bfaad144",
+    "cv-house-price\\.local\\experiment_record\\19_image_embedding_reference\\pe_core_multiview_price_metric_kernel\\20261014T051116Z_13d3ea16\\predictions.csv": "b6915cb4febe40b1653a41ed7ecbaed031a2da3409758c0b3c1ea2187da3af24",
+    "cv-house-price\\.local\\experiment_record\\19_image_embedding_reference\\pe_core_g14_448_kernel\\20261014T073812Z_e0339201\\predictions.csv": "901f212e3a053819c32452f9ce7a95b0dabcc4c56606ff751abc41ded31f90de",
+    "cv-house-price\\.local\\experiment_record\\19_image_embedding_reference\\pe_core_g14_448_whole_kernel\\20261014T090655Z_2d55c743\\predictions.csv": "b51ea95669403aa57dd4b8bd24d78c10d2a4e2050b989a36070ea105bbeadd3e",
+    "cv-house-price\\.local\\experiment_record\\19_image_embedding_reference\\pe_giant_whole_pca_bandwidth_kernel\\20261015T033416Z_4b848f75\\predictions.csv": "3bb35fd8fb936af522f99575792f6d8e4e9fa6019753b48b17a1503030ae4123",
+    "cv-house-price\\.local\\experiment_record\\15_fixed_ensembles\\pe_whole_pca_incremental_fusion\\20261015T033810Z_8aa6ec62\\predictions.csv": "a94f5f4b6456261a903bcc68339f0a82cfaf811252ec164f8debda3b0b673b86",
+    "comp-90086-2026\\house_dataset\\train\\518.jpg": "cf1ac0e1b384e06e6eedb5b75300a31fcd2e0f02b094c3cbdd9ba67fbb779481",
+    "comp-90086-2026\\house_dataset\\train\\5352.jpg": "3874a68b7a26d48d57099cfbd0e99c9d84e063b8bbe413d0d4dc23538536d4d7",
+    "comp-90086-2026\\house_dataset\\train\\2138.jpg": "ae072f3dc8150e002cb9dde6ff1f84bfe1a128635a1dbda121f5b58d471a3495",
+    "comp-90086-2026\\house_dataset\\train\\4920.jpg": "bbba51966e11246831c766a78817d48966a3b65188df21be88e7949b0f560186",
+    "comp-90086-2026\\house_dataset\\train\\5712.jpg": "fca22fca65516ffeee05ec8bbf266def12b12638d00d0f1bfaaa2d8a38b5ee3f"
+  },
+  "selection": "Success: nearest order statistic to 25th absolute-error percentile, stable imageid tie-break; failures retained from prior report.",
+  "low_error_case": {
+    "imageid": "518.jpg",
+    "group_id": "518.jpg",
+    "price": 619.9,
+    "raw_prediction": 569.7317468529847,
+    "prediction": 569.7317468529847,
+    "error": -50.16825314701532,
+    "squared_error": 2516.8536238230126,
+    "absolute_error": 50.16825314701532,
+    "selection": "25th percentile of absolute error"
+  }
+}

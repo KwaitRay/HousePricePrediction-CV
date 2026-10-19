@@ -1,0 +1,6 @@
+{
+  "n": 3000,
+  "max_abs_difference_from_archived_submission": 2.3078428057488054e-11,
+  "note": "Fresh encoder computation can differ with hardware/library precision; inspect the difference, not CSV byte identity.",
+  "scope": "CPU prediction phase checked against archived heads/features; no fresh encoder extraction or full refit executed in this revision."
+}

@@ -35,6 +35,10 @@
     "bytes": 1081,
     "sha256": "f5892112d4693f4db456f69379e8a69cd91c599fd7040db661ed38dd44537697"
   },
+  "checks/portable_prediction_adapter.json": {
+    "bytes": 368,
+    "sha256": "5960da1d84c7006323d89832e286152f28b96270dc9e19340650fb21d02206aa"
+  },
   "checks/report_metrics.json": {
     "bytes": 1515,
     "sha256": "a17a11a685e0d5d4d705d5740f72eb092f2ed5f4f84e661962cb4fd792d90652"
@@ -6272,8 +6276,12 @@
     "sha256": "5dcd980dbb972174c322bc29c76db93f26dd7c68391cc6caf8195acca1897718"
   },
   "README.txt": {
-    "bytes": 4151,
-    "sha256": "66ac85ef5d6740e74c96d5ec9c44d50101d3665749827c871deb49a2feba4bd6"
+    "bytes": 5703,
+    "sha256": "ad361869fe22effe0d36c4d59ade5136d40181c96f56f7aa33d735e607cf8312"
+  },
+  "report_analysis/build_cycle_evidence.py": {
+    "bytes": 8851,
+    "sha256": "7b9f15b9ee1b891010772f484ce5fdb0d30b4b096d3579b392044abfc9f5ada4"
   },
   "report_analysis/build_panels.py": {
     "bytes": 8865,
@@ -6356,16 +6364,28 @@
     "sha256": "77a5b43ea8e84796057cc2172621ec8fca1fce03b31ae7442cb930e2a2482f0c"
   },
   "report_analysis/figures/analysis_sources/report_compact_results_table.csv": {
-    "bytes": 1016,
-    "sha256": "7d184884d22c8d23387075eb926711438d1fb7431aa1f39e8cb27c17451e0177"
+    "bytes": 1665,
+    "sha256": "2b0f60c62decb9a0448c96f8fa77dfecef6c23e55397afacce4ada1fb0ed6b38"
   },
   "report_analysis/figures/analysis_sources/report_compact_results_table_provenance.json": {
     "bytes": 1535,
     "sha256": "8086a0f9a7dd3d4d95bdc249d2ccaa61f7fbe048c5448b384cb2ea35d5810198"
   },
+  "report_analysis/figures/analysis_sources/report_cycle_evidence_provenance.json": {
+    "bytes": 2708,
+    "sha256": "66513baa39aa9aec99dcb136d3af5c605c731cd89dc90d726d558bce5659bd15"
+  },
   "report_analysis/figures/analysis_sources/report_prediction_price_band_summary.csv": {
     "bytes": 294,
     "sha256": "488089f7e21d5954ae659b80b4828ddac9607016af011776fe64c7ad21b498da"
+  },
+  "report_analysis/figures/analysis_sources/report_success_failure_cases.csv": {
+    "bytes": 532,
+    "sha256": "f2bd8922e69e9a4ce0df805e63dedd1c74656913a8f089d650fca233409e9cad"
+  },
+  "report_analysis/figures/analysis_sources/representative_table_before_cycles.csv": {
+    "bytes": 1016,
+    "sha256": "16b7f29a3280b3a07c6c7a997a1c8244d4a4b85153635897671845d3796fe777"
   },
   "report_analysis/figures/analysis_sources/results_tables_provenance.json": {
     "bytes": 4361,
@@ -6415,17 +6435,49 @@
     "bytes": 100527,
     "sha256": "1f215d65784795d8a25cffc4b17c0c15d9165279a90f021feef3b49aee0768a8"
   },
+  "report_analysis/figures/report_regional_and_outcome_cases.pdf": {
+    "bytes": 1617613,
+    "sha256": "f436bbc738d47c4ff822751dcd14012744849058bdccd65644558e815daca902"
+  },
+  "report_analysis/figures/report_regional_and_outcome_cases.png": {
+    "bytes": 1670195,
+    "sha256": "5c0d141572fc2ad509f9028b139873fc5e9a6448d8ca220ecaf8deb5bd8cbff8"
+  },
+  "report_analysis/figures/report_regional_and_outcome_cases.svg": {
+    "bytes": 2340879,
+    "sha256": "5b5b7166db6f7941ccfed45465eedc5bc3f3c9a2468718ce8dc648881eb9af6c"
+  },
+  "report_analysis/figures/report_success_failure_cases.pdf": {
+    "bytes": 825793,
+    "sha256": "301497ad7225c49315f034ee6e62c807bc3f1b55bc168fa1bf34fed9c1fd4b26"
+  },
+  "report_analysis/figures/report_success_failure_cases.png": {
+    "bytes": 945300,
+    "sha256": "da2f04c9723c2f85e5773a968ff84ba2cee971b37b2ff720a3272a60d333be7b"
+  },
+  "report_analysis/figures/report_success_failure_cases.svg": {
+    "bytes": 1204195,
+    "sha256": "b9f36921eccc9e71d44a0126f93e2ea97aa4cbfed222bcc393f3825009fdc604"
+  },
   "report_analysis/occlusion_experiment_original.py": {
     "bytes": 18087,
     "sha256": "91296fce5500193078510fe3a8700969383c7d8ceb5daae16ccad55ba220eb60"
   },
   "report_analysis/representative_results.csv": {
-    "bytes": 1016,
-    "sha256": "7d184884d22c8d23387075eb926711438d1fb7431aa1f39e8cb27c17451e0177"
+    "bytes": 1665,
+    "sha256": "2b0f60c62decb9a0448c96f8fa77dfecef6c23e55397afacce4ada1fb0ed6b38"
+  },
+  "reproduce_final.py": {
+    "bytes": 8718,
+    "sha256": "7b021aaa1604d5f87b8c3e4af8049c32e91cb0cc4e8ab802943ad8e42ec5693a"
   },
   "requirements-analysis.txt": {
     "bytes": 70,
     "sha256": "9efbf8585bc3697e894ae2afae2c867a16b472c3ca2ad76b83044cc2c78f4a2c"
+  },
+  "requirements-reproduction.txt": {
+    "bytes": 102,
+    "sha256": "f04c7cfaa7386348cb1febc967c5185c154e84b8ae70561af03708906abd1acd"
   },
   "scripts/analyze_dataset.py": {
     "bytes": 35140,

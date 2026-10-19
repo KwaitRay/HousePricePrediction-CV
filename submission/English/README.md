@@ -11,7 +11,9 @@ Shifeng Chen — 1686631; Haoxuan Ying — 1255329.
 Canvas requires the report and code as separate uploads. The combined English archive
 is for transfer/review. Trained model heads, pretrained weights, feature caches and
 supplied images are omitted. All experiment source/configuration code discussed in
-the report is included; historical scripts retain run-dependency guards.
+the report is included. `code/reproduce_final.py` provides staged fixed-recipe
+reproduction without historical fitted heads or run IDs; original experiment
+scripts retain execution guards. See `code/README.txt` for commands and checks.
 
 The report and prediction files are the current snapshot. Confirm the Kaggle team
 name contains both student IDs and complete the course's separate peer assessment.
