@@ -1,0 +1,48 @@
+{
+  "method": "Image RBF multiplied by fold-fitted supervised PLS-score RBF",
+  "source": "19_image_embedding_reference/pe_core_l14_336_multiview_kernel/20261014T043810Z_6840dfd9",
+  "source_head_sha256": "d4f97d910ef65f0f1a6f06d3534d3014db80184b26596293235a606ef44cfbab",
+  "source_sha256": "828a7b5e0ab76b64498f8a0ca5e881a59466203ef7765e3a956a94b72313fc0f",
+  "cache_family": "pe_core_multiview",
+  "feature_cache_key": "d5cbb115b2d7c440dafb307239fc30d3207df90486d9baf790b1f7a7dd7974db",
+  "manifest_sha256": "888822d7bf92e8dd9a2ed50eebc18e615d8c47e2e430fd22b91c6df764b11b69",
+  "feature_dim": 3072,
+  "implementation_lineage": "Same fold-fitted PLS product-kernel recipe as the recorded SigLIP2 metric, applied to an explicitly pinned generic visual source",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "source_feature_manifest_sha256": "888822d7bf92e8dd9a2ed50eebc18e615d8c47e2e430fd22b91c6df764b11b69",
+  "image_gamma": 1.0,
+  "settings": [
+    [
+      4,
+      0.01
+    ],
+    [
+      4,
+      0.1
+    ],
+    [
+      16,
+      0.01
+    ],
+    [
+      16,
+      0.1
+    ]
+  ],
+  "alphas": [
+    0.1,
+    1.0,
+    10.0
+  ],
+  "null_control": {
+    "pls_gamma": 0,
+    "alpha": 1.0
+  },
+  "pls": "16 components fit on fitting-fold image embeddings and training prices only; use first 4 or 16 scores",
+  "score_scaling": "StandardScaler fit on fitting-fold scores only; squared distances divided by component count",
+  "selection": "Original unweighted training GroupKFold3 MSE; validation evaluated once after selection",
+  "test_images_used": false,
+  "mllm_components": false,
+  "course_scope": "General-purpose frozen image features and provided training labels only",
+  "caveat": "Source image gamma previously selected on these folds; selected CV criterion is not an unbiased nested estimate"
+}

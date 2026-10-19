@@ -1,0 +1,102 @@
+{
+  "population": "Frozen development validation split; not the final all-8000 fit evaluated on training images",
+  "units": "thousand USD; MSE in (thousand USD)^2",
+  "residual_definition": "prediction - true price",
+  "overall": {
+    "n": 1601,
+    "mse": 52201.21126766699,
+    "rmse": 228.4758439478165,
+    "mae": 159.58053603321397,
+    "bias": 6.510645778194681,
+    "median_absolute_error": 113.40700034360907,
+    "p90_absolute_error": 343.59505275010247
+  },
+  "price_bands": [
+    {
+      "band": "0–300",
+      "n": 169,
+      "mse": 19386.3009333509,
+      "rmse": 139.2346973040517,
+      "mae": 104.02659843009465,
+      "bias": 93.71912536575627,
+      "median_absolute_error": 79.87898940769693,
+      "p90_absolute_error": 241.96031990502377,
+      "sample_share": 0.10555902560899438,
+      "squared_error_share": 0.03920213701927607,
+      "previous_mse": 21510.507659052833,
+      "previous_bias": 102.55496425290896,
+      "delta_overall_mse": -224.2291921571685
+    },
+    {
+      "band": "300–700",
+      "n": 775,
+      "mse": 22895.695491663613,
+      "rmse": 151.31323633993034,
+      "mae": 112.2204231228373,
+      "bias": 70.26593885637924,
+      "median_absolute_error": 83.66412586229768,
+      "p90_absolute_error": 244.80564452632902,
+      "sample_share": 0.4840724547158026,
+      "squared_error_share": 0.21231644342973263,
+      "previous_mse": 22512.627918306778,
+      "previous_bias": 72.56902423626083,
+      "delta_overall_mse": 185.43246055686893
+    },
+    {
+      "band": "700–1,300",
+      "n": 498,
+      "mse": 46512.329472470374,
+      "rmse": 215.6671729134278,
+      "mae": 171.894896505646,
+      "bias": 2.7508576962011677,
+      "median_absolute_error": 147.92378764620423,
+      "p90_absolute_error": 349.72751458693,
+      "sample_share": 0.3110555902560899,
+      "squared_error_share": 0.2771567890265855,
+      "previous_mse": 44591.53079192848,
+      "previous_bias": -1.5002336006361847,
+      "delta_overall_mse": 597.4751673390767
+    },
+    {
+      "band": ">1,300",
+      "n": 159,
+      "mse": 247739.3100532642,
+      "rmse": 497.7341760952971,
+      "mae": 410.9022432357169,
+      "bias": -385.16363548632205,
+      "median_absolute_error": 350.28441003647754,
+      "p90_absolute_error": 841.5734162426118,
+      "sample_share": 0.09931292941911306,
+      "squared_error_share": 0.47132463052440576,
+      "previous_mse": 256622.86005053946,
+      "previous_bias": -399.87943382293946,
+      "delta_overall_mse": -882.2513738705597
+    }
+  ],
+  "worst_10pct": {
+    "n": 161,
+    "squared_error_share": 0.6330139964842418
+  },
+  "method": "Descriptive analysis only; no retraining, tuning, test labels, or new significance tests.",
+  "comparison_provenance": "Final metrics recomputed from CSV; previous band metrics from archived paired_price_slices.json, not a new previous-model replay.",
+  "limitations": [
+    "Cases selected by numerical rules are illustrations, not a random sample or causal explanation.",
+    "Validation has been reused during development; metrics are not an unbiased new generalization estimate.",
+    "No room-type/location/size labels were supplied for subgroup causal claims."
+  ],
+  "sources": {
+    "predictions": {
+      "path": "$REPO\\.local\\best_model_bundle_20261018\\.local\\experiment_record\\15_fixed_ensembles\\fixed_sparse_export_reference\\20261015T034010Z_5ae566a4\\predictions.csv",
+      "sha256": "a94f5f4b6456261a903bcc68339f0a82cfaf811252ec164f8debda3b0b673b86"
+    },
+    "split": {
+      "path": "$REPO\\.local\\best_model_bundle_20261018\\inputs\\split_v1.csv",
+      "sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213"
+    },
+    "paired_slices": {
+      "path": "$REPO\\.local\\best_model_review\\best_model\\crossfit_evaluation\\paired_price_slices.json",
+      "sha256": "46d035b874ab9182c7ec4583662737d9d29f49014ef5136299732b7249bdbb32"
+    },
+    "images": "$GROUP\\house_dataset\\house_dataset\\train"
+  }
+}

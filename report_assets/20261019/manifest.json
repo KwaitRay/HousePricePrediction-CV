@@ -1,0 +1,1063 @@
+{
+  "as_of": "2026-10-19",
+  "source_commit": "664393e2342fe5b838db6649554b31bc64a1c763",
+  "best_model_source_commit": "cceac4082c543d55af51673fd87662fa767be14c",
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "frozen_model_run": "20261015T034010Z_0c94a543",
+  "files": [
+    {
+      "file": "data/traditional.json",
+      "source": "output/experiment_record/03_traditional/baseline_summary/summary.json",
+      "category": "Traditional baseline",
+      "source_sha256": "18b315f3fc5e67e075241b1d21a234c71506dadd70f7d8cd57dac2e87f0b0e15",
+      "packed_sha256": "18b315f3fc5e67e075241b1d21a234c71506dadd70f7d8cd57dac2e87f0b0e15",
+      "bytes": 4112
+    },
+    {
+      "file": "data/training_runs.json",
+      "source": "output/experiment_record/04_training/analyses/completed_20261004/summary.json",
+      "category": "Training",
+      "source_sha256": "2f6a6e04dbc3bd1440fcf5ef158d63e32f5d54647dfc865f555564f7de8a427a",
+      "packed_sha256": "2f6a6e04dbc3bd1440fcf5ef158d63e32f5d54647dfc865f555564f7de8a427a",
+      "bytes": 32727
+    },
+    {
+      "file": "data/training_aggregates.json",
+      "source": "output/experiment_record/04_training/analyses/completed_20261004/aggregates.json",
+      "category": "Training",
+      "source_sha256": "1925b792bd052ec29817e347b83e6829c1d66beb35c440efe881fb035579c302",
+      "packed_sha256": "1925b792bd052ec29817e347b83e6829c1d66beb35c440efe881fb035579c302",
+      "bytes": 5271
+    },
+    {
+      "file": "data/geometric_augmentation.json",
+      "source": "output/experiment_record/05_augmentation/analyses/geometry_completed.json",
+      "category": "Augmentation",
+      "source_sha256": "00ff6a4cf5883e8f60a206f3341ed2bd9ff78543be33d9f3ef00d1549be5d0eb",
+      "packed_sha256": "00ff6a4cf5883e8f60a206f3341ed2bd9ff78543be33d9f3ef00d1549be5d0eb",
+      "bytes": 12971
+    },
+    {
+      "file": "data/robustness_augmentation.json",
+      "source": "output/experiment_record/05_augmentation/augmentation_status.json",
+      "category": "Augmentation",
+      "source_sha256": "f813b80fec95718011f51ec532b2e3f039b832fe37dde2ba69f0adfb13198d12",
+      "packed_sha256": "f813b80fec95718011f51ec532b2e3f039b832fe37dde2ba69f0adfb13198d12",
+      "bytes": 11021
+    },
+    {
+      "file": "data/architecture.json",
+      "source": "output/experiment_record/06_architecture/architecture_status.json",
+      "category": "Architecture",
+      "source_sha256": "92ca2877b1c6a5d2285e07a3c7cedc67e0761f7de93582b89fdf2169d42872f2",
+      "packed_sha256": "92ca2877b1c6a5d2285e07a3c7cedc67e0761f7de93582b89fdf2169d42872f2",
+      "bytes": 9095
+    },
+    {
+      "file": "data/preprocessing_decision.json",
+      "source": "output/experiment_record/01_preprocessing/final_comparison_v2/decision.json",
+      "category": "Preprocessing",
+      "source_sha256": "24aec5303086a53c833c8f94276f92df090371dd45f66543d6b5aba1ca85381e",
+      "packed_sha256": "24aec5303086a53c833c8f94276f92df090371dd45f66543d6b5aba1ca85381e",
+      "bytes": 1119
+    },
+    {
+      "file": "data/final_ablation.json",
+      "source": ".local/final_ablation_20261018/ablation_results.json",
+      "category": "Final fusion",
+      "source_sha256": "5716080bdbaa40ef20981a3ee300de6aaef836bb8f23bfd77d08b66ab705e49e",
+      "packed_sha256": "b9d7e0fbe812898943d51d9984c8547eae758a2026ba683e97a7fada2fdf3ff7",
+      "bytes": 14297
+    },
+    {
+      "file": "data/final_error_analysis.json",
+      "source": ".local/final_error_analysis_20261018/analysis_results.json",
+      "category": "Error analysis",
+      "source_sha256": "ecf54e857b428a403465e1c2cdcdee7b01206c4e985fed81463a548ee3373244",
+      "packed_sha256": "65ed9fcfe41fe8925b1af6dbceba0af4a4088f19f3f156d102de8ca76fff3aa6",
+      "bytes": 3970
+    },
+    {
+      "file": "data/continuation_screen.json",
+      "source": ".local/continuation_screen_20261019/results.json",
+      "category": "Rejected extensions",
+      "source_sha256": "799f47c52264d8cac31267d2741a90932b6147d5854fae4cf7684f6b11afc885",
+      "packed_sha256": "2fee5a9d9b1b87fbd83e5f78b4503a3e8d24132cbdc30dfc49459df017997e7b",
+      "bytes": 5917
+    },
+    {
+      "file": "data/mid40_fusion.json",
+      "source": ".local/continuation_screen_20261019/mid40/fusion_results.json",
+      "category": "Rejected extensions",
+      "source_sha256": "af55ac1bf9a3002f9be65b0ffd5482d90bda33607bdb9dcb6efc32653480e8d4",
+      "packed_sha256": "1dc92978f7567c842ddb1f08f3de9dc9704fd431c935e4e51009a81da2dfea78",
+      "bytes": 3339
+    },
+    {
+      "file": "data/cpu_replay_verification.json",
+      "source": ".local/best_model_bundle_20261018/replay_verification.json",
+      "category": "Verification",
+      "source_sha256": "47863857220bab2afe8b117bb55a7c97ca0647af68652bb172026365d3f3a54b",
+      "packed_sha256": "88b31ec9ba20195cec512fe803f94e3a22f0b122cccb8fcd5465b3382023add2",
+      "bytes": 279
+    },
+    {
+      "file": "photometric/results.json",
+      "source": "output/experiment_record/05_augmentation/photometric_screen_20261019/results.json",
+      "category": "Photometric screen",
+      "source_sha256": "ad5af379419bd95e8ebd8a144ebf8b57da38de204e8bb540352e952bb884cda2",
+      "packed_sha256": "ad5af379419bd95e8ebd8a144ebf8b57da38de204e8bb540352e952bb884cda2",
+      "bytes": 1890
+    },
+    {
+      "file": "photometric/protocol.json",
+      "source": "output/experiment_record/05_augmentation/photometric_screen_20261019/protocol.json",
+      "category": "Photometric screen",
+      "source_sha256": "51669712a12bb1d5d9f1b5d91a94dd73bb0378c2646c78a2e35f7b9c7c9282fa",
+      "packed_sha256": "51669712a12bb1d5d9f1b5d91a94dd73bb0378c2646c78a2e35f7b9c7c9282fa",
+      "bytes": 5785
+    },
+    {
+      "file": "photometric/audit.json",
+      "source": "output/experiment_record/05_augmentation/photometric_screen_20261019/audit.json",
+      "category": "Photometric screen",
+      "source_sha256": "a06e080cd8e6804c63f27a59e093cfcb02f7791e2590fa75151a42bd92259102",
+      "packed_sha256": "adb85af79a97d8cd74b80a8d1bf77d31fe892e8ac0137d01af4271ac4d3b84ff",
+      "bytes": 10287
+    },
+    {
+      "file": "photometric/summary.csv",
+      "source": "output/experiment_record/05_augmentation/photometric_screen_20261019/summary.csv",
+      "category": "Photometric screen",
+      "source_sha256": "afed04fca3f5df0a66425cb33fb85bb22f7b524aca71d4bd367f0e9b0660183e",
+      "packed_sha256": "afed04fca3f5df0a66425cb33fb85bb22f7b524aca71d4bd367f0e9b0660183e",
+      "bytes": 583
+    },
+    {
+      "file": "photometric/price_slices.csv",
+      "source": "output/experiment_record/05_augmentation/photometric_screen_20261019/price_slices.csv",
+      "category": "Photometric screen",
+      "source_sha256": "207f9f857ab23378963be7e8a9228bb1e104666a13e76ba41d4d07ee6dcc4a87",
+      "packed_sha256": "207f9f857ab23378963be7e8a9228bb1e104666a13e76ba41d4d07ee6dcc4a87",
+      "bytes": 981
+    },
+    {
+      "file": "photometric/learning_curves.png",
+      "source": "output/experiment_record/05_augmentation/photometric_screen_20261019/learning_curves.png",
+      "category": "Photometric screen",
+      "source_sha256": "60bad5c578cbe59b6940f54f43ee0615823c839b5170924a3de9eb582e646266",
+      "packed_sha256": "60bad5c578cbe59b6940f54f43ee0615823c839b5170924a3de9eb582e646266",
+      "bytes": 155010
+    },
+    {
+      "file": "tables/preprocessing_summary.csv",
+      "source": "output/experiment_record/01_preprocessing/final_comparison_v2/summary.csv",
+      "category": "Preprocessing",
+      "source_sha256": "d8fb2515a67cdc36b99f9e49910496310f35e8b0699a174fbf72cee71b14012f",
+      "packed_sha256": "e6144fc3b1234a58b25fbbb19c75d57899aeb2545a73b1381ea78701754a9302",
+      "bytes": 709
+    },
+    {
+      "file": "tables/preprocessing_seed_results.csv",
+      "source": "output/experiment_record/01_preprocessing/final_comparison_v2/seed_results.csv",
+      "category": "Preprocessing",
+      "source_sha256": "8837796947fd7630803eaced6dac8622a6452c9c61ed114e51295f00b3416e3f",
+      "packed_sha256": "011facbd3c7a0e239b8f61a5cb21e8d0936ba19ae4a5556ba519793353580f96",
+      "bytes": 3805
+    },
+    {
+      "file": "ablation/ablation_summary.csv",
+      "source": ".local/final_ablation_20261018/ablation_summary.csv",
+      "category": "Final fusion",
+      "source_sha256": "a729dc0141c3f0dafaf95e988b35c4b5098c4cb0c1e40a209b6c0a4d93b3469e",
+      "packed_sha256": "850f718cc055186ac935e990274e3785898dbfd81d55533aef31e1be05a93788",
+      "bytes": 1094
+    },
+    {
+      "file": "ablation/table_01_ablation_results.png",
+      "source": ".local/final_ablation_20261018/table_01_ablation_results.png",
+      "category": "Final fusion",
+      "source_sha256": "85d0cd397af607000660994e0973b543416c027fe1ccf2b8133fb71ab3104cd0",
+      "packed_sha256": "85d0cd397af607000660994e0973b543416c027fe1ccf2b8133fb71ab3104cd0",
+      "bytes": 230612
+    },
+    {
+      "file": "ablation/table_01_ablation_results.svg",
+      "source": ".local/final_ablation_20261018/table_01_ablation_results.svg",
+      "category": "Final fusion",
+      "source_sha256": "bc5a42a7ae4c0c5ba51a6e79df29c36010a20a4685a5a0995126a149d1a31b67",
+      "packed_sha256": "ac801c767e4d99916a1596c2784a2a307927b7bc3439a2784afe7ca6e8a856c1",
+      "bytes": 31300
+    },
+    {
+      "file": "ablation/figure_01_ablation_comparison.png",
+      "source": ".local/final_ablation_20261018/figure_01_ablation_comparison.png",
+      "category": "Final fusion",
+      "source_sha256": "13af2a9208540d0bc4981aece60248d4f1608658692dacb38d32587c69a2e547",
+      "packed_sha256": "13af2a9208540d0bc4981aece60248d4f1608658692dacb38d32587c69a2e547",
+      "bytes": 213482
+    },
+    {
+      "file": "ablation/figure_01_ablation_comparison.svg",
+      "source": ".local/final_ablation_20261018/figure_01_ablation_comparison.svg",
+      "category": "Final fusion",
+      "source_sha256": "cc86c82b5ddec87b3948cee77da4936b8df676d4a5ad559a3197d5804acc70d4",
+      "packed_sha256": "89ccac93be6a2349d69a57cc55c17b80b3f60e9b2b1a57d6c1572ee234ad1e91",
+      "bytes": 25480
+    },
+    {
+      "file": "ablation/verification.json",
+      "source": ".local/final_ablation_20261018/verification.json",
+      "category": "Final fusion",
+      "source_sha256": "9c6ba436582c7c2d93ae80c82051a2bd4bc451562041222c12e3e50cc4b7e94e",
+      "packed_sha256": "94d10286b2b5cc055327dc99e795795cc7698152fd4177636041f935392b55c6",
+      "bytes": 467
+    },
+    {
+      "file": "error_analysis/figure_01_prediction_and_residuals.png",
+      "source": ".local/final_error_analysis_20261018/figure_01_prediction_and_residuals.png",
+      "category": "Error analysis",
+      "source_sha256": "d7b2e426f78f16c94c4b79101549f48305192b33831db0b9db2dba5c2b6502f5",
+      "packed_sha256": "d7b2e426f78f16c94c4b79101549f48305192b33831db0b9db2dba5c2b6502f5",
+      "bytes": 785298
+    },
+    {
+      "file": "error_analysis/figure_01_prediction_and_residuals.svg",
+      "source": ".local/final_error_analysis_20261018/figure_01_prediction_and_residuals.svg",
+      "category": "Error analysis",
+      "source_sha256": "628eeca514b7b49d6258eb600c2fe05e80b69eb41ea90fad3011ce0923640c0d",
+      "packed_sha256": "961a0342c0b50096111e2ea7bf1e6fd7d14441c2dc9e32829c746d5583f97bfb",
+      "bytes": 544066
+    },
+    {
+      "file": "error_analysis/figure_02_price_band_bias_and_error_share.png",
+      "source": ".local/final_error_analysis_20261018/figure_02_price_band_bias_and_error_share.png",
+      "category": "Error analysis",
+      "source_sha256": "4be664aacdc00bc6830f0fc699b409428a1708350c841aea4e308ebbbee901f8",
+      "packed_sha256": "4be664aacdc00bc6830f0fc699b409428a1708350c841aea4e308ebbbee901f8",
+      "bytes": 196979
+    },
+    {
+      "file": "error_analysis/figure_02_price_band_bias_and_error_share.svg",
+      "source": ".local/final_error_analysis_20261018/figure_02_price_band_bias_and_error_share.svg",
+      "category": "Error analysis",
+      "source_sha256": "7de2d05d2d6e791cba55d49d33816f5c20afe592400fd7874e6d676100d00959",
+      "packed_sha256": "9e889571e37a35ef0ead29020ff8ea24208823a044b5c526b66ca9d507201500",
+      "bytes": 21960
+    },
+    {
+      "file": "error_analysis/figure_03_previous_vs_final.png",
+      "source": ".local/final_error_analysis_20261018/figure_03_previous_vs_final.png",
+      "category": "Error analysis",
+      "source_sha256": "75b0bd01ab5b209ccd5f523dd3d3b8aabffa74c2030a65f13fef581b3f3f3280",
+      "packed_sha256": "75b0bd01ab5b209ccd5f523dd3d3b8aabffa74c2030a65f13fef581b3f3f3280",
+      "bytes": 173570
+    },
+    {
+      "file": "error_analysis/figure_03_previous_vs_final.svg",
+      "source": ".local/final_error_analysis_20261018/figure_03_previous_vs_final.svg",
+      "category": "Error analysis",
+      "source_sha256": "ef083fb448b4a0d3e0123c194c48b4bd1d6a2606632255e36e7ea335d7e6c719",
+      "packed_sha256": "c26fcc3ed68d239d3373065920e0aa1cea5589a53f3f688a9af265a249e4336f",
+      "bytes": 20429
+    },
+    {
+      "file": "figures/training_comparison.png",
+      "source": "output/experiment_record/04_training/analyses/completed_20261004/comparison.png",
+      "category": "Training",
+      "source_sha256": "fbdfb433f8c54b53e8c2dc0fae1e05c0f57181c794f318dbb163ab00d992c7db",
+      "packed_sha256": "fbdfb433f8c54b53e8c2dc0fae1e05c0f57181c794f318dbb163ab00d992c7db",
+      "bytes": 97919
+    },
+    {
+      "file": "figures/traditional_diagnostics.png",
+      "source": "output/experiment_record/03_traditional/baseline_summary/validation_diagnostics.png",
+      "category": "Traditional baseline",
+      "source_sha256": "7281d24a1cecde01be3c7cfc894be975551d3723f97ea00b4b75d2c8dadc4913",
+      "packed_sha256": "7281d24a1cecde01be3c7cfc894be975551d3723f97ea00b4b75d2c8dadc4913",
+      "bytes": 284456
+    },
+    {
+      "file": "figures/sift_keypoint_distribution.png",
+      "source": "output/experiment_record/03_traditional/baseline_summary/keypoint_distribution.png",
+      "category": "Traditional baseline",
+      "source_sha256": "fa4020144f9fb5af0822c494babb1b34e5e7cd08587ca64321dd52172e8065c7",
+      "packed_sha256": "fa4020144f9fb5af0822c494babb1b34e5e7cd08587ca64321dd52172e8065c7",
+      "bytes": 43247
+    },
+    {
+      "file": "figures/alexnet_price_and_error.png",
+      "source": "output/experiment_record/05_augmentation/analyses/error_review_20261005/price_and_error.png",
+      "category": "Historical AlexNet analysis",
+      "source_sha256": "81a475366f79ad5efe9af2e40c19ca1f27ac689b7d61dd778f8b3b0073d58f0d",
+      "packed_sha256": "81a475366f79ad5efe9af2e40c19ca1f27ac689b7d61dd778f8b3b0073d58f0d",
+      "bytes": 207643
+    },
+    {
+      "file": "figures/training_visual_coverage.png",
+      "source": "output/experiment_record/05_augmentation/analyses/visual_coverage_20261005/coverage.png",
+      "category": "Exploratory coverage",
+      "source_sha256": "729d01e7cd4f8ff75f13f2164e6a05c25e5c076b1b0efb7b68bd1ab69890021a",
+      "packed_sha256": "729d01e7cd4f8ff75f13f2164e6a05c25e5c076b1b0efb7b68bd1ab69890021a",
+      "bytes": 94690
+    },
+    {
+      "file": "data/training_visual_coverage.json",
+      "source": "output/experiment_record/05_augmentation/analyses/visual_coverage_20261005/coverage.json",
+      "category": "Exploratory coverage",
+      "source_sha256": "9f931d84563e49a6a4bfbf849402abd48bf906f6315bed946e4acc14b41c1ffa",
+      "packed_sha256": "9f931d84563e49a6a4bfbf849402abd48bf906f6315bed946e4acc14b41c1ffa",
+      "bytes": 23284
+    },
+    {
+      "file": "archive_curves/01_preprocessing/runs/preprocess_01_stretch/20261001T105638Z_d23f78f2/learning_curves.png",
+      "source": "output/experiment_record/01_preprocessing/runs/preprocess_01_stretch/20261001T105638Z_d23f78f2/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "56561fa67622223bd2210005742da07bfe436411f7a72243972357c84ce4c44a",
+      "packed_sha256": "56561fa67622223bd2210005742da07bfe436411f7a72243972357c84ce4c44a",
+      "bytes": 64944
+    },
+    {
+      "file": "archive_curves/01_preprocessing/runs/preprocess_01_stretch/20261001T145727Z_e813a9c3/learning_curves.png",
+      "source": "output/experiment_record/01_preprocessing/runs/preprocess_01_stretch/20261001T145727Z_e813a9c3/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "82d384f10f325d8a36210fc2a81c22e654647ef70d567dac33bedcac2023b647",
+      "packed_sha256": "82d384f10f325d8a36210fc2a81c22e654647ef70d567dac33bedcac2023b647",
+      "bytes": 64662
+    },
+    {
+      "file": "archive_curves/01_preprocessing/runs/preprocess_01_stretch/20261002T043957Z_e347f558/learning_curves.png",
+      "source": "output/experiment_record/01_preprocessing/runs/preprocess_01_stretch/20261002T043957Z_e347f558/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "bb5be467aad253f1b91a0398d4b19fcb0499014384c440e89914a7bf355f5f3f",
+      "packed_sha256": "bb5be467aad253f1b91a0398d4b19fcb0499014384c440e89914a7bf355f5f3f",
+      "bytes": 64323
+    },
+    {
+      "file": "archive_curves/01_preprocessing/runs/preprocess_01_stretch/20261002T062048Z_981e6c1b/learning_curves.png",
+      "source": "output/experiment_record/01_preprocessing/runs/preprocess_01_stretch/20261002T062048Z_981e6c1b/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "d4d293a990680d2a4b3cf74ae36293aa36497951daee7f04a140206febd6e535",
+      "packed_sha256": "d4d293a990680d2a4b3cf74ae36293aa36497951daee7f04a140206febd6e535",
+      "bytes": 63027
+    },
+    {
+      "file": "archive_curves/01_preprocessing/runs/preprocess_02_crop/20261001T121652Z_fe0754e2/learning_curves.png",
+      "source": "output/experiment_record/01_preprocessing/runs/preprocess_02_crop/20261001T121652Z_fe0754e2/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "fca49ad66237cf2b1f653f5c848dc8380f5205529d6bcf0d04f815ffc85bc520",
+      "packed_sha256": "fca49ad66237cf2b1f653f5c848dc8380f5205529d6bcf0d04f815ffc85bc520",
+      "bytes": 65021
+    },
+    {
+      "file": "archive_curves/01_preprocessing/runs/preprocess_02_crop/20261001T153635Z_a4bb24e6/learning_curves.png",
+      "source": "output/experiment_record/01_preprocessing/runs/preprocess_02_crop/20261001T153635Z_a4bb24e6/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "d661db964d5fff11d6d4577522138a97c546b763eaad640512c33abd50988c7e",
+      "packed_sha256": "d661db964d5fff11d6d4577522138a97c546b763eaad640512c33abd50988c7e",
+      "bytes": 64409
+    },
+    {
+      "file": "archive_curves/01_preprocessing/runs/preprocess_03_resolution/20261001T161643Z_55aa7823/learning_curves.png",
+      "source": "output/experiment_record/01_preprocessing/runs/preprocess_03_resolution/20261001T161643Z_55aa7823/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "b6e3e3cff9efacb6e546cf6aa121626269518cf1c323f202b01e9dc62ed4b42c",
+      "packed_sha256": "b6e3e3cff9efacb6e546cf6aa121626269518cf1c323f202b01e9dc62ed4b42c",
+      "bytes": 62867
+    },
+    {
+      "file": "archive_curves/01_preprocessing/runs/preprocess_04_normalize/20261001T170612Z_8ee48fbe/learning_curves.png",
+      "source": "output/experiment_record/01_preprocessing/runs/preprocess_04_normalize/20261001T170612Z_8ee48fbe/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "bc8c10dfe69dd0ae9f86e0f17354259a91357ad09b1b203361cd24197b182e43",
+      "packed_sha256": "bc8c10dfe69dd0ae9f86e0f17354259a91357ad09b1b203361cd24197b182e43",
+      "bytes": 65419
+    },
+    {
+      "file": "archive_curves/01_preprocessing/runs/preprocess_05_spatial_filter/20261001T173511Z_fca2ca8a/learning_curves.png",
+      "source": "output/experiment_record/01_preprocessing/runs/preprocess_05_spatial_filter/20261001T173511Z_fca2ca8a/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "270149ec3c8791c1772c4cfbc924ff7d4a46c6fb9e89178c3c4f02759283ee13",
+      "packed_sha256": "270149ec3c8791c1772c4cfbc924ff7d4a46c6fb9e89178c3c4f02759283ee13",
+      "bytes": 66750
+    },
+    {
+      "file": "archive_curves/01_preprocessing/runs/preprocess_06_frequency_filter/20261002T034507Z_39dfa162/learning_curves.png",
+      "source": "output/experiment_record/01_preprocessing/runs/preprocess_06_frequency_filter/20261002T034507Z_39dfa162/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "3c45084ec21ee7994eeb4b1d428a484fcb285494b38f4d36904312f9523c2f2c",
+      "packed_sha256": "3c45084ec21ee7994eeb4b1d428a484fcb285494b38f4d36904312f9523c2f2c",
+      "bytes": 65663
+    },
+    {
+      "file": "archive_curves/01_preprocessing/runs/preprocess_06_frequency_filter/20261002T052258Z_2209b502/learning_curves.png",
+      "source": "output/experiment_record/01_preprocessing/runs/preprocess_06_frequency_filter/20261002T052258Z_2209b502/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "836aac60aa363d3cab7cedeec0d8978bd60276771b7735406b0048e79ffb3720",
+      "packed_sha256": "836aac60aa363d3cab7cedeec0d8978bd60276771b7735406b0048e79ffb3720",
+      "bytes": 64024
+    },
+    {
+      "file": "archive_curves/01_preprocessing/runs/preprocess_06_frequency_filter/20261002T065140Z_5c9ebc94/learning_curves.png",
+      "source": "output/experiment_record/01_preprocessing/runs/preprocess_06_frequency_filter/20261002T065140Z_5c9ebc94/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "4e12454abe0183d24e9d169ca10e2ea8a58cb64be2ec45b2ceec3350ed7bfd9d",
+      "packed_sha256": "4e12454abe0183d24e9d169ca10e2ea8a58cb64be2ec45b2ceec3350ed7bfd9d",
+      "bytes": 64082
+    },
+    {
+      "file": "archive_curves/01_preprocessing/runs/preprocess_07_frequency_stretch/20261002T075856Z_fdcd7b51/learning_curves.png",
+      "source": "output/experiment_record/01_preprocessing/runs/preprocess_07_frequency_stretch/20261002T075856Z_fdcd7b51/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "4450e93d695d1a0b3a7695fc491b663a512d1db63e581947439563c0021a5585",
+      "packed_sha256": "4450e93d695d1a0b3a7695fc491b663a512d1db63e581947439563c0021a5585",
+      "bytes": 64462
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_01_lr_0p0003/20261002T130650Z_6058bbc8/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_01_lr_0p0003/20261002T130650Z_6058bbc8/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "9ceb1edbebd82a7cfb5c1c9d437b791f577a37cf2342493c32feee07f6cfb886",
+      "packed_sha256": "9ceb1edbebd82a7cfb5c1c9d437b791f577a37cf2342493c32feee07f6cfb886",
+      "bytes": 64995
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_01_lr_3e-05/20261002T124127Z_0e487837/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_01_lr_3e-05/20261002T124127Z_0e487837/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "037f548575477a9afe556c33b682a373dd15a0e9cebdfb4c0da22bc2b5c76140",
+      "packed_sha256": "037f548575477a9afe556c33b682a373dd15a0e9cebdfb4c0da22bc2b5c76140",
+      "bytes": 62705
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_02_adagrad_0p001/20261002T164745Z_df4554c7/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_02_adagrad_0p001/20261002T164745Z_df4554c7/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "a9ab05e49ee3f54984c20b5191c717148a3bd6fabc384ed228a958b7e5dc0b07",
+      "packed_sha256": "a9ab05e49ee3f54984c20b5191c717148a3bd6fabc384ed228a958b7e5dc0b07",
+      "bytes": 56471
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_02_adagrad_0p01/20261002T171240Z_d79d96f8/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_02_adagrad_0p01/20261002T171240Z_d79d96f8/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "2bda17e413f649e1cc9e98d0e7150b0fd99f5269714583f92d39458bb70c65b7",
+      "packed_sha256": "2bda17e413f649e1cc9e98d0e7150b0fd99f5269714583f92d39458bb70c65b7",
+      "bytes": 59408
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_02_adam_0p0001/20261002T155113Z_335d863a/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_02_adam_0p0001/20261002T155113Z_335d863a/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "4b07aa7b2f672b91d92d02a01d516b4f917c628988dd96083cd12fb3897afac5",
+      "packed_sha256": "4b07aa7b2f672b91d92d02a01d516b4f917c628988dd96083cd12fb3897afac5",
+      "bytes": 63425
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_02_adam_0p001/20261002T161649Z_6f11b2f7/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_02_adam_0p001/20261002T161649Z_6f11b2f7/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "924289d526e507d1074bda8821dfd5f660481a5ed294675c1161c2193ddae33a",
+      "packed_sha256": "924289d526e507d1074bda8821dfd5f660481a5ed294675c1161c2193ddae33a",
+      "bytes": 44732
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_02_adam_0p001/20261003T034816Z_facd6854/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_02_adam_0p001/20261003T034816Z_facd6854/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "c2a915eb7d1da075ebe84e101e4bca500b3648559793a6f9fe9c2e66b55585c0",
+      "packed_sha256": "c2a915eb7d1da075ebe84e101e4bca500b3648559793a6f9fe9c2e66b55585c0",
+      "bytes": 77668
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_02_adam_0p001/20261003T041721Z_4dff5fc7/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_02_adam_0p001/20261003T041721Z_4dff5fc7/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "03e9f63181b9e16bc5b73a3678ffe921c21a157269bbbbb0ffa747d64e081a17",
+      "packed_sha256": "03e9f63181b9e16bc5b73a3678ffe921c21a157269bbbbb0ffa747d64e081a17",
+      "bytes": 72430
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_02_adam_1em05/20261002T152503Z_df28c19a/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_02_adam_1em05/20261002T152503Z_df28c19a/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "12545baa6086a9c2c0e17dc343205cf14be10c4267258d9c2d406ae06ce54bc8",
+      "packed_sha256": "12545baa6086a9c2c0e17dc343205cf14be10c4267258d9c2d406ae06ce54bc8",
+      "bytes": 67397
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_02_muon_0p005/20261002T183439Z_0d758881/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_02_muon_0p005/20261002T183439Z_0d758881/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "99031099d6111d3148cc5cbc0f549073138b914115ae365449b29ce8d340e0b8",
+      "packed_sha256": "99031099d6111d3148cc5cbc0f549073138b914115ae365449b29ce8d340e0b8",
+      "bytes": 65621
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_02_sgd_0p0005/20261002T145850Z_4d461132/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_02_sgd_0p0005/20261002T145850Z_4d461132/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "4b7c8af413fcab6a5c6b7e994dd834fbe1785b2f4d57da9c8fd0d9f9881a8a6d",
+      "packed_sha256": "4b7c8af413fcab6a5c6b7e994dd834fbe1785b2f4d57da9c8fd0d9f9881a8a6d",
+      "bytes": 63764
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_02_sgd_0p001/20261002T133217Z_dd4e5282/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_02_sgd_0p001/20261002T133217Z_dd4e5282/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "15af44ef52c789bfcd073f6aeb07188cd3e5743b77c972e1edf31abcfeb3d92b",
+      "packed_sha256": "15af44ef52c789bfcd073f6aeb07188cd3e5743b77c972e1edf31abcfeb3d92b",
+      "bytes": 64700
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_03_cosine/20261003T050102Z_19886f34/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_03_cosine/20261003T050102Z_19886f34/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "0f0e7b778b893ff6be1001826b95e75a1a3287fe66035172de2422113f9771de",
+      "packed_sha256": "0f0e7b778b893ff6be1001826b95e75a1a3287fe66035172de2422113f9771de",
+      "bytes": 88157
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_03_cosine/20261003T052850Z_06d0e47a/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_03_cosine/20261003T052850Z_06d0e47a/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "20a0eeca4d8353cea5280f75689cfe7cc47fd4b845bd89d0fafe343f934943f5",
+      "packed_sha256": "20a0eeca4d8353cea5280f75689cfe7cc47fd4b845bd89d0fafe343f934943f5",
+      "bytes": 90220
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_03_cosine/20261003T055436Z_6b8e6d3a/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_03_cosine/20261003T055436Z_6b8e6d3a/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "aca94dba71b3f2d5cf0f3464a6cc6c0eaa4d578e8a3dd2f12fceb859cd283514",
+      "packed_sha256": "aca94dba71b3f2d5cf0f3464a6cc6c0eaa4d578e8a3dd2f12fceb859cd283514",
+      "bytes": 89564
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_04_batch_16/20261003T064210Z_8846ab8f/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_04_batch_16/20261003T064210Z_8846ab8f/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "5a6631cd27de6752791a4c4aa227e6c5eb4134ea17c0c97cfd1552a6a2503484",
+      "packed_sha256": "5a6631cd27de6752791a4c4aa227e6c5eb4134ea17c0c97cfd1552a6a2503484",
+      "bytes": 71821
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_04_batch_16/20261003T071154Z_8af6a290/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_04_batch_16/20261003T071154Z_8af6a290/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "1588170286c9f23f1fb85bfbb1cf9a945019b4e6b6233d3805affeb03b614fe1",
+      "packed_sha256": "1588170286c9f23f1fb85bfbb1cf9a945019b4e6b6233d3805affeb03b614fe1",
+      "bytes": 75691
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_04_batch_16/20261003T074222Z_6a0c68e5/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_04_batch_16/20261003T074222Z_6a0c68e5/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "94fdcd359a973b6594e72dd39065a634f6ecba88d6cf87a807d2038b7515e0f6",
+      "packed_sha256": "94fdcd359a973b6594e72dd39065a634f6ecba88d6cf87a807d2038b7515e0f6",
+      "bytes": 75482
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_04_batch_64/20261003T081656Z_98b550fe/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_04_batch_64/20261003T081656Z_98b550fe/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "16d2821c9e3337f046e4d4dad06288c27990e5c9302f39a64c0567e3150f57f2",
+      "packed_sha256": "16d2821c9e3337f046e4d4dad06288c27990e5c9302f39a64c0567e3150f57f2",
+      "bytes": 75748
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_04_batch_64/20261003T084356Z_4d481951/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_04_batch_64/20261003T084356Z_4d481951/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "012f6ba22086c50e0b4e52589e0bd739a514e5dd9a5683f4035a9b23fd5727d2",
+      "packed_sha256": "012f6ba22086c50e0b4e52589e0bd739a514e5dd9a5683f4035a9b23fd5727d2",
+      "bytes": 75183
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_04_batch_64/20261003T090830Z_f0a34d89/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_04_batch_64/20261003T090830Z_f0a34d89/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "a48e635c23c7655435a9ac8b2969de3c0274719bad1188057649b6b496050650",
+      "packed_sha256": "a48e635c23c7655435a9ac8b2969de3c0274719bad1188057649b6b496050650",
+      "bytes": 76895
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_05_dropout_0/20261003T093414Z_adc8350e/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_05_dropout_0/20261003T093414Z_adc8350e/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "e3c3fb40350340350c1ea06bdc04e817b00ef5e057cb9300dddf8ebf9717caf0",
+      "packed_sha256": "e3c3fb40350340350c1ea06bdc04e817b00ef5e057cb9300dddf8ebf9717caf0",
+      "bytes": 69844
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_05_dropout_0/20261003T100246Z_a6a359b8/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_05_dropout_0/20261003T100246Z_a6a359b8/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "61bf990c335d37e5ca00190515bc587c764a4455488a7a6437205b21db14608b",
+      "packed_sha256": "61bf990c335d37e5ca00190515bc587c764a4455488a7a6437205b21db14608b",
+      "bytes": 73814
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_05_dropout_0/20261003T102955Z_cc438865/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_05_dropout_0/20261003T102955Z_cc438865/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "7348c6085a7b0c00a5fabb3729c21f244812de7fffa0dfcd73f86776206441b8",
+      "packed_sha256": "7348c6085a7b0c00a5fabb3729c21f244812de7fffa0dfcd73f86776206441b8",
+      "bytes": 74092
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_05_dropout_0p2/20261003T105535Z_159782ad/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_05_dropout_0p2/20261003T105535Z_159782ad/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "f5b8df8cf8a66ada27917f24ac00ed5dfce64156cf3056feff0122f3153ca38c",
+      "packed_sha256": "f5b8df8cf8a66ada27917f24ac00ed5dfce64156cf3056feff0122f3153ca38c",
+      "bytes": 74737
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_05_dropout_0p2/20261003T113155Z_9dfeba2a/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_05_dropout_0p2/20261003T113155Z_9dfeba2a/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "5fdf171cef4afdd332efc92d9a4e7e87c47a2ab1763a984c087f4bec0609b649",
+      "packed_sha256": "5fdf171cef4afdd332efc92d9a4e7e87c47a2ab1763a984c087f4bec0609b649",
+      "bytes": 74948
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_05_dropout_0p2/20261003T115856Z_2e89695c/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_05_dropout_0p2/20261003T115856Z_2e89695c/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "9bf9962ba474bbdad8c02c1ed547e7bde7778b5336689a77a188a54402fb119f",
+      "packed_sha256": "9bf9962ba474bbdad8c02c1ed547e7bde7778b5336689a77a188a54402fb119f",
+      "bytes": 75217
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_06_decay_0p001/20261003T191651Z_44cd39bf/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_06_decay_0p001/20261003T191651Z_44cd39bf/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "0a54fdc1ff7bb404c1c64b59c8203886fdbb93b8c02846440ed45046f16c032c",
+      "packed_sha256": "0a54fdc1ff7bb404c1c64b59c8203886fdbb93b8c02846440ed45046f16c032c",
+      "bytes": 76589
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_06_decay_1e-05/20261003T184229Z_9be2c11b/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_06_decay_1e-05/20261003T184229Z_9be2c11b/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "5253934d8b039bc2e5882a2d7e49f5f05611e4c3a7cf0ba1572e3c52ae15987f",
+      "packed_sha256": "5253934d8b039bc2e5882a2d7e49f5f05611e4c3a7cf0ba1572e3c52ae15987f",
+      "bytes": 77624
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_06_l1_1e-06/20261003T170840Z_31d2a615/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_06_l1_1e-06/20261003T170840Z_31d2a615/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "c7a737257f458000e773c68c15fed2dd5a5ff268d82d28488ed1e5ca16912cce",
+      "packed_sha256": "c7a737257f458000e773c68c15fed2dd5a5ff268d82d28488ed1e5ca16912cce",
+      "bytes": 74930
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_06_l1_1e-07/20261003T163931Z_e34d8e72/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_06_l1_1e-07/20261003T163931Z_e34d8e72/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "9c1b95ebc5800037c7f15a193c49a7b1c41e182eba56c61ce2dd6188650d697f",
+      "packed_sha256": "9c1b95ebc5800037c7f15a193c49a7b1c41e182eba56c61ce2dd6188650d697f",
+      "bytes": 75633
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_06_l2_1e-05/20261003T181525Z_2a279187/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_06_l2_1e-05/20261003T181525Z_2a279187/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "3df13f5838e8a3cf572722e4c7e12a135dbb32021a9ca993effc8a57962be5f6",
+      "packed_sha256": "3df13f5838e8a3cf572722e4c7e12a135dbb32021a9ca993effc8a57962be5f6",
+      "bytes": 75874
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_06_l2_1e-06/20261003T173549Z_67460e51/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_06_l2_1e-06/20261003T173549Z_67460e51/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "3001b28c02012569cf11ae028b49c2ffed8e5c5bf75a9482311644bb855ddf5b",
+      "packed_sha256": "3001b28c02012569cf11ae028b49c2ffed8e5c5bf75a9482311644bb855ddf5b",
+      "bytes": 76134
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_06_l2_1e-06/20261003T194254Z_a32ec1e2/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_06_l2_1e-06/20261003T194254Z_a32ec1e2/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "d84b45bc1a7a8ef7eb70c3bd58378b9e086f5d2b0d8ceb1d73092cb9a086c87a",
+      "packed_sha256": "d84b45bc1a7a8ef7eb70c3bd58378b9e086f5d2b0d8ceb1d73092cb9a086c87a",
+      "bytes": 76710
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_06_l2_1e-06/20261003T200957Z_50fdc7a6/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_06_l2_1e-06/20261003T200957Z_50fdc7a6/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "f494c6d23d50cacfcceda1da9c27fe570c8d672994a100cd0f0ded7511c0ea98",
+      "packed_sha256": "f494c6d23d50cacfcceda1da9c27fe570c8d672994a100cd0f0ded7511c0ea98",
+      "bytes": 75256
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_06_no_penalty/20261003T145806Z_01ce8a0e/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_06_no_penalty/20261003T145806Z_01ce8a0e/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "5253934d8b039bc2e5882a2d7e49f5f05611e4c3a7cf0ba1572e3c52ae15987f",
+      "packed_sha256": "5253934d8b039bc2e5882a2d7e49f5f05611e4c3a7cf0ba1572e3c52ae15987f",
+      "bytes": 77624
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_06_no_penalty/20261003T153343Z_31050c1b/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_06_no_penalty/20261003T153343Z_31050c1b/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "c29944668e0c727fc7a249b9872b27a7c71e28d8d4c74aea5356b2c5f16be5d8",
+      "packed_sha256": "c29944668e0c727fc7a249b9872b27a7c71e28d8d4c74aea5356b2c5f16be5d8",
+      "bytes": 77130
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_06_no_penalty/20261003T161152Z_9b70ed3f/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_06_no_penalty/20261003T161152Z_9b70ed3f/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "d08f65b62a19fd177064945f3d58b4516ca1a1aa842ddf37acccecb67988bce7",
+      "packed_sha256": "d08f65b62a19fd177064945f3d58b4516ca1a1aa842ddf37acccecb67988bce7",
+      "bytes": 75855
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_08_initialization/20261004T024854Z_489899ef/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_08_initialization/20261004T024854Z_489899ef/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "31742882924dd4dde9c6a822e10817c23fa6a8315fdb7ebee3cb39514fb651ec",
+      "packed_sha256": "31742882924dd4dde9c6a822e10817c23fa6a8315fdb7ebee3cb39514fb651ec",
+      "bytes": 77006
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_08_initialization/20261004T031530Z_3e8d5761/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_08_initialization/20261004T031530Z_3e8d5761/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "c101af1cc127128a0f5ba2b63b8243347a178ecad7eed4140dc694966c796556",
+      "packed_sha256": "c101af1cc127128a0f5ba2b63b8243347a178ecad7eed4140dc694966c796556",
+      "bytes": 76638
+    },
+    {
+      "file": "archive_curves/04_training/runs/tune_08_initialization/20261004T034414Z_b0d72c2b/learning_curves.png",
+      "source": "output/experiment_record/04_training/runs/tune_08_initialization/20261004T034414Z_b0d72c2b/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "f519ec2e1e4639e1339ecc7682c7ea051a7598701764074d5bc1075020878f8a",
+      "packed_sha256": "f519ec2e1e4639e1339ecc7682c7ea051a7598701764074d5bc1075020878f8a",
+      "bytes": 76557
+    },
+    {
+      "file": "data/stages/04_training/batch_dropout_status.json",
+      "source": "output/experiment_record/04_training/batch_dropout_status.json",
+      "category": "Stage decisions",
+      "source_sha256": "15a5ad5ff5ce4e7d706b8b97c9d01e975130c659836063796dcaa4e06320466b",
+      "packed_sha256": "15a5ad5ff5ce4e7d706b8b97c9d01e975130c659836063796dcaa4e06320466b",
+      "bytes": 22672
+    },
+    {
+      "file": "data/stages/04_training/continuation_status.json",
+      "source": "output/experiment_record/04_training/continuation_status.json",
+      "category": "Stage decisions",
+      "source_sha256": "8581afb802d243210ec396c34a9f5e2798914302ae0c343a2ae3071a417d8137",
+      "packed_sha256": "8581afb802d243210ec396c34a9f5e2798914302ae0c343a2ae3071a417d8137",
+      "bytes": 10525
+    },
+    {
+      "file": "data/stages/04_training/initialization_status.json",
+      "source": "output/experiment_record/04_training/initialization_status.json",
+      "category": "Stage decisions",
+      "source_sha256": "10231e7609ec4cef19183b181e13df7f1149c7999908335dffd3cc4b38ced73d",
+      "packed_sha256": "10231e7609ec4cef19183b181e13df7f1149c7999908335dffd3cc4b38ced73d",
+      "bytes": 5425
+    },
+    {
+      "file": "data/stages/04_training/regularization_status.json",
+      "source": "output/experiment_record/04_training/regularization_status.json",
+      "category": "Stage decisions",
+      "source_sha256": "c931aa8e4bf7faf459a8ab5104da2cb5f01671b3a8bfc72e5705bb2cae1a2692",
+      "packed_sha256": "c931aa8e4bf7faf459a8ab5104da2cb5f01671b3a8bfc72e5705bb2cae1a2692",
+      "bytes": 20890
+    },
+    {
+      "file": "archive_curves/05_augmentation/runs/augment_01_flip/20261004T072600Z_0c811207/learning_curves.png",
+      "source": "output/experiment_record/05_augmentation/runs/augment_01_flip/20261004T072600Z_0c811207/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "ca4d47599eabebd7f2d828a2aba36ea3f2ecd8a3864e440a7dde621a8fc7d003",
+      "packed_sha256": "ca4d47599eabebd7f2d828a2aba36ea3f2ecd8a3864e440a7dde621a8fc7d003",
+      "bytes": 75671
+    },
+    {
+      "file": "archive_curves/05_augmentation/runs/augment_01_flip/20261004T092422Z_4cec3867/learning_curves.png",
+      "source": "output/experiment_record/05_augmentation/runs/augment_01_flip/20261004T092422Z_4cec3867/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "53b84ccf1c8bb4d93323e055ac573ad6c14f86dfb2896e0d4960cd2e1c0d6fcd",
+      "packed_sha256": "53b84ccf1c8bb4d93323e055ac573ad6c14f86dfb2896e0d4960cd2e1c0d6fcd",
+      "bytes": 79254
+    },
+    {
+      "file": "archive_curves/05_augmentation/runs/augment_01_flip/20261004T095200Z_78e79a80/learning_curves.png",
+      "source": "output/experiment_record/05_augmentation/runs/augment_01_flip/20261004T095200Z_78e79a80/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "e909d9f905a625ad7893af96223bfec7091df3fa5c65e4290cf9bbe639b3cd66",
+      "packed_sha256": "e909d9f905a625ad7893af96223bfec7091df3fa5c65e4290cf9bbe639b3cd66",
+      "bytes": 80461
+    },
+    {
+      "file": "archive_curves/05_augmentation/runs/augment_05_rotation/20261004T075520Z_05e61c86/learning_curves.png",
+      "source": "output/experiment_record/05_augmentation/runs/augment_05_rotation/20261004T075520Z_05e61c86/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "c66ec150a781756ef5c13a408de5861c41765914fbacefe88fe1695fbc25a588",
+      "packed_sha256": "c66ec150a781756ef5c13a408de5861c41765914fbacefe88fe1695fbc25a588",
+      "bytes": 79211
+    },
+    {
+      "file": "archive_curves/05_augmentation/runs/augment_06_translation/20261004T082531Z_fbdaec9f/learning_curves.png",
+      "source": "output/experiment_record/05_augmentation/runs/augment_06_translation/20261004T082531Z_fbdaec9f/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "bf25ce003f8871f0891ce8b7a1aded5910849a972b2c2e314b8fbc0e543e4a66",
+      "packed_sha256": "bf25ce003f8871f0891ce8b7a1aded5910849a972b2c2e314b8fbc0e543e4a66",
+      "bytes": 78185
+    },
+    {
+      "file": "archive_curves/05_augmentation/runs/augment_07_crop/20261004T085702Z_1423a27b/learning_curves.png",
+      "source": "output/experiment_record/05_augmentation/runs/augment_07_crop/20261004T085702Z_1423a27b/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "ea38fd4654bfe9b6a3abeb5923a9e3ed8c8713459196e7c5a9cd850ea7f11d31",
+      "packed_sha256": "ea38fd4654bfe9b6a3abeb5923a9e3ed8c8713459196e7c5a9cd850ea7f11d31",
+      "bytes": 79081
+    },
+    {
+      "file": "archive_curves/05_augmentation/runs/augment_08_blur/20261004T111119Z_e1b5a21a/learning_curves.png",
+      "source": "output/experiment_record/05_augmentation/runs/augment_08_blur/20261004T111119Z_e1b5a21a/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "a34c22346525d320bafea48c8bd7b437caf79552024158dbca7a7e8c9f19f140",
+      "packed_sha256": "a34c22346525d320bafea48c8bd7b437caf79552024158dbca7a7e8c9f19f140",
+      "bytes": 77060
+    },
+    {
+      "file": "archive_curves/05_augmentation/runs/augment_09_noise/20261004T113830Z_7afc72d6/learning_curves.png",
+      "source": "output/experiment_record/05_augmentation/runs/augment_09_noise/20261004T113830Z_7afc72d6/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "96896ffa8aa3d9ca2a64accc318323797da253063d8010ae69cfa65baf50763e",
+      "packed_sha256": "96896ffa8aa3d9ca2a64accc318323797da253063d8010ae69cfa65baf50763e",
+      "bytes": 77013
+    },
+    {
+      "file": "archive_curves/05_augmentation/runs/augment_10_erase/20261004T120712Z_c603c3fa/learning_curves.png",
+      "source": "output/experiment_record/05_augmentation/runs/augment_10_erase/20261004T120712Z_c603c3fa/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "7ee619caa4ee4ae86383dd8c0e6b876b8d09e76479104c4989a78189c039e298",
+      "packed_sha256": "7ee619caa4ee4ae86383dd8c0e6b876b8d09e76479104c4989a78189c039e298",
+      "bytes": 76177
+    },
+    {
+      "file": "archive_curves/05_augmentation/runs/augment_10_erase/20261004T123344Z_1f4b6283/learning_curves.png",
+      "source": "output/experiment_record/05_augmentation/runs/augment_10_erase/20261004T123344Z_1f4b6283/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "cba49dd021a5773818eb6eee418741746efa0551bb40cfbbff0024bbd604b8bd",
+      "packed_sha256": "cba49dd021a5773818eb6eee418741746efa0551bb40cfbbff0024bbd604b8bd",
+      "bytes": 77517
+    },
+    {
+      "file": "archive_curves/05_augmentation/runs/augment_10_erase/20261004T130020Z_c746eb01/learning_curves.png",
+      "source": "output/experiment_record/05_augmentation/runs/augment_10_erase/20261004T130020Z_c746eb01/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "e0d2d434de4d19d9d181f33b9b266ca794eb750f52d69abe321e1d219810e79f",
+      "packed_sha256": "e0d2d434de4d19d9d181f33b9b266ca794eb750f52d69abe321e1d219810e79f",
+      "bytes": 75326
+    },
+    {
+      "file": "data/stages/05_augmentation/augmentation_status.json",
+      "source": "output/experiment_record/05_augmentation/augmentation_status.json",
+      "category": "Stage decisions",
+      "source_sha256": "f813b80fec95718011f51ec532b2e3f039b832fe37dde2ba69f0adfb13198d12",
+      "packed_sha256": "f813b80fec95718011f51ec532b2e3f039b832fe37dde2ba69f0adfb13198d12",
+      "bytes": 11021
+    },
+    {
+      "file": "data/stages/05_augmentation/robustness_status.json",
+      "source": "output/experiment_record/05_augmentation/robustness_status.json",
+      "category": "Stage decisions",
+      "source_sha256": "f813b80fec95718011f51ec532b2e3f039b832fe37dde2ba69f0adfb13198d12",
+      "packed_sha256": "f813b80fec95718011f51ec532b2e3f039b832fe37dde2ba69f0adfb13198d12",
+      "bytes": 11021
+    },
+    {
+      "file": "archive_curves/06_architecture/runs/structure_01_small_kernels/20261004T145003Z_62e6891d/learning_curves.png",
+      "source": "output/experiment_record/06_architecture/runs/structure_01_small_kernels/20261004T145003Z_62e6891d/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "e83a6f172785dcbf9c21fdd908990916a7df45bac038ba6c50a70d554cd614b0",
+      "packed_sha256": "e83a6f172785dcbf9c21fdd908990916a7df45bac038ba6c50a70d554cd614b0",
+      "bytes": 80178
+    },
+    {
+      "file": "archive_curves/06_architecture/runs/structure_02_inception/20261004T151749Z_1fdbdd69/learning_curves.png",
+      "source": "output/experiment_record/06_architecture/runs/structure_02_inception/20261004T151749Z_1fdbdd69/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "5aabad6d3c358e6289dba6e66a61ca72ce3c7cb1c9f32659bfc6a2047f4e3d7d",
+      "packed_sha256": "5aabad6d3c358e6289dba6e66a61ca72ce3c7cb1c9f32659bfc6a2047f4e3d7d",
+      "bytes": 82749
+    },
+    {
+      "file": "archive_curves/06_architecture/runs/structure_03_residual/20261004T155005Z_3fb24b96/learning_curves.png",
+      "source": "output/experiment_record/06_architecture/runs/structure_03_residual/20261004T155005Z_3fb24b96/learning_curves.png",
+      "category": "Per-run learning curves",
+      "source_sha256": "74f74846107f9d312e6611d4ead5af6e767b02846244aa1990bdf73c3265d1de",
+      "packed_sha256": "74f74846107f9d312e6611d4ead5af6e767b02846244aa1990bdf73c3265d1de",
+      "bytes": 82958
+    },
+    {
+      "file": "data/stages/06_architecture/architecture_status.json",
+      "source": "output/experiment_record/06_architecture/architecture_status.json",
+      "category": "Stage decisions",
+      "source_sha256": "92ca2877b1c6a5d2285e07a3c7cedc67e0761f7de93582b89fdf2169d42872f2",
+      "packed_sha256": "92ca2877b1c6a5d2285e07a3c7cedc67e0761f7de93582b89fdf2169d42872f2",
+      "bytes": 9095
+    },
+    {
+      "file": "data/final_branches/naflex_registration.json",
+      "source": ".local/best_model_bundle_20261018/output/experiment_record/19_image_embedding_reference/siglip2_naflex_576_kernel/20261014T020905Z_e457778a/registration.json",
+      "category": "Frozen branch definition",
+      "source_sha256": "04a63c04bcf84cd67d8de24c21a8fe99106718f0eb76df5f4e63bd9346ca5d12",
+      "packed_sha256": "c35d81deb30389e2f82ac58ebeb5906854b1e94b1de37ecf4b23fcfb85032943",
+      "bytes": 949
+    },
+    {
+      "file": "data/final_branches/naflex_results.json",
+      "source": ".local/best_model_bundle_20261018/output/experiment_record/19_image_embedding_reference/siglip2_naflex_576_kernel/20261014T020905Z_e457778a/results.json",
+      "category": "Frozen branch definition",
+      "source_sha256": "460ea0f14ba1a54aa78befc1b4f4262fd35fbe48c17ab83b4a83a873e22a856b",
+      "packed_sha256": "f14625ea9e4d77218dbce9e1d841b453549d1dfd203c8fb630cd063eff5c80d8",
+      "bytes": 255
+    },
+    {
+      "file": "data/final_branches/pe_l_pls_registration.json",
+      "source": ".local/best_model_bundle_20261018/output/experiment_record/19_image_embedding_reference/pe_core_multiview_price_metric_kernel/20261014T051116Z_13d3ea16/registration.json",
+      "category": "Frozen branch definition",
+      "source_sha256": "dbb18554b97a2e2887908666e04d93ec139a8d97f67b247ccd1d467226824a07",
+      "packed_sha256": "66c1fa2ae44a6890af57312954a9a56cb5dd9d3b7729756cc7c367ad06001408",
+      "bytes": 1846
+    },
+    {
+      "file": "data/final_branches/pe_l_pls_results.json",
+      "source": ".local/best_model_bundle_20261018/output/experiment_record/19_image_embedding_reference/pe_core_multiview_price_metric_kernel/20261014T051116Z_13d3ea16/results.json",
+      "category": "Frozen branch definition",
+      "source_sha256": "4fc2268d476001a2cf705c9a080616809d505a873c2059167dd97fac4442c7e9",
+      "packed_sha256": "2696cc2fac6ea8829a3e923cadd83984412e4a1b875c3497adac954ed4c05b45",
+      "bytes": 317
+    },
+    {
+      "file": "data/final_branches/pe_g_pca_registration.json",
+      "source": ".local/best_model_bundle_20261018/output/experiment_record/19_image_embedding_reference/pe_giant_whole_pca_bandwidth_kernel/20261015T033416Z_4b848f75/registration.json",
+      "category": "Frozen branch definition",
+      "source_sha256": "74080623bf8282e8bbc2ab0aa51e1af47bf314c3f503f2f95404fefed7d01995",
+      "packed_sha256": "4e03f4ee7dc0d891684ae8af5bef033f159366171abb4d1040d3433f861f323d",
+      "bytes": 2264
+    },
+    {
+      "file": "data/final_branches/pe_g_pca_results.json",
+      "source": ".local/best_model_bundle_20261018/output/experiment_record/19_image_embedding_reference/pe_giant_whole_pca_bandwidth_kernel/20261015T033416Z_4b848f75/results.json",
+      "category": "Frozen branch definition",
+      "source_sha256": "c16373d5508533e2cc47ca2f9ab713d337388d64d44911d6929e30c5c32751a3",
+      "packed_sha256": "feb54fa6975608ee763de067abe2425890bc4fde403dd6b430bd9ae8cebd725c",
+      "bytes": 530
+    }
+  ],
+  "exclusions": [
+    "raw train/test images",
+    "sample-image collages and occlusion images",
+    "per-image labels/predictions",
+    "model weights and feature caches",
+    "credentials",
+    "design folder"
+  ],
+  "sanitization": "JSON absolute local roots replaced with $REPO/$GROUP; case_selection removed. Source and packed hashes both retained. Text stored as UTF-8 LF; SVG trailing whitespace removed.",
+  "caveats": [
+    "Supplementary photometric results use a fresh paired control and one seed.",
+    "No nested unbiased CV claim; no significance test.",
+    "Report assets are not the final code submission.",
+    "Curves are archival runs; use stage decisions, not every curve as a selected result."
+  ],
+  "derived_files": [
+    {
+      "file": ".gitattributes",
+      "sha256": "23302dd90b8bb74b44d365fafef8df20f809b61cb347023951ecf60a88a29651",
+      "bytes": 32
+    },
+    {
+      "file": "build_pack.py",
+      "sha256": "3057ca71932acfaf88ff3e0edb1850f4d2ec73e8eb4cc75ff5b4ea5611f601be",
+      "bytes": 16674
+    },
+    {
+      "file": "CAPTIONS_ZH.txt",
+      "sha256": "f0b59dda10e9d53ab3b48006c51682d525d217da26ef22628efafd93930c304f",
+      "bytes": 1476
+    },
+    {
+      "file": "draft_zh.html",
+      "sha256": "c1406db230f574e109d7d896435135baf37c803ba61aa663fe61129c6f405767",
+      "bytes": 19738
+    },
+    {
+      "file": "figures/photometric_tradeoff.png",
+      "sha256": "1d64b61c05bb9f218956098ec2c2660c269f5c08e8e7cf377316ad687e1cc988",
+      "bytes": 73066
+    },
+    {
+      "file": "figures/photometric_tradeoff.svg",
+      "sha256": "2692ab73480d1d187b51c86becf778c33794ef22129fddf1a365e5fffd90396c",
+      "bytes": 52896
+    },
+    {
+      "file": "index.html",
+      "sha256": "b4cefbd483769701acf53a19fe9ee15a2ceb1303705747560e7ce5a5428621ec",
+      "bytes": 35670
+    },
+    {
+      "file": "README.md",
+      "sha256": "a6a99d642cced056d88987b1742e1e22aabaea28e773c05c8106b115568f2166",
+      "bytes": 4205
+    },
+    {
+      "file": "tables/ABLATION.html",
+      "sha256": "c6677bd25b8ecf08a7072a3c0df0fd99a25f7ded5c17716c745a1f1f223eddb0",
+      "bytes": 1895
+    },
+    {
+      "file": "tables/architecture.html",
+      "sha256": "7c1f56b7329d961ea52be27ed9b6f421f3279f6ba24de8c56053c1b7a4a9d0fc",
+      "bytes": 1425
+    },
+    {
+      "file": "tables/AUGMENT.html",
+      "sha256": "827e34d781d81dc3588e70551382860a9462ceb2d96c56b6be4c908c2c8ecb26",
+      "bytes": 2010
+    },
+    {
+      "file": "tables/ERROR_BANDS.html",
+      "sha256": "ac6dd5b3f9e7fbca108103d990f1bee1e560c259b359ca06842104a0217f2492",
+      "bytes": 1496
+    },
+    {
+      "file": "tables/overall.html",
+      "sha256": "d76cb4e8833299fc3efac9e19c8ebb2cdf20651ae346a2f9685f5405010a35a3",
+      "bytes": 2034
+    },
+    {
+      "file": "tables/OVERVIEW.html",
+      "sha256": "a9426c0061598c70c2685133b90cad02b58182d68a258c864b9dc711e2752d96",
+      "bytes": 2319
+    },
+    {
+      "file": "tables/PHOTO.html",
+      "sha256": "b7401fae6a62a33fce6c218c003a6bf6563ed3c837c317794c632a4ad7738f34",
+      "bytes": 1530
+    },
+    {
+      "file": "tables/report_tables.json",
+      "sha256": "0da12bda327051d24a4f258bccf1cc00269636540a4b9a7c596e5c89d4781a1c",
+      "bytes": 6604
+    },
+    {
+      "file": "verify_pack.py",
+      "sha256": "94f8b13eaf0ca5cb7efc3882946ac197c18850f052316229543ef17e118a074b",
+      "bytes": 3037
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "validated_variants": 8,
+  "validation_rows": 1601,
+  "meta_rows": 6399,
+  "closed_form_pair_checks": [
+    {
+      "variant": "Without NaFlex",
+      "max_weight_error_vs_closed_form": 2.220446049250313e-16
+    },
+    {
+      "variant": "Without PE-L PLS",
+      "max_weight_error_vs_closed_form": 7.771561172376096e-16
+    },
+    {
+      "variant": "Without PCA PE-G",
+      "max_weight_error_vs_closed_form": 4.996003610813204e-16
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "created_utc": "2026-10-19T02:17:13.213087+00:00",
+  "seed": 2026,
+  "groups": [
+    "control",
+    "brightness",
+    "contrast"
+  ],
+  "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+  "data_manifest": {
+    "train_csv_sha256": "6a37aec7c596d98a2342aae32b0cf2eb660e56c92292fd1c324961ca5d8653d5",
+    "test_csv_sha256": "3b204c0887200c43fc7ff7e5e0f897b7b82ea16cf2387d55b3bf31759db57de9",
+    "split_sha256": "c9f91f12b49978b77bc434d8a7ab878f1ee8b8e73bf96f6cf4474767a0c94213",
+    "tail_threshold": 1300.0,
+    "seed": 2026,
+    "near_pairs": [
+      [
+        "1078.jpg",
+        "3568.jpg"
+      ]
+    ],
+    "n": 8000
+  },
+  "training": {
+    "optimizer": "adamw",
+    "lr": 0.0001,
+    "momentum": 0.9,
+    "schedule": "constant",
+    "batch_size": 4,
+    "accumulation": 8,
+    "epochs": 60,
+    "workers": 2,
+    "loader_mode": "persistent",
+    "cpu_threads": 4,
+    "weight_decay": 0.0001,
+    "penalty": "none",
+    "penalty_coefficient": 0.0,
+    "initialization": "default",
+    "early_stopping": {
+      "enabled": true,
+      "patience": 15,
+      "relative_improvement": 0.001,
+      "min_epochs": 40
+    }
+  },
+  "preprocess": {
+    "size": 224,
+    "geometry": "stretch",
+    "normalization": "fixed",
+    "filter": "none"
+  },
+  "model": {
+    "pretrained": false,
+    "small_kernels": false,
+    "inception": false,
+    "residual": false,
+    "head": "alexnet",
+    "dropout": 0.5,
+    "embedding_dim": 128,
+    "attention_heads": 4,
+    "feedforward_dim": 512,
+    "encoder_dropout": 0.1,
+    "encoder_layers": 1
+  },
+  "target": {
+    "transform": "scale",
+    "scale": 1000.0,
+    "loss": "mse",
+    "huber_delta": 0.1
+  },
+  "source_hashes": {
+    "architecture_stage.py": "6cd45b2074cc842957bc89238ac4d3b8f9f504e9636f2034388bf866f47c785e",
+    "augmentation_robustness.py": "99677bd311bed76e0b5823cdd6e2b015af0a7783a6246c17c5f9acd3c11a0968",
+    "augmentation_stage.py": "ffa742d332fe7d6833fd9795a660551a533a030374facdd1cdb07d0f6681a71f",
+    "batch_dropout.py": "e1a8dc9415b2ed89aa13e66f1b13db9981119f92f4ed09b8d6b253277165535b",
+    "continue_training.py": "38b5434de912e321e30872aed14294bf046aa334df07598f938ae2b8e26df836",
+    "generate_configs.py": "dc83c15222ec4ce532276857e8dcd4bf3f0ec3040dd9afce94ffb26786e6ba67",
+    "initialization.py": "d6603bca2627758ef483fc519c0020c291152e84adc903e3d4cd014b0a9b8abb",
+    "photometric_screen.py": "f4486c06b98997586371a10a986e031cf44dd4f88035293911299dfdf7a1eed0",
+    "plot_training_summary.py": "03b2893d641a357e9469ea7703625e1d251d6b3b52b2aed3f2e2de55c09112cd",
+    "preflight.py": "2c945cc096c6a4e98b75b8bc12530425193e7bdace96008d32b028b2f181b5c4",
+    "regularization.py": "05d666453c234e3b424200af3919e6449e22b170511eb6528263465690b26a55",
+    "regularization_screen.py": "c91883b2b28d2c07e5622d3a1f3f0239c4db9041ee5ffdaf39eb1ae7a2769389",
+    "review_augmentation_results.py": "7d932e8cbc658aa026e2f5d9958306d3482a77eb1e85b982293e4a6082d37693",
+    "review_occlusion.py": "82d097d711dc1709f0b016e31821f9ab43088101662b9b0094c661fcf9ba53a6",
+    "run.py": "b89c360edc55e1d0fc9e2a031bb9d8dda45e8da306b609735026bdb3ae744c05",
+    "train_augmented.py": "3b782787e6446957ecb42d6853ef6729a768e09e12bc6873e817ed278a8b037b",
+    "train_cached.py": "6ee39f322e7fa1393695c06704997254d4dce03b530a1bf2bc90dc58ba719708",
+    "train_regularized.py": "34764e08f31f6dbaeed5c8dfed90119aab80ccb15be2ed7904fc0a39b97e9160",
+    "visual_coverage.py": "5fce3afd7fa32f8dc5c31873d7555ba607e8f8d679ab2febcc2d6ab332f217bb",
+    "common\\config.py": "f90dad78a6188f1a67fbbb3ab62dda40cbadaf0ed8ed1b75d486d25553775beb",
+    "common\\local_paths.py": "13fe2527b1ab31904823af32c98bb29dc21aa2afc4591a115dfe6d0d602fc721",
+    "common\\metrics.py": "d06d027f49f3614c3d607e4ba34eab27246766350021a6ce805d3c43f919de49",
+    "common\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "preparation\\images.py": "2841fe6a6bbc50f47aa428f7d06a6776b353fe00d9d7f490850e58e343be0568",
+    "preparation\\split.py": "f2885e0bc40abaa08a7717b6e15e70cd43cb12de577f03a9b43055f744610d20",
+    "preparation\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "models\\alexnet.py": "040a64503175ba477115dc3e483e9bfa727bbd9f3081784176609df0920952c6",
+    "models\\encoder.py": "bea0aa4ab5887b679bbf54912de7d208ba30fe7d9a41e1bab07748e922dc4e48",
+    "models\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "training\\cached_input.py": "68859325c5e6c4f6b9bcd3e8b78efea4c984ed41e7b204da9458f7384735c3de",
+    "training\\engine.py": "ada060249311661b8ac60eb62baa0d577e1236c1b2dfb8111a519df825a9c70d",
+    "training\\loading.py": "c908b9b421ffb90b0e44c0f8f49fd2d4f3bc05676c50d65436d448ee7d4e08ed",
+    "training\\optimizers.py": "3a9ffffa1e69608c32b96efd1eaf53a98ec28d368266fd20415470f1450862e3",
+    "training\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "config_hashes": {
+    "control": "3dd51da66707fa41377ef9d3d800a0395fe6b38aaac3cf9205fed2ba60aac8d4",
+    "brightness": "419291d743ac01274e4d2636674287ed1a196f47da022373bb49487971e61aaf",
+    "contrast": "a645464d9303b924e670ca1ea674d1e7246a547fd88fc8993fe03669e23ad55b"
+  },
+  "input_contract": "Original EXIF-corrected RGB -> online training-only augmentation -> stretch224 -> fixed normalization; no stochastic cache",
+  "evaluation": "Fresh unaugmented control; paired validation MSE/MAE and price-bin errors; historical scores contextual only",
+  "screening_only": true,
+  "automatic_multiseed": false,
+  "automatic_selection": false,
+  "automatic_export": false,
+  "test_images_used_for_training": false,
+  "original_data_checks": "Test CSV and file existence checked by standard split loader; no test inference"
+}

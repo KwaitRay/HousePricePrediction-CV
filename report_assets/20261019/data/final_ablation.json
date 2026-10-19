@@ -1,0 +1,605 @@
+{
+  "date": "2026-10-18",
+  "plan_sha256": "217d0199534e4a7a1380f0109b16b63b5f5beb281540fd853382c75b047f8803",
+  "n_train_oof": 6399,
+  "n_validation": 1601,
+  "price_units": "thousand USD",
+  "mse_units": "(thousand USD)^2",
+  "sources": [
+    {
+      "source": "19_image_embedding_reference/siglip2_naflex_576_kernel/20261014T020905Z_e457778a",
+      "oof_sha256": "843fab01bc9167889ba19ad01135e5e1ea93b5ff7563f47b9ba45a3726f42918",
+      "validation_sha256": "f4fbd1d8df2aa69d120d9b741318d9db77bb2ee630d301a84581ccc18ab31bc9"
+    },
+    {
+      "source": "19_image_embedding_reference/pe_core_multiview_price_metric_kernel/20261014T051116Z_13d3ea16",
+      "oof_sha256": "31c735f657dc0f099cc772db06faf92f8d6bc13b6c92d440f585b46d61c313a2",
+      "validation_sha256": "b6915cb4febe40b1653a41ed7ecbaed031a2da3409758c0b3c1ea2187da3af24"
+    },
+    {
+      "source": "19_image_embedding_reference/pe_giant_whole_pca_bandwidth_kernel/20261015T033416Z_4b848f75",
+      "oof_sha256": "847444c6198fd7a2dde4317b18993ca5b9631ad8137ffcd33d3b1bcf5ef81f90",
+      "validation_sha256": "3bb35fd8fb936af522f99575792f6d8e4e9fa6019753b48b17a1503030ae4123"
+    }
+  ],
+  "optimizer_sha256": "33671e0ce29345651c926f86e89a305815b43f84d30a0a979b36f6132e4ce0cb",
+  "results": [
+    {
+      "variant": "NaFlex only",
+      "weight_method": "single",
+      "weights": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "validation": {
+        "mse": 63086.48140777634,
+        "mae": 181.28437141848872,
+        "rmse": 251.17022396728547
+      },
+      "delta_validation_mse": 10885.270140109344,
+      "meta_crossfit": {
+        "mse": 64475.1294605844,
+        "mae": 183.8999351995616,
+        "rmse": 253.9195334364499
+      }
+    },
+    {
+      "variant": "PE-L PLS only",
+      "weight_method": "single",
+      "weights": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "validation": {
+        "mse": 59483.30818305479,
+        "mae": 171.73323706699864,
+        "rmse": 243.89200106410786
+      },
+      "delta_validation_mse": 7282.096915387796,
+      "meta_crossfit": {
+        "mse": 59515.432122704246,
+        "mae": 173.04989905616156,
+        "rmse": 243.95784906967893
+      }
+    },
+    {
+      "variant": "PCA PE-G only",
+      "weight_method": "single",
+      "weights": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "validation": {
+        "mse": 52805.77357815986,
+        "mae": 160.67492289616416,
+        "rmse": 229.79506865500804
+      },
+      "delta_validation_mse": 604.5623104928673,
+      "meta_crossfit": {
+        "mse": 52531.27093548736,
+        "mae": 161.3897055758213,
+        "rmse": 229.19701336511207
+      }
+    },
+    {
+      "variant": "Without NaFlex",
+      "weight_method": "refit",
+      "weights": [
+        0.0,
+        0.13822824161059705,
+        0.8617717583894029
+      ],
+      "validation": {
+        "mse": 52597.49657749912,
+        "mae": 160.20725728872222,
+        "rmse": 229.34144103824568
+      },
+      "delta_validation_mse": 396.2853098321284,
+      "meta_crossfit": {
+        "mse": 52359.30300841701,
+        "mae": 160.96474797367478,
+        "rmse": 228.8215527620093
+      }
+    },
+    {
+      "variant": "Without PE-L PLS",
+      "weight_method": "refit",
+      "weights": [
+        0.13350234427884963,
+        0.0,
+        0.8664976557211503
+      ],
+      "validation": {
+        "mse": 52194.810602608806,
+        "mae": 159.5712315804027,
+        "rmse": 228.46183620598168
+      },
+      "delta_validation_mse": -6.40066505818686,
+      "meta_crossfit": {
+        "mse": 52244.24485936646,
+        "mae": 160.8397398361513,
+        "rmse": 228.56999991111357
+      }
+    },
+    {
+      "variant": "Without PCA PE-G",
+      "weight_method": "refit",
+      "weights": [
+        0.3419394902962272,
+        0.6580605097037728,
+        0.0
+      ],
+      "validation": {
+        "mse": 57372.89593392682,
+        "mae": 168.44704486434105,
+        "rmse": 239.52639924218545
+      },
+      "delta_validation_mse": 5171.6846662598255,
+      "meta_crossfit": {
+        "mse": 57694.19795523913,
+        "mae": 170.48881627675766,
+        "rmse": 240.19616557147435
+      }
+    },
+    {
+      "variant": "Equal-weight fusion",
+      "weight_method": "equal",
+      "weights": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "validation": {
+        "mse": 53847.677388683456,
+        "mae": 162.55935574454412,
+        "rmse": 232.0510232442069
+      },
+      "delta_validation_mse": 1646.4661210164631,
+      "meta_crossfit": {
+        "mse": 54214.32813555501,
+        "mae": 164.455622771662,
+        "rmse": 232.83970480902738
+      }
+    },
+    {
+      "variant": "Full frozen fusion",
+      "weight_method": "frozen",
+      "weights": [
+        0.10806512208866993,
+        0.08080557778997872,
+        0.8111293001213513
+      ],
+      "validation": {
+        "mse": 52201.21126766699,
+        "mae": 159.58053603321397,
+        "rmse": 228.4758439478165
+      },
+      "delta_validation_mse": 0.0,
+      "meta_crossfit": {
+        "mse": 52210.22351470248,
+        "mae": 160.68711234513182,
+        "rmse": 228.4955656346584
+      }
+    }
+  ],
+  "folds": [
+    {
+      "variant": "NaFlex only",
+      "fold": 1,
+      "n_fit": 4266,
+      "n_held": 2133,
+      "weights": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "mse": 62119.4340004772,
+      "mae": 183.1236641961145,
+      "rmse": 249.23770581610881
+    },
+    {
+      "variant": "NaFlex only",
+      "fold": 2,
+      "n_fit": 4266,
+      "n_held": 2133,
+      "weights": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "mse": 64025.19237294535,
+      "mae": 180.13147789601328,
+      "rmse": 253.03199871349344
+    },
+    {
+      "variant": "NaFlex only",
+      "fold": 3,
+      "n_fit": 4266,
+      "n_held": 2133,
+      "weights": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "mse": 67280.76200833065,
+      "mae": 188.4446635065571,
+      "rmse": 259.3853542672189
+    },
+    {
+      "variant": "PE-L PLS only",
+      "fold": 1,
+      "n_fit": 4266,
+      "n_held": 2133,
+      "weights": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "mse": 58177.49508888778,
+      "mae": 173.72221269007542,
+      "rmse": 241.20011419750153
+    },
+    {
+      "variant": "PE-L PLS only",
+      "fold": 2,
+      "n_fit": 4266,
+      "n_held": 2133,
+      "weights": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "mse": 58184.93691377943,
+      "mae": 169.68595819940242,
+      "rmse": 241.21554036541556
+    },
+    {
+      "variant": "PE-L PLS only",
+      "fold": 3,
+      "n_fit": 4266,
+      "n_held": 2133,
+      "weights": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "mse": 62183.86436544553,
+      "mae": 175.7415262790069,
+      "rmse": 249.36692716847102
+    },
+    {
+      "variant": "PCA PE-G only",
+      "fold": 1,
+      "n_fit": 4266,
+      "n_held": 2133,
+      "weights": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "mse": 50360.27155320758,
+      "mae": 160.83966296703397,
+      "rmse": 224.41094347916186
+    },
+    {
+      "variant": "PCA PE-G only",
+      "fold": 2,
+      "n_fit": 4266,
+      "n_held": 2133,
+      "weights": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "mse": 52250.704138977395,
+      "mae": 159.00645391402963,
+      "rmse": 228.58412923686848
+    },
+    {
+      "variant": "PCA PE-G only",
+      "fold": 3,
+      "n_fit": 4266,
+      "n_held": 2133,
+      "weights": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "mse": 54982.83711427709,
+      "mae": 164.32299984640034,
+      "rmse": 234.48419374080865
+    },
+    {
+      "variant": "Without NaFlex",
+      "fold": 1,
+      "n_fit": 4266,
+      "n_held": 2133,
+      "weights": [
+        0.0,
+        0.15152445782703045,
+        0.8484755421729695
+      ],
+      "mse": 50244.801174525885,
+      "mae": 160.46309473560967,
+      "rmse": 224.1535214412789
+    },
+    {
+      "variant": "Without NaFlex",
+      "fold": 2,
+      "n_fit": 4266,
+      "n_held": 2133,
+      "weights": [
+        0.0,
+        0.11577759990015368,
+        0.8842224000998464
+      ],
+      "mse": 51973.967712354206,
+      "mae": 158.52765038801547,
+      "rmse": 227.977998307631
+    },
+    {
+      "variant": "Without NaFlex",
+      "fold": 3,
+      "n_fit": 4266,
+      "n_held": 2133,
+      "weights": [
+        0.0,
+        0.14786561706030002,
+        0.8521343829397
+      ],
+      "mse": 54859.14013837094,
+      "mae": 163.90349879739918,
+      "rmse": 234.22028122767452
+    },
+    {
+      "variant": "Without PE-L PLS",
+      "fold": 1,
+      "n_fit": 4266,
+      "n_held": 2133,
+      "weights": [
+        0.12502523656771689,
+        0.0,
+        0.8749747634322831
+      ],
+      "mse": 49994.2799017912,
+      "mae": 160.16915139626664,
+      "rmse": 223.59400685570978
+    },
+    {
+      "variant": "Without PE-L PLS",
+      "fold": 2,
+      "n_fit": 4266,
+      "n_held": 2133,
+      "weights": [
+        0.13458477137944003,
+        0.0,
+        0.86541522862056
+      ],
+      "mse": 51975.74808744046,
+      "mae": 158.0319172947127,
+      "rmse": 227.98190298232106
+    },
+    {
+      "variant": "Without PE-L PLS",
+      "fold": 3,
+      "n_fit": 4266,
+      "n_held": 2133,
+      "weights": [
+        0.14072260719222904,
+        0.0,
+        0.8592773928077709
+      ],
+      "mse": 54762.70658886771,
+      "mae": 164.3181508174745,
+      "rmse": 234.01432987932108
+    },
+    {
+      "variant": "Without PCA PE-G",
+      "fold": 1,
+      "n_fit": 4266,
+      "n_held": 2133,
+      "weights": [
+        0.32414608922389776,
+        0.6758539107761022,
+        0.0
+      ],
+      "mse": 55956.52892944237,
+      "mae": 170.35383051392904,
+      "rmse": 236.55132409150107
+    },
+    {
+      "variant": "Without PCA PE-G",
+      "fold": 2,
+      "n_fit": 4266,
+      "n_held": 2133,
+      "weights": [
+        0.35486349496247793,
+        0.6451365050375221,
+        0.0
+      ],
+      "mse": 56610.805140105185,
+      "mae": 166.45206758794134,
+      "rmse": 237.93025267944634
+    },
+    {
+      "variant": "Without PCA PE-G",
+      "fold": 3,
+      "n_fit": 4266,
+      "n_held": 2133,
+      "weights": [
+        0.3466695510192674,
+        0.6533304489807326,
+        0.0
+      ],
+      "mse": 60515.25979616982,
+      "mae": 174.66055072840263,
+      "rmse": 245.99849551606982
+    },
+    {
+      "variant": "Equal-weight fusion",
+      "fold": 1,
+      "n_fit": 4266,
+      "n_held": 2133,
+      "weights": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mse": 52122.74398992372,
+      "mae": 163.96074218556944,
+      "rmse": 228.30406038860482
+    },
+    {
+      "variant": "Equal-weight fusion",
+      "fold": 2,
+      "n_fit": 4266,
+      "n_held": 2133,
+      "weights": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mse": 53563.67958096959,
+      "mae": 160.78533973400582,
+      "rmse": 231.4382846051396
+    },
+    {
+      "variant": "Equal-weight fusion",
+      "fold": 3,
+      "n_fit": 4266,
+      "n_held": 2133,
+      "weights": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "mse": 56956.560835771714,
+      "mae": 168.6207863954107,
+      "rmse": 238.65573706863137
+    },
+    {
+      "variant": "Full frozen fusion",
+      "fold": 1,
+      "n_fit": 4266,
+      "n_held": 2133,
+      "weights": [
+        0.09338008104228006,
+        0.10235340212187662,
+        0.8042665168358434
+      ],
+      "mse": 50012.856114762115,
+      "mae": 160.11538464506359,
+      "rmse": 223.63554304886804
+    },
+    {
+      "variant": "Full frozen fusion",
+      "fold": 2,
+      "n_fit": 4266,
+      "n_held": 2133,
+      "weights": [
+        0.11792081122415546,
+        0.05145198619311666,
+        0.8306272025827279
+      ],
+      "mse": 51881.625323930144,
+      "mae": 157.87016688448236,
+      "rmse": 227.77538348981028
+    },
+    {
+      "variant": "Full frozen fusion",
+      "fold": 3,
+      "n_fit": 4266,
+      "n_held": 2133,
+      "weights": [
+        0.11307824832660829,
+        0.08885845156269676,
+        0.7980633001106949
+      ],
+      "mse": 54736.189105415164,
+      "mae": 164.07578550584947,
+      "rmse": 233.95766519910214
+    }
+  ],
+  "frozen_weight_removal_sensitivity": [
+    {
+      "removed": "NaFlex",
+      "weights": [
+        0.0,
+        0.09059582688279161,
+        0.9094041731172083
+      ],
+      "validation": {
+        "mse": 52628.28463458422,
+        "mae": 160.26576332901794,
+        "rmse": 229.40855396995164
+      },
+      "delta_validation_mse": 427.07336691722594
+    },
+    {
+      "removed": "PE-L PLS",
+      "weights": [
+        0.11756503246489325,
+        0.0,
+        0.8824349675351068
+      ],
+      "validation": {
+        "mse": 52235.62015377329,
+        "mae": 159.63539598512938,
+        "rmse": 228.5511324709928
+      },
+      "delta_validation_mse": 34.40888610629918
+    },
+    {
+      "removed": "PCA PE-G",
+      "weights": [
+        0.5721645663308437,
+        0.42783543366915633,
+        0.0
+      ],
+      "validation": {
+        "mse": 57908.68604531372,
+        "mae": 170.40187048098096,
+        "rmse": 240.64223661966267
+      },
+      "delta_validation_mse": 5707.474777646727
+    }
+  ],
+  "training_oof_residual_correlations": [
+    [
+      1.0,
+      0.8741658792785172,
+      0.8652630257616263
+    ],
+    [
+      0.8741658792785172,
+      1.0,
+      0.9156318433613665
+    ],
+    [
+      0.8652630257616264,
+      0.9156318433613665,
+      1.0
+    ]
+  ],
+  "full_refit_control": {
+    "weights": [
+      0.10806696496105424,
+      0.08080603643636534,
+      0.8111269986025804
+    ],
+    "validation": {
+      "mse": 52201.20719548889,
+      "mae": 159.5805296635084,
+      "rmse": 228.47583503620004
+    },
+    "max_abs_validation_prediction_difference_from_frozen": 0.0012128641596973466,
+    "meta_cv_mse_difference_from_archived_14_candidate_fit": 0.0006881314839120023
+  },
+  "scope": "Base models and hyperparameters were previously selected. Meta crossfit is not fully nested unbiased CV. Removing a whole branch is not a clean isolated PCA or PLS operation ablation.",
+  "original_candidate_changed": false,
+  "test_data_used": false,
+  "encoder_or_base_head_retrained": false
+}
