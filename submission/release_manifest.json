@@ -12,20 +12,20 @@
   ],
   "files": {
     "English/code.zip": {
-      "bytes": 21643510,
-      "sha256": "075d4532b57ef6737b77bba40e60c50f0bf4d24d06281bc55901e56c3424aac6"
+      "bytes": 21644956,
+      "sha256": "5600f4017a210f77bffab28e8298b5c7e38c77916fbfda33bfc9b5abb648e837"
     },
     "English_all_materials.zip": {
-      "bytes": 51685966,
-      "sha256": "a9782dbdd478489d90cfd7a6a548cca67abfeaba56d9a4298098be0d23b533c3"
+      "bytes": 51689329,
+      "sha256": "07afd9bd98a7ccfc2e4791f92698d35c1584a6d08fda36d09c6b2254f697e2f6"
     },
     "English/report.pdf": {
-      "bytes": 1768960,
-      "sha256": "f361f4e0103249d6974fba2cbed5ae6a6ce98e4155aaa29e5206bdfc338efcdf"
+      "bytes": 1769321,
+      "sha256": "f324cc0884ba0af54c35a9d0bd993e44d7c769cc7d527578ead13f1ea793a7ae"
     },
     "Chinese/report.pdf": {
-      "bytes": 1954555,
-      "sha256": "7cffc4aec7ebd8e39dd3f9ab76c6ed56371e0de28421dcf78cd28f3733135bc7"
+      "bytes": 1953853,
+      "sha256": "7303fb6f219a0537c0218b08112153fdd63658761318288d4fe9f14a0d6db5e3"
     }
   },
   "validation": {
@@ -40,7 +40,7 @@
     "feature_arrays_included": false,
     "provided_images_included": false,
     "numerical_checks": "English/code/checks/report_metrics.json",
-    "manifest_files": 1879,
+    "manifest_files": 1881,
     "zip_crc_checked": true,
     "gpu_execution": false,
     "portable_prediction_adapter_max_abs_error": 2.3078428057488054e-11,

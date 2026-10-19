@@ -33,6 +33,7 @@ def main():
     (CODE/'report_analysis/build_cycle_evidence.py').write_text(source,encoding='utf-8')
     shutil.copyfile(REPORT/'build_single_column_table.py',CODE/'report_analysis/build_single_column_table.py')
     shutil.copyfile(REPORT/'build_augmentation_table.py',CODE/'report_analysis/build_augmentation_table.py')
+    shutil.copyfile(REPORT/'build_fig3_response_summary.py',CODE/'report_analysis/build_fig3_response_summary.py')
     panels=(REPORT/'build_report_analysis_panels.py').read_text(encoding='utf-8')
     panels=panels.replace('import hashlib','import os\nimport hashlib',1)
     panels=panels.replace('ASSIGNMENT = ROOT.parents[1]','ASSIGNMENT = ROOT.parent').replace("REPO = ASSIGNMENT / 'cv-house-price'",'REPO = ROOT.parent')

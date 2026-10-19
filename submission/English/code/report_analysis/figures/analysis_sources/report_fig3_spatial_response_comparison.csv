@@ -1,0 +1,3 @@
+imageid,grid_cells,single_view_peak_drop,two_view_peak_drop,two_view_pca_peak_drop,blur_response_correlation,source,source_sha256
+4920.jpg,16,414.840477774665,293.7180576177674,252.3893592418148,0.9151207305235856,occlusion/per_region_predictions.csv,3c838050e685b90d3a7f35cc86682c351dcc9c2de19ffebee95dfee553f6b375
+5712.jpg,16,284.4567462683537,324.2601677554983,280.7919647067756,0.9765355179053226,occlusion/per_region_predictions.csv,3c838050e685b90d3a7f35cc86682c351dcc9c2de19ffebee95dfee553f6b375

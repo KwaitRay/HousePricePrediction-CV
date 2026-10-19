@@ -6287,6 +6287,10 @@
     "bytes": 8938,
     "sha256": "f7072ece5374a177dd7bb1ce7d34b525c38f5b1cb31066ac1d14ba6e5844a63e"
   },
+  "report_analysis/build_fig3_response_summary.py": {
+    "bytes": 1403,
+    "sha256": "d6a17d71f3eebe8174f9cc4224b26adfde2c6c82fd19988af8394a113248ff49"
+  },
   "report_analysis/build_panels.py": {
     "bytes": 9403,
     "sha256": "acb2742660123538aafeb9b6fa819ab26cb69603c0ff5fc2dadc6dad5215bd57"
@@ -6382,6 +6386,10 @@
   "report_analysis/figures/analysis_sources/report_cycle_evidence_provenance.json": {
     "bytes": 2708,
     "sha256": "66513baa39aa9aec99dcb136d3af5c605c731cd89dc90d726d558bce5659bd15"
+  },
+  "report_analysis/figures/analysis_sources/report_fig3_spatial_response_comparison.csv": {
+    "bytes": 506,
+    "sha256": "c2bc001e1aaeb0992631873d9cd9ec44bf7428b4fb2e3438f135184b75cf173f"
   },
   "report_analysis/figures/analysis_sources/report_prediction_price_band_summary.csv": {
     "bytes": 294,
