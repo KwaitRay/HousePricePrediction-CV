@@ -142,7 +142,7 @@ Supplementing PE-G's official view with the whole frame reduces validation MSE f
 
 However, compressing these features with PCA256 and fixed $\gamma=4$ worsens OOF MSE to 77,771.43. The training median squared distance changes from 0.5402 to 2.0515, so we recalibrate $\gamma$ to 1.05323 (Fig.~1). OOF MSE falls to 52,531.27; validation MSE reaches 52,805.77 and MAE 160.67. The distance shift explains why compression must be evaluated together with the downstream similarity scale; it does not establish that PCA removes only irrelevant information.
 
-Supervised adaptation is also not uniformly beneficial: PE-L PLS slightly worsens validation MSE relative to its three-view RBF control, while improving MAE. Its usefulness must consequently be judged through complementarity, rather than assumed from price supervision.
+Supervised adaptation is also not uniformly beneficial: PE-L PLS slightly worsens validation MSE relative to its three-view RBF control, while improving MAE.
 
 ### Complementarity and Remaining Valuation Ambiguity
 
