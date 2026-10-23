@@ -49,7 +49,7 @@
   },
   "checks/selected_report.json": {
     "bytes": 521,
-    "sha256": "f479b763462a20a910456a346e862754fbee25dea717d6eff4d4bc3952091a97"
+    "sha256": "af6df973c43b4070d218433a19a78df3be67bd15bcdab1437124fd4122839e83"
   },
   "download_pretrained_weights.py": {
     "bytes": 1244,

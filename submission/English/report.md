@@ -31,7 +31,7 @@ We calculate the average housing price in the training set as a constant predict
 
 The AlexNet-style network  [1] is trained from random weights, using five convolutional layers and a fully connected regression head of 9216--4096--4096--1. The image is directly scaled to $224\times224$ without filtering. After converting pixel values to $[0,1]$, we normalize the RGB channels with a mean and standard deviation of 0.5. We use AdamW  [9] as the optimizer, with a learning rate and weight decay of $10^{-4}$, and dropout  [10, 11] of 0.5.
 
-Due to local memory limitations, only 4 images are used per batch, accumulating 8 training batches of gradients. A total of 40--60 rounds of training were conducted, with 15 rounds of early stopping patience and a relative improvement threshold of 0.1%. Finally, the checkpoint with the lowest MSE was used for validation.
+Due to local memory limitations, only 4 images are used per batch, accumulating 8 training batches of gradients. A total of 40--60 epochs of training were conducted, with 15 epochs of early stopping patience and a relative improvement threshold of 0.1%. Finally, the checkpoint with the lowest MSE was used for validation.
 
 we first test changes to the learning rate, effective batch size, and dropout separately. We also test Adam  [12], cosine learning-rate decay without restarts  [13], and different weight initializations  [14, 15]. Geometric and degradation augmentations are tested separately. For horizontal flipping, the probability is 0.5. Augmentation and dropout are disabled during validation.
 
