@@ -2,22 +2,22 @@
   "description": "Compact panels from archived records; no inference, training or new selection.",
   "validation_n": 1601,
   "sources": {
-    "cv-house-price\\.local\\experiment_record\\15_fixed_ensembles\\pe_whole_pca_incremental_fusion\\20261015T033810Z_8aa6ec62\\predictions.csv": "a94f5f4b6456261a903bcc68339f0a82cfaf811252ec164f8debda3b0b673b86",
-    "submission\\report\\figures\\analysis_sources\\occlusion\\per_region_predictions.csv": "3c838050e685b90d3a7f35cc86682c351dcc9c2de19ffebee95dfee553f6b375",
-    "submission\\report\\figures\\analysis_sources\\pca_sampled_pair_geometry.csv": "0ef97dee2bdcfca7c73fb499f26f102a2b995e0c8128713b8ecf3b7b3d72b6fd",
-    "submission\\report\\figures\\analysis_sources\\pca_bandwidth_oof_comparison.csv": "d50a23dd9199742351f1395e2c31aa28b45cd84955d4caa3d23938bfc87719a9",
-    "comp-90086-2026\\house_dataset\\train\\4920.jpg": "bbba51966e11246831c766a78817d48966a3b65188df21be88e7949b0f560186",
-    "comp-90086-2026\\house_dataset\\train\\5712.jpg": "fca22fca65516ffeee05ec8bbf266def12b12638d00d0f1bfaaa2d8a38b5ee3f"
+    "D:\\学习\\研究生\\graduate 26s2\\COMP 90086 CV\\.handin_20261023\\code\\evidence\\final_validation_predictions.csv": "a94f5f4b6456261a903bcc68339f0a82cfaf811252ec164f8debda3b0b673b86",
+    "D:\\学习\\研究生\\graduate 26s2\\COMP 90086 CV\\.handin_20261023\\code\\report_analysis\\figures\\analysis_sources\\occlusion\\per_region_predictions.csv": "3c838050e685b90d3a7f35cc86682c351dcc9c2de19ffebee95dfee553f6b375",
+    "D:\\学习\\研究生\\graduate 26s2\\COMP 90086 CV\\.handin_20261023\\code\\report_analysis\\figures\\analysis_sources\\pca_sampled_pair_geometry.csv": "0ef97dee2bdcfca7c73fb499f26f102a2b995e0c8128713b8ecf3b7b3d72b6fd",
+    "D:\\学习\\研究生\\graduate 26s2\\COMP 90086 CV\\.handin_20261023\\code\\report_analysis\\figures\\analysis_sources\\pca_bandwidth_oof_comparison.csv": "d50a23dd9199742351f1395e2c31aa28b45cd84955d4caa3d23938bfc87719a9",
+    "D:\\学习\\研究生\\graduate 26s2\\COMP 90086 CV\\Final_Assignment\\comp-90086-2026\\house_dataset\\train\\4920.jpg": "bbba51966e11246831c766a78817d48966a3b65188df21be88e7949b0f560186",
+    "D:\\学习\\研究生\\graduate 26s2\\COMP 90086 CV\\Final_Assignment\\comp-90086-2026\\house_dataset\\train\\5712.jpg": "fca22fca65516ffeee05ec8bbf266def12b12638d00d0f1bfaaa2d8a38b5ee3f"
   },
   "outputs": {
     "report_prediction_scatter_price_band_errors.png": "79ca47e19dfe0fd38c15a47ec1d133da40fb6970fc8bde2749c1fbd64acfdaac",
-    "report_prediction_scatter_price_band_errors.svg": "a00ce723fc4ef37a69d0a0c9e086e20d721536caa0912384f7ce02b6f0838a1e",
-    "report_prediction_scatter_price_band_errors.pdf": "ab7b363726a7c655e51fea90cd8dc8b5c700c04bcf1e158f731475c9af9597d9",
+    "report_prediction_scatter_price_band_errors.svg": "25d92e2fa3b20df509eed3955bd9ce498a51401d6632f9216b196715bbb0ce4f",
+    "report_prediction_scatter_price_band_errors.pdf": "6a2ce538c19e76016da4340a121151cb6af77eb9f449c932f4b8ca5508997bd5",
     "report_pca_distance_bandwidth_oof.png": "c9c3edc739d2879d17a880b07fb0e88125ea4086d78d58c1879b1e7d852b729a",
-    "report_pca_distance_bandwidth_oof.svg": "7d5b286553d287b1937a582f529f532349dbf69e569604a4cdf9e0e2550b1548",
-    "report_pca_distance_bandwidth_oof.pdf": "32238b5009eda40a94e347434cc81e4ce20b9c312b15bd325b99f67b4233b003",
+    "report_pca_distance_bandwidth_oof.svg": "679320f136e9ebeb176957ea39c06e0d3b1a7531c461abbfaa8ba9fc41d88e7f",
+    "report_pca_distance_bandwidth_oof.pdf": "552da48384a19059847c56d55984acc76f0d8cbe368e4050ae229d428575f70b",
     "report_pe_g_occlusion_model_comparison.png": "d0f8c3d76b504fbb4e22c68e00aedbe77bdbb393232bdef63eaa48ea09a68ad4",
-    "report_pe_g_occlusion_model_comparison.svg": "3e25eb71574ac15b6e206241b50078141fc6ffbd19a0c76c793fad53ceadb022",
-    "report_pe_g_occlusion_model_comparison.pdf": "0fde3b4e4140125916e64616a972790b1c951fcbe783b28377ad15d5993eca04"
+    "report_pe_g_occlusion_model_comparison.svg": "c9511193c06cca4b7b34745ecf084f90e43516b9016b4367113368cab7970de8",
+    "report_pe_g_occlusion_model_comparison.pdf": "2fa8539f90d3c8d06f7bb9f78e4398210c3e9a5d3a478df33695c22c45a8718a"
   }
 }

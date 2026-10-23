@@ -1,8 +1,50 @@
 {
   "base_commit": "cceac4082c543d55af51673fd87662fa767be14c",
   "photometric_pr_commit": "664393e2342fe5b838db6649554b31bc64a1c763",
-  "report_source": "Sibling submission/report",
+  "report_source": "English/report_source/main.tex",
   "weights_excluded_by_request": true,
   "provided_images_excluded": true,
-  "test_labels_used": false
+  "test_labels_used": false,
+  "selected_report_original": "Final_Assignment/submission/report_1021/main_v1.tex",
+  "selected_report_original_sha256": "c41b81c17f4c6a6343e9ac3bbcb197a755586ed1168b52bd9c5d1d9d9fc9091f",
+  "report_changes": [
+    {
+      "before": "\\renewcommand{\\refname}{参考文献}",
+      "after": "\\renewcommand{\\refname}{References}"
+    },
+    {
+      "before": "\\title{基于冻结视觉特征与核回归融合的房价预测}",
+      "after": "\\title{House Price Prediction with Frozen Visual Features and Kernel Fusion}"
+    },
+    {
+      "before": "墨尔本大学，COMP90086 计算机视觉",
+      "after": "COMP90086 Computer Vision, The University of Melbourne"
+    },
+    {
+      "before": "145,336.73pm1,091.58",
+      "after": "145,336.73\\pm1,091.58"
+    },
+    {
+      "before": "$4times4$",
+      "after": "$4\\times4$"
+    },
+    {
+      "before": "（table~",
+      "after": "(Table~"
+    },
+    {
+      "before": "）。At",
+      "after": "). At"
+    },
+    {
+      "before": "where $\\alpha=1$。",
+      "after": "where $\\alpha=1$."
+    },
+    {
+      "before": "\\section{Result}",
+      "after": "\\section{Results}"
+    }
+  ],
+  "selected_prediction_recipe": "20261015T034010Z_0c94a543",
+  "subsequent_47196_exploration_included": false
 }

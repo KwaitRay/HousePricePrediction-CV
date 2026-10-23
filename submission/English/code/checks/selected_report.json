@@ -1,0 +1,11 @@
+{
+  "source": "English/report_source/main.tex",
+  "report_sha256": "422300ff985c48a171f3537fd74d1055b2e3432b4127ba5bc4c519026543035d",
+  "source_sha256": "f4cfbf7bf6289348a660536b215e238b22b1ed303059a25ef06e865363c937b9",
+  "original_main_v1_sha256": "c41b81c17f4c6a6343e9ac3bbcb197a755586ed1168b52bd9c5d1d9d9fc9091f",
+  "body_pages": 4,
+  "reference_pages": 1,
+  "recipe": "20261015T034010Z_0c94a543",
+  "public_mse_user_reported": 47291.34608,
+  "later_47196_exploration_is_not_the_submitted_recipe": true
+}

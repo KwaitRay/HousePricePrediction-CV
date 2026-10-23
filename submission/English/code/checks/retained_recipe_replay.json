@@ -1,0 +1,8 @@
+{
+  "stage": "after",
+  "rows": 3000,
+  "cpu_only": true,
+  "report_recipe": "08_final/visual_kernel_ensemble/20261015T034010Z_0c94a543",
+  "report_max_absolute_error": 1.3642420526593924e-12,
+  "all_test_feature_chunks_hash_verified": true
+}

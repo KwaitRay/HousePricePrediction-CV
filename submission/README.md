@@ -1,16 +1,14 @@
-# Submission snapshot
+# Final project submission
 
-Authors: Shifeng Chen (1686631), Haoxuan Ying (1255329).
+Upload these two files separately on Canvas:
 
-| Directory / file | Purpose |
+| Canvas destination | File |
 |---|---|
-| English/ | English report, source, expanded code and separate code.zip |
-| Chinese/ | Chinese reading version and review notes; shares English code |
-| English_all_materials.zip | All English hand-in materials for transfer |
-| release_manifest.json | SHA256 and verification summary |
+| Final Project: Report | [English/report.pdf](English/report.pdf) |
+| Final Project: Code | [English/code.zip](English/code.zip) |
 
-For Canvas upload English/report.pdf and English/code.zip separately.
-Only this submission/ directory defines the hand-in snapshot. Historical best_model/
-archives elsewhere in the development repository are not part of the submission.
-No fitted model weights, encoder checkpoints, feature arrays or supplied images are
-included. Source for all reported experiments, frozen split and test predictions are included.
+The selected report is the main_v1 revision, with four A4 IEEE content pages plus a references-only fifth page. The code/predictions use the report-consistent 47291.34608 recipe. Source, expanded code and verification details are under [English/](English/README.md).
+
+`English_all_materials.zip` is a combined transfer archive, not an additional Canvas deliverable. `Chinese/` and `Haoxuan_Ying/` are historical reading/review versions; neither is the final report. Development models and later optimization experiments elsewhere in the repository are not part of the code upload.
+
+The separate Project Plan/group registration, Kaggle submission and each member's peer assessment must be completed through their respective course interfaces. This preparation does not upload to Canvas or Kaggle.

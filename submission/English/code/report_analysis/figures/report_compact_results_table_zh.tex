@@ -1,0 +1,32 @@
+\begin{table}[t]
+\centering
+\caption{固定验证集上的代表性结果。}
+\label{tab:representative-results-zh}
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.0}
+\begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}lrr@{}}
+\hline
+方法 & MSE & MAE \\
+\hline
+\multicolumn{3}{l}{\emph{参照基线}} \\
+训练均价 & 151,840 & 294.47 \\
+SIFT--BoVW--Ridge & 145,337 & 288.66 \\
+\multicolumn{3}{l}{\emph{A. 表示路线}} \\
+AlexNet & 127,774 & 264.52 \\
+AlexNet + 翻转 & 126,810 & 268.02 \\
+翻转 AlexNet + 均值头 & 122,334 & 261.48 \\
+CLIP B/32 + 岭回归 & 91,821 & 223.27 \\
+\multicolumn{3}{l}{\emph{B. 冻结分支与融合}} \\
+NaFlex + RBF & 63,086 & 181.28 \\
+PE-L（三视图）+ RBF & 59,213 & 172.90 \\
+PE-L（三视图）+ PLS/RBF & 59,483 & 171.73 \\
+PE-G（双视图）+ PCA/RBF & 52,806 & 160.67 \\
+\textbf{三编码器融合} & \textbf{52,201} & \textbf{159.58} \\
+\hline
+\end{tabular*}
+\par\smallskip
+\begin{minipage}{\columnwidth}\scriptsize
+$n=1{,}601$；MSE 单位为（千美元）$^2$，MAE 为千美元。SIFT 与三个 AlexNet 结果为三种子均值；冻结特征行使用选定拟合。
+\end{minipage}
+\end{table}

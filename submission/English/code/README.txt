@@ -86,3 +86,10 @@ Upload code.zip to Canvas Final Project: Code, and English/report.pdf separately
 to Final Project: Report. English_all_materials.zip is a combined handover archive.
 Project-plan registration/submission and individual peer assessment are separate
 course activities; blank templates are not included as completed deliverables.
+
+FINAL SNAPSHOT
+The separately submitted report is the main_v1 revision, with English title/references and corrected LaTeX math escapes.
+The supplied predictions and portable recipe remain the report-consistent 47291.34608 model.
+Later 47196.41766 exploration is retained in the development repository and is not the hand-in recipe.
+Report source: ../report_source/main.tex (XeLaTeX).
+A new CPU replay of all 3000 archived report-recipe predictions is recorded in checks/retained_recipe_replay.json.

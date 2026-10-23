@@ -1,0 +1,20 @@
+{
+  "body_pages": 4,
+  "reference_pages": 1,
+  "a4": true,
+  "ieee_default_font_size_and_margins": true,
+  "test_predictions": 3000,
+  "report_sha256": "422300ff985c48a171f3537fd74d1055b2e3432b4127ba5bc4c519026543035d",
+  "code_zip_sha256": "e5327587f19404766c2ef354418cf8d47d4f0e11d37ec32fea5585befa91b890",
+  "manifest_files": 1885,
+  "python_sources": 167,
+  "code_verified": true,
+  "pdf_visually_reviewed": true,
+  "portable_metadata_check": true,
+  "report_metrics_and_ablations_recomputed": true,
+  "figure_rebuilds_on_cpu": true,
+  "zip_crc_and_manifest_verified": true,
+  "model_weights_features_supplied_images_included": false,
+  "fresh_encoder_extraction": false,
+  "fresh_full_refit": false
+}
